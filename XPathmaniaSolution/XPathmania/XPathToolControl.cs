@@ -190,7 +190,7 @@ namespace XmlMvp.XPathmania
 
                 try
                 {
-                    foreach (DataGridViewRow CurrentRow in NamespaceGridView.Rows)
+                    foreach (DataGridViewRow CurrentRow in namespaceGridView.Rows)
                     {
                         if (CurrentRow.Cells[0].Value != null && CurrentRow.Cells[1].Value != null)
                         {
@@ -245,7 +245,7 @@ namespace XmlMvp.XPathmania
                 if (this.results.Count > 0)
                 {
                     this.resultsGridView.Focus();
-                    this.queryTabControl.SelectedTab = this.ResultsTabPage;
+                    this.queryTabControl.SelectedTab = this.resultsTabPage;
                 }
                 else
                 {
