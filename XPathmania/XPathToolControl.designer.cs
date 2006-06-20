@@ -18,20 +18,20 @@ namespace XmlMvp.XPathmania
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.xpathTextBox = new System.Windows.Forms.TextBox();
-            this.XPathQueryButton = new System.Windows.Forms.Button();
+            this.xpathQueryButton = new System.Windows.Forms.Button();
             this.queryTabControl = new System.Windows.Forms.TabControl();
-            this.ResultsTabPage = new System.Windows.Forms.TabPage();
+            this.resultsTabPage = new System.Windows.Forms.TabPage();
             this.resultsGridView = new System.Windows.Forms.DataGridView();
             this.Match = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Line = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NamespaceTabPage = new System.Windows.Forms.TabPage();
-            this.NamespaceGridView = new System.Windows.Forms.DataGridView();
-            this.PrefixColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NamespaceColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ErrorTabPage = new System.Windows.Forms.TabPage();
+            this.namespaceTabPage = new System.Windows.Forms.TabPage();
+            this.namespaceGridView = new System.Windows.Forms.DataGridView();
+            this.prefixColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.namespaceColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.errorTabPage = new System.Windows.Forms.TabPage();
             this.errorListGridView = new System.Windows.Forms.DataGridView();
             this.imageDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
             this.sequenceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,11 +39,11 @@ namespace XmlMvp.XPathmania
             this.errorInfoLineBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.errorInfoLineBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.queryTabControl.SuspendLayout();
-            this.ResultsTabPage.SuspendLayout();
+            this.resultsTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.resultsGridView)).BeginInit();
-            this.NamespaceTabPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NamespaceGridView)).BeginInit();
-            this.ErrorTabPage.SuspendLayout();
+            this.namespaceTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.namespaceGridView)).BeginInit();
+            this.errorTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorListGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorInfoLineBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorInfoLineBindingSource)).BeginInit();
@@ -58,42 +58,42 @@ namespace XmlMvp.XPathmania
             this.xpathTextBox.Size = new System.Drawing.Size(700, 20);
             this.xpathTextBox.TabIndex = 0;
             // 
-            // XPathQueryButton
+            // xpathQueryButton
             // 
-            this.XPathQueryButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.XPathQueryButton.AutoSize = true;
-            this.XPathQueryButton.Location = new System.Drawing.Point(709, 1);
-            this.XPathQueryButton.Name = "XPathQueryButton";
-            this.XPathQueryButton.Size = new System.Drawing.Size(75, 23);
-            this.XPathQueryButton.TabIndex = 1;
-            this.XPathQueryButton.Text = "Query";
-            this.XPathQueryButton.UseVisualStyleBackColor = true;
-            this.XPathQueryButton.Click += new System.EventHandler(this.XPathQueryButton_Click);
+            this.xpathQueryButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.xpathQueryButton.AutoSize = true;
+            this.xpathQueryButton.Location = new System.Drawing.Point(709, 1);
+            this.xpathQueryButton.Name = "xpathQueryButton";
+            this.xpathQueryButton.Size = new System.Drawing.Size(75, 23);
+            this.xpathQueryButton.TabIndex = 1;
+            this.xpathQueryButton.Text = "Query";
+            this.xpathQueryButton.UseVisualStyleBackColor = true;
+            this.xpathQueryButton.Click += new System.EventHandler(this.XPathQueryButton_Click);
             // 
             // queryTabControl
             // 
             this.queryTabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.queryTabControl.Controls.Add(this.ResultsTabPage);
-            this.queryTabControl.Controls.Add(this.NamespaceTabPage);
-            this.queryTabControl.Controls.Add(this.ErrorTabPage);
+            this.queryTabControl.Controls.Add(this.resultsTabPage);
+            this.queryTabControl.Controls.Add(this.namespaceTabPage);
+            this.queryTabControl.Controls.Add(this.errorTabPage);
             this.queryTabControl.Location = new System.Drawing.Point(3, 29);
             this.queryTabControl.Name = "queryTabControl";
             this.queryTabControl.SelectedIndex = 0;
             this.queryTabControl.Size = new System.Drawing.Size(781, 146);
             this.queryTabControl.TabIndex = 2;
             // 
-            // ResultsTabPage
+            // resultsTabPage
             // 
-            this.ResultsTabPage.Controls.Add(this.resultsGridView);
-            this.ResultsTabPage.Location = new System.Drawing.Point(4, 22);
-            this.ResultsTabPage.Name = "ResultsTabPage";
-            this.ResultsTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.ResultsTabPage.Size = new System.Drawing.Size(773, 120);
-            this.ResultsTabPage.TabIndex = 0;
-            this.ResultsTabPage.Text = "Results";
-            this.ResultsTabPage.UseVisualStyleBackColor = true;
+            this.resultsTabPage.Controls.Add(this.resultsGridView);
+            this.resultsTabPage.Location = new System.Drawing.Point(4, 22);
+            this.resultsTabPage.Name = "resultsTabPage";
+            this.resultsTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.resultsTabPage.Size = new System.Drawing.Size(773, 120);
+            this.resultsTabPage.TabIndex = 0;
+            this.resultsTabPage.Text = "Results";
+            this.resultsTabPage.UseVisualStyleBackColor = true;
             // 
             // resultsGridView
             // 
@@ -153,60 +153,60 @@ namespace XmlMvp.XPathmania
             this.Column.ReadOnly = true;
             this.Column.Width = 75;
             // 
-            // NamespaceTabPage
+            // namespaceTabPage
             // 
-            this.NamespaceTabPage.Controls.Add(this.NamespaceGridView);
-            this.NamespaceTabPage.Location = new System.Drawing.Point(4, 22);
-            this.NamespaceTabPage.Name = "NamespaceTabPage";
-            this.NamespaceTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.NamespaceTabPage.Size = new System.Drawing.Size(773, 120);
-            this.NamespaceTabPage.TabIndex = 2;
-            this.NamespaceTabPage.Text = "Namespace Table";
-            this.NamespaceTabPage.UseVisualStyleBackColor = true;
+            this.namespaceTabPage.Controls.Add(this.namespaceGridView);
+            this.namespaceTabPage.Location = new System.Drawing.Point(4, 22);
+            this.namespaceTabPage.Name = "namespaceTabPage";
+            this.namespaceTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.namespaceTabPage.Size = new System.Drawing.Size(773, 120);
+            this.namespaceTabPage.TabIndex = 2;
+            this.namespaceTabPage.Text = "Namespace Table";
+            this.namespaceTabPage.UseVisualStyleBackColor = true;
             // 
-            // NamespaceGridView
+            // namespaceGridView
             // 
-            this.NamespaceGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.namespaceGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.NamespaceGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.NamespaceGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedHeaders;
-            this.NamespaceGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.NamespaceGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.PrefixColumn,
-            this.NamespaceColumn});
-            this.NamespaceGridView.Location = new System.Drawing.Point(3, 3);
-            this.NamespaceGridView.Name = "NamespaceGridView";
-            this.NamespaceGridView.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.NamespaceGridView.Size = new System.Drawing.Size(767, 114);
-            this.NamespaceGridView.TabIndex = 0;
+            this.namespaceGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.namespaceGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedHeaders;
+            this.namespaceGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.namespaceGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.prefixColumn,
+            this.namespaceColumn});
+            this.namespaceGridView.Location = new System.Drawing.Point(3, 3);
+            this.namespaceGridView.Name = "namespaceGridView";
+            this.namespaceGridView.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.namespaceGridView.Size = new System.Drawing.Size(767, 114);
+            this.namespaceGridView.TabIndex = 0;
             // 
-            // PrefixColumn
+            // prefixColumn
             // 
-            this.PrefixColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.NullValue = null;
-            this.PrefixColumn.DefaultCellStyle = dataGridViewCellStyle1;
-            this.PrefixColumn.HeaderText = "Prefix";
-            this.PrefixColumn.Name = "PrefixColumn";
-            this.PrefixColumn.Width = 58;
+            this.prefixColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.NullValue = null;
+            this.prefixColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.prefixColumn.HeaderText = "Prefix";
+            this.prefixColumn.Name = "prefixColumn";
+            this.prefixColumn.Width = 58;
             // 
-            // NamespaceColumn
+            // namespaceColumn
             // 
-            this.NamespaceColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.NamespaceColumn.HeaderText = "Namespace";
-            this.NamespaceColumn.Name = "NamespaceColumn";
+            this.namespaceColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.namespaceColumn.HeaderText = "Namespace";
+            this.namespaceColumn.Name = "namespaceColumn";
             // 
-            // ErrorTabPage
+            // errorTabPage
             // 
-            this.ErrorTabPage.Controls.Add(this.errorListGridView);
-            this.ErrorTabPage.Location = new System.Drawing.Point(4, 22);
-            this.ErrorTabPage.Name = "ErrorTabPage";
-            this.ErrorTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.ErrorTabPage.Size = new System.Drawing.Size(773, 120);
-            this.ErrorTabPage.TabIndex = 1;
-            this.ErrorTabPage.Text = "Error List";
-            this.ErrorTabPage.UseVisualStyleBackColor = true;
+            this.errorTabPage.Controls.Add(this.errorListGridView);
+            this.errorTabPage.Location = new System.Drawing.Point(4, 22);
+            this.errorTabPage.Name = "errorTabPage";
+            this.errorTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.errorTabPage.Size = new System.Drawing.Size(773, 120);
+            this.errorTabPage.TabIndex = 1;
+            this.errorTabPage.Text = "Error List";
+            this.errorTabPage.UseVisualStyleBackColor = true;
             // 
             // errorListGridView
             // 
@@ -277,16 +277,16 @@ namespace XmlMvp.XPathmania
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Controls.Add(this.queryTabControl);
-            this.Controls.Add(this.XPathQueryButton);
+            this.Controls.Add(this.xpathQueryButton);
             this.Controls.Add(this.xpathTextBox);
             this.Name = "XPathToolControl";
             this.Size = new System.Drawing.Size(800, 200);
             this.queryTabControl.ResumeLayout(false);
-            this.ResultsTabPage.ResumeLayout(false);
+            this.resultsTabPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.resultsGridView)).EndInit();
-            this.NamespaceTabPage.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.NamespaceGridView)).EndInit();
-            this.ErrorTabPage.ResumeLayout(false);
+            this.namespaceTabPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.namespaceGridView)).EndInit();
+            this.errorTabPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorListGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorInfoLineBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorInfoLineBindingSource)).EndInit();
@@ -297,18 +297,17 @@ namespace XmlMvp.XPathmania
         #endregion
 
         private System.Windows.Forms.TextBox xpathTextBox;
-        private System.Windows.Forms.Button XPathQueryButton;
+        private System.Windows.Forms.Button xpathQueryButton;
         private System.Windows.Forms.TabControl queryTabControl;
-        private System.Windows.Forms.TabPage ResultsTabPage;
-        private System.Windows.Forms.TabPage ErrorTabPage;
-        private System.Windows.Forms.TabPage NamespaceTabPage;
-        private System.Windows.Forms.DataGridView NamespaceGridView;
+        private System.Windows.Forms.TabPage resultsTabPage;
+        private System.Windows.Forms.TabPage namespaceTabPage;
+        private System.Windows.Forms.DataGridView namespaceGridView;
         private System.Windows.Forms.DataGridView resultsGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn Match;
         private System.Windows.Forms.DataGridViewTextBoxColumn Line;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PrefixColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NamespaceColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn prefixColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn namespaceColumn;
         private System.Windows.Forms.DataGridView errorListGridView;
         private System.Windows.Forms.BindingSource errorInfoLineBindingSource;
         private System.Windows.Forms.BindingSource errorInfoLineBindingSource1;
