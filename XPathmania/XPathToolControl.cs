@@ -250,7 +250,7 @@ namespace XmlMvp.XPathmania
                 else
                 {
                     // If no results and XmlDoc has a default namespace, display a warning
-                    if (!String.IsNullOrEmpty(this.currentDocument.DocumentElementDefaultNamespace) || !(this.currentDocument.DocumentElementDefaultNamespace == ""))
+                    if (!String.IsNullOrEmpty(this.currentDocument.DocumentElementDefaultNamespace) && !(this.currentDocument.DocumentElementDefaultNamespace == ""))
                     {
                         this.ReportError(new ErrorInfoLine("Document has a default namespace.  Did you make sure to add it to the Namespace Table and use its prefix in your XPath query?",errors.Count + 1,ErrorInfoLine.ErrorType.Warning));
                         return;
