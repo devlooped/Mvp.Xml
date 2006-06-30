@@ -60,11 +60,6 @@
     <Compile Include="Internal\DomLoader.cs" />
     <Compile Include="Guids.cs" />
     <Compile Include="Internal\XmlNodeInfo.cs" />
-    <Compile Include="VSPackage.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>VSPackage.resx</DependentUpon>
-    </Compile>
     <Compile Include="XPathToolControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -95,8 +90,6 @@
     <EmbeddedResource Include="VSPackage.resx">
       <MergeWithCTO>true</MergeWithCTO>
       <SubType>Designer</SubType>
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>VSPackage.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="XPathToolControl.resx">
       <DependentUpon>XPathToolControl.cs</DependentUpon>

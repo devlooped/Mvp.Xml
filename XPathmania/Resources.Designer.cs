@@ -61,22 +61,6 @@ namespace XmlMvp.XPathmania {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to QDA1MIC0Q3AJCADDD8MTQAJ9MCRJQ9RTITI8M1HKICQDHQMZRARJI2RII2A2AQDAZKI2JTMCAKPQD8CTQQKPATPJAJIDCJP2P1JZAIAIC9A0EHP9QTRCECAZEHQCDAEP.
-        /// </summary>
-        internal static string _104 {
-            get {
-                return ResourceManager.GetString("104", resourceCulture);
-            }
-        }
-        
-        internal static System.Drawing.Bitmap _300 {
-            get {
-                object obj = ResourceManager.GetObject("300", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Can not create tool window..
         /// </summary>
         internal static string CanNotCreateWindow {
