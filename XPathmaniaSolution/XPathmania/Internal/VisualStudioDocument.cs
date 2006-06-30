@@ -82,7 +82,14 @@ namespace XmlMvp.XPathmania.Internal
                 }
                 else
                 {
-                    return this.currentXmlDocument.DocumentElement.NamespaceURI;
+                    if (this.currentXmlDocument.DocumentElement.Prefix == "" && this.currentXmlDocument.DocumentElement.NamespaceURI != "")
+                    {
+                        return this.currentXmlDocument.DocumentElement.NamespaceURI;
+                    }
+                    else
+                    {
+                        return null;
+                    }
                 } 
             }
         }
