@@ -852,7 +852,7 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:XPathmania, Version=1.0.2340.32724, Culture=neutral, PublicKeyToken=637a304eea5087d5, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:XPathmania, Version=1.0.2371.38787, Culture=neutral, PublicKeyToken=637a304eea5087d5, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
                     "_EB77321651524EB6A6B03160F1680959"
@@ -1119,7 +1119,7 @@
                                                                     "Condition" = "8:"
                                                                     "Transitive" = "11:FALSE"
                                                                     "ValueTypes" = "3:1"
-                                                                    "Value" = "8:XPathmania, Version=1.0.2340.32724, Culture=neutral, PublicKeyToken=637a304eea5087d5"
+                                                                    "Value" = "8:XPathmania, Version=1.0.2371.38787, Culture=neutral, PublicKeyToken=637a304eea5087d5"
                                                                     }
                                                                     "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_DF5AF98D9BB041748104AB3EA8F1A752"
                                                                     {
