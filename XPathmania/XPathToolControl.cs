@@ -321,6 +321,7 @@ namespace XmlMvp.XPathmania
             this.results.Remove(old);
             this.resultsGridView.AutoGenerateColumns = false;
             this.resultsGridView.DataSource = this.results;
+            this.resultsGridView.Invalidate();
           
         }
 
