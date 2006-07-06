@@ -24,9 +24,6 @@ namespace XmlMvp.XPathmania
             this.queryTabControl = new System.Windows.Forms.TabControl();
             this.resultsTabPage = new System.Windows.Forms.TabPage();
             this.resultsGridView = new System.Windows.Forms.DataGridView();
-            this.Match = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Line = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.namespaceTabPage = new System.Windows.Forms.TabPage();
             this.namespaceGridView = new System.Windows.Forms.DataGridView();
             this.prefixColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,6 +35,9 @@ namespace XmlMvp.XPathmania
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.errorInfoLineBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.errorInfoLineBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Match = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Line = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.queryTabControl.SuspendLayout();
             this.resultsTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.resultsGridView)).BeginInit();
@@ -120,38 +120,8 @@ namespace XmlMvp.XPathmania
             this.resultsGridView.Size = new System.Drawing.Size(770, 117);
             this.resultsGridView.TabIndex = 0;
             this.resultsGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.resultsGridView_KeyDown);
+            this.resultsGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.resultsGridView_DataError);
             this.resultsGridView.DoubleClick += new System.EventHandler(this.resultsGridView_DoubleClick);
-            // 
-            // Match
-            // 
-            this.Match.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Match.DataPropertyName = "Match";
-            this.Match.FillWeight = 111.9289F;
-            this.Match.HeaderText = "Match";
-            this.Match.Name = "Match";
-            this.Match.ReadOnly = true;
-            // 
-            // Line
-            // 
-            this.Line.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Line.DataPropertyName = "Line";
-            this.Line.FillWeight = 111.9289F;
-            this.Line.HeaderText = "Line";
-            this.Line.MinimumWidth = 10;
-            this.Line.Name = "Line";
-            this.Line.ReadOnly = true;
-            this.Line.Width = 75;
-            // 
-            // Column
-            // 
-            this.Column.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Column.DataPropertyName = "Column";
-            this.Column.FillWeight = 76.14214F;
-            this.Column.HeaderText = "Column";
-            this.Column.MinimumWidth = 10;
-            this.Column.Name = "Column";
-            this.Column.ReadOnly = true;
-            this.Column.Width = 75;
             // 
             // namespaceTabPage
             // 
@@ -271,6 +241,37 @@ namespace XmlMvp.XPathmania
             // 
             this.errorInfoLineBindingSource.DataSource = typeof(XmlMvp.XPathmania.Internal.ErrorInfoLine);
             // 
+            // Match
+            // 
+            this.Match.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Match.DataPropertyName = "Match";
+            this.Match.FillWeight = 111.9289F;
+            this.Match.HeaderText = "Match";
+            this.Match.Name = "Match";
+            this.Match.ReadOnly = true;
+            // 
+            // Line
+            // 
+            this.Line.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Line.DataPropertyName = "OnesBasedLine";
+            this.Line.FillWeight = 111.9289F;
+            this.Line.HeaderText = "Line";
+            this.Line.MinimumWidth = 10;
+            this.Line.Name = "Line";
+            this.Line.ReadOnly = true;
+            this.Line.Width = 75;
+            // 
+            // Column
+            // 
+            this.Column.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Column.DataPropertyName = "Column";
+            this.Column.FillWeight = 76.14214F;
+            this.Column.HeaderText = "Column";
+            this.Column.MinimumWidth = 10;
+            this.Column.Name = "Column";
+            this.Column.ReadOnly = true;
+            this.Column.Width = 75;
+            // 
             // XPathToolControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -303,9 +304,6 @@ namespace XmlMvp.XPathmania
         private System.Windows.Forms.TabPage namespaceTabPage;
         private System.Windows.Forms.DataGridView namespaceGridView;
         private System.Windows.Forms.DataGridView resultsGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Match;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Line;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column;
         private System.Windows.Forms.DataGridViewTextBoxColumn prefixColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn namespaceColumn;
         private System.Windows.Forms.DataGridView errorListGridView;
@@ -314,5 +312,8 @@ namespace XmlMvp.XPathmania
         private System.Windows.Forms.DataGridViewImageColumn imageDataGridViewImageColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sequenceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Match;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Line;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column;
     }
 }
