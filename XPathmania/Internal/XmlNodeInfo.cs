@@ -34,7 +34,7 @@ namespace XmlMvp.XPathmania.Internal
             set { }
         }
 
-        public int OnesBasedLine
+        public int OneBasedLine
         {
             get { return span.iStartLine +1; }
         }

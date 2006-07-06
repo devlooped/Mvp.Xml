@@ -253,7 +253,7 @@ namespace XmlMvp.XPathmania
             // Line
             // 
             this.Line.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Line.DataPropertyName = "OnesBasedLine";
+            this.Line.DataPropertyName = "OneBasedLine";
             this.Line.FillWeight = 111.9289F;
             this.Line.HeaderText = "Line";
             this.Line.MinimumWidth = 10;
