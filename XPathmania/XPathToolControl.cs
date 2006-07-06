@@ -192,10 +192,32 @@ namespace XmlMvp.XPathmania
                 {
                     foreach (DataGridViewRow CurrentRow in namespaceGridView.Rows)
                     {
-                        if (CurrentRow.Cells[0].Value != null && CurrentRow.Cells[1].Value != null)
+                        if (CurrentRow.Cells[0].Value == null && CurrentRow.Cells[1].Value == null)
                         {
-                            this.currentDocument.XmlNamespaceManager.AddNamespace((string)CurrentRow.Cells[0].Value, (string)CurrentRow.Cells[1].Value);
+                            //skip empty rows
+                            continue;
                         }
+                        else
+                        {
+                            if (CurrentRow.Cells[0].Value == null)
+                            {
+                                ReportError(new ErrorInfoLine("Invalid Namespace Table - a prefix is required for all namespaces", errors.Count + 1, ErrorInfoLine.ErrorType.Warning));
+                                return;
+                            }
+                            else
+                            {
+                                if (CurrentRow.Cells[1].Value == null)
+                                {
+                                    this.currentDocument.XmlNamespaceManager.AddNamespace((string)CurrentRow.Cells[0].Value, string.Empty);
+                                }
+                                else
+                                {
+                                    this.currentDocument.XmlNamespaceManager.AddNamespace((string)CurrentRow.Cells[0].Value, (string)CurrentRow.Cells[1].Value);
+                                }
+                            }
+                        }
+
+
                     }
                 }
                 catch (Exception ex)

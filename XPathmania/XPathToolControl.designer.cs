@@ -18,7 +18,7 @@ namespace XmlMvp.XPathmania
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.xpathTextBox = new System.Windows.Forms.TextBox();
             this.xpathQueryButton = new System.Windows.Forms.Button();
             this.queryTabControl = new System.Windows.Forms.TabControl();
@@ -184,9 +184,9 @@ namespace XmlMvp.XPathmania
             // prefixColumn
             // 
             this.prefixColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.NullValue = null;
-            this.prefixColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.NullValue = null;
+            this.prefixColumn.DefaultCellStyle = dataGridViewCellStyle1;
             this.prefixColumn.HeaderText = "Prefix";
             this.prefixColumn.Name = "prefixColumn";
             this.prefixColumn.Width = 58;
