@@ -184,7 +184,7 @@ namespace XmlMvp.XPathmania
 
                 if (!this.currentDocument.IsValidXmlDocument())
                 {
-                    ReportError(new ErrorInfoLine("Invalid Xml Document", errors.Count + 1, ErrorInfoLine.ErrorType.Warning));
+                    ReportError(new ErrorInfoLine("Invalid XML Document – see Error List Window for details", errors.Count + 1, ErrorInfoLine.ErrorType.Warning));
                     return;
                 }
 
