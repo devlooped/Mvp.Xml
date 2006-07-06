@@ -34,6 +34,11 @@ namespace XmlMvp.XPathmania.Internal
             set { }
         }
 
+        public int OnesBasedLine
+        {
+            get { return span.iStartLine +1; }
+        }
+
         public int Line
         {
             get { return span.iStartLine; }
@@ -165,6 +170,7 @@ namespace XmlMvp.XPathmania.Internal
 
         public void MarkerInvalidated()
         {
+            MarkerDeleted(this, new EventArgs());
             marker = null;
         }
 

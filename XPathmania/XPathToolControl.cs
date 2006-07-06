@@ -311,10 +311,17 @@ namespace XmlMvp.XPathmania
 
         void OnMarkerDeleted(object sender, EventArgs a)
         {
-            this.ClearResults();
-            this.results = null;
-            this.resultsGridView.DataSource = null;
-            this.resultsGridView.Invalidate();
+            //this.ClearResults();
+            //this.results = null;
+            //this.resultsGridView.DataSource = null;
+            //this.resultsGridView.Invalidate();
+            XmlNodeInfo old = sender as XmlNodeInfo;
+            old.MarkerDeleted -= new EventHandler(OnMarkerDeleted);
+            old.MarkerChanged -= new EventHandler(OnMarkerChanged);
+            this.results.Remove(old);
+            this.resultsGridView.AutoGenerateColumns = false;
+            this.resultsGridView.DataSource = this.results;
+          
         }
 
         void ClearResults()
@@ -359,6 +366,11 @@ namespace XmlMvp.XPathmania
                 NavigateSelection();
                 e.Handled = true;
             }
+        }
+
+        private void resultsGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            e.Cancel = true;
         }
 
 
