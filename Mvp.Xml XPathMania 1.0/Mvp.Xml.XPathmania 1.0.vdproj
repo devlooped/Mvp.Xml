@@ -852,7 +852,7 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:XPathmania, Version=1.0.2378.24251, Culture=neutral, PublicKeyToken=637a304eea5087d5, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:XPathmania, Version=1.0.2378.35894, Culture=neutral, PublicKeyToken=637a304eea5087d5, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
                     "_EB77321651524EB6A6B03160F1680959"
@@ -977,7 +977,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Mvp.Xml XPathmania 1.0"
         "ProductCode" = "8:{B85C3BBC-08DE-437F-B498-B13F277F41B5}"
-        "PackageCode" = "8:{D1F21081-AA9A-457D-8E49-5047F6ED1C1D}"
+        "PackageCode" = "8:{029DE811-A390-4F72-9903-BFB167DC4A21}"
         "UpgradeCode" = "8:{61A064C4-B3EC-4E88-8265-1C3E950A7B81}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
@@ -1119,7 +1119,7 @@
                                                                     "Condition" = "8:"
                                                                     "Transitive" = "11:FALSE"
                                                                     "ValueTypes" = "3:1"
-                                                                    "Value" = "8:XPathmania, Version=1.0.2378.24251, Culture=neutral, PublicKeyToken=637a304eea5087d5"
+                                                                    "Value" = "8:XPathmania, Version=1.0.2378.35894, Culture=neutral, PublicKeyToken=637a304eea5087d5"
                                                                     }
                                                                     "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_DF5AF98D9BB041748104AB3EA8F1A752"
                                                                     {
