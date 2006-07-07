@@ -24,7 +24,7 @@ namespace XmlMvp.XPathmania
     /// </summary>
     public partial class XPathToolControl : UserControl
     {
-        private ArrayList results;
+        private BindingList<XmlNodeInfo> results;
         private ArrayList errors;
         private int changeCount;
         private Internal.VisualStudioDocument currentDocument;
@@ -238,7 +238,7 @@ namespace XmlMvp.XPathmania
                     return;
                 }
 
-                results = new ArrayList();
+                results = new BindingList<XmlNodeInfo>();
 
                 if (XPathResultNodeList != null)
                 {
@@ -311,18 +311,12 @@ namespace XmlMvp.XPathmania
 
         void OnMarkerDeleted(object sender, EventArgs a)
         {
-            //this.ClearResults();
-            //this.results = null;
-            //this.resultsGridView.DataSource = null;
-            //this.resultsGridView.Invalidate();
             XmlNodeInfo old = sender as XmlNodeInfo;
             old.MarkerDeleted -= new EventHandler(OnMarkerDeleted);
             old.MarkerChanged -= new EventHandler(OnMarkerChanged);
+
             this.results.Remove(old);
-            this.resultsGridView.AutoGenerateColumns = false;
-            this.resultsGridView.DataSource = this.results;
-            this.resultsGridView.Invalidate();
-          
+            this.resultsGridView.Invalidate();          
         }
 
         void ClearResults()
@@ -368,12 +362,5 @@ namespace XmlMvp.XPathmania
                 e.Handled = true;
             }
         }
-
-        private void resultsGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
-        {
-            e.Cancel = true;
-        }
-
-
     }
 }
