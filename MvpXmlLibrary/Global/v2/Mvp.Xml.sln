@@ -25,6 +25,41 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XIncludeTest", "..\..\XInclude\v2\test\XIncludeTest.csproj", "{D766C1F9-D2DA-4088-9AE1-52EA369B555F}"
 EndProject
 Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 11
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs01.codeplex.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Global.csproj
+		SccLocalPath1 = .
+		SccProjectUniqueName2 = ..\\..\\EXSLT\\v2\\src\\Exslt\\Exslt.csproj
+		SccProjectName2 = ../../EXSLT/v2/src/Exslt
+		SccLocalPath2 = ..\\..\\EXSLT\\v2\\src\\Exslt
+		SccProjectUniqueName3 = ..\\..\\EXSLT\\v2\\src\\MethodRenamer\\MethodRenamer.csproj
+		SccProjectName3 = ../../EXSLT/v2/src/MethodRenamer
+		SccLocalPath3 = ..\\..\\EXSLT\\v2\\src\\MethodRenamer
+		SccProjectUniqueName4 = ..\\..\\XPointer\\v2\\src\\XPointer.csproj
+		SccProjectName4 = ../../XPointer/v2/src
+		SccLocalPath4 = ..\\..\\XPointer\\v2\\src
+		SccProjectUniqueName5 = ..\\..\\XPointer\\v2\\test\\XPointerTest.csproj
+		SccProjectName5 = ../../XPointer/v2/test
+		SccLocalPath5 = ..\\..\\XPointer\\v2\\test
+		SccProjectUniqueName6 = ..\\..\\EXSLT\\v2\\test\\ExsltTest\\ExsltTest.csproj
+		SccProjectName6 = ../../EXSLT/v2/test/ExsltTest
+		SccLocalPath6 = ..\\..\\EXSLT\\v2\\test\\ExsltTest
+		SccProjectUniqueName7 = ..\\..\\Common\\v2\\src\\Common.csproj
+		SccProjectName7 = ../../Common/v2/src
+		SccLocalPath7 = ..\\..\\Common\\v2\\src
+		SccProjectUniqueName8 = ..\\..\\Common\\v2\\test\\CommonTest.csproj
+		SccProjectName8 = ../../Common/v2/test
+		SccLocalPath8 = ..\\..\\Common\\v2\\test
+		SccProjectUniqueName9 = ..\\..\\XInclude\\v2\\src\\XInclude.csproj
+		SccProjectName9 = ../../XInclude/v2/src
+		SccLocalPath9 = ..\\..\\XInclude\\v2\\src
+		SccProjectUniqueName10 = ..\\..\\XInclude\\v2\\test\\XIncludeTest.csproj
+		SccProjectName10 = ../../XInclude/v2/test
+		SccLocalPath10 = ..\\..\\XInclude\\v2\\test
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
