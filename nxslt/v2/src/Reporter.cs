@@ -11,14 +11,25 @@ namespace XmlLab.nxslt
     /// </summary>
     internal class Reporter
     {
-        private static TextWriter stdout = Console.Out;
-        private static TextWriter stderr = Console.Error;
+        private TextWriter stdout;
+        private TextWriter stderr;
+
+        public Reporter() {
+            this.stdout = Console.Out;
+            this.stderr = Console.Error;
+        }
+
+        public Reporter(TextWriter stdout, TextWriter stderr)
+        {
+            this.stdout = stdout;
+            this.stderr = stderr;
+        }
 
         /// <summary>
         /// Reports command line parsing error.
         /// </summary>        
         /// <param name="msg">Error message</param>
-        public static void ReportCommandLineParsingError(string msg)
+        public void ReportCommandLineParsingError(string msg)
         {
             stderr.WriteLine();
             ReportUsage();
@@ -31,7 +42,7 @@ namespace XmlLab.nxslt
         /// Reports an error.
         /// </summary>        
         /// <param name="msg">Error message</param>
-        public static void ReportError(string msg)
+        public void ReportError(string msg)
         {
             stderr.WriteLine();
             stderr.WriteLine();
@@ -44,7 +55,7 @@ namespace XmlLab.nxslt
         /// </summary>        
         /// <param name="msg">Error message</param>
         /// <param name="arg">Message argument</param>
-        public static void ReportError(string msg, params string[] args)
+        public void ReportError(string msg, params string[] args)
         {
             stderr.WriteLine();
             stderr.WriteLine();
@@ -57,7 +68,7 @@ namespace XmlLab.nxslt
         /// </summary>        
         /// <param name="msg">Error message</param>
         /// <param name="arg">Message argument</param>
-        public static void ReportCommandLineParsingError(string msg, params string[] args)
+        public void ReportCommandLineParsingError(string msg, params string[] args)
         {
             stderr.WriteLine();
             ReportUsage();
@@ -69,7 +80,7 @@ namespace XmlLab.nxslt
         /// <summary>
         /// Prints nxslt usage info.
         /// </summary>        
-        public static void ReportUsage()
+        public void ReportUsage()
         {
             Version ver = Assembly.GetExecutingAssembly().GetName().Version;
             stderr.WriteLine(NXsltStrings.UsageHeader,
@@ -83,7 +94,7 @@ namespace XmlLab.nxslt
         /// <summary>
         /// Prints timing info.
         /// </summary>   
-        public static void ReportTimings(ref NXsltTimings timings)
+        public void ReportTimings(ref NXsltTimings timings)
         {
             stderr.WriteLine();
             stderr.WriteLine();

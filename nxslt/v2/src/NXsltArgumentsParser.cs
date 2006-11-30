@@ -306,7 +306,7 @@ namespace XmlLab.nxslt
     /// Auxilary method for parsing credentials
     /// </summary>    
     /// <param name="value">Passed credentials in username:password@domain form</param>
-    private NetworkCredential ParseCredentials(string value)
+    public static NetworkCredential ParseCredentials(string value)
     {
       NetworkCredential creds = new NetworkCredential();
       Regex r = new Regex(NXsltStrings.PatternCredentials);

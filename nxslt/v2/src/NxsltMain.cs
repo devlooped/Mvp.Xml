@@ -14,19 +14,20 @@ using Mvp.Xml.Common.Xsl;
 
 namespace XmlLab.nxslt
 {
-
     /// <summary>
     /// nxslt main class.
     /// </summary>
     public class NXsltMain
     {
         //Parsed command line options
-        private NXsltOptions options;
+        internal NXsltOptions options;
         //nxslt return codes
-        private const int RETURN_CODE_OK = 0;
-        private const int RETURN_CODE_ERROR = -1;
+        internal const int RETURN_CODE_OK = 0;
+        internal const int RETURN_CODE_ERROR = -1;
         //Timings
         private NXsltTimings timings;
+        //reporter
+        private Reporter reporter;
 
         /// <summary>
         /// nxslt main entry point.
@@ -34,38 +35,44 @@ namespace XmlLab.nxslt
         /// <param name="args">Command line args</param>
         public static int Main(string[] args)
         {
+            NXsltMain nxsltMain = new NXsltMain();
+            nxsltMain.setReporter(new Reporter());
             try
-            {
-                NXsltMain nxslt = new NXsltMain();
+            {                                
                 NXsltArgumentsParser clParser = new NXsltArgumentsParser();
-                nxslt.options = clParser.ParseArguments(args);
+                nxsltMain.options = clParser.ParseArguments(args);                
                 //Ok, then let's process it
-                return nxslt.Process();
+                return nxsltMain.Process();
             }
             catch (NXsltCommandLineParsingException clpe)
             {
                 //There was an exception while parsing command line
-                Reporter.ReportCommandLineParsingError(Reporter.GetFullMessage(clpe));
+                nxsltMain.reporter.ReportCommandLineParsingError(Reporter.GetFullMessage(clpe));
                 return RETURN_CODE_ERROR;
             }
             catch (NXsltException ne)
             {
-                Reporter.ReportError(Reporter.GetFullMessage(ne));
+                nxsltMain.reporter.ReportError(Reporter.GetFullMessage(ne));
                 return RETURN_CODE_ERROR;
             }
             catch (Exception e)
             {
                 //Some other exception
-                Reporter.ReportError(NXsltStrings.Error, Reporter.GetFullMessage(e));
+                nxsltMain.reporter.ReportError(NXsltStrings.Error, Reporter.GetFullMessage(e));
                 return RETURN_CODE_ERROR;
             }
         }// Main() method
+
+        internal void setReporter(Reporter r)
+        {
+            this.reporter = r;
+        }
 
         /// <summary>
         /// Process command line arguments and applies the specified stylesheet
         /// to the specified source document.
         /// </summary>
-        private int Process()
+        internal int Process()
         {
             //Start timing if needed
             Stopwatch totalTimer = null;
@@ -79,14 +86,14 @@ namespace XmlLab.nxslt
             //Just show help
             if (options.ShowHelp)
             {
-                Reporter.ReportUsage();
+                reporter.ReportUsage();
                 return RETURN_CODE_OK;
             }
 
             //Check that everything is in place
             if (options.Source == null && !options.LoadSourceFromStdin && !options.NoSourceXml)
             {
-                Reporter.ReportCommandLineParsingError(NXsltStrings.ErrorMissingSource);
+                reporter.ReportCommandLineParsingError(NXsltStrings.ErrorMissingSource);
                 return RETURN_CODE_ERROR;
             }
             if (options.Stylesheet == null && !options.LoadStylesheetFromStdin
@@ -98,7 +105,7 @@ namespace XmlLab.nxslt
             if (options.PrettyPrintMode &&
               (options.Stylesheet != null || options.LoadStylesheetFromStdin || options.GetStylesheetFromPI))
             {
-                Reporter.ReportCommandLineParsingError(NXsltStrings.ErrorStylesheetAndPrettyPrintMode);
+                reporter.ReportCommandLineParsingError(NXsltStrings.ErrorStylesheetAndPrettyPrintMode);
                 return RETURN_CODE_ERROR;
             }            
             //Prepare source XML reader
@@ -135,7 +142,7 @@ namespace XmlLab.nxslt
             {
                 totalTimer.Stop();
                 timings.TotalRunTime = totalTimer.ElapsedMilliseconds;
-                Reporter.ReportTimings(ref timings);
+                reporter.ReportTimings(ref timings);
             }
             return RETURN_CODE_OK;
         }        
