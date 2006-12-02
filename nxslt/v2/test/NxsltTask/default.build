@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<project name="NAnt" default="transform">
+    <target name="transform">
+        <loadtasks assembly="../../src/NxsltTasks/bin/Debug/XmlLab.NxsltTasks.dll" />
+        <nxslt doc="books.xml" stylesheet="books.xsl" output="catalog.html" show-timings="true"
+         strip-whitespace="true" resolve-externals="true" resolve-xinclude="true" validate="true"
+         pretty-print="true" get-stylesheet-from-pi="true" resolver="foo" assembly-file="foo"
+         assembly-name="foo" multi-output="true" extentions="true" xml-credentials="dd"
+         xslt-credentials="foo" if="false">
+          <params>
+            <param name="foo" value="5"/>
+          </params>
+        </nxslt>
+    </target>
+</project>
