@@ -29,7 +29,7 @@ namespace XmlLab.nxslt
         /// Reports command line parsing error.
         /// </summary>        
         /// <param name="msg">Error message</param>
-        public void ReportCommandLineParsingError(string msg)
+        public virtual void ReportCommandLineParsingError(string msg)
         {
             stderr.WriteLine();
             ReportUsage();
@@ -42,7 +42,7 @@ namespace XmlLab.nxslt
         /// Reports an error.
         /// </summary>        
         /// <param name="msg">Error message</param>
-        public void ReportError(string msg)
+        public virtual void ReportError(string msg)
         {
             stderr.WriteLine();
             stderr.WriteLine();
@@ -55,7 +55,7 @@ namespace XmlLab.nxslt
         /// </summary>        
         /// <param name="msg">Error message</param>
         /// <param name="arg">Message argument</param>
-        public void ReportError(string msg, params string[] args)
+        public virtual void ReportError(string msg, params string[] args)
         {
             stderr.WriteLine();
             stderr.WriteLine();
@@ -68,7 +68,7 @@ namespace XmlLab.nxslt
         /// </summary>        
         /// <param name="msg">Error message</param>
         /// <param name="arg">Message argument</param>
-        public void ReportCommandLineParsingError(string msg, params string[] args)
+        public virtual void ReportCommandLineParsingError(string msg, params string[] args)
         {
             stderr.WriteLine();
             ReportUsage();
@@ -80,7 +80,7 @@ namespace XmlLab.nxslt
         /// <summary>
         /// Prints nxslt usage info.
         /// </summary>        
-        public void ReportUsage()
+        public virtual void ReportUsage()
         {
             Version ver = Assembly.GetExecutingAssembly().GetName().Version;
             stderr.WriteLine(NXsltStrings.UsageHeader,
@@ -94,17 +94,17 @@ namespace XmlLab.nxslt
         /// <summary>
         /// Prints timing info.
         /// </summary>   
-        public void ReportTimings(ref NXsltTimings timings)
+        public virtual void ReportTimings(ref NXsltTimings timings)
         {
-            stderr.WriteLine();
-            stderr.WriteLine();
+            stdout.WriteLine();
+            stdout.WriteLine();
             Version ver = Assembly.GetExecutingAssembly().GetName().Version;
-            stderr.WriteLine(NXsltStrings.UsageHeader,
+            stdout.WriteLine(NXsltStrings.UsageHeader,
               ver.Major, ver.Minor, ver.Build,
               System.Environment.Version.Major, System.Environment.Version.Minor,
               System.Environment.Version.Build, System.Environment.Version.Revision);
-            stderr.WriteLine();
-            stderr.WriteLine(NXsltStrings.Timings, timings.XsltCompileTime,
+            stdout.WriteLine();
+            stdout.WriteLine(NXsltStrings.Timings, timings.XsltCompileTime,
               timings.XsltExecutionTime, timings.TotalRunTime);
         }
 

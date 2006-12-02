@@ -3,6 +3,7 @@ using NAnt.Core;
 using NAnt.Core.Attributes;
 using XmlLab.nxslt;
 using System.IO;
+using System.Globalization;
 
 namespace XmlLab.NxsltTasks.NAnt
 {
@@ -24,8 +25,7 @@ namespace XmlLab.NxsltTasks.NAnt
         }
 
         /// <summary>XSLT stylesheet file.</summary>
-        [TaskAttribute("stylesheet", Required = true)]
-        [StringValidator(AllowEmpty = false)]
+        [TaskAttribute("stylesheet")]       
         public string Stylesheet
         {
             get { return nxsltOptions.Stylesheet; }
@@ -165,38 +165,42 @@ namespace XmlLab.NxsltTasks.NAnt
         #endregion
 
         protected override void ExecuteTask()
-        {
-            StringWriter stdout = new StringWriter();
-            StringWriter stderr = new StringWriter();
-            Reporter reporter = new Reporter(stdout, stderr);
+        {            
+            TaskReporter reporter = new TaskReporter(this);
+            int rc = NXsltMain.RETURN_CODE_OK;
             try
             {
                 NXsltMain nxslt = new NXsltMain();
                 nxslt.setReporter(reporter);
                 nxslt.options = nxsltOptions;                                
-                int rc = nxslt.Process();
-                if (rc != NXsltMain.RETURN_CODE_OK)
-                {
-                    throw new Exception();
-                }
+                rc = nxslt.Process();                                
             }
             catch (NXsltCommandLineParsingException clpe)
-            {
+            {                
                 //There was an exception while parsing command line
-                reporter.ReportCommandLineParsingError(Reporter.GetFullMessage(clpe));
-                throw new Exception();
+                reporter.ReportCommandLineParsingError(Reporter.GetFullMessage(clpe));                
+                throw new BuildException(                        
+                        "nxslt task failed to parse parameters.", Location, clpe);
             }
             catch (NXsltException ne)
             {
-                reporter.ReportError(Reporter.GetFullMessage(ne));
-                throw;
+                reporter.ReportError(Reporter.GetFullMessage(ne));                
+                throw new BuildException(
+                        "nxslt task failed.", Location, ne);
             }
             catch (Exception e)
             {
                 //Some other exception
-                reporter.ReportError(NXsltStrings.Error, Reporter.GetFullMessage(e));
-                throw;
+                reporter.ReportError(NXsltStrings.Error, Reporter.GetFullMessage(e));               
+                throw new BuildException(                        
+                        "nxslt task failed.", Location, e);
             }
-        }
+            if (rc != NXsltMain.RETURN_CODE_OK)
+            {
+                throw new BuildException(
+                    string.Format(CultureInfo.InvariantCulture,
+                    "nxslt task failed.", rc), Location);
+            }
+        }       
     }
 }

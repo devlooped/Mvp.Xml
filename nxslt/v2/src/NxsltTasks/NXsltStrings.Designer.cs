@@ -79,7 +79,7 @@ namespace XmlLab.nxslt {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to -af and -an options cannot be used simultaneously..
+        ///   Looks up a localized string similar to &apos;assembly-file&apos; and &apos;assembly-name&apos; parameters cannot be used simultaneously..
         /// </summary>
         internal static string ErrorBothAssemblyFileNameAndName {
             get {
@@ -88,7 +88,7 @@ namespace XmlLab.nxslt {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The &apos;-pi&apos; and &apos;-xs&apos; options are mutually exclusive..
+        ///   Looks up a localized string similar to The &apos;get-stylesheet-from-pi&apos; and &apos;-xs&apos; options are mutually exclusive..
         /// </summary>
         internal static string ErrorBothNoSourceAndPI {
             get {
@@ -115,7 +115,7 @@ namespace XmlLab.nxslt {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The &apos;-pi&apos; option cannot be used when the stylesheet argument is specified..
+        ///   Looks up a localized string similar to The &apos;get-stylesheet-from-pi&apos; parameter cannot be used when the stylesheet filename is specified..
         /// </summary>
         internal static string ErrorBothStylesheetAndPI {
             get {
@@ -124,7 +124,7 @@ namespace XmlLab.nxslt {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to An error occurred while parsing command line..
+        ///   Looks up a localized string similar to An error occurred while parsing task parameters..
         /// </summary>
         internal static string ErrorCommandLineParsing {
             get {
@@ -169,7 +169,7 @@ namespace XmlLab.nxslt {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Two extension objects cannot be bound to &apos;{0}&apos; namespace URI..
+        ///   Looks up a localized string similar to Two extension objects cannot be bound to the same &apos;{0}&apos; namespace URI..
         /// </summary>
         internal static string ErrorExtNamespaceClash {
             get {
@@ -196,7 +196,7 @@ namespace XmlLab.nxslt {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Type &apos;{0}&apos; not found in &apos;{1}&apos; assembly..
+        ///   Looks up a localized string similar to Type &apos;{0}&apos; not found in the &apos;{1}&apos; assembly..
         /// </summary>
         internal static string ErrorGetTypeFromAssembly {
             get {
@@ -250,7 +250,7 @@ namespace XmlLab.nxslt {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Missing assembly file name after &apos;-af&apos; option..
+        ///   Looks up a localized string similar to Missing assembly file name..
         /// </summary>
         internal static string ErrorMissingAssemblyFileName {
             get {
@@ -259,7 +259,7 @@ namespace XmlLab.nxslt {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Missing assembly name after &apos;-an&apos; option..
+        ///   Looks up a localized string similar to Missing assembly name..
         /// </summary>
         internal static string ErrorMissingAssemblyName {
             get {
@@ -277,7 +277,7 @@ namespace XmlLab.nxslt {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Missing list of extension class names after &apos;-ext&apos; option..
+        ///   Looks up a localized string similar to Missing list of extension class names..
         /// </summary>
         internal static string ErrorMissingExtClassNames {
             get {
@@ -295,7 +295,7 @@ namespace XmlLab.nxslt {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Missing output filename after &apos;-o&apos; option..
+        ///   Looks up a localized string similar to Missing output filename value..
         /// </summary>
         internal static string ErrorMissingOutFileName {
             get {
@@ -304,7 +304,7 @@ namespace XmlLab.nxslt {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Missing URI resolver type name after &apos;-r&apos; option..
+        ///   Looks up a localized string similar to Missing URI resolver type name..
         /// </summary>
         internal static string ErrorMissingResolverTypeName {
             get {
@@ -349,7 +349,7 @@ namespace XmlLab.nxslt {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Missing credentials after &apos;-xmlc&apos; option..
+        ///   Looks up a localized string similar to Missing XML credentials..
         /// </summary>
         internal static string ErrorMissingXMLCredentials {
             get {
@@ -358,7 +358,7 @@ namespace XmlLab.nxslt {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Missing credentials after &apos;-xslc&apos; option..
+        ///   Looks up a localized string similar to Missing XSLT credentials..
         /// </summary>
         internal static string ErrorMissingXSLTCredentials {
             get {
@@ -367,7 +367,7 @@ namespace XmlLab.nxslt {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to An error occurred while parsing document: {0}: {1}.
+        ///   Looks up a localized string similar to An error occurred while parsing document {0}: {1}.
         /// </summary>
         internal static string ErrorParsingDoc {
             get {
@@ -376,7 +376,7 @@ namespace XmlLab.nxslt {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Stylesheet &apos;{0}&apos;, defined in &apos;xml-stylesheet&apos; processing instruction not found..
+        ///   Looks up a localized string similar to Stylesheet &apos;{0}&apos;, defined in the &apos;xml-stylesheet&apos; processing instruction not found..
         /// </summary>
         internal static string ErrorPIStylesheetNotFound {
             get {
@@ -385,7 +385,7 @@ namespace XmlLab.nxslt {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No stylesheet (in file name, &apos;-&apos; or &apos;-pi&apos; ways) should be specified along with &apos;-pp&apos; option..
+        ///   Looks up a localized string similar to No stylesheet (as a file name or &apos;get-stylesheet-from-pi&apos; parameter) should be specified along with &apos;pretty-print&apos; option..
         /// </summary>
         internal static string ErrorStylesheetAndPrettyPrintMode {
             get {
@@ -403,7 +403,7 @@ namespace XmlLab.nxslt {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Specified URI resolver type &apos;{0}&apos; is not XmlResolver type..
+        ///   Looks up a localized string similar to Specified XML resolver type &apos;{0}&apos; is not XmlResolver type..
         /// </summary>
         internal static string ErrorTypeNotXmlResolver {
             get {
@@ -412,7 +412,7 @@ namespace XmlLab.nxslt {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Prefix &apos;{0}&apos; cannot be resolved.  Use xmlns:{0}=&apos;...&apos; to bind &apos;{0}&apos; to a URI..
+        ///   Looks up a localized string similar to Prefix &apos;{0}&apos; cannot be resolved.  Use xmlns:{0}=&apos;...&apos; to bind &apos;{0}&apos; to an URI..
         /// </summary>
         internal static string ErrorUnboundedPrefix {
             get {
@@ -421,7 +421,7 @@ namespace XmlLab.nxslt {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Unrecognized option : &apos;{0}&apos;..
+        ///   Looks up a localized string similar to Unrecognized parameter : &apos;{0}&apos;..
         /// </summary>
         internal static string ErrorUnrecognizedOption {
             get {
@@ -501,7 +501,7 @@ namespace XmlLab.nxslt {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .NET 2.0 XSLT command line utility, version {0}.{1}.{2}
+        ///   Looks up a localized string similar to .NET 2.0 XSLT NAnt/MSBuild Task, version {0}.{1}.{2}
         ///(c) 2004-2005 Oleg Tkachenko, http://www.xmllab.net
         ///Running under .NET {3}.{4}.{5}.{6}.
         /// </summary>
