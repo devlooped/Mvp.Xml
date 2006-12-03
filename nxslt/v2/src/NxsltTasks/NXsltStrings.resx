@@ -183,10 +183,10 @@ Options:
     <value xml:space="preserve">The source document does not contain an 'xml-stylesheet' processing instruction of this form: &lt;?xml-stylesheet type='text/xsl' href='stylesheet-url'?&gt;</value>
   </data>
   <data name="ErrorBothStylesheetAndPI">
-    <value xml:space="preserve">The 'get-stylesheet-from-pi' parameter cannot be used when the stylesheet filename is specified.</value>
+    <value xml:space="preserve">The 'getstylesheetfrompi' parameter cannot be used when the stylesheet filename is specified.</value>
   </data>
   <data name="ErrorBothNoSourceAndPI">
-    <value xml:space="preserve">The 'get-stylesheet-from-pi' and '-xs' options are mutually exclusive.</value>
+    <value xml:space="preserve">The 'getstylesheetfrompi' and '-xs' options are mutually exclusive.</value>
   </data>
   <data name="ErrorBothNoSourceAndSource">
     <value xml:space="preserve">The '-xs' option and source document filename (or '-') are mutually exclusive.</value>
@@ -243,7 +243,7 @@ Total execution time:          {2, 9:f3} milliseconds
     <value xml:space="preserve">Type '{0}' not found.</value>
   </data>
   <data name="ErrorBothAssemblyFileNameAndName">
-    <value xml:space="preserve">'assembly-file' and 'assembly-name' parameters cannot be used simultaneously.</value>
+    <value xml:space="preserve">'assemblyfile' and 'assemblyname' parameters cannot be used simultaneously.</value>
   </data>
   <data name="ErrorExtNamespaceClash">
     <value xml:space="preserve">Two extension objects cannot be bound to the same '{0}' namespace URI.</value>
@@ -279,7 +279,7 @@ Total execution time:          {2, 9:f3} milliseconds
     <value xml:space="preserve">Duplicate credentials.</value>
   </data>
   <data name="ErrorStylesheetAndPrettyPrintMode">
-    <value xml:space="preserve">No stylesheet (as a file name or 'get-stylesheet-from-pi' parameter) should be specified along with 'pretty-print' option.</value>
+    <value xml:space="preserve">No stylesheet (as a file name or 'getstylesheetfrompi' parameter) should be specified along with 'prettyprint' option.</value>
   </data>
   <data name="IdentityTransformation">
     <value xml:space="preserve">&lt;xsl:transform xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"&gt;  		

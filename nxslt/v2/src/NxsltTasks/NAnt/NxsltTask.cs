@@ -1,9 +1,12 @@
 using System;
 using NAnt.Core;
 using NAnt.Core.Attributes;
+using NAnt.Core.Types;
 using XmlLab.nxslt;
 using System.IO;
 using System.Globalization;
+using System.Xml.Xsl;
+using System.Collections.Specialized;
 
 namespace XmlLab.NxsltTasks.NAnt
 {
@@ -11,38 +14,48 @@ namespace XmlLab.NxsltTasks.NAnt
     public class NxsltTask : Task
     {
         #region privates
-        private NXsltOptions nxsltOptions = new NXsltOptions();                       
+        private NXsltOptions nxsltOptions = new NXsltOptions();
+        private XsltParameterCollection xsltParameters = new XsltParameterCollection();
+        private XsltExtensionObjectCollection xsltExtensions = new XsltExtensionObjectCollection();
+        private FileSet inFiles = new FileSet();
+        private FileInfo inFile = null;
+        private FileInfo outFile = null;
+        private string extension = "html";
+        private DirectoryInfo destDir;
+        private Uri style;
         #endregion        
+
 
         #region Properties
         /// <summary>Source XML document to be transformed.</summary>
-        [TaskAttribute("doc", Required = true)]
+        [TaskAttribute("in", Required = true)]
         [StringValidator(AllowEmpty = false)]
-        public string Doc
+        public FileInfo In
         {
-            get { return nxsltOptions.Source; }
-            set { nxsltOptions.Source = Project.ExpandProperties(value, Location); }
+            get { return inFile; }
+            set { inFile = value; }
         }
 
-        /// <summary>XSLT stylesheet file.</summary>
-        [TaskAttribute("stylesheet")]       
-        public string Stylesheet
+        /// <summary>XSLT stylesheet file. If given as path, it can
+        /// be relative to the project's basedir or absolute.</summary>
+        [TaskAttribute("style")]       
+        public Uri Style
         {
-            get { return nxsltOptions.Stylesheet; }
-            set { nxsltOptions.Stylesheet = Project.ExpandProperties(value, Location); }
+            get { return style; }
+            set { style = value; }
         }
 
         /// <summary>Principal output file.</summary>
-        [TaskAttribute("output", Required = true)]
+        [TaskAttribute("out", Required = true)]
         [StringValidator(AllowEmpty = false)]
-        public string Output
+        public FileInfo Out
         {
-            get { return nxsltOptions.OutFile; }
-            set { nxsltOptions.OutFile = Project.ExpandProperties(value, Location); }
+            get { return outFile; }
+            set { outFile = value; }
         }
 
         /// <summary>Strip non-significant whitespace from source and stylesheet.</summary>
-        [TaskAttribute("strip-whitespace")]
+        [TaskAttribute("stripwhitespace")]
         [BooleanValidator()]
         public bool StripWhitespace
         {
@@ -51,7 +64,7 @@ namespace XmlLab.NxsltTasks.NAnt
         }
 
         /// <summary>Resolve external definitions during parse phase.</summary>
-        [TaskAttribute("resolve-externals")]
+        [TaskAttribute("resolveexternals")]
         [BooleanValidator()]
         public bool ResolveExternals
         {
@@ -60,7 +73,7 @@ namespace XmlLab.NxsltTasks.NAnt
         }
 
         /// <summary>Process XInclude during parse phase.</summary>
-        [TaskAttribute("resolve-xinclude")]
+        [TaskAttribute("resolvexinclude")]
         [BooleanValidator()]
         public bool ResolveXInclude
         {
@@ -78,7 +91,7 @@ namespace XmlLab.NxsltTasks.NAnt
         }
 
         /// <summary>Show load and transformation timings.</summary>
-        [TaskAttribute("show-timings")]
+        [TaskAttribute("showtimings")]
         [BooleanValidator()]
         public bool ShowTimings
         {
@@ -87,7 +100,7 @@ namespace XmlLab.NxsltTasks.NAnt
         }
 
         /// <summary>Pretty-print source document.</summary>
-        [TaskAttribute("pretty-print")]
+        [TaskAttribute("prettyprint")]
         [BooleanValidator()]
         public bool PrettyPrint
         {
@@ -96,7 +109,7 @@ namespace XmlLab.NxsltTasks.NAnt
         }
 
         /// <summary>Get stylesheet URL from xml-stylesheet PI in source document.</summary>
-        [TaskAttribute("get-stylesheet-from-pi")]
+        [TaskAttribute("getstylesheetfrompi")]
         [BooleanValidator()]
         public bool GetStylesheetFromPI
         {
@@ -113,7 +126,7 @@ namespace XmlLab.NxsltTasks.NAnt
         }
 
         /// <summary>Assembly file name to look up URI resolver class.</summary>
-        [TaskAttribute("assembly-file")]
+        [TaskAttribute("assemblyfile")]
         public string AssemblyFile
         {
             get { return nxsltOptions.AssemblyFileName; }
@@ -121,7 +134,7 @@ namespace XmlLab.NxsltTasks.NAnt
         }
 
         /// <summary>Assembly full or partial name to look up URI resolver class.</summary>
-        [TaskAttribute("assembly-name")]
+        [TaskAttribute("assemblyname")]
         public string AssemblyName
         {
             get { return nxsltOptions.AssemblyName; }
@@ -129,25 +142,18 @@ namespace XmlLab.NxsltTasks.NAnt
         }
 
         /// <summary>Allow multiple output documents.</summary>
-        [TaskAttribute("multi-output")]
+        [TaskAttribute("multioutput")]
         [BooleanValidator()]
         public bool MultiOutput
         {
             get { return nxsltOptions.MultiOutput; }
             set { nxsltOptions.MultiOutput = value; }
-        }
-
-        /// <summary>Comma-separated list of extension object class names.</summary>
-        [TaskAttribute("extentions")]
-        public string Extentions
-        {
-            set { nxsltOptions.ExtClasses = Project.ExpandProperties(value, Location).Split(','); }
-        }
+        }        
 
         /// <summary>
         /// Credentials in username:password@domain format to be
         /// used in Web request authentications when loading source XML.</summary>
-        [TaskAttribute("xml-credentials")]
+        [TaskAttribute("xmlcredentials")]
         public string XmlCredentials
         {
             set { nxsltOptions.SourceCredential = NXsltArgumentsParser.ParseCredentials(Project.ExpandProperties(value, Location)); }
@@ -157,50 +163,183 @@ namespace XmlLab.NxsltTasks.NAnt
         /// Credentials in username:password@domain format to be
         /// used in Web request authentications when loading XSLT stylesheet.
         /// </summary>
-        [TaskAttribute("xslt-credentials")]
+        [TaskAttribute("xsltcredentials")]
         public string XsltCredentials
         {
             set { nxsltOptions.XSLTCredential = NXsltArgumentsParser.ParseCredentials(Project.ExpandProperties(value, Location)); }
-        } 
+        }
+
+        /// <summary>XSLT parameters to be passed to the XSLT transformation.</summary>
+        [BuildElementCollection("parameters", "parameter")]
+        public XsltParameterCollection Parameters
+        {
+            get { return xsltParameters; }            
+        }
+
+        /// <summary>XSLT extension objects to be passed to the XSLT transformation.</summary>
+        [BuildElementCollection("extensionobjects", "extensionobject")]
+        public XsltExtensionObjectCollection ExtensionObjects
+        {
+            get { return xsltExtensions; }
+        }
+
+        /// <summary>Specifies a list of input files to be transformed.</summary>
+        [BuildElement("infiles")]
+        public FileSet InFiles
+        {
+            get { return inFiles; }            
+        }
+
+        /// <summary>
+        /// Desired file extension to be used for the targets. The default is 
+        /// <c>html</c>.
+        /// </summary>
+        [TaskAttribute("extension")]
+        public string Extension
+        {
+            get { return extension; }
+            set { extension = value; }
+        }
+
+        /// <summary>
+        /// Directory in which to store the results. The default is the project
+        /// base directory.
+        /// </summary>
+        [TaskAttribute("destdir")]
+        public DirectoryInfo DestDir
+        {
+            get
+            {
+                if (destDir == null)
+                {
+                    return new DirectoryInfo(Project.BaseDirectory);
+                }
+                return destDir;
+            }
+            set { destDir = value; }
+        }
+
         #endregion
 
         protected override void ExecuteTask()
-        {            
+        {         
+            if (inFiles.BaseDirectory == null)
+            {
+                inFiles.BaseDirectory = new DirectoryInfo(Project.BaseDirectory);
+            }
+
             TaskReporter reporter = new TaskReporter(this);
             int rc = NXsltMain.RETURN_CODE_OK;
             try
             {
                 NXsltMain nxslt = new NXsltMain();
                 nxslt.setReporter(reporter);
-                nxslt.options = nxsltOptions;                                
-                rc = nxslt.Process();                                
+                if (xsltParameters.Count > 0)
+                {
+                    if (nxsltOptions.XslArgList == null)
+                    {
+                        nxsltOptions.XslArgList = new XsltArgumentList();
+                    }
+                    foreach (XsltParameter param in xsltParameters)
+                    {
+                        if (param.IfDefined && !param.UnlessDefined)
+                        {
+                            nxsltOptions.XslArgList.AddParam(param.ParameterName,
+                                param.NamespaceUri, param.Value);
+                        }
+                    }
+                }
+                if (xsltExtensions.Count > 0)
+                {
+                    if (nxsltOptions.XslArgList == null)
+                    {
+                        nxsltOptions.XslArgList = new XsltArgumentList();
+                    }
+                    foreach (XsltExtensionObject ext in xsltExtensions)
+                    {
+                        if (ext.IfDefined && !ext.UnlessDefined)
+                        {
+                            object extInstance = ext.CreateInstance();
+                            nxsltOptions.XslArgList.AddExtensionObject(
+                                ext.NamespaceUri, extInstance);
+                        }
+                    }
+                }
+                nxslt.options = nxsltOptions;
+                nxslt.options.Stylesheet = style.AbsoluteUri;
+
+                StringCollection srcFiles = null;
+                if (inFile != null)
+                {
+                    srcFiles = new StringCollection();
+                    srcFiles.Add(inFile.FullName);
+                }
+                else if (InFiles.FileNames.Count > 0)
+                {
+                    //TODO:
+                    //if (OutputFile != null)
+                    //{
+                    //    throw new BuildException(string.Format(CultureInfo.InvariantCulture,
+                    //        ResourceUtils.GetString("NA1148")),
+                    //        Location);
+                    //}
+                    srcFiles = inFiles.FileNames;
+                }
+
+                //if (srcFiles == null || srcFiles.Count == 0)
+                //{
+                //    throw new BuildException(string.Format(CultureInfo.InvariantCulture,
+                //        ResourceUtils.GetString("NA1147")),
+                //        Location);
+                //}
+
+                foreach (string file in srcFiles)
+                {
+                    Log(Level.Info, "Transforming " + file);
+                    nxslt.options.Source = file;
+                    if (outFile != null)
+                    {
+                        nxslt.options.OutFile = outFile.FullName;
+                    }
+                    else
+                    {                        
+                        string destFile = Path.Combine(file, 
+                            Path.GetFileNameWithoutExtension(file) + "." + extension);
+                        nxslt.options.OutFile = Path.Combine(destDir.FullName, destFile);
+                    }
+                    rc = nxslt.Process();
+                    if (rc != NXsltMain.RETURN_CODE_OK)
+                    {
+                        throw new BuildException(
+                            string.Format(CultureInfo.InvariantCulture,
+                            "nxslt task failed.", rc), Location);
+                    }
+                }
             }
             catch (NXsltCommandLineParsingException clpe)
-            {                
+            {
                 //There was an exception while parsing command line
-                reporter.ReportCommandLineParsingError(Reporter.GetFullMessage(clpe));                
-                throw new BuildException(                        
+                reporter.ReportCommandLineParsingError(Reporter.GetFullMessage(clpe));
+                throw new BuildException(
                         "nxslt task failed to parse parameters.", Location, clpe);
             }
             catch (NXsltException ne)
             {
-                reporter.ReportError(Reporter.GetFullMessage(ne));                
+                reporter.ReportError(Reporter.GetFullMessage(ne));
                 throw new BuildException(
                         "nxslt task failed.", Location, ne);
+            }
+            catch (BuildException)
+            {
+                throw;
             }
             catch (Exception e)
             {
                 //Some other exception
-                reporter.ReportError(NXsltStrings.Error, Reporter.GetFullMessage(e));               
-                throw new BuildException(                        
-                        "nxslt task failed.", Location, e);
-            }
-            if (rc != NXsltMain.RETURN_CODE_OK)
-            {
+                reporter.ReportError(NXsltStrings.Error, Reporter.GetFullMessage(e));
                 throw new BuildException(
-                    string.Format(CultureInfo.InvariantCulture,
-                    "nxslt task failed.", rc), Location);
-            }
+                        "nxslt task failed.", Location, e);
+            }           
         }       
     }
 }

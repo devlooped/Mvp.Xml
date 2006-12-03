@@ -79,7 +79,7 @@ namespace XmlLab.nxslt {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &apos;assembly-file&apos; and &apos;assembly-name&apos; parameters cannot be used simultaneously..
+        ///   Looks up a localized string similar to &apos;assemblyfile&apos; and &apos;assemblyname&apos; parameters cannot be used simultaneously..
         /// </summary>
         internal static string ErrorBothAssemblyFileNameAndName {
             get {
@@ -88,7 +88,7 @@ namespace XmlLab.nxslt {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The &apos;get-stylesheet-from-pi&apos; and &apos;-xs&apos; options are mutually exclusive..
+        ///   Looks up a localized string similar to The &apos;getstylesheetfrompi&apos; and &apos;-xs&apos; options are mutually exclusive..
         /// </summary>
         internal static string ErrorBothNoSourceAndPI {
             get {
@@ -115,7 +115,7 @@ namespace XmlLab.nxslt {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The &apos;get-stylesheet-from-pi&apos; parameter cannot be used when the stylesheet filename is specified..
+        ///   Looks up a localized string similar to The &apos;getstylesheetfrompi&apos; parameter cannot be used when the stylesheet filename is specified..
         /// </summary>
         internal static string ErrorBothStylesheetAndPI {
             get {
@@ -385,7 +385,7 @@ namespace XmlLab.nxslt {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No stylesheet (as a file name or &apos;get-stylesheet-from-pi&apos; parameter) should be specified along with &apos;pretty-print&apos; option..
+        ///   Looks up a localized string similar to No stylesheet (as a file name or &apos;getstylesheetfrompi&apos; parameter) should be specified along with &apos;prettyprint&apos; option..
         /// </summary>
         internal static string ErrorStylesheetAndPrettyPrintMode {
             get {
