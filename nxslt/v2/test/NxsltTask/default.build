@@ -2,7 +2,8 @@
 <project name="NAnt" default="transform">
     <target name="transform">
         <loadtasks assembly="../../src/NxsltTasks/bin/Debug/XmlLab.NxsltTasks.dll" />
-        <nxslt doc="books.xml" stylesheet="books.xsl" output="catalog.html" show-timings="true"
+
+<!--        <nxslt doc="books.xml" stylesheet="books.xsl" output="catalog.html" show-timings="true"
          strip-whitespace="true" resolve-externals="true" resolve-xinclude="true" validate="true"
          pretty-print="true" get-stylesheet-from-pi="true" resolver="foo" assembly-file="foo"
          assembly-name="foo" multi-output="true" extentions="true" xml-credentials="dd"
@@ -10,6 +11,13 @@
           <params>
             <param name="foo" value="5"/>
           </params>
+        </nxslt>-->
+        <nxslt in="books.xml" style="books.xsl" out="catalog.html" showtimings="true"
+        stripwhitespace="true" resolveexternals="true" resolvexinclude="false" validate="true" 
+        prettyprint="true">
+        <parameters>
+          <parameter name="param1" namespaceuri="" value="param1 value" />
+        </parameters>
         </nxslt>
     </target>
 </project>
