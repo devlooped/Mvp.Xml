@@ -1,6 +1,13 @@
 <?xml version="1.0"?>
 <project name="NAnt" default="transform">
-    <target name="transform">
+    <target name="clean">
+       <delete>
+    <fileset>
+        <include name="out/*.*" />
+    </fileset>
+       </delete>
+    </target>
+    <target name="transform" depends="clean">
         <loadtasks assembly="../../src/NxsltTasks/bin/Debug/XmlLab.NxsltTasks.dll" />
 
 <!--        <nxslt doc="books.xml" stylesheet="books.xsl" output="catalog.html" show-timings="true"
@@ -12,12 +19,43 @@
             <param name="foo" value="5"/>
           </params>
         </nxslt>-->
-        <nxslt in="books.xml" style="books.xsl" out="catalog.html" showtimings="true"
-        stripwhitespace="true" resolveexternals="true" resolvexinclude="false" validate="true" 
-        prettyprint="true">
-        <parameters>
-          <parameter name="param1" namespaceuri="" value="param1 value" />
-        </parameters>
+
+        <!-- simple -->
+        <nxslt in="books.xml" style="books.xsl" out="out/catalog.html" />
+        <!-- timings -->
+        <nxslt in="books.xml" style="books.xsl" out="out/catalog2.html" showtimings="true" />
+        <!-- xinclude -->
+        <nxslt in="../../../../MvpXmlLibrary/XInclude/v2/test/tests/document.xml" out="out/document.html" />
+        <nxslt in="../../../../MvpXmlLibrary/XInclude/v2/test/tests/document.xml" 
+        resolvexinclude="false" out="out/document2.html" />
+        <!-- get stylesheet pi -->
+        <nxslt in="books.xml" getstylesheetfrompi="true" out="out/pi.html" />
+        <!-- resolver -->
+        <!-- params -->
+	<nxslt in="books.xml" style="books.xsl" out="out/params1.html">
+           <parameters>
+               <parameter name="param2" namespaceuri="foo ns" value="param2 value"/>
+               <parameter name="param1" namespaceuri="" value="param1 value"/>
+           </parameters>
+        </nxslt>		
+        <!-- ext obj -->
+        <!-- creds -->
+        <!--<nxslt in="http://www.tkachenko.com/secure/document.xml" 
+	style="http://www.tkachenko.com/secure/style.xsl" out="out/secure.html" 
+        xmlcredentials="olegt:xx" xsltcredentials="olegt:xx"/>-->
+        <!-- mutexes -->
+        <!-- infiles -->
+        <nxslt style="books.xsl" destdir="out">        
+        <infiles>
+        <include name="in/*.*" />
+        </infiles>
         </nxslt>
+        <nxslt style="books.xsl" destdir="out" extension="xhtml">        
+        <infiles>
+        <include name="in/*.*" />
+        </infiles>
+        </nxslt>
+	<nxslt in="books.xml" style="books.xsl" out="out/ext1.html" extension="xhtml"/>        
+        <!-- multiout -->
     </target>
 </project>

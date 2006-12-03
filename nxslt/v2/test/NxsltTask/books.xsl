@@ -1,5 +1,6 @@
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"  xmlns:f="foo ns">
+<xsl:param name="param1" select="'DEFAULT VALUE'"/>
+<xsl:param name="f:param2" select="'DEFAULT VALUE2'"/>
 	<xsl:template match="/">
 	<html>
 		<xsl:apply-templates/>
@@ -8,6 +9,8 @@
 
 	<xsl:template match="bookstore">
 	<!-- Prices and books -->
+<p><xsl:value-of select="$param1"/></p>
+<p><xsl:value-of select="$f:param2"/></p>
 		<table>
 			<xsl:apply-templates select="book"/>
 		</table>
