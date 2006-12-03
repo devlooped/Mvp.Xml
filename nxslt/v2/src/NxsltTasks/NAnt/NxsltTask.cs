@@ -18,7 +18,7 @@ namespace XmlLab.NxsltTasks.NAnt
         private XsltParameterCollection xsltParameters = new XsltParameterCollection();
         private XsltExtensionObjectCollection xsltExtensions = new XsltExtensionObjectCollection();
         private FileSet inFiles = new FileSet();
-        private FileInfo inFile = null;
+        private Uri inFile = null;
         private FileInfo outFile = null;
         private string extension = "html";
         private DirectoryInfo destDir;
@@ -28,9 +28,8 @@ namespace XmlLab.NxsltTasks.NAnt
 
         #region Properties
         /// <summary>Source XML document to be transformed.</summary>
-        [TaskAttribute("in", Required = true)]
-        [StringValidator(AllowEmpty = false)]
-        public FileInfo In
+        [TaskAttribute("in")]        
+        public Uri In
         {
             get { return inFile; }
             set { inFile = value; }
@@ -46,8 +45,7 @@ namespace XmlLab.NxsltTasks.NAnt
         }
 
         /// <summary>Principal output file.</summary>
-        [TaskAttribute("out", Required = true)]
-        [StringValidator(AllowEmpty = false)]
+        [TaskAttribute("out")]        
         public FileInfo Out
         {
             get { return outFile; }
@@ -266,13 +264,16 @@ namespace XmlLab.NxsltTasks.NAnt
                     }
                 }
                 nxslt.options = nxsltOptions;
-                nxslt.options.Stylesheet = style.AbsoluteUri;
+                if (style != null)
+                {
+                    nxslt.options.Stylesheet = style.AbsoluteUri;
+                }
 
                 StringCollection srcFiles = null;
                 if (inFile != null)
                 {
                     srcFiles = new StringCollection();
-                    srcFiles.Add(inFile.FullName);
+                    srcFiles.Add(inFile.AbsoluteUri);
                 }
                 else if (InFiles.FileNames.Count > 0)
                 {
@@ -303,8 +304,8 @@ namespace XmlLab.NxsltTasks.NAnt
                     }
                     else
                     {                        
-                        string destFile = Path.Combine(file, 
-                            Path.GetFileNameWithoutExtension(file) + "." + extension);
+                        string destFile =  Path.GetFileNameWithoutExtension(file) + "." + extension;
+                        Log(Level.Info, destFile);
                         nxslt.options.OutFile = Path.Combine(destDir.FullName, destFile);
                     }
                     rc = nxslt.Process();
