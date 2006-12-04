@@ -34,6 +34,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Build.Framework" />
+    <Reference Include="Microsoft.Build.Utilities" />
     <Reference Include="NAnt.Core, Version=0.85.2478.0, Culture=neutral">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\nant\nant-0.85\bin\NAnt.Core.dll</HintPath>
@@ -239,6 +241,9 @@
     <Compile Include="..\Utils.cs">
       <Link>Utils.cs</Link>
     </Compile>
+    <Compile Include="MSBuild\Nxslt.cs" />
+    <Compile Include="MSBuild\NxsltTaskException.cs" />
+    <Compile Include="MSBuild\TaskReporter.cs" />
     <Compile Include="NAnt\NxsltTask.cs" />
     <Compile Include="NXsltStrings.Designer.cs">
       <AutoGen>True</AutoGen>

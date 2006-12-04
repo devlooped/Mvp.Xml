@@ -307,8 +307,7 @@ namespace XmlLab.NxsltTasks.NAnt
                     }
                     else
                     {                        
-                        string destFile =  Path.GetFileNameWithoutExtension(file) + "." + extension;
-                        Log(Level.Info, destFile);
+                        string destFile =  Path.GetFileNameWithoutExtension(file) + "." + extension;                        
                         nxslt.options.OutFile = Path.Combine(destDir.FullName, destFile);
                     }                    
                     rc = nxslt.Process();
