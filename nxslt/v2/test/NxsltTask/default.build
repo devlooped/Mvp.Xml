@@ -31,6 +31,8 @@
         <!-- get stylesheet pi -->
         <nxslt in="books.xml" getstylesheetfrompi="true" out="out/pi.html" />
         <!-- resolver -->
+        <nxslt in="cache://ext.xml" style="books.xsl" out="out/resolver.html" resolver="Acme.Resolvers.CacheResolver"
+	assemblyfile="D:\projects2005\MVPXML\nxslt\v2\test\NxsltTask\lib\CacheResolver.dll"/>
         <!-- params -->
 	<nxslt in="books.xml" style="books.xsl" out="out/params1.html">
            <parameters>
@@ -38,13 +40,11 @@
                <parameter name="param1" namespaceuri="" value="param1 value"/>
            </parameters>
         </nxslt>		
-        <!-- ext obj -->
-        <!-- creds -->
-        <!--<nxslt in="http://www.tkachenko.com/secure/document.xml" 
-	style="http://www.tkachenko.com/secure/style.xsl" out="out/secure.html" 
-        xmlcredentials="olegt:xx" xsltcredentials="olegt:xx"/>-->
         <!-- mutexes -->
+        <nxslt in="books.xml" out="out/books-ident.xml">        
+        </nxslt>
         <!-- infiles -->
+
         <nxslt style="books.xsl" destdir="out">        
         <infiles>
         <include name="in/*.*" />
@@ -57,5 +57,12 @@
         </nxslt>
 	<nxslt in="books.xml" style="books.xsl" out="out/ext1.html" extension="xhtml"/>        
         <!-- multiout -->
+	<nxslt in="books.xml" style="multibooks.xsl" out="out/multiout.html" multioutput="true"/>        
+        <!-- extensions -->
+	<nxslt in="books.xml" style="ext.xsl" out="out/extobj.html">
+        <extensionobjects>
+	        <extensionobject namespaceuri="ext ns" typename="TestExtLib.MyExtensions" assembly="lib\TestExtLib.dll" />
+	</extensionobjects>
+	</nxslt>
     </target>
 </project>
