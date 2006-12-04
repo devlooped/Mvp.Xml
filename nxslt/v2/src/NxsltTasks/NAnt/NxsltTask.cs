@@ -220,8 +220,7 @@ namespace XmlLab.NxsltTasks.NAnt
         #endregion
 
         protected override void ExecuteTask()
-        {
-            //System.Diagnostics.Debugger.Break();
+        {            
             if (inFiles.BaseDirectory == null)
             {
                 inFiles.BaseDirectory = new DirectoryInfo(Project.BaseDirectory);
@@ -278,22 +277,25 @@ namespace XmlLab.NxsltTasks.NAnt
                 }
                 else if (InFiles.FileNames.Count > 0)
                 {
-                    //TODO:
-                    //if (OutputFile != null)
-                    //{
-                    //    throw new BuildException(string.Format(CultureInfo.InvariantCulture,
-                    //        ResourceUtils.GetString("NA1148")),
-                    //        Location);
-                    //}
+
+                    if (outFile != null)
+                    {
+                        throw new BuildException("The 'out' attribute cannot be used when <infiles> is specified.",
+                            Location);
+                    }
                     srcFiles = inFiles.FileNames;
                 }
 
-                //if (srcFiles == null || srcFiles.Count == 0)
-                //{
-                //    throw new BuildException(string.Format(CultureInfo.InvariantCulture,
-                //        ResourceUtils.GetString("NA1147")),
-                //        Location);
-                //}
+                if (srcFiles == null || srcFiles.Count == 0)
+                {
+                    throw new BuildException("No source files indicated; use 'in' or <infiles>.",
+                        Location);
+                }
+
+                if (outFile == null && destDir == null)
+                {
+                    throw new BuildException("'out' and 'destdir' cannot be both omitted.", Location);
+                }
 
                 foreach (string file in srcFiles)
                 {
@@ -308,7 +310,7 @@ namespace XmlLab.NxsltTasks.NAnt
                         string destFile =  Path.GetFileNameWithoutExtension(file) + "." + extension;
                         Log(Level.Info, destFile);
                         nxslt.options.OutFile = Path.Combine(destDir.FullName, destFile);
-                    }
+                    }                    
                     rc = nxslt.Process();
                     if (rc != NXsltMain.RETURN_CODE_OK)
                     {

@@ -108,6 +108,7 @@ namespace XmlLab.nxslt
                 reporter.ReportCommandLineParsingError(NXsltStrings.ErrorStylesheetAndPrettyPrintMode);
                 return RETURN_CODE_ERROR;
             }            
+            
             //Prepare source XML reader
             XmlResolver srcResolver = null;
             if (options.ResolveExternals)                
