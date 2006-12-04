@@ -36,6 +36,13 @@ namespace Mvp.Xml.Common
             
         }
 
+        public XmlBaseAwareXmlTextReader(string uri, XmlResolver resolver)
+            : base(uri)
+        {
+            _state.BaseUri = new Uri(base.BaseURI);
+            base.XmlResolver = resolver;
+        }
+
         /// <summary>
         /// Creates XmlBaseAwareXmlTextReader instance for given URI and 
         /// name table.
@@ -105,6 +112,16 @@ namespace Mvp.Xml.Common
         {
             _state.BaseUri = new Uri(base.BaseURI);
             
+        }
+
+        /// <summary>
+        /// Creates XmlBaseAwareXmlTextReader instance for given uri and stream.
+        /// </summary>        
+        public XmlBaseAwareXmlTextReader(string uri, Stream stream, XmlResolver resolver)
+            : base(uri, stream)
+        {
+            _state.BaseUri = new Uri(base.BaseURI);
+            base.XmlResolver = resolver;
         }
 
         /// <summary>

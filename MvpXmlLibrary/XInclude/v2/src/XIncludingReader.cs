@@ -114,6 +114,9 @@ namespace Mvp.Xml.XInclude
         /// <param name="url">Document location.</param>
         public XIncludingReader(string url) 
             : this(new XmlBaseAwareXmlTextReader(url)) {}
+
+        public XIncludingReader(string url, XmlResolver resolver)
+            : this(new XmlBaseAwareXmlTextReader(url, resolver)) { }
         
         /// <summary>
         /// Creates new instance of <c>XIncludingReader</c> class with
@@ -175,7 +178,10 @@ namespace Mvp.Xml.XInclude
         /// <param name="input"><c>Stream</c>.</param>
         /// <param name="url">Source document's URL</param>
         public XIncludingReader(string url, Stream input) 
-            : this(new XmlBaseAwareXmlTextReader(url, input)) {}							
+            : this(new XmlBaseAwareXmlTextReader(url, input)) {}
+
+        public XIncludingReader(string url, Stream input, XmlResolver resolver)
+            : this(new XmlBaseAwareXmlTextReader(url, input, resolver)) { }							
         
         /// <summary>
         /// Creates new instance of <c>XIncludingReader</c> class with
@@ -911,7 +917,9 @@ namespace Mvp.Xml.XInclude
         /// </summary>
         public XmlResolver XmlResolver 
         {
-            set { _xmlResolver = value; }
+            set { 
+                _xmlResolver = value;                
+            }
         }
         
         /// <summary>
@@ -1403,7 +1411,7 @@ namespace Mvp.Xml.XInclude
                     //not the source infoset                                                                                          
                     _reader = new XPointerReader(includeLocation.AbsoluteUri, 
                         CreateAcquiredInfoset(includeLocation), 
-                        xpointer);
+                        xpointer);                    
                 }
                 else 
                 {                
@@ -1415,7 +1423,8 @@ namespace Mvp.Xml.XInclude
                     _readers.Push(_reader);                
                     XmlTextReader r = new XmlBaseAwareXmlTextReader(wRes.ResponseUri.AbsoluteUri, stream, _nameTable);
                     r.Normalization = _normalization;
-                    r.WhitespaceHandling = _whiteSpaceHandling;                                    
+                    r.WhitespaceHandling = _whiteSpaceHandling;
+                    r.XmlResolver = _xmlResolver;
                     _reader = r;                    
                 }                                                           
                 return Read();                

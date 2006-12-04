@@ -104,11 +104,13 @@ namespace XmlLab.nxslt
             return href;
         }
 
-        public static XmlReader CreateReader(string filename, XmlReaderSettings settings, NXsltOptions options)
+        public static XmlReader CreateReader(string filename, XmlReaderSettings settings, NXsltOptions options, XmlResolver resolver)
         {
             if (options.ProcessXInclude)
             {
-                return XmlReader.Create(new XIncludingReader(filename), settings);
+                XIncludingReader xir = new XIncludingReader(filename, resolver);
+                xir.XmlResolver = resolver;
+                return XmlReader.Create(xir, settings);
             }
             else
             {
@@ -116,11 +118,13 @@ namespace XmlLab.nxslt
             }
         }
 
-        public static XmlReader CreateReader(Stream stream, XmlReaderSettings settings, NXsltOptions options)
+        public static XmlReader CreateReader(Stream stream, XmlReaderSettings settings, NXsltOptions options, XmlResolver resolver)
         {
             if (options.ProcessXInclude)
             {
-                return XmlReader.Create(new XIncludingReader(Directory.GetCurrentDirectory(), stream), settings);
+                XIncludingReader xir = new XIncludingReader(Directory.GetCurrentDirectory(), stream, resolver);
+                xir.XmlResolver = resolver;
+                return XmlReader.Create(xir, settings);
             }
             else
             {

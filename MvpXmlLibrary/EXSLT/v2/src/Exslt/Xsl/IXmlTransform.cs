@@ -117,6 +117,21 @@ namespace Mvp.Xml.Common.Xsl {
         //public static implicit operator XmlInput(XPathNavigator nav   ) { return new XmlInput(nav   ); } // the trick doesn't work with interfaces
     }
 
+    public class OutputResolver : XmlUrlResolver
+    {
+        private Uri baseUri;
+
+        public OutputResolver(string baseUri)
+        {
+            this.baseUri = new Uri(new Uri(Directory.GetCurrentDirectory() + "/"), baseUri + "/");
+        }
+
+        public override Uri ResolveUri(Uri baseUri, string relativeUri)
+        {
+            return base.ResolveUri(this.baseUri, relativeUri);
+        }
+    }
+
     /// <summary>
     /// XmlOutput class represents generic XML transformation output. An output XML
     /// can be written to an URI, <see cref="Stream"/>, <see cref="TextWriter"/> or
@@ -124,6 +139,14 @@ namespace Mvp.Xml.Common.Xsl {
     /// </summary>
     public class XmlOutput {
         internal object destination;
+        private XmlResolver resolver;
+
+        public XmlResolver XmlResolver
+        {
+            get { return resolver; }
+            set { resolver = value; }
+        }
+	
         /// <summary>
         /// Creates new XmlOutput object over an <see cref="XmlWriter"/>.
         /// </summary>

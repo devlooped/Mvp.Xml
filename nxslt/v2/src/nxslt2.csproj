@@ -268,6 +268,7 @@ ilasm nxslt.fixed.il /RESOURCE=nxslt.res /EXE /OUTPUT="$(TargetFileName)" /KEY="
 del nxslt.res
 del *.il
 del *.resources
-@echo ########### nxslt Custom Build Event has finished</PostBuildEvent>
+@echo ########### nxslt Custom Build Event has finished
+</PostBuildEvent>
   </PropertyGroup>
 </Project>

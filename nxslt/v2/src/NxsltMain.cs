@@ -109,7 +109,12 @@ namespace XmlLab.nxslt
                 return RETURN_CODE_ERROR;
             }            
             //Prepare source XML reader
-            XmlReader srcReader = PrepareSourceReader();
+            XmlResolver srcResolver = null;
+            if (options.ResolveExternals)                
+            {
+                srcResolver = Utils.GetXmlResolver(options.SourceCredential, options);                
+            }
+            XmlReader srcReader = PrepareSourceReader(srcResolver);
             if (options.PrettyPrintMode)
             {
                 //Process in pretty-print mode
@@ -129,12 +134,12 @@ namespace XmlLab.nxslt
                     //Now srcReader reads in-memory cache instead
                     srcReader = srcNav.ReadSubtree();
                     MvpXslTransform xslt = PrepareStylesheetFromPI(srcNav, stylesheetResolver);
-                    Transform(srcReader, xslt, stylesheetResolver);
+                    Transform(srcReader, xslt, srcResolver);
                 }
                 else
                 {
                     MvpXslTransform xslt = PrepareStylesheet(stylesheetResolver);
-                    Transform(srcReader, xslt, stylesheetResolver);
+                    Transform(srcReader, xslt, srcResolver);
                 }                
             }
 
@@ -172,7 +177,8 @@ namespace XmlLab.nxslt
                 }
                 try
                 {
-                    XmlOutput results = new XmlOutput(fs);                    
+                    XmlOutput results = new XmlOutput(fs);
+                    results.XmlResolver = new OutputResolver(Path.GetDirectoryName(options.OutFile));
                     TransformImpl(srcReader, xslt, resolver, results);
                 }
                 finally
@@ -183,7 +189,8 @@ namespace XmlLab.nxslt
             else
             {
                 //Transform to Console
-                XmlOutput results = new XmlOutput(Console.Out);                
+                XmlOutput results = new XmlOutput(Console.Out);
+                results.XmlResolver = new OutputResolver(Path.GetDirectoryName(options.OutFile));
                 TransformImpl(srcReader, xslt, resolver, results);
             }
             //Save transfomation time
@@ -324,9 +331,10 @@ namespace XmlLab.nxslt
         /// Prepares source XML reader.
         /// </summary>
         /// <returns>XmlReader over source XML</returns>
-        private XmlReader PrepareSourceReader()
+        private XmlReader PrepareSourceReader(XmlResolver srcResolver)
         {
             XmlReaderSettings srcReaderSettings = new XmlReaderSettings();
+            XmlResolver resolver = null;
             srcReaderSettings.ProhibitDtd = false;            
             if (options.StripWhiteSpace || options.PrettyPrintMode)
             {
@@ -335,13 +343,8 @@ namespace XmlLab.nxslt
             if (options.ValidateDocs)
             {
                 srcReaderSettings.ValidationType = ValidationType.DTD;
-            }
-            if (!options.ResolveExternals)
-                srcReaderSettings.XmlResolver = null;
-            else
-            {
-                srcReaderSettings.XmlResolver = Utils.GetXmlResolver(options.SourceCredential, options);
-            }
+            }            
+            srcReaderSettings.XmlResolver = srcResolver;            
             XmlReader srcReader;
             if (options.NoSourceXml)
             {
@@ -351,12 +354,12 @@ namespace XmlLab.nxslt
             else if (options.LoadSourceFromStdin)
             {
                 //Get source from stdin 
-                srcReader = Utils.CreateReader(Console.OpenStandardInput(), srcReaderSettings, options);
+                srcReader = Utils.CreateReader(Console.OpenStandardInput(), srcReaderSettings, options, srcResolver);
             }
             else
             {
                 //Get source from URI
-                srcReader = Utils.CreateReader(options.Source, srcReaderSettings, options);
+                srcReader = Utils.CreateReader(options.Source, srcReaderSettings, options, srcResolver);
             }
             //Chain schema validaring reader on top
             if (options.ValidateDocs)
@@ -390,7 +393,7 @@ namespace XmlLab.nxslt
             {
                 stylesheetReaderSettings.XmlResolver = stylesheetResolver;
             }
-            XmlReader stylesheetReader;
+            XmlReader stylesheetReader;            
             if (options.IdentityTransformMode)
             {
                 //No XSLT - use identity transformation
@@ -398,13 +401,13 @@ namespace XmlLab.nxslt
             }
             else if (options.LoadStylesheetFromStdin)
             {
-                //Get stylesheet from stdin 
-                stylesheetReader = Utils.CreateReader(Console.OpenStandardInput(), stylesheetReaderSettings, options);
+                //Get stylesheet from stdin                 
+                stylesheetReader = Utils.CreateReader(Console.OpenStandardInput(), stylesheetReaderSettings, options, stylesheetResolver);
             }
             else
             {
                 //Get source from URI
-                stylesheetReader = Utils.CreateReader(options.Stylesheet, stylesheetReaderSettings, options);
+                stylesheetReader = Utils.CreateReader(options.Stylesheet, stylesheetReaderSettings, options, stylesheetResolver);
             }
             //Chain schema validaring reader on top
             if (options.ValidateDocs)
@@ -417,5 +420,5 @@ namespace XmlLab.nxslt
         }
 
 
-    }// NXsltMain class
+    }// NXsltMain class    
 }// XmlLab.nxslt namespace

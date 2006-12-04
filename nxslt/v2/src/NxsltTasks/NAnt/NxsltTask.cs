@@ -220,7 +220,8 @@ namespace XmlLab.NxsltTasks.NAnt
         #endregion
 
         protected override void ExecuteTask()
-        {         
+        {
+            //System.Diagnostics.Debugger.Break();
             if (inFiles.BaseDirectory == null)
             {
                 inFiles.BaseDirectory = new DirectoryInfo(Project.BaseDirectory);

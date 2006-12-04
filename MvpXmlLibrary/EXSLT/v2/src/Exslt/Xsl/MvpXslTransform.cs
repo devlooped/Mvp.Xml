@@ -223,7 +223,8 @@ namespace Mvp.Xml.Common.Xsl {
                     {
                         if (multiOutput)
                         {                            
-                            MultiXmlTextWriter mw = new MultiXmlTextWriter(txtWriter);
+                            MultiXmlTextWriter mw = new MultiXmlTextWriter(txtWriter, output.XmlResolver);
+                            
                             if (this.compiledTransform.OutputSettings.Indent)
                             {
                                 mw.Formatting = Formatting.Indented;
@@ -242,7 +243,7 @@ namespace Mvp.Xml.Common.Xsl {
                         if (multiOutput)
                         {
 
-                            MultiXmlTextWriter mw = new MultiXmlTextWriter(strm, this.compiledTransform.OutputSettings.Encoding);
+                            MultiXmlTextWriter mw = new MultiXmlTextWriter(strm, this.compiledTransform.OutputSettings.Encoding, output.XmlResolver);
                             if (this.compiledTransform.OutputSettings.Indent)
                             {
                                 mw.Formatting = Formatting.Indented;
