@@ -502,7 +502,7 @@ namespace XmlLab.nxslt {
         
         /// <summary>
         ///   Looks up a localized string similar to .NET 2.0 XSLT command line utility, version {0}.{1}.{2}
-        ///(c) 2004-2005 Oleg Tkachenko, http://www.xmllab.net
+        ///(c) 2004-2006 Oleg Tkachenko, http://www.xmllab.net
         ///Running under .NET {3}.{4}.{5}.{6}.
         /// </summary>
         internal static string UsageHeader {

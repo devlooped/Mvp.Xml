@@ -116,7 +116,7 @@
   </resheader>
   <data name="UsageHeader">
     <value xml:space="preserve">.NET 2.0 XSLT command line utility, version {0}.{1}.{2}
-(c) 2004-2005 Oleg Tkachenko, http://www.xmllab.net
+(c) 2004-2006 Oleg Tkachenko, http://www.xmllab.net
 Running under .NET {3}.{4}.{5}.{6}</value>
   </data>
   <data name="UsageBody">
