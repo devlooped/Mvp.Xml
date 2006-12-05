@@ -33,6 +33,8 @@
         <!-- resolver -->
         <nxslt in="cache://ext.xml" style="books.xsl" out="out/resolver.html" resolver="Acme.Resolvers.CacheResolver"
 	assemblyfile="D:\projects2005\MVPXML\nxslt\v2\test\NxsltTask\lib\CacheResolver.dll"/>
+	<nxslt in="cache://ext.xml" style="books.xsl" out="out/resolver2.html" resolver="Acme.Resolvers.CacheResolver"
+	assemblyname="CacheResolver, Version=1.0.2161.33858, Culture=neutral, PublicKeyToken=49f505af2b7accbc"/>
         <!-- params -->
 	<nxslt in="books.xml" style="books.xsl" out="out/params1.html">
            <parameters>

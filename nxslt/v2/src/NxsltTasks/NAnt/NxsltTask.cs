@@ -309,7 +309,7 @@ namespace XmlLab.NxsltTasks.NAnt
                     {                        
                         string destFile =  Path.GetFileNameWithoutExtension(file) + "." + extension;                        
                         nxslt.options.OutFile = Path.Combine(destDir.FullName, destFile);
-                    }                    
+                    }                     
                     rc = nxslt.Process();
                     if (rc != NXsltMain.RETURN_CODE_OK)
                     {

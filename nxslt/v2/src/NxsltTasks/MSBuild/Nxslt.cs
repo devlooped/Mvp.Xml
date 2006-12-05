@@ -6,29 +6,30 @@ using System.Xml.Xsl;
 using System.Collections.Specialized;
 using Microsoft.Build.Utilities;
 using Microsoft.Build.Framework;
+using Microsoft.Build.BuildEngine;
+using System.Xml;
+using System.Reflection;
 
 namespace XmlLab.NxsltTasks.MSBuild
-{
-    
-
+{   
     public class Nxslt : Task
     {
         #region privates
         private NXsltOptions nxsltOptions = new NXsltOptions();
-        private Parameter[] xsltParameters;
-        //private XsltExtensionObjectCollection xsltExtensions = new XsltExtensionObjectCollection();
+        private string xsltParameters;
+        private string xsltExtensions;
         //private FileSet inFiles = new FileSet();
-        private string inFile = null;
+        private ITaskItem[] inFile = null;
         private string outFile = null;
         private string extension = "html";
-        private DirectoryInfo destDir;
+        private string destDir;
         private string style;
         #endregion
 
 
         #region Properties
         /// <summary>Source XML document to be transformed.</summary>        
-        public string In
+        public ITaskItem[] In
         {
             get { return inFile; }
             set { inFile = value; }
@@ -144,17 +145,18 @@ namespace XmlLab.NxsltTasks.MSBuild
         }
 
         /// <summary>XSLT parameters to be passed to the XSLT transformation.</summary>        
-        public Parameter[] Parameters
+        public string Parameters
         {
             get { return xsltParameters; }
             set { xsltParameters = value; }
         }
 
-        ///// <summary>XSLT extension objects to be passed to the XSLT transformation.</summary>        
-        //public XsltExtensionObjectCollection ExtensionObjects
-        //{
-        //    get { return xsltExtensions; }
-        //}
+        /// <summary>XSLT extension objects to be passed to the XSLT transformation.</summary>        
+        public string ExtensionObjects
+        {
+            get { return xsltExtensions; }
+            set { xsltExtensions = value; }
+        }
 
         ///// <summary>Specifies a list of input files to be transformed.</summary>        
         //public FileSet InFiles
@@ -176,28 +178,23 @@ namespace XmlLab.NxsltTasks.MSBuild
         /// Directory in which to store the results. The default is the project
         /// base directory.
         /// </summary>        
-        //public DirectoryInfo DestDir
-        //{
-        //    get
-        //    {
-        //        if (destDir == null)
-        //        {
-        //            return new DirectoryInfo(Project.BaseDirectory);
-        //        }
-        //        return destDir;
-        //    }
-        //    set { destDir = value; }
-        //}
+        public string DestDir
+        {
+            get
+            {
+                if (destDir == null)
+                {
+                    return Path.GetDirectoryName(this.BuildEngine.ProjectFileOfTaskNode);
+                }
+                return destDir;
+            }
+            set { destDir = value; }
+        }
 
         #endregion
 
         public override bool  Execute()
-        {
-            //if (inFiles.BaseDirectory == null)
-            //{
-            //    inFiles.BaseDirectory = new DirectoryInfo(Project.BaseDirectory);
-            //}
-
+        {            
             TaskReporter reporter = new TaskReporter(this);
             int rc = NXsltMain.RETURN_CODE_OK;
             try
@@ -206,61 +203,33 @@ namespace XmlLab.NxsltTasks.MSBuild
                 {
                     NXsltMain nxslt = new NXsltMain();
                     nxslt.setReporter(reporter);
-                    //if (xsltParameters.Count > 0)
-                    //{
-                    //    if (nxsltOptions.XslArgList == null)
-                    //    {
-                    //        nxsltOptions.XslArgList = new XsltArgumentList();
-                    //    }
-                    //    foreach (XsltParameter param in xsltParameters)
-                    //    {
-                    //        if (param.IfDefined && !param.UnlessDefined)
-                    //        {
-                    //            nxsltOptions.XslArgList.AddParam(param.ParameterName,
-                    //                param.NamespaceUri, param.Value);
-                    //        }
-                    //    }
-                    //}
-                    //if (xsltExtensions.Count > 0)
-                    //{
-                    //    if (nxsltOptions.XslArgList == null)
-                    //    {
-                    //        nxsltOptions.XslArgList = new XsltArgumentList();
-                    //    }
-                    //    foreach (XsltExtensionObject ext in xsltExtensions)
-                    //    {
-                    //        if (ext.IfDefined && !ext.UnlessDefined)
-                    //        {
-                    //            object extInstance = ext.CreateInstance();
-                    //            nxsltOptions.XslArgList.AddExtensionObject(
-                    //                ext.NamespaceUri, extInstance);
-                    //        }
-                    //    }
-                    //}
+
+                    if (xsltParameters != null)
+                    {                        
+                        if (nxsltOptions.XslArgList == null)
+                        {
+                            nxsltOptions.XslArgList = new XsltArgumentList();
+                        }
+                        ParseParameters();                                                
+                    }
+
+                    if (xsltExtensions != null)
+                    {
+                        if (nxsltOptions.XslArgList == null)
+                        {
+                            nxsltOptions.XslArgList = new XsltArgumentList();
+                        }
+
+                        ParseExtensions();                                                
+                    }
+
                     nxslt.options = nxsltOptions;
                     if (style != null)
                     {
                         nxslt.options.Stylesheet = style;
-                    }
-
-                    StringCollection srcFiles = null;
-                    if (inFile != null)
-                    {
-                        srcFiles = new StringCollection();
-                        srcFiles.Add(inFile);
-                    }
-                    //else if (InFiles.FileNames.Count > 0)
-                    //{
-
-                    //    if (outFile != null)
-                    //    {
-                    //        throw new NxsltTaskException("The 'out' attribute cannot be used when <infiles> is specified.",
-                    //            Location);
-                    //    }
-                    //    srcFiles = inFiles.FileNames;
-                    //}
-
-                    if (srcFiles == null || srcFiles.Count == 0)
+                    }                                                           
+                                        
+                    if (inFile == null || inFile.Length == 0)
                     {
                         throw new NxsltTaskException("No source files indicated; use 'in' or <infiles>.");
                     }
@@ -270,18 +239,18 @@ namespace XmlLab.NxsltTasks.MSBuild
                         throw new NxsltTaskException("'out' and 'destdir' cannot be both omitted.");
                     }
 
-                    foreach (string file in srcFiles)
+                    foreach (ITaskItem file in inFile)
                     {
-                        Log.LogMessage(MessageImportance.Normal, "Transforming " + file);
-                        nxslt.options.Source = file;
+                        Log.LogMessage(MessageImportance.Normal, "Transforming " + file.ItemSpec);
+                        nxslt.options.Source = file.ItemSpec;
                         if (outFile != null)
                         {
                             nxslt.options.OutFile = outFile;
                         }
                         else
                         {
-                            string destFile = Path.GetFileNameWithoutExtension(file) + "." + extension;                            
-                            nxslt.options.OutFile = Path.Combine(destDir.FullName, destFile);
+                            string destFile = Path.GetFileNameWithoutExtension(file.ItemSpec) + "." + extension;                            
+                            nxslt.options.OutFile = Path.Combine(destDir, destFile);
                         }
                         rc = nxslt.Process();
                         if (rc != NXsltMain.RETURN_CODE_OK)
@@ -313,17 +282,90 @@ namespace XmlLab.NxsltTasks.MSBuild
             }
             return true;
         }
-    }
 
-    public class Parameter
-    {
-        private string name;
+        private void ParseExtensions()
+        {            
+            XmlReaderSettings rs = new XmlReaderSettings();
+            rs.ConformanceLevel = ConformanceLevel.Fragment;
+            using (XmlReader r = XmlReader.Create(new StringReader(xsltExtensions), rs))
+            {
+                while (r.Read())
+                {
+                    if (r.NodeType == XmlNodeType.Element &&
+                        r.LocalName == "ExtensionObject")
+                    {
+                        string extTypeName = r["TypeName"];
+                        if (extTypeName == null)
+                        {
+                            throw new NxsltTaskException("'TypeName' attribute of the <ExtensionObject> element is required.");
+                        }
+                        string extNamespaceUri = r["NamespaceUri"];
 
-        public string Name
-        {
-            get { return name; }
-            set { name = value; }
+                        string extAssemblyName = r["Assembly"];
+                        if (extAssemblyName == null)
+                        {
+                            throw new NxsltTaskException("'Assembly' attribute of the <ExtensionObject> element is required.");
+                        }
+                        
+                        Uri baseUri = new Uri(this.BuildEngine.ProjectFileOfTaskNode);
+                        Uri assemblyFullPath = new Uri(baseUri, extAssemblyName);
+                        Assembly extAssembly = null;
+                        try
+                        {
+                            extAssembly = Assembly.LoadFile(assemblyFullPath.AbsolutePath);
+                        } catch 
+                        {                        
+                            throw new NxsltTaskException("Unable to load assembly '" + assemblyFullPath + "'.");
+                        }
+                        Type extObjType = extAssembly.GetType(extTypeName);
+                        if (extObjType == null)
+                        {
+                            throw new NxsltTaskException("Unable to find type '" + extTypeName + "'.");
+                        }
+                        object extInstance = null;
+                        try
+                        {
+                            extInstance = Activator.CreateInstance(extObjType);
+                        }
+                        catch
+                        {
+                            throw new NxsltTaskException("Unable to create an instance of the type '" + extTypeName + "'.");
+                        }
+                        nxsltOptions.XslArgList.AddExtensionObject(
+                            extNamespaceUri==null?"":extNamespaceUri, extInstance);
+
+                        Log.LogMessage(MessageImportance.Low, "Adding XSLT extension object {0}:{1}, from \"{2}\"",
+                            extNamespaceUri == null ? "" : "{" + extNamespaceUri + "}", extTypeName, extAssemblyName);
+                    }
+                }
+            }           
         }
-	
+
+        private void ParseParameters()
+        {
+            XmlReaderSettings rs = new XmlReaderSettings();
+            rs.ConformanceLevel = ConformanceLevel.Fragment;
+            using (XmlReader r = XmlReader.Create(new StringReader(xsltParameters), rs))
+            {
+                while (r.Read())
+                {
+                    if (r.NodeType == XmlNodeType.Element &&
+                        r.LocalName == "Parameter")
+                    {
+                        string name = r["Name"];
+                        if (name == null)
+                        {
+                            throw new NxsltTaskException("'Name' attribute of the <Parameter> element is required.");
+                        }
+                        string ns = r["NamespaceUri"];
+                        string val = r["Value"];
+                        nxsltOptions.XslArgList.AddParam(
+                            name, ns == null ? "" : ns, val == null ? "" : val);
+                        Log.LogMessage(MessageImportance.Low, "Adding XSLT parameter {0}{1}=\"{2}\"",
+                            ns == null ? "" : "{" + ns + "}", name, val);
+                    }
+                }
+            }
+        }
     }
 }
