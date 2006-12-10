@@ -334,8 +334,7 @@ namespace XmlLab.nxslt
         /// <returns>XmlReader over source XML</returns>
         private XmlReader PrepareSourceReader(XmlResolver srcResolver)
         {
-            XmlReaderSettings srcReaderSettings = new XmlReaderSettings();
-            XmlResolver resolver = null;
+            XmlReaderSettings srcReaderSettings = new XmlReaderSettings();            
             srcReaderSettings.ProhibitDtd = false;            
             if (options.StripWhiteSpace || options.PrettyPrintMode)
             {
