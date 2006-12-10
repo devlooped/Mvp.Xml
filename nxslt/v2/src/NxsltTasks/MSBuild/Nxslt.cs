@@ -17,9 +17,8 @@ namespace XmlLab.NxsltTasks.MSBuild
         #region privates
         private NXsltOptions nxsltOptions = new NXsltOptions();
         private string xsltParameters;
-        private string xsltExtensions;
-        //private FileSet inFiles = new FileSet();
-        private ITaskItem[] inFile = null;
+        private string xsltExtensions;        
+        private ITaskItem[] inFiles = null;
         private string outFile = null;
         private string extension = "html";
         private string destDir;
@@ -31,8 +30,8 @@ namespace XmlLab.NxsltTasks.MSBuild
         /// <summary>Source XML document to be transformed.</summary>        
         public ITaskItem[] In
         {
-            get { return inFile; }
-            set { inFile = value; }
+            get { return inFiles; }
+            set { inFiles = value; }
         }
 
         /// <summary>XSLT stylesheet file. If given as path, it can
@@ -156,13 +155,7 @@ namespace XmlLab.NxsltTasks.MSBuild
         {
             get { return xsltExtensions; }
             set { xsltExtensions = value; }
-        }
-
-        ///// <summary>Specifies a list of input files to be transformed.</summary>        
-        //public FileSet InFiles
-        //{
-        //    get { return inFiles; }
-        //}
+        }       
 
         /// <summary>
         /// Desired file extension to be used for the targets. The default is 
@@ -229,7 +222,7 @@ namespace XmlLab.NxsltTasks.MSBuild
                         nxslt.options.Stylesheet = style;
                     }                                                           
                                         
-                    if (inFile == null || inFile.Length == 0)
+                    if (inFiles == null || inFiles.Length == 0)
                     {
                         throw new NxsltTaskException("No source files indicated; use 'in' or <infiles>.");
                     }
@@ -239,7 +232,7 @@ namespace XmlLab.NxsltTasks.MSBuild
                         throw new NxsltTaskException("'out' and 'destdir' cannot be both omitted.");
                     }
 
-                    foreach (ITaskItem file in inFile)
+                    foreach (ITaskItem file in inFiles)
                     {
                         Log.LogMessage(MessageImportance.Normal, "Transforming " + file.ItemSpec);
                         nxslt.options.Source = file.ItemSpec;
