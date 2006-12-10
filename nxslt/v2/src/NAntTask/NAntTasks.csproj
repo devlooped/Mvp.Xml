@@ -240,7 +240,6 @@
     <Compile Include="NXsltStrings.Designer.cs">
       <DependentUpon>NXsltStrings.resx</DependentUpon>
       <AutoGen>True</AutoGen>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="NxsltTask.cs" />
@@ -252,7 +251,6 @@
       <LastGenOutput>NXsltStrings.Designer.cs</LastGenOutput>
       <CustomToolNamespace>XmlLab.nxslt</CustomToolNamespace>
       <SubType>Designer</SubType>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
