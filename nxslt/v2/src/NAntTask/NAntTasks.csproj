@@ -4,17 +4,15 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.50727</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{9C7CD1F4-CE0E-48A7-8306-F0AC97553D3A}</ProjectGuid>
+    <ProjectGuid>{2C35E6B1-0708-40A0-B10E-B69D3F7A0D9C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>XmlLab.NxsltTasks</RootNamespace>
-    <AssemblyName>XmlLab.NxsltTasks</AssemblyName>
+    <RootNamespace>XmlLab.NxsltTasks.NAnt</RootNamespace>
+    <AssemblyName>XmlLab.NxsltTasks.NAnt</AssemblyName>
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
-    <SignAssembly>false</SignAssembly>
-    <AssemblyOriginatorKeyFile>..\nxslt.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -34,9 +32,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.Build.Engine" />
-    <Reference Include="Microsoft.Build.Framework" />
-    <Reference Include="Microsoft.Build.Utilities" />
     <Reference Include="NAnt.Core, Version=0.85.2478.0, Culture=neutral">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\nant\nant-0.85\bin\NAnt.Core.dll</HintPath>
@@ -242,24 +237,21 @@
     <Compile Include="..\Utils.cs">
       <Link>Utils.cs</Link>
     </Compile>
-    <Compile Include="MSBuild\Nxslt.cs" />
-    <Compile Include="MSBuild\NxsltTaskException.cs" />
-    <Compile Include="MSBuild\TaskReporter.cs" />
-    <Compile Include="NAnt\NxsltTask.cs" />
     <Compile Include="NXsltStrings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>NXsltStrings.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="NAnt\TaskReporter.cs" />
+    <Compile Include="NxsltTask.cs" />
+    <Compile Include="TaskReporter.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="NXsltStrings.resx">
-      <SubType>Designer</SubType>
-      <CustomToolNamespace>XmlLab.nxslt</CustomToolNamespace>
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>NXsltStrings.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>XmlLab.nxslt</CustomToolNamespace>
+      <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>

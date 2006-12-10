@@ -6,7 +6,6 @@ using System.Xml.Xsl;
 using System.Collections.Specialized;
 using Microsoft.Build.Utilities;
 using Microsoft.Build.Framework;
-using Microsoft.Build.BuildEngine;
 using System.Xml;
 using System.Reflection;
 
