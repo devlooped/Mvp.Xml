@@ -1,0 +1,65 @@
+<#@ Template Output="text" #>
+<#@ Import Namespace="System" #>
+<#@ Import Namespace="System.Data" #>
+<# /* Retrieve parameters for use in the template */ 
+	IParameterService svc = (IParameterService) GetService( typeof(IParameterService) );
+	string method   = (string) svc["BusinessAction"];
+	string name     = (string) svc["ClassName"];
+	string ns       = (string) svc["Namespace"];
+	string request  = (string) svc["Request"];
+	string response = (string) svc["Response"];
+#>#region info
+//===============================================================================
+// Microsoft Services Reference Architecture
+// http://msdn.microsoft.com/library/en-us/dnpag/html/EDRA.asp
+//
+// <#= name #>.cs
+//
+// This file contains the implementation of the <#= name #> class
+//
+//===============================================================================
+// Copyright (C) 2003-2004 Microsoft Corporation
+// All rights reserved.
+// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY
+// OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT
+// LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
+// FITNESS FOR A PARTICULAR PURPOSE.
+//==============================================================================
+#endregion info
+
+#region using
+
+using System;
+
+#endregion using
+
+namespace <#= ns #>
+{
+	/// <summary>
+	/// Summary description for <#= name #>.
+	/// </summary>
+	public class <#= name #>
+	{
+		#region Implementation
+
+		/// <summary>
+		/// This method shows the Business Action Serialization invocation method.
+		/// </summary>
+		/// <param name="request">
+		/// </param>
+<# if (response == null) { #>
+		public void <#= method #>(<#= (request == null ? "" : request + " request") #>)
+		{
+			// TODO: add processing.
+		}
+<# } else { #>
+		public <#= response #> <#= method #>(<#= (request == null ? "" : request + " request") #>)
+		{
+			<#= response #> response = new <#= response #>();
+			// TODO: add initialization of response.
+			return response;
+		}
+<# } #>
+		#endregion Implementation
+	}
+}
