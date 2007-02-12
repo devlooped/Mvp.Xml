@@ -12,25 +12,30 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		{B4F97281-0DBD-4835-9ED8-7DFB966E87FF} = {B4F97281-0DBD-4835-9ED8-7DFB966E87FF}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mvp.Xml.TypedTemplate.Tool", "Mvp.Xml.TypedTemplate.Tool\Mvp.Xml.TypedTemplate.Tool.csproj", "{B591C5A7-D7AA-4497-94A0-41B5F8001613}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mvp.Xml.TypedTemplate.VisualStudio", "Mvp.Xml.TypedTemplate.Tool\Mvp.Xml.TypedTemplate.VisualStudio.csproj", "{B591C5A7-D7AA-4497-94A0-41B5F8001613}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mvp.Xml.TypedTemplate", "Mvp.Xml.TypedTemplate\Mvp.Xml.TypedTemplate.csproj", "{8B71C979-C8B1-430D-9BD7-067884FA9F9C}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{B0FEFCB4-1466-4D40-86A6-E1E7BB4D79E7}"
+EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 4
+		SccNumberOfProjects = 5
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://tfs01.codeplex.com/
 		SccProjectUniqueName0 = Mvp.Xml.TypedTemplate.Tests\\Mvp.Xml.TypedTemplate.Tests.csproj
 		SccProjectName0 = Mvp.Xml.TypedTemplate.Tests
 		SccLocalPath0 = Mvp.Xml.TypedTemplate.Tests
-		SccProjectUniqueName1 = Mvp.Xml.TypedTemplate.Tool\\Mvp.Xml.TypedTemplate.Tool.csproj
-		SccProjectName1 = Mvp.Xml.TypedTemplate.Tool
-		SccLocalPath1 = Mvp.Xml.TypedTemplate.Tool
-		SccLocalPath2 = .
-		SccProjectUniqueName3 = Mvp.Xml.TypedTemplate\\Mvp.Xml.TypedTemplate.csproj
-		SccProjectName3 = Mvp.Xml.TypedTemplate
-		SccLocalPath3 = Mvp.Xml.TypedTemplate
+		SccLocalPath1 = .
+		SccProjectUniqueName2 = Mvp.Xml.TypedTemplate\\Mvp.Xml.TypedTemplate.csproj
+		SccProjectName2 = Mvp.Xml.TypedTemplate
+		SccLocalPath2 = Mvp.Xml.TypedTemplate
+		SccProjectUniqueName3 = Setup\\Setup.vdproj
+		SccProjectName3 = Setup
+		SccLocalPath3 = Setup
+		SccProjectUniqueName4 = Mvp.Xml.TypedTemplate.Tool\\Mvp.Xml.TypedTemplate.VisualStudio.csproj
+		SccProjectName4 = Mvp.Xml.TypedTemplate.Tool
+		SccLocalPath4 = Mvp.Xml.TypedTemplate.Tool
 	EndGlobalSection
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = Mvp.Xml.TypedTemplate.vsmdi
@@ -55,6 +60,8 @@ Global
 		{8B71C979-C8B1-430D-9BD7-067884FA9F9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B71C979-C8B1-430D-9BD7-067884FA9F9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B71C979-C8B1-430D-9BD7-067884FA9F9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0FEFCB4-1466-4D40-86A6-E1E7BB4D79E7}.Debug|Any CPU.ActiveCfg = Debug
+		{B0FEFCB4-1466-4D40-86A6-E1E7BB4D79E7}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
