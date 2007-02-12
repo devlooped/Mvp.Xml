@@ -1,0 +1,18 @@
+<?template typename="CustomerTemplate" ?>
+<?using namespace="ConsoleDemo" ?>
+<?property name="Customer" type="Customer" ?>
+<Customer xmlns="mvp-xml-templates" FullName="${Customer.LastName + &quot;, &quot; + Customer.FirstName}">
+	<?foreach (Order o in this.Customer.Orders) ?>
+	<Order Id="${o.Id}" Premium="${CalculateTotal(o) > 5000}" Date="${o.DateOrdered}">
+		<GrandTotal>${CalculateTotal(o)}</GrandTotal>
+		<?if (o.Items != null) ?>
+		<?foreach (Item i in o.Items) ?>
+		<Item Id="${i.ProductId}" SubTotal="${i.Quantity * i.Price}">
+			<Quantity>${i.Quantity}</Quantity>
+			<Price>${i.Price}</Price>
+		</Item>
+		<?end?>
+		<?end?>
+	</Order>
+	<?end?>
+</Customer>

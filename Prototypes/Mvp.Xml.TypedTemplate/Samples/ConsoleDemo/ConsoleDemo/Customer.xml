@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Customer xmlns="mvp-xml-templates" Name="${customer.LastName + &quot;, &quot; + customer.FirstName}">
+	<Order Id="${o.Id}" Premium="${CalculateFoo(o)}">
+		${CalculateTotal(o)}
+		<Item Id="${i.ProductId}" SubTotal="${i.Quantity * i.Price}" />
+		Never reached :)
+	</Order>
+</Customer>
