@@ -17,6 +17,21 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mvp.Xml.TypedTemplate", "Mvp.Xml.TypedTemplate\Mvp.Xml.TypedTemplate.csproj", "{8B71C979-C8B1-430D-9BD7-067884FA9F9C}"
 EndProject
 Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs01.codeplex.com/
+		SccProjectUniqueName0 = Mvp.Xml.TypedTemplate.Tests\\Mvp.Xml.TypedTemplate.Tests.csproj
+		SccProjectName0 = Mvp.Xml.TypedTemplate.Tests
+		SccLocalPath0 = Mvp.Xml.TypedTemplate.Tests
+		SccProjectUniqueName1 = Mvp.Xml.TypedTemplate.Tool\\Mvp.Xml.TypedTemplate.Tool.csproj
+		SccProjectName1 = Mvp.Xml.TypedTemplate.Tool
+		SccLocalPath1 = Mvp.Xml.TypedTemplate.Tool
+		SccLocalPath2 = .
+		SccProjectUniqueName3 = Mvp.Xml.TypedTemplate\\Mvp.Xml.TypedTemplate.csproj
+		SccProjectName3 = Mvp.Xml.TypedTemplate
+		SccLocalPath3 = Mvp.Xml.TypedTemplate
+	EndGlobalSection
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = Mvp.Xml.TypedTemplate.vsmdi
 	EndGlobalSection

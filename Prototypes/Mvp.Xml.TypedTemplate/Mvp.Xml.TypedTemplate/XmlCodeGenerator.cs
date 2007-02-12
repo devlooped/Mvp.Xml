@@ -68,6 +68,8 @@ namespace Mvp.Xml.TypedTemplate
 			CodeArgumentReferenceExpression writerExpression = new CodeArgumentReferenceExpression("writer");
 			templateType.Members.Add(renderMethod);
 
+			templateType.Members.Add(BuildConverter());
+
 			while (reader.Read())
 			{
 				if (reader.NodeType == XmlNodeType.ProcessingInstruction)
@@ -94,6 +96,41 @@ namespace Mvp.Xml.TypedTemplate
 			}
 
 			return templateNamespace;
+		}
+
+		private CodeTypeDeclaration BuildConverter()
+		{
+			// This inner private class is required because the 
+			// XmlConvert .NET class does not receive a string 
+			// as argument, and we cannot know the type 
+			// of a code snippet, therefore we need to 
+			// add support for that signature overload 
+			// and let the compiler do the work. The overhead 
+			// is minimal.
+
+			//class Converter : XmlConvert
+			//{
+			//    public static string ToString(string value)
+			//    {
+			//        return value;
+			//    }
+			//}
+
+			CodeTypeDeclaration conv = new CodeTypeDeclaration("Converter");
+			conv.Attributes = MemberAttributes.Private | MemberAttributes.Static;
+			conv.BaseTypes.Add(typeof(XmlConvert));
+			
+			CodeMemberMethod method = new CodeMemberMethod();
+			method.Attributes = MemberAttributes.Public | MemberAttributes.Static;
+			method.Name = "ToString";
+			method.ReturnType = new CodeTypeReference(typeof(string));
+			method.Parameters.Add(new CodeParameterDeclarationExpression(
+				typeof(string), "value"));
+			method.Statements.Add(new CodeMethodReturnStatement(
+				new CodeArgumentReferenceExpression("value")));
+			conv.Members.Add(method);
+
+			return conv;
 		}
 
 		//private void StripWhitespaceFromPreviousText(CodeMemberMethod renderMethod)
@@ -205,9 +242,7 @@ namespace Mvp.Xml.TypedTemplate
 			else if (m.Length == xmlString.Length)
 			{
 				// Simplified match where the entire string is the expression: ${foo}
-				return new CodeMethodInvokeExpression(
-					new CodeSnippetExpression(m.Groups["expression"].Value), 
-					"ToString");
+				return ExpressionToString(m.Groups["expression"].Value);
 			}
 
 			// We need to concatenate all the snippet expressions with the 
@@ -217,9 +252,7 @@ namespace Mvp.Xml.TypedTemplate
 			CodeBinaryOperatorExpression result = new CodeBinaryOperatorExpression();
 			result.Left = new CodePrimitiveExpression(xmlString.Substring(lastIndex, m.Index - lastIndex));
 			result.Operator = CodeBinaryOperatorType.Add;
-			result.Right = new CodeMethodInvokeExpression(
-				new CodeSnippetExpression(m.Groups["expression"].Value), 
-				"ToString");
+			result.Right = ExpressionToString(m.Groups["expression"].Value);
 			lastIndex = m.Index + m.Length;
 
 			CodeBinaryOperatorExpression current = result;
@@ -228,9 +261,7 @@ namespace Mvp.Xml.TypedTemplate
 				CodeBinaryOperatorExpression exp = new CodeBinaryOperatorExpression(
 					new CodePrimitiveExpression(xmlString.Substring(lastIndex, m.Index - lastIndex)),
 					CodeBinaryOperatorType.Add,
-					new CodeMethodInvokeExpression(
-						new CodeSnippetExpression(m.Groups["expression"].Value), 
-						"ToString"));
+					ExpressionToString(m.Groups["expression"].Value));
 
 				current.Right = new CodeBinaryOperatorExpression(
 					current.Right,
@@ -246,6 +277,15 @@ namespace Mvp.Xml.TypedTemplate
 				new CodePrimitiveExpression(xmlString.Substring(lastIndex)));
 
 			return result;
+		}
+
+		private static CodeExpression ExpressionToString(string value)
+		{
+			// Calls the private inner class generated on BuildConverter.
+			return new CodeMethodInvokeExpression(
+				new CodeTypeReferenceExpression("Converter"),
+				"ToString",
+				new CodeSnippetExpression(value));
 		}
 
 		private CodeStatementCollection GenerateEndElementImpl(XmlReader reader, CodeExpression writerExpression)
