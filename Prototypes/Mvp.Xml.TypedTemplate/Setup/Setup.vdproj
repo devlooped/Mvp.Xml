@@ -27,8 +27,20 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_0BBCE546D6AC48A89D5B8B0DAFBF170A"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_1825AA8CBBEC382F635AF97FF6BFF6E9"
         "OwnerKey" = "8:_F1187C9E5B318A3D4A7B074554C82F36"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_18B75E656F7A41D6B488FE47F512CF52"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -105,6 +117,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_4DBB1D8BB2C445B99EF6A12DA9611B16"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_5ABC2C9538EC279E23B8AC6F11B1F309"
         "OwnerKey" = "8:_C66BB18B09DBE95016C1A40E3025B95D"
         "MsmSig" = "8:_UNDEFINED"
@@ -135,6 +153,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_61965829EA9548E681EBB33D8B7C676B"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_64EDD44CFBE747816A358E9A4976EA80"
         "OwnerKey" = "8:_C83BABBE71CD48F59AE3CCABC2551087"
         "MsmSig" = "8:_UNDEFINED"
@@ -149,6 +173,12 @@
         {
         "MsmKey" = "8:_6A66673C978738393451C8C582D55FFF"
         "OwnerKey" = "8:_C83BABBE71CD48F59AE3CCABC2551087"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_6D58A77033B84BC1BFBBB088A75F25E8"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -189,14 +219,26 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_B458E6ACDEB8A9C88A36DABC6449CE24"
-        "OwnerKey" = "8:_F0A7DD3AEB2403948337ED8BE3813A0E"
+        "MsmKey" = "8:_AA77F6AB92114F14ADFE1445A1DC9656"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_B458E6ACDEB8A9C88A36DABC6449CE24"
         "OwnerKey" = "8:_C83BABBE71CD48F59AE3CCABC2551087"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_B458E6ACDEB8A9C88A36DABC6449CE24"
+        "OwnerKey" = "8:_F0A7DD3AEB2403948337ED8BE3813A0E"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C08778ACA5C24E8094A353FE0118048E"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -220,6 +262,12 @@
         "Entry"
         {
         "MsmKey" = "8:_C83BABBE71CD48F59AE3CCABC2551087"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_DCA8D9887A954D0DBD87067FEF7E8AE1"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -256,7 +304,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_1AB336252F5C185AE1A7363CCB0DE491"
+        "OwnerKey" = "8:_B458E6ACDEB8A9C88A36DABC6449CE24"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -287,12 +335,6 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_F0A7DD3AEB2403948337ED8BE3813A0E"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_B458E6ACDEB8A9C88A36DABC6449CE24"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -337,6 +379,12 @@
         "OwnerKey" = "8:_F1187C9E5B318A3D4A7B074554C82F36"
         "MsmSig" = "8:_UNDEFINED"
         }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_1AB336252F5C185AE1A7363CCB0DE491"
+        "MsmSig" = "8:_UNDEFINED"
+        }
     }
     "Configurations"
     {
@@ -355,6 +403,17 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                }
+            }
         }
         "Release"
         {
@@ -371,6 +430,17 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                }
+            }
         }
     }
     "Deployable"
@@ -487,6 +557,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_0BBCE546D6AC48A89D5B8B0DAFBF170A"
+            {
+            "SourcePath" = "8:..\\Samples\\ConsoleDemo\\ConsoleDemo\\Customer.cs"
+            "TargetName" = "8:Customer.cs"
+            "Tag" = "8:"
+            "Folder" = "8:_97B69AE4B2A0407885349F1DC80CC660"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1825AA8CBBEC382F635AF97FF6BFF6E9"
             {
             "SourcePath" = "8:dte80a.olb"
@@ -505,6 +595,26 @@
             "Register" = "3:1"
             "Exclude" = "11:TRUE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_18B75E656F7A41D6B488FE47F512CF52"
+            {
+            "SourcePath" = "8:..\\Samples\\ConsoleDemo\\ConsoleDemo\\Program.cs"
+            "TargetName" = "8:Program.cs"
+            "Tag" = "8:"
+            "Folder" = "8:_97B69AE4B2A0407885349F1DC80CC660"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_1AB336252F5C185AE1A7363CCB0DE491"
@@ -671,6 +781,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4DBB1D8BB2C445B99EF6A12DA9611B16"
+            {
+            "SourcePath" = "8:..\\Samples\\ConsoleDemo\\ConsoleDemo\\Customer.xml"
+            "TargetName" = "8:Customer.xml"
+            "Tag" = "8:"
+            "Folder" = "8:_97B69AE4B2A0407885349F1DC80CC660"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_5ABC2C9538EC279E23B8AC6F11B1F309"
             {
             "AssemblyRegister" = "3:1"
@@ -700,6 +830,26 @@
             "Register" = "3:1"
             "Exclude" = "11:TRUE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_61965829EA9548E681EBB33D8B7C676B"
+            {
+            "SourcePath" = "8:..\\Samples\\ConsoleDemo\\ConsoleDemo\\CustomerTemplate.cs"
+            "TargetName" = "8:CustomerTemplate.cs"
+            "Tag" = "8:"
+            "Folder" = "8:_97B69AE4B2A0407885349F1DC80CC660"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_64EDD44CFBE747816A358E9A4976EA80"
@@ -764,6 +914,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6D58A77033B84BC1BFBBB088A75F25E8"
+            {
+            "SourcePath" = "8:..\\Samples\\ConsoleDemo\\ConsoleDemo\\Properties\\AssemblyInfo.cs"
+            "TargetName" = "8:AssemblyInfo.cs"
+            "Tag" = "8:"
+            "Folder" = "8:_5787620FFE31430A9CD4FA42B1602F09"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_986A9759672E428E1D9B3B53747F7CD3"
             {
             "AssemblyRegister" = "3:1"
@@ -793,6 +963,26 @@
             "Register" = "3:1"
             "Exclude" = "11:TRUE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_AA77F6AB92114F14ADFE1445A1DC9656"
+            {
+            "SourcePath" = "8:..\\Samples\\ConsoleDemo\\ConsoleDemo\\CustomerTemplate.xml"
+            "TargetName" = "8:CustomerTemplate.xml"
+            "Tag" = "8:"
+            "Folder" = "8:_97B69AE4B2A0407885349F1DC80CC660"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_B458E6ACDEB8A9C88A36DABC6449CE24"
@@ -826,6 +1016,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C08778ACA5C24E8094A353FE0118048E"
+            {
+            "SourcePath" = "8:..\\Samples\\ConsoleDemo\\ConsoleDemo\\ConsoleDemo.csproj"
+            "TargetName" = "8:ConsoleDemo.csproj"
+            "Tag" = "8:"
+            "Folder" = "8:_97B69AE4B2A0407885349F1DC80CC660"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_C66BB18B09DBE95016C1A40E3025B95D"
             {
             "AssemblyRegister" = "3:1"
@@ -855,6 +1065,26 @@
             "Register" = "3:1"
             "Exclude" = "11:TRUE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_DCA8D9887A954D0DBD87067FEF7E8AE1"
+            {
+            "SourcePath" = "8:..\\Samples\\ConsoleDemo\\ConsoleDemo\\CustomerTemplate.Designer.cs"
+            "TargetName" = "8:CustomerTemplate.Designer.cs"
+            "Tag" = "8:"
+            "Folder" = "8:_97B69AE4B2A0407885349F1DC80CC660"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_F0A7DD3AEB2403948337ED8BE3813A0E"
@@ -946,6 +1176,39 @@
             "Property" = "8:TARGETDIR"
                 "Folders"
                 {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_710D67D4D8624114921D87B3254AF402"
+                    {
+                    "Name" = "8:Samples"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_6389AABE57034B2CAD3BCC6077942D62"
+                        "Folders"
+                        {
+                            "{9EF0B969-E518-4E46-987F-47570745A589}:_97B69AE4B2A0407885349F1DC80CC660"
+                            {
+                            "Name" = "8:ConsoleDemo"
+                            "AlwaysCreate" = "11:FALSE"
+                            "Condition" = "8:"
+                            "Transitive" = "11:FALSE"
+                            "Property" = "8:_F64B9E0C0E714AD29FE0F4C3819206CA"
+                                "Folders"
+                                {
+                                    "{9EF0B969-E518-4E46-987F-47570745A589}:_5787620FFE31430A9CD4FA42B1602F09"
+                                    {
+                                    "Name" = "8:Properties"
+                                    "AlwaysCreate" = "11:FALSE"
+                                    "Condition" = "8:"
+                                    "Transitive" = "11:FALSE"
+                                    "Property" = "8:_CB55F570971644FBB86938B58BF3283D"
+                                        "Folders"
+                                        {
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
             "{1525181F-901A-416C-8A58-119130FE478E}:_CE77840161394713B2B7D460E6288462"
