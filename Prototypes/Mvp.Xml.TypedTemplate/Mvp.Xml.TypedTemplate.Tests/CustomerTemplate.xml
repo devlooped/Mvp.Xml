@@ -1,0 +1,32 @@
+<?xml version="1.0" standalone="yes" ?>
+<?template className="CustomerT" ?>
+<?import namespace="Mvp.Xml.TypedTemplate.Tests" ?>
+<?property name="customer" type="Mvp.Xml.TypedTemplate.Tests.Customer" ?>
+<Customer xmlns="mvp-xml-templates" Name="{= customer.LastName + &quot;, &quot; + customer.FirstName}">
+	<Orders>
+		<?foreach (Order o in customer.Orders) ?>
+		<Order Id="${o.Id}" Premium="{=(o.GrandTotal > 10000)}">
+			<Items GrandTotal="{=CalculateTotal(o)}">
+				<?foreach (Item i in o.Items) ?>
+				<Item Id="{=i.ProductId}" SubTotal="{= i.Quantity * i.Price}" />
+				<?end?>
+			</Items>
+			<Recipe xmlns="http://schemas.microsoft.com/pag/gax-core" Name="Foo">
+				<Caption>{=o.OrderDate}</Caption>
+				<Description>
+					El metodo Console.EWirte
+					string.Format("{{0}}");
+					${o.OrderDate}
+				</Description>
+			</Recipe>
+			<?if (customer == null) ?>
+			Null!
+			<?elseif (customer != null) ?>
+			Not Null!
+			<?else?>
+			Never Reached!
+			<?end?>
+		</Order>
+		<?end?>
+	</Orders>
+</Customer>
