@@ -45,6 +45,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+	  <Compile Include="..\..\Common\v2\src\Properties\Resources.Designer.cs">
+		  <AutoGen>True</AutoGen>
+		  <DesignTime>True</DesignTime>
+		  <DependentUpon>Resources.resx</DependentUpon>
+		  <Link>Properties\Resources.Designer.cs</Link>
+	  </Compile>
+	  <EmbeddedResource Include="..\..\Common\v2\src\Properties\Resources.resx">
+		  <SubType>Designer</SubType>
+		  <Generator>ResXFileCodeGenerator</Generator>
+		  <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+		  <Link>Properties\Resources.resx</Link>
+	  </EmbeddedResource>
+	  <Compile Include="..\..\Common\v2\src\Guard.cs">
+      <Link>Common\Guard.cs</Link>
+    </Compile>
     <Compile Include="..\..\Common\v2\src\Serialization\CacheKeyFactory.cs">
       <Link>Common\Serialization\CacheKeyFactory.cs</Link>
     </Compile>
@@ -93,6 +108,9 @@
     </Compile>
     <Compile Include="..\..\Common\v2\src\XmlPrefix.cs">
       <Link>Common\XmlPrefix.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Common\v2\src\XmlWrappingReader.cs">
+      <Link>Common\XmlWrappingReader.cs</Link>
     </Compile>
     <Compile Include="..\..\Common\v2\src\XPath\DynamicContext.cs">
       <Link>Common\XPath\DynamicContext.cs</Link>
@@ -256,12 +274,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Common\.cvsignore" />
     <None Include="Common\Serialization\.cvsignore" />
     <None Include="Common\XPath\.cvsignore" />
-    <None Include="Common\Xsl\.cvsignore" />
-    <None Include="EXSLT\.cvsignore" />
-    <None Include="EXSLT\MultiOutput\.cvsignore" />
     <None Include="XInclude\.cvsignore" />
     <None Include="XPointer\.cvsignore" />
   </ItemGroup>
@@ -286,6 +300,9 @@
       <DependentUpon>SR.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

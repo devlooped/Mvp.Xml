@@ -15,7 +15,7 @@ namespace Mvp.Xml.Common
 	/// <see cref="XPathNodeIterator"/> objects.
 	/// </summary>
 	/// <remarks>See http://weblogs.asp.net/cazzu/archive/2004/04/14/113479.aspx. 
-	/// <para>Author: Daniel Cazzulino, kzu.net@gmail.com</para>
+	/// <para>Author: Daniel Cazzulino, <a href="http://clariusconsulting.net/kzu">blog</a></para>
     /// <para>Contributors: Oleg Tkachenko, olegt@xmllab.net</para>
 	/// </remarks>
 	public sealed class XmlNodeListFactory

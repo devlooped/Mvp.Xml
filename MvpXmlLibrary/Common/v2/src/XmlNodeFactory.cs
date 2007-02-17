@@ -21,7 +21,7 @@ namespace Mvp.Xml.Common
 	/// methods, as they are intended for use only for serialization, and to avoid 
 	/// <see cref="XmlDocument"/> loading for fast performance. All other members 
 	/// will throw an <see cref="NotSupportedException"/>.
-	/// <para>Author: Daniel Cazzulino, kzu.net@gmail.com</para>
+	/// <para>Author: Daniel Cazzulino, <a href="http://clariusconsulting.net/kzu">blog</a></para>
 	/// See: http://weblogs.asp.net/cazzu/archive/2004/05/31/144922.aspx and 
 	/// http://weblogs.asp.net/cazzu/posts/XmlMessagePerformance.aspx.
 	/// </remarks>

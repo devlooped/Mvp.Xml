@@ -19,7 +19,7 @@ namespace Mvp.Xml.Common.XPath
 	/// <remarks>
 	/// This class is responsible for resolving variables during dynamic expression execution.
 	/// <para>Discussed in http://weblogs.asp.net/cazzu/archive/2003/10/07/30888.aspx</para>
-	/// <para>Author: Daniel Cazzulino, kzu.net@gmail.com</para>
+	/// <para>Author: Daniel Cazzulino, <a href="http://clariusconsulting.net/kzu">blog</a></para>
 	/// </remarks>
 	public class DynamicContext : XsltContext
 	{

@@ -20,7 +20,7 @@ namespace Mvp.Xml.Common.XPath
 	/// </summary>
 	/// <remarks>
     /// <para>Author: Oleg Tkachenko, <a href="http://www.xmllab.net">http://www.xmllab.net</a>.</para>
-    /// <para>Contributors: Daniel Cazzulino, kzu.net@gmail.com</para>
+    /// <para>Contributors: Daniel Cazzulino, <a href="http://clariusconsulting.net/kzu">blog</a></para>
     /// <para>See <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/dnxmlnet/html/XMLindexing.asp">"XML Indexing Part 1: XML IDs, XSLT Keys and IndexingXPathNavigator"</a>.</para>
 	/// </remarks>    
 	public class IndexingXPathNavigator : XPathNavigator

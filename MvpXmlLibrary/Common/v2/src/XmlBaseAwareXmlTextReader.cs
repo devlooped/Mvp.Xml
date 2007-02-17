@@ -36,7 +36,10 @@ namespace Mvp.Xml.Common
             
         }
 
-        public XmlBaseAwareXmlTextReader(string uri, XmlResolver resolver)
+		/// <summary>
+		/// Creates XmlBaseAwareXmlTextReader instance for given URI using the given resolver.
+		/// </summary>        
+		public XmlBaseAwareXmlTextReader(string uri, XmlResolver resolver)
             : base(uri)
         {
             _state.BaseUri = new Uri(base.BaseURI);

@@ -19,7 +19,7 @@ namespace Mvp.Xml.Common.XPath
 	/// The reader exposes a new root element enclosing all navigators from the 
 	/// iterator. This root node is configured in the constructor, by 
 	/// passing the desired name and optional namespace for it.
-	/// <para>Author: Daniel Cazzulino, kzu.net@gmail.com</para>
+	/// <para>Author: Daniel Cazzulino, <a href="http://clariusconsulting.net/kzu">blog</a></para>
 	/// See: http://weblogs.asp.net/cazzu/archive/2004/04/26/120684.aspx
 	/// </remarks>
 	public class XPathIteratorReader : XmlTextReader, IXmlSerializable

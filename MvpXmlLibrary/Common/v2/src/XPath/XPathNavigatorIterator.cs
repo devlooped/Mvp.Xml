@@ -14,7 +14,7 @@ namespace Mvp.Xml.Common.XPath
 	/// nodes that belong to the set.
 	/// </summary>
     /// <remarks>
-    /// <para>Author: Daniel Cazzulino, kzu.net@gmail.com</para>
+    /// <para>Author: Daniel Cazzulino, <a href="http://clariusconsulting.net/kzu">blog</a></para>
     /// <para>Contributors: Oleg Tkachenko, <a href="http://www.xmllab.net">http://www.xmllab.net</a>.</para>
     /// </remarks>
 	public class XPathNavigatorIterator : XPathNodeIterator

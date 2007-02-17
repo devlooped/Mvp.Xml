@@ -22,10 +22,6 @@
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
     <StartupObject>
     </StartupObject>
-    <FileUpgradeFlags>
-    </FileUpgradeFlags>
-    <UpgradeBackupLocation>
-    </UpgradeBackupLocation>
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
@@ -98,10 +94,10 @@
     <Reference Include="System.Xml">
       <Name>System.XML</Name>
     </Reference>
-    <ProjectReference Include="..\..\..\EXSLT\v2\src\Exslt\Exslt.csproj">
+    <!--<ProjectReference Include="..\..\..\EXSLT\v2\src\Exslt\Exslt.csproj">
       <Project>{BA694D9F-6B1E-4038-AC81-BF1640C07D90}</Project>
       <Name>Exslt</Name>
-    </ProjectReference>
+    </ProjectReference>-->
     <ProjectReference Include="..\src\Common.csproj">
       <Name>Common</Name>
       <Project>{12B8D3E3-4362-4E91-A3D2-37473083B47A}</Project>
@@ -173,6 +169,7 @@
     <Compile Include="XmlSerializerCacheTests\XmlRootThumbprintTests.cs" />
     <Compile Include="XmlSerializerCacheTests\XmlSerializerCacheTests.cs" />
     <Compile Include="XmlSerializerCacheTests\XmlTextThumbprintTests.cs" />
+    <Compile Include="XmlWrappingReaderTests.cs" />
     <Compile Include="XPathCacheTests.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -196,12 +193,16 @@
     <EmbeddedResource Include="northwind.xml" />
     <EmbeddedResource Include="pubs.xml" />
     <EmbeddedResource Include="pubsNs.xml" />
-    <EmbeddedResource Include="pubsNs.xsd" />
+    <EmbeddedResource Include="pubsNs.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="SubtreeeXPathNavigatorTests\nodecopy.xsl" />
     <EmbeddedResource Include="SubtreeeXPathNavigatorTests\print_root.xsl" />
     <EmbeddedResource Include="SubtreeeXPathNavigatorTests\test.xsl" />
     <EmbeddedResource Include="UpperLowerTests\Customer.xml" />
-    <EmbeddedResource Include="UpperLowerTests\Customer.xsd" />
+    <EmbeddedResource Include="UpperLowerTests\Customer.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="XmlBaseAwareXmlTextReaderTests\relativeTest.xml" />
     <EmbeddedResource Include="XmlBaseAwareXmlTextReaderTests\test.xml" />
     <EmbeddedResource Include="XmlFragments\publishers.xml" />
@@ -212,6 +213,9 @@
     <None Include="UpperLowerTests\Customer.xsx">
       <DependentUpon>Customer.xsd</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

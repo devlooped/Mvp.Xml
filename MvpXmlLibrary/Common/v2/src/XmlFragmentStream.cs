@@ -15,7 +15,7 @@ namespace Mvp.Xml.Common
 	/// <remarks>A faked root element is added at the stream 
 	/// level to enclose the fragments, which can be customized 
 	/// using the overloaded constructors.
-	/// <para>Author: Daniel Cazzulino, kzu.net@gmail.com</para>
+	/// <para>Author: Daniel Cazzulino, <a href="http://clariusconsulting.net/kzu">blog</a></para>
 	/// See: http://weblogs.asp.net/cazzu/archive/2004/04/23/119263.aspx.
 	/// </remarks>
 	public class XmlFragmentStream : Stream

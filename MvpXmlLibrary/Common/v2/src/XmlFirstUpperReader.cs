@@ -15,7 +15,7 @@ namespace Mvp.Xml.Common
 	/// <remarks>
 	/// To be used in conjunction with <see cref="XmlFirstLowerWriter"/> for 
 	/// serialization.
-	/// <para>Author: Daniel Cazzulino, kzu.net@gmail.com</para>
+	/// <para>Author: Daniel Cazzulino, <a href="http://clariusconsulting.net/kzu">blog</a></para>
 	/// See http://weblogs.asp.net/cazzu/archive/2004/05/10/129106.aspx.
 	/// </remarks>
 	public class XmlFirstUpperReader : XmlTextReader

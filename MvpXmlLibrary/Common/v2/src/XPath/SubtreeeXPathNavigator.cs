@@ -13,7 +13,7 @@ namespace Mvp.Xml.Common.XPath
 	/// by limiting the scope of the navigator to that received 
 	/// at construction time.
 	/// </summary>
-	/// <remarks>Author: Daniel Cazzulino, kzu.net@gmail.com
+	/// <remarks>Author: Daniel Cazzulino, <a href="http://clariusconsulting.net/kzu">blog</a>
 	/// <para>See http://weblogs.asp.net/cazzu/archive/2004/06/24/164243.aspx</para>
 	/// </remarks>
 	public class SubtreeXPathNavigator : XPathNavigator

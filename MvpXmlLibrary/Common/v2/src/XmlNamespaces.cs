@@ -9,12 +9,9 @@ namespace Mvp.Xml.Common
 	/// <summary>
 	/// Provides public constants for wellknown XML namespaces.
 	/// </summary>
-	/// <remarks>Author: Daniel Cazzulino, kzu.net@gmail.com</remarks>
+	/// <remarks>Author: Daniel Cazzulino, <a href="http://clariusconsulting.net/kzu">blog</a></remarks>
 	public static class XmlNamespaces
 	{		
-
-		#region Public Constants
-
 		/// <summary>
 		/// The public XML 1.0 namespace. 
 		/// </summary>
@@ -44,7 +41,5 @@ namespace Mvp.Xml.Common
 		/// </summary>
 		/// <remarks>See http://www.w3.org/TR/xmlschema-1/</remarks>
 		public const string Xsd = "http://www.w3.org/2001/XMLSchema";
-
-		#endregion Public Constants
 	}
 }

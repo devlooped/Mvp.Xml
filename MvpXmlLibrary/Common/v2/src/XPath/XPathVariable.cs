@@ -10,7 +10,7 @@ namespace Mvp.Xml.Common.XPath
 	/// Represents a variable to use in dynamic XPath expression 
 	/// queries.
 	/// </summary>
-	/// <remarks>Author: Daniel Cazzulino, kzu.net@gmail.com</remarks>
+	/// <remarks>Author: Daniel Cazzulino, <a href="http://clariusconsulting.net/kzu">blog</a></remarks>
 	public struct XPathVariable
 	{
 		#region Ctor

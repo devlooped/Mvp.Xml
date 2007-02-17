@@ -1,12 +1,8 @@
-#region using
-
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Xml;
 using System.Xml.XPath;
-
-#endregion using
 
 namespace Mvp.Xml.Common.XPath
 {
@@ -15,19 +11,13 @@ namespace Mvp.Xml.Common.XPath
 	/// </summary>
 	/// <remarks>
 	/// Discussed at http://weblogs.asp.net/cazzu/archive/2004/04/02/106667.aspx
-	/// <para>Author: Daniel Cazzulino, kzu.net@gmail.com</para>
+	/// <para>Author: Daniel Cazzulino, <a href="http://clariusconsulting.net/kzu">blog</a></para>
 	/// </remarks>
-	public sealed class XPathCache
+	public static class XPathCache
 	{
-		#region Ctor
-
-		private XPathCache()
-		{
-		}
-
-		#endregion Ctor
-
 		#region Private Members
+
+		static IDictionary<string, XPathExpression> _cache = new Dictionary<string, XPathExpression>();
 
 		/// <summary>
 		/// Initially a simple hashtable. In the future should 
@@ -36,7 +26,7 @@ namespace Mvp.Xml.Common.XPath
 		private static IDictionary<string, XPathExpression> Cache
 		{
 			get { return _cache; }
-        } static IDictionary<string, XPathExpression> _cache = new Dictionary<string, XPathExpression>();
+        } 
 
 		/// <summary>
 		/// Retrieves a cached compiled expression, or a newly compiled one.
