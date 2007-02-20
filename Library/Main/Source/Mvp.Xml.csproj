@@ -64,7 +64,9 @@
     <Compile Include="Common\XmlNodeListFactory.cs" />
     <Compile Include="Common\XmlPrefix.cs" />
     <Compile Include="Common\XmlWrappingReader.cs" />
-    <Compile Include="Common\XmlWrappingWriter.cs" />
+    <Compile Include="Common\XmlWrappingWriter.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Common\XPath\DynamicContext.cs" />
     <Compile Include="Common\XPath\EmptyXPathNodeIterator.cs" />
     <Compile Include="Common\XPath\IHasXPathNavigator.cs" />
