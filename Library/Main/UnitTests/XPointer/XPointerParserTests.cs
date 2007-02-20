@@ -2,11 +2,7 @@ using System;
 using System.Diagnostics;
 
 using Mvp.Xml.XPointer;
-#if NUnit
 using NUnit.Framework;
-#else
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-#endif
 
 namespace Mvp.Xml.XPointer.Test
 {
