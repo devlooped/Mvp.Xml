@@ -23,11 +23,11 @@ using TestMethod = NUnit.Framework.TestAttribute;
 
 namespace Mvp.Xml.Tests.SubtreeeXPathNavigatorTests
 {
-	[TestFixture]
+	[TestClass]
 	public class SubtreeTests
 	{
 		[Ignore]
-		[Test]
+		[TestMethod]
 		public void SubtreeSpeed() 
 		{
 			XPathDocument xdoc = new XPathDocument(Globals.GetResource(Globals.LibraryResource));
@@ -108,7 +108,7 @@ namespace Mvp.Xml.Tests.SubtreeeXPathNavigatorTests
 		}
 
 		[Ignore]
-		[Test]
+		[TestMethod]
 		public void SubtreeTransform() 
 		{
             XslCompiledTransform tx = new XslCompiledTransform();
@@ -141,7 +141,7 @@ namespace Mvp.Xml.Tests.SubtreeeXPathNavigatorTests
 		}
 
 		[Ignore]
-		[Test]
+		[TestMethod]
 		public void TestBooks()
 		{
             XslCompiledTransform xslt = new XslCompiledTransform();
@@ -166,7 +166,7 @@ namespace Mvp.Xml.Tests.SubtreeeXPathNavigatorTests
 		}
 
 		[Ignore]
-		[Test]
+		[TestMethod]
 		public void TestRead()
 		{
 			XPathDocument doc = new XPathDocument(Globals.GetResource(Globals.LibraryResource));

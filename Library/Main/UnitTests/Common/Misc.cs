@@ -24,10 +24,10 @@ namespace Mvp.Xml.Tests
 	/// <summary>
 	/// Miscelaneous tests.
 	/// </summary>
-	[TestFixture]
+	[TestClass]
 	public class Misc
 	{
-		[Test]
+		[TestMethod]
 		public void SerializeXmlDocument()
 		{
 			XmlSerializer ser = new XmlSerializer(typeof(XmlDocument));
@@ -39,7 +39,7 @@ namespace Mvp.Xml.Tests
 			Assert.IsNotNull(ser);
 		}
 
-		[Test]
+		[TestMethod]
 		public void CursorMovement()
 		{
 			XPathDocument doc = new XPathDocument(Globals.GetResource(Globals.NorthwindResource));

@@ -18,7 +18,7 @@ namespace Mvp.Xml.XPointer.Test
 	/// <summary>
 	/// Summary description for XPointerParserTests.
 	/// </summary>
-	[TestFixture]
+	[TestClass]
 	public class XPointerParserTests
 	{        
 
@@ -27,48 +27,48 @@ namespace Mvp.Xml.XPointer.Test
             Debug.Listeners.Add(new TextWriterTraceListener(Console.Error));
         }
 
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(XPointerSyntaxException))]
         public void SyntaxErrorTest()
         {
             Pointer p = Pointer.Compile("too bad");			
         }
 
-        [Test]
+        [TestMethod]
         public void ParenthesisTest() 
         {
             Pointer p = Pointer.Compile("xmlns(p=http://foo.com^))");
             p = Pointer.Compile("xmlns(p=http://foo.com^()");
         }
         
-        [Test]
+        [TestMethod]
         public void EscapingCircumflexTest() 
         {
             Pointer p = Pointer.Compile("xmlns(p=http://foo.com^^)");            
         }
 
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(XPointerSyntaxException))]
         public void CircumflexErrorTest() 
         {
             Pointer p = Pointer.Compile("xmlns(p=http://fo^o.com)");            
         }     
    
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(XPointerSyntaxException))]
         public void BadNCName() 
         {
             Pointer p = Pointer.Compile("foo:bar");            
         }     
 
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(XPointerSyntaxException))]
         public void BadElementPointer() 
         {
             Pointer p = Pointer.Compile("element(1/33/foo)");            
         } 
     
-        [Test]       
+        [TestMethod]       
         public void UnknownSchemePointer() 
         {
             Pointer p = Pointer.Compile("xpath1(/foo) foo(abr)");            

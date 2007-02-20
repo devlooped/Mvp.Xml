@@ -21,10 +21,10 @@ using Mvp.Xml.Common.XPath;
 
 namespace Mvp.Xml.Tests.XPathIteratorReaderTests
 {
-	[TestFixture]
+	[TestClass]
 	public class Tests
 	{
-		[Test]
+		[TestMethod]
 		public void TestRss()
 		{
 			string theWord = "XML";
@@ -46,7 +46,7 @@ namespace Mvp.Xml.Tests.XPathIteratorReaderTests
 			Assert.IsTrue(xml != String.Empty);
 		}
 
-		[Test]
+		[TestMethod]
 		public void Test1()
 		{
 			XPathDocument doc = new XPathDocument(Globals.GetResource(Globals.PubsResource));
@@ -59,7 +59,7 @@ namespace Mvp.Xml.Tests.XPathIteratorReaderTests
 			Assert.IsTrue(xml != String.Empty);
 		}
 
-		[Test]
+		[TestMethod]
 		public void FunctionalTest()
 		{
 			XPathDocument doc = new XPathDocument(new StringReader(

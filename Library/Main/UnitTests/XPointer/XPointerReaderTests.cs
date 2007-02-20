@@ -22,13 +22,13 @@ namespace Mvp.Xml.XPointer.Test
 	/// <summary>
 	/// Unit tests for XPointerReader class.
 	/// </summary>
-	[TestFixture]
+	[TestClass]
 	public class XPointerReaderTests
 	{                    
         /// <summary>
         /// xmlns() + xpath1() + namespaces works
         /// </summary>
-        [Test]
+        [TestMethod]
         public void XmlNsXPath1SchemeTest() 
         {
             string xptr = "xmlns(m=mvp-xml)xpath1(m:dsPubs/m:publishers[m:pub_id='1389']/m:pub_name)";            
@@ -46,7 +46,7 @@ namespace Mvp.Xml.XPointer.Test
         /// <summary>
         /// xpath1() + namespaces doesn't work w/o xmlns()
         /// </summary>
-        [Test]    
+        [TestMethod]    
         [ExpectedException(typeof(NoSubresourcesIdentifiedException))]
         public void XPath1SchemeWithoutXmlnsTest() 
         {
@@ -64,7 +64,7 @@ namespace Mvp.Xml.XPointer.Test
         /// <summary>
         /// xpath1() that doesn't select a node w/o namespaces
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(NoSubresourcesIdentifiedException))]
         public void XPath1SchemeNoSelectedNodeTest() 
         {
@@ -77,7 +77,7 @@ namespace Mvp.Xml.XPointer.Test
         /// <summary>
         /// xpath1() that returns scalar value, not a node
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(NoSubresourcesIdentifiedException))]
         public void XPath1SchemeScalarResultTest() 
         {
@@ -90,7 +90,7 @@ namespace Mvp.Xml.XPointer.Test
         /// <summary>
         /// xmlns() + xpointer() + namespaces works
         /// </summary>
-        [Test]
+        [TestMethod]
         public void XmlNsXPointerSchemeTest() 
         {
             string xptr = "xmlns(m=mvp-xml)xpointer(m:dsPubs/m:publishers[m:pub_id='1389']/m:pub_name)";            
@@ -108,7 +108,7 @@ namespace Mvp.Xml.XPointer.Test
         /// <summary>
         /// xpointer() + namespaces doesn't work w/o xmlns()
         /// </summary>
-        [Test]    
+        [TestMethod]    
         [ExpectedException(typeof(NoSubresourcesIdentifiedException))]
         public void XPointerSchemeWithoutXmlnsTest() 
         {
@@ -127,7 +127,7 @@ namespace Mvp.Xml.XPointer.Test
         /// <summary>
         /// xpointer() that doesn't select a node w/o namespaces
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(NoSubresourcesIdentifiedException))]
         public void XPointerSchemeNoSelectedNodeTest() 
         {
@@ -140,7 +140,7 @@ namespace Mvp.Xml.XPointer.Test
         /// <summary>
         /// xpointer() that returns scalar value, not a node
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(NoSubresourcesIdentifiedException))]
         public void XPointerSchemeScalarResultTest() 
         {
@@ -153,7 +153,7 @@ namespace Mvp.Xml.XPointer.Test
         /// <summary>
         /// superfluous xmlns() doesn't hurt
         /// </summary>
-        [Test]
+        [TestMethod]
         public void SuperfluousXmlNsSchemeTest() 
         {
             string xptr = "xmlns(m=mvp-xml)xpointer(dsPubs/publishers[pub_id='1389']/pub_name)";            
@@ -171,7 +171,7 @@ namespace Mvp.Xml.XPointer.Test
         /// <summary>
         /// xpointer() + xmlns() + namespaces doesn't work
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(NoSubresourcesIdentifiedException))]
         public void XmlnsAfterTest() 
         {
@@ -184,7 +184,7 @@ namespace Mvp.Xml.XPointer.Test
         /// <summary>
         /// namespace re3efinition doesn't hurt
         /// </summary>
-        [Test]
+        [TestMethod]
         public void NamespaceRedefinitionTest() 
         {
             string xptr = "xmlns(m=mvp-xml)xmlns(m=http://foo.com)xmlns(m=mvp-xml)xpointer(m:dsPubs/m:publishers[m:pub_id='1389']/m:pub_name)";            
@@ -202,7 +202,7 @@ namespace Mvp.Xml.XPointer.Test
         /// <summary>
         /// Shorthand pointer works
         /// </summary>
-        [Test]
+        [TestMethod]
         public void ShorthandTest() 
         {           
             string xptr = "o10535";                        
@@ -223,7 +223,7 @@ namespace Mvp.Xml.XPointer.Test
         /// <summary>
         /// Shorthand pointer works via stream
         /// </summary>
-        [Test]
+        [TestMethod]
         public void ShorthandViaStreamTest() 
         {           
             string xptr = "o10535";                        
@@ -248,7 +248,7 @@ namespace Mvp.Xml.XPointer.Test
         /// <summary>
         /// Shorthand pointer points to nothing
         /// </summary>
-        [Test]
+        [TestMethod]
          [ExpectedException(typeof(NoSubresourcesIdentifiedException))]
         public void ShorthandNotFoundTest() 
         {           
@@ -260,7 +260,7 @@ namespace Mvp.Xml.XPointer.Test
         /// <summary>
         /// element() scheme pointer works
         /// </summary>
-        [Test]
+        [TestMethod]
         public void ElementSchemeTest() 
         {           
             string xptr = "element(o10535)";                        
@@ -281,7 +281,7 @@ namespace Mvp.Xml.XPointer.Test
         /// <summary>
         /// element() scheme pointer works
         /// </summary>
-        [Test]
+        [TestMethod]
         public void ElementSchemeTest2() 
         {           
             string xptr = "element(o10535/1)";                        
@@ -299,7 +299,7 @@ namespace Mvp.Xml.XPointer.Test
         /// <summary>
         /// element() scheme pointer works
         /// </summary>
-        [Test]
+        [TestMethod]
         public void ElementSchemeTest3() 
         {           
             string xptr = "element(/1/1/2)";                        
@@ -317,7 +317,7 @@ namespace Mvp.Xml.XPointer.Test
         /// <summary>
         /// element() scheme pointer points to nothing
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(NoSubresourcesIdentifiedException))]
         public void ElementSchemeNotFoundTest() 
         {           
@@ -329,7 +329,7 @@ namespace Mvp.Xml.XPointer.Test
         /// <summary>
         /// compound pointer
         /// </summary>
-        [Test]
+        [TestMethod]
         public void CompoundPointerTest() 
         {           
             string xptr = "xmlns(p=12345)xpath1(/no/such/node) xpointer(/and/such) element(/1/1/2) element(o10535/1)";                        
@@ -347,7 +347,7 @@ namespace Mvp.Xml.XPointer.Test
         /// <summary>
         /// Unknown scheme pointer
         /// </summary>
-        [Test]
+        [TestMethod]
         public void UnknownSchemeTest() 
         {           
             string xptr = "dummy(foo) element(/1/1/2)";                        
@@ -365,7 +365,7 @@ namespace Mvp.Xml.XPointer.Test
         /// <summary>
         /// Unknown scheme pointer
         /// </summary>
-        [Test]
+        [TestMethod]
         public void UnknownSchemeTest2() 
         {           
             string xptr = "foo:dummy(bar) element(/1/1/2)";                        
@@ -383,7 +383,7 @@ namespace Mvp.Xml.XPointer.Test
         /// <summary>
         /// Unknown scheme pointer
         /// </summary>
-        [Test]        
+        [TestMethod]        
         public void UnknownSchemeTest3() 
         {           
             string xptr = "xmlns(foo=http://foo.com/schemas)foo:dummy(bar) element(/1/1/2)";                        
@@ -401,7 +401,7 @@ namespace Mvp.Xml.XPointer.Test
         /// <summary>
         /// XSD-defined ID
         /// </summary>
-        //[Test]        
+        //[TestMethod]        
         //public void XSDDefnedIDTest() 
         //{           
         //    string xptr = "element(id1389/1)";                        

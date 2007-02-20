@@ -21,7 +21,7 @@ namespace Mvp.Xml.XInclude.Test
     /// <summary>
     /// Edinburgh University test cases from the XInclude Test suite.
     /// </summary>
-    [TestFixture]
+    [TestClass]
     public class NISTTests
     {
         public NISTTests()
@@ -43,7 +43,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Test the inclusion of another XML document.        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void Nist_include_01() 
         {
             RunAndCompare("nist-include-01.xml", "../../result/nist-include-01.xml");            
@@ -54,7 +54,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Test that the encoding attribute in the Xinclude element has no effect when parse="xml".        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void Nist_include_02() 
         {
             RunAndCompare("nist-include-02.xml", "../../result/nist-include-02.xml");            
@@ -66,7 +66,7 @@ namespace Mvp.Xml.XInclude.Test
         /// Test that values other than xml or text, in the parse attribute of the XInclude
         /// element, result in fatal errors.        
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(XIncludeSyntaxError))]
         public void Nist_include_03() 
         {
@@ -78,7 +78,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Test of fallback element appearing as a child of an xinclude element.        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void Nist_include_04() 
         {
             RunAndCompare("nist-include-04.xml", "../../result/nist-include-04.xml");            
@@ -90,7 +90,7 @@ namespace Mvp.Xml.XInclude.Test
         /// Test a fallback element not appearing as a direct
         /// child of an xinclude element. A fatal error should be generated.        
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(XIncludeSyntaxError))]
         public void Nist_include_05() 
         {
@@ -102,7 +102,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Test a fallback when a resource error occurs.        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void Nist_include_06() 
         {
             RunAndCompare("nist-include-06.xml", "../../result/nist-include-06.xml");            
@@ -114,7 +114,7 @@ namespace Mvp.Xml.XInclude.Test
         /// Test an empty fallback element. The xinclude element is
         /// removed from the results.        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void Nist_include_07() 
         {
             RunAndCompare("nist-include-07.xml", "../../result/nist-include-07.xml");            
@@ -126,7 +126,7 @@ namespace Mvp.Xml.XInclude.Test
         /// Test of a fallback element missing from the
         /// include element. A resource error results in a fatal error.        
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(FatalResourceException))]
         public void Nist_include_08() 
         {
@@ -137,7 +137,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Test unqualified attributes in the include element. They must be ignored.        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void Nist_include_09() 
         {
             RunAndCompare("nist-include-09.xml", "../../result/nist-include-09.xml");            
@@ -149,7 +149,7 @@ namespace Mvp.Xml.XInclude.Test
         /// Test content other than the fallback, in the xinclude element.
         /// This content must be ignored.        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void Nist_include_10() 
         {
             RunAndCompare("nist-include-10.xml", "../../result/nist-include-10.xml");            
@@ -161,7 +161,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Test a resource containing non-well-formed XML. The inclusion results in a fatal error.        
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(FatalResourceException))]
         public void Nist_include_11() 
         {
@@ -173,7 +173,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Test that is a fatal error for an include element to contain more than one fallback elements.        
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(XIncludeSyntaxError))]
         public void Nist_include_12() 
         {
@@ -185,7 +185,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Test a fallback element containing markup when parse="text".        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void Nist_include_13() 
         {
             RunAndCompare("nist-include-13.xml", "../../result/nist-include-13.xml");            
@@ -196,7 +196,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Test a fallback element containing markup when parse="text".        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void Nist_include_14() 
         {
             RunAndCompare("nist-include-14.xml", "../../result/nist-include-14.xml");            
@@ -207,7 +207,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// It is illegal for an include element to point to itself, when parse="xml".        
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(CircularInclusionException))]
         public void Nist_include_15() 
         {
@@ -220,7 +220,7 @@ namespace Mvp.Xml.XInclude.Test
         /// Test a document type declaration information item child
         /// in the resource information set. the DTD should be excluded for inclusion in the source infoset.        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void Nist_include_16() 
         {
             RunAndCompare("nist-include-16.xml", "../../result/nist-include-16.xml");            
@@ -232,7 +232,7 @@ namespace Mvp.Xml.XInclude.Test
         /// Test intra-document reference within include elements.        
         /// </summary>
         /// <remarks>INTRA-DOCUMENT REFERENCES ARE NOT SUPPORTED BY THE XIncludingReader.</remarks>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(FatalResourceException))]
         public void Nist_include_17() 
         {
@@ -244,7 +244,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Simple test of including a set of nodes from an XML document.        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void Nist_include_18() 
         {
             RunAndCompare("nist-include-18.xml", "../../result/nist-include-18.xml");            
@@ -254,7 +254,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Test the inclusion of a set of nodes from an XML document.        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void Nist_include_19() 
         {
             RunAndCompare("nist-include-19.xml", "../../result/nist-include-19.xml");            
@@ -269,7 +269,7 @@ namespace Mvp.Xml.XInclude.Test
         /// document information item, except for the document type information
         /// item.        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void Nist_include_20() 
         {
             RunAndCompare("nist-include-20.xml", "../../result/nist-include-20.xml");            
@@ -280,7 +280,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Including an XML document with an unparsed entity.        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void Nist_include_21() 
         {
             RunAndCompare("nist-include-21.xml", "../../result/nist-include-21.xml");            
@@ -292,7 +292,7 @@ namespace Mvp.Xml.XInclude.Test
         /// Testing when the document (top level) element in the source infoset is an
         /// include element.        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void Nist_include_22() 
         {
             RunAndCompare("nist-include-22.xml", "../../result/nist-include-22.xml");            
@@ -304,7 +304,7 @@ namespace Mvp.Xml.XInclude.Test
         /// Testing an include element in the document (top-level) element in the source doc.
         /// Test should fail because is including more than one element.        
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(MalformedXInclusionResultError))]
         public void Nist_include_23() 
         {
@@ -317,7 +317,7 @@ namespace Mvp.Xml.XInclude.Test
         /// Testing an include element in the document (top-level) element in the source doc.
         /// Test should fail because is including only a processing instruction.        
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(MalformedXInclusionResultError))]
         public void Nist_include_24() 
         {
@@ -330,7 +330,7 @@ namespace Mvp.Xml.XInclude.Test
         /// Testing an include element in the document (top-level) element in the source doc.
         /// Test should fail because is including only a comment.        
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(MalformedXInclusionResultError))]
         public void Nist_include_25() 
         {
@@ -342,7 +342,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Test relative URI references in the included infoset.        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void Nist_include_26() 
         {
             RunAndCompare("nist-include-26.xml", "../../result/nist-include-26.xml");            
@@ -353,7 +353,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Test that the encoding attribute when parse="xml" does not translate the incoming document.        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void Nist_include_27() 
         {
             RunAndCompare("nist-include-27.xml", "../../result/nist-include-27.xml");            
@@ -364,7 +364,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// including another XML document with IDs, using a shorthand pointer.        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void Nist_include_28() 
         {
             RunAndCompare("nist-include-28.xml", "../../result/nist-include-28.xml");            
@@ -375,7 +375,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// including another XML document with IDs, using a shorthand pointer.        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void Nist_include_29() 
         {
             RunAndCompare("nist-include-29.xml", "../../result/nist-include-29.xml");            
@@ -386,7 +386,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Including another XML document with IDs, using a shorthand pointer.        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void Nist_include_30() 
         {
             RunAndCompare("nist-include-30.xml", "../../result/nist-include-30.xml");            
@@ -397,7 +397,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Including an XML document using an XPointer element scheme.        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void Nist_include_31() 
         {
             RunAndCompare("nist-include-31.xml", "../../result/nist-include-31.xml");            
@@ -408,7 +408,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Including an XML document using an XPointer element scheme.        
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(FatalResourceException))]
         public void Nist_include_32() 
         {
@@ -420,7 +420,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Including an XML document using an XPointer element scheme.        
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(FatalResourceException))]
         public void Nist_include_33() 
         {
@@ -432,7 +432,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Including another XML document with ids using XPointer element scheme.        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void Nist_include_34() 
         {
             RunAndCompare("nist-include-34.xml", "../../result/nist-include-34.xml");            
@@ -443,7 +443,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Including an XML document using an XPointer element scheme.        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void Nist_include_35() 
         {
             RunAndCompare("nist-include-35.xml", "../../result/nist-include-35.xml");            
@@ -454,7 +454,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Including an XML document using an XPointer element scheme.        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void Nist_include_36() 
         {
             RunAndCompare("nist-include-36.xml", "../../result/nist-include-36.xml");            
@@ -466,7 +466,7 @@ namespace Mvp.Xml.XInclude.Test
         /// Including another XML document using XPointer Framework scheme-base pointer.
         /// If the processor does not support the scheme used in a pointer part, it skip that pointer part.        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void Nist_include_37() 
         {
             RunAndCompare("nist-include-37.xml", "../../result/nist-include-37.xml");            
@@ -478,7 +478,7 @@ namespace Mvp.Xml.XInclude.Test
         /// Including another XML document using XPointer Framework.
         /// If the processor does not support the scheme used in a pointer part, it skip that pointer part.        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void Nist_include_38() 
         {
             RunAndCompare("nist-include-38.xml", "../../result/nist-include-38.xml");            
@@ -490,7 +490,7 @@ namespace Mvp.Xml.XInclude.Test
         /// Testing the content of the xinclude element.
         /// The comment should be ignored .        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void nist_include_39() 
         {
             RunAndCompare("nist-include-39.xml", "../../result/nist-include-39.xml");            
@@ -502,7 +502,7 @@ namespace Mvp.Xml.XInclude.Test
         /// Testing the content of the xinclude element.
         /// The element should be ignored .        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void nist_include_40() 
         {
             RunAndCompare("nist-include-40.xml", "../../result/nist-include-40.xml");            
@@ -514,7 +514,7 @@ namespace Mvp.Xml.XInclude.Test
         /// Testing the content of the xinclude element.
         /// This test should result in a fatal error.        
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(XIncludeSyntaxError))]
         public void nist_include_41() 
         {
@@ -528,7 +528,7 @@ namespace Mvp.Xml.XInclude.Test
         /// The xinclude element may contain a fallback element;
         /// other elements from the xinclude namespace result in a fatal error.        
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(XIncludeSyntaxError))]
         public void Nist_include_42() 
         {
@@ -541,7 +541,7 @@ namespace Mvp.Xml.XInclude.Test
         /// Testing the content of the xinclude element.
         /// The content must be one fallback. This test should result in a fatal error.        
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(XIncludeSyntaxError))]
         public void Nist_include_43() 
         {
@@ -554,7 +554,7 @@ namespace Mvp.Xml.XInclude.Test
         /// Test a resource that contains not-well-formed XML.
         /// This test should result in a fatal error.        
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(XmlException))]
         public void Nist_include_44() 
         {
@@ -567,7 +567,7 @@ namespace Mvp.Xml.XInclude.Test
         /// Test a resource that contains not-well-formed XML.
         /// This test should result in a fatal error.        
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(XmlException))]
         public void Nist_include_45() 
         {
@@ -580,7 +580,7 @@ namespace Mvp.Xml.XInclude.Test
         /// Testing the content of the xinclude element.
         /// The xinclude element may contain a fallback element; other elements from the xinclude namespace result in a fatal error.        
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(XIncludeSyntaxError))]
         public void Nist_include_46() 
         {
@@ -593,7 +593,7 @@ namespace Mvp.Xml.XInclude.Test
         /// Testing the content of the xinclude element.
         /// The xinclude element may contain a fallback element; other elements from the xinclude namespace result in a fatal error.        
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(XIncludeSyntaxError))]
         public void Nist_include_47() 
         {
@@ -607,7 +607,7 @@ namespace Mvp.Xml.XInclude.Test
         /// that contains unexpanded entity reference information items.        
         /// </summary>
         /// <remarks>No support for unexpanded entity references here.</remarks>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(DirectoryNotFoundException))]
         public void Nist_include_48() 
         {
@@ -620,7 +620,7 @@ namespace Mvp.Xml.XInclude.Test
         /// The unexpanded entity reference information items, if present in the source infoset,
         /// will appear in the result infoset.        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void Nist_include_49() 
         {
             RunAndCompare("nist-include-49.xml", "../../result/nist-include-49.xml");            
@@ -633,7 +633,7 @@ namespace Mvp.Xml.XInclude.Test
         /// The set of top-level included items should be the children of the acquired inforset's document
         /// information item, except for the document type declaration information item.        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void Nist_include_50() 
         {
             RunAndCompare("nist-include-50.xml", "../../result/nist-include-50.xml");            
@@ -646,7 +646,7 @@ namespace Mvp.Xml.XInclude.Test
         /// The set of top-level included items should consist of the information item corresponding
         /// to the comment node in the acquired infoset.        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void Nist_include_51() 
         {
             RunAndCompare("nist-include-51.xml", "../../result/nist-include-51.xml");            
@@ -659,7 +659,7 @@ namespace Mvp.Xml.XInclude.Test
         /// The set of top-level included items should consist of the information item corresponding
         /// to the processing instruction node in the acquired infoset.        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void Nist_include_52() 
         {
             RunAndCompare("nist-include-52.xml", "../../result/nist-include-52.xml");            
@@ -671,7 +671,7 @@ namespace Mvp.Xml.XInclude.Test
         /// Test that an include location identifying an attribute node will result in a
         /// fatal error.        
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(AttributeOrNamespaceInIncludeLocationError))]
         public void Nist_include_53() 
         {
@@ -684,7 +684,7 @@ namespace Mvp.Xml.XInclude.Test
         /// Test that an include location identifying an attribute node will result in a
         /// fatal error.        
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(AttributeOrNamespaceInIncludeLocationError))]
         public void Nist_include_54() 
         {
@@ -698,7 +698,7 @@ namespace Mvp.Xml.XInclude.Test
         /// Test should ignore duplicate unparsed entity.        
         /// </summary>
         /// <remarks>No support for unparsed entities here.</remarks>
-        [Test]
+        [TestMethod]
         public void Nist_include_55() 
         {
             RunAndCompare("nist-include-55.xml", "../../result/nist-include-55.xml");            
@@ -711,7 +711,7 @@ namespace Mvp.Xml.XInclude.Test
         /// but different sysid. Test should fail.        
         /// </summary>
         /// <remarks>No support for unparsed entities here.</remarks>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(DirectoryNotFoundException))]
         public void Nist_include_56() 
         {

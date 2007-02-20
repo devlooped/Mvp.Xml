@@ -20,7 +20,7 @@ using TestMethod = NUnit.Framework.TestAttribute;
 
 namespace Mvp.Xml.Serialization.Tests
 {
-	[TestFixture]
+	[TestClass]
 	public class XmlEnumAttributeThumbprintTests
 	{
 		public XmlEnumAttributeThumbprintTests()
@@ -34,7 +34,7 @@ namespace Mvp.Xml.Serialization.Tests
 		XmlAttributes atts1;
 		XmlAttributes atts2;
 
-		[SetUp]
+		[TestInitialize]
 		public void SetUp()
 		{
 			ov1 = new XmlAttributeOverrides();
@@ -44,7 +44,7 @@ namespace Mvp.Xml.Serialization.Tests
 			atts2 = new XmlAttributes();
 		}
 
-		[Test]
+		[TestMethod]
 		public void SameName()
 		{
 			XmlEnumAttribute enum1 = new XmlEnumAttribute("enum1");
@@ -59,7 +59,7 @@ namespace Mvp.Xml.Serialization.Tests
 			ThumbprintHelpers.SameThumbprint(ov1, ov2);
 		}
 
-		[Test]
+		[TestMethod]
 		public void DifferentName()
 		{
 			XmlEnumAttribute enum1 = new XmlEnumAttribute("enum1");

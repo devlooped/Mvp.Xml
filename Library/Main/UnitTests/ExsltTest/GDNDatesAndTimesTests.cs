@@ -15,7 +15,7 @@ namespace ExsltTest
     /// <summary>
     /// Collection of unit tests for GotDotNet Dates and Times module functions.
     /// </summary>
-    [TestFixture]
+    [TestClass]
     public class GDNDatesAndTimesTests : ExsltUnitTests
     {        
         protected override string TestDir 
@@ -31,7 +31,7 @@ namespace ExsltTest
         /// Tests the following function:
         ///     date2:avg()
         /// </summary>
-        [Test]
+        [TestMethod]
         public void AvgTest() 
         {
             RunAndCompare("source.xml", "avg.xslt", "avg.xml");
@@ -41,7 +41,7 @@ namespace ExsltTest
         /// Tests the following function:
         ///     date2:min()
         /// </summary>
-        [Test]
+        [TestMethod]
         public void MinTest() 
         {
             RunAndCompare("source.xml", "min.xslt", "min.xml");
@@ -51,7 +51,7 @@ namespace ExsltTest
         /// Tests the following function:
         ///     date2:max()
         /// </summary>
-        [Test]
+        [TestMethod]
         public void MaxTest() 
         {
             RunAndCompare("source.xml", "max.xslt", "max.xml");
@@ -61,7 +61,7 @@ namespace ExsltTest
         /// Tests the following function:
         ///     date2:day-name()
         /// </summary>
-        [Test]
+        [TestMethod]
         public void DayNameTest() 
         {
             RunAndCompare("source.xml", "day-name.xslt", "day-name.xml");
@@ -71,7 +71,7 @@ namespace ExsltTest
         /// Tests the following function:
         ///     date2:day-abbreviation()
         /// </summary>
-        [Test]
+        [TestMethod]
         public void DayAbbreviationTest() 
         {
             RunAndCompare("source.xml", "day-abbreviation.xslt", "day-abbreviation.xml");
@@ -81,7 +81,7 @@ namespace ExsltTest
         /// Tests the following function:
         ///     date2:month-name()
         /// </summary>
-        [Test]
+        [TestMethod]
         public void MonthNameTest() 
         {
             RunAndCompare("source.xml", "month-name.xslt", "month-name.xml");
@@ -91,7 +91,7 @@ namespace ExsltTest
         /// Tests the following function:
         ///     date2:month-abbreviation()
         /// </summary>
-        [Test]
+        [TestMethod]
         public void MonthAbbreviationTest() 
         {
             RunAndCompare("source.xml", "month-abbreviation.xslt", "month-abbreviation.xml");

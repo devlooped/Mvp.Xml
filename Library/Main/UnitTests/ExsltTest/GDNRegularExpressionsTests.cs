@@ -15,7 +15,7 @@ namespace ExsltTest
     /// <summary>
     /// Collection of unit tests for GotDotNet RegularExpressions module functions.
     /// </summary>
-    [TestFixture]
+    [TestClass]
     public class GDNRegularExpressionsTests : ExsltUnitTests
     {        
 
@@ -32,7 +32,7 @@ namespace ExsltTest
         /// Tests the following function:
         ///     regexp2:tokenize()
         /// </summary>
-        [Test]
+        [TestMethod]
         public void TokenizeTest() 
         {
             RunAndCompare("source.xml", "tokenize.xslt", "tokenize.xml");

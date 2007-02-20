@@ -15,7 +15,7 @@ namespace ExsltTest
     /// <summary>
     /// Collection of unit tests for EXSLT Random module functions.
     /// </summary>
-    [TestFixture]
+    [TestClass]
     public class ExsltRandomTests : ExsltUnitTests
     {        
 
@@ -32,7 +32,7 @@ namespace ExsltTest
         /// Tests the following function:
         ///     random:random-sequence()
         /// </summary>
-        [Test]
+        [TestMethod]
         public void RandomSequenceTest() 
         {
             RunAndCompare("source.xml", "random-sequence.xslt", "random-sequence.xml");

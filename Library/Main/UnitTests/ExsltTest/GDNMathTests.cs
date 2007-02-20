@@ -15,7 +15,7 @@ namespace ExsltTest
     /// <summary>
     /// Collection of unit tests for GotDotNet Math module functions.
     /// </summary>
-    [TestFixture]
+    [TestClass]
     public class GDNMathTests : ExsltUnitTests
     {        
         protected override string TestDir 
@@ -31,7 +31,7 @@ namespace ExsltTest
         /// Tests the following function:
         ///     math2:avg()
         /// </summary>
-        [Test]
+        [TestMethod]
         public void AvgTest() 
         {
             RunAndCompare("source.xml", "avg.xslt", "avg.xml");

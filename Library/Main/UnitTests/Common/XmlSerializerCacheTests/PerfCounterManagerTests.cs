@@ -21,7 +21,7 @@ using System.Reflection;
 
 namespace Mvp.Xml.Serialization.Tests
 {
-	[TestFixture]
+	[TestClass]
 	public class PerfCounterManagerTests
 	{
 		public PerfCounterManagerTests()
@@ -52,7 +52,7 @@ namespace Mvp.Xml.Serialization.Tests
 			return name;	
 		}
 
-		[Test]
+		[TestMethod]
 		public void CacheHit()
 		{
 			string instanceName = GetCounterInstanceName(0);
@@ -90,7 +90,7 @@ namespace Mvp.Xml.Serialization.Tests
 			}
 		}
 
-		[Test]
+		[TestMethod]
 		public void InstanceCount()
 		{
 			string instanceName = GetCounterInstanceName(0);

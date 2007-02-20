@@ -15,7 +15,7 @@ namespace ExsltTest
     /// <summary>
     /// Collection of unit tests for GotDotNet Sets module functions.
     /// </summary>
-    [TestFixture]
+    [TestClass]
     public class GDNSetsTests : ExsltUnitTests
     {        
 
@@ -32,7 +32,7 @@ namespace ExsltTest
         /// Tests the following function:
         ///     set2:subset()
         /// </summary>
-        [Test]
+        [TestMethod]
         public void SubsetTest() 
         {
             RunAndCompare("source.xml", "subset.xslt", "subset.xml");

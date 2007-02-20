@@ -21,7 +21,7 @@ using TestMethod = NUnit.Framework.TestAttribute;
 
 namespace Mvp.Xml.Tests.XslReaderTests
 {
-    [TestFixture]
+    [TestClass]
     public class XslReaderTests
     {
         static string copyTransform =
@@ -42,7 +42,7 @@ namespace Mvp.Xml.Tests.XslReaderTests
         /// <summary>
         /// Compare with standard XmlReader test
         /// </summary>
-        [Test]
+        [TestMethod]
         public void Test1()
         {
             CompareWithStandardReader(true, 16);
@@ -114,7 +114,7 @@ namespace Mvp.Xml.Tests.XslReaderTests
         /// <summary>
         /// Test LookupNamespace()
         /// </summary>
-        [Test]
+        [TestMethod]
         public void Test2()
         {
             string xml = @"<foo xmlns:f=""bar""/>";            
@@ -139,7 +139,7 @@ namespace Mvp.Xml.Tests.XslReaderTests
         /// <summary>
         /// Test Read() after EOF
         /// </summary>
-        [Test]        
+        [TestMethod]        
         public void Test3()
         {
             string xml = @"<foo xmlns:f=""bar""/>";            
@@ -157,7 +157,7 @@ namespace Mvp.Xml.Tests.XslReaderTests
         /// <summary>
         /// Test singlethread with small buffer
         /// </summary>
-        [Test]
+        [TestMethod]
         public void Test4()
         {
             CompareWithStandardReader(false, 2);
@@ -166,7 +166,7 @@ namespace Mvp.Xml.Tests.XslReaderTests
         /// <summary>
         /// Test different bufer sizes
         /// </summary>
-        [Test]
+        [TestMethod]
         public void Test5()
         {
             for (int b = -1024; b < 1024; b+=100)
@@ -185,7 +185,7 @@ namespace Mvp.Xml.Tests.XslReaderTests
         /// <summary>
         /// Test reader restart
         /// </summary>
-        [Test]
+        [TestMethod]
         public void Test6()
         {
             XmlReader r = GetReader(Globals.NorthwindResource);
@@ -209,7 +209,7 @@ namespace Mvp.Xml.Tests.XslReaderTests
             CompareReaders(standard, xslReader);
         }
 
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(OverflowException))]
         public void Test7()
         {

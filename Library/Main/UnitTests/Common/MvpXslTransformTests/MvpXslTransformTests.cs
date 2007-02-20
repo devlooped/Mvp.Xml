@@ -18,7 +18,7 @@ using Mvp.Xml.Common.Xsl;
 
 namespace Mvp.Xml.Tests
 {
-    [TestFixture]
+    [TestClass]
     public class MvpXslTransformTests 
     {
         byte[] standardResult;
@@ -96,7 +96,7 @@ namespace Mvp.Xml.Tests
             return XmlReader.Create(Globals.GetResource(xml), s);
         }
 
-        [Test]
+        [TestMethod]
         public void TestStringInput()
         {
             MvpXslTransform xslt = GetMvpXslTransform();
@@ -106,7 +106,7 @@ namespace Mvp.Xml.Tests
             CompareResults(standardResult, ms.ToArray());
         }
 
-        [Test]
+        [TestMethod]
         public void TestStreamInput()
         {
             MvpXslTransform xslt = GetMvpXslTransform();
@@ -119,7 +119,7 @@ namespace Mvp.Xml.Tests
             }            
         }
 
-        [Test]
+        [TestMethod]
         public void TestTextReaderInput()
         {
             MvpXslTransform xslt = GetMvpXslTransform();
@@ -129,7 +129,7 @@ namespace Mvp.Xml.Tests
             CompareResults(standardResult, ms.ToArray());
         }
 
-        [Test]
+        [TestMethod]
         public void TestXmlReaderInput()
         {
             MvpXslTransform xslt = GetMvpXslTransform();
@@ -140,7 +140,7 @@ namespace Mvp.Xml.Tests
         }
 
 
-        [Test]
+        [TestMethod]
         public void TestIXPathNavigableInput()
         {
             MvpXslTransform xslt = GetMvpXslTransform();
@@ -150,7 +150,7 @@ namespace Mvp.Xml.Tests
             CompareResults(standardResult, ms.ToArray());
         }
 
-        [Test]
+        [TestMethod]
         public void TestStringInput2()
         {
             MvpXslTransform xslt = GetMvpXslTransform();
@@ -163,7 +163,7 @@ namespace Mvp.Xml.Tests
             CompareResults(standardResult, ms.ToArray());
         }
 
-        [Test]
+        [TestMethod]
         public void TestStreamInput2()
         {
             MvpXslTransform xslt = GetMvpXslTransform();
@@ -179,7 +179,7 @@ namespace Mvp.Xml.Tests
             }
         }
 
-        [Test]
+        [TestMethod]
         public void TestTextReaderInput2()
         {
             MvpXslTransform xslt = GetMvpXslTransform();
@@ -192,7 +192,7 @@ namespace Mvp.Xml.Tests
             CompareResults(standardResult, ms.ToArray());
         }
 
-        [Test]
+        [TestMethod]
         public void TestXmlReaderInput2()
         {
             MvpXslTransform xslt = GetMvpXslTransform();
@@ -206,7 +206,7 @@ namespace Mvp.Xml.Tests
         }
 
 
-        [Test]
+        [TestMethod]
         public void TestIXPathNavigableInput2()
         {
             MvpXslTransform xslt = GetMvpXslTransform();
@@ -219,7 +219,7 @@ namespace Mvp.Xml.Tests
             CompareResults(standardResult, ms.ToArray());
         }
 
-        [Test]
+        [TestMethod]
         public void TestStringOutput()
         {
             MvpXslTransform xslt = GetMvpXslTransform();
@@ -233,7 +233,7 @@ namespace Mvp.Xml.Tests
             }            
         }
 
-        [Test]
+        [TestMethod]
         public void TestStreamOutput()
         {
             MvpXslTransform xslt = GetMvpXslTransform();
@@ -249,7 +249,7 @@ namespace Mvp.Xml.Tests
             }
         }
 
-        [Test]
+        [TestMethod]
         public void TestTextWriterOutput()
         {
             MvpXslTransform xslt = GetMvpXslTransform();
@@ -265,7 +265,7 @@ namespace Mvp.Xml.Tests
             }
         }
 
-        [Test]
+        [TestMethod]
         public void TestXmlWriterOutput()
         {
             MvpXslTransform xslt = GetMvpXslTransform();
@@ -281,7 +281,7 @@ namespace Mvp.Xml.Tests
             }
         }
 
-        [Test]        
+        [TestMethod]        
         public void ResolverTestStringInput()
         {
             MvpXslTransform xslt = GetMvpXslTransform2();
@@ -291,7 +291,7 @@ namespace Mvp.Xml.Tests
             CompareResults(resolverTestStandardResult, ms.ToArray());            
         }
 
-        [Test]
+        [TestMethod]
         public void ResolverTestStreamInput()
         {
             MvpXslTransform xslt = GetMvpXslTransform2();
@@ -304,7 +304,7 @@ namespace Mvp.Xml.Tests
             }
         }
 
-        [Test]
+        [TestMethod]
         public void ResolverTestTextReaderInput()
         {
             MvpXslTransform xslt = GetMvpXslTransform2();
@@ -314,7 +314,7 @@ namespace Mvp.Xml.Tests
             CompareResults(resolverTestStandardResult, ms.ToArray());
         }
 
-        [Test]
+        [TestMethod]
         public void ResolverTestXmlReaderInput()
         {
             MvpXslTransform xslt = GetMvpXslTransform2();
@@ -324,7 +324,7 @@ namespace Mvp.Xml.Tests
             CompareResults(resolverTestStandardResult, ms.ToArray());
         }
 
-        [Test]
+        [TestMethod]
         public void ResolverTestIXPathNavigableInput()
         {
             MvpXslTransform xslt = GetMvpXslTransform2();
@@ -334,7 +334,7 @@ namespace Mvp.Xml.Tests
             CompareResults(resolverTestStandardResult, ms.ToArray());
         }
 
-        [Test]
+        [TestMethod]
         public void ExsltTest()
         {
             MvpXslTransform xslt = new MvpXslTransform();
@@ -346,7 +346,7 @@ namespace Mvp.Xml.Tests
             CompareResults(Encoding.ASCII.GetBytes(expected), ms.ToArray());
         }
 
-        [Test]       
+        [TestMethod]       
         public void NoExsltTest()
         {
             MvpXslTransform xslt = new MvpXslTransform();

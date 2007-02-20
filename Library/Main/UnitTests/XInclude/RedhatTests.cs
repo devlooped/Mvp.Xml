@@ -21,7 +21,7 @@ namespace Mvp.Xml.XInclude.Test
 	/// <summary>
 	/// Edinburgh University test cases from the XInclude Test suite.
 	/// </summary>
-	[TestFixture]
+	[TestClass]
 	public class RedhatTests
 	{
 		public RedhatTests()
@@ -43,7 +43,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Simple test of including another XML document.        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void imaq_include_xml_01() 
         {
             RunAndCompare("include.xml", "../../../result/XInclude/include.xml");            
@@ -54,7 +54,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Test recursive inclusion.        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void imaq_include_xml_02() 
         {
             RunAndCompare("recursive.xml", "../../../result/XInclude/recursive.xml");            
@@ -65,7 +65,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Simple test of including a set of nodes from an XML document.        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void imaq_include_xml_03() 
         {
             RunAndCompare("nodes.xml", "../../../result/XInclude/nodes.xml");            
@@ -76,7 +76,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// including another XML document with IDs        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void imaq_include_xml_04() 
         {
             RunAndCompare("docids.xml", "../../../result/XInclude/docids.xml");            
@@ -87,7 +87,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Simple test of including another text document        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void imaq_include_xml_05() 
         {
             RunAndCompare("txtinclude.xml", "../../../result/XInclude/txtinclude.xml");            
@@ -98,7 +98,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Simple test of a fallback on unavailable URI.        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void imaq_include_xml_06() 
         {
             RunAndCompare("fallback.xml", "../../../result/XInclude/fallback.xml");            

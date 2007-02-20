@@ -20,7 +20,7 @@ using System.Xml.Serialization;
 
 namespace Mvp.Xml.Serialization.Tests
 {
-	[TestFixture]
+	[TestClass]
 	public class XmlSerializerCacheTests
 	{
 		private bool NewInstaceCreated;
@@ -32,7 +32,7 @@ namespace Mvp.Xml.Serialization.Tests
 
 		}
 
-		[SetUp]
+		[TestInitialize]
 		public void SetUp()
 		{
 			cache = new XmlSerializerCache();
@@ -40,7 +40,7 @@ namespace Mvp.Xml.Serialization.Tests
 			ConnectListeners();
 		}
 
-		[TearDown]
+		[TestCleanup]
 		public void TearDown()
 		{
 			DisonnectListeners();
@@ -65,7 +65,7 @@ namespace Mvp.Xml.Serialization.Tests
 			cache.NewSerializer -= new SerializerCacheDelegate(cache_NewSerializer);
 			cache.CacheHit -= new SerializerCacheDelegate(cache_CacheHit);
 		}
-		[Test]
+		[TestMethod]
 		public void AllParams()
 		{
 			Type[] types1 = new Type[] { typeof(SerializeMe), typeof(SerializeMeToo) };
@@ -111,7 +111,7 @@ namespace Mvp.Xml.Serialization.Tests
 			Assert.AreSame(ser1, ser2);
 		}
 
-		[Test]
+		[TestMethod]
 		public void TypesParam()
 		{
 			Type[] types = new Type[] { typeof(SerializeMe), typeof(SerializeMeToo) };
@@ -132,7 +132,7 @@ namespace Mvp.Xml.Serialization.Tests
 			Assert.AreSame(ser1, ser2);
 		}
 
-		[Test]
+		[TestMethod]
 		public void OverridesParam()
 		{
 			XmlAttributeOverrides over1 = new XmlAttributeOverrides();
@@ -160,7 +160,7 @@ namespace Mvp.Xml.Serialization.Tests
 			Assert.AreSame(ser1, ser2);
 		}
 
-		[Test]
+		[TestMethod]
 		public void RootParam()
 		{
 			XmlRootAttribute root1 = new XmlRootAttribute("someelement");
@@ -179,7 +179,7 @@ namespace Mvp.Xml.Serialization.Tests
 			Assert.AreSame(ser1, ser2);
 		}
 
-		[Test]
+		[TestMethod]
 		public void NamespaceParam()
 		{
 			string namespace1 = "mynamespace";

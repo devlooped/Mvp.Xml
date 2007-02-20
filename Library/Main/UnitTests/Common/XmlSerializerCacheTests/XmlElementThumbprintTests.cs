@@ -20,7 +20,7 @@ using TestMethod = NUnit.Framework.TestAttribute;
 
 namespace Mvp.Xml.Serialization.Tests
 {
-	[TestFixture]
+	[TestClass]
 	public class XmlElementThumbprintTests
 	{
 		public XmlElementThumbprintTests()
@@ -34,7 +34,7 @@ namespace Mvp.Xml.Serialization.Tests
 		XmlAttributes atts1;
 		XmlAttributes atts2;
 
-		[SetUp]
+		[TestInitialize]
 		public void SetUp()
 		{
 			ov1 = new XmlAttributeOverrides();
@@ -44,7 +44,7 @@ namespace Mvp.Xml.Serialization.Tests
 			atts2 = new XmlAttributes();
 		}
 
-		[Test]
+		[TestMethod]
 		public void SameItemType()
 		{
 			XmlElementAttribute element1 = new XmlElementAttribute("myname", typeof(SerializeMe));
@@ -59,7 +59,7 @@ namespace Mvp.Xml.Serialization.Tests
 			ThumbprintHelpers.SameThumbprint(ov1, ov2);
 		}
 
-		[Test]
+		[TestMethod]
 		public void DifferentItemTypes()
 		{
 			XmlElementAttribute element1 = new XmlElementAttribute("myname", typeof(SerializeMe));
@@ -74,7 +74,7 @@ namespace Mvp.Xml.Serialization.Tests
 			ThumbprintHelpers.DifferentThumbprint(ov1, ov2);
 		}
 
-		[Test]
+		[TestMethod]
 		public void SameDataType()
 		{
 			XmlElementAttribute element1 = new XmlElementAttribute("myname", typeof(SerializeMe));
@@ -91,7 +91,7 @@ namespace Mvp.Xml.Serialization.Tests
 			ThumbprintHelpers.SameThumbprint(ov1, ov2);
 		}
 
-		[Test]
+		[TestMethod]
 		public void DifferentDataTypes()
 		{
 			XmlElementAttribute element1 = new XmlElementAttribute();
@@ -108,7 +108,7 @@ namespace Mvp.Xml.Serialization.Tests
 			ThumbprintHelpers.DifferentThumbprint(ov1, ov2);
 		}
 
-		[Test]
+		[TestMethod]
 		public void SameElementName()
 		{
 			XmlElementAttribute element1 = new XmlElementAttribute("myname");
@@ -123,7 +123,7 @@ namespace Mvp.Xml.Serialization.Tests
 			ThumbprintHelpers.SameThumbprint(ov1, ov2);
 		}
 
-		[Test]
+		[TestMethod]
 		public void DifferentElementNames()
 		{
 			XmlElementAttribute element1 = new XmlElementAttribute("myname");
@@ -138,7 +138,7 @@ namespace Mvp.Xml.Serialization.Tests
 			ThumbprintHelpers.DifferentThumbprint(ov1, ov2);
 		}
 
-		[Test]
+		[TestMethod]
 		public void DifferentTypes()
 		{
 			XmlElementAttribute element1 = new XmlElementAttribute("myname");
@@ -153,7 +153,7 @@ namespace Mvp.Xml.Serialization.Tests
 			ThumbprintHelpers.DifferentThumbprint(ov1, ov2);
 		}
 
-		[Test]
+		[TestMethod]
 		public void SameNamespace()
 		{
 			XmlElementAttribute element1 = new XmlElementAttribute("myname");
@@ -171,7 +171,7 @@ namespace Mvp.Xml.Serialization.Tests
 			ThumbprintHelpers.SameThumbprint(ov1, ov2);
 		}
 
-		[Test]
+		[TestMethod]
 		public void DifferentNamespace()
 		{
 			XmlElementAttribute element1 = new XmlElementAttribute("myname");
@@ -188,7 +188,7 @@ namespace Mvp.Xml.Serialization.Tests
 			ThumbprintHelpers.DifferentThumbprint(ov1, ov2);
 		}
 
-		[Test]
+		[TestMethod]
 		public void SameNullable()
 		{
 			XmlElementAttribute element1 = new XmlElementAttribute("myname");
@@ -205,7 +205,7 @@ namespace Mvp.Xml.Serialization.Tests
 			ThumbprintHelpers.SameThumbprint(ov1, ov2);
 		}
 
-		[Test]
+		[TestMethod]
 		public void DifferentNullable()
 		{
 			XmlElementAttribute element1 = new XmlElementAttribute("myname");
@@ -222,7 +222,7 @@ namespace Mvp.Xml.Serialization.Tests
 			ThumbprintHelpers.DifferentThumbprint(ov1, ov2);
 		}
 
-		[Test]
+		[TestMethod]
 		public void SameForm()
 		{
 			XmlElementAttribute element1 = new XmlElementAttribute("myname");
@@ -239,7 +239,7 @@ namespace Mvp.Xml.Serialization.Tests
 			ThumbprintHelpers.SameThumbprint(ov1, ov2);
 		}
 
-		[Test]
+		[TestMethod]
 		public void DifferentForm()
 		{
 			XmlElementAttribute element1 = new XmlElementAttribute("myname");
@@ -256,7 +256,7 @@ namespace Mvp.Xml.Serialization.Tests
 			ThumbprintHelpers.DifferentThumbprint(ov1, ov2);
 		}
 
-		[Test]
+		[TestMethod]
 		public void SameMemberName()
 		{
 			XmlElementAttribute element1 = new XmlElementAttribute("myname");
@@ -271,7 +271,7 @@ namespace Mvp.Xml.Serialization.Tests
 			ThumbprintHelpers.SameThumbprint(ov1, ov2);
 		}
 
-		[Test]
+		[TestMethod]
 		public void DifferentMemberName()
 		{
 			XmlElementAttribute element1 = new XmlElementAttribute("myname");

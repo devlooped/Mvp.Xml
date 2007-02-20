@@ -20,7 +20,7 @@ using TestMethod = NUnit.Framework.TestAttribute;
 
 namespace Mvp.Xml.Serialization.Tests
 {
-	[TestFixture]
+	[TestClass]
 	public class XmlTextThumbprintTests
 	{
 		public XmlTextThumbprintTests()
@@ -34,7 +34,7 @@ namespace Mvp.Xml.Serialization.Tests
 		XmlAttributes atts1;
 		XmlAttributes atts2;
 
-		[SetUp]
+		[TestInitialize]
 		public void SetUp()
 		{
 			ov1 = new XmlAttributeOverrides();
@@ -44,7 +44,7 @@ namespace Mvp.Xml.Serialization.Tests
 			atts2 = new XmlAttributes();
 		}
 
-		[Test]
+		[TestMethod]
 		public void SameType()
 		{
 			XmlTextAttribute text1 = new XmlTextAttribute(typeof(SerializeMe));
@@ -59,7 +59,7 @@ namespace Mvp.Xml.Serialization.Tests
 			ThumbprintHelpers.SameThumbprint(ov1,ov2);
 		}
 
-		[Test]
+		[TestMethod]
 		public void DifferentTypes()
 		{
 			XmlTextAttribute text1 = new XmlTextAttribute(typeof(SerializeMe));
@@ -75,7 +75,7 @@ namespace Mvp.Xml.Serialization.Tests
 
 		}
 
-		[Test]
+		[TestMethod]
 		public void SameDataType()
 		{
 			XmlTextAttribute text1 = new XmlTextAttribute();
@@ -92,7 +92,7 @@ namespace Mvp.Xml.Serialization.Tests
 			ThumbprintHelpers.SameThumbprint(ov1, ov2);
 		}
 
-		[Test]
+		[TestMethod]
 		public void DifferentDataTypes()
 		{
 			XmlTextAttribute text1 = new XmlTextAttribute();

@@ -18,7 +18,7 @@ namespace Mvp.Xml.XInclude.Test
     /// <summary>
     /// XInclude syntax tests.
     /// </summary>
-    [TestFixture]
+    [TestClass]
     public class XIncludeSyntaxTests
     {        
 
@@ -30,7 +30,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// No href and no xpointer attribute.
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(XIncludeSyntaxError))]
         public void NoHrefAndNoXPointerAttributes() 
         {
@@ -42,7 +42,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// xi:include child of xi:include.
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(XIncludeSyntaxError))]
         public void IncludeChildOfInclude() 
         {
@@ -54,7 +54,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// xi:fallback not child of xi:include.
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(XIncludeSyntaxError))]
         public void FallbackNotChildOfInclude() 
         {
@@ -66,7 +66,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Unknown value of parse attribute.
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(XIncludeSyntaxError))]
         public void UnknownParseAttribute() 
         {
@@ -78,7 +78,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Two xi:fallback.
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(XIncludeSyntaxError))]
         public void TwoFallbacks() 
         {

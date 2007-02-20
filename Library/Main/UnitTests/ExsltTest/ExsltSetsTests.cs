@@ -15,7 +15,7 @@ namespace ExsltTest
     /// <summary>
     /// Collection of unit tests for EXSLT Sets module functions.
     /// </summary>
-    [TestFixture]
+    [TestClass]
     public class ExsltSetsTests : ExsltUnitTests
     {        
 
@@ -32,7 +32,7 @@ namespace ExsltTest
         /// Tests the following function:
         ///     set:difference()
         /// </summary>
-        [Test]
+        [TestMethod]
         public void DifferenceTest() 
         {
             RunAndCompare("source.xml", "difference.xslt", "difference.xml");
@@ -42,7 +42,7 @@ namespace ExsltTest
         /// Tests the following function:
         ///     set:intersection()
         /// </summary>
-        [Test]
+        [TestMethod]
         public void IntersectionTest() 
         {
             RunAndCompare("source.xml", "intersection.xslt", "intersection.xml");
@@ -52,7 +52,7 @@ namespace ExsltTest
         /// Tests the following function:
         ///     set:distinct()
         /// </summary>
-        [Test]
+        [TestMethod]
         public void DistinctTest() 
         {
             RunAndCompare("source.xml", "distinct.xslt", "distinct.xml");
@@ -62,7 +62,7 @@ namespace ExsltTest
         /// Tests the following function:
         ///     set:has-same-node()
         /// </summary>
-        [Test]
+        [TestMethod]
         public void HasSameNodeTest() 
         {
             RunAndCompare("source.xml", "has-same-node.xslt", "has-same-node.xml");
@@ -72,7 +72,7 @@ namespace ExsltTest
         /// Tests the following function:
         ///     set:leading()
         /// </summary>
-        [Test]
+        [TestMethod]
         public void LeadingTest() 
         {
             RunAndCompare("source.xml", "leading.xslt", "leading.xml");
@@ -82,7 +82,7 @@ namespace ExsltTest
         /// Tests the following function:
         ///     set:trailing()
         /// </summary>
-        [Test]
+        [TestMethod]
         public void TrailingTest() 
         {
             RunAndCompare("source.xml", "trailing.xslt", "trailing.xml");

@@ -21,7 +21,7 @@ namespace Mvp.Xml.XInclude.Test
 	/// <summary>
 	/// Edinburgh University test cases from the XInclude Test suite.
 	/// </summary>
-	[TestFixture]
+	[TestClass]
 	public class LTG_Edinburgh_UnivTests
 	{
 		public LTG_Edinburgh_UnivTests()
@@ -44,7 +44,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Simple whole-file inclusion.        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void eduni_1() 
         {
             RunAndCompare("book.xml", "../result/book.xml");            
@@ -55,7 +55,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Verify that xi:include elements in the target have been processed in the acquired infoset, ie before the xpointer is applied.        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void eduni_2() 
         {
             RunAndCompare("extract.xml", "../result/extract.xml");            
@@ -66,7 +66,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Check xml:lang fixup        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void eduni_3() 
         {
             RunAndCompare("lang.xml", "../result/lang.xml");            

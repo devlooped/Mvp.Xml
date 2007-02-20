@@ -19,7 +19,7 @@ using Mvp.Xml.Common.Serialization;
 
 namespace Mvp.Xml.Serialization.Tests
 {
-	[TestFixture]
+	[TestClass]
 	public class StringSorterHelperTests
 	{
 		public StringSorterHelperTests()
@@ -30,7 +30,7 @@ namespace Mvp.Xml.Serialization.Tests
 		const string s2 = "Bert";
 		const string s3 = "Christoph";
 
-		[Test]
+		[TestMethod]
 		public void SortStrings()
 		{
 			StringSorter sorter = new StringSorter();
@@ -41,7 +41,7 @@ namespace Mvp.Xml.Serialization.Tests
 			AssertStringOrder( sorter.GetOrderedArray() );
 		}
 
-		[Test]
+		[TestMethod]
 		public void SortMoreStrings()
 		{
 			StringSorter sorter = new StringSorter();
@@ -52,7 +52,7 @@ namespace Mvp.Xml.Serialization.Tests
 			AssertStringOrder(sorter.GetOrderedArray());
 		}
 
-		[Test]
+		[TestMethod]
 		public void SortStrings2()
 		{
 			StringSorter sorter = new StringSorter();
@@ -63,7 +63,7 @@ namespace Mvp.Xml.Serialization.Tests
 			AssertStringOrder(sorter.GetOrderedArray());
 		}
 
-		[Test]
+		[TestMethod]
 		public void SortStrings3()
 		{
 			StringSorter sorter = new StringSorter();

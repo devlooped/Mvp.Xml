@@ -25,10 +25,10 @@ using TestMethod = NUnit.Framework.TestAttribute;
 
 namespace Mvp.Xml.Tests.UpperLowerTests
 {
-	[TestFixture]
+	[TestClass]
 	public class FirstUpperLowerTests
 	{
-		[Test]
+		[TestMethod]
 		public void XmlFirstUpperReader()
 		{
 			string xml = "<customer id='1' pp:id='aba' xmlns='urn-kzu' xmlns:pp='urn-pepenamespace'><pp:order /><order id='1'>Chocolates</order></customer>";
@@ -53,7 +53,7 @@ namespace Mvp.Xml.Tests.UpperLowerTests
 			Assert.AreEqual("pp:Order", fr.Name);
 		}
 
-		[Test]
+		[TestMethod]
 		public void XmlFirstLowerWriter()
 		{
 			string xml = "<Customer Id=\"1\" pp:Id=\"aba\" xmlns=\"urn-kzu\" xmlns:pp=\"urn-pepenamespace\"><pp:Order /><Order Id=\"1\">chocolates</Order></Customer>";
@@ -69,7 +69,7 @@ namespace Mvp.Xml.Tests.UpperLowerTests
 			Assert.AreEqual(xml.ToLower(), sw.ToString());
 		}
 
-		[Test]
+		[TestMethod]
 		public void Deserialization()
 		{
             XmlFirstUpperReader fu = new XmlFirstUpperReader("../../Common/UpperLowerTests/Customer.xml");
@@ -85,7 +85,7 @@ namespace Mvp.Xml.Tests.UpperLowerTests
 			Assert.AreEqual(25, c.Order.Id);
 		}
 
-		[Test]
+		[TestMethod]
 		public void Serialization()
 		{
             XmlFirstUpperReader fu = new XmlFirstUpperReader("../../Common/UpperLowerTests/Customer.xml");
