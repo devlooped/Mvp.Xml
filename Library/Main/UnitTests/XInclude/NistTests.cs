@@ -1,11 +1,20 @@
-﻿using System;
+using System;
 using System.Diagnostics;
 using System.Xml;
 using System.IO;
 using System.Text;
 
 using Mvp.Xml.XInclude;
+#if !NUNIT
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+#else
 using NUnit.Framework;
+using TestClass = NUnit.Framework.TestFixtureAttribute;
+using TestInitialize = NUnit.Framework.SetUpAttribute;
+using TestCleanup = NUnit.Framework.TearDownAttribute;
+using TestMethod = NUnit.Framework.TestAttribute;
+#endif
+
 
 namespace Mvp.Xml.XInclude.Test
 {

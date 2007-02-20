@@ -6,7 +6,16 @@ using System.Text;
 
 using Mvp.Xml.XInclude;
 using Mvp.Xml.Common;
+#if !NUNIT
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+#else
 using NUnit.Framework;
+using TestClass = NUnit.Framework.TestFixtureAttribute;
+using TestInitialize = NUnit.Framework.SetUpAttribute;
+using TestCleanup = NUnit.Framework.TearDownAttribute;
+using TestMethod = NUnit.Framework.TestAttribute;
+#endif
+
 
 namespace Mvp.Xml.XInclude.Test
 {

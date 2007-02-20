@@ -2,7 +2,16 @@ using System;
 using System.Diagnostics;
 
 using Mvp.Xml.XPointer;
+#if !NUNIT
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+#else
 using NUnit.Framework;
+using TestClass = NUnit.Framework.TestFixtureAttribute;
+using TestInitialize = NUnit.Framework.SetUpAttribute;
+using TestCleanup = NUnit.Framework.TearDownAttribute;
+using TestMethod = NUnit.Framework.TestAttribute;
+#endif
+
 
 namespace Mvp.Xml.XPointer.Test
 {
