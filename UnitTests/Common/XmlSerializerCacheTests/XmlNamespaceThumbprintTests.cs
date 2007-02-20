@@ -20,7 +20,7 @@ using TestMethod = NUnit.Framework.TestAttribute;
 
 namespace Mvp.Xml.Serialization.Tests
 {
-	[TestFixture]
+	[TestClass]
 	public class XmlNamespaceThumbprintTests
 	{
 		public XmlNamespaceThumbprintTests()
@@ -34,7 +34,7 @@ namespace Mvp.Xml.Serialization.Tests
 		XmlAttributes atts1;
 		XmlAttributes atts2;
 
-		[SetUp]
+		[TestInitialize]
 		public void SetUp()
 		{
 			ov1 = new XmlAttributeOverrides();
@@ -44,7 +44,7 @@ namespace Mvp.Xml.Serialization.Tests
 			atts2 = new XmlAttributes();
 		}
 
-		[Test]
+		[TestMethod]
 		public void KeepNamespaces()
 		{
 			atts1.Xmlns = true;
@@ -56,7 +56,7 @@ namespace Mvp.Xml.Serialization.Tests
 			ThumbprintHelpers.SameThumbprint(ov1, ov2);
 		}
 
-		[Test]
+		[TestMethod]
 		public void DontKeepNamespaces()
 		{
 			atts1.Xmlns = true;

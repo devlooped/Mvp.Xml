@@ -30,7 +30,7 @@ namespace Mvp.Xml.Serialization.Tests
 		public string MyString;
 	}
 
-	[TestFixture]
+	[TestClass]
 	public class XmlAttributeOverridesThumbprinterTester
 	{
 		public XmlAttributeOverridesThumbprinterTester()
@@ -38,7 +38,7 @@ namespace Mvp.Xml.Serialization.Tests
 
 		}
 
-		[Test]
+		[TestMethod]
 		public void SameEmptyObjectTwice()
 		{
 			// the same object should most certainly
@@ -47,7 +47,7 @@ namespace Mvp.Xml.Serialization.Tests
 			ThumbprintHelpers.SameThumbprint(ov, ov);
 		}
 
-		[Test]
+		[TestMethod]
 		public void DifferentEmptyObjects()
 		{
 			XmlAttributeOverrides ov1 = new XmlAttributeOverrides();
@@ -56,7 +56,7 @@ namespace Mvp.Xml.Serialization.Tests
 			ThumbprintHelpers.SameThumbprint(ov1, ov2);
 		}
 
-		[Test]
+		[TestMethod]
 		public void TwoDifferentEmptyObjects()
 		{
 			XmlAttributeOverrides ov1 = new XmlAttributeOverrides();
@@ -65,7 +65,7 @@ namespace Mvp.Xml.Serialization.Tests
 			ThumbprintHelpers.SameThumbprint(ov1, ov2);
 		}
 
-		[Test]
+		[TestMethod]
 		public void SameObjectWithRootAttribute()
 		{
 			XmlAttributeOverrides ov = new XmlAttributeOverrides();
@@ -75,7 +75,7 @@ namespace Mvp.Xml.Serialization.Tests
 
 			ThumbprintHelpers.SameThumbprint(ov, ov);
 		}
-		[Test]
+		[TestMethod]
 		public void TwoObjectsWithSameRootAttributeDifferentTypes()
 		{
 			XmlAttributeOverrides ov1 = new XmlAttributeOverrides();
@@ -91,7 +91,7 @@ namespace Mvp.Xml.Serialization.Tests
 			ThumbprintHelpers.DifferentThumbprint(ov1, ov2);
 		}
 
-		[Test]
+		[TestMethod]
 		public void TwoObjectsWithDifferentRootAttribute()
 		{
 			XmlAttributeOverrides ov1 = new XmlAttributeOverrides();
@@ -108,7 +108,7 @@ namespace Mvp.Xml.Serialization.Tests
 			ThumbprintHelpers.DifferentThumbprint(ov1, ov2);
 		}
 
-		[Test]
+		[TestMethod]
 		public void TwoObjectsWithSameRootAttribute()
 		{
 			XmlAttributeOverrides ov1 = new XmlAttributeOverrides();
@@ -125,7 +125,7 @@ namespace Mvp.Xml.Serialization.Tests
 			ThumbprintHelpers.SameThumbprint(ov1, ov2);
 		}
 
-		[Test]
+		[TestMethod]
 		public void SameXmlTypeTwice()
 		{
 			XmlAttributeOverrides ov = new XmlAttributeOverrides();
@@ -139,7 +139,7 @@ namespace Mvp.Xml.Serialization.Tests
 			ThumbprintHelpers.SameThumbprint(ov, ov);
 		}
 
-		[Test]
+		[TestMethod]
 		public void SameXmlTypeDifferentObjects()
 		{
 			XmlAttributeOverrides ov1 = new XmlAttributeOverrides();
@@ -156,7 +156,7 @@ namespace Mvp.Xml.Serialization.Tests
 			ov2.Add(typeof(SerializeMe), atts2);
 			ThumbprintHelpers.SameThumbprint(ov1, ov2);
 		}
-		[Test]
+		[TestMethod]
 		public void DifferentXmlTypes()
 		{
 			XmlAttributeOverrides ov1 = new XmlAttributeOverrides();
@@ -175,7 +175,7 @@ namespace Mvp.Xml.Serialization.Tests
 			ThumbprintHelpers.DifferentThumbprint(ov1, ov2);
 		}
 
-		[Test]
+		[TestMethod]
 		public void DifferentTypesSameXmlTypes()
 		{
 			XmlAttributeOverrides ov1 = new XmlAttributeOverrides();
@@ -194,7 +194,7 @@ namespace Mvp.Xml.Serialization.Tests
 			ThumbprintHelpers.DifferentThumbprint(ov1, ov2);
 		}
 
-		[Test]
+		[TestMethod]
 		public void SameMemberSameEmptyAttributes()
 		{
 			XmlAttributeOverrides ov1 = new XmlAttributeOverrides();
@@ -206,7 +206,7 @@ namespace Mvp.Xml.Serialization.Tests
 			ThumbprintHelpers.SameThumbprint(ov1, ov2);
 		}
 
-		[Test]
+		[TestMethod]
 		public void SameMemberSameEmptyAttibuteOverrides()
 		{
 			XmlAttributeOverrides ov1 = new XmlAttributeOverrides();

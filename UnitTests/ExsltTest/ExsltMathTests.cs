@@ -15,7 +15,7 @@ namespace ExsltTest
     /// <summary>
     /// Collection of unit tests for EXSLT Math module functions.
     /// </summary>
-    [TestFixture]
+    [TestClass]
     public class ExsltMathTests : ExsltUnitTests
     {        
 
@@ -32,7 +32,7 @@ namespace ExsltTest
         /// Tests the following function:
         ///     math:min()
         /// </summary>
-        [Test]
+        [TestMethod]
         public void MinTest() 
         {
             RunAndCompare("source.xml", "min.xslt", "min.xml");
@@ -42,7 +42,7 @@ namespace ExsltTest
         /// Tests the following function:
         ///     math:max()
         /// </summary>
-        [Test]
+        [TestMethod]
         public void MaxTest() 
         {
             RunAndCompare("source.xml", "max.xslt", "max.xml");
@@ -52,7 +52,7 @@ namespace ExsltTest
         /// Tests the following function:
         ///     math:highest()
         /// </summary>
-        [Test]
+        [TestMethod]
         public void HighestTest() 
         {
             RunAndCompare("source.xml", "highest.xslt", "highest.xml");
@@ -62,7 +62,7 @@ namespace ExsltTest
         /// Tests the following function:
         ///     math:lowest()
         /// </summary>
-        [Test]
+        [TestMethod]
         public void LowestTest() 
         {
             RunAndCompare("source.xml", "lowest.xslt", "lowest.xml");
@@ -72,7 +72,7 @@ namespace ExsltTest
         /// Tests the following function:
         ///     math:abs()
         /// </summary>
-        [Test]
+        [TestMethod]
         public void AbsTest() 
         {
             RunAndCompare("source.xml", "abs.xslt", "abs.xml");
@@ -82,7 +82,7 @@ namespace ExsltTest
         /// Tests the following function:
         ///     math:sqrt()
         /// </summary>
-        [Test]
+        [TestMethod]
         public void SqrtTest() 
         {
             RunAndCompare("source.xml", "sqrt.xslt", "sqrt.xml");
@@ -92,7 +92,7 @@ namespace ExsltTest
         /// Tests the following function:
         ///     math:power()
         /// </summary>
-        [Test]
+        [TestMethod]
         public void PowerTest() 
         {
             RunAndCompare("source.xml", "power.xslt", "power.xml");
@@ -102,7 +102,7 @@ namespace ExsltTest
         /// Tests the following function:
         ///     math:constant()
         /// </summary>
-        [Test]
+        [TestMethod]
         public void ConstantTest() 
         {
             RunAndCompare("source.xml", "constant.xslt", "constant.xml");
@@ -112,7 +112,7 @@ namespace ExsltTest
         /// Tests the following function:
         ///     math:log()
         /// </summary>
-        [Test]
+        [TestMethod]
         public void LogTest() 
         {
             RunAndCompare("source.xml", "log.xslt", "log.xml");
@@ -122,7 +122,7 @@ namespace ExsltTest
         /// Tests the following function:
         ///     math:random()
         /// </summary>
-        [Test]
+        [TestMethod]
         public void RandomTest() 
         {
             RunAndCompare("source.xml", "random.xslt", "random.xml");
@@ -132,7 +132,7 @@ namespace ExsltTest
         /// Tests the following function:
         ///     math:sin()
         /// </summary>
-        [Test]
+        [TestMethod]
         public void SinTest() 
         {
             RunAndCompare("source.xml", "sin.xslt", "sin.xml");
@@ -142,7 +142,7 @@ namespace ExsltTest
         /// Tests the following function:
         ///     math:cos()
         /// </summary>
-        [Test]
+        [TestMethod]
         public void CosTest() 
         {
             RunAndCompare("source.xml", "cos.xslt", "cos.xml");
@@ -152,7 +152,7 @@ namespace ExsltTest
         /// Tests the following function:
         ///     math:tan()
         /// </summary>
-        [Test]
+        [TestMethod]
         public void TanTest() 
         {
             RunAndCompare("source.xml", "tan.xslt", "tan.xml");
@@ -162,7 +162,7 @@ namespace ExsltTest
         /// Tests the following function:
         ///     math:asin()
         /// </summary>
-        [Test]
+        [TestMethod]
         public void AsinTest() 
         {
             RunAndCompare("source.xml", "asin.xslt", "asin.xml");
@@ -172,7 +172,7 @@ namespace ExsltTest
         /// Tests the following function:
         ///     math:acos()
         /// </summary>
-        [Test]
+        [TestMethod]
         public void AcosTest() 
         {
             RunAndCompare("source.xml", "acos.xslt", "acos.xml");
@@ -182,7 +182,7 @@ namespace ExsltTest
         /// Tests the following function:
         ///     math:atan()
         /// </summary>
-        [Test]
+        [TestMethod]
         public void AtanTest() 
         {
             RunAndCompare("source.xml", "atan.xslt", "atan.xml");
@@ -192,7 +192,7 @@ namespace ExsltTest
         /// Tests the following function:
         ///     math:atan2()
         /// </summary>
-        [Test]
+        [TestMethod]
         public void Atan2Test() 
         {
             RunAndCompare("source.xml", "atan2.xslt", "atan2.xml");
@@ -202,7 +202,7 @@ namespace ExsltTest
         /// Tests the following function:
         ///     math:exp()
         /// </summary>
-        [Test]
+        [TestMethod]
         public void ExpTest() 
         {
             RunAndCompare("source.xml", "exp.xslt", "exp.xml");

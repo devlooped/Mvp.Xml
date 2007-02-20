@@ -2,6 +2,7 @@ using System;
 using System.Xml;
 using System.Xml.XPath;
 using Mvp.Xml.Common;
+
 #if !NUNIT
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 #else
@@ -15,10 +16,10 @@ using TestMethod = NUnit.Framework.TestAttribute;
 
 namespace Mvp.Xml.Tests.XmlBaseAwareXmlTextReaderTests
 {
-	[TestFixture]
+	[TestClass]
 	public class Tests
 	{
-        [Test]
+        [TestMethod]
         public void BasicTest() 
         {
             XmlTextReader r = new XmlBaseAwareXmlTextReader("../../Common/XmlBaseAwareXmlTextReaderTests/test.xml");
@@ -70,7 +71,7 @@ namespace Mvp.Xml.Tests.XmlBaseAwareXmlTextReaderTests
             r.Close();
         }   
 
-		[Test]
+		[TestMethod]
 		public void ReaderWithPath() 
 		{
 			XmlTextReader r = new XmlBaseAwareXmlTextReader("../../Common/XmlBaseAwareXmlTextReaderTests/relativeTest.xml");

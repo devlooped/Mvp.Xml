@@ -15,7 +15,7 @@ namespace ExsltTest
     /// <summary>
     /// Collection of unit tests for GotDotNet Dynamic module functions.
     /// </summary>
-    [TestFixture]
+    [TestClass]
     public class GDNDynamicTests : ExsltUnitTests
     {        
         protected override string TestDir 
@@ -31,7 +31,7 @@ namespace ExsltTest
         /// Tests the following function:
         ///     dyn2:evaluate()
         /// </summary>
-        [Test]
+        [TestMethod]
         public void EvaluateTest() 
         {
             RunAndCompare("source.xml", "evaluate.xslt", "evaluate.xml");

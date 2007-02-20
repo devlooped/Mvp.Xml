@@ -20,10 +20,10 @@ namespace Mvp.Xml.Tests
 	/// <summary>
 	/// Test class for IndexingXPathNavigator
 	/// </summary>
-	[TestFixture]
+	[TestClass]
 	public class IndexingXPathNavigatorTest
 	{
-		[Test]
+		[TestMethod]
 		public void RunTests()
 		{
 			Main2(new string[0]);

@@ -15,7 +15,7 @@ namespace ExsltTest
     /// <summary>
     /// Collection of unit tests for EXSLT RegularExpressions module functions.
     /// </summary>
-    [TestFixture]
+    [TestClass]
     public class ExsltRegularExpressionsTests : ExsltUnitTests
     {        
 
@@ -32,7 +32,7 @@ namespace ExsltTest
         /// Tests the following function:
         ///     regexp:test()
         /// </summary>
-        [Test]
+        [TestMethod]
         public void TestTest() 
         {
             RunAndCompare("source.xml", "test.xslt", "test.xml");
@@ -42,7 +42,7 @@ namespace ExsltTest
         /// Tests the following function:
         ///     regexp:match()
         /// </summary>
-        [Test]
+        [TestMethod]
         public void MatchTest() 
         {
             RunAndCompare("source.xml", "match.xslt", "match.xml");
@@ -52,7 +52,7 @@ namespace ExsltTest
         /// Tests the following function:
         ///     regexp:replace()
         /// </summary>
-        [Test]
+        [TestMethod]
         public void ReplaceTest() 
         {
             RunAndCompare("source.xml", "replace.xslt", "replace.xml");

@@ -65,7 +65,7 @@ public bool  IsDefined(Type attributeType, bool inherit)
 #endregion
 }
 
-	[TestFixture]
+	[TestClass]
 	public class XmlChoiceIndetifierPrintTests
 	{
 		public XmlChoiceIndetifierPrintTests()
@@ -79,14 +79,14 @@ public bool  IsDefined(Type attributeType, bool inherit)
 		XmlAttributes atts1;
 		XmlAttributes atts2;
 
-		[SetUp]
+		[TestInitialize]
 		public void SetUp()
 		{
 			ov1 = new XmlAttributeOverrides();
 			ov2 = new XmlAttributeOverrides();
 		}
 
-		[Test]
+		[TestMethod]
 		public void SameMemberName()
 		{
 			atts1 = new XmlAttributes(new ChoiceIdentifierAttributeProvider("myname"));
@@ -98,7 +98,7 @@ public bool  IsDefined(Type attributeType, bool inherit)
 			ThumbprintHelpers.SameThumbprint(ov1, ov2);
 		}
 
-		[Test]
+		[TestMethod]
 		public void DifferentMemberName()
 		{
 			atts1 = new XmlAttributes(new ChoiceIdentifierAttributeProvider("myname"));

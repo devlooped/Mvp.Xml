@@ -25,19 +25,19 @@ namespace Mvp.Xml.Tests
 {
 	/// <summary>
 	/// </summary>
-	[TestFixture]
+	[TestClass]
 	public class XmlNodeListFactoryTests
 	{
 		private XmlDocument pubsDocument;
 
-		[SetUp]
+		[TestInitialize]
 		public void Setup()
 		{
 			pubsDocument = new XmlDocument();
 			pubsDocument.Load(Globals.GetResource(Globals.PubsResource));
 		}
 
-		[Test]
+		[TestMethod]
 		public void MultipleCompleteEnumerations()
 		{
 			XPathNodeIterator nodeIterator = pubsDocument.CreateNavigator().Select("/dsPubs/publishers");
@@ -58,7 +58,7 @@ namespace Mvp.Xml.Tests
 			Assert.IsTrue(enumerator.MoveNext());
 		}
 
-		[Test]
+		[TestMethod]
 		public void List1()
 		{
 			string xml = @"<?xml version='1.0'?>

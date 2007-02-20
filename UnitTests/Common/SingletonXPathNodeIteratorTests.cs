@@ -16,10 +16,10 @@ using TestMethod = NUnit.Framework.TestAttribute;
 
 namespace Mvp.Xml.Tests
 {
-    [TestFixture]
+    [TestClass]
     public class SingletonXPathNodeIteratorTests
     {
-        [Test]
+        [TestMethod]
         public void Test1()
         {
             XPathDocument doc = new XPathDocument(new StringReader("<foo/>"));

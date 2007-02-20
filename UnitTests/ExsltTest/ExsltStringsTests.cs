@@ -15,7 +15,7 @@ namespace ExsltTest
 	/// <summary>
 	/// Collection of unit tests for EXSLT Strings module functions.
 	/// </summary>
-	[TestFixture]
+	[TestClass]
 	public class ExsltStringsTests : ExsltUnitTests
 	{        
         protected override string TestDir 
@@ -31,7 +31,7 @@ namespace ExsltTest
         /// Tests the following function:
         ///     str:tokenize()
         /// </summary>
-        [Test]
+        [TestMethod]
         public void TokenizeTest() 
         {
             RunAndCompare("source.xml", "tokenize.xslt", "tokenize.xml");
@@ -41,7 +41,7 @@ namespace ExsltTest
         /// Tests the following function:
         ///     str:replace()
         /// </summary>
-        [Test]
+        [TestMethod]
         public void ReplaceTest() 
         {
             RunAndCompare("source.xml", "replace.xslt", "replace.xml");
@@ -51,7 +51,7 @@ namespace ExsltTest
         /// Tests the following function:
         ///     str:padding()
         /// </summary>
-        [Test]
+        [TestMethod]
         public void PaddingTest() 
         {
             RunAndCompare("source.xml", "padding.xslt", "padding.xml");
@@ -61,7 +61,7 @@ namespace ExsltTest
         /// Tests the following function:
         ///     str:align()
         /// </summary>
-        [Test]
+        [TestMethod]
         public void AlignTest() 
         {
             RunAndCompare("source.xml", "align.xslt", "align.xml");
@@ -71,7 +71,7 @@ namespace ExsltTest
         /// Tests the following function:
         ///     str:encode-uri()
         /// </summary>
-        [Test]
+        [TestMethod]
         public void EncodeUriTest() 
         {
             RunAndCompare("source.xml", "encode-uri.xslt", "encode-uri.xml");
@@ -81,7 +81,7 @@ namespace ExsltTest
         /// Tests the following function:
         ///     str:decode-uri()
         /// </summary>
-        [Test]
+        [TestMethod]
         public void DecodeUriTest() 
         {
             RunAndCompare("source.xml", "decode-uri.xslt", "decode-uri.xml");
@@ -91,7 +91,7 @@ namespace ExsltTest
         /// Tests the following function:
         ///     str:concat()
         /// </summary>
-        [Test]
+        [TestMethod]
         public void ConcatTest() 
         {
             RunAndCompare("source.xml", "concat.xslt", "concat.xml");
@@ -101,7 +101,7 @@ namespace ExsltTest
         /// Tests the following function:
         ///     str:split()
         /// </summary>
-        [Test]
+        [TestMethod]
         public void SplitTest() 
         {
             RunAndCompare("source.xml", "split.xslt", "split.xml");

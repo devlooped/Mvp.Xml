@@ -24,12 +24,12 @@ namespace Mvp.Xml.Tests
 {
 	/// <summary>
 	/// </summary>
-	[TestFixture]
+	[TestClass]
 	public class XmlNodeFactoryTests
 	{
 		static XmlSerializer ser = new XmlSerializer(typeof(XmlNode));
 
-		[Test]
+		[TestMethod]
 		public void NodeFromReader()
 		{
 			string xml = "<?xml version=\"1.0\" encoding=\"utf-8\"?><root><element>1</element><element></element><element>2</element></root>";
@@ -48,7 +48,7 @@ namespace Mvp.Xml.Tests
 		}
 
 
-		[Test]
+		[TestMethod]
 		public void NodeFromNavigator()
 		{
 			string xml = "<?xml version=\"1.0\" encoding=\"utf-8\"?><root><element>1</element><element /><element>2</element></root>";
@@ -82,7 +82,7 @@ namespace Mvp.Xml.Tests
 			Assert.AreEqual("<?xml version=\"1.0\" encoding=\"utf-8\"?><element>1</element>", res);
 		}
 
-		[Test]
+		[TestMethod]
 		public void NodeFromObject()
 		{
 			Customer cust = new Customer();

@@ -20,7 +20,7 @@ using System.Xml.Serialization;
 
 namespace Mvp.Xml.Serialization.Tests
 {
-	[TestFixture]
+	[TestClass]
 	public class XmlArrayItemThumbprintTests
 	{
 		public XmlArrayItemThumbprintTests()
@@ -34,7 +34,7 @@ namespace Mvp.Xml.Serialization.Tests
 		XmlAttributes atts1;
 		XmlAttributes atts2;
 
-		[SetUp]
+		[TestInitialize]
 		public void SetUp()
 		{
 			ov1 = new XmlAttributeOverrides();
@@ -44,7 +44,7 @@ namespace Mvp.Xml.Serialization.Tests
 			atts2 = new XmlAttributes();
 		}
 
-		[Test]
+		[TestMethod]
 		public void SameItemType()
 		{
 			XmlArrayItemAttribute array1 = new XmlArrayItemAttribute("myname", typeof(SerializeMe));
@@ -59,7 +59,7 @@ namespace Mvp.Xml.Serialization.Tests
 			ThumbprintHelpers.SameThumbprint(ov1, ov2);
 		}
 
-		[Test]
+		[TestMethod]
 		public void DifferentItemTypes()
 		{
 			XmlArrayItemAttribute array1 = new XmlArrayItemAttribute("myname", typeof(SerializeMe));
@@ -74,7 +74,7 @@ namespace Mvp.Xml.Serialization.Tests
 			ThumbprintHelpers.DifferentThumbprint(ov1, ov2);
 		}
 
-		[Test]
+		[TestMethod]
 		public void SameDataType()
 		{
 			XmlArrayItemAttribute array1 = new XmlArrayItemAttribute("myname", typeof(SerializeMe));
@@ -91,7 +91,7 @@ namespace Mvp.Xml.Serialization.Tests
 			ThumbprintHelpers.SameThumbprint(ov1, ov2);
 		}
 
-		[Test]
+		[TestMethod]
 		public void DifferentDataTypes()
 		{
 			XmlArrayItemAttribute array1 = new XmlArrayItemAttribute();
@@ -108,7 +108,7 @@ namespace Mvp.Xml.Serialization.Tests
 			ThumbprintHelpers.DifferentThumbprint(ov1, ov2);
 		}
 
-		[Test]
+		[TestMethod]
 		public void SameNestingLevel()
 		{
 			XmlArrayItemAttribute array1 = new XmlArrayItemAttribute("myname", typeof(SerializeMe));
@@ -125,7 +125,7 @@ namespace Mvp.Xml.Serialization.Tests
 			ThumbprintHelpers.SameThumbprint(ov1, ov2);
 		}
 
-		[Test]
+		[TestMethod]
 		public void DifferentNestingLevels()
 		{
 			XmlArrayItemAttribute array1 = new XmlArrayItemAttribute("myname", typeof(SerializeMe));
@@ -142,7 +142,7 @@ namespace Mvp.Xml.Serialization.Tests
 			ThumbprintHelpers.DifferentThumbprint(ov1, ov2);
 		}
 
-		[Test]
+		[TestMethod]
 		public void SameElementName()
 		{
 			XmlArrayItemAttribute array1 = new XmlArrayItemAttribute("myname");
@@ -157,7 +157,7 @@ namespace Mvp.Xml.Serialization.Tests
 			ThumbprintHelpers.SameThumbprint(ov1, ov2);
 		}
 
-		[Test]
+		[TestMethod]
 		public void DifferentTypes()
 		{
 			XmlArrayItemAttribute array1 = new XmlArrayItemAttribute("myname");
@@ -172,7 +172,7 @@ namespace Mvp.Xml.Serialization.Tests
 			ThumbprintHelpers.DifferentThumbprint(ov1, ov2);
 		}
 
-		[Test]
+		[TestMethod]
 		public void DifferentElementNames()
 		{
 			XmlArrayItemAttribute array1 = new XmlArrayItemAttribute("myname");
@@ -187,7 +187,7 @@ namespace Mvp.Xml.Serialization.Tests
 			ThumbprintHelpers.DifferentThumbprint(ov1, ov2);
 		}
 
-		[Test]
+		[TestMethod]
 		public void SameNamespace()
 		{
 			XmlArrayItemAttribute array1 = new XmlArrayItemAttribute("myname");
@@ -205,7 +205,7 @@ namespace Mvp.Xml.Serialization.Tests
 			ThumbprintHelpers.SameThumbprint(ov1, ov2);
 		}
 
-		[Test]
+		[TestMethod]
 		public void DifferentNamespace()
 		{
 			XmlArrayItemAttribute array1 = new XmlArrayItemAttribute("myname");
@@ -222,7 +222,7 @@ namespace Mvp.Xml.Serialization.Tests
 			ThumbprintHelpers.DifferentThumbprint(ov1, ov2);
 		}
 
-		[Test]
+		[TestMethod]
 		public void SameNullable()
 		{
 			XmlArrayItemAttribute array1 = new XmlArrayItemAttribute("myname");
@@ -239,7 +239,7 @@ namespace Mvp.Xml.Serialization.Tests
 			ThumbprintHelpers.SameThumbprint(ov1, ov2);
 		}
 
-		[Test]
+		[TestMethod]
 		public void DifferentNullable()
 		{
 			XmlArrayItemAttribute array1 = new XmlArrayItemAttribute("myname");
@@ -256,7 +256,7 @@ namespace Mvp.Xml.Serialization.Tests
 			ThumbprintHelpers.DifferentThumbprint(ov1, ov2);
 		}
 
-		[Test]
+		[TestMethod]
 		public void SameForm()
 		{
 			XmlArrayItemAttribute array1 = new XmlArrayItemAttribute("myname");
@@ -273,7 +273,7 @@ namespace Mvp.Xml.Serialization.Tests
 			ThumbprintHelpers.SameThumbprint(ov1, ov2);
 		}
 
-		[Test]
+		[TestMethod]
 		public void DifferentForm()
 		{
 			XmlArrayItemAttribute array1 = new XmlArrayItemAttribute("myname");
@@ -290,7 +290,7 @@ namespace Mvp.Xml.Serialization.Tests
 			ThumbprintHelpers.DifferentThumbprint(ov1, ov2);
 		}
 
-		[Test]
+		[TestMethod]
 		public void SameMemberName()
 		{
 			XmlArrayItemAttribute array1 = new XmlArrayItemAttribute("myname");
@@ -305,7 +305,7 @@ namespace Mvp.Xml.Serialization.Tests
 			ThumbprintHelpers.SameThumbprint(ov1, ov2);
 		}
 
-		[Test]
+		[TestMethod]
 		public void DifferentMemberName()
 		{
 			XmlArrayItemAttribute array1 = new XmlArrayItemAttribute("myname");

@@ -15,10 +15,10 @@ using TestMethod = NUnit.Framework.TestAttribute;
 
 namespace Mvp.Xml.Tests
 {
-    [TestFixture]
+    [TestClass]
     public class EmptyXPathNodeIteratorTests
     {
-        [Test]
+        [TestMethod]
         public void Test1()
         {
             EmptyXPathNodeIterator ni = EmptyXPathNodeIterator.Instance;
@@ -28,7 +28,7 @@ namespace Mvp.Xml.Tests
             }
         }
 
-        [Test]
+        [TestMethod]
         public void Test2()
         {
             EmptyXPathNodeIterator ni = EmptyXPathNodeIterator.Instance;

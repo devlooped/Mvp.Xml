@@ -21,7 +21,7 @@ namespace Mvp.Xml.XInclude.Test
 	/// <summary>
 	/// Edinburgh University test cases from the XInclude Test suite.
 	/// </summary>
-	[TestFixture]
+	[TestClass]
 	public class Elliotte_Rusty_HaroldTests
 	{
 		public Elliotte_Rusty_HaroldTests()
@@ -44,7 +44,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// xml:base attribute is used to resolve relative URLs in href attributes        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void harold_01() 
         {
             RunAndCompare("xmlbasetest.xml", "../result/xmlbasetest.xml");            
@@ -56,7 +56,7 @@ namespace Mvp.Xml.XInclude.Test
         /// Use XPointer to include an include element in another document,
         /// and make sure that's fully resolved too        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void harold_02() 
         {
             RunAndCompare("resolvethruxpointer.xml", "../result/resolvethruxpointer.xml");            
@@ -67,7 +67,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// xml:base attribute on the xi:include element is used to resolve relative URL in href        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void harold_03() 
         {
             RunAndCompare("xmlbasetest2.xml", "../result/xmlbasetest2.xml");            
@@ -79,7 +79,7 @@ namespace Mvp.Xml.XInclude.Test
         /// xml:base attribute from an unincluded element
         /// still applies to its included descendants        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void harold_04() 
         {
             RunAndCompare("xmlbasetest3.xml", "../result/xmlbasetest3.xml");            
@@ -92,7 +92,7 @@ namespace Mvp.Xml.XInclude.Test
         /// include element including the sibling element after that one.        
         /// </summary>
         /// <remarks>INTRA-DOCUMENT REFERENCES ARE NOT SUPPORTED BY THE XIncludingReader.</remarks>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(FatalResourceException))]
         public void harold_05() 
         {
@@ -105,7 +105,7 @@ namespace Mvp.Xml.XInclude.Test
         /// Include a document that uses XPointers to reference various parts of itself        
         /// </summary>
         /// <remarks>INTRA-DOCUMENT REFERENCES ARE NOT SUPPORTED BY THE XIncludingReader.</remarks>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(FatalResourceException))]
         public void harold_06() 
         {
@@ -117,7 +117,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// xml:lang attribute from including document does not override xml:lang attribute in included document        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void harold_07() 
         {
             RunAndCompare("langtest1.xml", "../result/langtest1.xml");            
@@ -129,7 +129,7 @@ namespace Mvp.Xml.XInclude.Test
         /// xml:lang attribute is added to retain the included element's language, even
         /// though the language was originaly declared on an unincluded element        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void harold_08() 
         {
             RunAndCompare("langtest2.xml", "../result/langtest2.xml");            
@@ -141,7 +141,7 @@ namespace Mvp.Xml.XInclude.Test
         /// xml:lang='' is added when the included document does not declare a language
         /// and the including element does        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void harold_09() 
         {
             RunAndCompare("langtest3.xml", "../result/langtest3.xml");            
@@ -156,7 +156,7 @@ namespace Mvp.Xml.XInclude.Test
         /// According to RFC 2396 empty string URI always refers to the current document irrespective of base URI.        
         /// </summary>
         /// <remarks>INTRA-DOCUMENT REFERENCES ARE NOT SUPPORTED BY THE XIncludingReader.</remarks>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(FatalResourceException))]
         public void harold_10() 
         {
@@ -170,7 +170,7 @@ namespace Mvp.Xml.XInclude.Test
         /// There's no difference between href="" and no href attribute.        
         /// </summary>
         /// <remarks>INTRA-DOCUMENT REFERENCES ARE NOT SUPPORTED BY THE XIncludingReader.</remarks>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(FatalResourceException))]
         public void harold_11() 
         {
@@ -184,7 +184,7 @@ namespace Mvp.Xml.XInclude.Test
         /// Make sure base URIs are preserved when including from the same document.        
         /// </summary>
         /// <remarks>INTRA-DOCUMENT REFERENCES ARE NOT SUPPORTED BY THE XIncludingReader.</remarks>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(FatalResourceException))]
         public void harold_12() 
         {
@@ -197,7 +197,7 @@ namespace Mvp.Xml.XInclude.Test
         /// Syntactically incorrect IRI is a fatal error (Eitehr I'm missing something or the spec needs to state this prinicple more clearly.)        
         /// </summary>
         /// <remarks>WE TREAT IT AS RESOURCE ERROR</remarks> 
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(DirectoryNotFoundException))]
         public void harold_13() 
         {
@@ -210,7 +210,7 @@ namespace Mvp.Xml.XInclude.Test
         /// Syntactically incorrect IRI with an unrecognized scheme is a fatal error        
         /// </summary>
         /// <remarks>WE TREAT IT AS RESOURCE ERROR</remarks> 
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(DirectoryNotFoundException))]
         public void harold_14() 
         {
@@ -222,7 +222,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Syntactically correct IRI with an unrecognized scheme is a resource error        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void harold_15() 
         {
             RunAndCompare("goodiri.xml", "../result/goodiri.xml");            
@@ -233,7 +233,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// accept attribute contains carriage-return/linefeed pair        
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(InvalidAcceptHTTPHeaderValueError))]
         public void harold_16() 
         {
@@ -245,7 +245,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// accept attribute contains Latin-1 character (non-breaking space)        
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(InvalidAcceptHTTPHeaderValueError))]
         public void harold_17() 
         {
@@ -257,7 +257,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Unprefixed, unrecognized attributes on an include element are ignored        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void harold_18() 
         {
             RunAndCompare("extraattributes.xml", "../result/c1.xml");            
@@ -268,7 +268,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Fallback elements can be empty        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void harold_19() 
         {
             RunAndCompare("emptyfallback.xml", "../result/emptyfallback.xml");            
@@ -279,7 +279,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Included documents can themselves use fallbacks        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void harold_20() 
         {
             RunAndCompare("metafallbacktest.xml", "../result/metafallbacktest.xml");            
@@ -291,7 +291,7 @@ namespace Mvp.Xml.XInclude.Test
         /// An included document can use a fallback that points into the included document        
         /// </summary>
         /// <remarks>INTRA-DOCUMENT REFERENCES ARE NOT SUPPORTED BY THE XIncludingReader.</remarks>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(FatalResourceException))]
         public void harold_21() 
         {
@@ -303,7 +303,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// An included document can use a fallback that includes another document as text        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void harold_22() 
         {
             RunAndCompare("metafallbacktest2.xml", "../result/metafallbacktest2.xml");            
@@ -314,7 +314,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// A fallback element in an included document contains an include element with a parse attribute with an illegal value.        
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(XIncludeSyntaxError))]
         public void harold_23() 
         {
@@ -326,7 +326,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// A fallback element in an included document contains an include element with neither an xpointer nor an href attribute.        
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(XIncludeSyntaxError))]
         public void harold_24() 
         {
@@ -339,7 +339,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// A fallback element in an included document contains an include element whose href attribute has a fragment ID.        
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(XIncludeSyntaxError))]
         public void harold_25() 
         {
@@ -351,7 +351,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// The XPointer does not select anything in the acquired infoset, but does select something in the source infoset.        
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(FatalResourceException))]
         public void harold_26() 
         {
@@ -363,7 +363,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// A fallback in an included document contains some text and a comment, but no elements.        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void harold_27() 
         {
             RunAndCompare("metafallbacktotexttest.xml", "../result/metafallbacktotexttest.xml");            
@@ -375,7 +375,7 @@ namespace Mvp.Xml.XInclude.Test
         /// Include element points to another include element, which has a missing resource
         /// and therefore activates a fallback.        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void harold_28() 
         {
             RunAndCompare("metafallbacktestwithxpointer.xml", "../result/metafallbacktestwithxpointer.xml");            
@@ -387,7 +387,7 @@ namespace Mvp.Xml.XInclude.Test
         /// An include element can include another include element that
         /// then uses a fallback.        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void harold_29() 
         {
             RunAndCompare("metafallbacktestwithxpointer2.xml", "../result/metafallbacktestwithxpointer2.xml");            
@@ -399,7 +399,7 @@ namespace Mvp.Xml.XInclude.Test
         /// An include element can include another include element that
         /// then fails to find a resource, which is a fatal error if there's no fallback.        
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(FatalResourceException))]
         public void harold_30() 
         {
@@ -412,7 +412,7 @@ namespace Mvp.Xml.XInclude.Test
         /// An include element can include another include element that
         /// then fails to find a resource, but it has a fallback, which itself has an include child, which then throws a fatal error.        
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(FatalResourceException))]
         public void harold_31() 
         {
@@ -424,7 +424,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Basic test from XInclude spec        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void harold_32() 
         {
             RunAndCompare("parseequalxml.xml", "../result/c1.xml");            
@@ -435,7 +435,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// An include element points to a document that includes it, using an xpointer to select part of that document.        
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(CircularInclusionException))]
         public void harold_33() 
         {
@@ -448,7 +448,7 @@ namespace Mvp.Xml.XInclude.Test
         /// An include element points to another include element in the same document.        
         /// </summary>
         /// <remarks>INTRA-DOCUMENT REFERENCES ARE NOT SUPPORTED BY THE XIncludingReader.</remarks>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(FatalResourceException))]
         public void harold_34() 
         {
@@ -460,7 +460,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Include elements can be siblings        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void harold_35() 
         {
             RunAndCompare("paralleltest.xml", "../result/paralleltest.xml");            
@@ -471,7 +471,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Namespaces (and lack thereof) must be preserved in included documents        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void harold_36() 
         {
             RunAndCompare("namespacetest.xml", "../result/namespacetest.xml");            
@@ -482,7 +482,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Detect an inclusion loop when an include element refers to itself        
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(FatalResourceException))]
         public void harold_37() 
         {
@@ -495,7 +495,7 @@ namespace Mvp.Xml.XInclude.Test
         /// Detect an inclusion loop when an include element refers to its ancestor element
         /// in the same document        
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(FatalResourceException))]
         public void harold_38() 
         {
@@ -507,7 +507,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Processing a document that contains no include elements produces the same document.        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void harold_39() 
         {
             RunAndCompare("latin1.xml", "../result/latin1.xml");            
@@ -518,7 +518,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Basic inclusion        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void harold_40() 
         {
             RunAndCompare("simple.xml", "../result/simple.xml");            
@@ -529,7 +529,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// The root element of a document can be an include element.        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void harold_41() 
         {
             RunAndCompare("roottest.xml", "../result/roottest.xml");            
@@ -541,7 +541,7 @@ namespace Mvp.Xml.XInclude.Test
         /// The root element of a document can be an include element.
         /// In this test the included document has a prolog and an epilog and the root element is replaced        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void harold_42() 
         {
             RunAndCompare("roottest2.xml", "../result/roottest2.xml");            
@@ -552,7 +552,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// testIncludeElementsCannotHaveIncludeChildren        
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(XIncludeSyntaxError))]
         public void harold_43() 
         {
@@ -564,7 +564,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Include elements cannot have children from the xinclude namespace except for fallback.        
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(XIncludeSyntaxError))]
         public void harold_44() 
         {
@@ -576,7 +576,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Fallback can only be a child of xinclude element        
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(XIncludeSyntaxError))]
         public void harold_45() 
         {
@@ -588,7 +588,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// A fallback element cannot have a fallback child element.        
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(XIncludeSyntaxError))]
         public void harold_46() 
         {
@@ -602,7 +602,7 @@ namespace Mvp.Xml.XInclude.Test
         /// or any other element from the XInclude namespace is a fatal error."
         /// In this test the fallback is activated.        
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(XIncludeSyntaxError))]
         public void harold_47() 
         {
@@ -616,7 +616,7 @@ namespace Mvp.Xml.XInclude.Test
         /// or any other element from the XInclude namespace is a fatal error."
         /// In this test the fallback is not activated.        
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(XIncludeSyntaxError))]
         public void harold_48() 
         {
@@ -628,7 +628,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// A document cannot include itself        
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(CircularInclusionException))]
         public void harold_49() 
         {
@@ -640,7 +640,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Document A includes document B which includes document A        
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(CircularInclusionException))]
         public void harold_50() 
         {
@@ -652,7 +652,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Include element is missing an href and xpointer attribute        
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(XIncludeSyntaxError))]
         public void harold_51() 
         {
@@ -664,7 +664,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// parse attribute must have value xml or text        
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(XIncludeSyntaxError))]
         public void harold_52() 
         {
@@ -676,7 +676,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Missing resource is fatal when there's no fallback        
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(FatalResourceException))]
         public void harold_53() 
         {
@@ -688,7 +688,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Missing resource is non-fatal when there's a fallback        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void harold_54() 
         {
             RunAndCompare("fallbacktest.xml", "../result/fallbacktest.xml");            
@@ -699,7 +699,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Fallback elements can themselves contain include elements        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void harold_55() 
         {
             RunAndCompare("fallbacktest2.xml", "../result/fallbacktest2.xml");            
@@ -710,7 +710,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// encoding="UTF-16"        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void harold_56() 
         {
             RunAndCompare("utf16.xml", "../result/utf16.xml");            
@@ -721,7 +721,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// A shorthand XPointer        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void harold_57() 
         {
             RunAndCompare("xptridtest.xml", "../result/xptridtest.xml");            
@@ -732,7 +732,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// XPointer that selects nothing is a resource error, and fatal because there's no fallback.        
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(FatalResourceException))]
         public void harold_58() 
         {
@@ -744,7 +744,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// XPointers of the forms described in [XPointer Framework] and [XPointer element() scheme] must be supported.        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void harold_59() 
         {
             RunAndCompare("xptrtumblertest.xml", "../result/xptrtumblertest.xml");            
@@ -755,7 +755,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Unrecognized colonized XPointer schemes are skipped, and the following scheme is used.        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void harold_60() 
         {
             RunAndCompare("colonizedschemename.xml", "../result/xptrtumblertest.xml");            
@@ -767,7 +767,7 @@ namespace Mvp.Xml.XInclude.Test
         /// Even if the first XPointer part locates a resource, a syntax error in
         /// the second XPointer part is still a fatal error.        
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(FatalResourceException))]
         public void harold_61() 
         {
@@ -780,7 +780,7 @@ namespace Mvp.Xml.XInclude.Test
         /// Even if the first XPointer part locates a resource, a syntax error in
         /// the second XPointer part is still a fatal error.        
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(FatalResourceException))]
         public void harold_62() 
         {
@@ -793,7 +793,7 @@ namespace Mvp.Xml.XInclude.Test
         /// You can include another element from the same document without an href attribute.        
         /// </summary>
         /// <remarks>INTRA-DOCUMENT REFERENCES ARE NOT SUPPORTED BY THE XIncludingReader.</remarks>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(FatalResourceException))]
         public void harold_63() 
         {
@@ -807,7 +807,7 @@ namespace Mvp.Xml.XInclude.Test
         /// The first and second one point to nothing. The third one
         /// selects something. XPointer parts are evaluated from left to right until one finds something.        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void harold_64() 
         {
             RunAndCompare("xptr2tumblertest.xml", "../result/xptrtumblertest.xml");            
@@ -821,7 +821,7 @@ namespace Mvp.Xml.XInclude.Test
         /// and points to nothing. The second one
         /// selects something.        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void harold_65() 
         {
             RunAndCompare("xptrtumblertest.xml", "../result/xptrtumblertest.xml");            
@@ -833,7 +833,7 @@ namespace Mvp.Xml.XInclude.Test
         /// Make sure XPointer syntax errors are treated as a resource
         /// error, not a fatal error; and thus fallbacks are applied        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void harold_66() 
         {
             RunAndCompare("xptrtumblerfailsbutfallback.xml", "../result/xptrtumblertest.xml");            
@@ -845,7 +845,7 @@ namespace Mvp.Xml.XInclude.Test
         /// Make sure XPointer syntax errors are treated as a resource
         /// error, not a fatal error; and thus fallbacks are applied        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void harold_67() 
         {
             RunAndCompare("xptrsyntaxerrorbutfallback.xml", "../result/xptrtumblertest.xml");            
@@ -858,7 +858,7 @@ namespace Mvp.Xml.XInclude.Test
         /// The first one points to nothing. The third one
         /// selects something.        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void harold_68() 
         {
             RunAndCompare("xptrtumblertest.xml", "../result/xptrtumblertest.xml");            
@@ -869,7 +869,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// An XPointer that doesn't point to anything is a resource error; and fatal because there's no fallback        
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(FatalResourceException))]
         public void harold_69() 
         {
@@ -881,7 +881,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Syntax error in an XPointer is a resource error; and fatal because there's no fallback        
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(FatalResourceException))]
         public void harold_70() 
         {
@@ -893,7 +893,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Syntax error in an XPointer is a resource error; and fatal because there's no fallback        
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(XIncludeSyntaxError))]
         public void harold_71() 
         {
@@ -905,7 +905,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Unrecognized XPointer scheme activates fallback        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void harold_72() 
         {
             RunAndCompare("xptrfallback.xml", "../result/xptrfallback.xml");            
@@ -916,7 +916,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// XPointer uses an element scheme where the first part is an ID        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void harold_73() 
         {
             RunAndCompare("xptridandtumblertest.xml", "../result/xptridandtumblertest.xml");            
@@ -927,7 +927,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Can autodetect UTF16 big endian files with a with a byte order mark when parse="text"        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void harold_74() 
         {
             RunAndCompare("UTF16BigEndianWithByteOrderMark.xml", "../result/UTF16BigEndianWithByteOrderMark.xml");            
@@ -938,7 +938,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Can autodetect UTF16 little endian files with a with a byte order mark when parse="text"        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void harold_75() 
         {
             RunAndCompare("UTF16LittleEndianWithByteOrderMark.xml", "../result/UTF16LittleEndianWithByteOrderMark.xml");            
@@ -949,7 +949,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Can autodetect UTF-8 files with a with a byte order mark when parse="text"        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void harold_76() 
         {
             RunAndCompare("UTF8WithByteOrderMark.xml", "../result/UTF8WithByteOrderMark.xml");            
@@ -960,7 +960,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Can autodetect UCS2 big endian files with a without a byte order mark when parse="text"        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void harold_77() 
         {
             XIncludeReaderTests.RunAndCompare(
@@ -973,7 +973,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Can autodetect UCS2 little endian files with a without a byte order mark when parse="text"        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void harold_78() 
         {
             XIncludeReaderTests.RunAndCompare(
@@ -987,7 +987,7 @@ namespace Mvp.Xml.XInclude.Test
         /// Can autodetect EBCDIC files with a without a byte order mark when parse="text"        
         /// </summary>
         /// <remarks>EBCDIC is not supported encoding</remarks>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(FatalResourceException))]
         public void harold_79() 
         {
@@ -1002,7 +1002,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Syntax error in an XPointer is a resource error; and fatal becaue there's no fallback        
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(FatalResourceException))]
         public void harold_80() 
         {
@@ -1014,7 +1014,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Syntax error in an XPointer is a resource error; and fatal becaue there's no fallback        
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(FatalResourceException))]
         public void harold_81() 
         {
@@ -1026,7 +1026,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Circular references via xpointer are fatal        
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(CircularInclusionException))]
         public void harold_82() 
         {
@@ -1038,7 +1038,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// href attribute with fragment ID is a fatal error even when there's an xpointer attribute        
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(XIncludeSyntaxError))]
         public void harold_83() 
         {
@@ -1050,7 +1050,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// href attribute with fragment ID is a fatal error        
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(XIncludeSyntaxError))]
         public void harold_84() 
         {
@@ -1062,7 +1062,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Line breaks must be preserved verbatim when including a document with parse="text"        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void harold_85() 
         {
             RunAndCompare("lineends.xml", "../result/lineends.xml");            
@@ -1074,7 +1074,7 @@ namespace Mvp.Xml.XInclude.Test
         /// A fragment identifier is semantically bad; but still meets the
         /// syntax of fragment IDs from RFC 2396.        
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(XIncludeSyntaxError))]
         public void harold_86() 
         {
@@ -1089,7 +1089,7 @@ namespace Mvp.Xml.XInclude.Test
         /// data. This is necessary because file URLs don't support
         /// content negotiation        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void harold_87() 
         {
             RunAndCompare("acceptfrench.xml", "../result/acceptfrench.xml");            
@@ -1103,7 +1103,7 @@ namespace Mvp.Xml.XInclude.Test
         /// data. This is necessary because file URLs don't support
         /// content negotiation        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void harold_88() 
         {
             RunAndCompare("acceptenglish.xml", "../result/acceptenglish.xml");            
@@ -1117,7 +1117,7 @@ namespace Mvp.Xml.XInclude.Test
         /// data. This is necessary because file URLs don't support
         /// content negotiation        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void harold_89() 
         {
             RunAndCompare("acceptplaintext.xml", "../result/acceptplaintext.xml");            
@@ -1131,7 +1131,7 @@ namespace Mvp.Xml.XInclude.Test
         /// data. This is necessary because file URLs don't support
         /// content negotiation        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void harold_90() 
         {
             RunAndCompare("accepthtml.xml", "../result/accepthtml.xml");            
@@ -1142,7 +1142,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Unrecognized scheme in XPointer is a fatal error if there's no fallback        
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(FatalResourceException))]
         public void harold_91() 
         {
@@ -1154,7 +1154,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Unrecognized scheme in XPointer is a resource error so fallbacks apply        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void harold_92() 
         {
             RunAndCompare("unrecognizedschemewithfallback.xml", "../result/unrecognizedschemewithfallback.xml");            
@@ -1165,7 +1165,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Basic inclusions as XML and text        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void harold_93() 
         {
             RunAndCompare("test.xml", "../result/test.xml");            
@@ -1176,7 +1176,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Included document has an include element with neither href nor xpointer attribute        
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(XIncludeSyntaxError))]
         public void harold_94() 
         {
@@ -1188,7 +1188,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// XPointers are resolved against the acquired infoset, not thge source infoset        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void harold_95() 
         {
             RunAndCompare("tobintop.xml", "../result/tobintop.xml");            
@@ -1199,7 +1199,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Test that a non-child sequence in an xpointer is treated as a resource error.        
         /// </summary>
-        [Test]
+        [TestMethod]
         public void harold_96() 
         {
             RunAndCompare("badelementschemedata.xml", "../result/badelementschemedata.xml");            
@@ -1210,7 +1210,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Since the xpointer attribute is not a URI reference, %-escaping must not appear in the XPointer, nor is there any need for a processor to apply or reverse such escaping.        
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(FatalResourceException))]
         public void harold_97() 
         {

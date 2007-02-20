@@ -22,7 +22,7 @@ namespace Mvp.Xml.XInclude.Test
     /// <summary>
     /// XIncludeReader general tests.
     /// </summary>
-    [TestFixture]
+    [TestClass]
     public class XIncludeReaderTests
     {        
 
@@ -194,7 +194,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// General test - it should work actually.
         /// </summary>
-        [Test]
+        [TestMethod]
         public void ItWorksAtLeast() 
         {
 			RunAndCompare("../../XInclude/tests/document.xml", "../../XInclude/results/document.xml");            
@@ -204,7 +204,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Non XML character in the included document.
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(NonXmlCharacterException))]
         public void NonXMLChar() 
         {
@@ -214,7 +214,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// File not found and no fallback.
         /// </summary>
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(FatalResourceException))]
         public void FileNotFound() 
         {
@@ -224,7 +224,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Includes itself by url.
         /// </summary>
-        [Test]        
+        [TestMethod]        
         public void IncludesItselfByUrl() 
         {
 			RunAndCompare("../../XInclude/tests/includesitself.xml", "../../XInclude/results/includesitself.xml");            
@@ -233,7 +233,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Includes itself by url - no href - as text.
         /// </summary>
-        [Test]        
+        [TestMethod]        
         [ExpectedException(typeof(FatalResourceException))]
         public void IncludesItselfNoHrefText() 
         {
@@ -243,7 +243,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Text inclusion. 
         /// </summary>
-        [Test]        
+        [TestMethod]        
         public void TextInclusion() 
         {
 			RunAndCompare("../../XInclude/tests/working_example.xml", "../../XInclude/results/working_example.xml");            
@@ -252,7 +252,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Text inclusion. 
         /// </summary>
-        [Test]        
+        [TestMethod]        
         public void TextInclusion2() 
         {
 			RunAndCompare("../../XInclude/tests/working_example2.xml", "../../XInclude/results/working_example2.xml");            
@@ -261,7 +261,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Fallback.
         /// </summary>
-        [Test]        
+        [TestMethod]        
         public void Fallback() 
         {
 			RunAndCompare("../../XInclude/tests/fallback.xml", "../../XInclude/results/fallback.xml");            
@@ -270,7 +270,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// XPointer.
         /// </summary>
-        [Test]        
+        [TestMethod]        
         public void XPointer() 
         {
 			RunAndCompare("../../XInclude/tests/xpointer.xml", "../../XInclude/results/xpointer.xml");            
@@ -279,7 +279,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// xml:lang fixup
         /// </summary>
-        [Test]        
+        [TestMethod]        
         public void XmlLangTest() 
         {
 			RunAndCompare("../../XInclude/tests/langtest.xml", "../../XInclude/results/langtest.xml");                                    
@@ -288,7 +288,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// ReadOuterXml() test.
         /// </summary>
-        [Test]
+        [TestMethod]
         public void OuterXmlTest() 
         {
 			XIncludingReader xir = new XIncludingReader("../../XInclude/tests/document.xml");
@@ -307,7 +307,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// ReadInnerXml() test.
         /// </summary>
-        [Test]
+        [TestMethod]
         public void InnerXmlTest() 
         {
 			XIncludingReader xir = new XIncludingReader("../../XInclude/tests/document.xml");
@@ -326,7 +326,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Depth test.
         /// </summary>
-        [Test]
+        [TestMethod]
         public void DepthTest() 
         {
 			XIncludingReader xir = new XIncludingReader("../../XInclude/tests/document.xml");
@@ -344,7 +344,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Custom resolver test.
         /// </summary>
-        [Test]        
+        [TestMethod]        
         public void CustomResolver() 
         {
 			RunAndCompare("../../XInclude/tests/resolver.xml", "../../XInclude/results/resolver.xml", false, new TestResolver());            
@@ -353,7 +353,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Test for a bug discovered by Martin Wickett.
         /// </summary>
-        [Test]        
+        [TestMethod]        
         public void Test_Martin() 
         {
 			RunAndCompare("../../XInclude/tests/test-Martin.xml", "../../XInclude/results/test-Martin.xml");            
@@ -362,7 +362,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Test for string as input (no base URI)
         /// </summary>
-        [Test]        
+        [TestMethod]        
         [ExpectedException(typeof(FatalResourceException))]
         public void NoBaseURITest() 
         {
@@ -377,7 +377,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Caching test.
         /// </summary>
-        [Test]        
+        [TestMethod]        
         public void CachingTest() 
         {
 			RunAndCompare("../../XInclude/tests/caching.xml", "../../XInclude/results/caching.xml");            
@@ -386,7 +386,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Infinite loop (bug 1187498)
         /// </summary>
-        [Test]        
+        [TestMethod]        
         public void LoopTest() 
         {
 			RunAndCompare("../../XInclude/tests/loop.xml", "../../XInclude/results/loop.xml");            

@@ -16,10 +16,10 @@ using TestMethod = NUnit.Framework.TestAttribute;
 
 namespace Mvp.Xml.Tests.XmlFragments
 {
-	[TestFixture]
+	[TestClass]
 	public class Tests
 	{
-		[Test]
+		[TestMethod]
 		public void ReadFragments()
 		{
 			XmlDocument doc = new XmlDocument();
@@ -29,7 +29,7 @@ namespace Mvp.Xml.Tests.XmlFragments
 			}
 		}
 
-		[Test]
+		[TestMethod]
 		public void ReadFragmentsRoot()
 		{
 			XmlDocument doc = new XmlDocument();
@@ -41,7 +41,7 @@ namespace Mvp.Xml.Tests.XmlFragments
 			Assert.AreEqual("pubs", doc.DocumentElement.LocalName);
 		}
 
-		[Test]
+		[TestMethod]
 		public void ReadFragmentsRootNs()
 		{
 			XmlDocument doc = new XmlDocument();

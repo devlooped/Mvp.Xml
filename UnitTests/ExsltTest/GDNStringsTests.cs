@@ -15,7 +15,7 @@ namespace ExsltTest
     /// <summary>
     /// Collection of unit tests for GotDotNet Strings module functions.
     /// </summary>
-    [TestFixture]
+    [TestClass]
     public class GDNStringsTests : ExsltUnitTests
     {        
         protected override string TestDir 
@@ -31,7 +31,7 @@ namespace ExsltTest
         /// Tests the following function:
         ///     str2:lowercase()
         /// </summary>
-        [Test]
+        [TestMethod]
         public void LowercaseTest() 
         {
             RunAndCompare("source.xml", "lowercase.xslt", "lowercase.xml");
@@ -41,7 +41,7 @@ namespace ExsltTest
         /// Tests the following function:
         ///     str2:uppercase()
         /// </summary>
-        [Test]
+        [TestMethod]
         public void UppercaseTest() 
         {
             RunAndCompare("source.xml", "uppercase.xslt", "uppercase.xml");

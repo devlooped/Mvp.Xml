@@ -20,7 +20,7 @@ using TestMethod = NUnit.Framework.TestAttribute;
 
 namespace Mvp.Xml.Serialization.Tests
 {
-	[TestFixture]
+	[TestClass]
 	public class XmlRootThumbprintTests
 	{
 		public XmlRootThumbprintTests()
@@ -34,7 +34,7 @@ namespace Mvp.Xml.Serialization.Tests
 		XmlAttributes atts1;
 		XmlAttributes atts2;
 
-		[SetUp]
+		[TestInitialize]
 		public void SetUp()
 		{
 			ov1 = new XmlAttributeOverrides();
@@ -44,7 +44,7 @@ namespace Mvp.Xml.Serialization.Tests
 			atts2 = new XmlAttributes();
 		}
 
-		[Test]
+		[TestMethod]
 		public void SameDataType()
 		{
 			XmlRootAttribute root1 = new XmlRootAttribute("myname");
@@ -61,7 +61,7 @@ namespace Mvp.Xml.Serialization.Tests
 			ThumbprintHelpers.SameThumbprint(ov1, ov2);
 		}
 
-		[Test]
+		[TestMethod]
 		public void DifferentDataType()
 		{
 			XmlRootAttribute root1 = new XmlRootAttribute("myname");
@@ -78,7 +78,7 @@ namespace Mvp.Xml.Serialization.Tests
 			ThumbprintHelpers.DifferentThumbprint(ov1, ov2);
 		}
 
-		[Test]
+		[TestMethod]
 		public void SameElementName()
 		{
 			XmlRootAttribute root1 = new XmlRootAttribute("myname");
@@ -93,7 +93,7 @@ namespace Mvp.Xml.Serialization.Tests
 			ThumbprintHelpers.SameThumbprint(ov1, ov2);
 		}
 
-		[Test]
+		[TestMethod]
 		public void DifferentElementName()
 		{
 			XmlRootAttribute root1 = new XmlRootAttribute("myname");
@@ -108,7 +108,7 @@ namespace Mvp.Xml.Serialization.Tests
 			ThumbprintHelpers.DifferentThumbprint(ov1, ov2);
 		}
 
-		[Test]
+		[TestMethod]
 		public void SameNullable()
 		{
 			XmlRootAttribute root1 = new XmlRootAttribute("myname");
@@ -125,7 +125,7 @@ namespace Mvp.Xml.Serialization.Tests
 			ThumbprintHelpers.SameThumbprint(ov1, ov2);
 		}
 
-		[Test]
+		[TestMethod]
 		public void DifferentNullable()
 		{
 			XmlRootAttribute root1 = new XmlRootAttribute("myname");
@@ -142,7 +142,7 @@ namespace Mvp.Xml.Serialization.Tests
 			ThumbprintHelpers.DifferentThumbprint(ov1, ov2);
 		}
 
-		[Test]
+		[TestMethod]
 		public void SameNamespace()
 		{
 			XmlRootAttribute root1 = new XmlRootAttribute("myname");
@@ -160,7 +160,7 @@ namespace Mvp.Xml.Serialization.Tests
 			ThumbprintHelpers.SameThumbprint(ov1, ov2);
 		}
 
-		[Test]
+		[TestMethod]
 		public void DifferentNamespace()
 		{
 			XmlRootAttribute root1 = new XmlRootAttribute("myname");

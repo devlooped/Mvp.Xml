@@ -6,6 +6,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{69A83678-6FBE-41AB-A53A-8360FACB4A69}"
 	ProjectSection(SolutionItems) = preProject
 		Solution Items\localtestrun.testrunconfig = Solution Items\localtestrun.testrunconfig
+		..\..\Mvp-Xml.Net20.Public.snk = ..\..\Mvp-Xml.Net20.Public.snk
 		Mvp.Xml.vsmdi = Mvp.Xml.vsmdi
 	EndProjectSection
 	ProjectSection(FolderStartupServices) = postProject
@@ -26,9 +27,6 @@ Global
 		SccProjectUniqueName2 = UnitTests\\Mvp.Xml.Tests.NUnit.csproj
 		SccProjectName2 = UnitTests
 		SccLocalPath2 = UnitTests
-	EndGlobalSection
-	GlobalSection(TestCaseManagementSettings) = postSolution
-		CategoryFile = Mvp.Xml.vsmdi
 	EndGlobalSection
 	GlobalSection(TextTemplating) = postSolution
 		TextTemplating = 1

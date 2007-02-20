@@ -21,7 +21,7 @@ using System.Diagnostics;
 
 namespace Mvp.Xml.Serialization.Tests
 {
-	[TestFixture]
+	[TestClass]
 	public class PerfCounterTests
 	{
 		public PerfCounterTests()
@@ -29,7 +29,7 @@ namespace Mvp.Xml.Serialization.Tests
 
 		}
 
-		[Test]
+		[TestMethod]
 		public void BothCounters()
 		{
 			using (XmlSerializerCache cache = new XmlSerializerCache())

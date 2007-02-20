@@ -20,7 +20,7 @@ using Mvp.Xml.Common.Serialization;
 
 namespace Mvp.Xml.Serialization.Tests
 {
-	[TestFixture]
+	[TestClass]
 	public class XmlAnyElementThumbprintTests
 	{
 		public XmlAnyElementThumbprintTests()
@@ -34,7 +34,7 @@ namespace Mvp.Xml.Serialization.Tests
 		XmlAttributes atts1;
 		XmlAttributes atts2;
 
-		[SetUp]
+		[TestInitialize]
 		public void SetUp()
 		{
 			ov1 = new XmlAttributeOverrides();
@@ -45,7 +45,7 @@ namespace Mvp.Xml.Serialization.Tests
 		}
 
 
-		[Test]
+		[TestMethod]
 		public void AnyElementAttributesSameMember()
 		{
 			XmlAnyElementAttribute any1 = new XmlAnyElementAttribute();
@@ -60,7 +60,7 @@ namespace Mvp.Xml.Serialization.Tests
 			ThumbprintHelpers.SameThumbprint(ov1, ov2);
 		}
 
-		[Test]
+		[TestMethod]
 		public void AnyElementAttributesSameNamespace()
 		{
 			XmlAnyElementAttribute any1 = new XmlAnyElementAttribute("myname", "myns");
@@ -75,7 +75,7 @@ namespace Mvp.Xml.Serialization.Tests
 			ThumbprintHelpers.SameThumbprint(ov1, ov2);
 		}
 
-		[Test]
+		[TestMethod]
 		public void DifferentNamespacesAnyElementAttributes()
 		{
 			XmlAnyElementAttribute any1 = new XmlAnyElementAttribute("myname", "myns");
@@ -90,7 +90,7 @@ namespace Mvp.Xml.Serialization.Tests
 			ThumbprintHelpers.DifferentThumbprint(ov1, ov2);
 		}
 
-		[Test]
+		[TestMethod]
 		public void DifferentNamesAnyElementAttributes()
 		{
 			XmlAnyElementAttribute any1 = new XmlAnyElementAttribute("myname", "myns");
@@ -105,7 +105,7 @@ namespace Mvp.Xml.Serialization.Tests
 			ThumbprintHelpers.DifferentThumbprint(ov1, ov2);
 		}
 
-		[Test]
+		[TestMethod]
 		public void AnyElementAttributeDifferentMember()
 		{
 			XmlAnyElementAttribute any1 = new XmlAnyElementAttribute("myname", "myns");
@@ -119,7 +119,7 @@ namespace Mvp.Xml.Serialization.Tests
 			ThumbprintHelpers.DifferentThumbprint(ov1, ov2);
 		}
 
-		[Test]
+		[TestMethod]
 		public void TwoSameAnyElement()
 		{
 			XmlAnyElementAttribute any1 = new XmlAnyElementAttribute("myname", "myns");
@@ -134,7 +134,7 @@ namespace Mvp.Xml.Serialization.Tests
 			ThumbprintHelpers.SameThumbprint(ov1, ov2);
 		}
 
-		[Test]
+		[TestMethod]
 		public void TwoDifferentAnyElement()
 		{
 			XmlAnyElementAttribute any1 = new XmlAnyElementAttribute("myname", "myns");

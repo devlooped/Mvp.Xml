@@ -15,7 +15,7 @@ namespace ExsltTest
     /// <summary>
     /// Collection of unit tests for EXSLT Common module functions.
     /// </summary>
-    [TestFixture]
+    [TestClass]
     public class ExsltCommonTests : ExsltUnitTests
     {        
 
@@ -32,7 +32,7 @@ namespace ExsltTest
         /// Tests the following function:
         ///     exsl:node-set()
         /// </summary>
-        [Test]
+        [TestMethod]
         public void NodeSetTest() 
         {
             RunAndCompare("source.xml", "node-set.xslt", "node-set.xml");
@@ -42,7 +42,7 @@ namespace ExsltTest
         /// Tests the following function:
         ///     exsl:object-type()
         /// </summary>
-        [Test]
+        [TestMethod]
         public void ObjectTypeTest() 
         {
             RunAndCompare("source.xml", "object-type.xslt", "object-type.xml");

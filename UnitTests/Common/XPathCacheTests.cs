@@ -17,26 +17,26 @@ using TestMethod = NUnit.Framework.TestAttribute;
 
 namespace Mvp.Xml.Tests
 {
-	[TestFixture]
+	[TestClass]
 	public class XPathCacheTests
 	{
 		private XPathDocument Document;
 		private XPathDocument DocumentNoNs;
 
-		[SetUp]
+		[TestInitialize]
 		public void Setup()
 		{
 			Document = new XPathDocument(Globals.GetResource(Globals.PubsNsResource));
 			DocumentNoNs = new XPathDocument(Globals.GetResource(Globals.PubsResource));
 		}
 
-		[TearDown]
+		[TestCleanup]
 		public void TearDown()
 		{
 			Document = null;
 		}
 
-		[Test]
+		[TestMethod]
 		public void DefaultNamespace()
 		{
 			dsPubs pubs = new dsPubs();
@@ -52,7 +52,7 @@ namespace Mvp.Xml.Tests
 			Assert.IsNotNull(xml);
 		}
 
-		[Test]
+		[TestMethod]
 		public void DynamicVariable()
 		{
 			string expr = "//mvp:titles[mvp:price > 10]";
@@ -78,7 +78,7 @@ namespace Mvp.Xml.Tests
 			Assert.AreEqual(count1, count2);
 		}
 
-		[Test]
+		[TestMethod]
 		public void PrefixMapping()
 		{
             string expr = "//mvp:titles[mvp:price > 10]";
@@ -96,7 +96,7 @@ namespace Mvp.Xml.Tests
 			Assert.AreEqual(count1, count2);
 		}
 
-		[Test]
+		[TestMethod]
 		public void Sorted1()
 		{
 			string expr = "//mvp:titles";

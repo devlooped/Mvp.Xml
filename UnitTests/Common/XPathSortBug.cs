@@ -17,10 +17,10 @@ using TestMethod = NUnit.Framework.TestAttribute;
 namespace Mvp.Xml.Tests
 {
 	/// <summary/>
-	[TestFixture]
+	[TestClass]
 	public class XPathSortBug
 	{
-		[Test]
+		[TestMethod]
 		public void Repro()
 		{
 			string xml = @"
