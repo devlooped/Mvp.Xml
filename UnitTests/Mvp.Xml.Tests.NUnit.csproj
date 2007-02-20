@@ -45,11 +45,13 @@
     <Compile Include="Common\MvpXslTransformTests\MvpXslTransformTests.cs" />
     <Compile Include="Common\pubsNs.cs">
       <DependentUpon>pubsNs.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Common\SingletonXPathNodeIteratorTests.cs" />
     <Compile Include="Common\SubtreeeXPathNavigatorTests\Tests.cs" />
     <Compile Include="Common\UpperLowerTests\Customer.cs">
       <DependentUpon>Customer.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Common\UpperLowerTests\FirstUpperLowerTests.cs" />
     <Compile Include="Common\XmlBaseAwareXmlTextReaderTests\Tests.cs" />
@@ -120,24 +122,60 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Common\changelog.txt" />
-    <Content Include="Common\library.xml" />
-    <Content Include="Common\MvpXslTransformTests\exslt-test.xslt" />
-    <Content Include="Common\MvpXslTransformTests\out.xml" />
-    <Content Include="Common\MvpXslTransformTests\resolver-test.xslt" />
-    <Content Include="Common\MvpXslTransformTests\test.xml" />
-    <Content Include="Common\MvpXslTransformTests\test1.xslt" />
-    <Content Include="Common\northwind.xml" />
-    <Content Include="Common\pubs.xml" />
-    <Content Include="Common\pubsNs.xml" />
-    <Content Include="Common\SubtreeeXPathNavigatorTests\nodecopy.xsl" />
-    <Content Include="Common\SubtreeeXPathNavigatorTests\print_root.xsl" />
-    <Content Include="Common\SubtreeeXPathNavigatorTests\test.xsl" />
-    <Content Include="Common\UpperLowerTests\Customer.xml" />
-    <Content Include="Common\XmlBaseAwareXmlTextReaderTests\relativeTest.xml" />
-    <Content Include="Common\XmlBaseAwareXmlTextReaderTests\test.xml" />
-    <Content Include="Common\XmlFragments\publishers.xml" />
-    <Content Include="Common\XPathIteratorReaderTests\rss.xml" />
-    <Content Include="Common\XslReaderTests\test1.xslt" />
+    <None Include="Common\library.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Content Include="Common\MvpXslTransformTests\exslt-test.xslt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Common\MvpXslTransformTests\out.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Common\MvpXslTransformTests\resolver-test.xslt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Common\MvpXslTransformTests\test.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Common\MvpXslTransformTests\test1.xslt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Common\northwind.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Common\pubs.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Common\pubsNs.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Content Include="Common\SubtreeeXPathNavigatorTests\nodecopy.xsl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Common\SubtreeeXPathNavigatorTests\print_root.xsl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Common\SubtreeeXPathNavigatorTests\test.xsl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Common\UpperLowerTests\Customer.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Common\XmlBaseAwareXmlTextReaderTests\relativeTest.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Common\XmlBaseAwareXmlTextReaderTests\test.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Common\XmlFragments\publishers.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Common\XPathIteratorReaderTests\rss.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Common\XslReaderTests\test1.xslt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="ExsltTest\FunctionsAvailability.html" />
     <Content Include="ExsltTest\results\EXSLT\Common\node-set.xml" />
     <Content Include="ExsltTest\results\EXSLT\Common\object-type.xml" />
@@ -746,12 +784,15 @@
   <ItemGroup>
     <None Include="Common\pubsNs.xsd">
       <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Common\UpperLowerTests\Customer.xsd">
+    <Content Include="Common\UpperLowerTests\Customer.xsd">
       <SubType>Designer</SubType>
-    </None>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Common\UpperLowerTests\Customer.xsx">
       <DependentUpon>Customer.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="ExsltTest\AvailabilityTest.cmd" />
     <None Include="ExsltXPathTest\Makefile" />

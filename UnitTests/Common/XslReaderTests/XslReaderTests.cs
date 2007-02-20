@@ -52,7 +52,7 @@ namespace Mvp.Xml.Tests.XslReaderTests
         {
             XmlReader r = GetReader(Globals.NorthwindResource);
             XslCompiledTransform xslt = new XslCompiledTransform();
-            xslt.Load("../../XslReaderTests/test1.xslt");
+            xslt.Load("../../Common/XslReaderTests/test1.xslt");
             MemoryStream ms = new MemoryStream();
             XmlWriterSettings s = new XmlWriterSettings();
             s.OmitXmlDeclaration = true;
@@ -190,7 +190,7 @@ namespace Mvp.Xml.Tests.XslReaderTests
         {
             XmlReader r = GetReader(Globals.NorthwindResource);
             XslCompiledTransform xslt = new XslCompiledTransform();
-            xslt.Load("../../XslReaderTests/test1.xslt");
+            xslt.Load("../../Common/XslReaderTests/test1.xslt");
             MemoryStream ms = new MemoryStream();
             XmlWriterSettings s = new XmlWriterSettings();
             s.OmitXmlDeclaration = true;

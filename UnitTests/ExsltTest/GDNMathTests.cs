@@ -20,11 +20,11 @@ namespace ExsltTest
     {        
         protected override string TestDir 
         {
-            get { return "tests/GotDotNet/Math/"; }
+			get { return "../../ExsltTest/tests/GotDotNet/Math/"; }
         }
         protected override string ResultsDir 
         {
-            get { return "results/GotDotNet/Math/"; }
+			get { return "../../ExsltTest/results/GotDotNet/Math/"; }
         }   
         
         /// <summary>

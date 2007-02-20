@@ -26,6 +26,7 @@ namespace Mvp.Xml.Tests.SubtreeeXPathNavigatorTests
 	[TestFixture]
 	public class SubtreeTests
 	{
+		[Ignore]
 		[Test]
 		public void SubtreeSpeed() 
 		{
@@ -35,8 +36,7 @@ namespace Mvp.Xml.Tests.SubtreeeXPathNavigatorTests
 			doc.Load(Globals.GetResource(Globals.LibraryResource));
 
             XslCompiledTransform xslt = new XslCompiledTransform();
-			xslt.Load(new XmlTextReader(
-				Globals.GetResource(this.GetType().Namespace + ".print_root.xsl")));
+			xslt.Load("../../Common/SubtreeeXPathNavigatorTests/print_root.xsl");
 
             Stopwatch stopWatch = new Stopwatch();
 
@@ -107,12 +107,12 @@ namespace Mvp.Xml.Tests.SubtreeeXPathNavigatorTests
 			Console.WriteLine(new StreamReader(stmxpath).ReadToEnd());
 		}
 
+		[Ignore]
 		[Test]
 		public void SubtreeTransform() 
 		{
             XslCompiledTransform tx = new XslCompiledTransform();
-			tx.Load(new XmlTextReader(
-				Globals.GetResource(this.GetType().Namespace + ".test.xsl")));
+			tx.Load("../../Common/SubtreeeXPathNavigatorTests/test.xsl");
 
 			string xml = @"
 	<root>
@@ -130,8 +130,6 @@ namespace Mvp.Xml.Tests.SubtreeeXPathNavigatorTests
 			tx.Transform(new DebuggingXPathNavigator(dom.DocumentElement.FirstChild.CreateNavigator()), 
 				null, Console.Out);
 
-			Console.WriteLine();
-
 			XPathDocument doc = new XPathDocument(new StringReader(xml));
 			XPathNavigator nav = doc.CreateNavigator();
 			nav.MoveToRoot();
@@ -142,12 +140,12 @@ namespace Mvp.Xml.Tests.SubtreeeXPathNavigatorTests
 			tx.Transform(new DebuggingXPathNavigator(new SubtreeXPathNavigator(nav)), null, Console.Out);
 		}
 
+		[Ignore]
 		[Test]
 		public void TestBooks()
 		{
-            XslCompiledTransform xslt = new XslCompiledTransform();     
-			xslt.Load(new XmlTextReader(
-				Globals.GetResource(this.GetType().Namespace + ".nodecopy.xsl")));
+            XslCompiledTransform xslt = new XslCompiledTransform();
+			xslt.Load("../../Common/SubtreeeXPathNavigatorTests/nodecopy.xsl");
 			XPathDocument doc = new XPathDocument(Globals.GetResource(Globals.LibraryResource));
 
 			XmlDocument dom = new XmlDocument();
@@ -167,6 +165,7 @@ namespace Mvp.Xml.Tests.SubtreeeXPathNavigatorTests
 			xslt.Transform(new SubtreeXPathNavigator(nav), null, Console.Out);
 		}
 
+		[Ignore]
 		[Test]
 		public void TestRead()
 		{

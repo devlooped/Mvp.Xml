@@ -35,8 +35,8 @@ namespace Mvp.Xml.XInclude.Test
         public static void RunAndCompare(string source, string result) 
         {
             XIncludeReaderTests.RunAndCompare(
-                "../../XInclude-Test-Suite/EdUni/test/" + source, 
-                "../../XInclude-Test-Suite/EdUni/test/" + result);
+				"../../XInclude/XInclude-Test-Suite/EdUni/test/" + source,
+				"../../XInclude/XInclude-Test-Suite/EdUni/test/" + result);
         }
         
 

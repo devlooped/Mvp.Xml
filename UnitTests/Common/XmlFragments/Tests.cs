@@ -23,17 +23,9 @@ namespace Mvp.Xml.Tests.XmlFragments
 		public void ReadFragments()
 		{
 			XmlDocument doc = new XmlDocument();
-			doc.Load(new XmlTextReader(null, new XmlFragmentStream(Globals.GetResource(
-				this.GetType().Namespace + ".publishers.xml"))));
-
-			doc = new XmlDocument();
-			XmlNamespaceManager mgr = new XmlNamespaceManager(doc.NameTable);
-			XmlTextReader tr = new XmlTextReader(Globals.GetResource(
-				this.GetType().Namespace + ".publishers.xml"), XmlNodeType.Element, 
-				new XmlParserContext( doc.NameTable, mgr, null, XmlSpace.None));
-			while (tr.Read())
+			using (Stream fs = File.Open("../../Common/XmlFragments/publishers.xml", FileMode.Open, FileAccess.Read, FileShare.Read))
 			{
-				Console.Write(doc.OuterXml);
+				doc.Load(new XmlTextReader(null, new XmlFragmentStream(fs)));
 			}
 		}
 
@@ -41,18 +33,22 @@ namespace Mvp.Xml.Tests.XmlFragments
 		public void ReadFragmentsRoot()
 		{
 			XmlDocument doc = new XmlDocument();
-			doc.Load(new XmlTextReader(new XmlFragmentStream(Globals.GetResource(
-				this.GetType().Namespace + ".publishers.xml"), "pubs")));
-			Console.Write(doc.OuterXml);
+			using (Stream fs = File.Open("../../Common/XmlFragments/publishers.xml", FileMode.Open, FileAccess.Read, FileShare.Read))
+			{
+				doc.Load(new XmlTextReader(null, new XmlFragmentStream(fs, "pubs")));
+			}
+
+			Assert.AreEqual("pubs", doc.DocumentElement.LocalName);
 		}
 
 		[Test]
 		public void ReadFragmentsRootNs()
 		{
 			XmlDocument doc = new XmlDocument();
-			doc.Load(new XmlTextReader(new XmlFragmentStream(Globals.GetResource(
-				this.GetType().Namespace + ".publishers.xml"), "pubs", "mvp-xml")));
-			Console.Write(doc.OuterXml);
+			using (Stream fs = File.Open("../../Common/XmlFragments/publishers.xml", FileMode.Open, FileAccess.Read, FileShare.Read))
+			{
+				doc.Load(new XmlTextReader(null, new XmlFragmentStream(fs, "pubs", "mvp-xml")));
+			}
 		}
 	}
 }

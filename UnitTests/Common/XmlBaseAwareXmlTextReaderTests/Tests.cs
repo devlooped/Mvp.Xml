@@ -21,9 +21,7 @@ namespace Mvp.Xml.Tests.XmlBaseAwareXmlTextReaderTests
         [Test]
         public void BasicTest() 
         {
-            XmlTextReader r = new XmlBaseAwareXmlTextReader(
-                Globals.GetResource( 
-                this.GetType().Namespace + ".test.xml"));
+            XmlTextReader r = new XmlBaseAwareXmlTextReader("../../Common/XmlBaseAwareXmlTextReaderTests/test.xml");
             while (r.Read()) 
             {
                 if (r.NodeType == XmlNodeType.Element) 
@@ -31,7 +29,7 @@ namespace Mvp.Xml.Tests.XmlBaseAwareXmlTextReaderTests
                     switch (r.Name) 
                     {
                         case "catalog":
-                            Assert.IsTrue(r.BaseURI == "");
+                            Assert.IsTrue(r.BaseURI.EndsWith("XmlBaseAwareXmlTextReaderTests/test.xml"));
                             break;
                         case "files":
                             Assert.IsTrue(r.BaseURI == "file:///d:/Files/");
@@ -40,7 +38,7 @@ namespace Mvp.Xml.Tests.XmlBaseAwareXmlTextReaderTests
                             Assert.IsTrue(r.BaseURI == "file:///d:/Files/");
                             break;
                         case "a":
-                            Assert.IsTrue(r.BaseURI == "");
+							Assert.IsTrue(r.BaseURI.EndsWith("XmlBaseAwareXmlTextReaderTests/test.xml"));
                             break;
                         case "b":
                             Assert.IsTrue(r.BaseURI == "file:///d:/Files/a/");
@@ -75,7 +73,7 @@ namespace Mvp.Xml.Tests.XmlBaseAwareXmlTextReaderTests
 		[Test]
 		public void ReaderWithPath() 
 		{
-			XmlTextReader r = new XmlBaseAwareXmlTextReader(@"..\..\XmlBaseAwareXmlTextReaderTests\relativeTest.xml");
+			XmlTextReader r = new XmlBaseAwareXmlTextReader("../../Common/XmlBaseAwareXmlTextReaderTests/relativeTest.xml");
 			r.WhitespaceHandling = WhitespaceHandling.None;
 			XPathDocument doc = new XPathDocument(r);
 			XPathNavigator nav = doc.CreateNavigator();
