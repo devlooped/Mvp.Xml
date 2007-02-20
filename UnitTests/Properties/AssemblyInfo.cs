@@ -5,22 +5,22 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("XPathmania.CustomActionInstaller")]
+[assembly: AssemblyTitle("Mvp.Xml.Tests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("DonXML")]
-[assembly: AssemblyProduct("XPathmania.CustomActionInstaller")]
-[assembly: AssemblyCopyright("Copyright © DonXML 2006")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("Mvp.Xml.Tests")]
+[assembly: AssemblyCopyright("Copyright ©  2007")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 
-// to COM components.  If you need to access a type in this assembly from 
+// to COM componenets.  If you need to access a type in this assembly from 
 // COM, set the ComVisible attribute to true on that type.
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("088a7df7-6088-4f0a-92e1-37a70b90a1c2")]
+[assembly: Guid("526721a5-8d86-44b5-bb5f-982de1413f33")]
 
 // Version information for an assembly consists of the following four values:
 //
