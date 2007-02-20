@@ -28,8 +28,7 @@ namespace Mvp.Xml.Tests.XPathIteratorReaderTests
 		public void TestRss()
 		{
 			string theWord = "XML";
-			XPathDocument doc = new XPathDocument(Globals.GetResource( 
-				this.GetType().Namespace + ".rss.xml"));
+			XPathDocument doc = new XPathDocument("../../Common/XPathIteratorReaderTests/rss.xml");
 			XPathNodeIterator it = doc.CreateNavigator().Select(
 				"/rss/channel/item[contains(title,'" + theWord + "')]");
 

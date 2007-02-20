@@ -72,12 +72,10 @@ namespace Mvp.Xml.Tests.UpperLowerTests
 		[Test]
 		public void Deserialization()
 		{
-            XmlFirstUpperReader fu = new XmlFirstUpperReader(Globals.GetResource( 
-				this.GetType().Namespace + ".Customer.xml"));
+            XmlFirstUpperReader fu = new XmlFirstUpperReader("../../Common/UpperLowerTests/Customer.xml");
             XmlReaderSettings settings = new XmlReaderSettings();
             settings.ValidationType = ValidationType.Schema;
-            settings.Schemas.Add(XmlSchema.Read(Globals.GetResource(
-                this.GetType().Namespace + ".Customer.xsd"), null));
+            settings.Schemas.Add(XmlSchema.Read(XmlReader.Create("../../Common/UpperLowerTests/Customer.xsd"), null));
 			XmlReader vr = XmlReader.Create(fu, settings);			
 			XmlSerializer ser = new XmlSerializer(typeof(Customer));
 			Customer c = (Customer) ser.Deserialize(vr);
@@ -90,8 +88,7 @@ namespace Mvp.Xml.Tests.UpperLowerTests
 		[Test]
 		public void Serialization()
 		{
-			XmlFirstUpperReader fu = new XmlFirstUpperReader(Globals.GetResource( 
-				this.GetType().Namespace + ".Customer.xml"));
+            XmlFirstUpperReader fu = new XmlFirstUpperReader("../../Common/UpperLowerTests/Customer.xml");
 			XmlSerializer ser = new XmlSerializer(typeof(Customer));
 			Customer c = (Customer) ser.Deserialize(fu);
 

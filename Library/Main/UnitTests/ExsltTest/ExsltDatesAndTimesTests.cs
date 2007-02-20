@@ -20,11 +20,11 @@ namespace ExsltTest
     {        
         protected override string TestDir 
         {
-            get { return "tests/EXSLT/DatesAndTimes/"; }
+            get { return "../../ExsltTest/tests/EXSLT/DatesAndTimes/"; }
         }
         protected override string ResultsDir 
         {
-            get { return "results/EXSLT/DatesAndTimes/"; }
+			get { return "../../ExsltTest/results/EXSLT/DatesAndTimes/"; }
         }   
         
         /// <summary>

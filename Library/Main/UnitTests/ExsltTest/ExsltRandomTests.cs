@@ -21,11 +21,11 @@ namespace ExsltTest
 
         protected override string TestDir 
         {
-            get { return "tests/EXSLT/Random/"; }
+			get { return "../../ExsltTest/tests/EXSLT/Random/"; }
         }
         protected override string ResultsDir 
         {
-            get { return "results/EXSLT/Random/"; }
+			get { return "../../ExsltTest/results/EXSLT/Random/"; }
         }   
                        
         /// <summary>

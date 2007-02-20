@@ -197,7 +197,7 @@ namespace Mvp.Xml.XInclude.Test
         [Test]
         public void ItWorksAtLeast() 
         {
-            RunAndCompare("../../tests/document.xml", "../../results/document.xml");            
+			RunAndCompare("../../XInclude/tests/document.xml", "../../XInclude/results/document.xml");            
         }
         
 
@@ -208,7 +208,7 @@ namespace Mvp.Xml.XInclude.Test
         [ExpectedException(typeof(NonXmlCharacterException))]
         public void NonXMLChar() 
         {
-            RunAndCompare("../../tests/nonxmlchar.xml", "../../results/nonxmlchar.xml");            
+			RunAndCompare("../../XInclude/tests/nonxmlchar.xml", "../../XInclude/results/nonxmlchar.xml");            
         }        
 
         /// <summary>
@@ -218,7 +218,7 @@ namespace Mvp.Xml.XInclude.Test
         [ExpectedException(typeof(FatalResourceException))]
         public void FileNotFound() 
         {
-            RunAndCompare("../../tests/filenotfound.xml", "../../results/filenotfound.xml");            
+			RunAndCompare("../../XInclude/tests/filenotfound.xml", "../../XInclude/results/filenotfound.xml");            
         }        
 
         /// <summary>
@@ -227,7 +227,7 @@ namespace Mvp.Xml.XInclude.Test
         [Test]        
         public void IncludesItselfByUrl() 
         {
-            RunAndCompare("../../tests/includesitself.xml", "../../results/includesitself.xml");            
+			RunAndCompare("../../XInclude/tests/includesitself.xml", "../../XInclude/results/includesitself.xml");            
         }        
 
         /// <summary>
@@ -237,7 +237,7 @@ namespace Mvp.Xml.XInclude.Test
         [ExpectedException(typeof(FatalResourceException))]
         public void IncludesItselfNoHrefText() 
         {
-            RunAndCompare("../../tests/includesitself-nohref-text.xml", "../../results/includesitself-nohref-text.xml");            
+			RunAndCompare("../../XInclude/tests/includesitself-nohref-text.xml", "../../XInclude/results/includesitself-nohref-text.xml");            
         }        
 
         /// <summary>
@@ -246,7 +246,7 @@ namespace Mvp.Xml.XInclude.Test
         [Test]        
         public void TextInclusion() 
         {
-            RunAndCompare("../../tests/working_example.xml", "../../results/working_example.xml");            
+			RunAndCompare("../../XInclude/tests/working_example.xml", "../../XInclude/results/working_example.xml");            
         }
         
         /// <summary>
@@ -255,7 +255,7 @@ namespace Mvp.Xml.XInclude.Test
         [Test]        
         public void TextInclusion2() 
         {
-            RunAndCompare("../../tests/working_example2.xml", "../../results/working_example2.xml");            
+			RunAndCompare("../../XInclude/tests/working_example2.xml", "../../XInclude/results/working_example2.xml");            
         }        
 
         /// <summary>
@@ -264,7 +264,7 @@ namespace Mvp.Xml.XInclude.Test
         [Test]        
         public void Fallback() 
         {
-            RunAndCompare("../../tests/fallback.xml", "../../results/fallback.xml");            
+			RunAndCompare("../../XInclude/tests/fallback.xml", "../../XInclude/results/fallback.xml");            
         }        
 
         /// <summary>
@@ -273,7 +273,7 @@ namespace Mvp.Xml.XInclude.Test
         [Test]        
         public void XPointer() 
         {
-            RunAndCompare("../../tests/xpointer.xml", "../../results/xpointer.xml");            
+			RunAndCompare("../../XInclude/tests/xpointer.xml", "../../XInclude/results/xpointer.xml");            
         }        
 
         /// <summary>
@@ -282,7 +282,7 @@ namespace Mvp.Xml.XInclude.Test
         [Test]        
         public void XmlLangTest() 
         {
-            RunAndCompare("../../tests/langtest.xml", "../../results/langtest.xml");                                    
+			RunAndCompare("../../XInclude/tests/langtest.xml", "../../XInclude/results/langtest.xml");                                    
         }        
 
         /// <summary>
@@ -291,11 +291,11 @@ namespace Mvp.Xml.XInclude.Test
         [Test]
         public void OuterXmlTest() 
         {
-            XIncludingReader xir = new XIncludingReader("../../tests/document.xml");
+			XIncludingReader xir = new XIncludingReader("../../XInclude/tests/document.xml");
             xir.MoveToContent();
             string outerXml = xir.ReadOuterXml();
             xir.Close();
-            xir = new XIncludingReader("../../tests/document.xml");
+			xir = new XIncludingReader("../../XInclude/tests/document.xml");
             xir.MoveToContent();
             XmlDocument doc = new XmlDocument();
             doc.PreserveWhitespace = true;
@@ -310,11 +310,11 @@ namespace Mvp.Xml.XInclude.Test
         [Test]
         public void InnerXmlTest() 
         {
-            XIncludingReader xir = new XIncludingReader("../../tests/document.xml");
+			XIncludingReader xir = new XIncludingReader("../../XInclude/tests/document.xml");
             xir.MoveToContent();
             string innerXml = xir.ReadInnerXml();
             xir.Close();
-            xir = new XIncludingReader("../../tests/document.xml");
+			xir = new XIncludingReader("../../XInclude/tests/document.xml");
             xir.MoveToContent();
             XmlDocument doc = new XmlDocument();
             doc.PreserveWhitespace = true;
@@ -329,7 +329,7 @@ namespace Mvp.Xml.XInclude.Test
         [Test]
         public void DepthTest() 
         {
-            XIncludingReader xir = new XIncludingReader("../../tests/document.xml");
+			XIncludingReader xir = new XIncludingReader("../../XInclude/tests/document.xml");
             StringBuilder sb = new StringBuilder();
             while (xir.Read()) 
             {
@@ -347,7 +347,7 @@ namespace Mvp.Xml.XInclude.Test
         [Test]        
         public void CustomResolver() 
         {
-            RunAndCompare("../../tests/resolver.xml", "../../results/resolver.xml", false, new TestResolver());            
+			RunAndCompare("../../XInclude/tests/resolver.xml", "../../XInclude/results/resolver.xml", false, new TestResolver());            
         }
 
         /// <summary>
@@ -356,7 +356,7 @@ namespace Mvp.Xml.XInclude.Test
         [Test]        
         public void Test_Martin() 
         {
-            RunAndCompare("../../tests/test-Martin.xml", "../../results/test-Martin.xml");            
+			RunAndCompare("../../XInclude/tests/test-Martin.xml", "../../XInclude/results/test-Martin.xml");            
         }
 
         /// <summary>
@@ -366,7 +366,7 @@ namespace Mvp.Xml.XInclude.Test
         [ExpectedException(typeof(FatalResourceException))]
         public void NoBaseURITest() 
         {
-            StreamReader sr = new StreamReader("../../tests/document.xml");
+			StreamReader sr = new StreamReader("../../XInclude/tests/document.xml");
             string xml = sr.ReadToEnd();
             sr.Close();
             XIncludingReader xir = new XIncludingReader(new StringReader(xml));
@@ -380,7 +380,7 @@ namespace Mvp.Xml.XInclude.Test
         [Test]        
         public void CachingTest() 
         {
-            RunAndCompare("../../tests/caching.xml", "../../results/caching.xml");            
+			RunAndCompare("../../XInclude/tests/caching.xml", "../../XInclude/results/caching.xml");            
         }
 
         /// <summary>
@@ -389,7 +389,7 @@ namespace Mvp.Xml.XInclude.Test
         [Test]        
         public void LoopTest() 
         {
-            RunAndCompare("../../tests/loop.xml", "../../results/loop.xml");            
+			RunAndCompare("../../XInclude/tests/loop.xml", "../../XInclude/results/loop.xml");            
         }
 
     }
@@ -402,7 +402,7 @@ namespace Mvp.Xml.XInclude.Test
                 return new StringReader(@"<text attr=""val"">From custom resolver (as TextReader)</text>"); 
             else if (absoluteUri.Scheme == "stream") 
             {
-                return File.OpenRead("../../results/document.xml");
+				return File.OpenRead("../../XInclude/results/document.xml");
             }
             else if (absoluteUri.Scheme == "xmlreader") 
             {                

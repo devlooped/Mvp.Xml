@@ -34,7 +34,7 @@ namespace Mvp.Xml.XInclude.Test
         [ExpectedException(typeof(XIncludeSyntaxError))]
         public void NoHrefAndNoXPointerAttributes() 
         {
-            XIncludingReader xir = new XIncludingReader("../../tests/nohref.xml");
+			XIncludingReader xir = new XIncludingReader("../../XInclude/tests/nohref.xml");
             while (xir.Read());
             xir.Close();
         }        
@@ -46,7 +46,7 @@ namespace Mvp.Xml.XInclude.Test
         [ExpectedException(typeof(XIncludeSyntaxError))]
         public void IncludeChildOfInclude() 
         {
-            XIncludingReader xir = new XIncludingReader("../../tests/includechildofinclude.xml");
+			XIncludingReader xir = new XIncludingReader("../../XInclude/tests/includechildofinclude.xml");
             while (xir.Read());
             xir.Close();
         }
@@ -58,7 +58,7 @@ namespace Mvp.Xml.XInclude.Test
         [ExpectedException(typeof(XIncludeSyntaxError))]
         public void FallbackNotChildOfInclude() 
         {
-            XIncludingReader xir = new XIncludingReader("../../tests/fallbacknotchildinclude.xml");
+			XIncludingReader xir = new XIncludingReader("../../XInclude/tests/fallbacknotchildinclude.xml");
             while (xir.Read());
             xir.Close();
         }     
@@ -70,7 +70,7 @@ namespace Mvp.Xml.XInclude.Test
         [ExpectedException(typeof(XIncludeSyntaxError))]
         public void UnknownParseAttribute() 
         {
-            XIncludingReader xir = new XIncludingReader("../../tests/unknownparseattr.xml");
+			XIncludingReader xir = new XIncludingReader("../../XInclude/tests/unknownparseattr.xml");
             while (xir.Read());
             xir.Close();
         }     
@@ -82,7 +82,7 @@ namespace Mvp.Xml.XInclude.Test
         [ExpectedException(typeof(XIncludeSyntaxError))]
         public void TwoFallbacks() 
         {
-            XIncludingReader xir = new XIncludingReader("../../tests/twofallbacks.xml");
+			XIncludingReader xir = new XIncludingReader("../../XInclude/tests/twofallbacks.xml");
             while (xir.Read());
             xir.Close();
         }             

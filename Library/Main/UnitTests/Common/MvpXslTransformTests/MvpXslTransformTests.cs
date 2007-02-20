@@ -29,7 +29,7 @@ namespace Mvp.Xml.Tests
         public MvpXslTransformTests()
         {
             XslCompiledTransform xslt = new XslCompiledTransform();
-            xslt.Load("../../MvpXslTransformTests/test1.xslt");
+            xslt.Load("../../Common/MvpXslTransformTests/test1.xslt");
             MemoryStream ms = new MemoryStream();
             using (XmlReader r = GetReader(Globals.NorthwindResource))
             {                
@@ -37,10 +37,10 @@ namespace Mvp.Xml.Tests
             }
             standardResult = ms.ToArray();
             XslCompiledTransform xslt2 = new XslCompiledTransform();
-            xslt2.Load("../../MvpXslTransformTests/resolver-test.xslt", XsltSettings.TrustedXslt, null);
+			xslt2.Load("../../Common/MvpXslTransformTests/resolver-test.xslt", XsltSettings.TrustedXslt, null);
             MemoryStream ms2 = new MemoryStream();
             XmlWriter w = XmlWriter.Create(ms2);
-            using (XmlReader r2 = XmlReader.Create("../../MvpXslTransformTests/test.xml"))
+			using (XmlReader r2 = XmlReader.Create("../../Common/MvpXslTransformTests/test.xml"))
             {
                 xslt2.Transform(r2, Arguments, w, new MyXmlResolver());
             }
@@ -65,7 +65,7 @@ namespace Mvp.Xml.Tests
             if (xslt == null)
             {
                 xslt = new MvpXslTransform();
-                xslt.Load("../../MvpXslTransformTests/test1.xslt");
+				xslt.Load("../../Common/MvpXslTransformTests/test1.xslt");
             }
             return xslt;
         }
@@ -75,7 +75,7 @@ namespace Mvp.Xml.Tests
             if (xslt2 == null)
             {
                 xslt2 = new MvpXslTransform();
-                xslt2.Load("../../MvpXslTransformTests/resolver-test.xslt", XsltSettings.TrustedXslt, null);
+				xslt2.Load("../../Common/MvpXslTransformTests/resolver-test.xslt", XsltSettings.TrustedXslt, null);
             }
             return xslt2;
         }        
@@ -100,7 +100,7 @@ namespace Mvp.Xml.Tests
         public void TestStringInput()
         {
             MvpXslTransform xslt = GetMvpXslTransform();
-            XmlInput input = new XmlInput("../../northwind.xml");
+			XmlInput input = new XmlInput("../../Common/northwind.xml");
             MemoryStream ms = new MemoryStream();
             xslt.Transform(input, Arguments, new XmlOutput(ms));
             CompareResults(standardResult, ms.ToArray());
@@ -110,7 +110,7 @@ namespace Mvp.Xml.Tests
         public void TestStreamInput()
         {
             MvpXslTransform xslt = GetMvpXslTransform();
-            using (FileStream fs = File.OpenRead("../../northwind.xml"))
+			using (FileStream fs = File.OpenRead("../../Common/northwind.xml"))
             {
                 XmlInput input = new XmlInput(fs);
                 MemoryStream ms = new MemoryStream();
@@ -123,7 +123,7 @@ namespace Mvp.Xml.Tests
         public void TestTextReaderInput()
         {
             MvpXslTransform xslt = GetMvpXslTransform();
-            XmlInput input = new XmlInput(new StreamReader("../../northwind.xml", Encoding.GetEncoding("windows-1252")));
+			XmlInput input = new XmlInput(new StreamReader("../../Common/northwind.xml", Encoding.GetEncoding("windows-1252")));
             MemoryStream ms = new MemoryStream();
             xslt.Transform(input, Arguments, new XmlOutput(ms));
             CompareResults(standardResult, ms.ToArray());
@@ -133,7 +133,7 @@ namespace Mvp.Xml.Tests
         public void TestXmlReaderInput()
         {
             MvpXslTransform xslt = GetMvpXslTransform();
-            XmlInput input = new XmlInput(XmlReader.Create("../../northwind.xml"));
+			XmlInput input = new XmlInput(XmlReader.Create("../../Common/northwind.xml"));
             MemoryStream ms = new MemoryStream();
             xslt.Transform(input, Arguments, new XmlOutput(ms));
             CompareResults(standardResult, ms.ToArray());
@@ -144,7 +144,7 @@ namespace Mvp.Xml.Tests
         public void TestIXPathNavigableInput()
         {
             MvpXslTransform xslt = GetMvpXslTransform();
-            XmlInput input = new XmlInput(new XPathDocument("../../northwind.xml", XmlSpace.Preserve));
+			XmlInput input = new XmlInput(new XPathDocument("../../Common/northwind.xml", XmlSpace.Preserve));
             MemoryStream ms = new MemoryStream();
             xslt.Transform(input, Arguments, new XmlOutput(ms));
             CompareResults(standardResult, ms.ToArray());
@@ -154,7 +154,7 @@ namespace Mvp.Xml.Tests
         public void TestStringInput2()
         {
             MvpXslTransform xslt = GetMvpXslTransform();
-            XmlInput input = new XmlInput("../../northwind.xml");
+			XmlInput input = new XmlInput("../../Common/northwind.xml");
             MemoryStream ms = new MemoryStream();
             XmlReader r = xslt.Transform(input, Arguments);
             XmlWriter w = XmlWriter.Create(ms);
@@ -167,7 +167,7 @@ namespace Mvp.Xml.Tests
         public void TestStreamInput2()
         {
             MvpXslTransform xslt = GetMvpXslTransform();
-            using (FileStream fs = File.OpenRead("../../northwind.xml"))
+			using (FileStream fs = File.OpenRead("../../Common/northwind.xml"))
             {
                 XmlInput input = new XmlInput(fs);
                 MemoryStream ms = new MemoryStream();
@@ -183,7 +183,7 @@ namespace Mvp.Xml.Tests
         public void TestTextReaderInput2()
         {
             MvpXslTransform xslt = GetMvpXslTransform();
-            XmlInput input = new XmlInput(new StreamReader("../../northwind.xml", Encoding.GetEncoding("windows-1252")));
+			XmlInput input = new XmlInput(new StreamReader("../../Common/northwind.xml", Encoding.GetEncoding("windows-1252")));
             MemoryStream ms = new MemoryStream();
             XmlReader r = xslt.Transform(input, Arguments);
             XmlWriter w = XmlWriter.Create(ms);
@@ -196,7 +196,7 @@ namespace Mvp.Xml.Tests
         public void TestXmlReaderInput2()
         {
             MvpXslTransform xslt = GetMvpXslTransform();
-            XmlInput input = new XmlInput(XmlReader.Create("../../northwind.xml"));
+			XmlInput input = new XmlInput(XmlReader.Create("../../Common/northwind.xml"));
             MemoryStream ms = new MemoryStream();
             XmlReader r = xslt.Transform(input, Arguments);
             XmlWriter w = XmlWriter.Create(ms);
@@ -210,7 +210,7 @@ namespace Mvp.Xml.Tests
         public void TestIXPathNavigableInput2()
         {
             MvpXslTransform xslt = GetMvpXslTransform();
-            XmlInput input = new XmlInput(new XPathDocument("../../northwind.xml", XmlSpace.Preserve));
+            XmlInput input = new XmlInput(new XPathDocument("../../Common/northwind.xml", XmlSpace.Preserve));
             MemoryStream ms = new MemoryStream();
             XmlReader r = xslt.Transform(input, Arguments);
             XmlWriter w = XmlWriter.Create(ms);
@@ -223,9 +223,9 @@ namespace Mvp.Xml.Tests
         public void TestStringOutput()
         {
             MvpXslTransform xslt = GetMvpXslTransform();
-            XmlInput input = new XmlInput("../../northwind.xml");
-            xslt.Transform(input, Arguments, new XmlOutput("../../MvpXslTransformTests/out.xml"));
-            using (FileStream fs = File.OpenRead("../../MvpXslTransformTests/out.xml"))
+            XmlInput input = new XmlInput("../../Common/northwind.xml");
+            xslt.Transform(input, Arguments, new XmlOutput("Common/MvpXslTransformTests/out.xml"));
+            using (FileStream fs = File.OpenRead("Common/MvpXslTransformTests/out.xml"))
             {
                 byte[] bytes = new byte[fs.Length];
                 fs.Read(bytes, 0, bytes.Length);
@@ -237,11 +237,11 @@ namespace Mvp.Xml.Tests
         public void TestStreamOutput()
         {
             MvpXslTransform xslt = GetMvpXslTransform();
-            XmlInput input = new XmlInput("../../northwind.xml");
-            using (FileStream outStrm = File.OpenWrite("../../MvpXslTransformTests/out.xml")) {
+            XmlInput input = new XmlInput("../../Common/northwind.xml");
+            using (FileStream outStrm = File.OpenWrite("Common/MvpXslTransformTests/out.xml")) {
                 xslt.Transform(input, Arguments, new XmlOutput(outStrm));
             }
-            using (FileStream fs = File.OpenRead("../../MvpXslTransformTests/out.xml"))
+            using (FileStream fs = File.OpenRead("Common/MvpXslTransformTests/out.xml"))
             {
                 byte[] bytes = new byte[fs.Length];
                 fs.Read(bytes, 0, bytes.Length);
@@ -253,11 +253,11 @@ namespace Mvp.Xml.Tests
         public void TestTextWriterOutput()
         {
             MvpXslTransform xslt = GetMvpXslTransform();
-            XmlInput input = new XmlInput("../../northwind.xml");
-            TextWriter w = new StreamWriter("../../MvpXslTransformTests/out.xml", false, Encoding.UTF8);
+            XmlInput input = new XmlInput("../../Common/northwind.xml");
+            TextWriter w = new StreamWriter("Common/MvpXslTransformTests/out.xml", false, Encoding.UTF8);
             xslt.Transform(input, Arguments, new XmlOutput(w));
             w.Close();
-            using (FileStream fs = File.OpenRead("../../MvpXslTransformTests/out.xml"))
+            using (FileStream fs = File.OpenRead("Common/MvpXslTransformTests/out.xml"))
             {
                 byte[] bytes = new byte[fs.Length];
                 fs.Read(bytes, 0, bytes.Length);
@@ -269,11 +269,11 @@ namespace Mvp.Xml.Tests
         public void TestXmlWriterOutput()
         {
             MvpXslTransform xslt = GetMvpXslTransform();
-            XmlInput input = new XmlInput("../../northwind.xml");
-            XmlWriter w = XmlWriter.Create("../../MvpXslTransformTests/out.xml");
+            XmlInput input = new XmlInput("../../Common/northwind.xml");
+            XmlWriter w = XmlWriter.Create("Common/MvpXslTransformTests/out.xml");
             xslt.Transform(input, Arguments, new XmlOutput(w));
             w.Close();
-            using (FileStream fs = File.OpenRead("../../MvpXslTransformTests/out.xml"))
+            using (FileStream fs = File.OpenRead("Common/MvpXslTransformTests/out.xml"))
             {
                 byte[] bytes = new byte[fs.Length];
                 fs.Read(bytes, 0, bytes.Length);
@@ -281,12 +281,11 @@ namespace Mvp.Xml.Tests
             }
         }
 
-
         [Test]        
         public void ResolverTestStringInput()
         {
             MvpXslTransform xslt = GetMvpXslTransform2();
-            XmlInput input = new XmlInput("../../MvpXslTransformTests/test.xml", new MyXmlResolver());
+            XmlInput input = new XmlInput("../../Common/MvpXslTransformTests/test.xml", new MyXmlResolver());
             MemoryStream ms = new MemoryStream();
             xslt.Transform(input, Arguments, new XmlOutput(ms));
             CompareResults(resolverTestStandardResult, ms.ToArray());            
@@ -296,7 +295,7 @@ namespace Mvp.Xml.Tests
         public void ResolverTestStreamInput()
         {
             MvpXslTransform xslt = GetMvpXslTransform2();
-            using (FileStream fs = File.OpenRead("../../MvpXslTransformTests/test.xml"))
+            using (FileStream fs = File.OpenRead("../../Common/MvpXslTransformTests/test.xml"))
             {
                 XmlInput input = new XmlInput(fs, new MyXmlResolver());
                 MemoryStream ms = new MemoryStream();
@@ -309,7 +308,7 @@ namespace Mvp.Xml.Tests
         public void ResolverTestTextReaderInput()
         {
             MvpXslTransform xslt = GetMvpXslTransform2();
-            XmlInput input = new XmlInput(new StreamReader("../../MvpXslTransformTests/test.xml"), new MyXmlResolver());
+            XmlInput input = new XmlInput(new StreamReader("../../Common/MvpXslTransformTests/test.xml"), new MyXmlResolver());
             MemoryStream ms = new MemoryStream();
             xslt.Transform(input, Arguments, new XmlOutput(ms));
             CompareResults(resolverTestStandardResult, ms.ToArray());
@@ -319,7 +318,7 @@ namespace Mvp.Xml.Tests
         public void ResolverTestXmlReaderInput()
         {
             MvpXslTransform xslt = GetMvpXslTransform2();
-            XmlInput input = new XmlInput(XmlReader.Create("../../MvpXslTransformTests/test.xml"), new MyXmlResolver());
+            XmlInput input = new XmlInput(XmlReader.Create("../../Common/MvpXslTransformTests/test.xml"), new MyXmlResolver());
             MemoryStream ms = new MemoryStream();
             xslt.Transform(input, Arguments, new XmlOutput(ms));
             CompareResults(resolverTestStandardResult, ms.ToArray());
@@ -329,7 +328,7 @@ namespace Mvp.Xml.Tests
         public void ResolverTestIXPathNavigableInput()
         {
             MvpXslTransform xslt = GetMvpXslTransform2();
-            XmlInput input = new XmlInput(new XPathDocument("../../MvpXslTransformTests/test.xml"), new MyXmlResolver());
+            XmlInput input = new XmlInput(new XPathDocument("../../Common/MvpXslTransformTests/test.xml"), new MyXmlResolver());
             MemoryStream ms = new MemoryStream();
             xslt.Transform(input, Arguments, new XmlOutput(ms));
             CompareResults(resolverTestStandardResult, ms.ToArray());
@@ -339,8 +338,8 @@ namespace Mvp.Xml.Tests
         public void ExsltTest()
         {
             MvpXslTransform xslt = new MvpXslTransform();
-            xslt.Load("../../MvpXslTransformTests/exslt-test.xslt");
-            XmlInput input = new XmlInput("../../MvpXslTransformTests/test.xml");
+            xslt.Load("../../Common/MvpXslTransformTests/exslt-test.xslt");
+            XmlInput input = new XmlInput("../../Common/MvpXslTransformTests/test.xml");
             MemoryStream ms = new MemoryStream();
             xslt.Transform(input, Arguments, new XmlOutput(ms));
             string expected = "<out>3</out>";            
@@ -351,8 +350,8 @@ namespace Mvp.Xml.Tests
         public void NoExsltTest()
         {
             MvpXslTransform xslt = new MvpXslTransform();
-            xslt.Load("../../MvpXslTransformTests/exslt-test.xslt");
-            XmlInput input = new XmlInput("../../MvpXslTransformTests/test.xml");
+            xslt.Load("../../Common/MvpXslTransformTests/exslt-test.xslt");
+            XmlInput input = new XmlInput("../../Common/MvpXslTransformTests/test.xml");
             MemoryStream ms = new MemoryStream();
             xslt.SupportedFunctions = Mvp.Xml.Exslt.ExsltFunctionNamespace.None;
             try

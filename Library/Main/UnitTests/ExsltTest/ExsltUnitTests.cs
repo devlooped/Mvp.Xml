@@ -23,11 +23,11 @@ namespace ExsltTest
     {
         protected virtual string TestDir 
         {
-            get { return "tests/EXSLT/Common/"; }
+            get { return "../../ExsltTest/tests/EXSLT/Common/"; }
         }
         protected virtual string ResultsDir 
         {
-            get { return "results/EXSLT/Common/"; }
+			get { return "../../ExsltTest/results/EXSLT/Common/"; }
         }
 
         protected void RunAndCompare(string source, string stylesheet, 

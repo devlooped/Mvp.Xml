@@ -21,11 +21,11 @@ namespace ExsltTest
 
         protected override string TestDir 
         {
-            get { return "tests/EXSLT/RegularExpressions/"; }
+			get { return "../../ExsltTest/tests/EXSLT/RegularExpressions/"; }
         }
         protected override string ResultsDir 
         {
-            get { return "results/EXSLT/RegularExpressions/"; }
+			get { return "../../ExsltTest/results/EXSLT/RegularExpressions/"; }
         }   
                        
         /// <summary>
