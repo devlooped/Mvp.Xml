@@ -33,14 +33,116 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\Guard.cs" />
+    <Compile Include="Common\Properties\Resources.Designer.cs" />
+    <Compile Include="Common\Serialization\CacheKeyFactory.cs" />
+    <Compile Include="Common\Serialization\PerfCounterInstaller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Common\Serialization\PerfCounterManager.cs" />
+    <Compile Include="Common\Serialization\SignatureExtractor.cs" />
+    <Compile Include="Common\Serialization\StringSorter.cs" />
+    <Compile Include="Common\Serialization\XmlAttributeOverridesThumbprinter.cs" />
+    <Compile Include="Common\Serialization\XmlSerializerCache.cs" />
+    <Compile Include="Common\SR.cs" />
+    <Compile Include="Common\XmlBaseAwareXmlTextReader.cs" />
+    <Compile Include="Common\XmlFirstLowerWriter.cs" />
+    <Compile Include="Common\XmlFirstUpperReader.cs" />
+    <Compile Include="Common\XmlFragmentStream.cs" />
+    <Compile Include="Common\XmlNamespaces.cs" />
+    <Compile Include="Common\XmlNodeFactory.cs" />
+    <Compile Include="Common\XmlNodeListFactory.cs" />
+    <Compile Include="Common\XmlPrefix.cs" />
+    <Compile Include="Common\XmlWrappingReader.cs" />
+    <Compile Include="Common\XPath\DynamicContext.cs" />
+    <Compile Include="Common\XPath\EmptyXPathNodeIterator.cs" />
+    <Compile Include="Common\XPath\IHasXPathNavigator.cs" />
+    <Compile Include="Common\XPath\IndexingXPathNavigator.cs" />
+    <Compile Include="Common\XPath\SingletonXPathNodeIterator.cs" />
+    <Compile Include="Common\XPath\SubtreeeXPathNavigator.cs" />
+    <Compile Include="Common\XPath\XPathCache.cs" />
+    <Compile Include="Common\XPath\XPathIteratorReader.cs" />
+    <Compile Include="Common\XPath\XPathNavigatorIterator.cs" />
+    <Compile Include="Common\XPath\XPathVariable.cs" />
+    <Compile Include="Exslt\ExsltContext.cs" />
+    <Compile Include="Exslt\ExsltContextFunction.cs" />
+    <Compile Include="Exslt\ExsltDatesAndTimes.cs" />
+    <Compile Include="Exslt\ExsltMath.cs" />
+    <Compile Include="Exslt\ExsltNamespaces.cs" />
+    <Compile Include="Exslt\ExsltRandom.cs" />
+    <Compile Include="Exslt\ExsltRegularExpressions.cs" />
+    <Compile Include="Exslt\ExsltSets.cs" />
+    <Compile Include="Exslt\ExsltStrings.cs" />
+    <Compile Include="Exslt\ExsltTransform.cs" />
+    <Compile Include="Exslt\GDNDatesAndTimes.cs" />
+    <Compile Include="Exslt\GDNDynamic.cs" />
+    <Compile Include="Exslt\GDNMath.cs" />
+    <Compile Include="Exslt\GDNRegularExpressions.cs" />
+    <Compile Include="Exslt\GDNSets.cs" />
+    <Compile Include="Exslt\GDNStrings.cs" />
+    <Compile Include="Exslt\MultiOutput\MultiXmlTextWriter.cs" />
+    <Compile Include="Exslt\MultiOutput\OutputState.cs" />
+    <Compile Include="Exslt\Xsl\IXmlTransform.cs" />
+    <Compile Include="Exslt\Xsl\MvpXslTransform.cs" />
+    <Compile Include="Exslt\Xsl\XslReader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XInclude\SR.cs" />
+    <Compile Include="XInclude\TextIncludingReader.cs" />
+    <Compile Include="XInclude\TextUtils.cs" />
+    <Compile Include="XInclude\XIncludeException.cs" />
+    <Compile Include="XInclude\XIncludeKeywords.cs" />
+    <Compile Include="XInclude\XIncludingReader.cs" />
+    <Compile Include="XInclude\XIncludingReaderState.cs" />
+    <Compile Include="XPointer\ElementSchemaPointerPart.cs" />
+    <Compile Include="XPointer\LexUtils.cs" />
+    <Compile Include="XPointer\Pointer.cs" />
+    <Compile Include="XPointer\PointerPart.cs" />
+    <Compile Include="XPointer\SchemaBasedPointer.cs" />
+    <Compile Include="XPointer\ShorthandPointer.cs" />
+    <Compile Include="XPointer\SR.cs" />
+    <Compile Include="XPointer\XmlnsSchemaPointerPart.cs" />
+    <Compile Include="XPointer\XPath1SchemaPointerPart.cs" />
+    <Compile Include="XPointer\XPointerException.cs" />
+    <Compile Include="XPointer\XPointerLexer.cs" />
+    <Compile Include="XPointer\XPointerParser.cs" />
+    <Compile Include="XPointer\XPointerReader.cs" />
+    <Compile Include="XPointer\XPointerSchema.cs" />
+    <Compile Include="XPointer\XPointerSchemaPointerPart.cs" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Common\changelog.txt" />
+    <Content Include="XPointer\changelog.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Common\Properties\Resources.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\Serialization\PerfCounterInstaller.resx">
+      <DependentUpon>PerfCounterInstaller.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\SR.resx">
+      <DependentUpon>SR.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XInclude\SR.resx">
+      <DependentUpon>SR.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XPointer\SR.resx">
+      <DependentUpon>SR.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
