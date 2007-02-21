@@ -78,6 +78,7 @@
     <Compile Include="Common\XPath\SingletonXPathNodeIterator.cs" />
     <Compile Include="Common\XPath\SubtreeeXPathNavigator.cs" />
     <Compile Include="Common\XPath\XPathCache.cs" />
+    <Compile Include="Common\XPath\XPathDocumentHelper.cs" />
     <Compile Include="Common\XPath\XPathIteratorReader.cs" />
     <Compile Include="Common\XPath\XPathNavigatorIterator.cs" />
     <Compile Include="Common\XPath\XPathVariable.cs" />
@@ -168,7 +169,7 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>
+    <PostBuildEvent Condition="$(Configuration)=='Release'">
 			@echo ########### Mvp.Xml Custom Build Event has started
 			@echo ########### Setting environment variables
 			call "$(DevEnvDir)..\Tools\vsvars32.bat"
