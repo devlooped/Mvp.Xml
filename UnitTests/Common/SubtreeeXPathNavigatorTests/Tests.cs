@@ -107,13 +107,9 @@ namespace Mvp.Xml.Tests.SubtreeeXPathNavigatorTests
 			Console.WriteLine(new StreamReader(stmxpath).ReadToEnd());
 		}
 
-		[Ignore]
 		[TestMethod]
-		public void SubtreeTransform() 
+		public void ShouldBeOnRootNodeTypeOnCreation()
 		{
-            XslCompiledTransform tx = new XslCompiledTransform();
-			tx.Load("../../Common/SubtreeeXPathNavigatorTests/test.xsl");
-
 			string xml = @"
 	<root>
 		<salutations>
@@ -125,58 +121,84 @@ namespace Mvp.Xml.Tests.SubtreeeXPathNavigatorTests
 		</other>
 	</root>";
 
-			XmlDocument dom = new XmlDocument();
-			dom.LoadXml(xml);
-			tx.Transform(new DebuggingXPathNavigator(dom.DocumentElement.FirstChild.CreateNavigator()), 
-				null, Console.Out);
-
-			XPathDocument doc = new XPathDocument(new StringReader(xml));
+			XmlReaderSettings set = new XmlReaderSettings();
+			set.IgnoreWhitespace = true;
+			XPathDocument doc = new XPathDocument(XmlReader.Create(new StringReader(xml), set));
 			XPathNavigator nav = doc.CreateNavigator();
-			nav.MoveToRoot();
+
 			nav.MoveToFirstChild();
-			// Salutations.
 			nav.MoveToFirstChild();
 
-			tx.Transform(new DebuggingXPathNavigator(new SubtreeXPathNavigator(nav)), null, Console.Out);
+			SubtreeXPathNavigator subtree = new SubtreeXPathNavigator(nav);
+
+			Assert.AreEqual(XPathNodeType.Root, subtree.NodeType);
 		}
 
-		[Ignore]
 		[TestMethod]
-		public void TestBooks()
+		public void ShouldNotMoveOutsideRootXPathDocument()
 		{
-            XslCompiledTransform xslt = new XslCompiledTransform();
-			xslt.Load("../../Common/SubtreeeXPathNavigatorTests/nodecopy.xsl");
-			XPathDocument doc = new XPathDocument(Globals.GetResource(Globals.LibraryResource));
+			string xml = @"
+	<root>
+		<salutations>
+			<salute>Hi there <name>kzu</name>.</salute>
+			<salute>Bye there <name>vga</name>.</salute>
+		</salutations>
+		<other>
+			Hi there without salutations.
+		</other>
+	</root>";
 
-			XmlDocument dom = new XmlDocument();
-			dom.Load(Globals.GetResource(Globals.LibraryResource));
-
-			xslt.Transform(dom.DocumentElement.FirstChild.CreateNavigator(), 
-				null, Console.Out);
-
-			Console.WriteLine();
-
-			//Navigator over first child of document element
+			XmlReaderSettings set = new XmlReaderSettings();
+			set.IgnoreWhitespace = true;
+			XPathDocument doc = new XPathDocument(XmlReader.Create(new StringReader(xml), set));
 			XPathNavigator nav = doc.CreateNavigator();
-			nav.MoveToRoot();
-			nav.MoveToFirstChild();
-			nav.MoveToFirstChild();
 
-			xslt.Transform(new SubtreeXPathNavigator(nav), null, Console.Out);
+			nav.MoveToFirstChild(); //root
+			nav.MoveToFirstChild(); //salutations
+
+			SubtreeXPathNavigator subtree = new SubtreeXPathNavigator(nav);
+			subtree.MoveToFirstChild(); //salutations
+			Assert.AreEqual("salutations", subtree.LocalName);
+			subtree.MoveToFirstChild(); //salute
+			subtree.MoveToRoot();
+
+			Assert.AreEqual(XPathNodeType.Root, subtree.NodeType);
+			subtree.MoveToFirstChild(); //salutations
+			Assert.AreEqual("salutations", subtree.LocalName);
 		}
 
-		[Ignore]
 		[TestMethod]
-		public void TestRead()
+		public void ShouldNotMoveOutsideRootXmlDocument()
 		{
-			XPathDocument doc = new XPathDocument(Globals.GetResource(Globals.LibraryResource));
+			string xml = @"
+	<root>
+		<salutations>
+			<salute>Hi there <name>kzu</name>.</salute>
+			<salute>Bye there <name>vga</name>.</salute>
+		</salutations>
+		<other>
+			Hi there without salutations.
+		</other>
+	</root>";
 
-			//Navigator over first child of document element
+			XmlReaderSettings set = new XmlReaderSettings();
+			set.IgnoreWhitespace = true;
+			XmlDocument doc = new XmlDocument();
+			doc.Load(XmlReader.Create(new StringReader(xml), set));
 			XPathNavigator nav = doc.CreateNavigator();
-			nav.MoveToRoot();
-			nav.MoveToFirstChild();
-			nav.MoveToFirstChild();			
-            Console.WriteLine(nav.OuterXml);
+
+			nav.MoveToFirstChild(); //root
+			nav.MoveToFirstChild(); //salutations
+
+			SubtreeXPathNavigator subtree = new SubtreeXPathNavigator(nav);
+			subtree.MoveToFirstChild(); //salutations
+			Assert.AreEqual("salutations", subtree.LocalName);
+			subtree.MoveToFirstChild(); //salute
+			subtree.MoveToRoot();
+
+			Assert.AreEqual(XPathNodeType.Root, subtree.NodeType);
+			subtree.MoveToFirstChild(); //salutations
+			Assert.AreEqual("salutations", subtree.LocalName);
 		}
 	}
 }
