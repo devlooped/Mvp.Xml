@@ -8,7 +8,7 @@
     <ProjectGuid>{6051A0FB-F205-4190-87AD-C384216C3729}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>Mvp.Xml.Tests</RootNamespace>
-    <AssemblyName>Mvp.Xml.Tests</AssemblyName>
+    <AssemblyName>Mvp.Xml.Tests.NUnit</AssemblyName>
     <WarningLevel>4</WarningLevel>
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
@@ -126,9 +126,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <Content Include="Common\MvpXslTransformTests\exslt-test.xslt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Common\MvpXslTransformTests\out.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Common\MvpXslTransformTests\resolver-test.xslt">

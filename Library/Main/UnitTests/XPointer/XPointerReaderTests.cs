@@ -206,7 +206,7 @@ namespace Mvp.Xml.XPointer.Test
         public void ShorthandTest() 
         {           
             string xptr = "o10535";                        
-            XmlReader reader = new XmlTextReader("../../northwind.xml");            
+            XmlReader reader = new XmlTextReader("../../XPointer/northwind.xml");            
             XPointerReader xpr = new XPointerReader(reader, xptr);
             string expected = @"<Item orderID=""o10535"">
                 <OrderDate> 6/13/95</OrderDate>
@@ -227,7 +227,7 @@ namespace Mvp.Xml.XPointer.Test
         public void ShorthandViaStreamTest() 
         {           
             string xptr = "o10535";                        
-            FileInfo file = new FileInfo("../../northwind.xml");
+            FileInfo file = new FileInfo("../../XPointer/northwind.xml");
             using (FileStream fs = file.OpenRead()) 
             {
                 XPointerReader xpr = new XPointerReader(
@@ -253,7 +253,7 @@ namespace Mvp.Xml.XPointer.Test
         public void ShorthandNotFoundTest() 
         {           
             string xptr = "no-such-id";                        
-            XmlReader reader = new XmlTextReader("../../northwind.xml");            
+            XmlReader reader = new XmlTextReader("../../XPointer/northwind.xml");            
             XPointerReader xpr = new XPointerReader(reader, xptr);                        
         }
 
@@ -264,7 +264,7 @@ namespace Mvp.Xml.XPointer.Test
         public void ElementSchemeTest() 
         {           
             string xptr = "element(o10535)";                        
-            XmlReader reader = new XmlTextReader("../../northwind.xml");            
+            XmlReader reader = new XmlTextReader("../../XPointer/northwind.xml");            
             XPointerReader xpr = new XPointerReader(reader, xptr);
             string expected = @"<Item orderID=""o10535"">
                 <OrderDate> 6/13/95</OrderDate>
@@ -285,7 +285,7 @@ namespace Mvp.Xml.XPointer.Test
         public void ElementSchemeTest2() 
         {           
             string xptr = "element(o10535/1)";                        
-            XmlReader reader = new XmlTextReader("../../northwind.xml");            
+            XmlReader reader = new XmlTextReader("../../XPointer/northwind.xml");            
             XPointerReader xpr = new XPointerReader(reader, xptr);
             string expected = @"<OrderDate> 6/13/95</OrderDate>";
             while (xpr.Read()) 
@@ -303,7 +303,7 @@ namespace Mvp.Xml.XPointer.Test
         public void ElementSchemeTest3() 
         {           
             string xptr = "element(/1/1/2)";                        
-            XmlReader reader = new XmlTextReader("../../northwind.xml");            
+            XmlReader reader = new XmlTextReader("../../XPointer/northwind.xml");            
             XPointerReader xpr = new XPointerReader(reader, xptr);
             string expected = @"<CompanyName> Alfreds Futterkiste</CompanyName>";
             while (xpr.Read()) 
@@ -322,7 +322,7 @@ namespace Mvp.Xml.XPointer.Test
         public void ElementSchemeNotFoundTest() 
         {           
             string xptr = "element(no-such-id)";                        
-            XmlReader reader = new XmlTextReader("../../northwind.xml");            
+            XmlReader reader = new XmlTextReader("../../XPointer/northwind.xml");            
             XPointerReader xpr = new XPointerReader(reader, xptr);                        
         }
 
@@ -333,7 +333,7 @@ namespace Mvp.Xml.XPointer.Test
         public void CompoundPointerTest() 
         {           
             string xptr = "xmlns(p=12345)xpath1(/no/such/node) xpointer(/and/such) element(/1/1/2) element(o10535/1)";                        
-            XmlReader reader = new XmlTextReader("../../northwind.xml");            
+            XmlReader reader = new XmlTextReader("../../XPointer/northwind.xml");            
             XPointerReader xpr = new XPointerReader(reader, xptr);
             string expected = @"<CompanyName> Alfreds Futterkiste</CompanyName>";
             while (xpr.Read()) 
@@ -351,7 +351,7 @@ namespace Mvp.Xml.XPointer.Test
         public void UnknownSchemeTest() 
         {           
             string xptr = "dummy(foo) element(/1/1/2)";                        
-            XmlReader reader = new XmlTextReader("../../northwind.xml");            
+            XmlReader reader = new XmlTextReader("../../XPointer/northwind.xml");            
             XPointerReader xpr = new XPointerReader(reader, xptr);
             string expected = @"<CompanyName> Alfreds Futterkiste</CompanyName>";
             while (xpr.Read()) 
@@ -369,7 +369,7 @@ namespace Mvp.Xml.XPointer.Test
         public void UnknownSchemeTest2() 
         {           
             string xptr = "foo:dummy(bar) element(/1/1/2)";                        
-            XmlReader reader = new XmlTextReader("../../northwind.xml");            
+            XmlReader reader = new XmlTextReader("../../XPointer/northwind.xml");            
             XPointerReader xpr = new XPointerReader(reader, xptr);
             string expected = @"<CompanyName> Alfreds Futterkiste</CompanyName>";
             while (xpr.Read()) 
@@ -387,7 +387,7 @@ namespace Mvp.Xml.XPointer.Test
         public void UnknownSchemeTest3() 
         {           
             string xptr = "xmlns(foo=http://foo.com/schemas)foo:dummy(bar) element(/1/1/2)";                        
-            XmlReader reader = new XmlTextReader("../../northwind.xml");            
+            XmlReader reader = new XmlTextReader("../../XPointer/northwind.xml");            
             XPointerReader xpr = new XPointerReader(reader, xptr);
             string expected = @"<CompanyName> Alfreds Futterkiste</CompanyName>";
             while (xpr.Read()) 
