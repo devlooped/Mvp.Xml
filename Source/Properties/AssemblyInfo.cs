@@ -2,6 +2,7 @@
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Security;
 
 [assembly: AssemblyTitle(ThisAssembly.Title)]
 [assembly: AssemblyDescription(ThisAssembly.Description)]
@@ -21,6 +22,9 @@ using System.Runtime.InteropServices;
 
 [assembly: AssemblyVersion(ThisAssembly.VersionString)]
 [assembly: AssemblyFileVersion(ThisAssembly.VersionString)]
+
+// Required by the XPathDocumentHelper.
+[assembly: AllowPartiallyTrustedCallers()]
 
 internal static partial class ThisAssembly
 {
