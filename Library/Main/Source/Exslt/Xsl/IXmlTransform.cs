@@ -117,15 +117,28 @@ namespace Mvp.Xml.Common.Xsl {
         //public static implicit operator XmlInput(XPathNavigator nav   ) { return new XmlInput(nav   ); } // the trick doesn't work with interfaces
     }
 
+	/// <summary>
+	/// Resolves URIs from the current working directory.
+	/// </summary>
     public class OutputResolver : XmlUrlResolver
     {
         private Uri baseUri;
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="OutputResolver"/> class, 
+		/// with the given <paramref name="baseUri"/> appended to the current directory.
+		/// </summary>
+		/// <param name="baseUri">The Uri to append to the current directory.</param>
         public OutputResolver(string baseUri)
         {
             this.baseUri = new Uri(new Uri(Directory.GetCurrentDirectory() + "/"), baseUri + "/");
         }
 
+		/// <summary>
+		/// Resolves the Uri using the <c>baseUri</c> determined in the constructor.
+		/// </summary>
+		/// <param name="baseUri">Not used.</param>
+		/// <param name="relativeUri">The relative Uri to resolve</param>
         public override Uri ResolveUri(Uri baseUri, string relativeUri)
         {
             return base.ResolveUri(this.baseUri, relativeUri);
@@ -141,6 +154,9 @@ namespace Mvp.Xml.Common.Xsl {
         internal object destination;
         private XmlResolver resolver;
 
+		/// <summary>
+		/// Resolver to use to acquire external resources.
+		/// </summary>
         public XmlResolver XmlResolver
         {
             get { return resolver; }

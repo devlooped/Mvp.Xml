@@ -25,7 +25,7 @@ namespace Mvp.Xml.Common
 		{
 			Guard.ArgumentNotNull(baseReader, "baseReader");
 
-			baseReader = baseReader;
+			this.baseReader = baseReader;
 		}
 
 		/// <summary>

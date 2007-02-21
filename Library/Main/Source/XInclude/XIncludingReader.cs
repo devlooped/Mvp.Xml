@@ -80,6 +80,7 @@ namespace Mvp.Xml.XInclude
             XmlTextReader xtr = reader as XmlTextReader;
             if (xtr != null) 
             {
+#pragma warning disable 0618
                 XmlValidatingReader vr = new XmlValidatingReader(reader);
                 vr.ValidationType = ValidationType.None;
                 vr.EntityHandling = EntityHandling.ExpandEntities;
@@ -87,7 +88,8 @@ namespace Mvp.Xml.XInclude
                     ValidationCallback);                
                 _normalization = xtr.Normalization;
                 _whiteSpaceHandling = xtr.WhitespaceHandling;
-                _reader = vr;                
+                _reader = vr;    
+#pragma warning restore 0618
             }
             else  
             {
@@ -115,7 +117,13 @@ namespace Mvp.Xml.XInclude
         public XIncludingReader(string url) 
             : this(new XmlBaseAwareXmlTextReader(url)) {}
 
-        public XIncludingReader(string url, XmlResolver resolver)
+		/// <summary>
+		/// Creates new instance of <c>XIncludingReader</c> class with
+		/// specified URL and resolver.
+		/// </summary>
+		/// <param name="url">Document location.</param>
+		/// <param name="resolver">Resolver to acquire external resources.</param>
+		public XIncludingReader(string url, XmlResolver resolver)
             : this(new XmlBaseAwareXmlTextReader(url, resolver)) { }
         
         /// <summary>
@@ -180,7 +188,14 @@ namespace Mvp.Xml.XInclude
         public XIncludingReader(string url, Stream input) 
             : this(new XmlBaseAwareXmlTextReader(url, input)) {}
 
-        public XIncludingReader(string url, Stream input, XmlResolver resolver)
+		/// <summary>
+		/// Creates new instance of <c>XIncludingReader</c> class with
+		/// specified URL, <c>Stream</c> and resolver.
+		/// </summary>
+		/// <param name="input"><c>Stream</c>.</param>
+		/// <param name="url">Source document's URL</param>
+		/// <param name="resolver">Resolver to acquire external resources.</param>
+		public XIncludingReader(string url, Stream input, XmlResolver resolver)
             : this(new XmlBaseAwareXmlTextReader(url, input, resolver)) { }							
         
         /// <summary>
