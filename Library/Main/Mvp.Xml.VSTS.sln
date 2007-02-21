@@ -7,7 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		Solution Items\localtestrun.testrunconfig = Solution Items\localtestrun.testrunconfig
 		..\..\Mvp-Xml.Net20.Public.snk = ..\..\Mvp-Xml.Net20.Public.snk
-		Solution Items\Mvp.Xml.vsmdi = Solution Items\Mvp.Xml.vsmdi
+		Mvp.Xml.vsmdi = Mvp.Xml.vsmdi
 	EndProjectSection
 	ProjectSection(FolderStartupServices) = postProject
 		{B4F97281-0DBD-4835-9ED8-7DFB966E87FF} = {B4F97281-0DBD-4835-9ED8-7DFB966E87FF}
@@ -29,7 +29,7 @@ Global
 		SccLocalPath2 = UnitTests
 	EndGlobalSection
 	GlobalSection(TestCaseManagementSettings) = postSolution
-		CategoryFile = Solution Items\Mvp.Xml.vsmdi
+		CategoryFile = Mvp.Xml.vsmdi
 	EndGlobalSection
 	GlobalSection(TextTemplating) = postSolution
 		TextTemplating = 1
