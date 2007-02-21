@@ -960,6 +960,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Can autodetect UCS2 big endian files with a without a byte order mark when parse="text"        
         /// </summary>
+		[Ignore]
         [TestMethod]
         public void harold_77() 
         {
@@ -973,6 +974,7 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Can autodetect UCS2 little endian files with a without a byte order mark when parse="text"        
         /// </summary>
+		[Ignore]
         [TestMethod]
         public void harold_78() 
         {
@@ -987,6 +989,7 @@ namespace Mvp.Xml.XInclude.Test
         /// Can autodetect EBCDIC files with a without a byte order mark when parse="text"        
         /// </summary>
         /// <remarks>EBCDIC is not supported encoding</remarks>
+		[Ignore]
         [TestMethod]
         [ExpectedException(typeof(FatalResourceException))]
         public void harold_79() 
