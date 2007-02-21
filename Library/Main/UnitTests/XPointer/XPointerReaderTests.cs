@@ -154,6 +154,7 @@ namespace Mvp.Xml.XPointer.Test
         /// superfluous xmlns() doesn't hurt
         /// </summary>
         [TestMethod]
+		[Ignore]
         public void SuperfluousXmlNsSchemeTest() 
         {
             string xptr = "xmlns(m=mvp-xml)xpointer(dsPubs/publishers[pub_id='1389']/pub_name)";            
