@@ -3,7 +3,6 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-
 [assembly: AssemblyTitle(ThisAssembly.Title)]
 [assembly: AssemblyDescription(ThisAssembly.Description)]
 [assembly: AssemblyCompany(ThisAssembly.Company)]
@@ -20,8 +19,8 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 [assembly: Guid("74262cce-9f30-418c-8e28-35ae800c9b0e")]
 
-[assembly: AssemblyVersion("2.0.*")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion(ThisAssembly.VersionString)]
+[assembly: AssemblyFileVersion(ThisAssembly.VersionString)]
 
 internal static partial class ThisAssembly
 {
@@ -30,4 +29,8 @@ internal static partial class ThisAssembly
 	public const string Product = "Mvp.Xml";
 	public const string Company = "MVP XML Project";
 	public const string Copyright = "";
+	public const string VersionString = "2.2.0.0";
+
+	public static readonly Version Version = new Version(VersionString);
+	
 }
