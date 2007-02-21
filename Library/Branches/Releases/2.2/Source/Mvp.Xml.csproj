@@ -1,0 +1,189 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{18BF6149-933D-4B41-8262-C6762D7A6664}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Mvp.Xml</RootNamespace>
+    <AssemblyName>Mvp.Xml</AssemblyName>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\..\..\Mvp-Xml.Net20.Public.snk</AssemblyOriginatorKeyFile>
+    <DelaySign>true</DelaySign>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Mvp.Xml.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\Mvp.Xml.xml</DocumentationFile>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\Guard.cs" />
+    <Compile Include="Common\Properties\Resources.Designer.cs" />
+    <Compile Include="Common\Serialization\CacheKeyFactory.cs" />
+    <Compile Include="Common\Serialization\PerfCounterInstaller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Common\Serialization\PerfCounterManager.cs" />
+    <Compile Include="Common\Serialization\SignatureExtractor.cs" />
+    <Compile Include="Common\Serialization\StringSorter.cs" />
+    <Compile Include="Common\Serialization\XmlAttributeOverridesThumbprinter.cs" />
+    <Compile Include="Common\Serialization\XmlSerializerCache.cs" />
+    <Compile Include="Common\SR.cs" />
+    <Compile Include="Common\XmlBaseAwareXmlTextReader.cs" />
+    <Compile Include="Common\XmlFirstLowerWriter.cs" />
+    <Compile Include="Common\XmlFirstUpperReader.cs" />
+    <Compile Include="Common\XmlFragmentStream.cs" />
+    <Compile Include="Common\XmlNamespaces.cs" />
+    <Compile Include="Common\XmlNodeFactory.cs" />
+    <Compile Include="Common\XmlNodeListFactory.cs" />
+    <Compile Include="Common\XmlPrefix.cs" />
+    <Compile Include="Common\XmlWrappingReader.cs" />
+    <Compile Include="Common\XmlWrappingWriter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\XPath\DynamicContext.cs" />
+    <Compile Include="Common\XPath\EmptyXPathNodeIterator.cs" />
+    <Compile Include="Common\XPath\IHasXPathNavigator.cs" />
+    <Compile Include="Common\XPath\IndexingXPathNavigator.cs" />
+    <Compile Include="Common\XPath\SingletonXPathNodeIterator.cs" />
+    <Compile Include="Common\XPath\SubtreeeXPathNavigator.cs" />
+    <Compile Include="Common\XPath\XPathCache.cs" />
+    <Compile Include="Common\XPath\XPathIteratorReader.cs" />
+    <Compile Include="Common\XPath\XPathNavigatorIterator.cs" />
+    <Compile Include="Common\XPath\XPathVariable.cs" />
+    <Compile Include="Exslt\ExsltContext.cs" />
+    <Compile Include="Exslt\ExsltContextFunction.cs" />
+    <Compile Include="Exslt\ExsltDatesAndTimes.cs" />
+    <Compile Include="Exslt\ExsltMath.cs" />
+    <Compile Include="Exslt\ExsltNamespaces.cs" />
+    <Compile Include="Exslt\ExsltRandom.cs" />
+    <Compile Include="Exslt\ExsltRegularExpressions.cs" />
+    <Compile Include="Exslt\ExsltSets.cs" />
+    <Compile Include="Exslt\ExsltStrings.cs" />
+    <Compile Include="Exslt\ExsltTransform.cs" />
+    <Compile Include="Exslt\GDNDatesAndTimes.cs" />
+    <Compile Include="Exslt\GDNDynamic.cs" />
+    <Compile Include="Exslt\GDNMath.cs" />
+    <Compile Include="Exslt\GDNRegularExpressions.cs" />
+    <Compile Include="Exslt\GDNSets.cs" />
+    <Compile Include="Exslt\GDNStrings.cs" />
+    <Compile Include="Exslt\MultiOutput\MultiXmlTextWriter.cs" />
+    <Compile Include="Exslt\MultiOutput\OutputState.cs" />
+    <Compile Include="Exslt\Xsl\IXmlTransform.cs" />
+    <Compile Include="Exslt\Xsl\MvpXslTransform.cs" />
+    <Compile Include="Exslt\Xsl\XslReader.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XInclude\SR.cs" />
+    <Compile Include="XInclude\TextIncludingReader.cs" />
+    <Compile Include="XInclude\TextUtils.cs" />
+    <Compile Include="XInclude\XIncludeException.cs" />
+    <Compile Include="XInclude\XIncludeKeywords.cs" />
+    <Compile Include="XInclude\XIncludingReader.cs" />
+    <Compile Include="XInclude\XIncludingReaderState.cs" />
+    <Compile Include="XPointer\ElementSchemaPointerPart.cs" />
+    <Compile Include="XPointer\LexUtils.cs" />
+    <Compile Include="XPointer\Pointer.cs" />
+    <Compile Include="XPointer\PointerPart.cs" />
+    <Compile Include="XPointer\SchemaBasedPointer.cs" />
+    <Compile Include="XPointer\ShorthandPointer.cs" />
+    <Compile Include="XPointer\SR.cs" />
+    <Compile Include="XPointer\XmlnsSchemaPointerPart.cs" />
+    <Compile Include="XPointer\XPath1SchemaPointerPart.cs" />
+    <Compile Include="XPointer\XPointerException.cs" />
+    <Compile Include="XPointer\XPointerLexer.cs" />
+    <Compile Include="XPointer\XPointerParser.cs" />
+    <Compile Include="XPointer\XPointerReader.cs" />
+    <Compile Include="XPointer\XPointerSchema.cs" />
+    <Compile Include="XPointer\XPointerSchemaPointerPart.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Common\changelog.txt" />
+    <Content Include="XPointer\changelog.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Common\Properties\Resources.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\Serialization\PerfCounterInstaller.resx">
+      <DependentUpon>PerfCounterInstaller.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\SR.resx">
+      <DependentUpon>SR.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XInclude\SR.resx">
+      <DependentUpon>SR.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XPointer\SR.resx">
+      <DependentUpon>SR.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\Mvp-Xml.Net20.Public.snk">
+      <Link>Mvp-Xml.Net20.Public.snk</Link>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>
+			@echo ########### Mvp.Xml Custom Build Event has started
+			@echo ########### Setting environment variables
+			call "$(DevEnvDir)..\Tools\vsvars32.bat"
+			@echo ########### Disassembling...
+			ildasm "$(TargetFileName)" /out=Mvp.Xml.il /nobar
+			@echo ########### Renaming EXSLT methods...
+			"$(ProjectDir)..\..\Tools\Bin\MethodRenamer.exe" Mvp.Xml.il Mvp.Xml.Fixed.il
+			@echo ########### Assembling library back...
+			ilasm Mvp.Xml.Fixed.il /RESOURCE=Mvp.Xml.res /DLL /OUTPUT="$(TargetFileName)" /KEY=../../../../../Mvp-Xml.Net20.Public.snk
+			@echo ########### Cleaning...
+			del Mvp.Xml.res
+			del Mvp.Xml.il
+			del Mvp.Xml.Fixed.il
+			del *.resources
+			@echo ########### Mvp.Xml Custom Build Event has finished
+		</PostBuildEvent>
+  </PropertyGroup>
+</Project>

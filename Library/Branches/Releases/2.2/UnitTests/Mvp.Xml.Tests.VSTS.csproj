@@ -1,0 +1,819 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F1148DB9-C008-4E5B-ADE7-2CC2B98398EE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Mvp.Xml.Tests</RootNamespace>
+    <AssemblyName>Mvp.Xml.Tests.VSTS</AssemblyName>
+    <WarningLevel>4</WarningLevel>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Windows\assembly\GAC_MSIL\Microsoft.VisualStudio.QualityTools.UnitTestFramework\8.0.0.0__b03f5f7f11d50a3a\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\DebuggingXmlTextReader.cs" />
+    <Compile Include="Common\DebuggingXPathNavigator.cs" />
+    <Compile Include="Common\DebugUtils.cs" />
+    <Compile Include="Common\EmptyXPathNodeIteratorTests.cs" />
+    <Compile Include="Common\EntryPoint.cs" />
+    <Compile Include="Common\Globals.cs" />
+    <Compile Include="Common\IndexingXPathNavigatorTest.cs" />
+    <Compile Include="Common\Misc.cs" />
+    <Compile Include="Common\MvpXslTransformTests\MvpXslTransformTests.cs" />
+    <Compile Include="Common\pubsNs.cs">
+      <DependentUpon>pubsNs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Common\SingletonXPathNodeIteratorTests.cs" />
+    <Compile Include="Common\SubtreeeXPathNavigatorTests\Tests.cs" />
+    <Compile Include="Common\UpperLowerTests\Customer.cs">
+      <DependentUpon>Customer.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Common\UpperLowerTests\FirstUpperLowerTests.cs" />
+    <Compile Include="Common\XmlBaseAwareXmlTextReaderTests\Tests.cs" />
+    <Compile Include="Common\XmlFragments\Tests.cs" />
+    <Compile Include="Common\XmlNodeFactoryTests.cs" />
+    <Compile Include="Common\XmlNodeListFactoryTests.cs" />
+    <Compile Include="Common\XmlSerializerCacheTests\PerfCounterManagerTests.cs" />
+    <Compile Include="Common\XmlSerializerCacheTests\PerfCounterTests.cs" />
+    <Compile Include="Common\XmlSerializerCacheTests\StringSorterHelperTests.cs" />
+    <Compile Include="Common\XmlSerializerCacheTests\ThumbprintHelpers.cs" />
+    <Compile Include="Common\XmlSerializerCacheTests\XmlAnyElementThumbprintTests.cs" />
+    <Compile Include="Common\XmlSerializerCacheTests\XmlArrayItemThumbprintTests.cs" />
+    <Compile Include="Common\XmlSerializerCacheTests\XmlArrayThumbprintTests.cs" />
+    <Compile Include="Common\XmlSerializerCacheTests\XmlAttributeOverridesThumbprinterTester.cs" />
+    <Compile Include="Common\XmlSerializerCacheTests\XmlAttributeThumbprintTests.cs" />
+    <Compile Include="Common\XmlSerializerCacheTests\XmlChoiceIndetifierPrintTests.cs" />
+    <Compile Include="Common\XmlSerializerCacheTests\XmlDefaultValuePrintTest.cs" />
+    <Compile Include="Common\XmlSerializerCacheTests\XmlElementThumbprintTests.cs" />
+    <Compile Include="Common\XmlSerializerCacheTests\XmlEnumAttributeThumbprintTests.cs" />
+    <Compile Include="Common\XmlSerializerCacheTests\XmlIgnoreThumbprintTests.cs" />
+    <Compile Include="Common\XmlSerializerCacheTests\XmlNamespaceThumbprintTests.cs" />
+    <Compile Include="Common\XmlSerializerCacheTests\XmlRootThumbprintTests.cs" />
+    <Compile Include="Common\XmlSerializerCacheTests\XmlSerializerCacheTests.cs" />
+    <Compile Include="Common\XmlSerializerCacheTests\XmlTextThumbprintTests.cs" />
+    <Compile Include="Common\XmlWrappingReaderTests.cs" />
+    <Compile Include="Common\XPathCacheTests.cs" />
+    <Compile Include="Common\XPathCacheUsability.cs" />
+    <Compile Include="Common\XPathIteratorReaderTests\Tests.cs" />
+    <Compile Include="Common\XPathSortBug.cs" />
+    <Compile Include="Common\XslReaderTests\XslReaderTests.cs" />
+    <Compile Include="ExsltTest\ExsltCommonTests.cs" />
+    <Compile Include="ExsltTest\ExsltDatesAndTimesTests.cs" />
+    <Compile Include="ExsltTest\ExsltMathTests.cs" />
+    <Compile Include="ExsltTest\ExsltRandomTests.cs" />
+    <Compile Include="ExsltTest\ExsltRegularExpressionsTests.cs" />
+    <Compile Include="ExsltTest\ExsltSetsTests.cs" />
+    <Compile Include="ExsltTest\ExsltStringsTests.cs" />
+    <Compile Include="ExsltTest\ExsltTest.cs" />
+    <Compile Include="ExsltTest\ExsltUnitTests.cs" />
+    <Compile Include="ExsltTest\GDNDatesAndTimesTests.cs" />
+    <Compile Include="ExsltTest\GDNDynamicTests.cs" />
+    <Compile Include="ExsltTest\GDNMathTests.cs" />
+    <Compile Include="ExsltTest\GDNRegularExpressionsTests.cs" />
+    <Compile Include="ExsltTest\GDNSetsTests.cs" />
+    <Compile Include="ExsltTest\GDNStringsTests.cs" />
+    <Compile Include="ExsltXPathTest\ExsltXPathTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XInclude\Elliotte_Rusty_HaroldTests.cs" />
+    <Compile Include="XInclude\EntryPoint.cs" />
+    <Compile Include="XInclude\FourThoughtTests.cs" />
+    <Compile Include="XInclude\LTG_Edinburgh_UnivTests.cs" />
+    <Compile Include="XInclude\NistTests.cs" />
+    <Compile Include="XInclude\RedhatTests.cs" />
+    <Compile Include="XInclude\XIncludeReaderTests.cs" />
+    <Compile Include="XInclude\XIncludeSyntaxTests.cs" />
+    <Compile Include="XPointer\EntryPoint.cs" />
+    <Compile Include="XPointer\XPointerParserTests.cs" />
+    <Compile Include="XPointer\XPointerReaderTests.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Source\Mvp.Xml.csproj">
+      <Project>{18BF6149-933D-4B41-8262-C6762D7A6664}</Project>
+      <Name>Mvp.Xml</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Common\changelog.txt" />
+    <Content Include="Common\library.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Common\MvpXslTransformTests\exslt-test.xslt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Common\MvpXslTransformTests\resolver-test.xslt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Common\MvpXslTransformTests\test.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Common\MvpXslTransformTests\test1.xslt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Common\northwind.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Common\pubs.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Common\pubsNs.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Common\SubtreeeXPathNavigatorTests\nodecopy.xsl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Common\SubtreeeXPathNavigatorTests\print_root.xsl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Common\SubtreeeXPathNavigatorTests\test.xsl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Common\UpperLowerTests\Customer.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Common\XmlBaseAwareXmlTextReaderTests\relativeTest.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Common\XmlBaseAwareXmlTextReaderTests\test.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Common\XmlFragments\publishers.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Common\XPathIteratorReaderTests\rss.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Common\XslReaderTests\test1.xslt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ExsltTest\FunctionsAvailability.html" />
+    <Content Include="ExsltTest\results\EXSLT\Common\node-set.xml" />
+    <Content Include="ExsltTest\results\EXSLT\Common\object-type.xml" />
+    <Content Include="ExsltTest\results\EXSLT\DatesAndTimes\add-duration.xml" />
+    <Content Include="ExsltTest\results\EXSLT\DatesAndTimes\add.xml" />
+    <Content Include="ExsltTest\results\EXSLT\DatesAndTimes\date-time.xml" />
+    <Content Include="ExsltTest\results\EXSLT\DatesAndTimes\date.xml" />
+    <Content Include="ExsltTest\results\EXSLT\DatesAndTimes\day-abbreviation.xml" />
+    <Content Include="ExsltTest\results\EXSLT\DatesAndTimes\day-in-month.xml" />
+    <Content Include="ExsltTest\results\EXSLT\DatesAndTimes\day-in-week.xml" />
+    <Content Include="ExsltTest\results\EXSLT\DatesAndTimes\day-in-year.xml" />
+    <Content Include="ExsltTest\results\EXSLT\DatesAndTimes\day-name.xml" />
+    <Content Include="ExsltTest\results\EXSLT\DatesAndTimes\day-of-week-in-month.xml" />
+    <Content Include="ExsltTest\results\EXSLT\DatesAndTimes\difference.xml" />
+    <Content Include="ExsltTest\results\EXSLT\DatesAndTimes\duration.xml" />
+    <Content Include="ExsltTest\results\EXSLT\DatesAndTimes\format-date.xml" />
+    <Content Include="ExsltTest\results\EXSLT\DatesAndTimes\hour-in-day.xml" />
+    <Content Include="ExsltTest\results\EXSLT\DatesAndTimes\leap-year.xml" />
+    <Content Include="ExsltTest\results\EXSLT\DatesAndTimes\minute-in-hour.xml" />
+    <Content Include="ExsltTest\results\EXSLT\DatesAndTimes\month-abbreviation.xml" />
+    <Content Include="ExsltTest\results\EXSLT\DatesAndTimes\month-in-year.xml" />
+    <Content Include="ExsltTest\results\EXSLT\DatesAndTimes\month-name.xml" />
+    <Content Include="ExsltTest\results\EXSLT\DatesAndTimes\parse-date.xml" />
+    <Content Include="ExsltTest\results\EXSLT\DatesAndTimes\second-in-minute.xml" />
+    <Content Include="ExsltTest\results\EXSLT\DatesAndTimes\seconds.xml" />
+    <Content Include="ExsltTest\results\EXSLT\DatesAndTimes\sum.xml" />
+    <Content Include="ExsltTest\results\EXSLT\DatesAndTimes\time.xml" />
+    <Content Include="ExsltTest\results\EXSLT\DatesAndTimes\week-in-month.xml" />
+    <Content Include="ExsltTest\results\EXSLT\DatesAndTimes\week-in-year.xml" />
+    <Content Include="ExsltTest\results\EXSLT\DatesAndTimes\year.xml" />
+    <Content Include="ExsltTest\results\EXSLT\Math\abs.xml" />
+    <Content Include="ExsltTest\results\EXSLT\Math\acos.xml" />
+    <Content Include="ExsltTest\results\EXSLT\Math\asin.xml" />
+    <Content Include="ExsltTest\results\EXSLT\Math\atan.xml" />
+    <Content Include="ExsltTest\results\EXSLT\Math\atan2.xml" />
+    <Content Include="ExsltTest\results\EXSLT\Math\constant.xml" />
+    <Content Include="ExsltTest\results\EXSLT\Math\cos.xml" />
+    <Content Include="ExsltTest\results\EXSLT\Math\exp.xml" />
+    <Content Include="ExsltTest\results\EXSLT\Math\highest.xml" />
+    <Content Include="ExsltTest\results\EXSLT\Math\log.xml" />
+    <Content Include="ExsltTest\results\EXSLT\Math\lowest.xml" />
+    <Content Include="ExsltTest\results\EXSLT\Math\max.xml" />
+    <Content Include="ExsltTest\results\EXSLT\Math\min.xml" />
+    <Content Include="ExsltTest\results\EXSLT\Math\power.xml" />
+    <Content Include="ExsltTest\results\EXSLT\Math\random.xml" />
+    <Content Include="ExsltTest\results\EXSLT\Math\sin.xml" />
+    <Content Include="ExsltTest\results\EXSLT\Math\sqrt.xml" />
+    <Content Include="ExsltTest\results\EXSLT\Math\tan.xml" />
+    <Content Include="ExsltTest\results\EXSLT\Random\random-sequence.xml" />
+    <Content Include="ExsltTest\results\EXSLT\RegularExpressions\match.xml" />
+    <Content Include="ExsltTest\results\EXSLT\RegularExpressions\replace.xml" />
+    <Content Include="ExsltTest\results\EXSLT\RegularExpressions\test.xml" />
+    <Content Include="ExsltTest\results\EXSLT\Sets\difference.xml" />
+    <Content Include="ExsltTest\results\EXSLT\Sets\distinct.xml" />
+    <Content Include="ExsltTest\results\EXSLT\Sets\has-same-node.xml" />
+    <Content Include="ExsltTest\results\EXSLT\Sets\intersection.xml" />
+    <Content Include="ExsltTest\results\EXSLT\Sets\leading.xml" />
+    <Content Include="ExsltTest\results\EXSLT\Sets\trailing.xml" />
+    <Content Include="ExsltTest\results\EXSLT\Strings\align.xml" />
+    <Content Include="ExsltTest\results\EXSLT\Strings\concat.xml" />
+    <Content Include="ExsltTest\results\EXSLT\Strings\decode-uri.xml" />
+    <Content Include="ExsltTest\results\EXSLT\Strings\encode-uri.xml" />
+    <Content Include="ExsltTest\results\EXSLT\Strings\padding.xml" />
+    <Content Include="ExsltTest\results\EXSLT\Strings\replace.xml" />
+    <Content Include="ExsltTest\results\EXSLT\Strings\split.xml" />
+    <Content Include="ExsltTest\results\EXSLT\Strings\tokenize.xml" />
+    <Content Include="ExsltTest\results\GotDotNet\DatesAndTimes\avg.xml" />
+    <Content Include="ExsltTest\results\GotDotNet\DatesAndTimes\day-abbreviation.xml" />
+    <Content Include="ExsltTest\results\GotDotNet\DatesAndTimes\day-name.xml" />
+    <Content Include="ExsltTest\results\GotDotNet\DatesAndTimes\max.xml" />
+    <Content Include="ExsltTest\results\GotDotNet\DatesAndTimes\min.xml" />
+    <Content Include="ExsltTest\results\GotDotNet\DatesAndTimes\month-abbreviation.xml" />
+    <Content Include="ExsltTest\results\GotDotNet\DatesAndTimes\month-name.xml" />
+    <Content Include="ExsltTest\results\GotDotNet\Dynamic\evaluate.xml" />
+    <Content Include="ExsltTest\results\GotDotNet\Math\avg.xml" />
+    <Content Include="ExsltTest\results\GotDotNet\RegularExpressions\tokenize.xml" />
+    <Content Include="ExsltTest\results\GotDotNet\Sets\subset.xml" />
+    <Content Include="ExsltTest\results\GotDotNet\Strings\lowercase.xml" />
+    <Content Include="ExsltTest\results\GotDotNet\Strings\uppercase.xml" />
+    <Content Include="ExsltTest\tests\availability.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\Common\node-set.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\Common\object-type.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\Common\source.xml" />
+    <Content Include="ExsltTest\tests\EXSLT\DatesAndTimes\add-duration.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\DatesAndTimes\add.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\DatesAndTimes\date-time.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\DatesAndTimes\date.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\DatesAndTimes\day-abbreviation.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\DatesAndTimes\day-in-month.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\DatesAndTimes\day-in-week.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\DatesAndTimes\day-in-year.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\DatesAndTimes\day-name.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\DatesAndTimes\day-of-week-in-month.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\DatesAndTimes\difference.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\DatesAndTimes\duration.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\DatesAndTimes\format-date.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\DatesAndTimes\hour-in-day.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\DatesAndTimes\leap-year.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\DatesAndTimes\minute-in-hour.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\DatesAndTimes\month-abbreviation.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\DatesAndTimes\month-in-year.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\DatesAndTimes\month-name.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\DatesAndTimes\parse-date.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\DatesAndTimes\second-in-minute.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\DatesAndTimes\seconds.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\DatesAndTimes\source.xml" />
+    <Content Include="ExsltTest\tests\EXSLT\DatesAndTimes\sum.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\DatesAndTimes\time.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\DatesAndTimes\week-in-month.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\DatesAndTimes\week-in-year.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\DatesAndTimes\year.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\Math\abs.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\Math\acos.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\Math\asin.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\Math\atan.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\Math\atan2.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\Math\constant.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\Math\cos.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\Math\exp.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\Math\highest.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\Math\log.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\Math\lowest.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\Math\max.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\Math\min.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\Math\power.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\Math\random.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\Math\sin.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\Math\source.xml" />
+    <Content Include="ExsltTest\tests\EXSLT\Math\sqrt.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\Math\tan.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\Random\random-sequence.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\Random\source.xml" />
+    <Content Include="ExsltTest\tests\EXSLT\RegularExpressions\match.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\RegularExpressions\replace.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\RegularExpressions\source.xml" />
+    <Content Include="ExsltTest\tests\EXSLT\RegularExpressions\test.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\Sets\difference.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\Sets\distinct.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\Sets\has-same-node.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\Sets\intersection.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\Sets\leading.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\Sets\source.xml" />
+    <Content Include="ExsltTest\tests\EXSLT\Sets\trailing.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\Strings\align.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\Strings\concat.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\Strings\decode-uri.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\Strings\encode-uri.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\Strings\padding.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\Strings\replace.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\Strings\source.xml" />
+    <Content Include="ExsltTest\tests\EXSLT\Strings\split.xslt" />
+    <Content Include="ExsltTest\tests\EXSLT\Strings\tokenize.xslt" />
+    <Content Include="ExsltTest\tests\GotDotNet\DatesAndTimes\avg.xslt" />
+    <Content Include="ExsltTest\tests\GotDotNet\DatesAndTimes\day-abbreviation.xslt" />
+    <Content Include="ExsltTest\tests\GotDotNet\DatesAndTimes\day-name.xslt" />
+    <Content Include="ExsltTest\tests\GotDotNet\DatesAndTimes\max.xslt" />
+    <Content Include="ExsltTest\tests\GotDotNet\DatesAndTimes\min.xslt" />
+    <Content Include="ExsltTest\tests\GotDotNet\DatesAndTimes\month-abbreviation.xslt" />
+    <Content Include="ExsltTest\tests\GotDotNet\DatesAndTimes\month-name.xslt" />
+    <Content Include="ExsltTest\tests\GotDotNet\DatesAndTimes\source.xml" />
+    <Content Include="ExsltTest\tests\GotDotNet\Dynamic\evaluate.xslt" />
+    <Content Include="ExsltTest\tests\GotDotNet\Dynamic\source.xml" />
+    <Content Include="ExsltTest\tests\GotDotNet\Math\avg.xslt" />
+    <Content Include="ExsltTest\tests\GotDotNet\Math\source.xml" />
+    <Content Include="ExsltTest\tests\GotDotNet\RegularExpressions\source.xml" />
+    <Content Include="ExsltTest\tests\GotDotNet\RegularExpressions\tokenize.xslt" />
+    <Content Include="ExsltTest\tests\GotDotNet\Sets\source.xml" />
+    <Content Include="ExsltTest\tests\GotDotNet\Sets\subset.xslt" />
+    <Content Include="ExsltTest\tests\GotDotNet\Strings\lowercase.xslt" />
+    <Content Include="ExsltTest\tests\GotDotNet\Strings\source.xml" />
+    <Content Include="ExsltTest\tests\GotDotNet\Strings\uppercase.xslt" />
+    <Content Include="ExsltTest\tests\invoice-processor.xsl" />
+    <Content Include="ExsltTest\tests\invoice.xml" />
+    <Content Include="ExsltTest\tests\regexp-match-test.xslt" />
+    <Content Include="ExsltTest\tests\test.xml" />
+    <Content Include="ExsltXPathTest\tests\books.xml" />
+    <Content Include="ExsltXPathTest\tests\foo.xml" />
+    <Content Include="XInclude\results\caching.xml" />
+    <Content Include="XInclude\results\document.xml" />
+    <Content Include="XInclude\results\fallback.xml" />
+    <Content Include="XInclude\results\filenotfound.xml" />
+    <Content Include="XInclude\results\includesitself-nohref-text.xml" />
+    <Content Include="XInclude\results\includesitself.xml" />
+    <Content Include="XInclude\results\langtest.xml" />
+    <Content Include="XInclude\results\loop.xml" />
+    <Content Include="XInclude\results\nonxmlchar.xml" />
+    <Content Include="XInclude\results\resolver.xml" />
+    <Content Include="XInclude\results\test-Martin.xml" />
+    <Content Include="XInclude\results\working_example.xml" />
+    <Content Include="XInclude\results\working_example2.xml" />
+    <Content Include="XInclude\results\xpointer.xml" />
+    <Content Include="XInclude\TestsGen.xslt" />
+    <Content Include="XInclude\tests\caching.xml" />
+    <Content Include="XInclude\tests\count.txt" />
+    <Content Include="XInclude\tests\data.xml" />
+    <Content Include="XInclude\tests\disclaimer.xml" />
+    <Content Include="XInclude\tests\document.xml" />
+    <Content Include="XInclude\tests\fallback.xml" />
+    <Content Include="XInclude\tests\fallbacknotchildinclude.xml" />
+    <Content Include="XInclude\tests\filenotfound.xml" />
+    <Content Include="XInclude\tests\includechildofinclude.xml" />
+    <Content Include="XInclude\tests\includesitself-nohref-text.xml" />
+    <Content Include="XInclude\tests\includesitself.xml" />
+    <Content Include="XInclude\tests\langtest.xml" />
+    <Content Include="XInclude\tests\loop.xml" />
+    <Content Include="XInclude\tests\nohref.xml" />
+    <Content Include="XInclude\tests\nonxmlchar.xml" />
+    <Content Include="XInclude\tests\resolver.xml" />
+    <Content Include="XInclude\tests\russian.xml" />
+    <Content Include="XInclude\tests\table.xml" />
+    <Content Include="XInclude\tests\test-Martin.xml" />
+    <Content Include="XInclude\tests\test2.xml" />
+    <Content Include="XInclude\tests\twofallbacks.xml" />
+    <Content Include="XInclude\tests\unknownparseattr.xml" />
+    <Content Include="XInclude\tests\working_example.xml" />
+    <Content Include="XInclude\tests\working_example2.xml" />
+    <Content Include="XInclude\tests\xpointer.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\EdUni\result\book.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\EdUni\result\extract.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\EdUni\result\lang.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\EdUni\test\book.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\EdUni\test\chap1.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\EdUni\test\chap2.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\EdUni\test\extract.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\EdUni\test\lang-samples.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\EdUni\test\lang.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\FourThought\result\XInclude\include1.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\FourThought\result\XInclude\include2.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\FourThought\result\XInclude\include3.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\FourThought\result\XInclude\include4.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\FourThought\result\XInclude\include5.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\FourThought\result\XInclude\include6.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\FourThought\result\XInclude\include7.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\FourThought\test\XInclude\docs\ft-include1.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\FourThought\test\XInclude\docs\ft-include2.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\FourThought\test\XInclude\docs\ft-include3.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\FourThought\test\XInclude\docs\ft-include4.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\FourThought\test\XInclude\docs\ft-include5.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\FourThought\test\XInclude\docs\ft-include6.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\FourThought\test\XInclude\docs\ft-include7.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\FourThought\test\XInclude\docs\include1.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\FourThought\test\XInclude\docs\include2.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\FourThought\test\XInclude\docs\include3.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\FourThought\test\XInclude\docs\include4.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\acceptascii.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\acceptenglish.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\acceptfrench.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\accepthtml.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\acceptjis.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\acceptplaintext.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\badelementschemedata.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\c1.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\c1a.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\c1b.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\c2.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\c2a.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\c2b.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\c2c.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\c2d.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\c3.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\c5.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\d1.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\disclaimer.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\EBCDIC.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\emptyfallback.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\encodingheuristicstest.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\fallbacktest.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\fallbacktest2.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\goodiri.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\ignoresfragmentid.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\includedocumentwithintradocumentreferences.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\includefromsamedocumentwithbase.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\langtest1.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\langtest2.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\langtest3.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\latin1.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\legalcircle.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\lineends.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\marshtest.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\marshtestwithxmlbase.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\metafallbacktest.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\metafallbacktest2.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\metafallbacktest5.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\metafallbacktest6.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\metafallbacktestwithxpointer.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\metafallbacktestwithxpointer2.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\metafallbacktotexttest.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\namespacetest.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\onlyxpointer.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\paralleltest.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\recursewithinsamedocument.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\resolvethruxpointer.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\roottest.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\roottest2.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\simple.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\test.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\tobintop.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\triple.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\UnicodeBigUnmarked.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\UnicodeLittleUnmarked.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\unrecognizedschemewithfallback.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\utf16.txt" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\utf16.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\UTF16BigEndianWithByteOrderMark.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\UTF16LittleEndianWithByteOrderMark.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\UTF32BE.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\UTF32LE.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\UTF8WithByteOrderMark.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\xmlbasetest.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\xmlbasetest2.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\xmlbasetest3.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\xpointeroverridesfragmentid.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\xptrdandtumblertest.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\xptrfallback.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\xptridandtumblertest.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\xptridtest.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\xptridtest2.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\result\xptrtumblertest.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\acceptenglish.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\acceptfrench.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\accepthtml.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\acceptplaintext.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\a\a.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\badaccept1.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\badaccept2.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\badelementschemedata.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\badiri.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\badiri2.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\badparseattribute.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\badxptr.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\badxptr2.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\badxptr3.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\badxptr4.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\basedata\red.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\baseinclude.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\bdisclaimer.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\b\b.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\c1.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\c2.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\c3.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\c5.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\circle1.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\circle2a.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\circle2b.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\circleback.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\circlepointer1.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\circlepointer2.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\circlepointer3.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\colonizedschemename.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\count.txt" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\d1.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\data.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\disclaimer.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\docwithid.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\docwithidandtumbler.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\EBCDIC.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\emptyfallback.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\encodingheuristicstest.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\extraattributes.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\fallbackbadparseattribute.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\fallbackbadxpointer.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\fallbackcontainsfallback.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\fallbackinternalxpointer.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\fallbacknohreforparse.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\fallbacktest.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\fallbacktest2.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\fallbacktest3.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\fallbacktotext.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\fallbackxpointerpointsnowhere.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\french.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\french2.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\goodiri.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\ignoresfragmentid.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\includedocumentwithintradocumentreferences.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\includefromsamedocumentwithbase.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\internalcircular.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\internalcircularviaancestor.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\langtest1.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\langtest2.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\langtest3.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\laterfailure.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\laterfailure2.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\latin1.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\legalcircle.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\lineends.txt" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\lineends.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\marshtest.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\marshtestwithxmlbase.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\marshtestwithxmlbaseandemptyhref.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\meaninglessfragmentid.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\metafallbacktest.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\metafallbacktest2.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\metafallbacktest3.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\metafallbacktest4.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\metafallbacktest5.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\metafallbacktest6.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\metafallbacktestwithfragmentid.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\metafallbacktestwithxpointer.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\metafallbacktestwithxpointer2.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\metafallbacktotexttest.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\metafallbackwithbadxpointertest.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\metamissingfallbacktestwithxpointer.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\missingfile.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\missinghref.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\multiplefallbacks.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\multiplefallbacks2.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\nakedfallback.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\namespaceinner.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\namespacetest.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\nestedxinclude.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\nestedxincludenamespace.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\nofallbacktest.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\nolang.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\onedown.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\onlyxpointer.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\paralleltest.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\parseequalxml.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\recursewithinsamedocument.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\resolvethruxpointer.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\rootfailuretest.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\roottest.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\roottest2.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\simple.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\simple2.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\test.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\test0.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\test2.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\test3.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\text\EBCDIC.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\text\UnicodeBigUnmarked.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\text\UnicodeLittleUnmarked.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\text\UTF32BE.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\text\UTF32LE.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\text\UTF8.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\tobinbottom.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\tobinmiddle.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\tobintop.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\toplevel.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\UCS4BE.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\ucs4bigendian.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\UCS4LE.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\ucs4littleendian.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\UnicodeBigUnmarked.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\UnicodeLittleUnmarked.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\unrecognizedscheme.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\unrecognizedschemewithfallback.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\utf16.txt" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\utf16.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\utf16be.txt" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\utf16be.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\UTF16BigEndianWithByteOrderMark.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\utf16le.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\UTF16LittleEndianWithByteOrderMark.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\UTF32BE.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\UTF32LE.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\utf8.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\utf8bom.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\UTF8WithByteOrderMark.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\xmlbasetest.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\xmlbasetest2.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\xmlbasetest3.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\xpointeroverridesfragmentid.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\xpointerselectsnonelements.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\xpointerwithpercentescape.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\xptr2tumblertest.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\xptrdoubletumblertest.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\xptrfallback.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\xptridandtumblertest.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\xptridtest.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\xptridtest2.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\xptrsyntaxerrorbutfallback.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\xptrtumblerfailsbutfallback.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\xptrtumblertest.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\xptrtumblertest2.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\xptrtumblertest3.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Imaq\result\XInclude\docids.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Imaq\result\XInclude\fallback.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Imaq\result\XInclude\include.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Imaq\result\XInclude\nodes.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Imaq\result\XInclude\recursive.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Imaq\result\XInclude\txtinclude.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Imaq\test\XInclude\docs\docids.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Imaq\test\XInclude\docs\fallback.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Imaq\test\XInclude\docs\include.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Imaq\test\XInclude\docs\nodes.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Imaq\test\XInclude\docs\recursive.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Imaq\test\XInclude\docs\txtinclude.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Imaq\test\XInclude\ents\ids.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Imaq\test\XInclude\ents\inc.txt" />
+    <Content Include="XInclude\XInclude-Test-Suite\Imaq\test\XInclude\ents\something.txt" />
+    <Content Include="XInclude\XInclude-Test-Suite\Imaq\test\XInclude\ents\something.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\result\nist-include-01.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\result\nist-include-02.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\result\nist-include-04.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\result\nist-include-06.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\result\nist-include-07.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\result\nist-include-09.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\result\nist-include-10.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\result\nist-include-13.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\result\nist-include-14.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\result\nist-include-16.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\result\nist-include-17.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\result\nist-include-18.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\result\nist-include-19.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\result\nist-include-20.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\result\nist-include-21.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\result\nist-include-22.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\result\nist-include-26.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\result\nist-include-27.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\result\nist-include-28.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\result\nist-include-29.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\result\nist-include-30.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\result\nist-include-31.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\result\nist-include-34.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\result\nist-include-35.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\result\nist-include-36.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\result\nist-include-37.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\result\nist-include-38.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\result\nist-include-39.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\result\nist-include-40.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\result\nist-include-49.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\result\nist-include-50.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\result\nist-include-51.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\result\nist-include-52.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\result\nist-include-55.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\docs\nist-include-01.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\docs\nist-include-02.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\docs\nist-include-03.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\docs\nist-include-04.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\docs\nist-include-05.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\docs\nist-include-06.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\docs\nist-include-07.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\docs\nist-include-08.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\docs\nist-include-09.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\docs\nist-include-10.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\docs\nist-include-11.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\docs\nist-include-12.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\docs\nist-include-13.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\docs\nist-include-14.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\docs\nist-include-15.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\docs\nist-include-16.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\docs\nist-include-17.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\docs\nist-include-18.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\docs\nist-include-19.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\docs\nist-include-20.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\docs\nist-include-21.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\docs\nist-include-22.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\docs\nist-include-23.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\docs\nist-include-24.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\docs\nist-include-25.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\docs\nist-include-26.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\docs\nist-include-27.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\docs\nist-include-28.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\docs\nist-include-29.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\docs\nist-include-30.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\docs\nist-include-31.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\docs\nist-include-32.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\docs\nist-include-33.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\docs\nist-include-34.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\docs\nist-include-35.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\docs\nist-include-36.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\docs\nist-include-37.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\docs\nist-include-38.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\docs\nist-include-39.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\docs\nist-include-40.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\docs\nist-include-41.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\docs\nist-include-42.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\docs\nist-include-43.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\docs\nist-include-44.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\docs\nist-include-45.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\docs\nist-include-46.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\docs\nist-include-47.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\docs\nist-include-48.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\docs\nist-include-49.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\docs\nist-include-50.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\docs\nist-include-51.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\docs\nist-include-52.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\docs\nist-include-53.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\docs\nist-include-54.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\docs\nist-include-55.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\docs\nist-include-56.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\ents\books.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\ents\chapter.txt" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\ents\extref.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\ents\getnodes.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\ents\idtst.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\ents\include.txt" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\ents\include1.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\ents\morebooks.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\ents\nwf1.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\ents\nwf2.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\ents\nwfsomething.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\ents\part1.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\ents\prtids.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\ents\ptrtst.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\ents\something.txt" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\ents\something.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\ents\unparent.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\report.html" />
+    <Content Include="XInclude\XInclude-Test-Suite\testdescr.xml" />
+    <Content Include="XInclude\XInclude-Test-Suite\xinclude.xsl" />
+    <Content Include="XPointer\changelog.txt" />
+    <Content Include="XPointer\northwind.xml" />
+    <Content Include="XPointer\pubsNS.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Common\pubsNs.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Common\UpperLowerTests\Customer.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Common\UpperLowerTests\Customer.xsx">
+      <DependentUpon>Customer.xsd</DependentUpon>
+    </None>
+    <None Include="ExsltTest\AvailabilityTest.cmd" />
+    <None Include="ExsltXPathTest\Makefile" />
+    <None Include="XInclude\generate-tests.cmd" />
+    <None Include="XInclude\tests\binary.bin" />
+    <None Include="XInclude\XInclude-Test-Suite\Harold\test\red.dtd" />
+    <Content Include="XInclude\XInclude-Test-Suite\Imaq\test\XInclude\ents\sub-inc.ent" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\ents\004.ent" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\ents\004.ent" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\ents\reluriref.ent" />
+    <Content Include="XInclude\XInclude-Test-Suite\Nist\test\ents\spec.dtd" />
+    <None Include="XInclude\XInclude-Test-Suite\README.cvs" />
+    <Content Include="XInclude\XInclude-Test-Suite\testcases.dtd" />
+    <Content Include="XPointer\northwind.dtd" />
+    <Content Include="XPointer\pubNS.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSHARP.Targets" />
+  <PropertyGroup>
+    <PrepareForRunDependsOn>$(PrepareForRunDependsOn);CopyVSTSContentFiles</PrepareForRunDependsOn>
+  </PropertyGroup>
+  <Target Name="CopyVSTSContentFiles">
+    <Copy SourceFiles="@(ContentWithTargetPath)" DestinationFiles="$(ProjectDir)..\TestResults\%(TargetPath)" />
+  </Target>
+</Project>
