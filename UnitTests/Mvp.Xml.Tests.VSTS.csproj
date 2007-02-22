@@ -56,7 +56,7 @@
       <DependentUpon>Customer.xsd</DependentUpon>
     </Compile>
     <Compile Include="Common\UpperLowerTests\FirstUpperLowerTests.cs" />
-    <Compile Include="Common\XmlBaseAwareXmlTextReaderTests\Tests.cs" />
+    <Compile Include="Common\XmlBaseAwareXmlReaderTests\Tests.cs" />
     <Compile Include="Common\XmlFragments\Tests.cs" />
     <Compile Include="Common\XmlNodeFactoryTests.cs" />
     <Compile Include="Common\XmlNodeListFactoryTests.cs" />
@@ -161,10 +161,10 @@
     <Content Include="Common\UpperLowerTests\Customer.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Common\XmlBaseAwareXmlTextReaderTests\relativeTest.xml">
+    <Content Include="Common\XmlBaseAwareXmlReaderTests\relativeTest.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Common\XmlBaseAwareXmlTextReaderTests\test.xml">
+    <Content Include="Common\XmlBaseAwareXmlReaderTests\test.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Common\XmlFragments\publishers.xml">
@@ -796,8 +796,8 @@
     <None Include="ExsltTest\AvailabilityTest.cmd" />
     <None Include="ExsltXPathTest\Makefile" />
     <None Include="XInclude\generate-tests.cmd" />
-    <None Include="XInclude\tests\binary.bin" />
-    <None Include="XInclude\XInclude-Test-Suite\Harold\test\red.dtd" />
+    <Content Include="XInclude\tests\binary.bin" />
+    <Content Include="XInclude\XInclude-Test-Suite\Harold\test\red.dtd" />
     <Content Include="XInclude\XInclude-Test-Suite\Imaq\test\XInclude\ents\sub-inc.ent" />
     <Content Include="XInclude\XInclude-Test-Suite\Nist\ents\004.ent" />
     <Content Include="XInclude\XInclude-Test-Suite\Nist\test\ents\004.ent" />

@@ -48,9 +48,7 @@ namespace Mvp.Xml.XInclude
         //Internal state
         private XIncludingReaderState _state;		
         //Name table
-        private XmlNameTable _nameTable;
-        //Normalization
-        private bool _normalization;
+        private XmlNameTable _nameTable;        
         //Whitespace handling
         private WhitespaceHandling _whiteSpaceHandling; 						
         //Emit relative xml:base URIs
@@ -85,8 +83,7 @@ namespace Mvp.Xml.XInclude
                 vr.ValidationType = ValidationType.None;
                 vr.EntityHandling = EntityHandling.ExpandEntities;
                 vr.ValidationEventHandler += new ValidationEventHandler(
-                    ValidationCallback);                
-                _normalization = xtr.Normalization;
+                    ValidationCallback);                                
                 _whiteSpaceHandling = xtr.WhitespaceHandling;
                 _reader = vr;    
 #pragma warning restore 0618
@@ -115,7 +112,7 @@ namespace Mvp.Xml.XInclude
         /// </summary>
         /// <param name="url">Document location.</param>
         public XIncludingReader(string url) 
-            : this(new XmlBaseAwareXmlTextReader(url)) {}
+            : this(new XmlBaseAwareXmlReader(url)) {}
 
 		/// <summary>
 		/// Creates new instance of <c>XIncludingReader</c> class with
@@ -124,7 +121,7 @@ namespace Mvp.Xml.XInclude
 		/// <param name="url">Document location.</param>
 		/// <param name="resolver">Resolver to acquire external resources.</param>
 		public XIncludingReader(string url, XmlResolver resolver)
-            : this(new XmlBaseAwareXmlTextReader(url, resolver)) { }
+            : this(new XmlBaseAwareXmlReader(url, resolver)) { }
         
         /// <summary>
         /// Creates new instance of <c>XIncludingReader</c> class with
@@ -133,7 +130,7 @@ namespace Mvp.Xml.XInclude
         /// <param name="url">Document location.</param>
         /// <param name="nt">Name table.</param>
         public XIncludingReader(string url, XmlNameTable nt) : 
-            this(new XmlBaseAwareXmlTextReader(url, nt)) {}
+            this(new XmlBaseAwareXmlReader(url, nt)) {}
         
         /// <summary>
         /// Creates new instance of <c>XIncludingReader</c> class with
@@ -141,7 +138,7 @@ namespace Mvp.Xml.XInclude
         /// </summary>
         /// <param name="reader"><c>TextReader</c>.</param>
         public XIncludingReader(TextReader reader) 
-            : this(new XmlBaseAwareXmlTextReader(reader)) {}                		
+            : this(new XmlBaseAwareXmlReader(reader)) {}                		
 
         /// <summary>
         /// Creates new instance of <c>XIncludingReader</c> class with
@@ -150,7 +147,7 @@ namespace Mvp.Xml.XInclude
         /// <param name="reader"><c>TextReader</c>.</param>
         /// <param name="url">Source document's URL</param>
         public XIncludingReader(string url, TextReader reader) 
-            : this(new XmlBaseAwareXmlTextReader(url, reader)) {}                		
+            : this(new XmlBaseAwareXmlReader(url, reader)) {}                		
         
         /// <summary>
         /// Creates new instance of <c>XIncludingReader</c> class with
@@ -159,7 +156,7 @@ namespace Mvp.Xml.XInclude
         /// <param name="reader"><c>TextReader</c>.</param>
         /// <param name="nt">Nametable.</param>
         public XIncludingReader(TextReader reader, XmlNameTable nt) : 
-            this(new XmlBaseAwareXmlTextReader(reader, nt)) {}
+            this(new XmlBaseAwareXmlReader(reader, nt)) {}
 
         /// <summary>
         /// Creates new instance of <c>XIncludingReader</c> class with
@@ -169,7 +166,7 @@ namespace Mvp.Xml.XInclude
         /// <param name="nt">Nametable.</param>
         /// <param name="url">Source document's URI</param>
         public XIncludingReader(string url, TextReader reader, XmlNameTable nt) : 
-            this(new XmlBaseAwareXmlTextReader(url, reader, nt)) {}
+            this(new XmlBaseAwareXmlReader(url, reader, nt)) {}
 							
         /// <summary>
         /// Creates new instance of <c>XIncludingReader</c> class with
@@ -177,7 +174,7 @@ namespace Mvp.Xml.XInclude
         /// </summary>
         /// <param name="input"><c>Stream</c>.</param>
         public XIncludingReader(Stream input) 
-            : this(new XmlBaseAwareXmlTextReader(input)) {}							
+            : this(new XmlBaseAwareXmlReader(input)) {}							
 
         /// <summary>
         /// Creates new instance of <c>XIncludingReader</c> class with
@@ -186,7 +183,7 @@ namespace Mvp.Xml.XInclude
         /// <param name="input"><c>Stream</c>.</param>
         /// <param name="url">Source document's URL</param>
         public XIncludingReader(string url, Stream input) 
-            : this(new XmlBaseAwareXmlTextReader(url, input)) {}
+            : this(new XmlBaseAwareXmlReader(url, input)) {}
 
 		/// <summary>
 		/// Creates new instance of <c>XIncludingReader</c> class with
@@ -196,7 +193,7 @@ namespace Mvp.Xml.XInclude
 		/// <param name="url">Source document's URL</param>
 		/// <param name="resolver">Resolver to acquire external resources.</param>
 		public XIncludingReader(string url, Stream input, XmlResolver resolver)
-            : this(new XmlBaseAwareXmlTextReader(url, input, resolver)) { }							
+            : this(new XmlBaseAwareXmlReader(url, input, resolver)) { }							
         
         /// <summary>
         /// Creates new instance of <c>XIncludingReader</c> class with
@@ -205,7 +202,7 @@ namespace Mvp.Xml.XInclude
         /// <param name="input"><c>Stream</c>.</param>
         /// <param name="nt">Nametable</param>
         public XIncludingReader(Stream input, XmlNameTable nt) : 
-            this(new XmlBaseAwareXmlTextReader(input, nt)) {}
+            this(new XmlBaseAwareXmlReader(input, nt)) {}
 
         /// <summary>
         /// Creates new instance of <c>XIncludingReader</c> class with
@@ -215,7 +212,7 @@ namespace Mvp.Xml.XInclude
         /// <param name="nt">Nametable</param>
         /// <param name="url">Source document's URL</param>
         public XIncludingReader(string url, Stream input, XmlNameTable nt) : 
-            this(new XmlBaseAwareXmlTextReader(url, input, nt)) {}
+            this(new XmlBaseAwareXmlReader(url, input, nt)) {}
 							
         #endregion						    								
 	
@@ -907,16 +904,7 @@ namespace Mvp.Xml.XInclude
 		
         #endregion
 		
-        #region Public members
-
-        /// <summary>
-        /// See <see cref="XmlTextReader.Normalization"/>.
-        /// </summary>
-        public bool Normalization 
-        {
-            get { return _normalization; }
-            set { _normalization = value; }
-        }
+        #region Public members        
         
         /// <summary>
         /// See <see cref="XmlTextReader.WhitespaceHandling"/>.
@@ -1339,8 +1327,7 @@ namespace Mvp.Xml.XInclude
                 Stream stream =  GetResource(includeLocation.AbsoluteUri, 
                     _reader.GetAttribute(_keywords.Accept),						
                     _reader.GetAttribute(_keywords.AcceptLanguage), out wRes);                                                    
-                XIncludingReader xir = new XIncludingReader(wRes.ResponseUri.AbsoluteUri, stream, _nameTable);
-                xir.Normalization = _normalization;            
+                XIncludingReader xir = new XIncludingReader(wRes.ResponseUri.AbsoluteUri, stream, _nameTable);                
                 xir.WhitespaceHandling = _whiteSpaceHandling;
                 StringWriter sw = new StringWriter();
                 XmlTextWriter w = new XmlTextWriter(sw);
@@ -1374,7 +1361,7 @@ namespace Mvp.Xml.XInclude
         private string CreateAcquiredInfoset(Uri includeLocation, TextReader reader) 
         {
             return CreateAcquiredInfoset(
-                new XmlBaseAwareXmlTextReader(includeLocation.AbsoluteUri, reader, _nameTable));
+                new XmlBaseAwareXmlReader(includeLocation.AbsoluteUri, reader, _nameTable));
         }
 
         /// <summary>
@@ -1435,11 +1422,11 @@ namespace Mvp.Xml.XInclude
                         _reader.GetAttribute(_keywords.Accept),						
                         _reader.GetAttribute(_keywords.AcceptLanguage), out wRes);                                                    
                     //Push current reader to the stack
-                    _readers.Push(_reader);                
-                    XmlTextReader r = new XmlBaseAwareXmlTextReader(wRes.ResponseUri.AbsoluteUri, stream, _nameTable);
-                    r.Normalization = _normalization;
-                    r.WhitespaceHandling = _whiteSpaceHandling;
-                    r.XmlResolver = _xmlResolver;
+                    _readers.Push(_reader);
+                    XmlReaderSettings settings = new XmlReaderSettings();
+                    settings.XmlResolver = _xmlResolver;
+                    settings.IgnoreWhitespace = (_whiteSpaceHandling == WhitespaceHandling.None);
+                    XmlReader r = new XmlBaseAwareXmlReader(wRes.ResponseUri.AbsoluteUri, stream, _nameTable);                    
                     _reader = r;                    
                 }                                                           
                 return Read();                
@@ -1493,7 +1480,7 @@ namespace Mvp.Xml.XInclude
                 {
                     //No XPointer   
                     if (resource is TextReader) 
-                        _reader = new XmlBaseAwareXmlTextReader(includeLocation.AbsoluteUri, (TextReader)resource, _nameTable);                                                                    
+                        _reader = new XmlBaseAwareXmlReader(includeLocation.AbsoluteUri, (TextReader)resource, _nameTable);                                                                    
                     else if (resource is XmlReader)                     
                         _reader = (XmlReader)resource;                                            
                     else 

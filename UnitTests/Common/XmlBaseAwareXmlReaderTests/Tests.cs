@@ -14,7 +14,7 @@ using TestMethod = NUnit.Framework.TestAttribute;
 #endif
 
 
-namespace Mvp.Xml.Tests.XmlBaseAwareXmlTextReaderTests
+namespace Mvp.Xml.Tests.XmlBaseAwareXmlReaderTests
 {
 	[TestClass]
 	public class Tests
@@ -22,7 +22,7 @@ namespace Mvp.Xml.Tests.XmlBaseAwareXmlTextReaderTests
         [TestMethod]
         public void BasicTest() 
         {
-            XmlTextReader r = new XmlBaseAwareXmlTextReader("../../Common/XmlBaseAwareXmlTextReaderTests/test.xml");
+            XmlReader r = new XmlBaseAwareXmlReader("../../Common/XmlBaseAwareXmlReaderTests/test.xml");
             while (r.Read()) 
             {
                 if (r.NodeType == XmlNodeType.Element) 
@@ -30,7 +30,7 @@ namespace Mvp.Xml.Tests.XmlBaseAwareXmlTextReaderTests
                     switch (r.Name) 
                     {
                         case "catalog":
-                            Assert.IsTrue(r.BaseURI.EndsWith("XmlBaseAwareXmlTextReaderTests/test.xml"));
+                            Assert.IsTrue(r.BaseURI.EndsWith("XmlBaseAwareXmlReaderTests/test.xml"));
                             break;
                         case "files":
                             Assert.IsTrue(r.BaseURI == "file:///d:/Files/");
@@ -39,7 +39,7 @@ namespace Mvp.Xml.Tests.XmlBaseAwareXmlTextReaderTests
                             Assert.IsTrue(r.BaseURI == "file:///d:/Files/");
                             break;
                         case "a":
-							Assert.IsTrue(r.BaseURI.EndsWith("XmlBaseAwareXmlTextReaderTests/test.xml"));
+							Assert.IsTrue(r.BaseURI.EndsWith("XmlBaseAwareXmlReaderTests/test.xml"));
                             break;
                         case "b":
                             Assert.IsTrue(r.BaseURI == "file:///d:/Files/a/");
@@ -74,17 +74,18 @@ namespace Mvp.Xml.Tests.XmlBaseAwareXmlTextReaderTests
 		[TestMethod]
 		public void ReaderWithPath() 
 		{
-			XmlTextReader r = new XmlBaseAwareXmlTextReader("../../Common/XmlBaseAwareXmlTextReaderTests/relativeTest.xml");
-			r.WhitespaceHandling = WhitespaceHandling.None;
+            XmlReaderSettings settings = new XmlReaderSettings();
+            settings.IgnoreWhitespace = true;
+			XmlReader r = new XmlBaseAwareXmlReader("../../Common/XmlBaseAwareXmlReaderTests/relativeTest.xml");			
 			XPathDocument doc = new XPathDocument(r);
 			XPathNavigator nav = doc.CreateNavigator();
 			XPathNodeIterator ni = nav.Select("/catalog");
 			ni.MoveNext();
-			Assert.IsTrue(ni.Current.BaseURI.EndsWith("/XmlBaseAwareXmlTextReaderTests/relativeTest.xml"));
+			Assert.IsTrue(ni.Current.BaseURI.EndsWith("/XmlBaseAwareXmlReaderTests/relativeTest.xml"));
 			ni = nav.Select("/catalog/relative/relativenode");
 			ni.MoveNext();
 			Console.WriteLine(ni.Current.BaseURI);
-			Assert.IsTrue(ni.Current.BaseURI.IndexOf("/XmlBaseAwareXmlTextReaderTests/") != -1);
+			Assert.IsTrue(ni.Current.BaseURI.IndexOf("/XmlBaseAwareXmlReaderTests/") != -1);
 		}   
 
 	}

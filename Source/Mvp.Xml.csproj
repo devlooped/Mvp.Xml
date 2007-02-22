@@ -59,7 +59,7 @@
     <Compile Include="Common\Serialization\XmlAttributeOverridesThumbprinter.cs" />
     <Compile Include="Common\Serialization\XmlSerializerCache.cs" />
     <Compile Include="Common\SR.cs" />
-    <Compile Include="Common\XmlBaseAwareXmlTextReader.cs" />
+    <Compile Include="Common\XmlBaseAwareXmlReader.cs" />
     <Compile Include="Common\XmlFirstLowerWriter.cs" />
     <Compile Include="Common\XmlFirstUpperReader.cs" />
     <Compile Include="Common\XmlFragmentStream.cs" />
