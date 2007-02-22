@@ -370,7 +370,7 @@ namespace Mvp.Xml.XInclude.Test
             string xml = sr.ReadToEnd();
             sr.Close();
             XIncludingReader xir = new XIncludingReader(new StringReader(xml));
-            XmlTextWriter w = new XmlTextWriter(Console.Out);
+            XmlWriter w = XmlWriter.Create(Console.Out);
             while (xir.Read());                
         }
 

@@ -88,19 +88,19 @@ namespace Mvp.Xml.XPointer
         /// Creates <c>XPointerReader</c> instance with given uri and xpointer.
         /// </summary>	    
         public XPointerReader(string uri, string xpointer)
-            : this(new XmlBaseAwareXmlTextReader(uri), xpointer) { }
+            : this(new XmlBaseAwareXmlReader(uri), xpointer) { }
 
         /// <summary>
         /// Creates <c>XPointerReader</c> instance with given uri, nametable and xpointer.
         /// </summary>	    
         public XPointerReader(string uri, XmlNameTable nt, string xpointer)
-            : this(new XmlBaseAwareXmlTextReader(uri, nt), xpointer) { }
+            : this(new XmlBaseAwareXmlReader(uri, nt), xpointer) { }
 
         /// <summary>
         /// Creates <c>XPointerReader</c> instance with given uri, stream, nametable and xpointer.
         /// </summary>	    
         public XPointerReader(string uri, Stream stream, XmlNameTable nt, string xpointer)
-            : this(new XmlBaseAwareXmlTextReader(uri, stream, nt), xpointer) { }
+            : this(new XmlBaseAwareXmlReader(uri, stream, nt), xpointer) { }
 
         /// <summary>
         /// Creates <c>XPointerReader</c> instance with given uri, stream and xpointer.
@@ -153,7 +153,10 @@ namespace Mvp.Xml.XPointer
             else
             {
                 //Not cached or GCollected                        
-                XmlReader r = new XmlBaseAwareXmlTextReader(uri, new StringReader(content));
+                //XmlReader r = new XmlBaseAwareXmlReader(uri, new StringReader(content));
+                XmlReaderSettings settings = new XmlReaderSettings();
+                settings.ProhibitDtd = false;
+                XmlReader r = XmlReader.Create(new StringReader(content), settings, uri);
                 doc = CreateAndCacheDocument(r);
             }
             Init(doc.CreateNavigator(), xpointer);
