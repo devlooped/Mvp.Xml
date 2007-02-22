@@ -7,7 +7,7 @@
     </PropertyGroup>
 
         <UsingTask TaskName="Nxslt"
-              AssemblyFile="../../src/NxsltTasks/bIn/Release/XmlLab.NxsltTasks.dll" />
+              AssemblyFile="../../src/MSBuildTasks/bin/Release/XmlLab.NxsltTasks.MSBuild.dll" />
 
     <PropertyGroup>
       <XsltParameters>

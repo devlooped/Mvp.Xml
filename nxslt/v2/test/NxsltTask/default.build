@@ -8,7 +8,7 @@
        </delete>
     </target>
     <target name="transform" depends="clean">
-        <loadtasks assembly="../../src/NxsltTasks/bin/Debug/XmlLab.NxsltTasks.dll" />
+        <loadtasks assembly="../../src/NAntTask/bin/Release/XmlLab.NxsltTasks.NAnt.dll" />
 
 <!--        <nxslt doc="books.xml" stylesheet="books.xsl" output="catalog.html" show-timings="true"
          strip-whitespace="true" resolve-externals="true" resolve-xinclude="true" validate="true"
