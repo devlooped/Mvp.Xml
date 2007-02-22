@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<customers xmlns="http://clariusconsulting.net/schemas/crm">
+	<customer id="1">
+		<firstName>Daniel</firstName>
+		<lastName>Cazzulino</lastName>
+		<orders>
+			<order id="1" date="2006-11-17T21:08:29.0871250-03:00">
+				<item productId="1" quantity="3" />
+				<item productId="2" quantity="1" />
+				<item productId="3" quantity="10" />
+			</order>
+		</orders>
+	</customer>
+</customers>

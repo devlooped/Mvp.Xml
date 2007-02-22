@@ -348,6 +348,12 @@ namespace Mvp.Xml.Core.UnitTests
 			int dependentAssemblyCount = 0;
 
 			XmlProcessorReader reader = new XmlProcessorReader(XmlReader.Create("machine.config"));
+			
+			//reader.
+			//    When().
+			//    Do(action).
+			//    Otherwise(action);
+			
 			reader.Processors.Add(new PathXmlProcessor("//section", delegate { sectionCount++; }, reader.NameTable));
 			reader.Processors.Add(new PathXmlProcessor("/configuration/configSections/section", delegate { topLevelSectionCount++; }, reader.NameTable));
 			reader.Processors.Add(new PathXmlProcessor("//*/@type", delegate { typeCount++; }, reader.NameTable));

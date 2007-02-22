@@ -8,19 +8,32 @@ namespace Mvp.Xml.Core
 	/// Implements the streaming processing reader. 
 	/// </summary>
 	/// <remarks>
-	/// This reader also modifies the input stream so that 
-	/// all elements have full end elements, so that no 
-	/// empty elements are reported. This change does not 
-	/// modify the infoset for a document, but allows the 
-	/// important feature of being able to match or perform 
-	/// processing when elements end, in a deterministic way.
+	/// If specified using the appropriate constructor 
+	/// overload, this reader can modify the input stream 
+	/// so that all elements are considered to have full end 
+	/// elements, so that no empty elements are reported. 
+	/// <para>
+	/// This behavior, if specified, does not modify the infoset for 
+	/// a document, but allows the important feature of being able to match or 
+	/// perform processing when elements end, in a deterministic way.
+	/// </para>
 	/// </remarks>
 	public class XmlProcessorReader : WrappingXmlReader
 	{
 		private List<XmlProcessor> processors = new List<XmlProcessor>();
 
-		public XmlProcessorReader(XmlReader reader) : base(new FullEndElementReader(reader))
-		{ 
+		public XmlProcessorReader(XmlReader baseReader)
+			: base(baseReader)
+		{
+		}
+
+		public XmlProcessorReader(XmlReader baseReader, bool fullEndElements)
+			: base(baseReader)
+		{
+			if (fullEndElements)
+			{
+				base.InnerReader = new FullEndElementReader(baseReader);
+			}
 		}
 
 		/// <summary>

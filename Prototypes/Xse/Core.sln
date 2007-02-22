@@ -13,21 +13,29 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Tests.NUnit", "UnitTes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Tests.VSTS", "UnitTests\Core.Tests.VSTS.csproj", "{DD4BD4B4-5558-4A79-B9FB-04D920ED400F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{1EB46B65-B198-47B0-B803-3856CFB2E444}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObjectModelParsing", "Samples\ObjectModelParsing\ObjectModelParsing.csproj", "{FAEE1E98-2EB2-4D48-B71B-223C3161B398}"
+EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 4
+		SccNumberOfProjects = 5
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://tfs01.codeplex.com/
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = Source\\Core.csproj
-		SccProjectName1 = Source
-		SccLocalPath1 = Source
-		SccProjectUniqueName2 = UnitTests\\Core.Tests.NUnit.csproj
+		SccProjectUniqueName0 = Source\\Core.csproj
+		SccProjectName0 = Source
+		SccLocalPath0 = Source
+		SccProjectUniqueName1 = UnitTests\\Core.Tests.NUnit.csproj
+		SccProjectName1 = UnitTests
+		SccLocalPath1 = UnitTests
+		SccProjectUniqueName2 = UnitTests\\Core.Tests.VSTS.csproj
 		SccProjectName2 = UnitTests
 		SccLocalPath2 = UnitTests
-		SccProjectUniqueName3 = UnitTests\\Core.Tests.VSTS.csproj
-		SccProjectName3 = UnitTests
-		SccLocalPath3 = UnitTests
+		SccLocalPath3 = .
+		SccProjectUniqueName4 = Samples\\ObjectModelParsing\\ObjectModelParsing.csproj
+		SccProjectTopLevelParentUniqueName4 = Core.sln
+		SccProjectName4 = Samples/ObjectModelParsing
+		SccLocalPath4 = Samples\\ObjectModelParsing
 	EndGlobalSection
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = Core.vsmdi
@@ -49,8 +57,15 @@ Global
 		{DD4BD4B4-5558-4A79-B9FB-04D920ED400F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD4BD4B4-5558-4A79-B9FB-04D920ED400F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD4BD4B4-5558-4A79-B9FB-04D920ED400F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAEE1E98-2EB2-4D48-B71B-223C3161B398}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAEE1E98-2EB2-4D48-B71B-223C3161B398}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAEE1E98-2EB2-4D48-B71B-223C3161B398}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAEE1E98-2EB2-4D48-B71B-223C3161B398}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FAEE1E98-2EB2-4D48-B71B-223C3161B398} = {1EB46B65-B198-47B0-B803-3856CFB2E444}
 	EndGlobalSection
 EndGlobal

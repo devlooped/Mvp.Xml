@@ -82,7 +82,7 @@ namespace Mvp.Xml.Core.UnitTests
 		{
 			string xml = "<root>foo</root>";
 			XmlProcessorReader reader = new XmlProcessorReader(GetReader(xml));
-			ChainReaderMockProcessor processor = new ChainReaderMockProcessor();
+			SkipReaderMockProcessor processor = new SkipReaderMockProcessor();
 
 			reader.Processors.Add(processor);
 
@@ -115,7 +115,7 @@ namespace Mvp.Xml.Core.UnitTests
 			MockProcessor processor = new MockProcessor();
 
 			reader.Processors.Add(new MutateMockProcessor());
-			reader.Processors.Add(new ChainReaderMockProcessor());
+			reader.Processors.Add(new SkipReaderMockProcessor());
 			reader.Processors.Add(processor);
 
 			string output = ReadToEnd(reader);
@@ -140,6 +140,30 @@ namespace Mvp.Xml.Core.UnitTests
 			Assert.AreEqual("<clarius:Root xmlns:clarius=\"http://clariusconsulting.net/kzu\">foo</clarius:Root>", output);
 		}
 
+		[TestMethod]
+		public void ShouldNotReportFullEndElementByDefault()
+		{
+			string xml = "<root/>";
+			XmlProcessorReader reader = new XmlProcessorReader(GetReader(xml));
+			string output = ReadToEnd(reader);
+
+			WriteIfDebugging(output);
+
+			Assert.AreEqual(xml, output);
+		}
+
+		[TestMethod]
+		public void ShouldReportFullEndElementIfSpecified()
+		{
+			string xml = "<root/>";
+			XmlProcessorReader reader = new XmlProcessorReader(GetReader(xml), true);
+			string output = ReadToEnd(reader);
+
+			WriteIfDebugging(output);
+
+			Assert.AreEqual("<root></root>", output);
+		}
+
 		// Can add predicate and action
 		// 
 
@@ -154,7 +178,7 @@ namespace Mvp.Xml.Core.UnitTests
 			}
 		}
 
-		class ChainReaderMockProcessor : XmlProcessor
+		class SkipReaderMockProcessor : XmlProcessor
 		{
 			public int Calls;
 
