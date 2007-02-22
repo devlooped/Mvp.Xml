@@ -1,3 +1,7 @@
+February 22, 2007
+
+Fixed bug with reusing documents with empty base URI.
+
 ---------------------------------------------------------
 October 16, 2005
 
