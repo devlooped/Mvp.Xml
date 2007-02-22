@@ -24,23 +24,40 @@ namespace Mvp.Xml.XPointer.Test
 	/// </summary>
 	[TestClass]
 	public class XPointerReaderTests
-	{                    
+	{
+        private XmlReaderSettings readerSettings;
+
+        /// <summary>
+        /// Test init
+        /// </summary>
+        [TestInitialize]
+        public void InitTest()
+        {
+            readerSettings = new XmlReaderSettings();
+            readerSettings.ProhibitDtd = false;
+            readerSettings.IgnoreWhitespace = true;
+        }        
+
         /// <summary>
         /// xmlns() + xpath1() + namespaces works
         /// </summary>
         [TestMethod]
         public void XmlNsXPath1SchemeTest() 
         {
-            string xptr = "xmlns(m=mvp-xml)xpath1(m:dsPubs/m:publishers[m:pub_id='1389']/m:pub_name)";            
-            XmlReader reader = new XmlTextReader(Globals.GetResource(Globals.PubsNsResource));
-            XPointerReader xpr = new XPointerReader(reader, xptr);
-            StringBuilder sb = new StringBuilder();
-            while (xpr.Read()) 
+            string xptr = "xmlns(m=mvp-xml)xpath1(m:dsPubs/m:publishers[m:pub_id='1389']/m:pub_name)";
+            using (XmlReader reader = XmlReader.Create(
+                Globals.GetResource(Globals.PubsNsResource),
+                readerSettings))
             {
-                sb.Append(xpr.ReadOuterXml());
+                XPointerReader xpr = new XPointerReader(reader, xptr);
+                StringBuilder sb = new StringBuilder();
+                while (xpr.Read())
+                {
+                    sb.Append(xpr.ReadOuterXml());
+                }
+                string expected = @"<pub_name xmlns=""mvp-xml"">Algodata Infosystems</pub_name><pub_name xmlns=""mvp-xml"">Algodata Infosystems</pub_name><pub_name xmlns=""mvp-xml"">Algodata Infosystems</pub_name><pub_name xmlns=""mvp-xml"">Algodata Infosystems</pub_name><pub_name xmlns=""mvp-xml"">Algodata Infosystems</pub_name>";
+                Assert.AreEqual(sb.ToString(), expected);
             }
-            string expected = @"<pub_name xmlns=""mvp-xml"">Algodata Infosystems</pub_name><pub_name xmlns=""mvp-xml"">Algodata Infosystems</pub_name><pub_name xmlns=""mvp-xml"">Algodata Infosystems</pub_name><pub_name xmlns=""mvp-xml"">Algodata Infosystems</pub_name><pub_name xmlns=""mvp-xml"">Algodata Infosystems</pub_name>";
-            Assert.AreEqual(sb.ToString(), expected);
         }
 
         /// <summary>
@@ -50,15 +67,20 @@ namespace Mvp.Xml.XPointer.Test
         [ExpectedException(typeof(NoSubresourcesIdentifiedException))]
         public void XPath1SchemeWithoutXmlnsTest() 
         {
-            string xptr = "xpath1(m:dsPubs/m:publishers[m:pub_id='1389']/m:pub_name)";            
-            XmlReader reader = new XmlTextReader(Globals.GetResource(Globals.PubsNsResource));
-            XPointerReader xpr = new XPointerReader(reader, xptr);
-            StringBuilder sb = new StringBuilder();
-            while (xpr.Read()) {
-                sb.Append(xpr.ReadOuterXml());
+            string xptr = "xpath1(m:dsPubs/m:publishers[m:pub_id='1389']/m:pub_name)";
+            using (XmlReader reader = XmlReader.Create(
+                Globals.GetResource(Globals.PubsNsResource),
+                readerSettings))
+            {
+                XPointerReader xpr = new XPointerReader(reader, xptr);
+                StringBuilder sb = new StringBuilder();
+                while (xpr.Read())
+                {
+                    sb.Append(xpr.ReadOuterXml());
+                }
+                string expected = @"<pub_name xmlns=""mvp-xml"">Algodata Infosystems</pub_name><pub_name xmlns=""mvp-xml"">Algodata Infosystems</pub_name><pub_name xmlns=""mvp-xml"">Algodata Infosystems</pub_name><pub_name xmlns=""mvp-xml"">Algodata Infosystems</pub_name><pub_name xmlns=""mvp-xml"">Algodata Infosystems</pub_name>";
+                Assert.AreEqual(sb.ToString(), expected);
             }
-            string expected = @"<pub_name xmlns=""mvp-xml"">Algodata Infosystems</pub_name><pub_name xmlns=""mvp-xml"">Algodata Infosystems</pub_name><pub_name xmlns=""mvp-xml"">Algodata Infosystems</pub_name><pub_name xmlns=""mvp-xml"">Algodata Infosystems</pub_name><pub_name xmlns=""mvp-xml"">Algodata Infosystems</pub_name>";
-            Assert.AreEqual(sb.ToString(), expected);
         }
 
         /// <summary>
@@ -68,10 +90,14 @@ namespace Mvp.Xml.XPointer.Test
         [ExpectedException(typeof(NoSubresourcesIdentifiedException))]
         public void XPath1SchemeNoSelectedNodeTest() 
         {
-            string xptr = "xpath1(no-such-node/foo)";            
-            XmlReader reader = new XmlTextReader(Globals.GetResource(Globals.PubsNsResource));
-            XPointerReader xpr = new XPointerReader(reader, xptr);            
-            while (xpr.Read()) {}            
+            string xptr = "xpath1(no-such-node/foo)";
+            using (XmlReader reader = XmlReader.Create(
+                Globals.GetResource(Globals.PubsNsResource),
+                readerSettings))
+            {
+                XPointerReader xpr = new XPointerReader(reader, xptr);
+                while (xpr.Read()) { }
+            }
         }
         
         /// <summary>
@@ -81,10 +107,14 @@ namespace Mvp.Xml.XPointer.Test
         [ExpectedException(typeof(NoSubresourcesIdentifiedException))]
         public void XPath1SchemeScalarResultTest() 
         {
-            string xptr = "xpath1(2+2)";            
-            XmlReader reader = new XmlTextReader(Globals.GetResource(Globals.PubsNsResource));
-            XPointerReader xpr = new XPointerReader(reader, xptr);            
-            while (xpr.Read()) {}            
+            string xptr = "xpath1(2+2)";
+            using (XmlReader reader = XmlReader.Create(
+                Globals.GetResource(Globals.PubsNsResource),
+                readerSettings))
+            {
+                XPointerReader xpr = new XPointerReader(reader, xptr);
+                while (xpr.Read()) { }
+            }
         }
 
         /// <summary>
@@ -93,16 +123,20 @@ namespace Mvp.Xml.XPointer.Test
         [TestMethod]
         public void XmlNsXPointerSchemeTest() 
         {
-            string xptr = "xmlns(m=mvp-xml)xpointer(m:dsPubs/m:publishers[m:pub_id='1389']/m:pub_name)";            
-            XmlReader reader = new XmlTextReader(Globals.GetResource(Globals.PubsNsResource));
-            XPointerReader xpr = new XPointerReader(reader, xptr);
-            StringBuilder sb = new StringBuilder();
-            while (xpr.Read()) 
+            string xptr = "xmlns(m=mvp-xml)xpointer(m:dsPubs/m:publishers[m:pub_id='1389']/m:pub_name)";
+            using (XmlReader reader = XmlReader.Create(
+                Globals.GetResource(Globals.PubsNsResource),
+                readerSettings))
             {
-                sb.Append(xpr.ReadOuterXml());
+                XPointerReader xpr = new XPointerReader(reader, xptr);
+                StringBuilder sb = new StringBuilder();
+                while (xpr.Read())
+                {
+                    sb.Append(xpr.ReadOuterXml());
+                }
+                string expected = @"<pub_name xmlns=""mvp-xml"">Algodata Infosystems</pub_name><pub_name xmlns=""mvp-xml"">Algodata Infosystems</pub_name><pub_name xmlns=""mvp-xml"">Algodata Infosystems</pub_name><pub_name xmlns=""mvp-xml"">Algodata Infosystems</pub_name><pub_name xmlns=""mvp-xml"">Algodata Infosystems</pub_name>";
+                Assert.AreEqual(sb.ToString(), expected);
             }
-            string expected = @"<pub_name xmlns=""mvp-xml"">Algodata Infosystems</pub_name><pub_name xmlns=""mvp-xml"">Algodata Infosystems</pub_name><pub_name xmlns=""mvp-xml"">Algodata Infosystems</pub_name><pub_name xmlns=""mvp-xml"">Algodata Infosystems</pub_name><pub_name xmlns=""mvp-xml"">Algodata Infosystems</pub_name>";
-            Assert.AreEqual(sb.ToString(), expected);
         }
 
         /// <summary>
@@ -112,16 +146,20 @@ namespace Mvp.Xml.XPointer.Test
         [ExpectedException(typeof(NoSubresourcesIdentifiedException))]
         public void XPointerSchemeWithoutXmlnsTest() 
         {
-            string xptr = "xpointer(m:dsPubs/m:publishers[m:pub_id='1389']/m:pub_name)";            
-            XmlReader reader = new XmlTextReader(Globals.GetResource(Globals.PubsNsResource));
-            XPointerReader xpr = new XPointerReader(reader, xptr);
-            StringBuilder sb = new StringBuilder();
-            while (xpr.Read()) 
+            string xptr = "xpointer(m:dsPubs/m:publishers[m:pub_id='1389']/m:pub_name)";
+            using (XmlReader reader = XmlReader.Create(
+                Globals.GetResource(Globals.PubsNsResource),
+                readerSettings))
             {
-                sb.Append(xpr.ReadOuterXml());
+                XPointerReader xpr = new XPointerReader(reader, xptr);
+                StringBuilder sb = new StringBuilder();
+                while (xpr.Read())
+                {
+                    sb.Append(xpr.ReadOuterXml());
+                }
+                string expected = @"<pub_name xmlns=""mvp-xml"">Algodata Infosystems</pub_name><pub_name xmlns=""mvp-xml"">Algodata Infosystems</pub_name><pub_name xmlns=""mvp-xml"">Algodata Infosystems</pub_name><pub_name xmlns=""mvp-xml"">Algodata Infosystems</pub_name><pub_name xmlns=""mvp-xml"">Algodata Infosystems</pub_name>";
+                Assert.AreEqual(sb.ToString(), expected);
             }
-            string expected = @"<pub_name xmlns=""mvp-xml"">Algodata Infosystems</pub_name><pub_name xmlns=""mvp-xml"">Algodata Infosystems</pub_name><pub_name xmlns=""mvp-xml"">Algodata Infosystems</pub_name><pub_name xmlns=""mvp-xml"">Algodata Infosystems</pub_name><pub_name xmlns=""mvp-xml"">Algodata Infosystems</pub_name>";
-            Assert.AreEqual(sb.ToString(), expected);
         }
 
         /// <summary>
@@ -131,10 +169,14 @@ namespace Mvp.Xml.XPointer.Test
         [ExpectedException(typeof(NoSubresourcesIdentifiedException))]
         public void XPointerSchemeNoSelectedNodeTest() 
         {
-            string xptr = "xpointer(no-such-node/foo)";            
-            XmlReader reader = new XmlTextReader(Globals.GetResource(Globals.PubsNsResource));
-            XPointerReader xpr = new XPointerReader(reader, xptr);            
-            while (xpr.Read()) {}            
+            string xptr = "xpointer(no-such-node/foo)";
+            using (XmlReader reader = XmlReader.Create(
+                Globals.GetResource(Globals.PubsNsResource),
+                readerSettings))
+            {
+                XPointerReader xpr = new XPointerReader(reader, xptr);
+                while (xpr.Read()) { }
+            }
         }
         
         /// <summary>
@@ -144,10 +186,14 @@ namespace Mvp.Xml.XPointer.Test
         [ExpectedException(typeof(NoSubresourcesIdentifiedException))]
         public void XPointerSchemeScalarResultTest() 
         {
-            string xptr = "xpointer(2+2)";            
-            XmlReader reader = new XmlTextReader(Globals.GetResource(Globals.PubsNsResource));
-            XPointerReader xpr = new XPointerReader(reader, xptr);            
-            while (xpr.Read()) {}            
+            string xptr = "xpointer(2+2)";
+            using (XmlReader reader = XmlReader.Create(
+                Globals.GetResource(Globals.PubsNsResource),
+                readerSettings))
+            {
+                XPointerReader xpr = new XPointerReader(reader, xptr);
+                while (xpr.Read()) { }
+            }
         }
 
         /// <summary>
@@ -156,16 +202,20 @@ namespace Mvp.Xml.XPointer.Test
         [TestMethod]		
         public void SuperfluousXmlNsSchemeTest() 
         {
-            string xptr = "xmlns(m=mvp-xml)xpointer(dsPubs/publishers[pub_id='1389']/pub_name)";            
-            XmlReader reader = new XmlTextReader(Globals.GetResource(Globals.PubsResource));
-            XPointerReader xpr = new XPointerReader(reader, xptr);
-            StringBuilder sb = new StringBuilder();
-            while (xpr.Read()) 
+            string xptr = "xmlns(m=mvp-xml)xpointer(dsPubs/publishers[pub_id='1389']/pub_name)";
+            using (XmlReader reader = XmlReader.Create(
+                Globals.GetResource(Globals.PubsResource),
+                readerSettings))
             {
-                sb.Append(xpr.ReadOuterXml());
+                XPointerReader xpr = new XPointerReader(reader, xptr);
+                StringBuilder sb = new StringBuilder();
+                while (xpr.Read())
+                {
+                    sb.Append(xpr.ReadOuterXml());
+                }
+                string expected = @"<pub_name>Algodata Infosystems</pub_name>";
+                Assert.AreEqual(sb.ToString(), expected);
             }
-            string expected = @"<pub_name>Algodata Infosystems</pub_name>";
-            Assert.AreEqual(sb.ToString(), expected);
         }
 
         /// <summary>
@@ -175,10 +225,14 @@ namespace Mvp.Xml.XPointer.Test
         [ExpectedException(typeof(NoSubresourcesIdentifiedException))]
         public void XmlnsAfterTest() 
         {
-            string xptr = "xpointer(m:dsPubs/m:publishers[m:pub_id='1389']/m:pub_name)xmlns(m=mvp-xml)";            
-            XmlReader reader = new XmlTextReader(Globals.GetResource(Globals.PubsNsResource));
-            XPointerReader xpr = new XPointerReader(reader, xptr);            
-            while (xpr.Read()) {}            
+            string xptr = "xpointer(m:dsPubs/m:publishers[m:pub_id='1389']/m:pub_name)xmlns(m=mvp-xml)";
+            using (XmlReader reader = XmlReader.Create(
+                Globals.GetResource(Globals.PubsNsResource),
+                readerSettings))
+            {
+                XPointerReader xpr = new XPointerReader(reader, xptr);
+                while (xpr.Read()) { }
+            }
         }
         
         /// <summary>
@@ -187,16 +241,20 @@ namespace Mvp.Xml.XPointer.Test
         [TestMethod]
         public void NamespaceRedefinitionTest() 
         {
-            string xptr = "xmlns(m=mvp-xml)xmlns(m=http://foo.com)xmlns(m=mvp-xml)xpointer(m:dsPubs/m:publishers[m:pub_id='1389']/m:pub_name)";            
-            XmlReader reader = new XmlTextReader(Globals.GetResource(Globals.PubsNsResource));
-            XPointerReader xpr = new XPointerReader(reader, xptr);
-            StringBuilder sb = new StringBuilder();
-            while (xpr.Read()) 
+            string xptr = "xmlns(m=mvp-xml)xmlns(m=http://foo.com)xmlns(m=mvp-xml)xpointer(m:dsPubs/m:publishers[m:pub_id='1389']/m:pub_name)";
+            using (XmlReader reader = XmlReader.Create(
+                Globals.GetResource(Globals.PubsNsResource),
+                readerSettings))
             {
-                sb.Append(xpr.ReadOuterXml());
+                XPointerReader xpr = new XPointerReader(reader, xptr);
+                StringBuilder sb = new StringBuilder();
+                while (xpr.Read())
+                {
+                    sb.Append(xpr.ReadOuterXml());
+                }
+                string expected = @"<pub_name xmlns=""mvp-xml"">Algodata Infosystems</pub_name><pub_name xmlns=""mvp-xml"">Algodata Infosystems</pub_name><pub_name xmlns=""mvp-xml"">Algodata Infosystems</pub_name><pub_name xmlns=""mvp-xml"">Algodata Infosystems</pub_name><pub_name xmlns=""mvp-xml"">Algodata Infosystems</pub_name>";
+                Assert.AreEqual(sb.ToString(), expected);
             }
-            string expected = @"<pub_name xmlns=""mvp-xml"">Algodata Infosystems</pub_name><pub_name xmlns=""mvp-xml"">Algodata Infosystems</pub_name><pub_name xmlns=""mvp-xml"">Algodata Infosystems</pub_name><pub_name xmlns=""mvp-xml"">Algodata Infosystems</pub_name><pub_name xmlns=""mvp-xml"">Algodata Infosystems</pub_name>";
-            Assert.AreEqual(sb.ToString(), expected);
         }
                 
         /// <summary>
@@ -205,19 +263,20 @@ namespace Mvp.Xml.XPointer.Test
         [TestMethod]
         public void ShorthandTest() 
         {           
-            string xptr = "o10535";                        
-            XmlReader reader = new XmlTextReader("../../XPointer/northwind.xml");            
-            XPointerReader xpr = new XPointerReader(reader, xptr);
-            string expected = @"<Item orderID=""o10535"">
-                <OrderDate> 6/13/95</OrderDate>
-                <ShipAddress> Mataderos  2312</ShipAddress>
-            </Item>";
-            while (xpr.Read()) 
+            string xptr = "o10535";            
+            using (XmlReader reader = XmlReader.Create(
+                "../../XPointer/northwind.xml",
+                readerSettings))
             {
-                Assert.AreEqual(xpr.ReadOuterXml(), expected);
-                return;
-            }            
-            throw new InvalidOperationException("This means shorthand XPointer didn't work as expected.");
+                XPointerReader xpr = new XPointerReader(reader, xptr);
+                string expected = @"<Item orderID=""o10535""><OrderDate> 6/13/95</OrderDate><ShipAddress> Mataderos  2312</ShipAddress></Item>";
+                while (xpr.Read())
+                {                    
+                    Assert.AreEqual(xpr.ReadOuterXml(), expected);
+                    return;
+                }
+                throw new InvalidOperationException("This means shorthand XPointer didn't work as expected.");
+            }
         }
 
         /// <summary>
@@ -229,13 +288,10 @@ namespace Mvp.Xml.XPointer.Test
             string xptr = "o10535";                        
             FileInfo file = new FileInfo("../../XPointer/northwind.xml");
             using (FileStream fs = file.OpenRead()) 
-            {
+            {                
                 XPointerReader xpr = new XPointerReader(
-                    new XmlTextReader(file.FullName, fs), xptr);
-                string expected = @"<Item orderID=""o10535"">
-                <OrderDate> 6/13/95</OrderDate>
-                <ShipAddress> Mataderos  2312</ShipAddress>
-            </Item>";
+                    XmlReader.Create(fs, readerSettings, file.FullName), xptr);
+                string expected = @"<Item orderID=""o10535""><OrderDate> 6/13/95</OrderDate><ShipAddress> Mataderos  2312</ShipAddress></Item>";
                 while (xpr.Read()) 
                 {
                     Assert.AreEqual(xpr.ReadOuterXml(), expected);
@@ -252,9 +308,13 @@ namespace Mvp.Xml.XPointer.Test
          [ExpectedException(typeof(NoSubresourcesIdentifiedException))]
         public void ShorthandNotFoundTest() 
         {           
-            string xptr = "no-such-id";                        
-            XmlReader reader = new XmlTextReader("../../XPointer/northwind.xml");            
-            XPointerReader xpr = new XPointerReader(reader, xptr);                        
+            string xptr = "no-such-id";
+            using (XmlReader reader = XmlReader.Create(
+                "../../XPointer/northwind.xml",
+                readerSettings))
+            {
+                XPointerReader xpr = new XPointerReader(reader, xptr);                                
+            }
         }
 
         /// <summary>
@@ -263,19 +323,19 @@ namespace Mvp.Xml.XPointer.Test
         [TestMethod]
         public void ElementSchemeTest() 
         {           
-            string xptr = "element(o10535)";                        
-            XmlReader reader = new XmlTextReader("../../XPointer/northwind.xml");            
-            XPointerReader xpr = new XPointerReader(reader, xptr);
-            string expected = @"<Item orderID=""o10535"">
-                <OrderDate> 6/13/95</OrderDate>
-                <ShipAddress> Mataderos  2312</ShipAddress>
-            </Item>";
-            while (xpr.Read()) 
+            string xptr = "element(o10535)";            
+            using (XmlReader reader = XmlReader.Create(
+                "../../XPointer/northwind.xml", readerSettings))
             {
-                Assert.AreEqual(xpr.ReadOuterXml(), expected);
-                return;
-            }            
-            throw new InvalidOperationException("This means XPointer didn't work as expected.");
+                XPointerReader xpr = new XPointerReader(reader, xptr);
+                string expected = @"<Item orderID=""o10535""><OrderDate> 6/13/95</OrderDate><ShipAddress> Mataderos  2312</ShipAddress></Item>";
+                while (xpr.Read())
+                {
+                    Assert.AreEqual(xpr.ReadOuterXml(), expected);
+                    return;
+                }
+                throw new InvalidOperationException("This means XPointer didn't work as expected.");
+            }
         }
 
         /// <summary>
@@ -284,16 +344,19 @@ namespace Mvp.Xml.XPointer.Test
         [TestMethod]
         public void ElementSchemeTest2() 
         {           
-            string xptr = "element(o10535/1)";                        
-            XmlReader reader = new XmlTextReader("../../XPointer/northwind.xml");            
-            XPointerReader xpr = new XPointerReader(reader, xptr);
-            string expected = @"<OrderDate> 6/13/95</OrderDate>";
-            while (xpr.Read()) 
+            string xptr = "element(o10535/1)";            
+            using (XmlReader reader = XmlReader.Create(
+                "../../XPointer/northwind.xml", readerSettings))
             {
-                Assert.AreEqual(xpr.ReadOuterXml(), expected);
-                return;
-            }            
-            throw new InvalidOperationException("This means XPointer didn't work as expected.");
+                XPointerReader xpr = new XPointerReader(reader, xptr);
+                string expected = @"<OrderDate> 6/13/95</OrderDate>";
+                while (xpr.Read())
+                {
+                    Assert.AreEqual(xpr.ReadOuterXml(), expected);
+                    return;
+                }
+                throw new InvalidOperationException("This means XPointer didn't work as expected.");
+            }
         }
 
         /// <summary>
@@ -302,16 +365,19 @@ namespace Mvp.Xml.XPointer.Test
         [TestMethod]
         public void ElementSchemeTest3() 
         {           
-            string xptr = "element(/1/1/2)";                        
-            XmlReader reader = new XmlTextReader("../../XPointer/northwind.xml");            
-            XPointerReader xpr = new XPointerReader(reader, xptr);
-            string expected = @"<CompanyName> Alfreds Futterkiste</CompanyName>";
-            while (xpr.Read()) 
+            string xptr = "element(/1/1/2)";
+            using (XmlReader reader = XmlReader.Create(
+                "../../XPointer/northwind.xml", readerSettings))
             {
-                Assert.AreEqual(xpr.ReadOuterXml(), expected);
-                return;
-            }            
-            throw new InvalidOperationException("This means XPointer didn't work as expected.");
+                XPointerReader xpr = new XPointerReader(reader, xptr);
+                string expected = @"<CompanyName> Alfreds Futterkiste</CompanyName>";
+                while (xpr.Read())
+                {
+                    Assert.AreEqual(xpr.ReadOuterXml(), expected);
+                    return;
+                }
+                throw new InvalidOperationException("This means XPointer didn't work as expected.");
+            }
         }        
 
         /// <summary>
@@ -321,9 +387,12 @@ namespace Mvp.Xml.XPointer.Test
         [ExpectedException(typeof(NoSubresourcesIdentifiedException))]
         public void ElementSchemeNotFoundTest() 
         {           
-            string xptr = "element(no-such-id)";                        
-            XmlReader reader = new XmlTextReader("../../XPointer/northwind.xml");            
-            XPointerReader xpr = new XPointerReader(reader, xptr);                        
+            string xptr = "element(no-such-id)";
+            using (XmlReader reader = XmlReader.Create(
+                "../../XPointer/northwind.xml", readerSettings))
+            {
+                XPointerReader xpr = new XPointerReader(reader, xptr);                
+            }        
         }
 
         /// <summary>
@@ -332,16 +401,19 @@ namespace Mvp.Xml.XPointer.Test
         [TestMethod]
         public void CompoundPointerTest() 
         {           
-            string xptr = "xmlns(p=12345)xpath1(/no/such/node) xpointer(/and/such) element(/1/1/2) element(o10535/1)";                        
-            XmlReader reader = new XmlTextReader("../../XPointer/northwind.xml");            
-            XPointerReader xpr = new XPointerReader(reader, xptr);
-            string expected = @"<CompanyName> Alfreds Futterkiste</CompanyName>";
-            while (xpr.Read()) 
+            string xptr = "xmlns(p=12345)xpath1(/no/such/node) xpointer(/and/such) element(/1/1/2) element(o10535/1)";
+            using (XmlReader reader = XmlReader.Create(
+                "../../XPointer/northwind.xml", readerSettings))
             {
-                Assert.AreEqual(xpr.ReadOuterXml(), expected);
-                return;
-            }            
-            throw new InvalidOperationException("This means XPointer didn't work as expected.");
+                XPointerReader xpr = new XPointerReader(reader, xptr);
+                string expected = @"<CompanyName> Alfreds Futterkiste</CompanyName>";
+                while (xpr.Read())
+                {
+                    Assert.AreEqual(xpr.ReadOuterXml(), expected);
+                    return;
+                }
+                throw new InvalidOperationException("This means XPointer didn't work as expected.");
+            }
         }       
 
         /// <summary>
@@ -350,16 +422,19 @@ namespace Mvp.Xml.XPointer.Test
         [TestMethod]
         public void UnknownSchemeTest() 
         {           
-            string xptr = "dummy(foo) element(/1/1/2)";                        
-            XmlReader reader = new XmlTextReader("../../XPointer/northwind.xml");            
-            XPointerReader xpr = new XPointerReader(reader, xptr);
-            string expected = @"<CompanyName> Alfreds Futterkiste</CompanyName>";
-            while (xpr.Read()) 
+            string xptr = "dummy(foo) element(/1/1/2)";
+            using (XmlReader reader = XmlReader.Create(
+                "../../XPointer/northwind.xml", readerSettings))
             {
-                Assert.AreEqual(xpr.ReadOuterXml(), expected);
-                return;
-            }            
-            throw new InvalidOperationException("This means XPointer didn't work as expected.");
+                XPointerReader xpr = new XPointerReader(reader, xptr);
+                string expected = @"<CompanyName> Alfreds Futterkiste</CompanyName>";
+                while (xpr.Read())
+                {
+                    Assert.AreEqual(xpr.ReadOuterXml(), expected);
+                    return;
+                }
+                throw new InvalidOperationException("This means XPointer didn't work as expected.");
+            }
         }      
  
         /// <summary>
@@ -368,16 +443,19 @@ namespace Mvp.Xml.XPointer.Test
         [TestMethod]
         public void UnknownSchemeTest2() 
         {           
-            string xptr = "foo:dummy(bar) element(/1/1/2)";                        
-            XmlReader reader = new XmlTextReader("../../XPointer/northwind.xml");            
-            XPointerReader xpr = new XPointerReader(reader, xptr);
-            string expected = @"<CompanyName> Alfreds Futterkiste</CompanyName>";
-            while (xpr.Read()) 
+            string xptr = "foo:dummy(bar) element(/1/1/2)";
+            using (XmlReader reader = XmlReader.Create(
+                "../../XPointer/northwind.xml", readerSettings))
             {
-                Assert.AreEqual(xpr.ReadOuterXml(), expected);
-                return;
-            }            
-            throw new InvalidOperationException("This means XPointer didn't work as expected.");
+                XPointerReader xpr = new XPointerReader(reader, xptr);
+                string expected = @"<CompanyName> Alfreds Futterkiste</CompanyName>";
+                while (xpr.Read())
+                {
+                    Assert.AreEqual(xpr.ReadOuterXml(), expected);
+                    return;
+                }
+                throw new InvalidOperationException("This means XPointer didn't work as expected.");
+            }
         }      
 
         /// <summary>
@@ -386,16 +464,19 @@ namespace Mvp.Xml.XPointer.Test
         [TestMethod]        
         public void UnknownSchemeTest3() 
         {           
-            string xptr = "xmlns(foo=http://foo.com/schemas)foo:dummy(bar) element(/1/1/2)";                        
-            XmlReader reader = new XmlTextReader("../../XPointer/northwind.xml");            
-            XPointerReader xpr = new XPointerReader(reader, xptr);
-            string expected = @"<CompanyName> Alfreds Futterkiste</CompanyName>";
-            while (xpr.Read()) 
+            string xptr = "xmlns(foo=http://foo.com/schemas)foo:dummy(bar) element(/1/1/2)";
+            using (XmlReader reader = XmlReader.Create(
+                "../../XPointer/northwind.xml", readerSettings))
             {
-                Assert.AreEqual(xpr.ReadOuterXml(), expected);
-                return;
-            }            
-            throw new InvalidOperationException("This means XPointer didn't work as expected.");
+                XPointerReader xpr = new XPointerReader(reader, xptr);
+                string expected = @"<CompanyName> Alfreds Futterkiste</CompanyName>";
+                while (xpr.Read())
+                {
+                    Assert.AreEqual(xpr.ReadOuterXml(), expected);
+                    return;
+                }
+                throw new InvalidOperationException("This means XPointer didn't work as expected.");
+            }
         }      
         
         /// <summary>
@@ -405,7 +486,7 @@ namespace Mvp.Xml.XPointer.Test
         //public void XSDDefnedIDTest() 
         //{           
         //    string xptr = "element(id1389/1)";                        
-        //    XmlReader reader = new XmlTextReader("../../pubsNS.xml");
+        //    XmlReader reader = XmlReader.Create("../../pubsNS.xml");
         //    XPointerReader xpr = new XPointerReader(reader, xptr, true);
         //    string expected = @"<pub_name>Algodata Infosystems</pub_name>";
         //    while (xpr.Read()) 
