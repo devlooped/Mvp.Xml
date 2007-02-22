@@ -115,14 +115,16 @@ namespace Mvp.Xml.XPointer
         if (_cache == null)
             _cache = new Dictionary<string, WeakReference>();
         WeakReference wr;
-        if (_cache.TryGetValue(reader.BaseURI, out wr) && wr.IsAlive)
+        if (!string.IsNullOrEmpty(reader.BaseURI) && 
+            _cache.TryGetValue(reader.BaseURI, out wr) && 
+            wr.IsAlive)
         {
             doc = (XPathDocument)wr.Target;
             reader.Close();
         }
         else
         {
-            //Not cached or GCollected                
+            //Not cached or GCollected or no base Uri                
             doc = CreateAndCacheDocument(reader);
         }               
         Init(doc.CreateNavigator(), xpointer);
