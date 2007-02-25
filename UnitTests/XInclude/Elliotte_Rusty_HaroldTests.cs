@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Xml;
 using System.IO;
 using System.Text;
+using System.Net;
 
 using Mvp.Xml.XInclude;
 #if !NUNIT
@@ -952,7 +953,8 @@ namespace Mvp.Xml.XInclude.Test
         [TestMethod]
         public void harold_76() 
         {
-            RunAndCompare("UTF8WithByteOrderMark.xml", "../result/UTF8WithByteOrderMark.xml");            
+            RunAndCompare("UTF8WithByteOrderMark.xml", 
+                "../result/UTF8WithByteOrderMark.xml");            
         }  
   
 
@@ -960,27 +962,81 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Can autodetect UCS2 big endian files with a without a byte order mark when parse="text"        
         /// </summary>
-		[Ignore]
         [TestMethod]
         public void harold_77() 
         {
+            WebRequest.RegisterPrefix("myhttp:", new MyWebRequestCreate());
+            DirectoryInfo root = new DirectoryInfo("../../XInclude/XInclude-Test-Suite/Harold/test/");
             XIncludeReaderTests.RunAndCompare(
-                "http://localhost/test/UnicodeBigUnmarked.xml", 
-                "../../XInclude-Test-Suite/Harold/test/../result/UnicodeBigUnmarked.xml");            
-        }  
-  
+                "myhttp:" + root.FullName + "UnicodeBigUnmarked.xml",
+                "../../XInclude/XInclude-Test-Suite/Harold/result/UnicodeBigUnmarked.xml");            
+        }
 
-    
+        private class MyWebRequestCreate : IWebRequestCreate
+        {
+            public WebRequest Create(Uri uri)
+            {
+                return new MyWebRequest(uri.PathAndQuery);
+            }
+        }
+
+        private class MyWebRequest : WebRequest
+        {
+            private string filename;
+
+            public MyWebRequest(string filename)
+            {
+                this.filename = filename;
+            }            
+                                 
+            public override WebResponse GetResponse()
+            {
+                return new MyWebResponse(filename);
+            }
+        }
+
+        private class MyWebResponse : WebResponse
+        {
+            private string filename;
+            private FileStream fileStream;
+
+            public MyWebResponse(string filename)
+            {
+                this.filename = filename;
+            }
+
+            public override String ContentType
+            {
+                get { return "text/xml"; }                                
+            }
+            public override Stream GetResponseStream()
+            {
+                fileStream = new FileStream(filename, FileMode.Open, 
+                    FileAccess.Read, FileShare.Read);
+                return fileStream;
+            }
+
+            public override void Close()
+            {
+                if (fileStream != null)
+                {
+                    fileStream.Close();
+                }
+                fileStream = null;
+            }
+        }
+
         /// <summary>
         /// Can autodetect UCS2 little endian files with a without a byte order mark when parse="text"        
-        /// </summary>
-		[Ignore]
+        /// </summary>		
         [TestMethod]
         public void harold_78() 
         {
+            WebRequest.RegisterPrefix("myhttp:", new MyWebRequestCreate());
+            DirectoryInfo root = new DirectoryInfo("../../XInclude/XInclude-Test-Suite/Harold/test/");
             XIncludeReaderTests.RunAndCompare(
-                "http://localhost/test/UnicodeLittleUnmarked.xml", 
-                "../../XInclude-Test-Suite/Harold/test/../result/UnicodeLittleUnmarked.xml");
+                "myhttp:" + root.FullName + "UnicodeLittleUnmarked.xml",
+                "../../XInclude/XInclude-Test-Suite/Harold/result/UnicodeLittleUnmarked.xml");            
         }  
   
     
@@ -988,16 +1044,16 @@ namespace Mvp.Xml.XInclude.Test
         /// <summary>
         /// Can autodetect EBCDIC files with a without a byte order mark when parse="text"        
         /// </summary>
-        /// <remarks>EBCDIC is not supported encoding</remarks>
-		[Ignore]
+        /// <remarks>EBCDIC is not supported encoding</remarks>		
         [TestMethod]
         [ExpectedException(typeof(FatalResourceException))]
         public void harold_79() 
-        {
+        {          
+            WebRequest.RegisterPrefix("myhttp:", new MyWebRequestCreate());
+            DirectoryInfo root = new DirectoryInfo("../../XInclude/XInclude-Test-Suite/Harold/test/");
             XIncludeReaderTests.RunAndCompare(
-                "http://localhost/test/EBCDIC.xml", 
-                "../../XInclude-Test-Suite/Harold/test/../result/EBCDIC.xml");
-            RunAndCompare("EBCDIC.xml", "../result/EBCDIC.xml");
+                "myhttp:" + root.FullName + "EBCDIC.xml",
+                "../../XInclude/XInclude-Test-Suite/Harold/result/EBCDIC.xml");            
         }  
   
 
