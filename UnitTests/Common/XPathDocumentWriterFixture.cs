@@ -72,6 +72,17 @@ namespace Mvp.Xml.Tests.Common
 			Assert.AreEqual("<hello>world</hello>", xml);
 		}
 
+		[TestMethod]
+		public void ShouldUseBaseUriForDocument()
+		{
+			XPathDocumentWriter writer = new XPathDocumentWriter("kzu-uri");
+			writer.WriteStartElement("Foo");
+			XPathDocument doc = writer.Close();
+
+			Assert.IsNotNull(doc);
+			Assert.AreEqual("kzu-uri", doc.CreateNavigator().BaseURI);
+		}
+
 		private static string GetXml(XPathDocument doc)
 		{
 			XPathNavigator nav = doc.CreateNavigator();
@@ -85,9 +96,5 @@ namespace Mvp.Xml.Tests.Common
 
 			return sw.ToString();
 		}
-
-		// Uses nametable to atomize strings
-		// Checks root element on close.
-
 	}
 }
