@@ -502,6 +502,15 @@ namespace Mvp.Xml.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Root element is missing..
+        /// </summary>
+        internal static string Xml_MissingRoot {
+            get {
+                return ResourceManager.GetString("Xml_MissingRoot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The XmlDocument instance can only be used for serialization purposes..
         /// </summary>
         internal static string XmlDocumentFactory_NotImplementedDOM {

@@ -265,6 +265,9 @@
   <data name="URISchemaNotSupported" xml:space="preserve">
     <value>URI schema is not supported: '{0}'.</value>
   </data>
+  <data name="Xml_MissingRoot" xml:space="preserve">
+    <value>Root element is missing.</value>
+  </data>
   <data name="XmlDocumentFactory_NotImplementedDOM" xml:space="preserve">
     <value>The XmlDocument instance can only be used for serialization purposes.</value>
     <comment>All methods except for WriteTo() are unimplemented.</comment>
