@@ -87,7 +87,7 @@ namespace Mvp.Xml.XPointer
 			lexer.NextLexeme();
 			if (lexer.Kind != XPointerLexer.LexKind.Eq)
 			{
-				// TODO
+				// TODO: missing resource string here. Check with Oleg.
 				//Debug.WriteLine(Properties.Resources.InvalidTokenInXmlnsSchemeWhileEqualsSignExpected);
 				return null;
 			}
