@@ -22,7 +22,7 @@ namespace Mvp.Xml.Common.Serialization
 
 	/// <summary>
 	/// The XmlSerializerCache allows to work around the 
-    /// assembly leak problem in the <see cref="XmlSerializer"/> 
+	/// assembly leak problem in the <see cref="XmlSerializer"/> 
 	/// ( LINK )
 	/// The cache will inspect if it contains any previously cached 
 	/// instances that are compatible with the parameters passed to the
@@ -30,7 +30,7 @@ namespace Mvp.Xml.Common.Serialization
 	/// a new XmlSerializer instance.
 	/// </summary>
 	/// <remarks>
-    /// In contrast to the <see cref="XmlSerializer"/>, the XmlSerializerCache requires
+	/// In contrast to the <see cref="XmlSerializer"/>, the XmlSerializerCache requires
 	/// a permission set that allows reflecting over private members.
 	/// </remarks>
 	public class XmlSerializerCache : IDisposable
@@ -54,7 +54,7 @@ namespace Mvp.Xml.Common.Serialization
 		/// <summary>
 		/// The Dictionary to store cached serializer instances.
 		/// </summary>
-		private Dictionary<string, System.Xml.Serialization.XmlSerializer> Serializers;		
+		private Dictionary<string, System.Xml.Serialization.XmlSerializer> Serializers;
 
 		/// <summary>
 		/// An object to synchonize access to the Dictionary instance.
@@ -71,7 +71,7 @@ namespace Mvp.Xml.Common.Serialization
 		{
 			SyncRoot = new object();
 			stats = new PerfCounterManager();
-			Serializers = new Dictionary<string, System.Xml.Serialization.XmlSerializer>();		
+			Serializers = new Dictionary<string, System.Xml.Serialization.XmlSerializer>();
 		}
 
 		/// <summary>
@@ -171,7 +171,7 @@ namespace Mvp.Xml.Common.Serialization
 				, root
 				, defaultNamespace);
 
-			System.Xml.Serialization.XmlSerializer serializer = null; 
+			System.Xml.Serialization.XmlSerializer serializer = null;
 			if (false == Serializers.ContainsKey(key))
 			{
 				lock (SyncRoot)
@@ -185,7 +185,7 @@ namespace Mvp.Xml.Common.Serialization
 							, types
 							, root
 							, defaultNamespace);
-						Serializers.Add( key, serializer );
+						Serializers.Add(key, serializer);
 
 						if (null != NewSerializer)
 						{

@@ -11,7 +11,7 @@ namespace Mvp.Xml.Common
 	/// </summary>
 	/// <remarks>Author: Daniel Cazzulino, <a href="http://clariusconsulting.net/kzu">blog</a></remarks>
 	public static class XmlNamespaces
-	{		
+	{
 		/// <summary>
 		/// The public XML 1.0 namespace. 
 		/// </summary>

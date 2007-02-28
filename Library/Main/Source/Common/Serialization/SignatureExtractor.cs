@@ -13,7 +13,7 @@ namespace Mvp.Xml.Common.Serialization
 	// I could test if the creating the hashvalue for the
 	// individual components of the key is faster than just building one
 	// long text key and then letting the hashtable do the hashing once.
-	
+
 	/// <summary>
 	/// Helper methods to create the signature for 
 	/// the XmlSerializer parameters.

@@ -57,7 +57,7 @@ namespace Mvp.Xml.Common.XPath
 		/// </summary>
 		public override bool Equals(object obj)
 		{
-			return Name == ((XPathVariable)obj).Name && 
+			return Name == ((XPathVariable)obj).Name &&
 				Value == ((XPathVariable)obj).Value;
 		}
 

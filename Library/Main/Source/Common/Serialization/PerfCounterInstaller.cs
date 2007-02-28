@@ -21,7 +21,7 @@ namespace Mvp.Xml.Common.Serialization
 		/// </summary>
 		public PerfCounterInstaller()
 		{
-			System.Diagnostics.Debug.WriteLine( "PerfCounterInstaller: done" );
+			System.Diagnostics.Debug.WriteLine("PerfCounterInstaller: done");
 			// This call is required by the Designer.
 			InitializeComponent();
 
@@ -30,7 +30,7 @@ namespace Mvp.Xml.Common.Serialization
 				// Create an instance of 'PerformanceCounterInstaller'.
 				PerformanceCounterInstaller performanceCounterInstaller =
 					new PerformanceCounterInstaller();
-				
+
 				// Set the 'CategoryName' for performance counter.
 				performanceCounterInstaller.CategoryName = PerfCounterManager.CATEGORY;
 
@@ -48,29 +48,29 @@ namespace Mvp.Xml.Common.Serialization
 				performanceCounterInstaller.Counters.Add(cacheHitCounterCreation);
 				performanceCounterInstaller.Counters.Add(cachedInstancesCounterCreation);
 				Installers.Add(performanceCounterInstaller);
-				System.Diagnostics.Debug.WriteLine( "PerfCounterInstaller: Added counters and category" );
+				System.Diagnostics.Debug.WriteLine("PerfCounterInstaller: Added counters and category");
 			}
-			catch(Exception e)
+			catch (Exception e)
 			{
-				System.Diagnostics.Debug.WriteLine("PerfCounterInstaller Error occured :"+e.Message);
+				System.Diagnostics.Debug.WriteLine("PerfCounterInstaller Error occured :" + e.Message);
 			}
-			System.Diagnostics.Debug.WriteLine( "PerfCounterInstaller done" );
+			System.Diagnostics.Debug.WriteLine("PerfCounterInstaller done");
 
 		}
 
 		/// <summary> 
 		/// Clean up any resources being used.
 		/// </summary>
-		protected override void Dispose( bool disposing )
+		protected override void Dispose(bool disposing)
 		{
-			if( disposing )
+			if (disposing)
 			{
-				if(components != null)
+				if (components != null)
 				{
 					components.Dispose();
 				}
 			}
-			base.Dispose( disposing );
+			base.Dispose(disposing);
 		}
 
 

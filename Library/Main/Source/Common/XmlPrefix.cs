@@ -3,7 +3,7 @@
 using System;
 using System.Xml;
 
-#endregion using 
+#endregion using
 
 namespace Mvp.Xml.Common
 {
@@ -36,8 +36,8 @@ namespace Mvp.Xml.Common
 		/// </remarks>
 		public XmlPrefix(string prefix, string ns, XmlNameTable nameTable)
 		{
-			_prefix = nameTable.Add( prefix );
-			_ns = nameTable.Add( ns );
+			_prefix = nameTable.Add(prefix);
+			_ns = nameTable.Add(ns);
 		}
 
 		/// <summary>

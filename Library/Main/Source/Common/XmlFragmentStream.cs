@@ -56,7 +56,8 @@ namespace Mvp.Xml.Common
 		/// </summary>
 		/// <param name="innerStream">The stream to read from.</param>
 		/// <param name="rootName">Custom root element name to use.</param>
-		public XmlFragmentStream(Stream innerStream, string rootName) : this (innerStream)
+		public XmlFragmentStream(Stream innerStream, string rootName)
+			: this(innerStream)
 		{
 			_rootstart = UTF8Encoding.UTF8.GetBytes("<" + rootName + ">");
 			_rootend = UTF8Encoding.UTF8.GetBytes("</" + rootName + ">");
@@ -69,7 +70,8 @@ namespace Mvp.Xml.Common
 		/// <param name="innerStream">The stream to read from.</param>
 		/// <param name="rootName">Custom root element name to use.</param>
 		/// <param name="ns">The namespace of the root element.</param>
-		public XmlFragmentStream(Stream innerStream, string rootName, string ns) : this (innerStream)
+		public XmlFragmentStream(Stream innerStream, string rootName, string ns)
+			: this(innerStream)
 		{
 			_rootstart = UTF8Encoding.UTF8.GetBytes("<" + rootName + " xmlns=\"" + ns + "\">");
 			_rootend = UTF8Encoding.UTF8.GetBytes("</" + rootName + ">");
@@ -108,37 +110,37 @@ namespace Mvp.Xml.Common
 
 		/// <summary>See <see cref="Stream.CanSeek"/>.</summary>
 		public override bool CanSeek { get { return _stream.CanSeek; } }
-		
+
 		/// <summary>See <see cref="Stream.CanWrite"/>.</summary>
 		public override bool CanWrite { get { return _stream.CanWrite; } }
-		
+
 		/// <summary>See <see cref="Stream.Length"/>.</summary>
 		public override long Length { get { return _stream.Length; } }
-		
+
 		/// <summary>See <see cref="Stream.Position"/>.</summary>
-		public override long Position 
-		{ 
+		public override long Position
+		{
 			get { return _stream.Position; }
 			set { _stream.Position = value; }
 		}
 
 		#endregion Stream abstract implementation
 
-		#region Read method 
+		#region Read method
 
 		/// <summary>See <see cref="Stream.Read"/>.</summary>
 		public override int Read(byte[] buffer, int offset, int count)
 		{
-			if (_done) 
+			if (_done)
 			{
-				if(!_eof)
+				if (!_eof)
 				{
 					_eof = true;
 					return 0;
 				}
 				else
 				{
-					throw new System.IO.EndOfStreamException(SR.GetString(SR.XmlFragmentStream_EOF)); 
+					throw new System.IO.EndOfStreamException(Properties.Resources.XmlFragmentStream_EOF);
 				}
 			}
 
@@ -184,6 +186,6 @@ namespace Mvp.Xml.Common
 			return ret;
 		}
 
-		#endregion Read method 
+		#endregion Read method
 	}
 }
