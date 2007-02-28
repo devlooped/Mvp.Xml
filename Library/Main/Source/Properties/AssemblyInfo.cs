@@ -23,7 +23,7 @@ using System.Security;
 [assembly: AssemblyVersion(ThisAssembly.VersionString)]
 [assembly: AssemblyFileVersion(ThisAssembly.VersionString)]
 
-// Required by the XPathDocumentHelper.
+// Required by the XPathDocumentWriter.
 [assembly: AllowPartiallyTrustedCallers()]
 
 internal static partial class ThisAssembly
