@@ -286,15 +286,6 @@ namespace Mvp.Xml.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Syntax error in xmlns() scheme data: Invalid token in XmlnsSchemaData, NCName was expected..
-        /// </summary>
-        internal static string InvalidTokenInXmlnsSchemeWhileNCNameExpected1 {
-            get {
-                return ResourceManager.GetString("InvalidTokenInXmlnsSchemeWhileNCNameExpected1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Invalid URI &apos;{0}&apos;..
         /// </summary>
         internal static string InvalidURI {
