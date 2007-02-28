@@ -748,28 +748,22 @@ namespace Mvp.Xml.Common.XPath
 					if (ni.Current.NodeType == XPathNodeType.Element)
 					{
 						//Processs namespace nodes
-						if (ni.Current.MoveToFirstNamespace())
+						for (bool go = ni.Current.MoveToFirstNamespace(); go; go = ni.Current.MoveToNextNamespace())
 						{
-							do
-							{
-								foreach (XPathNavigatorIndex index in indexes.Values)
-									index.MatchNode(ni.Current);
-							}
-							while (ni.Current.MoveToNextNamespace());
-							ni.Current.MoveToParent();
+							foreach (XPathNavigatorIndex index in indexes.Values)
+								index.MatchNode(ni.Current);
 						}
+						ni.Current.MoveToParent();
+
 						//process attributes
-						if (ni.Current.MoveToFirstAttribute())
+						for (bool go = ni.Current.MoveToFirstAttribute(); go; go = ni.Current.MoveToNextAttribute())
 						{
-							do
-							{
-								foreach (XPathNavigatorIndex index in indexes.Values)
-									index.MatchNode(ni.Current);
-							}
-							while (ni.Current.MoveToNextAttribute());
-							ni.Current.MoveToParent();
+							foreach (XPathNavigatorIndex index in indexes.Values)
+								index.MatchNode(ni.Current);
 						}
+						ni.Current.MoveToParent();
 					}
+
 					foreach (XPathNavigatorIndex index in indexes.Values)
 						index.MatchNode(ni.Current);
 				}
