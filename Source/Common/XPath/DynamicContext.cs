@@ -25,9 +25,9 @@ namespace Mvp.Xml.Common.XPath
 	{
 		#region Private vars
 
-		IDictionary<string, IXsltContextVariable> _variables = 
-            new Dictionary<string, IXsltContextVariable>();
-	
+		IDictionary<string, IXsltContextVariable> _variables =
+			new Dictionary<string, IXsltContextVariable>();
+
 		#endregion Private
 
 		#region Constructors & Initialization
@@ -35,7 +35,8 @@ namespace Mvp.Xml.Common.XPath
 		/// <summary>
 		/// Initializes a new instance of the <see cref="DynamicContext"/> class.
 		/// </summary>
-		public DynamicContext() : base(new NameTable())
+		public DynamicContext()
+			: base(new NameTable())
 		{
 		}
 
@@ -44,7 +45,8 @@ namespace Mvp.Xml.Common.XPath
 		/// class with the specified <see cref="NameTable"/>.
 		/// </summary>
 		/// <param name="table">The NameTable to use.</param>
-		public DynamicContext(NameTable table) : base(table) 
+		public DynamicContext(NameTable table)
+			: base(table)
 		{
 		}
 
@@ -52,8 +54,9 @@ namespace Mvp.Xml.Common.XPath
 		/// Initializes a new instance of the <see cref="DynamicContext"/> class.
 		/// </summary>
 		/// <param name="context">A previously filled context with the namespaces to use.</param>
-		public DynamicContext(XmlNamespaceManager context) : this(context, new NameTable())
-		{			
+		public DynamicContext(XmlNamespaceManager context)
+			: this(context, new NameTable())
+		{
 		}
 
 		/// <summary>
@@ -61,7 +64,8 @@ namespace Mvp.Xml.Common.XPath
 		/// </summary>
 		/// <param name="context">A previously filled context with the namespaces to use.</param>
 		/// <param name="table">The NameTable to use.</param>
-		public DynamicContext(XmlNamespaceManager context, NameTable table) : base(table)
+		public DynamicContext(XmlNamespaceManager context, NameTable table)
+			: base(table)
 		{
 			object xml = table.Add(XmlNamespaces.Xml);
 			object xmlns = table.Add(XmlNamespaces.XmlNs);
@@ -87,7 +91,7 @@ namespace Mvp.Xml.Common.XPath
 		/// <summary>
 		/// Implementation equal to <see cref="XsltContext"/>.
 		/// </summary>
-		public override int CompareDocument(string baseUri, string nextbaseUri) 
+		public override int CompareDocument(string baseUri, string nextbaseUri)
 		{
 			return String.Compare(baseUri, nextbaseUri, false, System.Globalization.CultureInfo.InvariantCulture);
 		}
@@ -98,7 +102,7 @@ namespace Mvp.Xml.Common.XPath
 		public override string LookupNamespace(string prefix)
 		{
 			string key = NameTable.Get(prefix);
-			if (key == null) 
+			if (key == null)
 				return null;
 			else
 				return base.LookupNamespace(key);
@@ -110,7 +114,7 @@ namespace Mvp.Xml.Common.XPath
 		public override string LookupPrefix(string uri)
 		{
 			string key = NameTable.Get(uri);
-			if (key == null) 
+			if (key == null)
 				return null;
 			else
 				return base.LookupPrefix(key);
@@ -127,9 +131,9 @@ namespace Mvp.Xml.Common.XPath
 		/// <summary>
 		/// Same as <see cref="XsltContext"/>.
 		/// </summary>
-		public override bool Whitespace 
-		{ 
-			get { return true; } 
+		public override bool Whitespace
+		{
+			get { return true; }
 		}
 
 		#endregion Common Overrides
@@ -210,9 +214,9 @@ namespace Mvp.Xml.Common.XPath
 		/// </summary>
 		public override IXsltContextVariable ResolveVariable(string prefix, string name)
 		{
-            IXsltContextVariable var;
-            _variables.TryGetValue(name, out var);
-            return var;
+			IXsltContextVariable var;
+			_variables.TryGetValue(name, out var);
+			return var;
 		}
 
 		#endregion Variable Handling Code
@@ -291,7 +295,7 @@ namespace Mvp.Xml.Common.XPath
 				get { return _type; }
 			} XPathResultType _type;
 
-			object IXsltContextVariable.Evaluate(XsltContext context) 
+			object IXsltContextVariable.Evaluate(XsltContext context)
 			{
 				return _value;
 			}
@@ -303,7 +307,7 @@ namespace Mvp.Xml.Common.XPath
 
 			bool IXsltContextVariable.IsParam
 			{
-				get  { return false; }
+				get { return false; }
 			}
 
 			#endregion IXsltContextVariable Implementation

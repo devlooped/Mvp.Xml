@@ -4,63 +4,64 @@ using System;
 using System.Collections.Generic;
 using System.Xml;
 using System.Xml.XPath;
+using System.Globalization;
 
 #endregion
 
 namespace Mvp.Xml.XPointer
 {
-  /// <summary>
-  /// SchemaBased XPointer pointer.
-  /// </summary>
-  internal class SchemaBasedPointer : Pointer
-  {
+	/// <summary>
+	/// SchemaBased XPointer pointer.
+	/// </summary>
+	internal class SchemaBasedPointer : Pointer
+	{
 
-    #region private members
+		#region private members
 
-    private IList<PointerPart> _parts;
-    private string _xpointer;
+		private IList<PointerPart> _parts;
+		private string _xpointer;
 
-    #endregion
+		#endregion
 
-    #region constructors
+		#region constructors
 
-    /// <summary>
-    /// Creates scheme based XPointer given list of pointer parts.
-    /// </summary>
-    /// <param name="parts">List of pointer parts</param>
-    /// <param name="xpointer">String representation of the XPointer 
-    /// (for error diagnostics)</param>
-    public SchemaBasedPointer(IList<PointerPart> parts, string xpointer)
-    {
-      _parts = parts;
-      _xpointer = xpointer;
-    }
+		/// <summary>
+		/// Creates scheme based XPointer given list of pointer parts.
+		/// </summary>
+		/// <param name="parts">List of pointer parts</param>
+		/// <param name="xpointer">String representation of the XPointer 
+		/// (for error diagnostics)</param>
+		public SchemaBasedPointer(IList<PointerPart> parts, string xpointer)
+		{
+			_parts = parts;
+			_xpointer = xpointer;
+		}
 
-    #endregion
+		#endregion
 
-    #region Pointer overrides
+		#region Pointer overrides
 
-    /// <summary>
-    /// Evaluates <see cref="XPointer"/> pointer and returns 
-    /// iterator over pointed nodes.
-    /// </summary>
-    /// <param name="nav">XPathNavigator to evaluate the 
-    /// <see cref="XPointer"/> on.</param>
-    /// <returns><see cref="XPathNodeIterator"/> over pointed nodes</returns>	    					
-    public override XPathNodeIterator Evaluate(XPathNavigator nav)
-    {
-      XPathNodeIterator result;
-      XmlNamespaceManager nm = new XmlNamespaceManager(nav.NameTable);
-      for (int i = 0; i < _parts.Count; i++)
-      {
-        PointerPart part = _parts[i];
-        result = part.Evaluate(nav, nm);
-        if (result != null && result.MoveNext())
-          return result;
-      }
-      throw new NoSubresourcesIdentifiedException(SR.GetString("NoSubresourcesIdentifiedException", _xpointer));
-    }
+		/// <summary>
+		/// Evaluates <see cref="XPointer"/> pointer and returns 
+		/// iterator over pointed nodes.
+		/// </summary>
+		/// <param name="nav">XPathNavigator to evaluate the 
+		/// <see cref="XPointer"/> on.</param>
+		/// <returns><see cref="XPathNodeIterator"/> over pointed nodes</returns>	    					
+		public override XPathNodeIterator Evaluate(XPathNavigator nav)
+		{
+			XPathNodeIterator result;
+			XmlNamespaceManager nm = new XmlNamespaceManager(nav.NameTable);
+			for (int i = 0; i < _parts.Count; i++)
+			{
+				PointerPart part = _parts[i];
+				result = part.Evaluate(nav, nm);
+				if (result != null && result.MoveNext())
+					return result;
+			}
+			throw new NoSubresourcesIdentifiedException(String.Format(CultureInfo.CurrentCulture, Properties.Resources.NoSubresourcesIdentifiedException, _xpointer));
+		}
 
-    #endregion
-  }
+		#endregion
+	}
 }

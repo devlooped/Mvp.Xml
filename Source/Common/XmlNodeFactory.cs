@@ -27,7 +27,7 @@ namespace Mvp.Xml.Common
 	/// </remarks>
 	public class XmlNodeFactory
 	{
-		private XmlNodeFactory() {}
+		private XmlNodeFactory() { }
 
 		#region Create overloads
 
@@ -88,185 +88,185 @@ namespace Mvp.Xml.Common
 
 		private abstract class SerializableNode : XmlElement
 		{
-			public SerializableNode() : base("", "dummy", "", new XmlDocument()) {}
+			public SerializableNode() : base("", "dummy", "", new XmlDocument()) { }
 
 			public override XmlNode AppendChild(XmlNode newChild)
 			{
-				throw new NotSupportedException(SR.XmlDocumentFactory_NotImplementedDOM);
+				throw new NotSupportedException(Properties.Resources.XmlDocumentFactory_NotImplementedDOM);
 			}
 
 			public override XmlAttributeCollection Attributes
 			{
-				get { throw new NotSupportedException(SR.XmlDocumentFactory_NotImplementedDOM); }
+				get { throw new NotSupportedException(Properties.Resources.XmlDocumentFactory_NotImplementedDOM); }
 			}
 
 			public override string BaseURI
 			{
-				get { throw new NotSupportedException(SR.XmlDocumentFactory_NotImplementedDOM); }
+				get { throw new NotSupportedException(Properties.Resources.XmlDocumentFactory_NotImplementedDOM); }
 			}
 
 			public override XmlNodeList ChildNodes
 			{
-				get { throw new NotSupportedException(SR.XmlDocumentFactory_NotImplementedDOM); }
+				get { throw new NotSupportedException(Properties.Resources.XmlDocumentFactory_NotImplementedDOM); }
 			}
 
 			public override XmlNode Clone()
 			{
-				throw new NotSupportedException(SR.XmlDocumentFactory_NotImplementedDOM); 
+				throw new NotSupportedException(Properties.Resources.XmlDocumentFactory_NotImplementedDOM);
 			}
 
 			public override XmlNode CloneNode(bool deep)
 			{
-				throw new NotSupportedException(SR.XmlDocumentFactory_NotImplementedDOM); 
+				throw new NotSupportedException(Properties.Resources.XmlDocumentFactory_NotImplementedDOM);
 			}
 
 			public override XmlNode FirstChild
 			{
-				get { throw new NotSupportedException(SR.XmlDocumentFactory_NotImplementedDOM); }
+				get { throw new NotSupportedException(Properties.Resources.XmlDocumentFactory_NotImplementedDOM); }
 			}
 
 			public override string GetNamespaceOfPrefix(string prefix)
 			{
-				throw new NotSupportedException(SR.XmlDocumentFactory_NotImplementedDOM); 
+				throw new NotSupportedException(Properties.Resources.XmlDocumentFactory_NotImplementedDOM);
 			}
 
 			public override string GetPrefixOfNamespace(string namespaceURI)
 			{
-				throw new NotSupportedException(SR.XmlDocumentFactory_NotImplementedDOM); 
+				throw new NotSupportedException(Properties.Resources.XmlDocumentFactory_NotImplementedDOM);
 			}
 
 			public override bool HasChildNodes
 			{
-				get { throw new NotSupportedException(SR.XmlDocumentFactory_NotImplementedDOM); }
+				get { throw new NotSupportedException(Properties.Resources.XmlDocumentFactory_NotImplementedDOM); }
 			}
 
 			public override string InnerText
 			{
-				get { throw new NotSupportedException(SR.XmlDocumentFactory_NotImplementedDOM); }
-				set { throw new NotSupportedException(SR.XmlDocumentFactory_NotImplementedDOM); }
+				get { throw new NotSupportedException(Properties.Resources.XmlDocumentFactory_NotImplementedDOM); }
+				set { throw new NotSupportedException(Properties.Resources.XmlDocumentFactory_NotImplementedDOM); }
 			}
 
 			public override string InnerXml
 			{
-				get { throw new NotSupportedException(SR.XmlDocumentFactory_NotImplementedDOM); }
-				set { throw new NotSupportedException(SR.XmlDocumentFactory_NotImplementedDOM); }
+				get { throw new NotSupportedException(Properties.Resources.XmlDocumentFactory_NotImplementedDOM); }
+				set { throw new NotSupportedException(Properties.Resources.XmlDocumentFactory_NotImplementedDOM); }
 			}
 
 			public override XmlNode InsertAfter(XmlNode newChild, XmlNode refChild)
 			{
-				throw new NotSupportedException(SR.XmlDocumentFactory_NotImplementedDOM); 
+				throw new NotSupportedException(Properties.Resources.XmlDocumentFactory_NotImplementedDOM);
 			}
 
 			public override XmlNode InsertBefore(XmlNode newChild, XmlNode refChild)
 			{
-				throw new NotSupportedException(SR.XmlDocumentFactory_NotImplementedDOM); 
+				throw new NotSupportedException(Properties.Resources.XmlDocumentFactory_NotImplementedDOM);
 			}
 
 			public override bool IsReadOnly
 			{
-				get { throw new NotSupportedException(SR.XmlDocumentFactory_NotImplementedDOM); }
+				get { throw new NotSupportedException(Properties.Resources.XmlDocumentFactory_NotImplementedDOM); }
 			}
 
 			public override XmlNode LastChild
 			{
-				get { throw new NotSupportedException(SR.XmlDocumentFactory_NotImplementedDOM); }
+				get { throw new NotSupportedException(Properties.Resources.XmlDocumentFactory_NotImplementedDOM); }
 			}
 
 			public override string LocalName
 			{
-				get { throw new NotSupportedException(SR.XmlDocumentFactory_NotImplementedDOM); }
+				get { throw new NotSupportedException(Properties.Resources.XmlDocumentFactory_NotImplementedDOM); }
 			}
 
 			public override string Name
 			{
-				get { throw new NotSupportedException(SR.XmlDocumentFactory_NotImplementedDOM); }
+				get { throw new NotSupportedException(Properties.Resources.XmlDocumentFactory_NotImplementedDOM); }
 			}
 
 			public override string NamespaceURI
 			{
-				get { throw new NotSupportedException(SR.XmlDocumentFactory_NotImplementedDOM); }
+				get { throw new NotSupportedException(Properties.Resources.XmlDocumentFactory_NotImplementedDOM); }
 			}
 
 			public override XmlNode NextSibling
 			{
-				get { throw new NotSupportedException(SR.XmlDocumentFactory_NotImplementedDOM); }
+				get { throw new NotSupportedException(Properties.Resources.XmlDocumentFactory_NotImplementedDOM); }
 			}
 
 			public override XmlNodeType NodeType
 			{
-				get { throw new NotSupportedException(SR.XmlDocumentFactory_NotImplementedDOM); }
+				get { throw new NotSupportedException(Properties.Resources.XmlDocumentFactory_NotImplementedDOM); }
 			}
 
 			public override void Normalize()
 			{
-				throw new NotSupportedException(SR.XmlDocumentFactory_NotImplementedDOM); 
+				throw new NotSupportedException(Properties.Resources.XmlDocumentFactory_NotImplementedDOM);
 			}
 
 			public override string OuterXml
 			{
-				get { throw new NotSupportedException(SR.XmlDocumentFactory_NotImplementedDOM); }					 
+				get { throw new NotSupportedException(Properties.Resources.XmlDocumentFactory_NotImplementedDOM); }
 			}
 
 			public override XmlDocument OwnerDocument
 			{
-				get { throw new NotSupportedException(SR.XmlDocumentFactory_NotImplementedDOM); }
+				get { throw new NotSupportedException(Properties.Resources.XmlDocumentFactory_NotImplementedDOM); }
 			}
 
 			public override XmlNode ParentNode
 			{
-				get { throw new NotSupportedException(SR.XmlDocumentFactory_NotImplementedDOM); }
+				get { throw new NotSupportedException(Properties.Resources.XmlDocumentFactory_NotImplementedDOM); }
 			}
 
 			public override string Prefix
 			{
-				get { throw new NotSupportedException(SR.XmlDocumentFactory_NotImplementedDOM); }
-				set { throw new NotSupportedException(SR.XmlDocumentFactory_NotImplementedDOM); }
+				get { throw new NotSupportedException(Properties.Resources.XmlDocumentFactory_NotImplementedDOM); }
+				set { throw new NotSupportedException(Properties.Resources.XmlDocumentFactory_NotImplementedDOM); }
 			}
 
 			public override XmlNode PrependChild(XmlNode newChild)
 			{
-				throw new NotSupportedException(SR.XmlDocumentFactory_NotImplementedDOM); 
+				throw new NotSupportedException(Properties.Resources.XmlDocumentFactory_NotImplementedDOM);
 			}
 
 			public override XmlNode PreviousSibling
 			{
-				get { throw new NotSupportedException(SR.XmlDocumentFactory_NotImplementedDOM); }
+				get { throw new NotSupportedException(Properties.Resources.XmlDocumentFactory_NotImplementedDOM); }
 			}
 
 			public override void RemoveAll()
 			{
-				throw new NotSupportedException(SR.XmlDocumentFactory_NotImplementedDOM); 
+				throw new NotSupportedException(Properties.Resources.XmlDocumentFactory_NotImplementedDOM);
 			}
 
 			public override XmlNode RemoveChild(XmlNode oldChild)
 			{
-				throw new NotSupportedException(SR.XmlDocumentFactory_NotImplementedDOM); 
+				throw new NotSupportedException(Properties.Resources.XmlDocumentFactory_NotImplementedDOM);
 			}
 
 			public override XmlNode ReplaceChild(XmlNode newChild, XmlNode oldChild)
 			{
-				throw new NotSupportedException(SR.XmlDocumentFactory_NotImplementedDOM); 
+				throw new NotSupportedException(Properties.Resources.XmlDocumentFactory_NotImplementedDOM);
 			}
 
 			public override bool Supports(string feature, string version)
 			{
-				throw new NotSupportedException(SR.XmlDocumentFactory_NotImplementedDOM); 
+				throw new NotSupportedException(Properties.Resources.XmlDocumentFactory_NotImplementedDOM);
 			}
 
 			public override XmlElement this[string localname, string ns]
 			{
-				get { throw new NotSupportedException(SR.XmlDocumentFactory_NotImplementedDOM); }
+				get { throw new NotSupportedException(Properties.Resources.XmlDocumentFactory_NotImplementedDOM); }
 			}
 
 			public override XmlElement this[string name]
 			{
-				get { throw new NotSupportedException(SR.XmlDocumentFactory_NotImplementedDOM); }
+				get { throw new NotSupportedException(Properties.Resources.XmlDocumentFactory_NotImplementedDOM); }
 			}
 
 			public override string Value
 			{
-				get { throw new NotSupportedException(SR.XmlDocumentFactory_NotImplementedDOM); }
-				set { throw new NotSupportedException(SR.XmlDocumentFactory_NotImplementedDOM); }
+				get { throw new NotSupportedException(Properties.Resources.XmlDocumentFactory_NotImplementedDOM); }
+				set { throw new NotSupportedException(Properties.Resources.XmlDocumentFactory_NotImplementedDOM); }
 			}
 
 			public override void WriteContentTo(XmlWriter w)
@@ -285,13 +285,13 @@ namespace Mvp.Xml.Common
 		{
 			private XPathNavigator _navigator;
 
-			public XPathNavigatorNode() {}
+			public XPathNavigatorNode() { }
 
 			public XPathNavigatorNode(XPathNavigator navigator)
 			{
 				_navigator = navigator;
 			}
-			
+
 			public override void WriteTo(XmlWriter w)
 			{
 				w.WriteNode(_navigator.ReadSubtree(), false);
@@ -299,15 +299,15 @@ namespace Mvp.Xml.Common
 		}
 
 		#endregion XPathNavigatorNode
-	
+
 		#region XmlReaderNode
 
 		private class XmlReaderNode : SerializableNode
 		{
-			private XmlReader	_reader;
-			private bool		_default;
+			private XmlReader _reader;
+			private bool _default;
 
-			public XmlReaderNode() {}
+			public XmlReaderNode() { }
 
 			public XmlReaderNode(XmlReader reader, bool defaultAttrs)
 			{
@@ -315,7 +315,7 @@ namespace Mvp.Xml.Common
 				_reader.MoveToContent();
 				_default = defaultAttrs;
 			}
-			
+
 			public override void WriteTo(XmlWriter w)
 			{
 				w.WriteNode(_reader, _default);
@@ -331,7 +331,7 @@ namespace Mvp.Xml.Common
 		{
 			private object serializableObject;
 
-			public ObjectNode() {}
+			public ObjectNode() { }
 
 			public ObjectNode(object serializableObject)
 			{

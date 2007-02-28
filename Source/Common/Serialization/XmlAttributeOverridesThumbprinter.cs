@@ -16,14 +16,14 @@ namespace Mvp.Xml.Common.Serialization
 	/// </summary>
 	public static class XmlAttributeOverridesThumbprinter
 	{
-		
+
 		/// <summary>
 		/// Gets a thumbprint (signature)
 		/// for the content of the XmlAttributeOverrides
 		/// </summary>
 		/// <param name="overrides"></param>
 		/// <returns></returns>
-		public static string GetThumbprint( XmlAttributeOverrides overrides )
+		public static string GetThumbprint(XmlAttributeOverrides overrides)
 		{
 			return GetClassThumbprint(overrides);
 		}
@@ -48,7 +48,7 @@ namespace Mvp.Xml.Common.Serialization
 			// so my first attempt at a thumbprint looks like this:
 			// typeName:memberName:attributes:memberName:attributes:...
 			// memberNames are orders alphabetically
-			
+
 			// the complete thumbprint for the XmlAttributeOverrides
 			// concatenates the individual thumbrprints for a type in
 			// the alphabetical order of the type names.
@@ -59,7 +59,7 @@ namespace Mvp.Xml.Common.Serialization
 				sorter.AddString(t.AssemblyQualifiedName);
 			}
 			string[] sortedTypeNames = sorter.GetOrderedArray();
-			
+
 			// now we have the types for which we have overriding attributes 
 			// in alphabetical order
 
@@ -91,7 +91,7 @@ namespace Mvp.Xml.Common.Serialization
 				sorter.AddString(memberName);
 			}
 			string[] sortedMemberNames = sorter.GetOrderedArray();
-		
+
 			foreach (string memberName in sortedMemberNames)
 			{
 				printBuilder.AppendFormat("**{0}**", memberName);
@@ -102,7 +102,7 @@ namespace Mvp.Xml.Common.Serialization
 			}
 		}
 
-		private static void GetXmlAttributesThumbprint(XmlAttributes atts, StringBuilder printBuilder )
+		private static void GetXmlAttributesThumbprint(XmlAttributes atts, StringBuilder printBuilder)
 		{
 			if (null == atts) return;
 
@@ -114,25 +114,25 @@ namespace Mvp.Xml.Common.Serialization
 			printBuilder.Append(":");
 			AddXmlArrayItemsPrint(atts.XmlArrayItems, printBuilder);
 			printBuilder.Append(":");
-			AddXmlAttributePrint( atts.XmlAttribute, printBuilder );
+			AddXmlAttributePrint(atts.XmlAttribute, printBuilder);
 			printBuilder.Append(":");
-			AddXmlChoiceIdentifierPrint( atts.XmlChoiceIdentifier, printBuilder );
+			AddXmlChoiceIdentifierPrint(atts.XmlChoiceIdentifier, printBuilder);
 			printBuilder.Append(":");
-			AddXmlDefaultValuePrint( atts.XmlDefaultValue, printBuilder );
+			AddXmlDefaultValuePrint(atts.XmlDefaultValue, printBuilder);
 			printBuilder.Append(":");
-			AddXmlElementsPrint( atts.XmlElements, printBuilder );
+			AddXmlElementsPrint(atts.XmlElements, printBuilder);
 			printBuilder.Append(":");
-			AddXmlEnumPrint( atts.XmlEnum, printBuilder );
+			AddXmlEnumPrint(atts.XmlEnum, printBuilder);
 			printBuilder.Append(":");
-			AddXmlIgnorePrint( atts.XmlIgnore, printBuilder );
+			AddXmlIgnorePrint(atts.XmlIgnore, printBuilder);
 			printBuilder.Append(":");
-			AddXmlNamespacePrint( atts.Xmlns, printBuilder );
+			AddXmlNamespacePrint(atts.Xmlns, printBuilder);
 			printBuilder.Append(":");
-			AddXmlRootPrint( atts.XmlRoot, printBuilder );
+			AddXmlRootPrint(atts.XmlRoot, printBuilder);
 			printBuilder.Append(":");
-			AddXmlTextPrint( atts.XmlText, printBuilder );
+			AddXmlTextPrint(atts.XmlText, printBuilder);
 			printBuilder.Append(":");
-			AddXmlTypePrint( atts.XmlType, printBuilder );
+			AddXmlTypePrint(atts.XmlType, printBuilder);
 		}
 
 		private static void AddXmlAnyElementsPrint(XmlAnyElementAttributes atts, StringBuilder printBuilder)
@@ -167,7 +167,7 @@ namespace Mvp.Xml.Common.Serialization
 			printBuilder.Append("%%");
 		}
 
-		private static void AddXmlArrayItemsPrint( XmlArrayItemAttributes atts, StringBuilder printBuilder )
+		private static void AddXmlArrayItemsPrint(XmlArrayItemAttributes atts, StringBuilder printBuilder)
 		{
 			if (null != atts)
 			{

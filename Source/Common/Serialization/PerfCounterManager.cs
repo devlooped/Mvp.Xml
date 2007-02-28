@@ -33,7 +33,7 @@ namespace Mvp.Xml.Common.Serialization
 		internal const string SERIALIZER_HITS_DESCRIPTION = "Number of times instances were retrieved from the serializer cache.";
 		internal const string CACHED_INSTANCES_NAME = "Cached Instances";
 		internal const string CACHED_INSTANCES_DESCRIPTION = "Number of XmlSerializer instances in the cache.";
- 
+
 		private void CheckAndCreateCategory()
 		{
 			if (!System.Diagnostics.PerformanceCounterCategory.Exists(CATEGORY))
@@ -43,8 +43,8 @@ namespace Mvp.Xml.Common.Serialization
 				counters.Add(GetCacheHitCounterData());
 				counters.Add(GetCachedInstancesCounterData());
 				PerformanceCounterCategory.Create(
-				   CATEGORY, CATEGORY_DESCRIPTION, PerformanceCounterCategoryType.MultiInstance, 
-                   counters);
+				   CATEGORY, CATEGORY_DESCRIPTION, PerformanceCounterCategoryType.MultiInstance,
+				   counters);
 			}
 		}
 
@@ -74,28 +74,28 @@ namespace Mvp.Xml.Common.Serialization
 		{
 			CacheHitCounter = new PerformanceCounter(CATEGORY
 				, SERIALIZER_HITS_NAME
-				, GetCounterInstanceName( HitCounterInstanceCount)
-				, false );
+				, GetCounterInstanceName(HitCounterInstanceCount)
+				, false);
 
 			InstanceCounter = new PerformanceCounter(CATEGORY
 				, CACHED_INSTANCES_NAME
-				, GetCounterInstanceName( InstanceCounterInstanceCount)
-				, false );
+				, GetCounterInstanceName(InstanceCounterInstanceCount)
+				, false);
 		}
 
-		private string GetCounterInstanceName( int index )
+		private string GetCounterInstanceName(int index)
 		{
 			string fileName = Environment.CommandLine.Split(' ')[0];
-			foreach( char c in System.IO.Path.GetInvalidPathChars() )
+			foreach (char c in System.IO.Path.GetInvalidPathChars())
 			{
-				fileName = fileName.Replace( c, '%' );
+				fileName = fileName.Replace(c, '%');
 			}
 			fileName = fileName = System.IO.Path.GetFileNameWithoutExtension(fileName);
 			System.Diagnostics.Debug.WriteLine(String.Format("File name is: {0}", fileName));
 			string name = String.Format("{0}-{1}#{2}"
 					, fileName
 					, AppDomain.CurrentDomain.FriendlyName
-					, index );
+					, index);
 			System.Diagnostics.Debug.WriteLine(string.Format("Created counter name: {0}"
 				, name));
 			return name;
@@ -116,7 +116,7 @@ namespace Mvp.Xml.Common.Serialization
 		{
 			InstanceCounter.Increment();
 		}
-	
+
 		/// <summary>
 		/// Finalizer to make sure counters are cleaned up 
 		/// properly even if Dispose wasn't called.
@@ -132,15 +132,15 @@ namespace Mvp.Xml.Common.Serialization
 			{
 				CacheHitCounter.RemoveInstance();
 			}
-			catch{}
+			catch { }
 			try
 			{
 				InstanceCounter.RemoveInstance();
 			}
-			catch{}
+			catch { }
 		}
 
-#region IDisposable Members
+		#region IDisposable Members
 
 		/// <summary>
 		/// Dispose method to clean up counter instances
@@ -151,6 +151,6 @@ namespace Mvp.Xml.Common.Serialization
 			GC.SuppressFinalize(this);
 		}
 
-#endregion
-}
+		#endregion
+	}
 }

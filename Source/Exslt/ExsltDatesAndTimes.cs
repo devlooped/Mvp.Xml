@@ -32,36 +32,36 @@ namespace Mvp.Xml.Exslt
 				{
 					return ParseDate(d);
 				}
-				catch(FormatException)
+				catch (FormatException)
 				{
 				}
-				
+
 				try
 				{
 					TimeTZ t = new TimeTZ(d);
 					return t;
 				}
-				catch(FormatException)
+				catch (FormatException)
 				{
-				}				
+				}
 
 				try
 				{
 					MonthDay t = new MonthDay(d);
 					return t;
 				}
-				catch(FormatException)
+				catch (FormatException)
 				{
-				}				
+				}
 
 				try
 				{
 					Month t = new Month(d);
 					return t;
 				}
-				catch(FormatException)
+				catch (FormatException)
 				{
-				}	
+				}
 
 				// Finally day -- don't catch the exception
 				{
@@ -81,9 +81,9 @@ namespace Mvp.Xml.Exslt
 				try
 				{
 					DateTimeTZ t = new DateTimeTZ(d);
-					return t; 
+					return t;
 				}
-				catch(FormatException)
+				catch (FormatException)
 				{
 				}
 
@@ -91,9 +91,9 @@ namespace Mvp.Xml.Exslt
 				try
 				{
 					DateTZ t = new DateTZ(d);
-					return t; 
+					return t;
 				}
-				catch(FormatException)
+				catch (FormatException)
 				{
 				}
 
@@ -101,24 +101,24 @@ namespace Mvp.Xml.Exslt
 				try
 				{
 					YearMonth t = new YearMonth(d);
-					return t; 
+					return t;
 				}
-				catch(FormatException)
+				catch (FormatException)
 				{
 				}
 
 				// Finally Year -- don't catch the exception for the last type
-				{	
+				{
 					YearTZ t = new YearTZ(d);
-					return t; 
+					return t;
 				}
 			}
 		}
 
 		internal abstract class ExsltDateTime
 		{
-			public DateTime	d;
-			public TimeSpan	ts = new TimeSpan(TimeSpan.MinValue.Ticks);
+			public DateTime d;
+			public TimeSpan ts = new TimeSpan(TimeSpan.MinValue.Ticks);
 
 			protected CultureInfo ci = new CultureInfo("en-US");
 
@@ -139,26 +139,26 @@ namespace Mvp.Xml.Exslt
 			public ExsltDateTime(string inS)
 			{
 				String s = inS.Trim();
-				d = DateTime.ParseExact(s, expectedFormats,	ci, DateTimeStyles.AdjustToUniversal);
+				d = DateTime.ParseExact(s, expectedFormats, ci, DateTimeStyles.AdjustToUniversal);
 
 				if (s.EndsWith("Z"))
 					ts = new TimeSpan(0, 0, 0);
 				else if (s.Length > 6)
 				{
-					String zoneStr = s.Substring(s.Length-6, 6);
+					String zoneStr = s.Substring(s.Length - 6, 6);
 					if (zoneStr[3] == ':')
 					{
 						try
 						{
-							int	hours = Int32.Parse(zoneStr.Substring(0,3));
-							int minutes = Int32.Parse(zoneStr.Substring(4,2));
+							int hours = Int32.Parse(zoneStr.Substring(0, 3));
+							int minutes = Int32.Parse(zoneStr.Substring(4, 2));
 							if (hours < 0)
 								minutes = -minutes;
 
 							ts = new TimeSpan(hours, minutes, 0);
 							d = d.Add(ts);	// Adjust to time zone relative time						
 						}
-						catch(Exception)
+						catch (Exception)
 						{
 						}
 					}
@@ -205,7 +205,7 @@ namespace Mvp.Xml.Exslt
 			public string ToString(String of)
 			{
 				StringBuilder retString = new StringBuilder("");
-						
+
 				retString.Append(d.ToString(of));
 				retString.Append(GetTimeZone());
 
@@ -226,7 +226,7 @@ namespace Mvp.Xml.Exslt
 						retString.Append('+');
 						retString.Append(ts.Hours.ToString().PadLeft(2, '0'));
 						retString.Append(':');
-						retString.Append(ts.Minutes.ToString().PadLeft(2, '0'));				
+						retString.Append(ts.Minutes.ToString().PadLeft(2, '0'));
 					}
 					else
 					{
@@ -236,7 +236,7 @@ namespace Mvp.Xml.Exslt
 						retString.Append((-ts.Minutes).ToString().PadLeft(2, '0'));
 					}
 				}
-				
+
 				return retString.ToString();
 			}
 
@@ -253,7 +253,7 @@ namespace Mvp.Xml.Exslt
 						retString.Append(GetTimeZone());
 					}
 				}
-				
+
 				return retString.ToString();
 			}
 
@@ -270,7 +270,7 @@ namespace Mvp.Xml.Exslt
 					{
 						retString.Append('+');
 						retString.Append(ts.Hours.ToString().PadLeft(2, '0'));
-						retString.Append(ts.Minutes.ToString().PadLeft(2, '0'));				
+						retString.Append(ts.Minutes.ToString().PadLeft(2, '0'));
 					}
 					else
 					{
@@ -279,23 +279,23 @@ namespace Mvp.Xml.Exslt
 						retString.Append((-ts.Minutes).ToString().PadLeft(2, '0'));
 					}
 				}
-				
+
 				return retString.ToString();
 			}
 
-			protected abstract string[] expectedFormats {get;}
-			protected abstract string outputFormat {get;}
+			protected abstract string[] expectedFormats { get;}
+			protected abstract string outputFormat { get;}
 		}
 
 		internal class DateTimeTZ : ExsltDateTime
 		{
-			public DateTimeTZ() : base(){}
-			public DateTimeTZ(string inS) : base(inS){}
-			public DateTimeTZ(ExsltDateTime inS) : base(inS){}
+			public DateTimeTZ() : base() { }
+			public DateTimeTZ(string inS) : base(inS) { }
+			public DateTimeTZ(ExsltDateTime inS) : base(inS) { }
 
 			protected override string[] expectedFormats
 			{
-				get 
+				get
 				{
 					return new string[] {"yyyy-MM-dd\"T\"HH:mm:sszzz", 
 											"yyyy-MM-dd\"T\"HH:mm:ssZ", 
@@ -337,9 +337,9 @@ namespace Mvp.Xml.Exslt
 
 		internal class DateTZ : ExsltDateTime
 		{
-			public DateTZ() : base(){}
-			public DateTZ(string inS) : base(inS){}
-			public DateTZ(ExsltDateTime inS) : base(inS){}
+			public DateTZ() : base() { }
+			public DateTZ(string inS) : base(inS) { }
+			public DateTZ(ExsltDateTime inS) : base(inS) { }
 
 			protected override string[] expectedFormats
 			{
@@ -386,8 +386,8 @@ namespace Mvp.Xml.Exslt
 
 		internal class TimeTZ : ExsltDateTime
 		{
-			public TimeTZ(string inS) : base(inS){}
-			public TimeTZ() : base(){}
+			public TimeTZ(string inS) : base(inS) { }
+			public TimeTZ() : base() { }
 
 			protected override string[] expectedFormats
 			{
@@ -434,9 +434,9 @@ namespace Mvp.Xml.Exslt
 
 		internal class YearMonth : ExsltDateTime
 		{
-			public YearMonth() : base(){}
-			public YearMonth(string inS) : base(inS){}
-			public YearMonth(ExsltDateTime inS) : base(inS){}
+			public YearMonth() : base() { }
+			public YearMonth(string inS) : base(inS) { }
+			public YearMonth(ExsltDateTime inS) : base(inS) { }
 
 			protected override string[] expectedFormats
 			{
@@ -482,9 +482,9 @@ namespace Mvp.Xml.Exslt
 
 		internal class YearTZ : ExsltDateTime
 		{
-			public YearTZ() : base(){}
-			public YearTZ(string inS) : base(inS){}
-			public YearTZ(ExsltDateTime inS) : base(inS){}
+			public YearTZ() : base() { }
+			public YearTZ(string inS) : base(inS) { }
+			public YearTZ(ExsltDateTime inS) : base(inS) { }
 
 			protected override string[] expectedFormats
 			{
@@ -531,9 +531,9 @@ namespace Mvp.Xml.Exslt
 
 		internal class Month : ExsltDateTime
 		{
-			public Month() : base(){}
-			public Month(string inS) : base(inS){}
-			public Month(ExsltDateTime inS) : base(inS){}
+			public Month() : base() { }
+			public Month(string inS) : base(inS) { }
+			public Month(ExsltDateTime inS) : base(inS) { }
 
 			protected override string[] expectedFormats
 			{
@@ -580,9 +580,9 @@ namespace Mvp.Xml.Exslt
 
 		internal class Day : ExsltDateTime
 		{
-			public Day() : base(){}
-			public Day(string inS) : base(inS){}
-			public Day(ExsltDateTime inS) : base(inS){}
+			public Day() : base() { }
+			public Day(string inS) : base(inS) { }
+			public Day(ExsltDateTime inS) : base(inS) { }
 
 			protected override string[] expectedFormats
 			{
@@ -629,9 +629,9 @@ namespace Mvp.Xml.Exslt
 
 		internal class MonthDay : ExsltDateTime
 		{
-			public MonthDay() : base(){}
-			public MonthDay(string inS) : base(inS){}
-			public MonthDay(ExsltDateTime inS) : base(inS){}
+			public MonthDay() : base() { }
+			public MonthDay(string inS) : base(inS) { }
+			public MonthDay(ExsltDateTime inS) : base(inS) { }
 
 			protected override string[] expectedFormats
 			{
@@ -676,7 +676,7 @@ namespace Mvp.Xml.Exslt
 		}
 
 
-		private string[] dayAbbrevs = {"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
+		private string[] dayAbbrevs = { "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" };
 		private string[] dayNames = {"Sunday", "Monday", "Tuesday", 
 										"Wednesday", "Thursday", "Friday", "Saturday"};
 
@@ -686,7 +686,7 @@ namespace Mvp.Xml.Exslt
 										  "July", "August", "September", 
 										  "October", "November", "December"};
 
-		
+
 		/// <summary>
 		/// Implements the following function
 		///   string date:date-time()
@@ -705,19 +705,19 @@ namespace Mvp.Xml.Exslt
 		/// </summary>
 		/// <returns>The current time.</returns>		
 		public string dateTime()
-		{		
-			DateTimeTZ	d = new DateTimeTZ();
+		{
+			DateTimeTZ d = new DateTimeTZ();
 			return dateTimeImpl(d);
 		}
-        
-        /// <summary>
-        /// This wrapper method will be renamed during custom build 
-        /// to provide conformant EXSLT function name.
-        /// </summary>
-        public string dateTime_RENAME_ME() 
-        {
-            return dateTime();
-        }    
+
+		/// <summary>
+		/// This wrapper method will be renamed during custom build 
+		/// to provide conformant EXSLT function name.
+		/// </summary>
+		public string dateTime_RENAME_ME()
+		{
+			return dateTime();
+		}
 
 		/// <summary>
 		/// Implements the following function
@@ -725,26 +725,27 @@ namespace Mvp.Xml.Exslt
 		/// </summary>
 		/// <returns>The current date and time or the empty string if the 
 		/// date is invalid </returns>        
-		public string dateTime(string s){		
+		public string dateTime(string s)
+		{
 			try
 			{
 				DateTimeTZ d = new DateTimeTZ(s);
 				return dateTimeImpl(d);
 			}
-			catch(FormatException)
+			catch (FormatException)
 			{
-				return ""; 
+				return "";
 			}
 		}
-		
+
 		/// <summary>
-        /// This wrapper method will be renamed during custom build 
-        /// to provide conformant EXSLT function name.
-        /// </summary>
-        public string dateTime_RENAME_ME(string d) 
-        {
-            return dateTime(d);
-        }
+		/// This wrapper method will be renamed during custom build 
+		/// to provide conformant EXSLT function name.
+		/// </summary>
+		public string dateTime_RENAME_ME(string d)
+		{
+			return dateTime(d);
+		}
 
 		/// <summary>
 		/// Internal function to format the date based on a date, rather than a string
@@ -777,12 +778,12 @@ namespace Mvp.Xml.Exslt
 		{
 			try
 			{
-				DateTZ dtz = new DateTZ(d);				
-				return dtz.ToString(); 
+				DateTZ dtz = new DateTZ(d);
+				return dtz.ToString();
 			}
-			catch(FormatException)
+			catch (FormatException)
 			{
-				return ""; 
+				return "";
 			}
 		}
 
@@ -808,14 +809,14 @@ namespace Mvp.Xml.Exslt
 			try
 			{
 				TimeTZ t = new TimeTZ(d);
-				return t.ToString(); 
+				return t.ToString();
 			}
-			catch(FormatException)
+			catch (FormatException)
 			{
-				return ""; 
+				return "";
 			}
 		}
-		
+
 
 		/// <summary>
 		/// Implements the following function
@@ -837,14 +838,14 @@ namespace Mvp.Xml.Exslt
 		/// xs:gYear types</remarks>        
 		public double year(string d)
 		{
-			try	
+			try
 			{
 				YearTZ date = new YearTZ(d);
-				return date.d.Year; 
+				return date.d.Year;
 			}
-			catch(FormatException)
+			catch (FormatException)
 			{
-				return System.Double.NaN; 
+				return System.Double.NaN;
 			}
 		}
 
@@ -852,16 +853,16 @@ namespace Mvp.Xml.Exslt
 		/// Helper method for calculating whether a year is a leap year. Algorithm 
 		/// obtained from http://mindprod.com/jglossleapyear.html
 		/// </summary>        
-		private static bool IsLeapYear (int year) 
-		{ 	
-            try 
-            {
-                return CultureInfo.CurrentCulture.Calendar.IsLeapYear(year); 
-            } 
-            catch 
-            {
-                return false;
-            }
+		private static bool IsLeapYear(int year)
+		{
+			try
+			{
+				return CultureInfo.CurrentCulture.Calendar.IsLeapYear(year);
+			}
+			catch
+			{
+				return false;
+			}
 		}
 
 
@@ -872,17 +873,17 @@ namespace Mvp.Xml.Exslt
 		/// <returns>True if the current year is a leap year.</returns>        
 		public bool leapYear()
 		{
-			return IsLeapYear((int) year());
+			return IsLeapYear((int)year());
 		}
-		
-        /// <summary>
-        /// This wrapper method will be renamed during custom build 
-        /// to provide conformant EXSLT function name.
-        /// </summary>
-        public bool leapYear_RENAME_ME() 
-        {
-            return leapYear();
-        }
+
+		/// <summary>
+		/// This wrapper method will be renamed during custom build 
+		/// to provide conformant EXSLT function name.
+		/// </summary>
+		public bool leapYear_RENAME_ME()
+		{
+			return leapYear();
+		}
 
 		/// <summary>
 		/// Implements the following function
@@ -894,22 +895,22 @@ namespace Mvp.Xml.Exslt
 		/// </remarks>        
 		public bool leapYear(string d)
 		{
-			double y = year(d); 
+			double y = year(d);
 
 			if (y == System.Double.NaN)
 				return false;
 			else
 				return IsLeapYear((int)y);
 		}
-		
-        /// <summary>
-        /// This wrapper method will be renamed during custom build 
-        /// to provide conformant EXSLT function name.
-        /// </summary>
-        public bool leapYear_RENAME_ME(string d) 
-        {
-            return leapYear(d);
-        }
+
+		/// <summary>
+		/// This wrapper method will be renamed during custom build 
+		/// to provide conformant EXSLT function name.
+		/// </summary>
+		public bool leapYear_RENAME_ME(string d)
+		{
+			return leapYear(d);
+		}
 
 		/// <summary>
 		/// Implements the following function
@@ -920,15 +921,15 @@ namespace Mvp.Xml.Exslt
 		{
 			return DateTime.Now.Month;
 		}
-        
-        /// <summary>
-        /// This wrapper method will be renamed during custom build 
-        /// to provide conformant EXSLT function name.
-        /// </summary>
-        public double monthInYear_RENAME_ME() 
-        {
-            return monthInYear();
-        }
+
+		/// <summary>
+		/// This wrapper method will be renamed during custom build 
+		/// to provide conformant EXSLT function name.
+		/// </summary>
+		public double monthInYear_RENAME_ME()
+		{
+			return monthInYear();
+		}
 
 		/// <summary>
 		/// Implements the following function
@@ -942,22 +943,22 @@ namespace Mvp.Xml.Exslt
 			try
 			{
 				Month date = new Month(d);
-				return date.d.Month; 
+				return date.d.Month;
 			}
-			catch(FormatException)
+			catch (FormatException)
 			{
-				return System.Double.NaN; 
+				return System.Double.NaN;
 			}
 		}
-		
-        /// <summary>
-        /// This wrapper method will be renamed during custom build 
-        /// to provide conformant EXSLT function name.
-        /// </summary>
-        public double monthInYear_RENAME_ME(string d) 
-        {
-            return monthInYear(d);
-        }
+
+		/// <summary>
+		/// This wrapper method will be renamed during custom build 
+		/// to provide conformant EXSLT function name.
+		/// </summary>
+		public double monthInYear_RENAME_ME(string d)
+		{
+			return monthInYear(d);
+		}
 
 		/// <summary>
 		/// Helper funcitno to calculate the week number
@@ -970,10 +971,10 @@ namespace Mvp.Xml.Exslt
 		/// <param name="d">The date for which we want to find the week</param>
 		private double weekInYear(DateTime d)
 		{
-		    return CultureInfo.InvariantCulture.Calendar.GetWeekOfYear(d, 
-										  System.Globalization.CalendarWeekRule.FirstFourDayWeek, 
+			return CultureInfo.InvariantCulture.Calendar.GetWeekOfYear(d,
+										  System.Globalization.CalendarWeekRule.FirstFourDayWeek,
 										  System.DayOfWeek.Monday);
-		}		        
+		}
 
 		/// <summary>
 		/// Implements the following function
@@ -988,15 +989,15 @@ namespace Mvp.Xml.Exslt
 		{
 			return this.weekInYear(DateTime.Now);
 		}
-		
-        /// <summary>
-        /// This wrapper method will be renamed during custom build 
-        /// to provide conformant EXSLT function name.
-        /// </summary>
-        public double weekInYear_RENAME_ME() 
-        {
-            return weekInYear();
-        }
+
+		/// <summary>
+		/// This wrapper method will be renamed during custom build 
+		/// to provide conformant EXSLT function name.
+		/// </summary>
+		public double weekInYear_RENAME_ME()
+		{
+			return weekInYear();
+		}
 
 		/// <summary>
 		/// Implements the following function
@@ -1015,27 +1016,27 @@ namespace Mvp.Xml.Exslt
 				DateTZ dtz = new DateTZ(d);
 				return weekInYear(dtz.d);
 			}
-			catch(FormatException)
+			catch (FormatException)
 			{
-				return System.Double.NaN; 
+				return System.Double.NaN;
 			}
 		}
-		
-        /// <summary>
-        /// This wrapper method will be renamed during custom build 
-        /// to provide conformant EXSLT function name.
-        /// </summary>
-        public double weekInYear_RENAME_ME(string d) 
-        {
-            return weekInYear(d);
-        }
 
-        /// <summary>
-        /// Helper method. 
-        /// </summary>
-        /// <param name="d"></param>
-        /// <returns></returns>
-        private double weekInMonth(DateTime d)
+		/// <summary>
+		/// This wrapper method will be renamed during custom build 
+		/// to provide conformant EXSLT function name.
+		/// </summary>
+		public double weekInYear_RENAME_ME(string d)
+		{
+			return weekInYear(d);
+		}
+
+		/// <summary>
+		/// Helper method. 
+		/// </summary>
+		/// <param name="d"></param>
+		/// <returns></returns>
+		private double weekInMonth(DateTime d)
 		{
 			//
 			// mon = 1
@@ -1044,64 +1045,64 @@ namespace Mvp.Xml.Exslt
 			// week = ceil(((date-day) / 7)) + 1
 
 			double offset = (d.DayOfWeek == DayOfWeek.Sunday) ? 7 : (double)d.DayOfWeek;
-			return System.Math.Ceiling((d.Day-offset) / 7)+1;
-        }
+			return System.Math.Ceiling((d.Day - offset) / 7) + 1;
+		}
 
-        /// <summary>
-        /// Implements the following function
-        ///   number date:week-in-month()
-        /// </summary>
+		/// <summary>
+		/// Implements the following function
+		///   number date:week-in-month()
+		/// </summary>
 		/// <remarks>
 		/// The current week in month as a number.  For the purposes of numbering, the first 
 		/// day of the month is in week 1 and new weeks begin on a Monday (so the first and 
 		/// last weeks in a month will often have less than 7 days in them). 
 		/// </remarks>        
 		public double weekInMonth()
-        {
-            return this.weekInMonth(DateTime.Now);
-        }
-        
-        /// <summary>
-        /// This wrapper method will be renamed during custom build 
-        /// to provide conformant EXSLT function name.
-        /// </summary>
-        public double weekInMonth_RENAME_ME() 
-        {
-            return weekInMonth();
-        }
+		{
+			return this.weekInMonth(DateTime.Now);
+		}
 
-        /// <summary>
-        /// Implements the following function
-        ///   number date:week-in-month(string)
-        /// </summary>
-        /// <returns>The week in month of the specified date or NaN if the 
-        /// date is invalid</returns>
+		/// <summary>
+		/// This wrapper method will be renamed during custom build 
+		/// to provide conformant EXSLT function name.
+		/// </summary>
+		public double weekInMonth_RENAME_ME()
+		{
+			return weekInMonth();
+		}
+
+		/// <summary>
+		/// Implements the following function
+		///   number date:week-in-month(string)
+		/// </summary>
+		/// <returns>The week in month of the specified date or NaN if the 
+		/// date is invalid</returns>
 		/// <remarks>
 		/// The current week in month as a number.  For the purposes of numbering, the first 
 		/// day of the month is in week 1 and new weeks begin on a Monday (so the first and 
 		/// last weeks in a month will often have less than 7 days in them). 
 		/// </remarks>        
-        public double weekInMonth(string d)
-        {
-            try
-            {
-                DateTZ date = new DateTZ(d); 
-                return this.weekInMonth(date.d); 
-            }
-            catch(FormatException)
-            {
-                return System.Double.NaN; 
-            }
-        }
-        
-        /// <summary>
-        /// This wrapper method will be renamed during custom build 
-        /// to provide conformant EXSLT function name.
-        /// </summary>
-        public double weekInMonth_RENAME_ME(string d) 
-        {
-            return weekInMonth(d);
-        }
+		public double weekInMonth(string d)
+		{
+			try
+			{
+				DateTZ date = new DateTZ(d);
+				return this.weekInMonth(date.d);
+			}
+			catch (FormatException)
+			{
+				return System.Double.NaN;
+			}
+		}
+
+		/// <summary>
+		/// This wrapper method will be renamed during custom build 
+		/// to provide conformant EXSLT function name.
+		/// </summary>
+		public double weekInMonth_RENAME_ME(string d)
+		{
+			return weekInMonth(d);
+		}
 
 
 		/// <summary>
@@ -1113,15 +1114,15 @@ namespace Mvp.Xml.Exslt
 		{
 			return DateTime.Now.DayOfYear;
 		}
-		
-        /// <summary>
-        /// This wrapper method will be renamed during custom build 
-        /// to provide conformant EXSLT function name.
-        /// </summary>
-        public double dayInYear_RENAME_ME() 
-        {
-            return dayInYear();
-        }
+
+		/// <summary>
+		/// This wrapper method will be renamed during custom build 
+		/// to provide conformant EXSLT function name.
+		/// </summary>
+		public double dayInYear_RENAME_ME()
+		{
+			return dayInYear();
+		}
 
 		/// <summary>
 		/// Implements the following function
@@ -1134,23 +1135,23 @@ namespace Mvp.Xml.Exslt
 		{
 			try
 			{
-				DateTZ date = new DateTZ(d); 
-				return date.d.DayOfYear; 
+				DateTZ date = new DateTZ(d);
+				return date.d.DayOfYear;
 			}
-			catch(FormatException)
+			catch (FormatException)
 			{
-				return System.Double.NaN; 
+				return System.Double.NaN;
 			}
 		}
-		
-        /// <summary>
-        /// This wrapper method will be renamed during custom build 
-        /// to provide conformant EXSLT function name.
-        /// </summary>
-        public double dayInYear_RENAME_ME(string d) 
-        {
-            return dayInYear(d);
-        }
+
+		/// <summary>
+		/// This wrapper method will be renamed during custom build 
+		/// to provide conformant EXSLT function name.
+		/// </summary>
+		public double dayInYear_RENAME_ME(string d)
+		{
+			return dayInYear(d);
+		}
 
 		/// <summary>
 		/// Implements the following function
@@ -1159,17 +1160,17 @@ namespace Mvp.Xml.Exslt
 		/// <returns>The current day in the week. 1=Sunday, 2=Monday,...,7=Saturday</returns>        
 		public double dayInWeek()
 		{
-			return ((int) DateTime.Now.DayOfWeek) + 1;
+			return ((int)DateTime.Now.DayOfWeek) + 1;
 		}
-		
-        /// <summary>
-        /// This wrapper method will be renamed during custom build 
-        /// to provide conformant EXSLT function name.
-        /// </summary>
-        public double dayInWeek_RENAME_ME() 
-        {
-            return dayInWeek();
-        }
+
+		/// <summary>
+		/// This wrapper method will be renamed during custom build 
+		/// to provide conformant EXSLT function name.
+		/// </summary>
+		public double dayInWeek_RENAME_ME()
+		{
+			return dayInWeek();
+		}
 
 		/// <summary>
 		/// Implements the following function
@@ -1178,26 +1179,27 @@ namespace Mvp.Xml.Exslt
 		/// <returns>The day in the week of the specified date or NaN if the 
 		/// date is invalid. The current day in the week. 1=Sunday, 2=Monday,...,7=Saturday
 		/// </returns>        
-		public double dayInWeek(string d){
+		public double dayInWeek(string d)
+		{
 			try
 			{
-				DateTZ date = new DateTZ(d); 
-				return ((int)date.d.DayOfWeek) + 1; 
+				DateTZ date = new DateTZ(d);
+				return ((int)date.d.DayOfWeek) + 1;
 			}
-			catch(FormatException)
+			catch (FormatException)
 			{
-				return System.Double.NaN; 
+				return System.Double.NaN;
 			}
 		}
-		
-        /// <summary>
-        /// This wrapper method will be renamed during custom build 
-        /// to provide conformant EXSLT function name.
-        /// </summary>
-        public double dayInWeek_RENAME_ME(string d) 
-        {
-            return dayInWeek(d);
-        }
+
+		/// <summary>
+		/// This wrapper method will be renamed during custom build 
+		/// to provide conformant EXSLT function name.
+		/// </summary>
+		public double dayInWeek_RENAME_ME(string d)
+		{
+			return dayInWeek(d);
+		}
 
 
 		/// <summary>
@@ -1209,15 +1211,15 @@ namespace Mvp.Xml.Exslt
 		{
 			return DateTime.Now.Day;
 		}
-		
-        /// <summary>
-        /// This wrapper method will be renamed during custom build 
-        /// to provide conformant EXSLT function name.
-        /// </summary>
-        public double dayInMonth_RENAME_ME() 
-        {
-            return dayInMonth();
-        }
+
+		/// <summary>
+		/// This wrapper method will be renamed during custom build 
+		/// to provide conformant EXSLT function name.
+		/// </summary>
+		public double dayInMonth_RENAME_ME()
+		{
+			return dayInMonth();
+		}
 
 		/// <summary>
 		/// Implements the following function
@@ -1230,22 +1232,22 @@ namespace Mvp.Xml.Exslt
 			try
 			{
 				Day date = new Day(d);
-				return date.d.Day; 
+				return date.d.Day;
 			}
-			catch(FormatException)
+			catch (FormatException)
 			{
-				return System.Double.NaN; 
+				return System.Double.NaN;
 			}
 		}
-		
-        /// <summary>
-        /// This wrapper method will be renamed during custom build 
-        /// to provide conformant EXSLT function name.
-        /// </summary>
-        public double dayInMonth_RENAME_ME(string d) 
-        {
-            return dayInMonth(d);
-        }
+
+		/// <summary>
+		/// This wrapper method will be renamed during custom build 
+		/// to provide conformant EXSLT function name.
+		/// </summary>
+		public double dayInMonth_RENAME_ME(string d)
+		{
+			return dayInMonth(d);
+		}
 
 		/// <summary>
 		/// Helper method.
@@ -1255,7 +1257,7 @@ namespace Mvp.Xml.Exslt
 		private double dayOfWeekInMonth(int day)
 		{
 			// day of week in month = floor(((date-1) / 7)) + 1
-			return ((day-1)/7) + 1;
+			return ((day - 1) / 7) + 1;
 		}
 
 		/// <summary>
@@ -1268,15 +1270,15 @@ namespace Mvp.Xml.Exslt
 		{
 			return this.dayOfWeekInMonth(DateTime.Now.Day);
 		}
-		
-        /// <summary>
-        /// This wrapper method will be renamed during custom build 
-        /// to provide conformant EXSLT function name.
-        /// </summary>
-        public double dayOfWeekInMonth_RENAME_ME() 
-        {
-            return dayOfWeekInMonth();
-        }
+
+		/// <summary>
+		/// This wrapper method will be renamed during custom build 
+		/// to provide conformant EXSLT function name.
+		/// </summary>
+		public double dayOfWeekInMonth_RENAME_ME()
+		{
+			return dayOfWeekInMonth();
+		}
 
 		/// <summary>
 		/// Implements the following function
@@ -1288,24 +1290,24 @@ namespace Mvp.Xml.Exslt
 		{
 			try
 			{
-				DateTZ date = new DateTZ(d); 
-				return this.dayOfWeekInMonth(date.d.Day); 
+				DateTZ date = new DateTZ(d);
+				return this.dayOfWeekInMonth(date.d.Day);
 			}
-			catch(FormatException)
+			catch (FormatException)
 			{
-				return System.Double.NaN; 
+				return System.Double.NaN;
 			}
 		}
-		
-        /// <summary>
-        /// This wrapper method will be renamed during custom build 
-        /// to provide conformant EXSLT function name.
-        /// </summary>
-        public double dayOfWeekInMonth_RENAME_ME(string d) 
-        {
-            return dayOfWeekInMonth(d);
-        }
-	
+
+		/// <summary>
+		/// This wrapper method will be renamed during custom build 
+		/// to provide conformant EXSLT function name.
+		/// </summary>
+		public double dayOfWeekInMonth_RENAME_ME(string d)
+		{
+			return dayOfWeekInMonth(d);
+		}
+
 		/// <summary>
 		/// Implements the following function
 		///   number date:hour-in-day()
@@ -1315,15 +1317,15 @@ namespace Mvp.Xml.Exslt
 		{
 			return DateTime.Now.Hour;
 		}
-		
-        /// <summary>
-        /// This wrapper method will be renamed during custom build 
-        /// to provide conformant EXSLT function name.
-        /// </summary>
-        public double hourInDay_RENAME_ME() 
-        {
-            return hourInDay();
-        }
+
+		/// <summary>
+		/// This wrapper method will be renamed during custom build 
+		/// to provide conformant EXSLT function name.
+		/// </summary>
+		public double hourInDay_RENAME_ME()
+		{
+			return hourInDay();
+		}
 
 		/// <summary>
 		/// Implements the following function
@@ -1335,23 +1337,23 @@ namespace Mvp.Xml.Exslt
 		{
 			try
 			{
-				TimeTZ date = new TimeTZ(d); 
-				return date.d.Hour; 
+				TimeTZ date = new TimeTZ(d);
+				return date.d.Hour;
 			}
-			catch(FormatException)
+			catch (FormatException)
 			{
-				return System.Double.NaN; 
+				return System.Double.NaN;
 			}
 		}
-		
-        /// <summary>
-        /// This wrapper method will be renamed during custom build 
-        /// to provide conformant EXSLT function name.
-        /// </summary>
-        public double hourInDay_RENAME_ME(string d) 
-        {
-            return hourInDay(d);
-        }
+
+		/// <summary>
+		/// This wrapper method will be renamed during custom build 
+		/// to provide conformant EXSLT function name.
+		/// </summary>
+		public double hourInDay_RENAME_ME(string d)
+		{
+			return hourInDay(d);
+		}
 
 		/// <summary>
 		/// Implements the following function
@@ -1362,15 +1364,15 @@ namespace Mvp.Xml.Exslt
 		{
 			return DateTime.Now.Minute;
 		}
-		
-        /// <summary>
-        /// This wrapper method will be renamed during custom build 
-        /// to provide conformant EXSLT function name.
-        /// </summary>
-        public double minuteInHour_RENAME_ME() 
-        {
-            return minuteInHour();
-        }
+
+		/// <summary>
+		/// This wrapper method will be renamed during custom build 
+		/// to provide conformant EXSLT function name.
+		/// </summary>
+		public double minuteInHour_RENAME_ME()
+		{
+			return minuteInHour();
+		}
 
 		/// <summary>
 		/// Implements the following function
@@ -1382,23 +1384,23 @@ namespace Mvp.Xml.Exslt
 		{
 			try
 			{
-				TimeTZ date = new TimeTZ(d); 
-				return date.d.Minute; 
+				TimeTZ date = new TimeTZ(d);
+				return date.d.Minute;
 			}
-			catch(FormatException)
+			catch (FormatException)
 			{
-				return System.Double.NaN; 
+				return System.Double.NaN;
 			}
 		}
 
-        /// <summary>
-        /// This wrapper method will be renamed during custom build 
-        /// to provide conformant EXSLT function name.
-        /// </summary>
-        public double minuteInHour_RENAME_ME(string d) 
-        {
-            return minuteInHour(d);
-        }
+		/// <summary>
+		/// This wrapper method will be renamed during custom build 
+		/// to provide conformant EXSLT function name.
+		/// </summary>
+		public double minuteInHour_RENAME_ME(string d)
+		{
+			return minuteInHour(d);
+		}
 
 		/// <summary>
 		/// Implements the following function
@@ -1409,15 +1411,15 @@ namespace Mvp.Xml.Exslt
 		{
 			return DateTime.Now.Second;
 		}
-		
-        /// <summary>
-        /// This wrapper method will be renamed during custom build 
-        /// to provide conformant EXSLT function name.
-        /// </summary>
-        public double secondInMinute_RENAME_ME() 
-        {
-            return secondInMinute();
-        }		
+
+		/// <summary>
+		/// This wrapper method will be renamed during custom build 
+		/// to provide conformant EXSLT function name.
+		/// </summary>
+		public double secondInMinute_RENAME_ME()
+		{
+			return secondInMinute();
+		}
 
 		/// <summary>
 		/// Implements the following function
@@ -1429,23 +1431,23 @@ namespace Mvp.Xml.Exslt
 		{
 			try
 			{
-				TimeTZ date = new TimeTZ(d); 
-				return date.d.Second; 
+				TimeTZ date = new TimeTZ(d);
+				return date.d.Second;
 			}
-			catch(FormatException)
+			catch (FormatException)
 			{
-				return System.Double.NaN; 
+				return System.Double.NaN;
 			}
 		}
-		
-        /// <summary>
-        /// This wrapper method will be renamed during custom build 
-        /// to provide conformant EXSLT function name.
-        /// </summary>
-        public double secondInMinute_RENAME_ME(string d) 
-        {
-            return secondInMinute(d);
-        }
+
+		/// <summary>
+		/// This wrapper method will be renamed during custom build 
+		/// to provide conformant EXSLT function name.
+		/// </summary>
+		public double secondInMinute_RENAME_ME(string d)
+		{
+			return secondInMinute(d);
+		}
 
 		/// <summary>
 		/// Helper function for 
@@ -1454,8 +1456,8 @@ namespace Mvp.Xml.Exslt
 		/// <returns>The Engish name of the current day</returns>        
 		private string dayName(int dow)
 		{
-            if (dow <0 || dow >= dayNames.Length)
-                return String.Empty;
+			if (dow < 0 || dow >= dayNames.Length)
+				return String.Empty;
 			return dayNames[dow];
 		}
 
@@ -1466,17 +1468,17 @@ namespace Mvp.Xml.Exslt
 		/// <returns>The Engish name of the current day</returns>        
 		public string dayName()
 		{
-			return dayName((int) DateTime.Now.DayOfWeek);
+			return dayName((int)DateTime.Now.DayOfWeek);
 		}
-		
-        /// <summary>
-        /// This wrapper method will be renamed during custom build 
-        /// to provide conformant EXSLT function name.
-        /// </summary>
-        public string dayName_RENAME_ME() 
-        {
-            return dayName();
-        }
+
+		/// <summary>
+		/// This wrapper method will be renamed during custom build 
+		/// to provide conformant EXSLT function name.
+		/// </summary>
+		public string dayName_RENAME_ME()
+		{
+			return dayName();
+		}
 
 		/// <summary>
 		/// Implements the following function
@@ -1488,23 +1490,23 @@ namespace Mvp.Xml.Exslt
 		{
 			try
 			{
-				DateTZ date = new DateTZ(d); 
-				return dayName((int) date.d.DayOfWeek);
+				DateTZ date = new DateTZ(d);
+				return dayName((int)date.d.DayOfWeek);
 			}
-			catch(FormatException)
+			catch (FormatException)
 			{
-				return ""; 
+				return "";
 			}
 		}
-		
-        /// <summary>
-        /// This wrapper method will be renamed during custom build 
-        /// to provide conformant EXSLT function name.
-        /// </summary>
-        public string dayName_RENAME_ME(string d) 
-        {
-            return dayName(d);
-        }
+
+		/// <summary>
+		/// This wrapper method will be renamed during custom build 
+		/// to provide conformant EXSLT function name.
+		/// </summary>
+		public string dayName_RENAME_ME(string d)
+		{
+			return dayName(d);
+		}
 
 		/// <summary>
 		/// Helper function for 
@@ -1513,8 +1515,8 @@ namespace Mvp.Xml.Exslt
 		/// <returns>The abbreviated English name of the current day</returns>        
 		private string dayAbbreviation(int dow)
 		{
-            if (dow < 0 || dow >= dayAbbrevs.Length)
-                return String.Empty;
+			if (dow < 0 || dow >= dayAbbrevs.Length)
+				return String.Empty;
 			return dayAbbrevs[dow];
 		}
 
@@ -1529,14 +1531,14 @@ namespace Mvp.Xml.Exslt
 			return dayAbbreviation((int)DateTime.Now.DayOfWeek);
 		}
 
-        /// <summary>
-        /// This wrapper method will be renamed during custom build 
-        /// to provide conformant EXSLT function name.
-        /// </summary>
-        public string dayAbbreviation_RENAME_ME() 
-        {
-            return dayAbbreviation();
-        }
+		/// <summary>
+		/// This wrapper method will be renamed during custom build 
+		/// to provide conformant EXSLT function name.
+		/// </summary>
+		public string dayAbbreviation_RENAME_ME()
+		{
+			return dayAbbreviation();
+		}
 
 		/// <summary>
 		/// Implements the following function
@@ -1548,23 +1550,23 @@ namespace Mvp.Xml.Exslt
 		{
 			try
 			{
-				DateTZ date = new DateTZ(d); 
+				DateTZ date = new DateTZ(d);
 				return dayAbbreviation((int)date.d.DayOfWeek);
 			}
-			catch(FormatException)
+			catch (FormatException)
 			{
-				return ""; 
+				return "";
 			}
 		}
-		
-        /// <summary>
-        /// This wrapper method will be renamed during custom build 
-        /// to provide conformant EXSLT function name.
-        /// </summary>
-        public string dayAbbreviation_RENAME_ME(string d) 
-        {
-            return dayAbbreviation(d);
-        }
+
+		/// <summary>
+		/// This wrapper method will be renamed during custom build 
+		/// to provide conformant EXSLT function name.
+		/// </summary>
+		public string dayAbbreviation_RENAME_ME(string d)
+		{
+			return dayAbbreviation(d);
+		}
 
 		/// <summary>
 		/// Helper Function for 
@@ -1573,9 +1575,9 @@ namespace Mvp.Xml.Exslt
 		/// <returns>The name of the current month</returns>        
 		private string monthName(int month)
 		{
-            if (month < 1 || month > monthNames.Length)
-                return String.Empty;
-			return monthNames[month-1];
+			if (month < 1 || month > monthNames.Length)
+				return String.Empty;
+			return monthNames[month - 1];
 		}
 
 		/// <summary>
@@ -1587,15 +1589,15 @@ namespace Mvp.Xml.Exslt
 		{
 			return monthName((int)monthInYear());
 		}
-		
-        /// <summary>
-        /// This wrapper method will be renamed during custom build 
-        /// to provide conformant EXSLT function name.
-        /// </summary>
-        public string monthName_RENAME_ME() 
-        {
-            return monthName();
-        }
+
+		/// <summary>
+		/// This wrapper method will be renamed during custom build 
+		/// to provide conformant EXSLT function name.
+		/// </summary>
+		public string monthName_RENAME_ME()
+		{
+			return monthName();
+		}
 
 		/// <summary>
 		/// Implements the following function
@@ -1612,15 +1614,15 @@ namespace Mvp.Xml.Exslt
 			else
 				return monthName((int)month);
 		}
-		
-        /// <summary>
-        /// This wrapper method will be renamed during custom build 
-        /// to provide conformant EXSLT function name.
-        /// </summary>
-        public string monthName_RENAME_ME(string d) 
-        {
-            return monthName(d);
-        }
+
+		/// <summary>
+		/// This wrapper method will be renamed during custom build 
+		/// to provide conformant EXSLT function name.
+		/// </summary>
+		public string monthName_RENAME_ME(string d)
+		{
+			return monthName(d);
+		}
 
 		/// <summary>
 		/// Helper function for 
@@ -1629,9 +1631,9 @@ namespace Mvp.Xml.Exslt
 		/// <returns>The abbreviated name of the current month</returns>        
 		private string monthAbbreviation(int month)
 		{
-            if (month < 1 || month > monthAbbrevs.Length)
-                return String.Empty;
-			return monthAbbrevs[month-1];
+			if (month < 1 || month > monthAbbrevs.Length)
+				return String.Empty;
+			return monthAbbrevs[month - 1];
 		}
 
 		/// <summary>
@@ -1643,15 +1645,15 @@ namespace Mvp.Xml.Exslt
 		{
 			return monthAbbreviation((int)monthInYear());
 		}
-		
-        /// <summary>
-        /// This wrapper method will be renamed during custom build 
-        /// to provide conformant EXSLT function name.
-        /// </summary>
-        public string monthAbbreviation_RENAME_ME() 
-        {
-            return monthAbbreviation();
-        }
+
+		/// <summary>
+		/// This wrapper method will be renamed during custom build 
+		/// to provide conformant EXSLT function name.
+		/// </summary>
+		public string monthAbbreviation_RENAME_ME()
+		{
+			return monthAbbreviation();
+		}
 
 		/// <summary>
 		/// Implements the following function
@@ -1669,15 +1671,15 @@ namespace Mvp.Xml.Exslt
 			else
 				return monthAbbreviation((int)month);
 		}
-		
-        /// <summary>
-        /// This wrapper method will be renamed during custom build 
-        /// to provide conformant EXSLT function name.
-        /// </summary>
-        public string monthAbbreviation_RENAME_ME(string d) 
-        {
-            return monthAbbreviation(d);
-        }
+
+		/// <summary>
+		/// This wrapper method will be renamed during custom build 
+		/// to provide conformant EXSLT function name.
+		/// </summary>
+		public string monthAbbreviation_RENAME_ME(string d)
+		{
+			return monthAbbreviation(d);
+		}
 
 		/// <summary>
 		/// Implements the following function
@@ -1718,15 +1720,15 @@ namespace Mvp.Xml.Exslt
 				ExsltDateTime oDate = ExsltDateTimeFactory.ParseDateTime(d);
 				StringBuilder retString = new StringBuilder("");
 
-				for (int i=0; i < format.Length;)
+				for (int i = 0; i < format.Length; )
 				{
 					int s = i;
-					switch(format[i])
+					switch (format[i])
 					{
 						case 'G'://        era designator          (Text)              AD
-							while (i < format.Length && format[i]=='G'){i++;}
+							while (i < format.Length && format[i] == 'G') { i++; }
 
-							if (Object.ReferenceEquals(oDate.GetType(), typeof(DateTimeTZ)) || 
+							if (Object.ReferenceEquals(oDate.GetType(), typeof(DateTimeTZ)) ||
 								Object.ReferenceEquals(oDate.GetType(), typeof(DateTZ)) ||
 								Object.ReferenceEquals(oDate.GetType(), typeof(YearMonth)) ||
 								Object.ReferenceEquals(oDate.GetType(), typeof(YearTZ)))
@@ -1743,57 +1745,57 @@ namespace Mvp.Xml.Exslt
 							break;
 
 						case 'y'://        year                    (Number)            1996
-							while (i < format.Length && format[i]=='y'){i++;}
-							if (Object.ReferenceEquals(oDate.GetType(), typeof(DateTimeTZ)) || 
+							while (i < format.Length && format[i] == 'y') { i++; }
+							if (Object.ReferenceEquals(oDate.GetType(), typeof(DateTimeTZ)) ||
 								Object.ReferenceEquals(oDate.GetType(), typeof(DateTZ)) ||
 								Object.ReferenceEquals(oDate.GetType(), typeof(YearMonth)) ||
 								Object.ReferenceEquals(oDate.GetType(), typeof(YearTZ)))
 							{
-								if (i-s == 2)
+								if (i - s == 2)
 								{
-									retString.Append((oDate.d.Year % 100).ToString().PadLeft(i-s, '0'));
+									retString.Append((oDate.d.Year % 100).ToString().PadLeft(i - s, '0'));
 
 								}
 								else
 								{
-									retString.Append(oDate.d.Year.ToString().PadLeft(i-s, '0'));
+									retString.Append(oDate.d.Year.ToString().PadLeft(i - s, '0'));
 								}
 							}
 							break;
 						case 'M'://        month in year           (Text &amp; Number)     July &amp; 07
-							while (i < format.Length && format[i]=='M'){i++;}
+							while (i < format.Length && format[i] == 'M') { i++; }
 
-							if (Object.ReferenceEquals(oDate.GetType(), typeof(DateTimeTZ)) || 
+							if (Object.ReferenceEquals(oDate.GetType(), typeof(DateTimeTZ)) ||
 								Object.ReferenceEquals(oDate.GetType(), typeof(DateTZ)) ||
 								Object.ReferenceEquals(oDate.GetType(), typeof(YearMonth)) ||
 								Object.ReferenceEquals(oDate.GetType(), typeof(Month)) ||
 								Object.ReferenceEquals(oDate.GetType(), typeof(MonthDay)) ||
 								Object.ReferenceEquals(oDate.GetType(), typeof(YearTZ)))
 							{
-								if (i-s <= 2)
-									retString.Append(oDate.d.Month.ToString().PadLeft(i-s, '0'));
-								else if (i-s == 3)
+								if (i - s <= 2)
+									retString.Append(oDate.d.Month.ToString().PadLeft(i - s, '0'));
+								else if (i - s == 3)
 									retString.Append(monthAbbreviation(oDate.d.Month));
 								else
 									retString.Append(monthName(oDate.d.Month));
 							}
 							break;
 						case 'd'://        day in month            (Number)            10
-							while (i < format.Length && format[i]=='d'){i++;}
+							while (i < format.Length && format[i] == 'd') { i++; }
 
-							if (Object.ReferenceEquals(oDate.GetType(), typeof(DateTimeTZ)) || 
+							if (Object.ReferenceEquals(oDate.GetType(), typeof(DateTimeTZ)) ||
 								Object.ReferenceEquals(oDate.GetType(), typeof(DateTZ)) ||
 								Object.ReferenceEquals(oDate.GetType(), typeof(YearMonth)) ||
 								Object.ReferenceEquals(oDate.GetType(), typeof(MonthDay)) ||
 								Object.ReferenceEquals(oDate.GetType(), typeof(Day)) ||
 								Object.ReferenceEquals(oDate.GetType(), typeof(YearTZ)))
 							{
-								retString.Append(oDate.d.Day.ToString().PadLeft(i-s, '0'));
+								retString.Append(oDate.d.Day.ToString().PadLeft(i - s, '0'));
 							}
 							break;
 						case 'h'://        hour in am/pm (1~12)    (Number)            12
-							while (i < format.Length && format[i]=='h'){i++;}
-							if (Object.ReferenceEquals(oDate.GetType(), typeof(DateTimeTZ)) || 
+							while (i < format.Length && format[i] == 'h') { i++; }
+							if (Object.ReferenceEquals(oDate.GetType(), typeof(DateTimeTZ)) ||
 								Object.ReferenceEquals(oDate.GetType(), typeof(DateTZ)) ||
 								Object.ReferenceEquals(oDate.GetType(), typeof(YearMonth)) ||
 								Object.ReferenceEquals(oDate.GetType(), typeof(TimeTZ)) ||
@@ -1802,62 +1804,62 @@ namespace Mvp.Xml.Exslt
 								int hour = oDate.d.Hour % 12;
 								if (0 == hour)
 									hour = 12;
-								retString.Append(hour.ToString().PadLeft(i-s, '0'));
+								retString.Append(hour.ToString().PadLeft(i - s, '0'));
 							}
 							break;
 						case 'H'://        hour in day (0~23)      (Number)            0
-							while (i < format.Length && format[i]=='H'){i++;}
-							if (Object.ReferenceEquals(oDate.GetType(), typeof(DateTimeTZ)) || 
+							while (i < format.Length && format[i] == 'H') { i++; }
+							if (Object.ReferenceEquals(oDate.GetType(), typeof(DateTimeTZ)) ||
 								Object.ReferenceEquals(oDate.GetType(), typeof(DateTZ)) ||
 								Object.ReferenceEquals(oDate.GetType(), typeof(YearMonth)) ||
 								Object.ReferenceEquals(oDate.GetType(), typeof(TimeTZ)) ||
 								Object.ReferenceEquals(oDate.GetType(), typeof(YearTZ)))
 							{
-								retString.Append(oDate.d.Hour.ToString().PadLeft(i-s, '0'));
+								retString.Append(oDate.d.Hour.ToString().PadLeft(i - s, '0'));
 							}
 							break;
 						case 'm'://        minute in hour          (Number)            30
-							while (i < format.Length && format[i]=='m'){i++;}
-							if (Object.ReferenceEquals(oDate.GetType(), typeof(DateTimeTZ)) || 
+							while (i < format.Length && format[i] == 'm') { i++; }
+							if (Object.ReferenceEquals(oDate.GetType(), typeof(DateTimeTZ)) ||
 								Object.ReferenceEquals(oDate.GetType(), typeof(DateTZ)) ||
 								Object.ReferenceEquals(oDate.GetType(), typeof(YearMonth)) ||
 								Object.ReferenceEquals(oDate.GetType(), typeof(TimeTZ)) ||
 								Object.ReferenceEquals(oDate.GetType(), typeof(YearTZ)))
 							{
-								retString.Append(oDate.d.Minute.ToString().PadLeft(i-s, '0'));
+								retString.Append(oDate.d.Minute.ToString().PadLeft(i - s, '0'));
 							}
 							break;
 						case 's'://        second in minute        (Number)            55
-							while (i < format.Length && format[i]=='s'){i++;}
-							if (Object.ReferenceEquals(oDate.GetType(), typeof(DateTimeTZ)) || 
+							while (i < format.Length && format[i] == 's') { i++; }
+							if (Object.ReferenceEquals(oDate.GetType(), typeof(DateTimeTZ)) ||
 								Object.ReferenceEquals(oDate.GetType(), typeof(DateTZ)) ||
 								Object.ReferenceEquals(oDate.GetType(), typeof(YearMonth)) ||
 								Object.ReferenceEquals(oDate.GetType(), typeof(TimeTZ)) ||
 								Object.ReferenceEquals(oDate.GetType(), typeof(YearTZ)))
 							{
-								retString.Append(oDate.d.Second.ToString().PadLeft(i-s, '0'));
+								retString.Append(oDate.d.Second.ToString().PadLeft(i - s, '0'));
 							}
 							break;
 						case 'S'://        millisecond             (Number)            978
-							while (i < format.Length && format[i]=='S'){i++;}
-                            if (Object.ReferenceEquals(oDate.GetType(), typeof(DateTimeTZ)) ||
-                                Object.ReferenceEquals(oDate.GetType(), typeof(DateTZ)) ||
-                                Object.ReferenceEquals(oDate.GetType(), typeof(YearMonth)) ||
-                                Object.ReferenceEquals(oDate.GetType(), typeof(TimeTZ)) ||
-                                Object.ReferenceEquals(oDate.GetType(), typeof(YearTZ)))
-                            {                                
-                                retString.Append(oDate.d.Millisecond.ToString().PadLeft(i-s, '0'));
-                            }							
+							while (i < format.Length && format[i] == 'S') { i++; }
+							if (Object.ReferenceEquals(oDate.GetType(), typeof(DateTimeTZ)) ||
+								Object.ReferenceEquals(oDate.GetType(), typeof(DateTZ)) ||
+								Object.ReferenceEquals(oDate.GetType(), typeof(YearMonth)) ||
+								Object.ReferenceEquals(oDate.GetType(), typeof(TimeTZ)) ||
+								Object.ReferenceEquals(oDate.GetType(), typeof(YearTZ)))
+							{
+								retString.Append(oDate.d.Millisecond.ToString().PadLeft(i - s, '0'));
+							}
 							break;
 						case 'E'://        day in week             (Text)              Tuesday
-							while (i < format.Length && format[i]=='E'){i++;}
+							while (i < format.Length && format[i] == 'E') { i++; }
 
-							if (Object.ReferenceEquals(oDate.GetType(), typeof(DateTimeTZ)) || 
+							if (Object.ReferenceEquals(oDate.GetType(), typeof(DateTimeTZ)) ||
 								Object.ReferenceEquals(oDate.GetType(), typeof(DateTZ)) ||
 								Object.ReferenceEquals(oDate.GetType(), typeof(YearMonth)) ||
 								Object.ReferenceEquals(oDate.GetType(), typeof(YearTZ)))
 							{
-								if (i-s <= 3)
+								if (i - s <= 3)
 								{
 									retString.Append(dayAbbreviation((int)oDate.d.DayOfWeek));
 								}
@@ -1868,30 +1870,30 @@ namespace Mvp.Xml.Exslt
 							}
 							break;
 						case 'D'://        day in year             (Number)            189
-							while (i < format.Length && format[i]=='D'){i++;}
-							if (Object.ReferenceEquals(oDate.GetType(), typeof(DateTimeTZ)) || 
+							while (i < format.Length && format[i] == 'D') { i++; }
+							if (Object.ReferenceEquals(oDate.GetType(), typeof(DateTimeTZ)) ||
 								Object.ReferenceEquals(oDate.GetType(), typeof(DateTZ)) ||
 								Object.ReferenceEquals(oDate.GetType(), typeof(YearMonth)) ||
 								Object.ReferenceEquals(oDate.GetType(), typeof(YearTZ)))
 							{
-								retString.Append(oDate.d.DayOfYear.ToString().PadLeft(i-s, '0'));
+								retString.Append(oDate.d.DayOfYear.ToString().PadLeft(i - s, '0'));
 							}
 							break;
 						case 'F'://        day of week in month    (Number)            2 (2nd Wed in July)
-							while (i < format.Length && format[i]=='F'){i++;}
-							if (Object.ReferenceEquals(oDate.GetType(), typeof(DateTimeTZ)) || 
+							while (i < format.Length && format[i] == 'F') { i++; }
+							if (Object.ReferenceEquals(oDate.GetType(), typeof(DateTimeTZ)) ||
 								Object.ReferenceEquals(oDate.GetType(), typeof(DateTZ)) ||
 								Object.ReferenceEquals(oDate.GetType(), typeof(YearMonth)) ||
 								Object.ReferenceEquals(oDate.GetType(), typeof(MonthDay)) ||
 								Object.ReferenceEquals(oDate.GetType(), typeof(Day)) ||
 								Object.ReferenceEquals(oDate.GetType(), typeof(YearTZ)))
 							{
-								retString.Append(dayOfWeekInMonth(oDate.d.Day).ToString().PadLeft(i-s, '0'));
+								retString.Append(dayOfWeekInMonth(oDate.d.Day).ToString().PadLeft(i - s, '0'));
 							}
 							break;
 						case 'w'://        week in year            (Number)            27
-							while (i < format.Length && format[i]=='w'){i++;}
-							if (Object.ReferenceEquals(oDate.GetType(), typeof(DateTimeTZ)) || 
+							while (i < format.Length && format[i] == 'w') { i++; }
+							if (Object.ReferenceEquals(oDate.GetType(), typeof(DateTimeTZ)) ||
 								Object.ReferenceEquals(oDate.GetType(), typeof(DateTZ)) ||
 								Object.ReferenceEquals(oDate.GetType(), typeof(YearMonth)) ||
 								Object.ReferenceEquals(oDate.GetType(), typeof(YearTZ)))
@@ -1900,8 +1902,8 @@ namespace Mvp.Xml.Exslt
 							}
 							break;
 						case 'W'://        week in month           (Number)            2
-							while (i < format.Length && format[i]=='W'){i++;}
-							if (Object.ReferenceEquals(oDate.GetType(), typeof(DateTimeTZ)) || 
+							while (i < format.Length && format[i] == 'W') { i++; }
+							if (Object.ReferenceEquals(oDate.GetType(), typeof(DateTimeTZ)) ||
 								Object.ReferenceEquals(oDate.GetType(), typeof(DateTZ)) ||
 								Object.ReferenceEquals(oDate.GetType(), typeof(YearMonth)) ||
 								Object.ReferenceEquals(oDate.GetType(), typeof(YearTZ)))
@@ -1910,8 +1912,8 @@ namespace Mvp.Xml.Exslt
 							}
 							break;
 						case 'a'://        am/pm marker            (Text)              PM
-							while (i < format.Length && format[i]=='a'){i++;}
-							if (Object.ReferenceEquals(oDate.GetType(), typeof(DateTimeTZ)) || 
+							while (i < format.Length && format[i] == 'a') { i++; }
+							if (Object.ReferenceEquals(oDate.GetType(), typeof(DateTimeTZ)) ||
 								Object.ReferenceEquals(oDate.GetType(), typeof(DateTZ)) ||
 								Object.ReferenceEquals(oDate.GetType(), typeof(YearMonth)) ||
 								Object.ReferenceEquals(oDate.GetType(), typeof(TimeTZ)) ||
@@ -1924,52 +1926,52 @@ namespace Mvp.Xml.Exslt
 							}
 							break;
 						case 'k'://        hour in day (1~24)      (Number)            24
-							while (i < format.Length && format[i]=='k'){i++;}
-							if (Object.ReferenceEquals(oDate.GetType(), typeof(DateTimeTZ)) || 
+							while (i < format.Length && format[i] == 'k') { i++; }
+							if (Object.ReferenceEquals(oDate.GetType(), typeof(DateTimeTZ)) ||
 								Object.ReferenceEquals(oDate.GetType(), typeof(DateTZ)) ||
 								Object.ReferenceEquals(oDate.GetType(), typeof(YearMonth)) ||
 								Object.ReferenceEquals(oDate.GetType(), typeof(TimeTZ)) ||
 								Object.ReferenceEquals(oDate.GetType(), typeof(YearTZ)))
 							{
 								int hour = oDate.d.Hour + 1;
-								retString.Append(hour.ToString().PadLeft(i-s, '0'));
+								retString.Append(hour.ToString().PadLeft(i - s, '0'));
 							}
 							break;
 						case 'K'://        hour in am/pm (0~11)    (Number)            0
-							while (i < format.Length && format[i]=='K'){i++;}
-							if (Object.ReferenceEquals(oDate.GetType(), typeof(DateTimeTZ)) || 
+							while (i < format.Length && format[i] == 'K') { i++; }
+							if (Object.ReferenceEquals(oDate.GetType(), typeof(DateTimeTZ)) ||
 								Object.ReferenceEquals(oDate.GetType(), typeof(DateTZ)) ||
 								Object.ReferenceEquals(oDate.GetType(), typeof(YearMonth)) ||
 								Object.ReferenceEquals(oDate.GetType(), typeof(TimeTZ)) ||
 								Object.ReferenceEquals(oDate.GetType(), typeof(YearTZ)))
 							{
 								int hour = oDate.d.Hour % 12;
-								retString.Append(hour.ToString().PadLeft(i-s, '0'));
+								retString.Append(hour.ToString().PadLeft(i - s, '0'));
 							}
 							break;
 						case 'z'://        time zone               (Text)              Pacific Standard Time
-							while (i < format.Length && format[i]=='z'){i++;}
+							while (i < format.Length && format[i] == 'z') { i++; }
 							//
 							// BUGBUG: Need to convert to full timezone names or timezone abbrevs
 							// if they are available.  Now cheating by using GMT offsets.
 							retString.Append(oDate.GetGMTOffsetTimeZone());
 							break;
 						case 'Z'://			rfc 822 time zone
-							while (i < format.Length && format[i]=='Z'){i++;}
+							while (i < format.Length && format[i] == 'Z') { i++; }
 							retString.Append(oDate.Get822TimeZone());
 							break;
 						case '\''://        escape for text         (Delimiter)
-							if (i < format.Length && format[i+1] == '\'')
+							if (i < format.Length && format[i + 1] == '\'')
 							{
 								i++;
-								while (i < format.Length && format[i]=='\''){i++;}
+								while (i < format.Length && format[i] == '\'') { i++; }
 								retString.Append("'");
 							}
 							else
 							{
 								i++;
-								while (i < format.Length && format[i]!='\'' && i <= format.Length){retString.Append(format.Substring(i++, 1));}
-								if (i >= format.Length)return "";
+								while (i < format.Length && format[i] != '\'' && i <= format.Length) { retString.Append(format.Substring(i++, 1)); }
+								if (i >= format.Length) return "";
 								i++;
 							}
 							break;
@@ -1979,25 +1981,25 @@ namespace Mvp.Xml.Exslt
 							break;
 					}
 				}
-	
+
 				return retString.ToString();
 			}
 
-		
-			catch(FormatException)
+
+			catch (FormatException)
 			{
-				return ""; 
+				return "";
 			}
 		}
-		
-        /// <summary>
-        /// This wrapper method will be renamed during custom build 
-        /// to provide conformant EXSLT function name.
-        /// </summary>
-        public string formatDate_RENAME_ME(string d, string format) 
-        {
-            return formatDate(d, format);
-        }
+
+		/// <summary>
+		/// This wrapper method will be renamed during custom build 
+		/// to provide conformant EXSLT function name.
+		/// </summary>
+		public string formatDate_RENAME_ME(string d, string format)
+		{
+			return formatDate(d, format);
+		}
 
 
 		/// <summary>
@@ -2009,24 +2011,28 @@ namespace Mvp.Xml.Exslt
 		/// <param name="format">One of the format strings understood by the 
 		/// DateTime.ToString(string) method.</param>
 		/// <returns>The parsed date</returns>        
-		public string parseDate(string d, string format){
-			try{
-				DateTime date = DateTime.ParseExact(d, format, CultureInfo.CurrentCulture); 
+		public string parseDate(string d, string format)
+		{
+			try
+			{
+				DateTime date = DateTime.ParseExact(d, format, CultureInfo.CurrentCulture);
 				return XmlConvert.ToString(date, XmlDateTimeSerializationMode.RoundtripKind);
-			}catch(FormatException){
-				return ""; 
+			}
+			catch (FormatException)
+			{
+				return "";
 			}
 		}
-		
-        /// <summary>
-        /// This wrapper method will be renamed during custom build 
-        /// to provide conformant EXSLT function name.
-        /// </summary>
-        public string parseDate_RENAME_ME(string d, string format) 
-        {
-            return parseDate(d, format);
-        }
-	
+
+		/// <summary>
+		/// This wrapper method will be renamed during custom build 
+		/// to provide conformant EXSLT function name.
+		/// </summary>
+		public string parseDate_RENAME_ME(string d, string format)
+		{
+			return parseDate(d, format);
+		}
+
 		/// <summary>
 		/// Implements the following function 
 		///    string:date:difference(string, string)
@@ -2048,20 +2054,20 @@ namespace Mvp.Xml.Exslt
 		/// If there H M and S are all 0, the T is suppressed.
 		/// </returns>        
 		public string difference(string start, string end)
-		{		
+		{
 			try
 			{
-				ExsltDateTime startdate = ExsltDateTimeFactory.ParseDate(start); 
-				ExsltDateTime enddate   = ExsltDateTimeFactory.ParseDate(end); 
+				ExsltDateTime startdate = ExsltDateTimeFactory.ParseDate(start);
+				ExsltDateTime enddate = ExsltDateTimeFactory.ParseDate(end);
 
 				// The rules are pretty tricky.  basically, interpret both strings as the least-
 				// specific format
-				if (Object.ReferenceEquals(startdate.GetType(), typeof(YearTZ)) || 
+				if (Object.ReferenceEquals(startdate.GetType(), typeof(YearTZ)) ||
 					Object.ReferenceEquals(enddate.GetType(), typeof(YearTZ)))
 				{
 					StringBuilder retString = new StringBuilder("");
 
-					int	yearDiff = enddate.d.Year - startdate.d.Year;
+					int yearDiff = enddate.d.Year - startdate.d.Year;
 
 					if (yearDiff < 0)
 						retString.Append('-');
@@ -2071,13 +2077,13 @@ namespace Mvp.Xml.Exslt
 					retString.Append('Y');
 
 					return retString.ToString();
-				}					
-				else if (Object.ReferenceEquals(startdate.GetType(), typeof(YearMonth)) || 
+				}
+				else if (Object.ReferenceEquals(startdate.GetType(), typeof(YearMonth)) ||
 					Object.ReferenceEquals(enddate.GetType(), typeof(YearMonth)))
 				{
 					StringBuilder retString = new StringBuilder("");
 
-					int	yearDiff = enddate.d.Year - startdate.d.Year;
+					int yearDiff = enddate.d.Year - startdate.d.Year;
 					int monthDiff = enddate.d.Month - startdate.d.Month;
 
 					// Borrow from the year if necessary
@@ -2085,7 +2091,7 @@ namespace Mvp.Xml.Exslt
 					{
 						yearDiff--;
 						monthDiff += 12;
-					} 
+					}
 					else if ((yearDiff < 0) && (Math.Sign(monthDiff) == 1))
 					{
 						yearDiff++;
@@ -2095,7 +2101,7 @@ namespace Mvp.Xml.Exslt
 
 					if ((yearDiff < 0) || ((yearDiff == 0) && (monthDiff < 0)))
 					{
-						retString.Append('-');						
+						retString.Append('-');
 					}
 					retString.Append('P');
 					if (yearDiff != 0)
@@ -2105,7 +2111,7 @@ namespace Mvp.Xml.Exslt
 					}
 					retString.Append(Math.Abs(monthDiff));
 					retString.Append('M');
-	
+
 					return retString.ToString();
 				}
 				else
@@ -2113,7 +2119,7 @@ namespace Mvp.Xml.Exslt
 					// Simulate casting to the most truncated format.  i.e. if one 
 					// Arg is DateTZ and the other is DateTimeTZ, get rid of the time
 					// for both.
-					if (Object.ReferenceEquals(startdate.GetType(), typeof(DateTZ)) || 
+					if (Object.ReferenceEquals(startdate.GetType(), typeof(DateTZ)) ||
 						Object.ReferenceEquals(enddate.GetType(), typeof(DateTZ)))
 					{
 						startdate = new DateTZ(startdate.d.ToString("yyyy-MM-dd"));
@@ -2124,9 +2130,9 @@ namespace Mvp.Xml.Exslt
 					return XmlConvert.ToString(ts);
 				}
 			}
-			catch(FormatException)
+			catch (FormatException)
 			{
-				return ""; 
+				return "";
 			}
 		}
 
@@ -2138,10 +2144,10 @@ namespace Mvp.Xml.Exslt
 		/// <param name="duration">the duration to add</param>
 		/// <returns>The new time</returns>        
 		public string add(string datetime, string duration)
-		{			
+		{
 			try
 			{
-				ExsltDateTime date = ExsltDateTimeFactory.ParseDate(datetime); 
+				ExsltDateTime date = ExsltDateTimeFactory.ParseDate(datetime);
 				//TimeSpan timespan = System.Xml.XmlConvert.ToTimeSpan(duration); 
 
 				Regex durationRE = new Regex(
@@ -2156,7 +2162,7 @@ namespace Mvp.Xml.Exslt
 					@"(?:(\d+)H)?" +		// May contain digits plus H for hours
 					@"(?:(\d+)M)?" +		// May contain digits plus M for minutes
 					@"(?:(\d+)S)?" +		// May contain digits plus S for seconds
-					@"$", 
+					@"$",
 					RegexOptions.IgnoreCase | RegexOptions.Singleline
 					);
 
@@ -2211,9 +2217,9 @@ namespace Mvp.Xml.Exslt
 					return "";
 				}
 			}
-			catch(FormatException)	
+			catch (FormatException)
 			{
-				return ""; 
+				return "";
 			}
 		}
 
@@ -2222,32 +2228,32 @@ namespace Mvp.Xml.Exslt
 		/// Implements the following function
 		///    string:date:add-duration(string, string)
 		/// </summary>
-        /// <param name="duration1">Initial duration</param>
-        /// <param name="duration2">the duration to add</param>
+		/// <param name="duration1">Initial duration</param>
+		/// <param name="duration2">the duration to add</param>
 		/// <returns>The new time</returns>        
 		public string addDuration(string duration1, string duration2)
-		{			
+		{
 			try
 			{
 				TimeSpan timespan1 = XmlConvert.ToTimeSpan(duration1);
-				TimeSpan timespan2 = XmlConvert.ToTimeSpan(duration2); 
+				TimeSpan timespan2 = XmlConvert.ToTimeSpan(duration2);
 				return XmlConvert.ToString(timespan1.Add(timespan2));
 			}
-			catch(FormatException)
+			catch (FormatException)
 			{
-				return ""; 
+				return "";
 			}
 
 		}
-		
-        /// <summary>
-        /// This wrapper method will be renamed during custom build 
-        /// to provide conformant EXSLT function name.
-        /// </summary>
-        public string addDuration_RENAME_ME(string duration1, string duration2) 
-        {
-            return addDuration(duration1, duration2);
-        }
+
+		/// <summary>
+		/// This wrapper method will be renamed during custom build 
+		/// to provide conformant EXSLT function name.
+		/// </summary>
+		public string addDuration_RENAME_ME(string duration1, string duration2)
+		{
+			return addDuration(duration1, duration2);
+		}
 
 		/// <summary>
 		/// Helper method for date:seconds() that takes an ExsltDateTime. 
@@ -2257,7 +2263,7 @@ namespace Mvp.Xml.Exslt
 		/// epoch (1970-01-01T00:00:00Z)</returns>
 		private double seconds(ExsltDateTime d)
 		{
-			DateTime epoch = new DateTime(1970, 1, 1, 0,0,0,0, CultureInfo.InvariantCulture.Calendar);
+			DateTime epoch = new DateTime(1970, 1, 1, 0, 0, 0, 0, CultureInfo.InvariantCulture.Calendar);
 			return d.ToUniversalTime().Subtract(epoch).TotalSeconds;
 		}
 
@@ -2267,7 +2273,7 @@ namespace Mvp.Xml.Exslt
 		/// </summary>
 		/// <returns>The amount of seconds since the epoch (1970-01-01T00:00:00Z)</returns>        
 		public double seconds()
-		{		 
+		{
 			return seconds(new DateTimeTZ());
 		}
 
@@ -2280,19 +2286,19 @@ namespace Mvp.Xml.Exslt
 		/// epoch (1970-01-01T00:00:00Z).  If timespan passed in, returns the number of seconds
 		/// in the timespan.</returns>
 		public double seconds(string datetime)
-		{		 
+		{
 			try
 			{
 				return seconds(ExsltDateTimeFactory.ParseDate(datetime));
 			}
-			catch(FormatException){ ; } //might be a duration
+			catch (FormatException) { ; } //might be a duration
 
 			try
 			{
-				TimeSpan duration = XmlConvert.ToTimeSpan(datetime); 
+				TimeSpan duration = XmlConvert.ToTimeSpan(datetime);
 				return duration.TotalSeconds;
 			}
-			catch(FormatException)
+			catch (FormatException)
 			{
 				return System.Double.NaN;
 			}
@@ -2306,28 +2312,28 @@ namespace Mvp.Xml.Exslt
 		/// <returns>The sum of the timespans within a node set.</returns>        
 		public string sum(XPathNodeIterator iterator)
 		{
-			
-			TimeSpan sum = new TimeSpan(0,0,0,0); 
- 
-			if(iterator.Count == 0)
+
+			TimeSpan sum = new TimeSpan(0, 0, 0, 0);
+
+			if (iterator.Count == 0)
 			{
-				return ""; 
+				return "";
 			}
 
 			try
-			{ 
-				while(iterator.MoveNext())
+			{
+				while (iterator.MoveNext())
 				{
 					sum = XmlConvert.ToTimeSpan(iterator.Current.Value).Add(sum);
 				}
-				
+
 			}
-			catch(FormatException)
+			catch (FormatException)
 			{
-				return ""; 
+				return "";
 			}
 
-			return XmlConvert.ToString(sum) ; //XmlConvert.ToString(sum);
+			return XmlConvert.ToString(sum); //XmlConvert.ToString(sum);
 		}
 
 		/// <summary>
@@ -2337,7 +2343,7 @@ namespace Mvp.Xml.Exslt
 		/// <returns>seconds since the beginning of the epoch until now</returns>        
 		public string duration()
 		{
-			return duration(seconds()); 
+			return duration(seconds());
 		}
 
 		/// <summary>
@@ -2348,7 +2354,7 @@ namespace Mvp.Xml.Exslt
 		/// <returns></returns>        
 		public string duration(double seconds)
 		{
-			return XmlConvert.ToString(TimeSpan.FromSeconds(seconds)); 
-		}	
+			return XmlConvert.ToString(TimeSpan.FromSeconds(seconds));
+		}
 	}
 }

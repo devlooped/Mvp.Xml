@@ -2,22 +2,22 @@
 
 using System;
 using System.Collections.Generic;
-using System.Xml.XPath; 
+using System.Xml.XPath;
 using System.Xml;
 using System.Web.UI;
 
 using Mvp.Xml.Common.XPath;
 
 #endregion
-	
-namespace Mvp.Xml.Exslt 
+
+namespace Mvp.Xml.Exslt
 {
 	/// <summary>
 	///   This class implements additional functions in the http://gotdotnet.com/exslt/sets namespace.
 	/// </summary>		
-	public class GDNSets 
+	public class GDNSets
 	{
-				
+
 		/// <summary>
 		/// Implements the following function 
 		///    boolean subset(node-set, node-set) 
@@ -29,21 +29,21 @@ namespace Mvp.Xml.Exslt
 		/// <remarks>THIS FUNCTION IS NOT PART OF EXSLT!!!</remarks>
 		public bool subset(XPathNodeIterator nodeset1, XPathNodeIterator nodeset2)
 		{
-			if(nodeset1.Count > 125 || nodeset2.Count > 125)
+			if (nodeset1.Count > 125 || nodeset2.Count > 125)
 				return subset2(nodeset1, nodeset2);
 			//else
-            XPathNavigatorIterator nodelist1 = new XPathNavigatorIterator(nodeset1, true);
-            XPathNavigatorIterator nodelist2 = new XPathNavigatorIterator(nodeset2, true);
+			XPathNavigatorIterator nodelist1 = new XPathNavigatorIterator(nodeset1, true);
+			XPathNavigatorIterator nodelist2 = new XPathNavigatorIterator(nodeset2, true);
 
-			foreach(XPathNavigator nav in nodelist1)
+			foreach (XPathNavigator nav in nodelist1)
 			{
-				if(!nodelist2.Contains(nav))
+				if (!nodelist2.Contains(nav))
 				{
-					return false; 
+					return false;
 				}
-			}					
-			return true; 
-		} 
+			}
+			return true;
+		}
 
 
 		/// <summary>
@@ -64,18 +64,18 @@ namespace Mvp.Xml.Exslt
 
 			List<XPathNavigator> arNodes2 = new List<XPathNavigator>(nodeset2.Count);
 
-			while(nodeset2.MoveNext())
+			while (nodeset2.MoveNext())
 			{
 				arNodes2.Add(nodeset2.Current.Clone());
 			}
 
 			auxEXSLT.findDocs(arNodes2, arDocs);
 
-			while(nodeset1.MoveNext())
+			while (nodeset1.MoveNext())
 			{
-				XPathNavigator currNode = nodeset1.Current; 
-				
-				if(!auxEXSLT.findNode(arNodes2, arDocs, currNode) )
+				XPathNavigator currNode = nodeset1.Current;
+
+				if (!auxEXSLT.findNode(arNodes2, arDocs, currNode))
 					return false;
 			}
 

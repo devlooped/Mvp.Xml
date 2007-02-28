@@ -26,29 +26,29 @@ namespace Mvp.Xml.Common.XPath
 		private static IDictionary<string, XPathExpression> Cache
 		{
 			get { return _cache; }
-        } 
+		}
 
 		/// <summary>
 		/// Retrieves a cached compiled expression, or a newly compiled one.
 		/// </summary>
-        private static XPathExpression GetCompiledExpression(string expression, XPathNavigator source)
-        {
-            XPathExpression expr;
+		private static XPathExpression GetCompiledExpression(string expression, XPathNavigator source)
+		{
+			XPathExpression expr;
 
-            if (!Cache.TryGetValue(expression, out expr))
-            {
-                // No double checks. At most we will compile twice. No big deal.			  
-                expr = source.Compile(expression);
-                Cache[expression] = expr;
-            }            
+			if (!Cache.TryGetValue(expression, out expr))
+			{
+				// No double checks. At most we will compile twice. No big deal.			  
+				expr = source.Compile(expression);
+				Cache[expression] = expr;
+			}
 
-            return expr.Clone();
-        }
+			return expr.Clone();
+		}
 
 		/// <summary>
 		/// Sets up the context for expression execution.
 		/// </summary>
-		private static XmlNamespaceManager PrepareContext(XPathNavigator source, 
+		private static XmlNamespaceManager PrepareContext(XPathNavigator source,
 			XmlNamespaceManager context, XmlPrefix[] prefixes, XPathVariable[] variables)
 		{
 			XmlNamespaceManager ctx = context;
@@ -90,7 +90,7 @@ namespace Mvp.Xml.Common.XPath
 			if (sortExpression is string)
 			{
 				expression.AddSort(
-					GetCompiledExpression((string)sortExpression, source), 
+					GetCompiledExpression((string)sortExpression, source),
 					order, caseOrder, lang, dataType);
 			}
 			else if (sortExpression is XPathExpression)
@@ -99,13 +99,13 @@ namespace Mvp.Xml.Common.XPath
 			}
 			else
 			{
-				throw new XPathException(SR.XPathCache_BadSortObject, null);
+				throw new XPathException(Properties.Resources.XPathCache_BadSortObject, null);
 			}
 		}
 
-		private static void PrepareSort(XPathExpression expression, XPathNavigator source, object sortExpression, 
-			XmlSortOrder order, XmlCaseOrder caseOrder, string lang, XmlDataType dataType, 
-			XmlNamespaceManager context )
+		private static void PrepareSort(XPathExpression expression, XPathNavigator source, object sortExpression,
+			XmlSortOrder order, XmlCaseOrder caseOrder, string lang, XmlDataType dataType,
+			XmlNamespaceManager context)
 		{
 			XPathExpression se;
 
@@ -115,14 +115,14 @@ namespace Mvp.Xml.Common.XPath
 			}
 			else if (sortExpression is XPathExpression)
 			{
-				se = (XPathExpression) sortExpression;
+				se = (XPathExpression)sortExpression;
 			}
 			else
 			{
-				throw new XPathException(SR.XPathCache_BadSortObject, null);
+				throw new XPathException(Properties.Resources.XPathCache_BadSortObject, null);
 			}
 
-			se.SetContext( context );
+			se.SetContext(context);
 			expression.AddSort(se, order, caseOrder, lang, dataType);
 		}
 
@@ -140,12 +140,12 @@ namespace Mvp.Xml.Common.XPath
 			}
 			else
 			{
-				throw new XPathException(SR.XPathCache_BadSortObject, null);
+				throw new XPathException(Properties.Resources.XPathCache_BadSortObject, null);
 			}
 		}
 
-		private static void PrepareSort(XPathExpression expression, XPathNavigator source, 
-			object sortExpression, IComparer comparer, XmlNamespaceManager context )
+		private static void PrepareSort(XPathExpression expression, XPathNavigator source,
+			object sortExpression, IComparer comparer, XmlNamespaceManager context)
 		{
 			XPathExpression se;
 
@@ -155,14 +155,14 @@ namespace Mvp.Xml.Common.XPath
 			}
 			else if (sortExpression is XPathExpression)
 			{
-				se = (XPathExpression) sortExpression;
+				se = (XPathExpression)sortExpression;
 			}
 			else
 			{
-				throw new XPathException(SR.XPathCache_BadSortObject, null);
+				throw new XPathException(Properties.Resources.XPathCache_BadSortObject, null);
 			}
 
-			se.SetContext( context );
+			se.SetContext(context);
 			expression.AddSort(se, comparer);
 		}
 
@@ -175,7 +175,7 @@ namespace Mvp.Xml.Common.XPath
 		/// <summary>
 		/// Evaluates the given expression and returns the typed result.
 		/// </summary>
-		public static object Evaluate(string expression, XPathNavigator source) 
+		public static object Evaluate(string expression, XPathNavigator source)
 		{
 			return source.Evaluate(GetCompiledExpression(expression, source));
 		}
@@ -194,7 +194,7 @@ namespace Mvp.Xml.Common.XPath
 		/// <summary>
 		/// Evaluates the given expression and returns the typed result.
 		/// </summary>
-		public static object Evaluate(string expression, XPathNavigator source, 
+		public static object Evaluate(string expression, XPathNavigator source,
 			XmlNamespaceManager context)
 		{
 			XPathExpression expr = GetCompiledExpression(expression, source);
@@ -205,7 +205,7 @@ namespace Mvp.Xml.Common.XPath
 		/// <summary>
 		/// Evaluates the given expression and returns the typed result.
 		/// </summary>
-		public static object Evaluate(string expression, XPathNavigator source, 
+		public static object Evaluate(string expression, XPathNavigator source,
 			params XmlPrefix[] prefixes)
 		{
 			XPathExpression expr = GetCompiledExpression(expression, source);
@@ -216,7 +216,7 @@ namespace Mvp.Xml.Common.XPath
 		/// <summary>
 		/// Evaluates the given expression and returns the typed result.
 		/// </summary>
-		public static object Evaluate(string expression, XPathNavigator source, 
+		public static object Evaluate(string expression, XPathNavigator source,
 			XmlNamespaceManager context, params XPathVariable[] variables)
 		{
 			XPathExpression expr = GetCompiledExpression(expression, source);
@@ -227,12 +227,12 @@ namespace Mvp.Xml.Common.XPath
 		/// <summary>
 		/// Evaluates the given expression and returns the typed result.
 		/// </summary>
-		public static object Evaluate(string expression, XPathNavigator source, 
+		public static object Evaluate(string expression, XPathNavigator source,
 			XmlPrefix[] prefixes, params XPathVariable[] variables)
 		{
 			XPathExpression expr = GetCompiledExpression(expression, source);
 			expr.SetContext(PrepareContext(source, null, prefixes, variables));
-			return source.Evaluate(expr);		
+			return source.Evaluate(expr);
 		}
 
 		#endregion Evaluate Overloads
@@ -250,7 +250,7 @@ namespace Mvp.Xml.Common.XPath
 		/// <summary>
 		/// Selects a node set using the specified XPath expression.
 		/// </summary>
-		public static XPathNodeIterator Select(string expression, XPathNavigator source, 
+		public static XPathNodeIterator Select(string expression, XPathNavigator source,
 			params XPathVariable[] variables)
 		{
 			XPathExpression expr = GetCompiledExpression(expression, source);
@@ -273,7 +273,7 @@ namespace Mvp.Xml.Common.XPath
 		/// Selects a node set using the specified XPath expression.
 		/// </summary>
 		public static XPathNodeIterator Select(string expression, XPathNavigator source,
-			params XmlPrefix[] prefixes )
+			params XmlPrefix[] prefixes)
 		{
 			XPathExpression expr = GetCompiledExpression(expression, source);
 			expr.SetContext(PrepareContext(source, null, prefixes, null));
@@ -283,7 +283,7 @@ namespace Mvp.Xml.Common.XPath
 		/// <summary>
 		/// Selects a node set using the specified XPath expression.
 		/// </summary>
-		public static XPathNodeIterator Select(string expression, XPathNavigator source, 
+		public static XPathNodeIterator Select(string expression, XPathNavigator source,
 			XmlNamespaceManager context, params XPathVariable[] variables)
 		{
 			XPathExpression expr = GetCompiledExpression(expression, source);
@@ -294,7 +294,7 @@ namespace Mvp.Xml.Common.XPath
 		/// <summary>
 		/// Selects a node set using the specified XPath expression.
 		/// </summary>
-		public static XPathNodeIterator Select(string expression, XPathNavigator source, 
+		public static XPathNodeIterator Select(string expression, XPathNavigator source,
 			XmlPrefix[] prefixes, params XPathVariable[] variables)
 		{
 			XPathExpression expr = GetCompiledExpression(expression, source);
@@ -312,7 +312,7 @@ namespace Mvp.Xml.Common.XPath
 		/// <remarks>
 		/// See <see cref="XPathExpression.AddSort(object, IComparer)"/>.
 		/// </remarks>
-		public static XPathNodeIterator SelectSorted(string expression, XPathNavigator source, 
+		public static XPathNodeIterator SelectSorted(string expression, XPathNavigator source,
 			object sortExpression, IComparer comparer)
 		{
 			XPathExpression expr = GetCompiledExpression(expression, source);
@@ -324,10 +324,10 @@ namespace Mvp.Xml.Common.XPath
 		/// Selects a node set using the specified XPath expression and sort.
 		/// </summary>
 		/// <remarks>
-        /// See <see cref="XPathExpression.AddSort(object, IComparer)"/>.
+		/// See <see cref="XPathExpression.AddSort(object, IComparer)"/>.
 		/// </remarks>
-		public static XPathNodeIterator SelectSorted(string expression, XPathNavigator source, 
-			object sortExpression, XmlSortOrder order, XmlCaseOrder caseOrder, string lang, XmlDataType dataType )
+		public static XPathNodeIterator SelectSorted(string expression, XPathNavigator source,
+			object sortExpression, XmlSortOrder order, XmlCaseOrder caseOrder, string lang, XmlDataType dataType)
 		{
 			XPathExpression expr = GetCompiledExpression(expression, source);
 			PrepareSort(expr, source, sortExpression, order, caseOrder, lang, dataType);
@@ -350,7 +350,7 @@ namespace Mvp.Xml.Common.XPath
 		/// Selects a node set using the specified XPath expression.
 		/// </summary>
 		public static XPathNodeIterator SelectSorted(string expression, XPathNavigator source,
-			object sortExpression, XmlSortOrder order, XmlCaseOrder caseOrder, string lang, XmlDataType dataType, 
+			object sortExpression, XmlSortOrder order, XmlCaseOrder caseOrder, string lang, XmlDataType dataType,
 			params XPathVariable[] variables)
 		{
 			XPathExpression expr = GetCompiledExpression(expression, source);
@@ -362,8 +362,8 @@ namespace Mvp.Xml.Common.XPath
 		/// <summary>
 		/// Selects a node set using the specified XPath expression.
 		/// </summary>
-		public static XPathNodeIterator SelectSorted(string expression, XPathNavigator source, 
-			object sortExpression, XmlSortOrder order, XmlCaseOrder caseOrder, string lang, XmlDataType dataType, 
+		public static XPathNodeIterator SelectSorted(string expression, XPathNavigator source,
+			object sortExpression, XmlSortOrder order, XmlCaseOrder caseOrder, string lang, XmlDataType dataType,
 			XmlNamespaceManager context)
 		{
 			XPathExpression expr = GetCompiledExpression(expression, source);
@@ -375,8 +375,8 @@ namespace Mvp.Xml.Common.XPath
 		/// <summary>
 		/// Selects a node set using the specified XPath expression.
 		/// </summary>
-		public static XPathNodeIterator SelectSorted(string expression, XPathNavigator source, 
-			object sortExpression, IComparer comparer, 
+		public static XPathNodeIterator SelectSorted(string expression, XPathNavigator source,
+			object sortExpression, IComparer comparer,
 			params XmlPrefix[] prefixes)
 		{
 			XPathExpression expr = GetCompiledExpression(expression, source);
@@ -390,8 +390,8 @@ namespace Mvp.Xml.Common.XPath
 		/// Selects a node set using the specified XPath expression.
 		/// </summary>
 		public static XPathNodeIterator SelectSorted(string expression, XPathNavigator source,
-			object sortExpression, XmlSortOrder order, XmlCaseOrder caseOrder, string lang, XmlDataType dataType, 
-			params XmlPrefix[] prefixes )
+			object sortExpression, XmlSortOrder order, XmlCaseOrder caseOrder, string lang, XmlDataType dataType,
+			params XmlPrefix[] prefixes)
 		{
 			XPathExpression expr = GetCompiledExpression(expression, source);
 			XmlNamespaceManager ctx = PrepareContext(source, null, prefixes, null);
@@ -404,7 +404,7 @@ namespace Mvp.Xml.Common.XPath
 		/// Selects a node set using the specified XPath expression.
 		/// </summary>
 		public static XPathNodeIterator SelectSorted(string expression, XPathNavigator source,
-			object sortExpression, XmlSortOrder order, XmlCaseOrder caseOrder, string lang, XmlDataType dataType, 
+			object sortExpression, XmlSortOrder order, XmlCaseOrder caseOrder, string lang, XmlDataType dataType,
 			XmlNamespaceManager context, params XPathVariable[] variables)
 		{
 			XPathExpression expr = GetCompiledExpression(expression, source);
@@ -418,7 +418,7 @@ namespace Mvp.Xml.Common.XPath
 		/// Selects a node set using the specified XPath expression.
 		/// </summary>
 		public static XPathNodeIterator SelectSorted(string expression, XPathNavigator source,
-			object sortExpression, IComparer comparer, 
+			object sortExpression, IComparer comparer,
 			XmlNamespaceManager context, params XPathVariable[] variables)
 		{
 			XPathExpression expr = GetCompiledExpression(expression, source);
@@ -431,8 +431,8 @@ namespace Mvp.Xml.Common.XPath
 		/// <summary>
 		/// Selects a node set using the specified XPath expression.
 		/// </summary>
-		public static XPathNodeIterator SelectSorted(string expression, XPathNavigator source, 
-			object sortExpression, XmlSortOrder order, XmlCaseOrder caseOrder, string lang, XmlDataType dataType, 
+		public static XPathNodeIterator SelectSorted(string expression, XPathNavigator source,
+			object sortExpression, XmlSortOrder order, XmlCaseOrder caseOrder, string lang, XmlDataType dataType,
 			XmlPrefix[] prefixes, params XPathVariable[] variables)
 		{
 			XPathExpression expr = GetCompiledExpression(expression, source);
@@ -441,12 +441,12 @@ namespace Mvp.Xml.Common.XPath
 			PrepareSort(expr, source, sortExpression, order, caseOrder, lang, dataType, ctx);
 			return source.Select(expr);
 		}
-		
+
 		/// <summary>
 		/// Selects a node set using the specified XPath expression.
 		/// </summary>
-		public static XPathNodeIterator SelectSorted(string expression, XPathNavigator source, 
-			object sortExpression, IComparer comparer, 
+		public static XPathNodeIterator SelectSorted(string expression, XPathNavigator source,
+			object sortExpression, IComparer comparer,
 			XmlPrefix[] prefixes, params XPathVariable[] variables)
 		{
 			XPathExpression expr = GetCompiledExpression(expression, source);
@@ -522,9 +522,9 @@ namespace Mvp.Xml.Common.XPath
 		/// Selects a node set using the specified XPath expression and sort.
 		/// </summary>
 		/// <remarks>
-        /// See <see cref="XPathExpression.AddSort(object, IComparer)"/>.
+		/// See <see cref="XPathExpression.AddSort(object, IComparer)"/>.
 		/// </remarks>
-		public static XmlNodeList SelectNodesSorted(string expression, XmlNode source, 
+		public static XmlNodeList SelectNodesSorted(string expression, XmlNode source,
 			object sortExpression, IComparer comparer)
 		{
 			return XmlNodeListFactory.CreateNodeList(
@@ -535,13 +535,13 @@ namespace Mvp.Xml.Common.XPath
 		/// Selects a node set using the specified XPath expression and sort.
 		/// </summary>
 		/// <remarks>(object, IComparer)
-        /// See <see cref="XPathExpression.AddSort(object, IComparer)"/>.
+		/// See <see cref="XPathExpression.AddSort(object, IComparer)"/>.
 		/// </remarks>
-		public static XmlNodeList SelectNodesSorted(string expression, XmlNode source, 
-			object sortExpression, XmlSortOrder order, XmlCaseOrder caseOrder, string lang, XmlDataType dataType )
+		public static XmlNodeList SelectNodesSorted(string expression, XmlNode source,
+			object sortExpression, XmlSortOrder order, XmlCaseOrder caseOrder, string lang, XmlDataType dataType)
 		{
 			return XmlNodeListFactory.CreateNodeList(
-				SelectSorted(expression, source.CreateNavigator(), sortExpression, 
+				SelectSorted(expression, source.CreateNavigator(), sortExpression,
 				order, caseOrder, lang, dataType));
 		}
 
@@ -552,7 +552,7 @@ namespace Mvp.Xml.Common.XPath
 			object sortExpression, IComparer comparer, params XPathVariable[] variables)
 		{
 			return XmlNodeListFactory.CreateNodeList(
-				SelectSorted(expression, source.CreateNavigator(), sortExpression, 
+				SelectSorted(expression, source.CreateNavigator(), sortExpression,
 				comparer, variables));
 		}
 
@@ -560,35 +560,35 @@ namespace Mvp.Xml.Common.XPath
 		/// Selects a node set using the specified XPath expression.
 		/// </summary>
 		public static XmlNodeList SelectNodesSorted(string expression, XmlNode source,
-			object sortExpression, XmlSortOrder order, XmlCaseOrder caseOrder, string lang, XmlDataType dataType, 
+			object sortExpression, XmlSortOrder order, XmlCaseOrder caseOrder, string lang, XmlDataType dataType,
 			params XPathVariable[] variables)
 		{
 			return XmlNodeListFactory.CreateNodeList(
-				SelectSorted(expression, source.CreateNavigator(), sortExpression, 
+				SelectSorted(expression, source.CreateNavigator(), sortExpression,
 				order, caseOrder, lang, dataType, variables));
 		}
 
 		/// <summary>
 		/// Selects a node set using the specified XPath expression.
 		/// </summary>
-		public static XmlNodeList SelectNodesSorted(string expression, XmlNode source, 
-			object sortExpression, XmlSortOrder order, XmlCaseOrder caseOrder, string lang, XmlDataType dataType, 
+		public static XmlNodeList SelectNodesSorted(string expression, XmlNode source,
+			object sortExpression, XmlSortOrder order, XmlCaseOrder caseOrder, string lang, XmlDataType dataType,
 			XmlNamespaceManager context)
 		{
 			return XmlNodeListFactory.CreateNodeList(
-				SelectSorted(expression, source.CreateNavigator(), sortExpression, 
+				SelectSorted(expression, source.CreateNavigator(), sortExpression,
 				order, caseOrder, lang, dataType, context));
 		}
 
 		/// <summary>
 		/// Selects a node set using the specified XPath expression.
 		/// </summary>
-		public static XmlNodeList SelectNodesSorted(string expression, XmlNode source, 
-			object sortExpression, IComparer comparer, 
+		public static XmlNodeList SelectNodesSorted(string expression, XmlNode source,
+			object sortExpression, IComparer comparer,
 			params XmlPrefix[] prefixes)
 		{
 			return XmlNodeListFactory.CreateNodeList(
-				SelectSorted(expression, source.CreateNavigator(), sortExpression, 
+				SelectSorted(expression, source.CreateNavigator(), sortExpression,
 				comparer, prefixes));
 		}
 
@@ -596,11 +596,11 @@ namespace Mvp.Xml.Common.XPath
 		/// Selects a node set using the specified XPath expression.
 		/// </summary>
 		public static XmlNodeList SelectNodesSorted(string expression, XmlNode source,
-			object sortExpression, XmlSortOrder order, XmlCaseOrder caseOrder, string lang, XmlDataType dataType, 
-			params XmlPrefix[] prefixes )
+			object sortExpression, XmlSortOrder order, XmlCaseOrder caseOrder, string lang, XmlDataType dataType,
+			params XmlPrefix[] prefixes)
 		{
 			return XmlNodeListFactory.CreateNodeList(
-				SelectSorted(expression, source.CreateNavigator(), sortExpression, 
+				SelectSorted(expression, source.CreateNavigator(), sortExpression,
 				order, caseOrder, lang, dataType, prefixes));
 		}
 
@@ -608,11 +608,11 @@ namespace Mvp.Xml.Common.XPath
 		/// Selects a node set using the specified XPath expression.
 		/// </summary>
 		public static XmlNodeList SelectNodesSorted(string expression, XmlNode source,
-			object sortExpression, XmlSortOrder order, XmlCaseOrder caseOrder, string lang, XmlDataType dataType, 
+			object sortExpression, XmlSortOrder order, XmlCaseOrder caseOrder, string lang, XmlDataType dataType,
 			XmlNamespaceManager context, params XPathVariable[] variables)
 		{
 			return XmlNodeListFactory.CreateNodeList(
-				SelectSorted(expression, source.CreateNavigator(), sortExpression, 
+				SelectSorted(expression, source.CreateNavigator(), sortExpression,
 				order, caseOrder, lang, dataType, context, variables));
 		}
 
@@ -620,35 +620,35 @@ namespace Mvp.Xml.Common.XPath
 		/// Selects a node set using the specified XPath expression.
 		/// </summary>
 		public static XmlNodeList SelectNodesSorted(string expression, XmlNode source,
-			object sortExpression, IComparer comparer, 
+			object sortExpression, IComparer comparer,
 			XmlNamespaceManager context, params XPathVariable[] variables)
 		{
 			return XmlNodeListFactory.CreateNodeList(
-				SelectSorted(expression, source.CreateNavigator(), sortExpression, 
+				SelectSorted(expression, source.CreateNavigator(), sortExpression,
 				comparer, context, variables));
 		}
 
 		/// <summary>
 		/// Selects a node set using the specified XPath expression.
 		/// </summary>
-		public static XmlNodeList SelectNodesSorted(string expression, XmlNode source, 
-			object sortExpression, XmlSortOrder order, XmlCaseOrder caseOrder, string lang, XmlDataType dataType, 
+		public static XmlNodeList SelectNodesSorted(string expression, XmlNode source,
+			object sortExpression, XmlSortOrder order, XmlCaseOrder caseOrder, string lang, XmlDataType dataType,
 			XmlPrefix[] prefixes, params XPathVariable[] variables)
 		{
 			return XmlNodeListFactory.CreateNodeList(
-				SelectSorted(expression, source.CreateNavigator(), sortExpression, 
+				SelectSorted(expression, source.CreateNavigator(), sortExpression,
 				order, caseOrder, lang, dataType, prefixes, variables));
 		}
-		
+
 		/// <summary>
 		/// Selects a node set using the specified XPath expression.
 		/// </summary>
-		public static XmlNodeList SelectNodesSorted(string expression, XmlNode source, 
-			object sortExpression, IComparer comparer, 
+		public static XmlNodeList SelectNodesSorted(string expression, XmlNode source,
+			object sortExpression, IComparer comparer,
 			XmlPrefix[] prefixes, params XPathVariable[] variables)
 		{
 			return XmlNodeListFactory.CreateNodeList(
-				SelectSorted(expression, source.CreateNavigator(), sortExpression, 
+				SelectSorted(expression, source.CreateNavigator(), sortExpression,
 				comparer, prefixes, variables));
 		}
 

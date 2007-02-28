@@ -15,7 +15,7 @@ namespace Mvp.Xml.Common.Serialization
 	public class StringSorter
 	{
 		List<string> list = new List<string>();
-		
+
 		/// <summary>
 		/// Helper class to sort strings alphabetically
 		/// </summary>
@@ -28,7 +28,7 @@ namespace Mvp.Xml.Common.Serialization
 		/// Add a string to sort
 		/// </summary>
 		/// <param name="s"></param>
-		public void AddString( string s )
+		public void AddString(string s)
 		{
 			list.Add(s);
 		}

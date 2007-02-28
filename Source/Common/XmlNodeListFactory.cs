@@ -16,11 +16,11 @@ namespace Mvp.Xml.Common
 	/// </summary>
 	/// <remarks>See http://weblogs.asp.net/cazzu/archive/2004/04/14/113479.aspx. 
 	/// <para>Author: Daniel Cazzulino, <a href="http://clariusconsulting.net/kzu">blog</a></para>
-    /// <para>Contributors: Oleg Tkachenko, olegt@xmllab.net</para>
+	/// <para>Contributors: Oleg Tkachenko, olegt@xmllab.net</para>
 	/// </remarks>
 	public sealed class XmlNodeListFactory
 	{
-		private XmlNodeListFactory() {}
+		private XmlNodeListFactory() { }
 
 		#region Public members
 
@@ -43,7 +43,7 @@ namespace Mvp.Xml.Common
 
 		#region XmlNodeListIterator
 
-		private class XmlNodeListIterator: XmlNodeList
+		private class XmlNodeListIterator : XmlNodeList
 		{
 			XPathNodeIterator _iterator;
 			IList<XmlNode> _nodes = new List<XmlNode>();
@@ -57,27 +57,27 @@ namespace Mvp.Xml.Common
 			{
 				return new XmlNodeListEnumerator(this);
 			}
-			
+
 			public override XmlNode Item(int index)
 			{
 
-                if (index >= _nodes.Count)
-                    ReadTo(index);
-                // Compatible behavior with .NET
-                if (index >= _nodes.Count || index < 0)
-                    return null;
-                return _nodes[index];
+				if (index >= _nodes.Count)
+					ReadTo(index);
+				// Compatible behavior with .NET
+				if (index >= _nodes.Count || index < 0)
+					return null;
+				return _nodes[index];
 			}
 
-			public override int Count 
-			{ 
-				get 
-				{ 
+			public override int Count
+			{
+				get
+				{
 					if (!_done) ReadToEnd();
 					return _nodes.Count;
-				} 
+				}
 			}
-						
+
 
 			/// <summary>
 			/// Reads the entire iterator.
@@ -89,7 +89,7 @@ namespace Mvp.Xml.Common
 					IHasXmlNode node = _iterator.Current as IHasXmlNode;
 					// Check IHasXmlNode interface.
 					if (node == null)
-						throw new ArgumentException(SR.XmlNodeListFactory_IHasXmlNodeMissing);
+						throw new ArgumentException(Properties.Resources.XmlNodeListFactory_IHasXmlNodeMissing);
 					_nodes.Add(node.GetNode());
 				}
 				_done = true;
@@ -108,7 +108,7 @@ namespace Mvp.Xml.Common
 						IHasXmlNode node = _iterator.Current as IHasXmlNode;
 						// Check IHasXmlNode interface.
 						if (node == null)
-							throw new ArgumentException(SR.XmlNodeListFactory_IHasXmlNodeMissing);
+							throw new ArgumentException(Properties.Resources.XmlNodeListFactory_IHasXmlNodeMissing);
 						_nodes.Add(node.GetNode());
 					}
 					else
@@ -127,17 +127,17 @@ namespace Mvp.Xml.Common
 				get { return _done; }
 			} bool _done;
 
-            /// <summary>
-            /// Current count of nodes in the iterator (read so far).
-            /// </summary>
-            private int CurrentPosition
-            {
-                get { return _nodes.Count; }
-            }
+			/// <summary>
+			/// Current count of nodes in the iterator (read so far).
+			/// </summary>
+			private int CurrentPosition
+			{
+				get { return _nodes.Count; }
+			}
 
 			#region XmlNodeListEnumerator
 
-			private class XmlNodeListEnumerator: IEnumerator
+			private class XmlNodeListEnumerator : IEnumerator
 			{
 				XmlNodeListIterator _iterator;
 				int _position = -1;
@@ -158,11 +158,11 @@ namespace Mvp.Xml.Common
 				bool System.Collections.IEnumerator.MoveNext()
 				{
 					_position++;
-                    _iterator.ReadTo(_position);
+					_iterator.ReadTo(_position);
 
 					// If we reached the end and our index is still 
 					// bigger, there're no more items.
-                    if (_iterator.Done && _position >= _iterator.CurrentPosition)
+					if (_iterator.Done && _position >= _iterator.CurrentPosition)
 						return false;
 
 					return true;

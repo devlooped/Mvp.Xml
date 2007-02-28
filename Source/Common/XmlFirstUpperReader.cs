@@ -4,7 +4,7 @@ using System;
 using System.IO;
 using System.Xml;
 
-#endregion using 
+#endregion using
 
 namespace Mvp.Xml.Common
 {
@@ -25,51 +25,51 @@ namespace Mvp.Xml.Common
 		/// <summary>
 		/// See <see cref="XmlTextReader"/> constructor overloads.
 		/// </summary>
-		public XmlFirstUpperReader(Stream input) : base(input) {}
+		public XmlFirstUpperReader(Stream input) : base(input) { }
 		/// <summary>
 		/// See <see cref="XmlTextReader"/> constructor overloads.
 		/// </summary>
-		public XmlFirstUpperReader(TextReader input) : base(input) {}
+		public XmlFirstUpperReader(TextReader input) : base(input) { }
 		/// <summary>
 		/// See <see cref="XmlTextReader"/> constructor overloads.
 		/// </summary>
-		public XmlFirstUpperReader(string url) : base(url) {}
+		public XmlFirstUpperReader(string url) : base(url) { }
 		/// <summary>
 		/// See <see cref="XmlTextReader"/> constructor overloads.
 		/// </summary>
-		public XmlFirstUpperReader(Stream input, XmlNameTable nt) : base(input, nt) {}
+		public XmlFirstUpperReader(Stream input, XmlNameTable nt) : base(input, nt) { }
 		/// <summary>
 		/// See <see cref="XmlTextReader"/> constructor overloads.
 		/// </summary>
-		public XmlFirstUpperReader(TextReader input, XmlNameTable nt) : base(input, nt) {}
+		public XmlFirstUpperReader(TextReader input, XmlNameTable nt) : base(input, nt) { }
 		/// <summary>
 		/// See <see cref="XmlTextReader"/> constructor overloads.
 		/// </summary>
-		public XmlFirstUpperReader(string url, Stream input) : base(url, input) {}
+		public XmlFirstUpperReader(string url, Stream input) : base(url, input) { }
 		/// <summary>
 		/// See <see cref="XmlTextReader"/> constructor overloads.
 		/// </summary>
-		public XmlFirstUpperReader(string url, TextReader input) : base(url, input) {}
+		public XmlFirstUpperReader(string url, TextReader input) : base(url, input) { }
 		/// <summary>
 		/// See <see cref="XmlTextReader"/> constructor overloads.
 		/// </summary>
-		public XmlFirstUpperReader(string url, XmlNameTable nt) : base(url, nt) {}
+		public XmlFirstUpperReader(string url, XmlNameTable nt) : base(url, nt) { }
 		/// <summary>
 		/// See <see cref="XmlTextReader"/> constructor overloads.
 		/// </summary>
-		public XmlFirstUpperReader(Stream xmlFragment, XmlNodeType fragType, XmlParserContext context) : base(xmlFragment, fragType, context) {}
+		public XmlFirstUpperReader(Stream xmlFragment, XmlNodeType fragType, XmlParserContext context) : base(xmlFragment, fragType, context) { }
 		/// <summary>
 		/// See <see cref="XmlTextReader"/> constructor overloads.
 		/// </summary>
-		public XmlFirstUpperReader(string url, Stream input, XmlNameTable nt) : base(url, input, nt) {}
+		public XmlFirstUpperReader(string url, Stream input, XmlNameTable nt) : base(url, input, nt) { }
 		/// <summary>
 		/// See <see cref="XmlTextReader"/> constructor overloads.
 		/// </summary>
-		public XmlFirstUpperReader(string url, TextReader input, XmlNameTable nt) : base(url, input, nt) {}
+		public XmlFirstUpperReader(string url, TextReader input, XmlNameTable nt) : base(url, input, nt) { }
 		/// <summary>
 		/// See <see cref="XmlTextReader"/> constructor overloads.
 		/// </summary>
-		public XmlFirstUpperReader(string xmlFragment, XmlNodeType fragType, XmlParserContext context) : base(xmlFragment, fragType, context) {}
+		public XmlFirstUpperReader(string xmlFragment, XmlNodeType fragType, XmlParserContext context) : base(xmlFragment, fragType, context) { }
 
 		#endregion Ctors
 
@@ -94,44 +94,44 @@ namespace Mvp.Xml.Common
 		#region Properties
 
 		/// <summary>See <see cref="XmlReader.this[string, string]"/></summary>
-		public override string this[string name, string namespaceURI] 
+		public override string this[string name, string namespaceURI]
 		{
-			get 
+			get
 			{
 				return base[
 					NameTable.Add(XmlFirstLowerWriter.MakeFirstLower(name)), namespaceURI];
 			}
 		}
-    
+
 		/// <summary>See <see cref="XmlReader.this[string]"/></summary>
-		public override string this[string name] 
+		public override string this[string name]
 		{
 			get { return this[name, String.Empty]; }
 		}
-       
+
 		/// <summary>See <see cref="XmlReader.LocalName"/></summary>
-		public override string LocalName 
+		public override string LocalName
 		{
-			get 
-			{ 
+			get
+			{
 				// Capitalize elements and attributes.
-				if ( base.NodeType == XmlNodeType.Element || 
+				if (base.NodeType == XmlNodeType.Element ||
 					base.NodeType == XmlNodeType.EndElement ||
-					base.NodeType == XmlNodeType.Attribute )
+					base.NodeType == XmlNodeType.Attribute)
 				{
-					return base.NamespaceURI == XmlNamespaces.XmlNs ? 
+					return base.NamespaceURI == XmlNamespaces.XmlNs ?
 						// Except if the attribute is a namespace declaration
 						base.LocalName : MakeFirstUpper(base.LocalName);
 				}
 				return base.LocalName;
 			}
 		}
-    
+
 		/// <summary>See <see cref="XmlReader.Name"/></summary>
-		public override string Name 
+		public override string Name
 		{
 			get
-			{ 
+			{
 				// Again, if this is a NS declaration, pass as-is.
 				if (base.NamespaceURI == XmlNamespaces.XmlNs)
 					return base.Name;
@@ -148,12 +148,12 @@ namespace Mvp.Xml.Common
 			}
 		}
 
-		#endregion Properties 
+		#endregion Properties
 
 		#region Methods
 
 		/// <summary>See <see cref="XmlReader.MoveToAttribute(string, string)"/></summary>
-		public override bool MoveToAttribute(string name, string ns) 
+		public override bool MoveToAttribute(string name, string ns)
 		{
 			return base.MoveToAttribute(
 				NameTable.Add(XmlFirstLowerWriter.MakeFirstLower(name)), ns);

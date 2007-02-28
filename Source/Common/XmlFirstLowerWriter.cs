@@ -5,7 +5,7 @@ using System.IO;
 using System.Text;
 using System.Xml;
 
-#endregion using 
+#endregion using
 
 namespace Mvp.Xml.Common
 {
@@ -21,25 +21,28 @@ namespace Mvp.Xml.Common
 	public class XmlFirstLowerWriter : XmlTextWriter
 	{
 		#region Fields & Ctor
-		
+
 		/// <summary>
 		/// See <see cref="XmlTextWriter"/> ctors.
 		/// </summary>
-		public XmlFirstLowerWriter(TextWriter w) : base(w)
+		public XmlFirstLowerWriter(TextWriter w)
+			: base(w)
 		{
 		}
 
 		/// <summary>
 		/// See <see cref="XmlTextWriter"/> ctors.
 		/// </summary>
-		public XmlFirstLowerWriter(Stream w, Encoding encoding) : base(w, encoding)
+		public XmlFirstLowerWriter(Stream w, Encoding encoding)
+			: base(w, encoding)
 		{
 		}
 
 		/// <summary>
 		/// See <see cref="XmlTextWriter"/> ctors.
 		/// </summary>
-		public XmlFirstLowerWriter(string filename, Encoding encoding) : base(filename, encoding)
+		public XmlFirstLowerWriter(string filename, Encoding encoding)
+			: base(filename, encoding)
 		{
 		}
 
@@ -64,11 +67,11 @@ namespace Mvp.Xml.Common
 		#endregion MakeFirstUpper
 
 		#region Methods
-			
+
 		/// <summary>
 		/// See <see cref="XmlWriter.WriteQualifiedName"/>.
 		/// </summary>
-		public override void WriteQualifiedName(string localName, string ns)		
+		public override void WriteQualifiedName(string localName, string ns)
 		{
 			base.WriteQualifiedName(MakeFirstLower(localName), ns);
 		}
@@ -80,7 +83,7 @@ namespace Mvp.Xml.Common
 		{
 			base.WriteStartAttribute(prefix, MakeFirstLower(localName), ns);
 		}
-				
+
 
 		/// <summary>
 		/// See <see cref="XmlWriter.WriteStartElement(string, string, string)"/>.

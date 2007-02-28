@@ -36,9 +36,9 @@ namespace Mvp.Xml.Common.Serialization
 		{
 			StringBuilder keyBuilder = new StringBuilder();
 			keyBuilder.Append(type.FullName);
-			keyBuilder.Append( "??" );
+			keyBuilder.Append("??");
 			keyBuilder.Append(SignatureExtractor.GetOverridesSignature(overrides));
-			keyBuilder.Append( "??" );
+			keyBuilder.Append("??");
 			keyBuilder.Append(SignatureExtractor.GetTypeArraySignature(types));
 			keyBuilder.Append("??");
 			keyBuilder.Append(SignatureExtractor.GetXmlRootSignature(root));
