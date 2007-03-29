@@ -560,6 +560,7 @@ namespace Mvp.Xml.Common.Xsl
 					depth++;
 					pipe.GetToken(attOffset, out qname, out value);
 					nodeType = XmlNodeType.Attribute;
+                    return;
 				}
 			}
 			throw new ArgumentOutOfRangeException("i");
