@@ -5,6 +5,7 @@ using System.Xml;
 using System.Xml.Xsl;
 using System.Xml.XPath;
 using System.IO;
+using System.Data;
 
 using Mvp.Xml.Common.Xsl;
 using Mvp.Xml.Tests;
@@ -214,6 +215,31 @@ namespace Mvp.Xml.Tests.XslReaderTests
         public void Test7()
         {
             CompareWithStandardReader(true, int.MaxValue / 2 + 2);
+        }
+
+        [TestMethod]
+        public void TestWithDataSet()
+        {
+            string stylesheet = @"
+<xsl:stylesheet version='1.0' xmlns:xsl='http://www.w3.org/1999/XSL/Transform'>
+          <xsl:template match='/'>                      
+<BTRChart xmlns:w=""http://schemas.microsoft.com/office/word/2003/wordml""><Data><DundasChart xmlns=""urn:www.benefittech.com:Chart"">[Data]</DundasChart></Data></BTRChart></xsl:template>
+        </xsl:stylesheet>
+";
+            XmlDocument doc = new XmlDocument();
+            XslCompiledTransform xslt = new XslCompiledTransform();
+            xslt.Load(XmlReader.Create(new StringReader(stylesheet)));
+            XslReader reader = new XslReader(xslt);
+            DataSet ds = new DataSet();
+            ds.ReadXml(reader.StartTransform(new XmlInput(doc), null));  
+            StringWriter writer = new StringWriter();
+            XmlWriterSettings settings = new XmlWriterSettings();
+            settings.Indent = false;
+            settings.OmitXmlDeclaration = true;
+            XmlWriter w = XmlWriter.Create(writer, settings);
+            ds.WriteXml(w);
+            w.Close();
+            Assert.AreEqual(@"<BTRChart><Data><DundasChart xmlns=""urn:www.benefittech.com:Chart"">[Data]</DundasChart></Data></BTRChart>", writer.ToString());
         }
     }
 }
