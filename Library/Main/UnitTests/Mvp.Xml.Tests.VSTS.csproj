@@ -78,10 +78,10 @@
     <Compile Include="Common\XmlSerializerCacheTests\XmlRootThumbprintTests.cs" />
     <Compile Include="Common\XmlSerializerCacheTests\XmlSerializerCacheTests.cs" />
     <Compile Include="Common\XmlSerializerCacheTests\XmlTextThumbprintTests.cs" />
-    <Compile Include="Common\XmlWrappingReaderTests.cs" />
+    <Compile Include="Common\XmlWrappingTests.cs" />
     <Compile Include="Common\XPathCacheTests.cs" />
     <Compile Include="Common\XPathCacheUsability.cs" />
-    <Compile Include="Common\XPathDocumentHelperTests.cs" />
+    <Compile Include="Common\XPathDocumentWriterFixture.cs" />
     <Compile Include="Common\XPathIteratorReaderTests\Tests.cs" />
     <Compile Include="Common\XPathSortBug.cs" />
     <Compile Include="Common\XslReaderTests\XslReaderTests.cs" />
