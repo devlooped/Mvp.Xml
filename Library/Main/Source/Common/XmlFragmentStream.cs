@@ -12,12 +12,17 @@ namespace Mvp.Xml.Common
 	/// Allows streams without a root element (i.e. multiple document 
 	/// fragments) to be passed to an <see cref="System.Xml.XmlReader"/>.
 	/// </summary>
-	/// <remarks>A faked root element is added at the stream 
+	/// <remarks>
+	/// <para>
+	/// This class is obsolete. Use <see cref="XmlFragmentReader"/> instead.
+	/// </para>
+	/// A faked root element is added at the stream 
 	/// level to enclose the fragments, which can be customized 
 	/// using the overloaded constructors.
 	/// <para>Author: Daniel Cazzulino, <a href="http://clariusconsulting.net/kzu">blog</a></para>
 	/// See: http://weblogs.asp.net/cazzu/archive/2004/04/23/119263.aspx.
 	/// </remarks>
+	[Obsolete("Use XmlFragmentReader instead.", false)]
 	public class XmlFragmentStream : Stream
 	{
 		#region Fields
