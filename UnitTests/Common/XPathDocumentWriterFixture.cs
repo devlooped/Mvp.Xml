@@ -83,6 +83,19 @@ namespace Mvp.Xml.Tests.Common
 			Assert.AreEqual("kzu-uri", doc.CreateNavigator().BaseURI);
 		}
 
+		[TestMethod]
+		public void WriterIsDisposable()
+		{
+			XPathDocument doc;
+			using (XPathDocumentWriter writer = new XPathDocumentWriter())
+			{
+				writer.WriteElementString("hello", "world");
+				doc = writer.Close();
+			}
+
+			Assert.IsNotNull(doc);
+		}
+
 		private static string GetXml(XPathDocument doc)
 		{
 			XPathNavigator nav = doc.CreateNavigator();
