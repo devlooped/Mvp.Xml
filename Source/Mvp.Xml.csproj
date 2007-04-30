@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\Guard.cs" />
+    <Compile Include="Common\XmlNormalizingReader.cs" />
     <Compile Include="Common\Serialization\CacheKeyFactory.cs" />
     <Compile Include="Common\Serialization\PerfCounterInstaller.cs">
       <SubType>Component</SubType>
