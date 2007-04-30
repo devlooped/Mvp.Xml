@@ -26,6 +26,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Debug\Mvp.Xml.xml</DocumentationFile>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>full</DebugType>
@@ -60,6 +61,7 @@
     <Compile Include="Common\XmlBaseAwareXmlReader.cs" />
     <Compile Include="Common\XmlFirstLowerWriter.cs" />
     <Compile Include="Common\XmlFirstUpperReader.cs" />
+    <Compile Include="Common\XmlFragmentReader.cs" />
     <Compile Include="Common\XmlFragmentStream.cs" />
     <Compile Include="Common\XmlNamespaces.cs" />
     <Compile Include="Common\XmlNodeFactory.cs" />

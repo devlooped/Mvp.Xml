@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Tests>
+  <edtdocversion branch="retail" build="50727" revision="312" />
+  <TestCategory type="Microsoft.VisualStudio.TestTools.Common.TestCategory">
+    <id type="Microsoft.VisualStudio.TestTools.Common.TestCategoryId">
+      <id type="System.Guid">8c43106b-9dc1-4907-a29f-aa66a61bf5b6</id>
+    </id>
+    <name type="System.String">Lists of Tests</name>
+    <description type="System.String" />
+    <enabled type="System.Boolean">True</enabled>
+    <parentCategoryId type="Microsoft.VisualStudio.TestTools.Common.TestCategoryId">
+      <id type="System.Guid">00000000-0000-0000-0000-000000000000</id>
+    </parentCategoryId>
+  </TestCategory>
+  <TestCategory type="Microsoft.VisualStudio.TestTools.Common.TestCategory">
+    <id type="Microsoft.VisualStudio.TestTools.Common.TestCategoryId">
+      <id type="System.Guid">8c84fa94-04c1-424b-9868-57a2d4851a1d</id>
+    </id>
+    <name type="System.String">Tests Not in a List</name>
+    <description type="System.String" />
+    <enabled type="System.Boolean">True</enabled>
+    <parentCategoryId type="Microsoft.VisualStudio.TestTools.Common.TestCategoryId">
+      <id type="System.Guid">00000000-0000-0000-0000-000000000000</id>
+    </parentCategoryId>
+    <testLinks type="System.Collections.Hashtable">
+      <key type="System.Guid">58e7791b-41e3-08ac-4d86-f05f4612a451</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">58e7791b-41e3-08ac-4d86-f05f4612a451</id>
+        <name type="System.String">harold_78</name>
+        <storage type="System.String">unittests\bin\release\mvp.xml.tests.vsts.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">af93fd99-af79-965f-e3f3-04441b21ab33</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">af93fd99-af79-965f-e3f3-04441b21ab33</id>
+        <name type="System.String">SubtreeSpeed</name>
+        <storage type="System.String">unittests\bin\release\mvp.xml.tests.vsts.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">ec5bd2f0-004b-34dd-ed67-53f92db60f54</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">ec5bd2f0-004b-34dd-ed67-53f92db60f54</id>
+        <name type="System.String">harold_79</name>
+        <storage type="System.String">unittests\bin\release\mvp.xml.tests.vsts.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">35dd56af-23e9-29b1-a9fa-bb674c342523</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">35dd56af-23e9-29b1-a9fa-bb674c342523</id>
+        <name type="System.String">harold_77</name>
+        <storage type="System.String">unittests\bin\release\mvp.xml.tests.vsts.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">52ffe5af-4838-a78e-b70c-38c8821fb6db</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">52ffe5af-4838-a78e-b70c-38c8821fb6db</id>
+        <name type="System.String">SuperfluousXmlNsSchemeTest</name>
+        <storage type="System.String">unittests\bin\release\mvp.xml.tests.vsts.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+    </testLinks>
+  </TestCategory>
+</Tests>
