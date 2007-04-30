@@ -44,12 +44,14 @@
     <Compile Include="Common\IndexingXPathNavigatorTest.cs" />
     <Compile Include="Common\Misc.cs" />
     <Compile Include="Common\MvpXslTransformTests\MvpXslTransformTests.cs" />
+    <Compile Include="Common\XmlNormalizingReaderFixture.cs" />
     <Compile Include="Common\pubsNs.cs">
       <DependentUpon>pubsNs.xsd</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Common\SingletonXPathNodeIteratorTests.cs" />
     <Compile Include="Common\SubtreeeXPathNavigatorTests\Tests.cs" />
+    <Compile Include="Common\TestFixtureBase.cs" />
     <Compile Include="Common\UpperLowerTests\Customer.cs">
       <DependentUpon>Customer.xsd</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
