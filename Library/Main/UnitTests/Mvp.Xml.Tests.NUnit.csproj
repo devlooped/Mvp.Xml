@@ -56,6 +56,7 @@
     </Compile>
     <Compile Include="Common\UpperLowerTests\FirstUpperLowerTests.cs" />
     <Compile Include="Common\XmlBaseAwareXmlReaderTests\Tests.cs" />
+    <Compile Include="Common\XmlFragmentReaderTests.cs" />
     <Compile Include="Common\XmlFragments\Tests.cs" />
     <Compile Include="Common\XmlNodeFactoryTests.cs" />
     <Compile Include="Common\XmlNodeListFactoryTests.cs" />
