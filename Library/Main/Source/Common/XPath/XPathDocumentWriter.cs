@@ -110,6 +110,31 @@ namespace Mvp.Xml.Common.XPath
 			return document;
 		}
 
+		/// <summary>
+		/// Reports <see cref="System.Xml.WriteState.Start"/> always, 
+		/// as the underlying writer is always writing to 
+		/// the <see cref="XPathDocument"/> directly.
+		/// </summary>
+		public override WriteState WriteState
+		{
+			get { return WriteState.Start; }
+		}
+
+		/// <summary>
+		/// Never disposes the underlying writer as it's not 
+		/// keeping in-memory state.
+		/// </summary>
+		/// <remarks>
+		/// This override also avoids an exception that is thrown 
+		/// otherwise by the base <see cref="System.Xml.XmlRawWriter"/> 
+		/// being used internally.
+		/// </remarks>
+		protected override void Dispose(bool disposing)
+		{
+			Close();
+			//base.Dispose(disposing);
+		}
+
 		private static XPathDocument CreateDocument()
 		{
 			return (XPathDocument)defaultConstructor.Invoke(new object[0]);
