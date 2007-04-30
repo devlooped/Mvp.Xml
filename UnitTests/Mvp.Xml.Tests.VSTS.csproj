@@ -53,6 +53,7 @@
     </Compile>
     <Compile Include="Common\SingletonXPathNodeIteratorTests.cs" />
     <Compile Include="Common\SubtreeeXPathNavigatorTests\Tests.cs" />
+    <Compile Include="Common\TestFixtureBase.cs" />
     <Compile Include="Common\UpperLowerTests\Customer.cs">
       <DependentUpon>Customer.xsd</DependentUpon>
     </Compile>
@@ -62,6 +63,7 @@
     <Compile Include="Common\XmlFragments\Tests.cs" />
     <Compile Include="Common\XmlNodeFactoryTests.cs" />
     <Compile Include="Common\XmlNodeListFactoryTests.cs" />
+    <Compile Include="Common\XmlNormalizingReaderFixture.cs" />
     <Compile Include="Common\XmlSerializerCacheTests\PerfCounterManagerTests.cs" />
     <Compile Include="Common\XmlSerializerCacheTests\PerfCounterTests.cs" />
     <Compile Include="Common\XmlSerializerCacheTests\StringSorterHelperTests.cs" />
