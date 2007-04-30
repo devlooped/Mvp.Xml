@@ -48,7 +48,13 @@ namespace Mvp.Xml.Common
 		/// <summary>
 		/// See <see cref="XmlWriter.Dispose"/>.
 		/// </summary>
-		protected override void Dispose(bool disposing) { ((IDisposable)this.baseWriter).Dispose(); }
+		protected override void Dispose(bool disposing)
+		{
+			if (WriteState != WriteState.Closed)
+				Close();
+
+			((IDisposable)this.baseWriter).Dispose();
+		}
 
 		/// <summary>
 		/// See <see cref="XmlWriter.Flush"/>.

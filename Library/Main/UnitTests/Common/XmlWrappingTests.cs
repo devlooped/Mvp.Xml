@@ -102,7 +102,5 @@ namespace Mvp.Xml.Tests
 				}
 			}
 		}
-
-
 	}
 }

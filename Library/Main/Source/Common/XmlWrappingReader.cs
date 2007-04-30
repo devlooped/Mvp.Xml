@@ -59,7 +59,15 @@ namespace Mvp.Xml.Common
 		/// <summary>
 		/// See <see cref="XmlReader.Dispose"/>.
 		/// </summary>
-		protected override void Dispose(bool disposing) { ((IDisposable)baseReader).Dispose(); }
+		protected override void Dispose(bool disposing)
+		{
+			if (this.ReadState != ReadState.Closed)
+			{
+				this.Close();
+			}
+
+			((IDisposable)baseReader).Dispose();
+		}
 
 		/// <summary>
 		/// See <see cref="XmlReader.Read"/>.
