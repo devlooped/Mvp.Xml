@@ -2,7 +2,7 @@ using System;
 using System.Xml;
 using System.Globalization;
 
-namespace Mvp.Xml.Core
+namespace Mvp.Xml
 {
 	/// <summary>
 	/// Represents a prefix, local name and matching logic 

@@ -1,7 +1,7 @@
 using System;
 using System.Xml;
 
-namespace Mvp.Xml.Core
+namespace Mvp.Xml
 {
 	public abstract class WrappingXmlReader : XmlReader, IXmlLineInfo
 	{
@@ -110,6 +110,9 @@ namespace Mvp.Xml.Core
 
 		public override int ReadValueChunk(char[] buffer, int index, int count) { return innerReader.ReadValueChunk(buffer, index, count); }
 
+		// Commented members do not need to be overriden, as they are implemented 
+		// in terms of the other overrides.
+
 		//public override bool HasAttributes { get { return innerReader.HasAttributes; } }
 
 		//public override bool IsStartElement() { return innerReader.IsStartElement(); }
@@ -125,7 +128,6 @@ namespace Mvp.Xml.Core
 		//public override int ReadContentAsBinHex(byte[] buffer, int index, int count) { return innerReader.ReadContentAsBinHex(buffer, index, count); }
 
 		//public override bool ReadContentAsBoolean() { return innerReader.ReadContentAsBoolean(); }
-
 
 		#region IXmlLineInfo Members
 

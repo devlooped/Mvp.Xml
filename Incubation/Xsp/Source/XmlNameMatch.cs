@@ -2,7 +2,7 @@ using System;
 using System.Xml;
 using System.Globalization;
 
-namespace Mvp.Xml.Core
+namespace Mvp.Xml
 {
 	/// <summary>
 	/// An XML name with optional prefix and local name that may contain 

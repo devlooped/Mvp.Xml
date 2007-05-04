@@ -2,7 +2,7 @@ using System;
 using System.Xml;
 using System.Globalization;
 
-namespace Mvp.Xml.Core
+namespace Mvp.Xml
 {
 	/// <summary>
 	/// A <see cref="XmlNameMatch"/> that only matches elements, optionally 
@@ -13,7 +13,7 @@ namespace Mvp.Xml.Core
 		MatchMode mode = MatchMode.Default;
 
 		/// <summary>
-		/// Constructs the <see cref="XmlName"/> with the given name and 
+		/// Constructs the <see cref="ElementMatch"/> with the given name and 
 		/// and no prefix.
 		/// </summary>
 		public ElementMatch(string name)
@@ -23,7 +23,7 @@ namespace Mvp.Xml.Core
 
 
 		/// <summary>
-		/// Constructs the <see cref="XmlName"/> with the given name and 
+		/// Constructs the <see cref="ElementMatch"/> with the given name and 
 		/// and no prefix.
 		/// </summary>
 		public ElementMatch(string name, MatchMode mode)
@@ -35,7 +35,7 @@ namespace Mvp.Xml.Core
 		}
 
 		/// <summary>
-		/// Constructs the <see cref="XmlName"/> with the given name and 
+		/// Constructs the <see cref="ElementMatch"/> with the given name and 
 		/// and no prefix.
 		/// </summary>
 		public ElementMatch(string prefix, string name)
@@ -44,7 +44,7 @@ namespace Mvp.Xml.Core
 		}
 
 		/// <summary>
-		/// Constructs the <see cref="XmlName"/> with the given name and prefix.
+		/// Constructs the <see cref="ElementMatch"/> with the given name and prefix.
 		/// </summary>
 		public ElementMatch(string prefix, string name, MatchMode mode)
 			: base(prefix, name)
@@ -58,14 +58,37 @@ namespace Mvp.Xml.Core
 
 			switch (mode)
 			{
-				case MatchMode.RootElement:
-					preCondition = reader.NodeType == XmlNodeType.Element && reader.Depth == 0;
-					break;
-				case MatchMode.RootEndElement:
-					preCondition = reader.NodeType == XmlNodeType.EndElement && reader.Depth == 0;
-					break;
-				case MatchMode.Element:
+				case MatchMode.StartElement:
 					preCondition = reader.NodeType == XmlNodeType.Element;
+					break;
+				case MatchMode.StartElementClosed:
+					if (reader.NodeType == XmlNodeType.Attribute)
+					{
+						string name = reader.LocalName;
+						string ns = reader.NamespaceURI;
+						if (reader.MoveToNextAttribute())
+						{
+							// If we moved, we didn't match and 
+							// we restore the cursor.
+							reader.MoveToAttribute(name, ns);
+							preCondition = false;
+						}
+						else
+						{
+							// We need to evaluate the element name/ns match from 
+							// the base here, moving to the element first
+							reader.MoveToElement();
+							preCondition = base.Matches(reader, resolver);
+							// Restore cursor always.
+							reader.MoveToAttribute(name, ns);
+							return preCondition;
+						}
+					}
+					else if (reader.NodeType == XmlNodeType.Element)
+					{
+						// Matches the same as StartElement if there are no attributes
+						preCondition = !reader.HasAttributes;
+					}
 					break;
 				case MatchMode.EndElement:
 					preCondition = reader.NodeType == XmlNodeType.EndElement;

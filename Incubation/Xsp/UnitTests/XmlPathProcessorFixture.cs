@@ -11,59 +11,60 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Xml;
+using System.IO;
 
-namespace Mvp.Xml.Core.UnitTests
+namespace Mvp.Xml.UnitTests
 {
 	[TestClass]
-	public class PathXmlProcessorFixture : TestFixtureBase
+	public class XmlPathProcessorFixture : TestFixtureBase
 	{
 		[ExpectedException(typeof(ArgumentNullException))]
 		[TestMethod]
 		public void ThrowsIfExpressionNull()
 		{
-			new PathXmlProcessor((string)null, delegate { }, new NameTable());
+			new XmlPathProcessor((string)null, delegate { }, new NameTable());
 		}
 
 		[ExpectedException(typeof(ArgumentNullException))]
 		[TestMethod]
 		public void ThrowsIfActionNull()
 		{
-			new PathXmlProcessor("/root", null, new NameTable());
+			new XmlPathProcessor("/root", null, new NameTable());
 		}
 
 		[ExpectedException(typeof(ArgumentNullException))]
 		[TestMethod]
 		public void ThrowsIfNameTableNull()
 		{
-			new PathXmlProcessor("/root", delegate { }, (XmlNameTable)null);
+			new XmlPathProcessor("/root", delegate { }, (XmlNameTable)null);
 		}
 
 		[ExpectedException(typeof(ArgumentNullException))]
 		[TestMethod]
 		public void ThrowsIfNamespaceManagerNull()
 		{
-			new PathXmlProcessor("/root", delegate { }, (XmlNamespaceManager)null);
+			new XmlPathProcessor("/root", delegate { }, (XmlNamespaceManager)null);
 		}
 
 		[ExpectedException(typeof(ArgumentNullException))]
 		[TestMethod]
 		public void ThrowsIfMatchListNull()
 		{
-			new PathXmlProcessor((IList<XmlMatch>)null, delegate {}, new NameTable());
+			new XmlPathProcessor((IList<XmlMatch>)null, delegate {}, new NameTable());
 		}
 
 		[ExpectedException(typeof(ArgumentException))]
 		[TestMethod]
 		public void ThrowsIfMatchListEmpty()
 		{
-			new PathXmlProcessor(new List<XmlMatch>(), delegate { }, new NameTable());
+			new XmlPathProcessor(new List<XmlMatch>(), delegate { }, new NameTable());
 		}
 
 		[TestMethod]
 		public void CanMatchRootElement()
 		{
 			List<XmlMatch> match = new List<XmlMatch>();
-			match.Add(new ElementMatch("root", MatchMode.Element | MatchMode.RootElement));
+			match.Add(new RootElementMatch("root", MatchMode.StartElement));
 			int matchCount = 0;
 
 			PerformMatch(match, "<root><foo><bar/></foo></root>", delegate { matchCount++; });
@@ -75,7 +76,7 @@ namespace Mvp.Xml.Core.UnitTests
 		public void CanMatchRootEndElement()
 		{
 			List<XmlMatch> match = new List<XmlMatch>();
-			match.Add(new ElementMatch("root", MatchMode.EndElement | MatchMode.RootElement));
+			match.Add(new RootElementMatch("root", MatchMode.EndElement));
 			int matchCount = 0;
 			
 			PerformMatch(match, "<root><foo><bar/></foo></root>", 
@@ -93,7 +94,7 @@ namespace Mvp.Xml.Core.UnitTests
 		public void CanMatchSubElement()
 		{
 			List<XmlMatch> match = new List<XmlMatch>();
-			match.Add(new ElementMatch("root", MatchMode.RootElement | MatchMode.Element));
+			match.Add(new RootElementMatch("root", MatchMode.StartElement));
 			match.Add(new ElementMatch("foo"));
 			int matchCount = 0;
 
@@ -106,7 +107,7 @@ namespace Mvp.Xml.Core.UnitTests
 		public void CanMatchSubElementWithPrefix()
 		{
 			List<XmlMatch> match = new List<XmlMatch>();
-			match.Add(new ElementMatch("root", MatchMode.RootElement | MatchMode.Element));
+			match.Add(new RootElementMatch("root", MatchMode.StartElement));
 			match.Add(new ElementMatch("p", "foo"));
 			int matchCount = 0;
 
@@ -119,7 +120,7 @@ namespace Mvp.Xml.Core.UnitTests
 		public void CanMatchSubElement2()
 		{
 			List<XmlMatch> match = new List<XmlMatch>();
-			match.Add(new ElementMatch("root", MatchMode.RootElement));
+			match.Add(new RootElementMatch("root"));
 			match.Add(new ElementMatch("foo"));
 			int matchCount = 0;
 
@@ -140,7 +141,7 @@ namespace Mvp.Xml.Core.UnitTests
 		public void CanMatchEmptySubElement()
 		{
 			List<XmlMatch> match = new List<XmlMatch>();
-			match.Add(new ElementMatch("root", MatchMode.RootElement));
+			match.Add(new RootElementMatch("root"));
 			match.Add(new ElementMatch("foo"));
 			int matchCount = 0;
 
@@ -160,7 +161,7 @@ namespace Mvp.Xml.Core.UnitTests
 		public void RootDoesNotMatchAnywhere()
 		{
 			List<XmlMatch> match = new List<XmlMatch>();
-			match.Add(new ElementMatch("root", MatchMode.RootElement));
+			match.Add(new RootElementMatch("root"));
 			match.Add(new ElementMatch("foo"));
 			int matchCount = 0;
 
@@ -304,12 +305,39 @@ namespace Mvp.Xml.Core.UnitTests
 		}
 
 		[TestMethod]
+		public void MatchSectionCount()
+		{
+			List<XmlMatch> match = PathExpressionParser.Parse("/configuration/configSections/section");
+
+			int matchCount = 0;
+
+			string xml = @"
+<configuration>
+  <configSections>
+    <section name='foo' />
+    <section name='bar' />
+  </configSections>
+</configuration>";
+
+			XmlReaderSettings set = new XmlReaderSettings();
+			set.IgnoreWhitespace = true;
+			XmlProcessorReader reader = new XmlProcessorReader(XmlReader.Create(new StringReader(xml)));
+			reader.Processors.Add(new XmlPathProcessor(match,
+				delegate { matchCount++; },
+				reader.NameTable));
+
+			reader.ReadToEnd();
+
+			Assert.AreEqual(2, matchCount);
+		}
+
+		[TestMethod]
 		public void MatchingResumesOnWrongSibling()
 		{
 			List<XmlMatch> match = new List<XmlMatch>();
-			match.Add(new ElementMatch("foo", MatchMode.Element));
-			match.Add(new ElementMatch("bar", MatchMode.Element));
-			match.Add(new ElementMatch("foo", MatchMode.Element));
+			match.Add(new ElementMatch("foo", MatchMode.StartElement));
+			match.Add(new ElementMatch("bar", MatchMode.StartElement));
+			match.Add(new ElementMatch("foo", MatchMode.StartElement));
 			int matchCount = 0;
 
 			PerformMatch(match, @"
@@ -354,15 +382,15 @@ namespace Mvp.Xml.Core.UnitTests
 			//    Do(action).
 			//    Otherwise(action);
 			
-			reader.Processors.Add(new PathXmlProcessor("//section", delegate { sectionCount++; }, reader.NameTable));
-			reader.Processors.Add(new PathXmlProcessor("/configuration/configSections/section", delegate { topLevelSectionCount++; }, reader.NameTable));
-			reader.Processors.Add(new PathXmlProcessor("//*/@type", delegate { typeCount++; }, reader.NameTable));
-			reader.Processors.Add(new PathXmlProcessor("@type", delegate { typeAttrCount++; }, reader.NameTable));
-			reader.Processors.Add(new PathXmlProcessor("//add", delegate { addCount++; }, reader.NameTable));
+			reader.Processors.Add(new XmlPathProcessor("//section", delegate { sectionCount++; }, reader.NameTable));
+			reader.Processors.Add(new XmlPathProcessor("/configuration/configSections/section", delegate { topLevelSectionCount++; }, reader.NameTable));
+			reader.Processors.Add(new XmlPathProcessor("//*/@type", delegate { typeCount++; }, reader.NameTable));
+			reader.Processors.Add(new XmlPathProcessor("@type", delegate { typeAttrCount++; }, reader.NameTable));
+			reader.Processors.Add(new XmlPathProcessor("//add", delegate { addCount++; }, reader.NameTable));
 
 			XmlNamespaceManager mgr = new XmlNamespaceManager(reader.NameTable);
 			mgr.AddNamespace("r", "urn:schemas-microsoft-com:asm.v1");
-			reader.Processors.Add(new PathXmlProcessor("/configuration/runtime/r:assemblyBinding/r:dependentAssembly", delegate { dependentAssemblyCount++; }, mgr));
+			reader.Processors.Add(new XmlPathProcessor("/configuration/runtime/r:assemblyBinding/r:dependentAssembly", delegate { dependentAssemblyCount++; }, mgr));
 
 			reader.ReadToEnd();
 
@@ -401,7 +429,7 @@ namespace Mvp.Xml.Core.UnitTests
 		private void PerformMatch(List<XmlMatch> matchList, string xml, Action<XmlReader> action)
 		{
 			XmlReader reader = GetReader(xml);
-			PathXmlProcessor processor = new PathXmlProcessor(matchList, action, reader.NameTable);
+			XmlPathProcessor processor = new XmlPathProcessor(matchList, action, reader.NameTable);
 
 			while (reader.Read())
 			{

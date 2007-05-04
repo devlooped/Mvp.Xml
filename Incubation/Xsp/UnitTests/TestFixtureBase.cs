@@ -5,7 +5,7 @@ using System.Diagnostics;
 using System.Xml;
 using System.IO;
 
-namespace Mvp.Xml.Core.UnitTests
+namespace Mvp.Xml.UnitTests
 {
 	public abstract class TestFixtureBase
 	{

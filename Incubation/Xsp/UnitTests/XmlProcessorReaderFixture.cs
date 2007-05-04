@@ -13,7 +13,7 @@ using System.Text;
 using System.Xml;
 using System.IO;
 
-namespace Mvp.Xml.Core.UnitTests
+namespace Mvp.Xml.UnitTests
 {
 	[TestClass]
 	public class XmlProcessorReaderFixture : TestFixtureBase
@@ -141,22 +141,10 @@ namespace Mvp.Xml.Core.UnitTests
 		}
 
 		[TestMethod]
-		public void ShouldNotReportFullEndElementByDefault()
+		public void AllwaysReportFullEndElements()
 		{
 			string xml = "<root/>";
 			XmlProcessorReader reader = new XmlProcessorReader(GetReader(xml));
-			string output = ReadToEnd(reader);
-
-			WriteIfDebugging(output);
-
-			Assert.AreEqual(xml, output);
-		}
-
-		[TestMethod]
-		public void ShouldReportFullEndElementIfSpecified()
-		{
-			string xml = "<root/>";
-			XmlProcessorReader reader = new XmlProcessorReader(GetReader(xml), true);
 			string output = ReadToEnd(reader);
 
 			WriteIfDebugging(output);
@@ -166,7 +154,6 @@ namespace Mvp.Xml.Core.UnitTests
 
 		// Can add predicate and action
 		// 
-
 		class MockProcessor : XmlProcessor
 		{
 			public int Calls;

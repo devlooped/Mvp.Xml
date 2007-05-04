@@ -4,15 +4,14 @@ using System.Text;
 using System.Xml;
 using System.Globalization;
 
-namespace Mvp.Xml.Core
+namespace Mvp.Xml
 {
-	public class PathXmlProcessor : PredicateActionXmlProcessor
+	public class XmlPathProcessor : PredicateActionXmlProcessor
 	{
 		string xmlNsNamespace;
 		XmlNamespaceManager nsManager;
 		Stack<NamespaceScope> elementScopes = new Stack<NamespaceScope>();
 		IList<XmlMatch> matchList;
-		//XmlMatch attributeMatch;
 
 		int currentPosition = 0;
 		int currentDepth = -1;
@@ -20,32 +19,38 @@ namespace Mvp.Xml.Core
 
 		#region Ctors
 
-		public PathXmlProcessor(string pathExpression, Action<XmlReader> action, XmlNameTable readerNameTable)
-			: this(PathExpressionParser.Parse(pathExpression, false), action, readerNameTable)
+		public XmlPathProcessor(string pathExpression, Action<XmlReader> action,
+			XmlNameTable readerNameTable)
+			: this(PathExpressionParser.Parse(pathExpression), action, readerNameTable)
 		{
 		}
 
-		public PathXmlProcessor(string pathExpression, Action<XmlReader> action, XmlNamespaceManager nsManager)
-			: this(PathExpressionParser.Parse(pathExpression, false), action, nsManager)
+		public XmlPathProcessor(string pathExpression, Action<XmlReader> action,
+			XmlNamespaceManager nsManager)
+			: this(PathExpressionParser.Parse(pathExpression), action, nsManager)
 		{
 		}
 
-		public PathXmlProcessor(string pathExpression, bool matchEndElement, Action<XmlReader> action, XmlNameTable readerNameTable)
-			: this(PathExpressionParser.Parse(pathExpression, matchEndElement), action, readerNameTable)
+		public XmlPathProcessor(string pathExpression, MatchMode matchMode,
+			Action<XmlReader> action, XmlNameTable readerNameTable)
+			: this(PathExpressionParser.Parse(pathExpression, matchMode), action, readerNameTable)
 		{
 		}
 
-		public PathXmlProcessor(string pathExpression, bool matchEndElement, Action<XmlReader> action, XmlNamespaceManager nsManager)
-			: this(PathExpressionParser.Parse(pathExpression, matchEndElement), action, nsManager)
+		public XmlPathProcessor(string pathExpression, MatchMode matchMode,
+			Action<XmlReader> action, XmlNamespaceManager nsManager)
+			: this(PathExpressionParser.Parse(pathExpression, matchMode), action, nsManager)
 		{
 		}
 
-		public PathXmlProcessor(IList<XmlMatch> matchList, Action<XmlReader> action, XmlNamespaceManager nsManager)
+		public XmlPathProcessor(IList<XmlMatch> matchList, Action<XmlReader> action,
+			XmlNamespaceManager nsManager)
 		{
 			Initialize(matchList, action, nsManager);
 		}
 
-		public PathXmlProcessor(IList<XmlMatch> matchList, Action<XmlReader> action, XmlNameTable readerNameTable)
+		public XmlPathProcessor(IList<XmlMatch> matchList, Action<XmlReader> action,
+			XmlNameTable readerNameTable)
 		{
 			Guard.ArgumentNotNull(readerNameTable, "readerNameTable");
 
@@ -54,7 +59,9 @@ namespace Mvp.Xml.Core
 
 		#endregion
 
-		private void Initialize(IList<XmlMatch> matchList, Action<XmlReader> action, XmlNamespaceManager nsManager)
+		private void Initialize(IList<XmlMatch> matchList,
+			Action<XmlReader> action,
+			XmlNamespaceManager nsManager)
 		{
 			Guard.ArgumentNotNull(matchList, "matchList");
 			Guard.ArgumentNotNull(action, "action");
@@ -64,13 +71,6 @@ namespace Mvp.Xml.Core
 
 			this.nsManager = nsManager;
 			this.matchList = matchList;
-			// Remove the attribute match from the list, so that 
-			// all depth logic works against elements only.
-			//if (matchList[matchList.Count - 1] is AttributeMatch)
-			//{
-			//    attributeMatch = matchList[matchList.Count - 1];
-			//    matchList.Remove(attributeMatch);
-			//}
 
 			xmlNsNamespace = nsManager.NameTable.Add("http://www.w3.org/2000/xmlns/");
 
@@ -186,8 +186,6 @@ namespace Mvp.Xml.Core
 			int lastPosition = currentPosition;
 			SaveCurrentState(reader);
 
-			//if (currentDepth < lastDepth) DecrementOrPop();
-
 			bool shouldPushLevelIfNoMatch = !ResetMatchListIfFull(lastDepth);
 			bool match = Evaluate(matchIndexes.Peek() + 1, reader);
 			bool result = false;
@@ -197,18 +195,7 @@ namespace Mvp.Xml.Core
 				matchIndexes.Push(matchIndexes.Pop() + 1);
 				if (matchIndexes.Peek() == matchList.Count - 1)
 				{
-					//if (attributeMatch != null)
-					//{
-					//    for (bool go = reader.MoveToFirstAttribute(); go; go = reader.MoveToNextAttribute())
-					//    {
-					//        result = attributeMatch.Matches(reader, nsManager);
-					//        if (result) break;
-					//    }
-					//}
-					//else
-					//{
-						result = true;
-					//}
+					result = true;
 				}
 			}
 			else

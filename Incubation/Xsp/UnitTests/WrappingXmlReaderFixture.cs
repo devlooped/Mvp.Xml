@@ -13,7 +13,7 @@ using System.Text;
 using System.Xml;
 using System.IO;
 
-namespace Mvp.Xml.Core.UnitTests
+namespace Mvp.Xml.UnitTests
 {
 	[TestClass]
 	public class WrappingXmlReaderFixture : TestFixtureBase

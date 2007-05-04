@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<customers xmlns="http://clariusconsulting.net/schemas/crm">
+<customers xmlns="http://www.codeplex.com/mvpxml">
 	<customer id="1">
 		<firstName>Daniel</firstName>
 		<lastName>Cazzulino</lastName>

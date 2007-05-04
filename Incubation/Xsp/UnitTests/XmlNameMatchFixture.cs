@@ -12,7 +12,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Xml;
 
-namespace Mvp.Xml.Core.UnitTests
+namespace Mvp.Xml.UnitTests
 {
 	[TestClass]
 	public class XmlNameMatchFixture : TestFixtureBase

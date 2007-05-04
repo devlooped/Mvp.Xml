@@ -12,7 +12,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Xml;
 
-namespace Mvp.Xml.Core.UnitTests
+namespace Mvp.Xml.UnitTests
 {
 	[TestClass]
 	public class PathExpressionParserFixture : TestFixtureBase
@@ -62,8 +62,7 @@ namespace Mvp.Xml.Core.UnitTests
 			List<XmlMatch> names = PathExpressionParser.Parse("/foo:bar");
 
 			Assert.AreEqual(1, names.Count);
-			Assert.IsTrue(names[0] is ElementMatch);
-			Assert.IsTrue(((ElementMatch)names[0]).Mode == MatchMode.RootElement);
+			Assert.IsTrue(names[0] is RootElementMatch);
 		}
 
 		[TestMethod]
@@ -73,7 +72,7 @@ namespace Mvp.Xml.Core.UnitTests
 
 			Assert.AreEqual(1, names.Count);
 			Assert.IsTrue(names[0] is ElementMatch);
-			Assert.IsTrue(((ElementMatch)names[0]).Mode == MatchMode.Element);
+			Assert.IsTrue(((ElementMatch)names[0]).Mode == MatchMode.StartElement);
 		}
 
 		[TestMethod]
@@ -138,7 +137,7 @@ namespace Mvp.Xml.Core.UnitTests
 		[TestMethod]
 		public void ShouldParseEndElementMode()
 		{
-			List<XmlMatch> names = PathExpressionParser.Parse("foo:bar", true);
+			List<XmlMatch> names = PathExpressionParser.Parse("foo:bar", MatchMode.EndElement);
 
 			Assert.AreEqual(1, names.Count);
 			Assert.IsTrue(names[0] is ElementMatch);
@@ -146,32 +145,22 @@ namespace Mvp.Xml.Core.UnitTests
 		}
 
 		[TestMethod]
-		public void ShouldParseRootEndElementMode()
-		{
-			List<XmlMatch> names = PathExpressionParser.Parse("/foo:bar", true);
-
-			Assert.AreEqual(1, names.Count);
-			Assert.IsTrue(names[0] is ElementMatch);
-			Assert.IsTrue(((ElementMatch)names[0]).Mode == MatchMode.RootEndElement);
-		}
-
-		[TestMethod]
 		public void ShouldParseLastElementAsEndElement()
 		{
-			List<XmlMatch> names = PathExpressionParser.Parse("foo/bar", true);
+			List<XmlMatch> names = PathExpressionParser.Parse("foo/bar", MatchMode.EndElement);
 
 			Assert.AreEqual(2, names.Count);
-			Assert.AreEqual(MatchMode.Element, ((ElementMatch)names[0]).Mode);
+			Assert.AreEqual(MatchMode.StartElement, ((ElementMatch)names[0]).Mode);
 			Assert.AreEqual(MatchMode.EndElement, ((ElementMatch)names[1]).Mode);
 		}
 
 		[TestMethod]
 		public void ShouldParseLastElementAsEndElementWithRootStart()
 		{
-			List<XmlMatch> names = PathExpressionParser.Parse("/foo/bar", true);
+			List<XmlMatch> names = PathExpressionParser.Parse("/foo/bar", MatchMode.EndElement);
 
 			Assert.AreEqual(2, names.Count);
-			Assert.AreEqual(MatchMode.RootElement, ((ElementMatch)names[0]).Mode);
+			Assert.IsTrue(names[0] is RootElementMatch);
 			Assert.AreEqual(MatchMode.EndElement, ((ElementMatch)names[1]).Mode);
 		}
 
@@ -181,7 +170,7 @@ namespace Mvp.Xml.Core.UnitTests
 			List<XmlMatch> names = PathExpressionParser.Parse("/foo/bar/@id");
 
 			Assert.AreEqual(2, names.Count);
-			Assert.AreEqual(MatchMode.RootElement, ((ElementMatch)names[0]).Mode);
+			Assert.IsTrue(names[0] is RootElementMatch);
 			Assert.IsTrue(names[1] is ElementAttributeMatch);
 		}
 
@@ -189,7 +178,7 @@ namespace Mvp.Xml.Core.UnitTests
 		[TestMethod]
 		public void ThrowsIfEndElementModeAndAttributeSpecified()
 		{
-			List<XmlMatch> names = PathExpressionParser.Parse("/foo/bar/@id", true);
+			List<XmlMatch> names = PathExpressionParser.Parse("/foo/bar/@id", MatchMode.EndElement);
 		}
 
 		[ExpectedException(typeof(ArgumentException))]

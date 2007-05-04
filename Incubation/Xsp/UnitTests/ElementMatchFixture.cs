@@ -12,43 +12,46 @@ using System.Collections.Generic;
 using System.Text;
 using System.Xml;
 
-namespace Mvp.Xml.Core.UnitTests
+namespace Mvp.Xml.UnitTests
 {
 	[TestClass]
 	public class ElementMatchFixture : TestFixtureBase
 	{
 		[TestMethod]
-		public void ShouldMatchRootElement()
-		{
-			XmlReader reader = GetReader("<root/>");
-			ElementMatch match = new ElementMatch("root", MatchMode.RootElement);
-
-			reader.MoveToContent();
-
-			Assert.IsTrue(match.Matches(reader, null));
-		}
-
-		[TestMethod]
-		public void ShouldMatchRootEndElement()
-		{
-			XmlReader reader = GetReader("<root></root>");
-			ElementMatch match = new ElementMatch("root", MatchMode.RootEndElement);
-
-			reader.MoveToContent();
-			reader.Read();
-
-			Assert.IsTrue(match.Matches(reader, null));
-		}
-
-		[TestMethod]
 		public void ShouldMatchElement()
 		{
 			XmlReader reader = GetReader("<root><foo></foo></root>");
-			ElementMatch match = new ElementMatch("foo", MatchMode.Element);
+			ElementMatch match = new ElementMatch("foo", MatchMode.StartElement);
 
 			reader.MoveToContent();
 			reader.Read();
 
+			Assert.IsTrue(match.Matches(reader, null));
+		}
+
+		[TestMethod]
+		public void ShouldMatchStartElementCloseIfNoAttributes()
+		{
+			XmlReader reader = GetReader("<root></root>");
+			ElementMatch match = new ElementMatch("root", MatchMode.StartElementClosed);
+
+			reader.MoveToContent();
+
+			Assert.IsTrue(match.Matches(reader, null));
+		}
+
+		[TestMethod]
+		public void ShouldMatchStartElementCloseOnLastAttribute()
+		{
+			XmlReader reader = GetReader("<root id='1' title='foo'></root>");
+			ElementMatch match = new ElementMatch("root", MatchMode.StartElementClosed);
+
+			reader.MoveToContent();
+
+			Assert.IsFalse(match.Matches(reader, null));
+			reader.MoveToFirstAttribute();
+			Assert.IsFalse(match.Matches(reader, null));
+			reader.MoveToNextAttribute();
 			Assert.IsTrue(match.Matches(reader, null));
 		}
 
@@ -69,7 +72,7 @@ namespace Mvp.Xml.Core.UnitTests
 		public void ShouldMatchElementForRootToo()
 		{
 			XmlReader reader = GetReader("<root/>");
-			ElementMatch match = new ElementMatch("root", MatchMode.Element);
+			ElementMatch match = new ElementMatch("root", MatchMode.StartElement);
 
 			reader.MoveToContent();
 
