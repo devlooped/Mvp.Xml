@@ -402,6 +402,7 @@ namespace Mvp.Xml.XInclude.Test
                 {
                     Assert.IsTrue(xir.AttributeCount == 1);
                     Assert.IsTrue(xir.GetAttribute(0).EndsWith("disclaimer.xml"));
+                    Assert.IsTrue(xir[0].EndsWith("disclaimer.xml"));
                 }
             }
         }
@@ -410,17 +411,51 @@ namespace Mvp.Xml.XInclude.Test
         public void GetAttributeTest2()
         {
             XIncludingReader xir = new XIncludingReader("../../XInclude/tests/document2.xml");
+            xir.MakeRelativeBaseUri = false;
+            while (xir.Read())
+            {
+                if (xir.NodeType == XmlNodeType.Element && xir.Name == "disclaimer")
+                {
+                    Assert.IsTrue(xir.AttributeCount == 1);                    
+                    Assert.IsTrue(xir.GetAttribute(0).EndsWith("tests/disclaimerWithXmlBase.xml"));
+                    Assert.IsTrue(xir[0].EndsWith("tests/disclaimerWithXmlBase.xml"));
+                }
+            }
+        }
+
+        [TestMethod]
+        public void GetAttributeTest3()
+        {
+            XIncludingReader xir = new XIncludingReader("../../XInclude/tests/document.xml");
             while (xir.Read())
             {
                 if (xir.NodeType == XmlNodeType.Element && xir.Name == "disclaimer")
                 {
                     Assert.IsTrue(xir.AttributeCount == 1);
-                    Console.WriteLine(xir.GetAttribute(0));
-                    Assert.IsTrue(xir.GetAttribute(0).EndsWith("disclaimer.xml"));
+                    xir.MoveToAttribute(0);
+                    Assert.IsTrue(xir.Name == "xml:base");
+                    Assert.IsTrue(xir.Value.EndsWith("disclaimer.xml"));
                 }
             }
         }
 
+        [TestMethod]
+        public void GetAttributeTest4()
+        {
+            XIncludingReader xir = new XIncludingReader("../../XInclude/tests/document2.xml");
+            xir.MakeRelativeBaseUri = false;
+            while (xir.Read())
+            {
+                if (xir.NodeType == XmlNodeType.Element && xir.Name == "disclaimer")
+                {
+                    Assert.IsTrue(xir.AttributeCount == 1);
+                    xir.MoveToAttribute(0);
+                    Console.WriteLine(xir.Value);
+                    Assert.IsTrue(xir.Name == "xml:base");
+                    Assert.IsTrue(xir.Value.EndsWith("tests/disclaimerWithXmlBase.xml"));                                        
+                }
+            }
+        }
     }
     
     public class TestResolver : XmlUrlResolver 

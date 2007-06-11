@@ -65,7 +65,9 @@ namespace Mvp.Xml.XInclude
 		//Top-level included item has different xml:lang
 		private bool _differentLang = false;
 		//Acquired infosets cache
-		private static IDictionary<string, WeakReference> _cache;        
+		private static IDictionary<string, WeakReference> _cache;
+        //Real xml:base attribute index
+        int _realXmlBaseIndex = -1;        
 		#endregion
 
 		#region Constructors
@@ -432,22 +434,28 @@ namespace Mvp.Xml.XInclude
             {
                 int ac = _reader.AttributeCount;
                 if (i < ac)
-                {                                                      
-                    //case 1: it's real attribute and it's not xml:base or xml:lang
-                    return _reader.GetAttribute(i);
-                    //case 2: it's real xml:base
-                    //case 3: it's real xml:lang
+                {
+                    if (i == _realXmlBaseIndex)
+                    {
+                        //case 1: it's real xml:base
+                        return GetBaseUri();
+                    }
+                    else
+                    {
+                        //case 2: it's real attribute and it's not xml:base
+                        return _reader.GetAttribute(i);                     
+                    }
                 }
                 else
                 {
                     if (i == ac)
                     {
-                        //case 4: it's virtual xml:base - it comes first
-                        return _reader.BaseURI;
+                        //case 3: it's virtual xml:base - it comes first
+                        return GetBaseUri();
                     }
                     else
                     {
-                        //case 5: it's virtual xml:lang - it comes last
+                        //case 4: it's virtual xml:lang - it comes last
                         return _reader.XmlLang;
                     }
                 }                                                               
@@ -456,17 +464,17 @@ namespace Mvp.Xml.XInclude
             {
                 return _reader.GetAttribute(i);
             }
-		}
+		}       
 
 		/// <summary>See <see cref="XmlReader.GetAttribute(string)"/></summary>
 		public override string GetAttribute(string name)
 		{
 			if (_topLevel)
 			{
-				if (XIncludeKeywords.Equals(name, _keywords.XmlBase))
-					return _reader.BaseURI;
-				else if (XIncludeKeywords.Equals(name, _keywords.XmlLang))
-					return _reader.XmlLang;
+                if (XIncludeKeywords.Equals(name, _keywords.XmlBase))
+                    return GetBaseUri();
+                else if (XIncludeKeywords.Equals(name, _keywords.XmlLang))
+                    return _reader.XmlLang;
 			}
 			return _reader.GetAttribute(name);
 		}
@@ -476,12 +484,12 @@ namespace Mvp.Xml.XInclude
 		{
 			if (_topLevel)
 			{
-				if (XIncludeKeywords.Equals(name, _keywords.Base) &&
-					XIncludeKeywords.Equals(namespaceURI, _keywords.XmlNamespace))
-					return _reader.BaseURI;
-				else if (XIncludeKeywords.Equals(name, _keywords.Lang) &&
-					XIncludeKeywords.Equals(namespaceURI, _keywords.XmlNamespace))
-					return _reader.XmlLang;
+                if (XIncludeKeywords.Equals(name, _keywords.Base) &&
+                    XIncludeKeywords.Equals(namespaceURI, _keywords.XmlNamespace))
+                    return GetBaseUri();
+                else if (XIncludeKeywords.Equals(name, _keywords.Lang) &&
+                    XIncludeKeywords.Equals(namespaceURI, _keywords.XmlNamespace))
+                    return _reader.XmlLang;
 			}
 			return _reader.GetAttribute(name, namespaceURI);
 		}
@@ -501,7 +509,21 @@ namespace Mvp.Xml.XInclude
 		/// <summary>See <see cref="XmlReader.MoveToAttribute(int)"/></summary>
 		public override void MoveToAttribute(int i)
 		{
-			_reader.MoveToAttribute(i);
+            if (_topLevel)
+            {                
+                if (i >= _reader.AttributeCount || i == _realXmlBaseIndex)
+                {
+                    _state = XIncludingReaderState.ExposingXmlBaseAttr;
+                }
+                else
+                {
+                    _reader.MoveToAttribute(i);
+                }                
+            }
+            else
+            {
+                _reader.MoveToAttribute(i);
+            }
 		}
 
 		/// <summary>See <see cref="XmlReader.MoveToAttribute(string)"/></summary>
@@ -701,17 +723,7 @@ namespace Mvp.Xml.XInclude
 				{
 					case XIncludingReaderState.ExposingXmlBaseAttr:
 					case XIncludingReaderState.ExposingXmlBaseAttrValue:
-						if (_reader.BaseURI == String.Empty)
-						{
-							return String.Empty;
-						}
-						if (_relativeBaseUri)
-						{
-							Uri baseUri = new Uri(_reader.BaseURI);
-							return _topBaseUri.MakeRelativeUri(baseUri).ToString();
-						}
-						else
-							return _reader.BaseURI;
+                        return GetBaseUri();
 					case XIncludingReaderState.ExposingXmlLangAttr:
 					case XIncludingReaderState.ExposingXmlLangAttrValue:
 						return _reader.XmlLang;
@@ -727,7 +739,7 @@ namespace Mvp.Xml.XInclude
 			switch (_state)
 			{
 				case XIncludingReaderState.ExposingXmlBaseAttr:
-					return _reader.BaseURI;
+                    return GetBaseUri();
 				case XIncludingReaderState.ExposingXmlBaseAttrValue:
 					return String.Empty;
 				case XIncludingReaderState.ExposingXmlLangAttr:
@@ -798,7 +810,7 @@ namespace Mvp.Xml.XInclude
 				case XIncludingReaderState.ExposingXmlBaseAttr:
 					return String.Empty;
 				case XIncludingReaderState.ExposingXmlBaseAttrValue:
-					return _reader.BaseURI;
+                    return GetBaseUri();
 				case XIncludingReaderState.ExposingXmlLangAttr:
 					return String.Empty;
 				case XIncludingReaderState.ExposingXmlLangAttrValue:
@@ -817,13 +829,11 @@ namespace Mvp.Xml.XInclude
 			{
 				//If we are including and including reader is at 0 depth - 
 				//we are at a top level included item
-				_topLevel = (_readers.Count > 0 && _reader.Depth == 0) ? true : false;
-				//Check if included item has different language
-				if (_topLevel)
-					_differentLang = AreDifferentLangs(_reader.XmlLang, ((XmlReader)_readers.Peek()).XmlLang);
+				_topLevel = (_readers.Count > 0 && _reader.Depth == 0) ? true : false;				                
 				if (_topLevel && _reader.NodeType == XmlNodeType.Attribute)
 					//Attempt to include an attribute or namespace node
 					throw new AttributeOrNamespaceInIncludeLocationError(Properties.Resources.AttributeOrNamespaceInIncludeLocationError);
+
 				if (_topLevel && ((XmlReader)_readers.Peek()).Depth == 0 &&
 					_reader.NodeType == XmlNodeType.Element)
 				{
@@ -833,7 +843,27 @@ namespace Mvp.Xml.XInclude
 					else
 						_gotTopIncludedElem = true;
 				}
-
+                if (_topLevel)
+                {
+                    //Check if included item has different language
+                    _differentLang = AreDifferentLangs(_reader.XmlLang, ((XmlReader)_readers.Peek()).XmlLang);
+                    if (_reader.NodeType == XmlNodeType.Element)
+                    {
+                        //Record real xml:base index
+                        _realXmlBaseIndex = -1;
+                        int i = 0;
+                        while (_reader.MoveToNextAttribute())
+                        {
+                            if (_reader.Name == _keywords.XmlBase)
+                            {
+                                _realXmlBaseIndex = i;
+                                break;
+                            }
+                            i++;
+                        }
+                        _reader.MoveToElement();
+                    }
+                }
 				switch (_reader.NodeType)
 				{
 					case XmlNodeType.XmlDeclaration:
@@ -1590,6 +1620,21 @@ namespace Mvp.Xml.XInclude
 					ThrowCircularInclusionError(_reader, url);
 			}
 		}
+
+        private string GetBaseUri()
+        {
+            if (_reader.BaseURI == String.Empty)
+            {
+                return String.Empty;
+            }
+            if (_relativeBaseUri)
+            {
+                Uri baseUri = new Uri(_reader.BaseURI);
+                return _topBaseUri.MakeRelativeUri(baseUri).ToString();
+            }
+            else
+                return _reader.BaseURI;   
+        }
 
 		#endregion
 	}
