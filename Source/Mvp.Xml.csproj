@@ -157,22 +157,20 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent Condition="$(Configuration)=='Release'">
-			@echo ########### Mvp.Xml Custom Build Event has started
-			@echo ########### Setting environment variables
-			call "$(DevEnvDir)..\Tools\vsvars32.bat"
-			@echo ########### Disassembling...
-			ildasm "$(TargetFileName)" /out=Mvp.Xml.il /nobar
-			@echo ########### Renaming EXSLT methods...
-			"$(ProjectDir)..\..\Tools\Bin\MethodRenamer.exe" Mvp.Xml.il Mvp.Xml.Fixed.il
-			@echo ########### Assembling library back...
-			ilasm Mvp.Xml.Fixed.il /RESOURCE=Mvp.Xml.res /DLL /OUTPUT="$(TargetFileName)" /KEY=../../../../../Mvp-Xml.Net20.Public.snk
-			@echo ########### Cleaning...
-			del Mvp.Xml.res
-			del Mvp.Xml.il
-			del Mvp.Xml.Fixed.il
-			del *.resources
-			@echo ########### Mvp.Xml Custom Build Event has finished
-		</PostBuildEvent>
+    <PostBuildEvent>@echo ########### Mvp.Xml Custom Build Event has started
+@echo ########### Setting environment variables
+call "$(DevEnvDir)..\Tools\vsvars32.bat"
+@echo ########### Disassembing...
+ildasm "$(TargetFileName)" /out=Mvp.Xml.il /nobar /linenum 
+@echo ########### Renaming EXSLT methods... 
+"$(ProjectDir)../../Tools/bin/MethodRenamer.exe" Mvp.Xml.il Mvp.Xml.Fixed.il
+@echo ########### Assembling library back...
+ilasm Mvp.Xml.Fixed.il /RESOURCE=Mvp.Xml.res /DLL /PDB  /OUTPUT="$(TargetFileName)" /KEY=$(ProjectDir)../../../Mvp-Xml.Net20.Public.snk
+@echo ########### Cleaning...
+del Mvp.Xml.res
+del Mvp.Xml.il
+del Mvp.Xml.Fixed.il
+del *.resources
+@echo ########### Mvp.Xml Custom Build Event has finished</PostBuildEvent>
   </PropertyGroup>
 </Project>
