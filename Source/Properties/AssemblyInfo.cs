@@ -33,7 +33,7 @@ internal static partial class ThisAssembly
 	public const string Product = "Mvp.Xml";
 	public const string Company = "MVP XML Project";
 	public const string Copyright = "";
-	public const string VersionString = "2.2.0.0";
+	public const string VersionString = "2.3.0.0";
 
 	public static readonly Version Version = new Version(VersionString);
 	
