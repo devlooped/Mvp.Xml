@@ -51,10 +51,19 @@ namespace Mvp.Xml.Common.Xsl
 
     public class MvpXslTransform : IXmlTransform
     {
-        private XslCompiledTransform compiledTransform;
+        /// <summary>
+        /// Real transformation engine
+        /// </summary>
+        protected XslCompiledTransform compiledTransform;        
         private object sync = new object();
-        private ExsltFunctionNamespace supportedFunctions = ExsltFunctionNamespace.All;
-        private bool multiOutput;
+        /// <summary>
+        /// Supported EXSLT functions
+        /// </summary>
+        protected ExsltFunctionNamespace supportedFunctions = ExsltFunctionNamespace.All;
+        /// <summary>
+        /// Multioutput support flag
+        /// </summary>
+        protected bool multiOutput;
 
         #region ctors
 
@@ -331,17 +340,40 @@ namespace Mvp.Xml.Common.Xsl
             return r;
         }
 
+        /// <summary>
+        /// Transforms given <see cref="XmlInput"/> into <see cref="XmlReader"/>.
+        /// </summary>
+        /// <param name="input">Default input XML document</param>
+        /// <param name="arguments">An <see cref="XsltArgumentList"/> containing the namespace-qualified 
+        /// arguments used as input to the transform. This value can be a null reference (Nothing in Visual Basic).</param>
+        /// <param name="multiThread">Defines in which mode (multithreaded or singlethreaded)
+        /// this instance of XslReader will operate</param>
+        /// <param name="initialBufferSize">Initial buffer size (number of nodes, not bytes)</param>
+        public XmlReader Transform(XmlInput input, XsltArgumentList arguments, bool multiThread, int initialBufferSize)
+        {
+            XslReader r = new XslReader(this.compiledTransform, multiThread, initialBufferSize);
+            r.StartTransform(input, AddExsltExtensionObjectsSync(arguments));
+            return r;
+        }
+
         #endregion
 
         #region private stuff
-        private static XmlReaderSettings DefaultReaderSettings;
+        /// <summary>
+        /// Default XML Reader settings
+        /// </summary>
+        protected static XmlReaderSettings DefaultReaderSettings;
         static MvpXslTransform()
         {
             DefaultReaderSettings = new XmlReaderSettings();
             DefaultReaderSettings.ProhibitDtd = false;
         }
 
-        private XmlReaderSettings GetReaderSettings(XmlInput defaultDocument)
+        /// <summary>
+        /// Gets XML Reader settings (customized if there is custom XML resolver)
+        /// </summary>        
+        /// <returns></returns>
+        protected XmlReaderSettings GetReaderSettings(XmlInput defaultDocument)
         {
             if (defaultDocument.resolver is DefaultXmlResolver)
             {
@@ -355,7 +387,10 @@ namespace Mvp.Xml.Common.Xsl
             }
         }
 
-        private void TransformToWriter(XmlInput defaultDocument, XsltArgumentList xsltArgs, XmlWriter xmlWriter)
+        /// <summary>
+        /// Transforms to XmlWriter.
+        /// </summary>        
+        protected void TransformToWriter(XmlInput defaultDocument, XsltArgumentList xsltArgs, XmlWriter xmlWriter)
         {
             XsltArgumentList args = AddExsltExtensionObjectsSync(xsltArgs);
             XmlReader xmlReader = defaultDocument.source as XmlReader;
@@ -407,7 +442,10 @@ namespace Mvp.Xml.Common.Xsl
             throw new Exception("Unexpected XmlInput");
         }
 
-        private void TransformIXPathNavigable(IXPathNavigable nav, XsltArgumentList args, XmlWriter xmlWriter, XmlResolver resolver)
+        /// <summary>
+        /// Transforms to IXPathNavigable.
+        /// </summary>        
+        protected void TransformIXPathNavigable(IXPathNavigable nav, XsltArgumentList args, XmlWriter xmlWriter, XmlResolver resolver)
         {
             object command = this.compiledTransform.GetType().GetField(
                 "command", BindingFlags.Instance | BindingFlags.NonPublic).GetValue(this.compiledTransform);
@@ -426,7 +464,7 @@ namespace Mvp.Xml.Common.Xsl
         /// <returns>An XsltArgumentList containing the contents of the list passed in 
         /// and objects that implement the EXSLT. </returns>
         /// <remarks>If null is passed in then a new XsltArgumentList is constructed. </remarks>
-        private XsltArgumentList AddExsltExtensionObjectsSync(XsltArgumentList list)
+        protected XsltArgumentList AddExsltExtensionObjectsSync(XsltArgumentList list)
         {
             lock (sync)
             {

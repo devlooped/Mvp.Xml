@@ -295,6 +295,6 @@ namespace ExsltTest
         public void DurationTest() 
         {
             RunAndCompare("source.xml", "duration.xslt", "duration.xml");
-        }
+        }        
     }
 }
