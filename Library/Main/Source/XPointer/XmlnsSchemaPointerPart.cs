@@ -86,9 +86,8 @@ namespace Mvp.Xml.XPointer
 			lexer.SkipWhiteSpace();
 			lexer.NextLexeme();
 			if (lexer.Kind != XPointerLexer.LexKind.Eq)
-			{
-				// TODO: missing resource string here. Check with Oleg.
-				//Debug.WriteLine(Properties.Resources.InvalidTokenInXmlnsSchemeWhileEqualsSignExpected);
+			{				
+				Debug.WriteLine(Properties.Resources.InvalidTokenInXmlnsSchemeWhileEqualsSignExpected);
 				return null;
 			}
 			lexer.SkipWhiteSpace();
