@@ -465,7 +465,7 @@ namespace Mvp.Xml.Common.Xsl
 					QName attName;
 					string attValue;
 					pipe.GetToken(i + 1, out attName, out attValue);
-					return value;
+					return attValue;
 				}
 			}
 			throw new ArgumentOutOfRangeException("i");
