@@ -747,21 +747,23 @@ namespace Mvp.Xml.Common.XPath
 				{
 					if (ni.Current.NodeType == XPathNodeType.Element)
 					{
+                        XPathNavigator tempNav = ni.Current.Clone();
 						//Processs namespace nodes
-						for (bool go = ni.Current.MoveToFirstNamespace(); go; go = ni.Current.MoveToNextNamespace())
+                        for (bool go = tempNav.MoveToFirstNamespace(); go; go = tempNav.MoveToNextNamespace())
 						{
 							foreach (XPathNavigatorIndex index in indexes.Values)
-								index.MatchNode(ni.Current);
+                                index.MatchNode(tempNav);
 						}
-						ni.Current.MoveToParent();
+						//ni.Current.MoveToParent();
 
+                        tempNav = ni.Current.Clone();
 						//process attributes
-						for (bool go = ni.Current.MoveToFirstAttribute(); go; go = ni.Current.MoveToNextAttribute())
+                        for (bool go = tempNav.MoveToFirstAttribute(); go; go = tempNav.MoveToNextAttribute())
 						{
 							foreach (XPathNavigatorIndex index in indexes.Values)
-								index.MatchNode(ni.Current);
+                                index.MatchNode(tempNav);
 						}
-						ni.Current.MoveToParent();
+						//ni.Current.MoveToParent();
 					}
 
 					foreach (XPathNavigatorIndex index in indexes.Values)
