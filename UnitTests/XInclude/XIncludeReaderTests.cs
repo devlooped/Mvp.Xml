@@ -392,6 +392,35 @@ namespace Mvp.Xml.XInclude.Test
 			RunAndCompare("../../XInclude/tests/loop.xml", "../../XInclude/results/loop.xml");            
         }
 
+        [TestMethod]
+        public void GetAttributeTest()
+        {
+            XIncludingReader xir = new XIncludingReader("../../XInclude/tests/document.xml");
+            while (xir.Read())
+            {
+                if (xir.NodeType == XmlNodeType.Element && xir.Name == "disclaimer")
+                {
+                    Assert.IsTrue(xir.AttributeCount == 1);
+                    Assert.IsTrue(xir.GetAttribute(0).EndsWith("disclaimer.xml"));
+                }
+            }
+        }
+
+        [TestMethod]
+        public void GetAttributeTest2()
+        {
+            XIncludingReader xir = new XIncludingReader("../../XInclude/tests/document2.xml");
+            while (xir.Read())
+            {
+                if (xir.NodeType == XmlNodeType.Element && xir.Name == "disclaimer")
+                {
+                    Assert.IsTrue(xir.AttributeCount == 1);
+                    Console.WriteLine(xir.GetAttribute(0));
+                    Assert.IsTrue(xir.GetAttribute(0).EndsWith("disclaimer.xml"));
+                }
+            }
+        }
+
     }
     
     public class TestResolver : XmlUrlResolver 

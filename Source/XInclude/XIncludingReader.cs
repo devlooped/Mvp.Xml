@@ -65,7 +65,7 @@ namespace Mvp.Xml.XInclude
 		//Top-level included item has different xml:lang
 		private bool _differentLang = false;
 		//Acquired infosets cache
-		private static IDictionary<string, WeakReference> _cache;
+		private static IDictionary<string, WeakReference> _cache;        
 		#endregion
 
 		#region Constructors
@@ -428,7 +428,34 @@ namespace Mvp.Xml.XInclude
 		/// <summary>See <see cref="XmlReader.GetAttribute(int)"/></summary>
 		public override string GetAttribute(int i)
 		{
-			return _reader.GetAttribute(i);
+            if (_topLevel)
+            {
+                int ac = _reader.AttributeCount;
+                if (i < ac)
+                {                                                      
+                    //case 1: it's real attribute and it's not xml:base or xml:lang
+                    return _reader.GetAttribute(i);
+                    //case 2: it's real xml:base
+                    //case 3: it's real xml:lang
+                }
+                else
+                {
+                    if (i == ac)
+                    {
+                        //case 4: it's virtual xml:base - it comes first
+                        return _reader.BaseURI;
+                    }
+                    else
+                    {
+                        //case 5: it's virtual xml:lang - it comes last
+                        return _reader.XmlLang;
+                    }
+                }                                                               
+            }
+            else
+            {
+                return _reader.GetAttribute(i);
+            }
 		}
 
 		/// <summary>See <see cref="XmlReader.GetAttribute(string)"/></summary>
