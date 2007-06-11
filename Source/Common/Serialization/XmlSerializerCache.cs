@@ -61,7 +61,7 @@ namespace Mvp.Xml.Common.Serialization
 		/// </summary>
 		private object SyncRoot;
 
-		private PerfCounterManager stats;
+        //private PerfCounterManager stats;
 
 		/// <summary>
 		/// Default constructor to initialize
@@ -70,7 +70,7 @@ namespace Mvp.Xml.Common.Serialization
 		public XmlSerializerCache()
 		{
 			SyncRoot = new object();
-			stats = new PerfCounterManager();
+            //stats = new PerfCounterManager();
 			Serializers = new Dictionary<string, System.Xml.Serialization.XmlSerializer>();
 		}
 
@@ -178,7 +178,7 @@ namespace Mvp.Xml.Common.Serialization
 				{
 					if (false == Serializers.ContainsKey(key))
 					{
-						stats.IncrementInstanceCount();
+                        //stats.IncrementInstanceCount();
 
 						serializer = new System.Xml.Serialization.XmlSerializer(type
 							, overrides
@@ -201,7 +201,7 @@ namespace Mvp.Xml.Common.Serialization
 			else
 			{
 				serializer = Serializers[key] as XmlSerializer;
-				stats.IncrementHitCount();
+                //stats.IncrementHitCount();
 				// Tell the listeners that we already 
 				// had a serializer that matched the attributes
 				if (null != CacheHit)
@@ -230,7 +230,7 @@ namespace Mvp.Xml.Common.Serialization
 		{
 			if (true == isDisposing)
 			{
-				stats.Dispose();
+                //stats.Dispose();
 			}
 		}
 
