@@ -77,19 +77,29 @@ namespace Mvp.Xml.XInclude
 		/// </summary>
 		/// <param name="reader">Underlying reader to read from</param>        
 		public XIncludingReader(XmlReader reader)
-		{
+		{            
 			XmlTextReader xtr = reader as XmlTextReader;
 			if (xtr != null)
 			{
-#pragma warning disable 0618
-				XmlValidatingReader vr = new XmlValidatingReader(reader);
-				vr.ValidationType = ValidationType.None;
-				vr.EntityHandling = EntityHandling.ExpandEntities;
-				vr.ValidationEventHandler += new ValidationEventHandler(
-					ValidationCallback);
-				_whiteSpaceHandling = xtr.WhitespaceHandling;
-				_reader = vr;
-#pragma warning restore 0618
+//#pragma warning disable 0618
+                //XmlValidatingReader vr = new XmlValidatingReader(reader);
+                //vr.ValidationType = ValidationType.None;
+                //vr.EntityHandling = EntityHandling.ExpandEntities;
+                //vr.ValidationEventHandler += new ValidationEventHandler(
+                //    ValidationCallback);
+                //_whiteSpaceHandling = xtr.WhitespaceHandling;
+                //_reader = vr;
+                XmlReaderSettings s = new XmlReaderSettings();
+                s.ProhibitDtd = false;
+                s.ValidationType = ValidationType.None;
+                s.ValidationEventHandler += new ValidationEventHandler(
+                    ValidationCallback);
+                if (xtr.WhitespaceHandling == WhitespaceHandling.Significant) 
+                {
+                    s.IgnoreWhitespace = true;
+                }
+                _reader = XmlReader.Create(reader, s);
+//#pragma warning restore 0618
 			}
 			else
 			{
