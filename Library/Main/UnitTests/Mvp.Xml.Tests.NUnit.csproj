@@ -786,6 +786,9 @@
     </Content>
     <Content Include="Common\XmlBaseAwareXmlReaderTests\relativeTest.xml" />
     <Content Include="Common\XmlBaseAwareXmlReaderTests\test.xml" />
+    <Content Include="Common\XslReaderTests\test2.xslt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="XInclude\tests\document2.xml" />
     <Content Include="XInclude\tests\disclaimerWithXmlBase.xml" />
     <Content Include="XInclude\tests\Document3.xml" />

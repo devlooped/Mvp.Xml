@@ -39,7 +39,7 @@ namespace Mvp.Xml.Tests.XslReaderTests
             s.ProhibitDtd = false;
             return XmlReader.Create(Globals.GetResource(xml), s);
         }
- 
+
         /// <summary>
         /// Compare with standard XmlReader test
         /// </summary>
@@ -96,7 +96,7 @@ namespace Mvp.Xml.Tests.XslReaderTests
             Assert.AreEqual(standard.EOF, custom.EOF);
             Assert.AreEqual(standard.HasAttributes, custom.HasAttributes);
             Assert.AreEqual(standard.HasValue, custom.HasValue);
-            Assert.AreEqual(standard.IsDefault, custom.IsDefault);
+            Assert.AreEqual(standard.IsDefault, custom.IsDefault);            
             Assert.AreEqual(standard.IsEmptyElement, custom.IsEmptyElement);
             Assert.AreEqual(standard.LocalName, custom.LocalName);
             Assert.AreEqual(standard.Name, custom.Name);
@@ -240,6 +240,19 @@ namespace Mvp.Xml.Tests.XslReaderTests
             ds.WriteXml(w);
             w.Close();
             Assert.AreEqual(@"<BTRChart><Data><DundasChart xmlns=""urn:www.benefittech.com:Chart"">[Data]</DundasChart></Data></BTRChart>", writer.ToString());
+        }
+
+        [TestMethod]
+        public void TestEmptyElement()
+        {            
+            XslCompiledTransform xslt = new XslCompiledTransform();
+            xslt.Load("../../Common/XslReaderTests/test2.xslt");            
+            XslReader xslReader = new XslReader(xslt);
+            xslReader.StartTransform(new XmlInput(GetReader(Globals.NorthwindResource)), null);
+            xslReader.MoveToContent();
+            Assert.IsTrue(xslReader.NodeType == XmlNodeType.Element);
+            Assert.IsTrue(xslReader.Name == "empty");
+            Assert.IsFalse(xslReader.IsEmptyElement);
         }
     }
 }
