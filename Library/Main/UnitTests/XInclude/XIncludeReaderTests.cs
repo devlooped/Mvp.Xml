@@ -14,6 +14,7 @@ using TestClass = NUnit.Framework.TestFixtureAttribute;
 using TestInitialize = NUnit.Framework.SetUpAttribute;
 using TestCleanup = NUnit.Framework.TearDownAttribute;
 using TestMethod = NUnit.Framework.TestAttribute;
+using System.Xml.Serialization;
 #endif
 
 
@@ -456,8 +457,52 @@ namespace Mvp.Xml.XInclude.Test
                 }
             }
         }
+
+        [TestMethod]
+        public void SerializerTest()
+        {
+            XmlSerializer ser = new XmlSerializer(typeof(Document));
+            using (XIncludingReader r = new XIncludingReader("../../XInclude/tests/Document3.xml"))
+            {
+                Document doc = (Document)ser.Deserialize(r);
+                Assert.IsNotNull(doc);
+                Assert.IsTrue(doc.Name == "Foo");
+                Assert.IsNotNull(doc.Items);
+                Assert.IsTrue(doc.Items.Length == 1);
+                Assert.IsTrue(doc.Items[0].Value == "Bar");
+            }            
+        }
     }
-    
+
+    public class Document
+    {
+        private string name;
+
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+        private Item[] items;
+
+        public Item[] Items
+        {
+            get { return items; }
+            set { items = value; }
+        }
+    }
+
+    public class Item
+    {
+        private string value;
+
+        public string Value
+        {
+            get { return this.value; }
+            set { this.value = value; }
+        }
+    }
+
     public class TestResolver : XmlUrlResolver 
     {
         public override object GetEntity(Uri absoluteUri, string role, Type ofObjectToReturn)

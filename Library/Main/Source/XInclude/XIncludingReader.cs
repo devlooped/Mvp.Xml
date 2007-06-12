@@ -823,6 +823,7 @@ namespace Mvp.Xml.XInclude
 		/// <summary>See <see cref="XmlReader.Read"/></summary>
 		public override bool Read()
 		{
+            _state = XIncludingReaderState.Default;
 			//Read internal reader
 			bool baseRead = _reader.Read();
 			if (baseRead)
