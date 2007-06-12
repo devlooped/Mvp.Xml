@@ -788,6 +788,8 @@
     <Content Include="Common\XmlBaseAwareXmlReaderTests\test.xml" />
     <Content Include="XInclude\tests\document2.xml" />
     <Content Include="XInclude\tests\disclaimerWithXmlBase.xml" />
+    <Content Include="XInclude\tests\Document3.xml" />
+    <Content Include="XInclude\tests\Item3.xml" />
     <None Include="Common\UpperLowerTests\Customer.xsx">
       <DependentUpon>Customer.xsd</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
