@@ -88,7 +88,7 @@ namespace Mvp.Xml.XInclude
                 //vr.ValidationEventHandler += new ValidationEventHandler(
                 //    ValidationCallback);
                 //_whiteSpaceHandling = xtr.WhitespaceHandling;
-                //_reader = vr;
+                //_reader = vr;                                
                 XmlReaderSettings s = new XmlReaderSettings();
                 s.ProhibitDtd = false;
                 s.ValidationType = ValidationType.None;
@@ -1003,6 +1003,28 @@ namespace Mvp.Xml.XInclude
 				_xmlResolver = value;
 			}
 		}
+
+        /// <summary>
+        /// Gets the encoding of the document.
+        /// </summary>
+        /// <remarks>If underlying XmlReader doesn't support Encoding property, null is returned.</remarks>
+        public Encoding Encoding
+        {
+            get
+            {
+                XmlTextReader xtr = _reader as XmlTextReader;
+                if (xtr != null)
+                {
+                    return xtr.Encoding;
+                }
+                XIncludingReader xir = _reader as XIncludingReader;
+                if (xir != null)
+                {
+                    return xir.Encoding;
+                }
+                return null;
+            }
+        }
 
 		/// <summary>
 		/// Flag indicating whether to emit <c>xml:base</c> as relative URI.

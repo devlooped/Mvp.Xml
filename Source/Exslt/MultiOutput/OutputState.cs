@@ -89,6 +89,7 @@ namespace Mvp.Xml.Exslt
 				textWriter = new StreamWriter(outFile, false, encoding);
 			// Set new current directory            
 			//Directory.SetCurrentDirectory(dir.ToString());                                    
+            href = ""; // clean the href for the next usage
 		}
 
 		/// <summary>
