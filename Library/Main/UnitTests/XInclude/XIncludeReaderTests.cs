@@ -472,6 +472,15 @@ namespace Mvp.Xml.XInclude.Test
                 Assert.IsTrue(doc.Items[0].Value == "Bar");
             }            
         }
+
+        [TestMethod]
+        public void EncodingTest()
+        {
+            XmlTextReader r = new XmlTextReader(new StringReader("<foo/>"));
+            XIncludingReader xir = new XIncludingReader(r);
+            xir.MoveToContent();
+            Assert.IsTrue(xir.Encoding == UnicodeEncoding.Unicode);            
+        }
     }
 
     public class Document
