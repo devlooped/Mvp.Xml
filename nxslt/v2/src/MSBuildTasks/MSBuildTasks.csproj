@@ -42,171 +42,184 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\..\..\mvpxmllibrary\common\v2\src\sr.cs">
-      <Link>Common\sr.cs</Link>
+    <Compile Include="..\..\..\..\Library\Main\Source\Common\Guard.cs">
+      <Link>Common\Guard.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\..\mvpxmllibrary\common\v2\src\xmlbaseawarexmltextreader.cs">
-      <Link>Common\xmlbaseawarexmltextreader.cs</Link>
+    <Compile Include="..\..\..\..\Library\Main\Source\Common\SR.cs">
+      <Link>Common\SR.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\..\mvpxmllibrary\common\v2\src\xmlnamespaces.cs">
-      <Link>Common\xmlnamespaces.cs</Link>
+    <Compile Include="..\..\..\..\Library\Main\Source\Common\XmlBaseAwareXmlReader.cs">
+      <Link>Common\XmlBaseAwareXmlTextReader.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\..\mvpxmllibrary\common\v2\src\xmlnodelistfactory.cs">
-      <Link>Common\xmlnodelistfactory.cs</Link>
+    <Compile Include="..\..\..\..\Library\Main\Source\Common\XmlNamespaces.cs">
+      <Link>Common\XmlNamespaces.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\..\mvpxmllibrary\common\v2\src\xmlprefix.cs">
-      <Link>Common\xmlprefix.cs</Link>
+    <Compile Include="..\..\..\..\Library\Main\Source\Common\XmlNodeListFactory.cs">
+      <Link>Common\XmlNodeListFactory.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\..\mvpxmllibrary\common\v2\src\xpath\dynamiccontext.cs">
-      <Link>Common\XPath\dynamiccontext.cs</Link>
+    <Compile Include="..\..\..\..\Library\Main\Source\Common\XmlPrefix.cs">
+      <Link>Common\XmlPrefix.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\..\mvpxmllibrary\common\v2\src\xpath\emptyxpathnodeiterator.cs">
-      <Link>Common\XPath\emptyxpathnodeiterator.cs</Link>
+    <Compile Include="..\..\..\..\Library\Main\Source\Common\XmlWrappingReader.cs">
+      <Link>Common\XmlWrappingReader.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\..\mvpxmllibrary\common\v2\src\xpath\ihasxpathnavigator.cs">
-      <Link>Common\XPath\ihasxpathnavigator.cs</Link>
+    <Compile Include="..\..\..\..\Library\Main\Source\Common\XmlWrappingWriter.cs">
+      <Link>Common\XmlWrappingWriter.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\..\mvpxmllibrary\common\v2\src\xpath\subtreeexpathnavigator.cs">
-      <Link>Common\XPath\subtreeexpathnavigator.cs</Link>
+    <Compile Include="..\..\..\..\Library\Main\Source\Common\XPath\DynamicContext.cs">
+      <Link>Common\XPath\DynamicContext.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\..\mvpxmllibrary\common\v2\src\xpath\xpathcache.cs">
-      <Link>Common\XPath\xpathcache.cs</Link>
+    <Compile Include="..\..\..\..\Library\Main\Source\Common\XPath\EmptyXPathNodeIterator.cs">
+      <Link>Common\XPath\EmptyXPathNodeIterator.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\..\mvpxmllibrary\common\v2\src\xpath\xpathnavigatoriterator.cs">
-      <Link>Common\XPath\xpathnavigatoriterator.cs</Link>
+    <Compile Include="..\..\..\..\Library\Main\Source\Common\XPath\IHasXPathNavigator.cs">
+      <Link>Common\XPath\IHasXPathNavigator.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\..\mvpxmllibrary\common\v2\src\xpath\xpathvariable.cs">
-      <Link>Common\XPath\xpathvariable.cs</Link>
+    <Compile Include="..\..\..\..\Library\Main\Source\Common\XPath\SubtreeeXPathNavigator.cs">
+      <Link>Common\XPath\SubtreeeXPathNavigator.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\..\mvpxmllibrary\exslt\v2\src\exslt\exsltcontext.cs">
-      <Link>Exslt\exsltcontext.cs</Link>
+    <Compile Include="..\..\..\..\Library\Main\Source\Common\XPath\XPathCache.cs">
+      <Link>Common\XPath\XPathCache.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\..\mvpxmllibrary\exslt\v2\src\exslt\exsltcontextfunction.cs">
-      <Link>Exslt\exsltcontextfunction.cs</Link>
+    <Compile Include="..\..\..\..\Library\Main\Source\Common\XPath\XPathNavigatorIterator.cs">
+      <Link>Common\XPath\XPathNavigatorIterator.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\..\mvpxmllibrary\exslt\v2\src\exslt\exsltdatesandtimes.cs">
-      <Link>Exslt\exsltdatesandtimes.cs</Link>
+    <Compile Include="..\..\..\..\Library\Main\Source\Common\XPath\XPathVariable.cs">
+      <Link>Common\XPath\XPathVariable.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\..\mvpxmllibrary\exslt\v2\src\exslt\exsltmath.cs">
-      <Link>Exslt\exsltmath.cs</Link>
+    <Compile Include="..\..\..\..\Library\Main\Source\Exslt\ExsltContext.cs">
+      <Link>Exslt\ExsltContext.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\..\mvpxmllibrary\exslt\v2\src\exslt\exsltnamespaces.cs">
-      <Link>Exslt\exsltnamespaces.cs</Link>
+    <Compile Include="..\..\..\..\Library\Main\Source\Exslt\ExsltContextFunction.cs">
+      <Link>Exslt\ExsltContextFunction.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\..\mvpxmllibrary\exslt\v2\src\exslt\exsltrandom.cs">
-      <Link>Exslt\exsltrandom.cs</Link>
+    <Compile Include="..\..\..\..\Library\Main\Source\Exslt\ExsltDatesAndTimes.cs">
+      <Link>Exslt\ExsltDatesAndTimes.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\..\mvpxmllibrary\exslt\v2\src\exslt\exsltregularexpressions.cs">
-      <Link>Exslt\exsltregularexpressions.cs</Link>
+    <Compile Include="..\..\..\..\Library\Main\Source\Exslt\ExsltMath.cs">
+      <Link>Exslt\ExsltMath.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\..\mvpxmllibrary\exslt\v2\src\exslt\exsltsets.cs">
-      <Link>Exslt\exsltsets.cs</Link>
+    <Compile Include="..\..\..\..\Library\Main\Source\Exslt\ExsltNamespaces.cs">
+      <Link>Exslt\ExsltNamespaces.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\..\mvpxmllibrary\exslt\v2\src\exslt\exsltstrings.cs">
-      <Link>Exslt\exsltstrings.cs</Link>
+    <Compile Include="..\..\..\..\Library\Main\Source\Exslt\ExsltRandom.cs">
+      <Link>Exslt\ExsltRandom.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\..\mvpxmllibrary\exslt\v2\src\exslt\exslttransform.cs">
-      <Link>Exslt\exslttransform.cs</Link>
+    <Compile Include="..\..\..\..\Library\Main\Source\Exslt\ExsltRegularExpressions.cs">
+      <Link>Exslt\ExsltRegularExpressions.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\..\mvpxmllibrary\exslt\v2\src\exslt\gdndatesandtimes.cs">
-      <Link>Exslt\gdndatesandtimes.cs</Link>
+    <Compile Include="..\..\..\..\Library\Main\Source\Exslt\ExsltSets.cs">
+      <Link>Exslt\ExsltSets.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\..\mvpxmllibrary\exslt\v2\src\exslt\gdndynamic.cs">
-      <Link>Exslt\gdndynamic.cs</Link>
+    <Compile Include="..\..\..\..\Library\Main\Source\Exslt\ExsltStrings.cs">
+      <Link>Exslt\ExsltStrings.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\..\mvpxmllibrary\exslt\v2\src\exslt\gdnmath.cs">
-      <Link>Exslt\gdnmath.cs</Link>
+    <Compile Include="..\..\..\..\Library\Main\Source\Exslt\ExsltTransform.cs">
+      <Link>Exslt\ExsltTransform.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\..\mvpxmllibrary\exslt\v2\src\exslt\gdnregularexpressions.cs">
-      <Link>Exslt\gdnregularexpressions.cs</Link>
+    <Compile Include="..\..\..\..\Library\Main\Source\Exslt\GDNDatesAndTimes.cs">
+      <Link>Exslt\GDNDatesAndTimes.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\..\mvpxmllibrary\exslt\v2\src\exslt\gdnsets.cs">
-      <Link>Exslt\gdnsets.cs</Link>
+    <Compile Include="..\..\..\..\Library\Main\Source\Exslt\GDNDynamic.cs">
+      <Link>Exslt\GDNDynamic.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\..\mvpxmllibrary\exslt\v2\src\exslt\gdnstrings.cs">
-      <Link>Exslt\gdnstrings.cs</Link>
+    <Compile Include="..\..\..\..\Library\Main\Source\Exslt\GDNMath.cs">
+      <Link>Exslt\GDNMath.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\..\mvpxmllibrary\exslt\v2\src\exslt\multioutput\multixmltextwriter.cs">
-      <Link>Exslt\MultiOutput\multixmltextwriter.cs</Link>
+    <Compile Include="..\..\..\..\Library\Main\Source\Exslt\GDNRegularExpressions.cs">
+      <Link>Exslt\GDNRegularExpressions.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\..\mvpxmllibrary\exslt\v2\src\exslt\multioutput\outputstate.cs">
-      <Link>Exslt\MultiOutput\outputstate.cs</Link>
+    <Compile Include="..\..\..\..\Library\Main\Source\Exslt\GDNSets.cs">
+      <Link>Exslt\GDNSets.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\..\mvpxmllibrary\exslt\v2\src\exslt\xsl\ixmltransform.cs">
-      <Link>Common\Xsl\ixmltransform.cs</Link>
+    <Compile Include="..\..\..\..\Library\Main\Source\Exslt\GDNStrings.cs">
+      <Link>Exslt\GDNStrings.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\..\mvpxmllibrary\exslt\v2\src\exslt\xsl\mvpxsltransform.cs">
-      <Link>Common\Xsl\mvpxsltransform.cs</Link>
+    <Compile Include="..\..\..\..\Library\Main\Source\Exslt\MultiOutput\MultiXmlTextWriter.cs">
+      <Link>Exslt\MultiOutput\MultiXmlTextWriter.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\..\mvpxmllibrary\exslt\v2\src\exslt\xsl\xslreader.cs">
-      <Link>Common\Xsl\xslreader.cs</Link>
+    <Compile Include="..\..\..\..\Library\Main\Source\Exslt\MultiOutput\OutputState.cs">
+      <Link>Exslt\MultiOutput\OutputState.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\..\mvpxmllibrary\xinclude\v2\src\sr.cs">
-      <Link>XInclude\sr.cs</Link>
+    <Compile Include="..\..\..\..\Library\Main\Source\Exslt\Xsl\IXmlTransform.cs">
+      <Link>Common\Xsl\IXmlTransform.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\..\mvpxmllibrary\xinclude\v2\src\textincludingreader.cs">
-      <Link>XInclude\textincludingreader.cs</Link>
+    <Compile Include="..\..\..\..\Library\Main\Source\Exslt\Xsl\MvpXslTransform.cs">
+      <Link>Common\Xsl\MvpXslTransform.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\..\mvpxmllibrary\xinclude\v2\src\textutils.cs">
-      <Link>XInclude\textutils.cs</Link>
+    <Compile Include="..\..\..\..\Library\Main\Source\Exslt\Xsl\XslReader.cs">
+      <Link>Common\Xsl\XslReader.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\..\mvpxmllibrary\xinclude\v2\src\xincludeexception.cs">
-      <Link>XInclude\xincludeexception.cs</Link>
+    <Compile Include="..\..\..\..\Library\Main\Source\Properties\Resources.Designer.cs">
+      <Link>Resources.Designer.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\..\mvpxmllibrary\xinclude\v2\src\xincludekeywords.cs">
-      <Link>XInclude\xincludekeywords.cs</Link>
+    <Compile Include="..\..\..\..\Library\Main\Source\XInclude\SR.cs">
+      <Link>XInclude\SR.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\..\mvpxmllibrary\xinclude\v2\src\xincludingreader.cs">
-      <Link>XInclude\xincludingreader.cs</Link>
+    <Compile Include="..\..\..\..\Library\Main\Source\XInclude\TextIncludingReader.cs">
+      <Link>XInclude\TextIncludingReader.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\..\mvpxmllibrary\xinclude\v2\src\xincludingreaderstate.cs">
-      <Link>XInclude\xincludingreaderstate.cs</Link>
+    <Compile Include="..\..\..\..\Library\Main\Source\XInclude\TextUtils.cs">
+      <Link>XInclude\TextUtils.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\..\mvpxmllibrary\xpointer\v2\src\elementschemapointerpart.cs">
-      <Link>XPointer\elementschemapointerpart.cs</Link>
+    <Compile Include="..\..\..\..\Library\Main\Source\XInclude\XIncludeException.cs">
+      <Link>XInclude\XIncludeException.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\..\mvpxmllibrary\xpointer\v2\src\lexutils.cs">
-      <Link>XPointer\lexutils.cs</Link>
+    <Compile Include="..\..\..\..\Library\Main\Source\XInclude\XIncludeKeywords.cs">
+      <Link>XInclude\XIncludeKeywords.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\..\mvpxmllibrary\xpointer\v2\src\pointer.cs">
-      <Link>XPointer\pointer.cs</Link>
+    <Compile Include="..\..\..\..\Library\Main\Source\XInclude\XIncludingReader.cs">
+      <Link>XInclude\XIncludingReader.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\..\mvpxmllibrary\xpointer\v2\src\pointerpart.cs">
-      <Link>XPointer\pointerpart.cs</Link>
+    <Compile Include="..\..\..\..\Library\Main\Source\XInclude\XIncludingReaderState.cs">
+      <Link>XInclude\XIncludingReaderState.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\..\mvpxmllibrary\xpointer\v2\src\schemabasedpointer.cs">
-      <Link>XPointer\schemabasedpointer.cs</Link>
+    <Compile Include="..\..\..\..\Library\Main\Source\XPointer\ElementSchemaPointerPart.cs">
+      <Link>XPointer\ElementSchemaPointerPart.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\..\mvpxmllibrary\xpointer\v2\src\shorthandpointer.cs">
-      <Link>XPointer\shorthandpointer.cs</Link>
+    <Compile Include="..\..\..\..\Library\Main\Source\XPointer\LexUtils.cs">
+      <Link>XPointer\LexUtils.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\..\mvpxmllibrary\xpointer\v2\src\sr.cs">
-      <Link>XPointer\sr.cs</Link>
+    <Compile Include="..\..\..\..\Library\Main\Source\XPointer\Pointer.cs">
+      <Link>XPointer\Pointer.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\..\mvpxmllibrary\xpointer\v2\src\xmlnsschemapointerpart.cs">
-      <Link>XPointer\xmlnsschemapointerpart.cs</Link>
+    <Compile Include="..\..\..\..\Library\Main\Source\XPointer\PointerPart.cs">
+      <Link>XPointer\PointerPart.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\..\mvpxmllibrary\xpointer\v2\src\xpath1schemapointerpart.cs">
-      <Link>XPointer\xpath1schemapointerpart.cs</Link>
+    <Compile Include="..\..\..\..\Library\Main\Source\XPointer\SchemaBasedPointer.cs">
+      <Link>XPointer\SchemaBasedPointer.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\..\mvpxmllibrary\xpointer\v2\src\xpointerexception.cs">
-      <Link>XPointer\xpointerexception.cs</Link>
+    <Compile Include="..\..\..\..\Library\Main\Source\XPointer\ShorthandPointer.cs">
+      <Link>XPointer\ShorthandPointer.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\..\mvpxmllibrary\xpointer\v2\src\xpointerlexer.cs">
-      <Link>XPointer\xpointerlexer.cs</Link>
+    <Compile Include="..\..\..\..\Library\Main\Source\XPointer\SR.cs">
+      <Link>XPointer\SR.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\..\mvpxmllibrary\xpointer\v2\src\xpointerparser.cs">
-      <Link>XPointer\xpointerparser.cs</Link>
+    <Compile Include="..\..\..\..\Library\Main\Source\XPointer\XmlnsSchemaPointerPart.cs">
+      <Link>XPointer\XmlnsSchemaPointerPart.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\..\mvpxmllibrary\xpointer\v2\src\xpointerreader.cs">
-      <Link>XPointer\xpointerreader.cs</Link>
+    <Compile Include="..\..\..\..\Library\Main\Source\XPointer\XPath1SchemaPointerPart.cs">
+      <Link>XPointer\XPath1SchemaPointerPart.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\..\mvpxmllibrary\xpointer\v2\src\xpointerschema.cs">
-      <Link>XPointer\xpointerschema.cs</Link>
+    <Compile Include="..\..\..\..\Library\Main\Source\XPointer\XPointerException.cs">
+      <Link>XPointer\XPointerException.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\..\mvpxmllibrary\xpointer\v2\src\xpointerschemapointerpart.cs">
-      <Link>XPointer\xpointerschemapointerpart.cs</Link>
+    <Compile Include="..\..\..\..\Library\Main\Source\XPointer\XPointerLexer.cs">
+      <Link>XPointer\XPointerLexer.cs</Link>
     </Compile>
+    <Compile Include="..\..\..\..\Library\Main\Source\XPointer\XPointerParser.cs">
+      <Link>XPointer\XPointerParser.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Library\Main\Source\XPointer\XPointerReader.cs">
+      <Link>XPointer\XPointerReader.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Library\Main\Source\XPointer\XPointerSchema.cs">
+      <Link>XPointer\XPointerSchema.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Library\Main\Source\XPointer\XPointerSchemaPointerPart.cs">
+      <Link>XPointer\XPointerSchemaPointerPart.cs</Link>
+    </Compile>
+
     <Compile Include="..\NXsltArgumentsParser.cs">
       <Link>NXsltArgumentsParser.cs</Link>
     </Compile>
@@ -247,6 +260,25 @@
     <Compile Include="TaskReporter.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="..\..\..\..\Library\Main\Source\Common\SR.resx">
+      <Link>Common\SR.resx</Link>
+      <DependentUpon>SR.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\..\Library\Main\Source\Properties\Resources.resx">
+      <Link>Resources.resx</Link>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\..\Library\Main\Source\XInclude\SR.resx">
+      <Link>XInclude\SR.resx</Link>
+      <DependentUpon>SR.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\..\Library\Main\Source\XPointer\SR.resx">
+      <Link>XPointer\SR.resx</Link>
+      <DependentUpon>SR.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="NXsltStrings.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>NXsltStrings.Designer.cs</LastGenOutput>
@@ -278,11 +310,11 @@
 @echo ########### Setting environment variables
 call "$(DevEnvDir)..\Tools\vsvars32.bat"
 @echo ########### Disassembing...
-ildasm "$(TargetFileName)" /out=nxslt.il /nobar
+ildasm "$(TargetFileName)" /out=nxslt.il /nobar /linenum
 @echo ########### Renaming EXSLT methods... 
 "$(ProjectDir)../MethodRenamer.exe" nxslt.il nxslt.fixed.il
 @echo ########### Assembling library back...
-ilasm nxslt.fixed.il /RESOURCE=nxslt.res /DLL /OUTPUT="$(TargetFileName)" /KEY="$(ProjectDir)../nxslt.snk"
+ilasm nxslt.fixed.il /RESOURCE=nxslt.res /DLL /PDB  /OUTPUT="$(TargetFileName)" /KEY="$(ProjectDir)../nxslt.snk"
 @echo ########### Cleaning...
 del nxslt.res
 del *.il
