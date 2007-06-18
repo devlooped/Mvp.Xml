@@ -9,7 +9,7 @@ namespace Mvp.Xml.XInclude
 	/// <summary>
 	/// Text inclusion related utility methods.	
 	/// </summary>
-	/// <author>Oleg Tkachenko, oleg@tkachenko.com</author>
+	/// <author>Oleg Tkachenko, http://www.xmllab.net</author>
 	internal class TextUtils
 	{
 

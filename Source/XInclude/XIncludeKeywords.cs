@@ -11,7 +11,7 @@ namespace Mvp.Xml.XInclude
 	/// <summary>
 	/// XInclude syntax keyword collection.	
 	/// </summary>
-	/// <author>Oleg Tkachenko, oleg@tkachenko.com</author>
+	/// <author>Oleg Tkachenko, http://www.xmllab.net</author>
 	internal class XIncludeKeywords
 	{
 

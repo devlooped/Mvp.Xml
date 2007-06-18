@@ -15,7 +15,7 @@ namespace Mvp.Xml.XInclude
 	/// <summary>
 	/// Custom <c>XmlReader</c>, handler for parse="text" case.	
 	/// </summary>
-	/// <author>Oleg Tkachenko, oleg@tkachenko.com</author>
+	/// <author>Oleg Tkachenko, http://www.xmllab.net</author>
 	/// <remarks>
 	/// Allows to read specified resource as a text node.
 	/// </remarks>

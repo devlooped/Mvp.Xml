@@ -16,7 +16,7 @@ namespace Mvp.Xml.Common
 	/// </summary>
 	/// <remarks>See http://weblogs.asp.net/cazzu/archive/2004/04/14/113479.aspx. 
 	/// <para>Author: Daniel Cazzulino, <a href="http://clariusconsulting.net/kzu">blog</a></para>
-	/// <para>Contributors: Oleg Tkachenko, olegt@xmllab.net</para>
+	/// <para>Contributors: Oleg Tkachenko, http://www.xmllab.net</para>
 	/// </remarks>
 	public sealed class XmlNodeListFactory
 	{
