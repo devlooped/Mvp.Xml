@@ -99,6 +99,8 @@
     <Compile Include="Exslt\GDNStrings.cs" />
     <Compile Include="Exslt\MultiOutput\MultiXmlTextWriter.cs" />
     <Compile Include="Exslt\MultiOutput\OutputState.cs" />
+    <Compile Include="Exslt\Xsl\CharacterMap.cs" />
+    <Compile Include="Exslt\Xsl\CharacterMappingXmlReader.cs" />
     <Compile Include="Exslt\Xsl\IXmlTransform.cs" />
     <Compile Include="Exslt\Xsl\MvpXslTransform.cs" />
     <Compile Include="Exslt\Xsl\XslReader.cs" />

@@ -13,7 +13,7 @@ namespace Mvp.Xml.XInclude
 	/// <summary>
 	/// XIncludingReader state machine.    
 	/// </summary>
-	/// <author>Oleg Tkachenko, oleg@tkachenko.com</author>
+	/// <author>Oleg Tkachenko, http://www.xmllab.net</author>
 	internal enum XIncludingReaderState
 	{
 		//Default state
