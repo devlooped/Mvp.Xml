@@ -12,10 +12,11 @@ namespace Mvp.Xml.Common.Xsl
     public class CharacterMappingXmlWriter : XmlWrappingWriter
     {
         private Dictionary<char, string> mapping;
+        private CharacterMappingXmlReader reader;
 
         /// <summary>
         /// Creates new instance of the <see cref="CharacterMappingXmlWriter"/>
-        /// with given base <see cref="XmlReader"/> and charcter mapping.
+        /// with given base <see cref="XmlWriter"/> and charcter mapping.
         /// </summary>        
         public CharacterMappingXmlWriter(XmlWriter baseWriter, Dictionary<char, string> mapping)
             : base(baseWriter)
@@ -24,10 +25,28 @@ namespace Mvp.Xml.Common.Xsl
         }
 
         /// <summary>
+        /// /// Creates new instance of the <see cref="CharacterMappingXmlWriter"/>
+        /// with given base <see cref="XmlWriter"/> and <see cref="CharacterMappingXmlReader"/>.
+        /// </summary>
+        /// <remarks>
+        /// <see cref="CharacterMappingXmlReader"/> paramter is used to get character mapping
+        /// information.
+        /// </remarks>
+        public CharacterMappingXmlWriter(CharacterMappingXmlReader reader, XmlWriter baseWriter) 
+            : base (baseWriter) 
+        {
+            this.reader = reader;
+        }
+
+        /// <summary>
         /// See <see cref="XmlWriter.WriteString"/>.
         /// </summary>        
         public override void WriteString(string text)
         {
+            if (mapping == null && reader != null) 
+            {
+                mapping = reader.CompileCharacterMapping();
+            }
             if (mapping != null && mapping.Count > 0) {
                 StringBuilder buf = new StringBuilder();
                 foreach (char c in text) {
