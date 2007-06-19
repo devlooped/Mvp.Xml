@@ -17,8 +17,8 @@ namespace Mvp.Xml.Common.Xsl
     /// <summary>
     /// <para>MvpXslTransform class extends capabilities of the <see cref="XslCompiledTransform"/>
     /// class by adding support for transforming into <see cref="XmlReader"/>, 
-    /// vast collection of EXSLT extention functions, multiple outputs and
-    /// transforming of <see cref="IXPathNavigable"/> along with <see cref="XmlResolver"/>.
+    /// built-in vast collection of EXSLT extention functions, multiple outputs, XSLT 2.0 character
+    /// maps and transforming of <see cref="IXPathNavigable"/> along with <see cref="XmlResolver"/>.
     /// Also MvpXslTransform class provides new improved XSL transformation API 
     /// by introducing concepts of <see cref="IXmlTransform"/> interface, <see cref="XmlInput"/>
     /// and <see cref="XmlOutput"/>.</para>    
@@ -64,6 +64,10 @@ namespace Mvp.Xml.Common.Xsl
         /// Multioutput support flag
         /// </summary>
         protected bool multiOutput;
+        /// <summary>
+        /// XSLT 2.0 like character maps support flag.
+        /// </summary>
+        protected bool supportCharacterMaps;
 
         #region ctors
 
@@ -196,6 +200,27 @@ namespace Mvp.Xml.Common.Xsl
         {
             get { return multiOutput; }
             set { multiOutput = value; }
+        }
+
+        /// <summary>
+        /// Boolean flag used to specify whether XSLT 2.0 character maps are
+        /// supported.
+        /// </summary>
+        /// <remarks>Note: MvpXslTransform is XSLT 1.0 processor, so 
+        /// XSLT 2.0 character maps must be defined in custom "http://www.xmllab.net/nxslt"
+        /// namespace. Here is a sample:
+        /// &lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+        ///     xmlns:nxslt="http://www.xmllab.net/nxslt">
+        ///     &lt;nxslt:output use-character-maps="testmap"/>
+        ///     &lt;nxslt:character-map name="testmap">
+        ///         &lt;nxslt:output-character character="&amp;#160;" string="&amp;amp;nbsp;" />
+        ///     &lt;/nxslt:character-map>
+        /// &lt;/xsl:stylesheet>
+        /// </remarks>
+        public bool SupportCharacterMaps 
+        {
+            get { return supportCharacterMaps; }
+            set { supportCharacterMaps = value; }
         }
 
         /// <summary>
@@ -390,13 +415,13 @@ namespace Mvp.Xml.Common.Xsl
         /// <summary>
         /// Transforms to XmlWriter.
         /// </summary>        
-        protected void TransformToWriter(XmlInput defaultDocument, XsltArgumentList xsltArgs, XmlWriter xmlWriter)
-        {
+        protected void TransformToWriter(XmlInput defaultDocument, XsltArgumentList xsltArgs, XmlWriter targetWriter)
+        {            
             XsltArgumentList args = AddExsltExtensionObjectsSync(xsltArgs);
             XmlReader xmlReader = defaultDocument.source as XmlReader;
             if (xmlReader != null)
             {
-                this.compiledTransform.Transform(xmlReader, args, xmlWriter, defaultDocument.resolver);
+                TransformFromReader(defaultDocument, args, xmlReader, targetWriter);
                 return;
             }
             IXPathNavigable nav = defaultDocument.source as IXPathNavigable;
@@ -404,11 +429,11 @@ namespace Mvp.Xml.Common.Xsl
             {
                 if (defaultDocument.resolver is DefaultXmlResolver)
                 {
-                    this.compiledTransform.Transform(nav, args, xmlWriter);
+                    this.compiledTransform.Transform(nav, args, targetWriter);
                 }
                 else
                 {
-                    TransformIXPathNavigable(nav, args, xmlWriter, defaultDocument.resolver);
+                    TransformIXPathNavigable(nav, args, targetWriter, defaultDocument.resolver);
                 }
                 return;
             }
@@ -417,7 +442,7 @@ namespace Mvp.Xml.Common.Xsl
             {
                 using (XmlReader reader = XmlReader.Create(str, GetReaderSettings(defaultDocument)))
                 {
-                    this.compiledTransform.Transform(reader, args, xmlWriter, defaultDocument.resolver);
+                    TransformFromReader(defaultDocument, args, reader, targetWriter);
                 }
                 return;
             }
@@ -426,7 +451,7 @@ namespace Mvp.Xml.Common.Xsl
             {
                 using (XmlReader reader = XmlReader.Create(strm, GetReaderSettings(defaultDocument)))
                 {
-                    this.compiledTransform.Transform(reader, args, xmlWriter, defaultDocument.resolver);
+                    TransformFromReader(defaultDocument, args, reader, targetWriter);
                 }
                 return;
             }
@@ -435,11 +460,25 @@ namespace Mvp.Xml.Common.Xsl
             {
                 using (XmlReader reader = XmlReader.Create(txtReader, GetReaderSettings(defaultDocument)))
                 {
-                    this.compiledTransform.Transform(reader, args, xmlWriter, defaultDocument.resolver);
+                    TransformFromReader(defaultDocument, args, reader, targetWriter);
                 }
                 return;
             }
             throw new Exception("Unexpected XmlInput");
+        }
+
+        private void TransformFromReader(XmlInput defaultDocument, XsltArgumentList args, XmlReader reader, XmlWriter writer) 
+        {
+            if (!supportCharacterMaps)
+            {
+                this.compiledTransform.Transform(reader, args, writer, defaultDocument.resolver);
+            }
+            else
+            {
+                CharacterMappingXmlReader cmr = new CharacterMappingXmlReader(reader);
+                CharacterMappingXmlWriter cmw = new CharacterMappingXmlWriter(cmr, writer);
+                this.compiledTransform.Transform(cmr, args, cmw, defaultDocument.resolver);
+            }
         }
 
         /// <summary>
