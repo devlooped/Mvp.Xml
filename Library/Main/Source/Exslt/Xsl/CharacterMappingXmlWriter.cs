@@ -11,7 +11,7 @@ namespace Mvp.Xml.Common.Xsl
     /// </summary>
     public class CharacterMappingXmlWriter : XmlWrappingWriter
     {
-        Dictionary<char, string> mapping;
+        private Dictionary<char, string> mapping;
 
         /// <summary>
         /// Creates new instance of the <see cref="CharacterMappingXmlWriter"/>
@@ -28,26 +28,27 @@ namespace Mvp.Xml.Common.Xsl
         /// </summary>        
         public override void WriteString(string text)
         {
-            if (mapping != null && mapping.Count > 0)
-            {
+            if (mapping != null && mapping.Count > 0) {
                 StringBuilder buf = new StringBuilder();
-                foreach (char c in text)
-                {
-                    if (mapping.ContainsKey(c))
-                    {
-                        buf.Append(mapping[c]);
-                    }
-                    else
-                    {
+                foreach (char c in text) {
+                    if (mapping.ContainsKey(c)) {
+                        FlushBuffer(buf);
+                        base.WriteRaw(mapping[c]);
+                    } else {
                         buf.Append(c);
                     }
                 }
-                base.WriteString(buf.ToString());
-            }
-            else
-            {
+                FlushBuffer(buf);
+            } else {
                 base.WriteString(text);
-            }
+            }            
         }
+
+        private void FlushBuffer(StringBuilder buf) {
+            if (buf.Length > 0) {
+                base.WriteString(buf.ToString());
+                buf.Length = 0;
+            }
+        }        
     }
 }
