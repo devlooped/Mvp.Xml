@@ -36,6 +36,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\CharacterMappingXmlReaderTests\Tests.cs" />
+    <Compile Include="Common\CharacterMappingXmlWriterTests\Tests.cs" />
     <Compile Include="Common\DebuggingXmlTextReader.cs" />
     <Compile Include="Common\DebuggingXPathNavigator.cs" />
     <Compile Include="Common\DebugUtils.cs" />
@@ -781,6 +782,11 @@
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <Content Include="Common\CharacterMappingXmlReaderTests\style6.xslt" />
+    <Content Include="Common\CharacterMappingXmlReaderTests\style5.xslt" />
+    <Content Include="Common\CharacterMappingXmlReaderTests\style4.xslt" />
+    <Content Include="Common\CharacterMappingXmlReaderTests\style3.xslt" />
+    <Content Include="Common\CharacterMappingXmlReaderTests\style2.xslt" />
     <Content Include="Common\CharacterMappingXmlReaderTests\style.xslt" />
     <Content Include="Common\UpperLowerTests\Customer.xsd">
       <SubType>Designer</SubType>
