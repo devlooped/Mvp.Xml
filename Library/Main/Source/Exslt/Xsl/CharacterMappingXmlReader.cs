@@ -6,60 +6,42 @@ using System.Xml;
 namespace Mvp.Xml.Common.Xsl
 {
     /// <summary>
-    /// XmlReader implementation able to read and filter out character map declarations
+    /// <see cref="XmlReader"/> implementation able to read and filter out XSLT 2.0-like character map declarations
     /// from XSLT stylesheets.
+    /// For character mapping semantics see http://www.w3.org/TR/xslt20/#character-maps.
+    /// The only deviation from XSLT 2.0 is that "output", "character-map" and "output-character" elements
+    /// must be in the "http://www.xmllab.net/nxslt" namespace.
     /// </summary>
     public class CharacterMappingXmlReader : XmlWrappingReader 
     {
-        private CharacterMap map;
+        private CharacterMapping mapping;
         private string nxsltNamespace;
         private string characterMapTag;
         private string nameTag;
         private string outputCharacterTag;
         private string characterTag;
         private string stringTag;
+        private string outputTag;
+        private string useCharacterMapsTag;
+        private List<string> useCharacterMaps;
 
         /// <summary>
         /// Creates new instance of the <see cref="CharacterMappingXmlReader"/> with given
         /// base <see cref="XmlReader"/>.
         /// </summary>        
         public CharacterMappingXmlReader(XmlReader baseReader)
-            : this(baseReader, new CharacterMap())
-        {            
-        }
-
-        /// <summary>
-        /// Compiled character map.
-        /// </summary>
-        public CharacterMap CharacterMap
-        {
-            get
-            {
-                return map;
-            }
-            set
-            {
-                map = value;
-            }
-        }
-
-        /// <summary>
-        /// Creates new instance of the <see cref="CharacterMappingXmlReader"/> with given
-        /// base <see cref="XmlReader"/> and <see cref="CharacterMap"/>
-        /// </summary>        
-        public CharacterMappingXmlReader(XmlReader baseReader, CharacterMap map)
             : base(baseReader)
         {
-            this.map = map;
             this.nxsltNamespace = base.NameTable.Add("http://www.xmllab.net/nxslt");
             this.characterMapTag = base.NameTable.Add("character-map");
             this.nameTag = base.NameTable.Add("name");
             this.outputCharacterTag = base.NameTable.Add("output-character");
             this.characterTag = base.NameTable.Add("character");
             this.stringTag = base.NameTable.Add("string");
-
-        }
-
+            this.outputTag = base.NameTable.Add("output");
+            this.useCharacterMapsTag = base.NameTable.Add("use-character-maps");
+        }        
+        
         /// <summary>
         /// See <see cref="XmlReader.Read"/>.
         /// </summary>        
@@ -75,6 +57,12 @@ namespace Mvp.Xml.Common.Xsl
                 {
                     throw new System.Xml.Xsl.XsltCompileException("Required 'name' attribute of nxslt:character-map element is missing.");
                 }
+                CharacterMap map = new CharacterMap();
+                string referencedMaps = base[useCharacterMapsTag];
+                if (!string.IsNullOrEmpty(referencedMaps))
+                {
+                    map.ReferencedCharacterMaps = referencedMaps.Split(' ');
+                }                
                 XmlReader subr = base.ReadSubtree();
                 while (subr.Read())
                 {
@@ -95,12 +83,44 @@ namespace Mvp.Xml.Common.Xsl
                         if (string.IsNullOrEmpty(character))
                         {
                             throw new System.Xml.Xsl.XsltCompileException("Required 'string' attribute of nxslt:output-character element is missing.");
-                        }
-                        this.map.AddMapping(mapName, character[0], _string);
+                        }                        
+                        map.AddMapping(character[0], _string);
                     }
                 }
+                if (this.mapping == null)
+                {
+                    this.mapping = new CharacterMapping();
+                }
+                this.mapping.AddCharacterMap(mapName, map);
+            }
+            else if (base.NodeType == XmlNodeType.Element && base.NamespaceURI == nxsltNamespace &&
+               base.LocalName == outputTag)
+            {
+                //nxslt:output
+                string useMaps = base[useCharacterMapsTag];
+                if (!string.IsNullOrEmpty(useMaps))
+                {
+                    if (this.useCharacterMaps == null)
+                    {
+                        this.useCharacterMaps = new List<string>();
+                    }
+                    this.useCharacterMaps.AddRange(useMaps.Split(' '));
+                }
+                XmlReader subr = base.ReadSubtree();
+                while (subr.Read());                
             }
             return baseRead;
+        }
+
+        /// <summary>
+        /// Compiles character map.
+        /// </summary>        
+        public Dictionary<char, string> CompileCharacterMapping()
+        {
+            if (this.mapping == null) {
+                return new Dictionary<char,string>();
+            }
+            return this.mapping.Compile(this.useCharacterMaps);
         }
     }
 }

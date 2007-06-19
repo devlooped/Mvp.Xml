@@ -5,44 +5,58 @@ using System.Text;
 namespace Mvp.Xml.Common.Xsl {
     
     /// <summary>
-    /// Represents compiled collection of XSLT 2.0 Character map, see http://www.w3.org/TR/xslt20/#character-maps.
+    /// Represents XSLT 2.0 Character map, see http://www.w3.org/TR/xslt20/#character-maps.
     /// </summary>
-    public class CharacterMap {
-        private Dictionary<string, Dictionary<char, string>> maps;
+    internal class CharacterMap {        
+        private Dictionary<char, string> map;
+        private string[] usedCharMaps;
 
         /// <summary>
         /// Creates empty character map.
         /// </summary>
-        public CharacterMap() {
-            maps = new Dictionary<string, Dictionary<char, string>>();
+        public CharacterMap() {                        
+            this.map = new Dictionary<char, string>();
         }
 
         /// <summary>
         /// Adds mapping for given character.
         /// </summary>        
-        public void AddMapping(string mapName, char character, string replace)
+        public void AddMapping(char character, string replace)
         {
-            if (!maps.ContainsKey(mapName))
+            if (map.ContainsKey(character))
             {
-                maps.Add(mapName, new Dictionary<char,string>());
+                map[character] = replace;
             }
-            maps[mapName].Add(character, replace);
+            else
+            {
+                map.Add(character, replace);
+            }
+        }                
+
+        /// <summary>
+        /// Gets mapping collection.
+        /// </summary>
+        public Dictionary<char, string> Map
+        {
+            get
+            {
+                return map;
+            }
         }
 
         /// <summary>
-        /// Gets mapping for given character.
-        /// </summary>        
-        public string GetMapping(string mapName, char character)
+        /// Referenced character maps.
+        /// </summary>
+        public string[] ReferencedCharacterMaps
         {
-            return maps[mapName][character];
-        }
-
-        /// <summary>
-        /// Returns true if there is a mapping for given character and false otherwise.
-        /// </summary>        
-        public bool ContainsMapping(string mapName, char character)
-        {
-            return maps.ContainsKey(mapName) && maps[mapName].ContainsKey(character);
-        }
+            get
+            {
+                return usedCharMaps;
+            }
+            set
+            {
+            	usedCharMaps = value;
+            }
+        }        
     }
 }
