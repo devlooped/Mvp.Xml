@@ -361,6 +361,67 @@ namespace Mvp.Xml.Tests
             catch (XsltException) { return; }
             Assert.Fail("Shoudn't be here.");
         }
+
+        [TestMethod]
+        public void CharMapTest()
+        {
+            MvpXslTransform xslt = new MvpXslTransform();
+            xslt.Load("../../Common/MvpXslTransformTests/char-map.xslt");
+            XmlInput input = new XmlInput(new StringReader("<foo attr=\"{data}\">text {%= fff() %} and more&#xA0;text.</foo>"));
+            StringWriter sw = new StringWriter();            
+            xslt.Transform(input, Arguments, new XmlOutput(sw));
+            Assert.IsTrue(sw.ToString() == "<out attr=\"a&nbsp;b\"><text>Some&nbsp;text, now ASP.NET <%# Eval(\"foo\") %> and more&nbsp;text.</text><foo attr=\"<data>\">text <%= fff() %> and more&nbsp;text.</foo></out>");
+        }
+
+        [TestMethod]
+        public void CharMapTest2()
+        {
+            MvpXslTransform xslt = new MvpXslTransform();
+            xslt.Load("../../Common/MvpXslTransformTests/char-map.xslt");
+            XmlInput input = new XmlInput(new StringReader("<foo attr=\"{data}\">text {%= fff() %} and more&#xA0;text.</foo>"));
+            MemoryStream ms = new MemoryStream();
+            xslt.Transform(input, Arguments, new XmlOutput(ms));
+            ms.Position = 0;
+            StreamReader sr = new StreamReader(ms);            
+            Assert.AreEqual(sr.ReadToEnd(), "<out attr=\"a&nbsp;b\"><text>Some&nbsp;text, now ASP.NET <%# Eval(\"foo\") %> and more&nbsp;text.</text><foo attr=\"<data>\">text <%= fff() %> and more&nbsp;text.</foo></out>");
+        }
+
+        [TestMethod]
+        public void CharMapTest3()
+        {
+            MvpXslTransform xslt = new MvpXslTransform();
+            xslt.Load("../../Common/MvpXslTransformTests/char-map.xslt");
+            XmlInput input = new XmlInput(new StringReader("<foo attr=\"{data}\">text {%= fff() %} and more&#xA0;text.</foo>"));
+            StringWriter sw = new StringWriter();
+            XmlWriter w = XmlWriter.Create(sw, xslt.OutputSettings);
+            xslt.Transform(input, Arguments, new XmlOutput(w));
+            w.Close();
+            Assert.AreEqual(sw.ToString(), "<out attr=\"a&nbsp;b\"><text>Some&nbsp;text, now ASP.NET <%# Eval(\"foo\") %> and more&nbsp;text.</text><foo attr=\"<data>\">text <%= fff() %> and more&nbsp;text.</foo></out>");
+        }
+
+
+        [TestMethod]
+        public void CharMapTest4()
+        {
+            MvpXslTransform xslt = new MvpXslTransform();
+            xslt.Load(XmlReader.Create("../../Common/MvpXslTransformTests/char-map.xslt"));
+            XmlInput input = new XmlInput(new StringReader("<foo attr=\"{data}\">text {%= fff() %} and more&#xA0;text.</foo>"));
+            StringWriter sw = new StringWriter();
+            xslt.Transform(input, Arguments, new XmlOutput(sw));
+            Assert.IsTrue(sw.ToString() == "<out attr=\"a&nbsp;b\"><text>Some&nbsp;text, now ASP.NET <%# Eval(\"foo\") %> and more&nbsp;text.</text><foo attr=\"<data>\">text <%= fff() %> and more&nbsp;text.</foo></out>");
+        }
+        
+        [TestMethod]
+        public void CharMapTest6()
+        {
+            MvpXslTransform xslt = new MvpXslTransform();
+            XPathDocument d = new XPathDocument("../../Common/MvpXslTransformTests/char-map.xslt");
+            xslt.Load(d);
+            XmlInput input = new XmlInput(new StringReader("<foo attr=\"{data}\">text {%= fff() %} and more&#xA0;text.</foo>"));
+            StringWriter sw = new StringWriter();
+            xslt.Transform(input, Arguments, new XmlOutput(sw));
+            Assert.IsTrue(sw.ToString() == "<out attr=\"a&nbsp;b\"><text>Some&nbsp;text, now ASP.NET <%# Eval(\"foo\") %> and more&nbsp;text.</text><foo attr=\"<data>\">text <%= fff() %> and more&nbsp;text.</foo></out>");
+        }
     }
 
     public class MyXmlResolver : XmlUrlResolver

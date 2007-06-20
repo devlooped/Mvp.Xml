@@ -6,6 +6,7 @@ using System.Xml.Xsl;
 using System.Xml.XPath;
 using System.Reflection;
 using System.CodeDom.Compiler;
+using System.Collections.Generic;
 
 using Mvp.Xml.Exslt;
 
@@ -67,7 +68,9 @@ namespace Mvp.Xml.Common.Xsl
         /// <summary>
         /// XSLT 2.0 like character maps support flag.
         /// </summary>
-        protected bool supportCharacterMaps;
+        protected bool supportCharacterMaps = true;
+        private Dictionary<char, string> characterMap;
+        
 
         #region ctors
 
@@ -99,21 +102,30 @@ namespace Mvp.Xml.Common.Xsl
         /// <param name="stylesheet">An object implementing the <see cref="IXPathNavigable"/> interface. 
         /// In the Microsoft .NET Framework, this can be either an <see cref="XmlNode"/> (typically an <see cref="XmlDocument"/>), 
         /// or an <see cref="XPathDocument"/> containing the style sheet.</param>
-        public void Load(IXPathNavigable stylesheet) { this.compiledTransform.Load(stylesheet); }
+        public void Load(IXPathNavigable stylesheet)
+        {
+            LoadStylesheetFromReader(stylesheet.CreateNavigator().ReadSubtree());            
+        }
 
         /// <summary>
         /// Loads and compiles the style sheet located at the specified URI.
         /// See also <see cref="XslCompiledTransform.Load(String)"/>.
         /// </summary>
         /// <param name="stylesheetUri">The URI of the style sheet.</param>
-        public void Load(string stylesheetUri) { this.compiledTransform.Load(stylesheetUri); }
+        public void Load(string stylesheetUri)
+        {
+            LoadStylesheetFromReader(XmlReader.Create(stylesheetUri));
+        }
 
         /// <summary>
         /// Compiles the style sheet contained in the <see cref="XmlReader"/>.
         /// See also <see cref="XslCompiledTransform.Load(XmlReader)"/>.
         /// </summary>
         /// <param name="stylesheet">An <see cref="XmlReader"/> containing the style sheet.</param>
-        public void Load(XmlReader stylesheet) { this.compiledTransform.Load(stylesheet); }
+        public void Load(XmlReader stylesheet) 
+        {
+            LoadStylesheetFromReader(stylesheet);
+        }
 
         /// <summary>
         /// Compiles the XSLT style sheet contained in the <see cref="IXPathNavigable"/>. 
@@ -131,7 +143,7 @@ namespace Mvp.Xml.Common.Xsl
         /// null reference (Nothing in Visual Basic), external resources are not resolved.</param>
         public void Load(IXPathNavigable stylesheet, XsltSettings settings, XmlResolver stylesheetResolver)
         {
-            this.compiledTransform.Load(stylesheet, settings, stylesheetResolver);
+            LoadStylesheetFromReader(stylesheet.CreateNavigator().ReadSubtree(), settings, stylesheetResolver);
         }
 
         /// <summary>
@@ -148,7 +160,7 @@ namespace Mvp.Xml.Common.Xsl
         /// null reference (Nothing in Visual Basic), external resources are not resolved.</param>
         public void Load(string stylesheetUri, XsltSettings settings, XmlResolver stylesheetResolver)
         {
-            this.compiledTransform.Load(stylesheetUri, settings, stylesheetResolver);
+            LoadStylesheetFromReader(XmlReader.Create(stylesheetUri), settings, stylesheetResolver);
         }
 
         /// <summary>
@@ -165,7 +177,7 @@ namespace Mvp.Xml.Common.Xsl
         /// null reference (Nothing in Visual Basic), external resources are not resolved.</param>
         public void Load(XmlReader stylesheet, XsltSettings settings, XmlResolver stylesheetResolver)
         {
-            this.compiledTransform.Load(stylesheet, settings, stylesheetResolver);
+            LoadStylesheetFromReader(stylesheet, settings, stylesheetResolver);
         }
 
         #endregion
@@ -416,12 +428,21 @@ namespace Mvp.Xml.Common.Xsl
         /// Transforms to XmlWriter.
         /// </summary>        
         protected void TransformToWriter(XmlInput defaultDocument, XsltArgumentList xsltArgs, XmlWriter targetWriter)
-        {            
+        {
+            XmlWriter xmlWriter;
+            if (this.supportCharacterMaps && this.characterMap != null && this.characterMap.Count > 0)
+            {
+                xmlWriter = new CharacterMappingXmlWriter(targetWriter, this.characterMap);
+            }
+            else
+            {
+                xmlWriter = targetWriter;
+            }
             XsltArgumentList args = AddExsltExtensionObjectsSync(xsltArgs);
             XmlReader xmlReader = defaultDocument.source as XmlReader;
             if (xmlReader != null)
             {
-                TransformFromReader(defaultDocument, args, xmlReader, targetWriter);
+                this.compiledTransform.Transform(xmlReader, args, xmlWriter, defaultDocument.resolver);
                 return;
             }
             IXPathNavigable nav = defaultDocument.source as IXPathNavigable;
@@ -429,11 +450,11 @@ namespace Mvp.Xml.Common.Xsl
             {
                 if (defaultDocument.resolver is DefaultXmlResolver)
                 {
-                    this.compiledTransform.Transform(nav, args, targetWriter);
+                    this.compiledTransform.Transform(nav, args, xmlWriter);
                 }
                 else
                 {
-                    TransformIXPathNavigable(nav, args, targetWriter, defaultDocument.resolver);
+                    TransformIXPathNavigable(nav, args, xmlWriter, defaultDocument.resolver);
                 }
                 return;
             }
@@ -442,7 +463,7 @@ namespace Mvp.Xml.Common.Xsl
             {
                 using (XmlReader reader = XmlReader.Create(str, GetReaderSettings(defaultDocument)))
                 {
-                    TransformFromReader(defaultDocument, args, reader, targetWriter);
+                    this.compiledTransform.Transform(reader, args, xmlWriter, defaultDocument.resolver);
                 }
                 return;
             }
@@ -451,7 +472,7 @@ namespace Mvp.Xml.Common.Xsl
             {
                 using (XmlReader reader = XmlReader.Create(strm, GetReaderSettings(defaultDocument)))
                 {
-                    TransformFromReader(defaultDocument, args, reader, targetWriter);
+                    this.compiledTransform.Transform(reader, args, xmlWriter, defaultDocument.resolver);
                 }
                 return;
             }
@@ -460,25 +481,11 @@ namespace Mvp.Xml.Common.Xsl
             {
                 using (XmlReader reader = XmlReader.Create(txtReader, GetReaderSettings(defaultDocument)))
                 {
-                    TransformFromReader(defaultDocument, args, reader, targetWriter);
+                    this.compiledTransform.Transform(reader, args, xmlWriter, defaultDocument.resolver);
                 }
                 return;
             }
             throw new Exception("Unexpected XmlInput");
-        }
-
-        private void TransformFromReader(XmlInput defaultDocument, XsltArgumentList args, XmlReader reader, XmlWriter writer) 
-        {
-            if (!supportCharacterMaps)
-            {
-                this.compiledTransform.Transform(reader, args, writer, defaultDocument.resolver);
-            }
-            else
-            {
-                CharacterMappingXmlReader cmr = new CharacterMappingXmlReader(reader);
-                CharacterMappingXmlWriter cmw = new CharacterMappingXmlWriter(cmr, writer);
-                this.compiledTransform.Transform(cmr, args, cmw, defaultDocument.resolver);
-            }
         }
 
         /// <summary>
@@ -492,6 +499,33 @@ namespace Mvp.Xml.Common.Xsl
                 null, new Type[] { typeof(IXPathNavigable), typeof(XmlResolver), typeof(XsltArgumentList), typeof(XmlWriter) }, null);
             executeMethod.Invoke(command,
                 new object[] { nav, resolver, AddExsltExtensionObjectsSync(args), xmlWriter });
+        }
+
+        /// <summary>
+        /// Loads XSLT stylesheet from <see cref="XmlReader"/>.
+        /// Wraps the reader if character maps are supported.
+        /// </summary>        
+        protected void LoadStylesheetFromReader(XmlReader reader)
+        {
+            LoadStylesheetFromReader(reader, XsltSettings.Default, new XmlUrlResolver());
+        }
+
+        /// <summary>
+        /// Loads XSLT stylesheet from <see cref="XmlReader"/>, with given settings and resolver.
+        /// Wraps the reader if character maps are supported.
+        /// </summary>        
+        protected void LoadStylesheetFromReader(XmlReader reader, XsltSettings settings, XmlResolver resolver)
+        {            
+            if (supportCharacterMaps)
+            {
+                CharacterMappingXmlReader cmr = new CharacterMappingXmlReader(reader);
+                this.compiledTransform.Load(cmr, settings, resolver);
+                this.characterMap = cmr.CompileCharacterMapping();
+            }
+            else
+            {
+                this.compiledTransform.Load(reader, settings, resolver);
+            }            
         }
 
         /// <summary>
