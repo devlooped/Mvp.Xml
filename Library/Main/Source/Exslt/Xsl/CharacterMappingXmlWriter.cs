@@ -42,10 +42,10 @@ namespace Mvp.Xml.Common.Xsl
         /// See <see cref="XmlWriter.WriteString"/>.
         /// </summary>        
         public override void WriteString(string text)
-        {
+        {            
             if (mapping == null && reader != null) 
-            {
-                mapping = reader.CompileCharacterMapping();
+            {                
+                mapping = reader.CompileCharacterMapping();                
             }
             if (mapping != null && mapping.Count > 0) {
                 StringBuilder buf = new StringBuilder();

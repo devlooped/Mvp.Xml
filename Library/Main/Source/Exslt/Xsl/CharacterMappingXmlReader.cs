@@ -24,6 +24,8 @@ namespace Mvp.Xml.Common.Xsl
         private string outputTag;
         private string useCharacterMapsTag;
         private List<string> useCharacterMaps;
+        private string currMapName;
+        private CharacterMap currMap;
 
         /// <summary>
         /// Creates new instance of the <see cref="CharacterMappingXmlReader"/> with given
@@ -47,51 +49,51 @@ namespace Mvp.Xml.Common.Xsl
         /// </summary>        
         public override bool Read()
         {
-            bool baseRead = base.Read();
+            bool baseRead = base.Read();            
             if (base.NodeType == XmlNodeType.Element && base.NamespaceURI == nxsltNamespace &&
                 base.LocalName == characterMapTag)
             {
                 //nxslt:character-map
-                string mapName = base[nameTag];
-                if (string.IsNullOrEmpty(mapName))
+                currMapName = base[nameTag];
+                if (string.IsNullOrEmpty(currMapName))
                 {
                     throw new System.Xml.Xsl.XsltCompileException("Required 'name' attribute of nxslt:character-map element is missing.");
                 }
-                CharacterMap map = new CharacterMap();
+                currMap = new CharacterMap();
                 string referencedMaps = base[useCharacterMapsTag];
                 if (!string.IsNullOrEmpty(referencedMaps))
                 {
-                    map.ReferencedCharacterMaps = referencedMaps.Split(' ');
-                }                
-                XmlReader subr = base.ReadSubtree();
-                while (subr.Read())
-                {
-                    if (subr.NodeType == XmlNodeType.Element && subr.NamespaceURI == nxsltNamespace
-                        && subr.LocalName == outputCharacterTag)
-                    {
-                        //nxslt:output-character                        
-                        string character = subr[characterTag];
-                        if (string.IsNullOrEmpty(character)) 
-                        {
-                            throw new System.Xml.Xsl.XsltCompileException("Required 'character' attribute of nxslt:output-character element is missing.");
-                        }
-                        if (character.Length > 1)
-                        {
-                            throw new System.Xml.Xsl.XsltCompileException("'character' attribute value of nxslt:output-character element is too long - must be a single character.");
-                        }
-                        string _string = subr[stringTag];
-                        if (string.IsNullOrEmpty(character))
-                        {
-                            throw new System.Xml.Xsl.XsltCompileException("Required 'string' attribute of nxslt:output-character element is missing.");
-                        }                        
-                        map.AddMapping(character[0], _string);
-                    }
-                }
+                    currMap.ReferencedCharacterMaps = referencedMaps.Split(' ');
+                }                                                                
+            }
+            else if (base.NodeType == XmlNodeType.EndElement && base.NamespaceURI == nxsltNamespace &&
+                base.LocalName == characterMapTag)
+            {
                 if (this.mapping == null)
                 {
                     this.mapping = new CharacterMapping();
                 }
-                this.mapping.AddCharacterMap(mapName, map);
+                this.mapping.AddCharacterMap(currMapName, currMap);
+            }
+            else if (base.NodeType == XmlNodeType.Element && base.NamespaceURI == nxsltNamespace
+              && base.LocalName == outputCharacterTag)
+            {
+                //nxslt:output-character                        
+                string character = base[characterTag];
+                if (string.IsNullOrEmpty(character))
+                {
+                    throw new System.Xml.Xsl.XsltCompileException("Required 'character' attribute of nxslt:output-character element is missing.");
+                }
+                if (character.Length > 1)
+                {
+                    throw new System.Xml.Xsl.XsltCompileException("'character' attribute value of nxslt:output-character element is too long - must be a single character.");
+                }
+                string _string = base[stringTag];
+                if (string.IsNullOrEmpty(character))
+                {
+                    throw new System.Xml.Xsl.XsltCompileException("Required 'string' attribute of nxslt:output-character element is missing.");
+                }
+                currMap.AddMapping(character[0], _string);
             }
             else if (base.NodeType == XmlNodeType.Element && base.NamespaceURI == nxsltNamespace &&
                base.LocalName == outputTag)
@@ -106,8 +108,6 @@ namespace Mvp.Xml.Common.Xsl
                     }
                     this.useCharacterMaps.AddRange(useMaps.Split(' '));
                 }
-                XmlReader subr = base.ReadSubtree();
-                while (subr.Read());                
             }
             return baseRead;
         }

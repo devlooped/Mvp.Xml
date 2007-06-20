@@ -5,4 +5,7 @@
     <nxslt:character-map name="testmap">
         <nxslt:output-character character="&#160;" string="&amp;nbsp;" />
     </nxslt:character-map>
+    <xsl:template match="/">
+        <out>data</out>
+    </xsl:template>
 </xsl:stylesheet>
