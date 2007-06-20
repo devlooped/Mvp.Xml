@@ -38,6 +38,10 @@ namespace XmlLab.nxslt
           case "-xw":
             options.StripWhiteSpace = true;
             break;
+          //Do not process character maps
+            case "-xcm":
+                options.ProcessCharacterMaps = false;
+                break;
           //Output filename
           case "-o":
             if (i == args.Length - 1)

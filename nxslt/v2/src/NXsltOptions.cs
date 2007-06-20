@@ -32,6 +32,16 @@ namespace XmlLab.nxslt
     private bool noSourceXml;
     private bool prettyPrintMode;
     private bool identityTransformMode;
+    private bool processCharacterMaps = true;
+
+    /// <summary>
+    /// Process character maps.
+    /// </summary>
+    public bool ProcessCharacterMaps
+    {
+        get { return processCharacterMaps; }
+        set { processCharacterMaps = value; }
+    }
 
     /// <summary>
     /// Default constructor.

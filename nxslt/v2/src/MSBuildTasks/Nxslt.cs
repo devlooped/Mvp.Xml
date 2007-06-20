@@ -76,6 +76,13 @@ namespace XmlLab.NxsltTasks.MSBuild
             set { nxsltOptions.ValidateDocs = value; }
         }
 
+        /// <summary>Process character maps.</summary>        
+        public bool ProcessCharacterMaps
+        {
+            get { return nxsltOptions.ProcessCharacterMaps; }
+            set { nxsltOptions.ProcessCharacterMaps = value; }
+        }
+
         /// <summary>Show load and transformation timings.</summary>        
         public bool ShowTimings
         {

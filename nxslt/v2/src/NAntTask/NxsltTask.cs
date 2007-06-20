@@ -88,6 +88,15 @@ namespace XmlLab.NxsltTasks.NAnt
             set { nxsltOptions.ValidateDocs = value; }
         }
 
+        /// <summary>Process character maps.</summary>
+        [TaskAttribute("processcharactermaps")]
+        [BooleanValidator()]
+        public bool ProcessCharacterMaps
+        {
+            get { return nxsltOptions.ProcessCharacterMaps; }
+            set { nxsltOptions.ProcessCharacterMaps = value; }
+        }
+
         /// <summary>Show load and transformation timings.</summary>
         [TaskAttribute("showtimings")]
         [BooleanValidator()]

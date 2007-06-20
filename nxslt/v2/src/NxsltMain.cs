@@ -258,8 +258,9 @@ namespace XmlLab.nxslt
         /// Creates XslCompiledTransform instance for given reader and resolver.
         /// </summary>                
         private MvpXslTransform CreateTransform(XmlResolver stylesheetResolver, XmlReader stylesheetReader)
-        {
+        {            
             MvpXslTransform xslt = new MvpXslTransform();
+            xslt.SupportCharacterMaps = options.ProcessCharacterMaps;
             try
             {
                 xslt.Load(stylesheetReader, XsltSettings.TrustedXslt, stylesheetResolver);
