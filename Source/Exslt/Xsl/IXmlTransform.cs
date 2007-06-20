@@ -134,6 +134,10 @@ namespace Mvp.Xml.Common.Xsl
 		/// <param name="baseUri">The Uri to append to the current directory.</param>
 		public OutputResolver(string baseUri)
 		{
+            if (string.IsNullOrEmpty(baseUri))
+            {
+                baseUri = ".";
+            }
 			this.baseUri = new Uri(new Uri(Directory.GetCurrentDirectory() + "/"), baseUri + "/");
 		}
 
