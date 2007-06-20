@@ -478,8 +478,18 @@ namespace Mvp.Xml.XInclude.Test
         {
             XmlTextReader r = new XmlTextReader(new StringReader("<foo/>"));
             XIncludingReader xir = new XIncludingReader(r);
+            xir.ExposeTextInclusionsAsCDATA = true;
             xir.MoveToContent();
             Assert.IsTrue(xir.Encoding == UnicodeEncoding.Unicode);            
+        }
+
+        [TestMethod]
+        public void ShouldPreserveCDATA()
+        {
+            string xml = "<HTML><![CDATA[<img src=\"/_layouts/images/\">]]></HTML>";
+            XIncludingReader xir = new XIncludingReader(new StringReader(xml));
+            xir.Read();
+            Assert.AreEqual("<HTML><![CDATA[<img src=\"/_layouts/images/\">]]></HTML>", xir.ReadOuterXml());
         }
     }
 

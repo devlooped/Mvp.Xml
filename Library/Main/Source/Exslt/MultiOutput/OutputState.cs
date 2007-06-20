@@ -67,7 +67,7 @@ namespace Mvp.Xml.Exslt
 			}
 			// Save current directory
 			//storedDir = Directory.GetCurrentDirectory();
-			string outFile = outResolver.ResolveUri(null, href).AbsolutePath;
+			string outFile = outResolver.ResolveUri(null, href).LocalPath;
 			DirectoryInfo dir = Directory.GetParent(outFile);
 			if (!dir.Exists)
 				dir.Create();

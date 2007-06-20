@@ -179,7 +179,7 @@ namespace XmlLab.nxslt
                 try
                 {
                     XmlOutput results = new XmlOutput(fs);
-                    results.XmlResolver = new OutputResolver(Path.GetDirectoryName(options.OutFile));
+                    results.XmlResolver = new OutputResolver(Path.GetDirectoryName(options.OutFile));                    
                     TransformImpl(srcReader, xslt, resolver, results);
                 }
                 finally
@@ -191,7 +191,7 @@ namespace XmlLab.nxslt
             {
                 //Transform to Console
                 XmlOutput results = new XmlOutput(Console.Out);
-                results.XmlResolver = new OutputResolver(Path.GetDirectoryName(options.OutFile));
+                results.XmlResolver = new OutputResolver(Directory.GetCurrentDirectory());
                 TransformImpl(srcReader, xslt, resolver, results);
             }
             //Save transfomation time
