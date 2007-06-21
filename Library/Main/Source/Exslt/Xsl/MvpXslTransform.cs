@@ -55,7 +55,8 @@ namespace Mvp.Xml.Common.Xsl
         /// <summary>
         /// Real transformation engine
         /// </summary>
-        protected XslCompiledTransform compiledTransform;        
+        private XslCompiledTransform compiledTransform;        
+
         private object sync = new object();
         /// <summary>
         /// Supported EXSLT functions
@@ -396,6 +397,15 @@ namespace Mvp.Xml.Common.Xsl
         #endregion
 
         #region private stuff
+
+        /// <summary>
+        /// Core XSLT engine.
+        /// </summary>
+        internal XslCompiledTransform CompiledTransform
+        {
+            get { return compiledTransform; }
+        }        
+
         /// <summary>
         /// Default XML Reader settings
         /// </summary>

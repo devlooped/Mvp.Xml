@@ -10,6 +10,8 @@ using System.Text;
 using System.Diagnostics;
 using Mvp.Xml.XInclude;
 using Mvp.Xml.Common.Xsl;
+using System.Reflection;
+using System.CodeDom.Compiler;
 #endregion
 
 namespace XmlLab.nxslt
@@ -107,13 +109,13 @@ namespace XmlLab.nxslt
             {
                 reporter.ReportCommandLineParsingError(NXsltStrings.ErrorStylesheetAndPrettyPrintMode);
                 return RETURN_CODE_ERROR;
-            }            
-            
+            }
+
             //Prepare source XML reader
             XmlResolver srcResolver = null;
-            if (options.ResolveExternals)                
+            if (options.ResolveExternals)
             {
-                srcResolver = Utils.GetXmlResolver(options.SourceCredential, options);                
+                srcResolver = Utils.GetXmlResolver(options.SourceCredential, options);
             }
             XmlReader srcReader = PrepareSourceReader(srcResolver);
             if (options.PrettyPrintMode)
@@ -141,7 +143,7 @@ namespace XmlLab.nxslt
                 {
                     MvpXslTransform xslt = PrepareStylesheet(stylesheetResolver);
                     Transform(srcReader, xslt, srcResolver);
-                }                
+                }
             }
 
             if (options.ShowTiming)
@@ -151,7 +153,7 @@ namespace XmlLab.nxslt
                 reporter.ReportTimings(ref timings);
             }
             return RETURN_CODE_OK;
-        }        
+        }
 
         /// <summary>
         /// Performs XSL Transformation.
@@ -179,7 +181,7 @@ namespace XmlLab.nxslt
                 try
                 {
                     XmlOutput results = new XmlOutput(fs);
-                    results.XmlResolver = new OutputResolver(Path.GetDirectoryName(options.OutFile));                    
+                    results.XmlResolver = new OutputResolver(Path.GetDirectoryName(options.OutFile));
                     TransformImpl(srcReader, xslt, resolver, results);
                 }
                 finally
@@ -207,7 +209,7 @@ namespace XmlLab.nxslt
         /// </summary>    
         private void TransformImpl(XmlReader srcReader, MvpXslTransform xslt, XmlResolver resolver, XmlOutput results)
         {
-            xslt.MultiOutput = options.MultiOutput;            
+            xslt.MultiOutput = options.MultiOutput;
             try
             {
                 xslt.Transform(new XmlInput(srcReader, resolver), options.XslArgList, results);
@@ -254,6 +256,89 @@ namespace XmlLab.nxslt
             return xslt;
         }
 
+        // Cached value of Environment.CurrentDirectory
+        private string currentDir = null;
+
+        /// 
+        /// Returns user-friendly file name. First, it tries to obtain a file name
+        /// from the given uriString.
+        /// Then, if fullPaths == false, and the file name starts with the current
+        /// directory path, it removes that path from the file name.
+        /// 
+        private string GetFriendlyFileName(string uriString)
+        {
+            Uri uri;
+
+            if (uriString == null ||
+                uriString.Length == 0 ||
+                !Uri.TryCreate(uriString, UriKind.Absolute, out uri) ||
+                !uri.IsFile
+            )
+            {
+                return uriString;
+            }
+
+            string fileName = uri.LocalPath;
+
+            if (true)
+            //if (!fullPaths)
+            {
+                if (currentDir == null)
+                {
+                    currentDir = Environment.CurrentDirectory;
+                    if (currentDir[currentDir.Length - 1] != Path.DirectorySeparatorChar)
+                    {
+                        currentDir += Path.DirectorySeparatorChar;
+                    }
+                }
+
+                if (fileName.StartsWith(currentDir, StringComparison.OrdinalIgnoreCase))
+                {
+                    fileName = fileName.Substring(currentDir.Length);
+                }
+            }
+
+            return fileName;
+        }
+
+        private string GetCompileErrors(XslCompiledTransform xslt)
+        {
+            try
+            {
+                MethodInfo methErrors = typeof(XslCompiledTransform).GetMethod(
+                    "get_Errors", BindingFlags.NonPublic | BindingFlags.Instance);
+
+                if (methErrors == null)
+                {
+                    return null;
+                }
+
+                CompilerErrorCollection errorColl =
+                    (CompilerErrorCollection)methErrors.Invoke(xslt, null);
+                StringBuilder sb = new StringBuilder();
+
+                foreach (CompilerError error in errorColl)
+                {
+                    sb.AppendFormat("{0}({1},{2}) : {3} {4}: {5}",
+                        GetFriendlyFileName(error.FileName),
+                        error.Line,
+                        error.Column,
+                        error.IsWarning ? "warning" : "error",
+                        error.ErrorNumber,
+                        error.ErrorText
+                    );
+                    sb.AppendLine();
+                }
+                return sb.ToString();
+            }
+            catch
+            {
+                // MethodAccessException or SecurityException may happen 
+                //if we do not have enough permissions
+                return null;
+            }
+        }
+
         /// <summary>
         /// Creates XslCompiledTransform instance for given reader and resolver.
         /// </summary>                
@@ -264,6 +349,11 @@ namespace XmlLab.nxslt
             try
             {
                 xslt.Load(stylesheetReader, XsltSettings.TrustedXslt, stylesheetResolver);
+            }
+            catch (XsltException xslte)
+            {
+                string errors = GetCompileErrors(xslt.CompiledTransform);
+                throw new NXsltException(errors);
             }
             catch (XmlException xe)
             {
@@ -308,8 +398,8 @@ namespace XmlLab.nxslt
                 if (embStylesheet == null)
                 {
                     //Unresolvable stylesheet URI                    
-                    throw new NXsltException(NXsltStrings.ErrorPIStylesheetNotFound, href);                    
-                }                
+                    throw new NXsltException(NXsltStrings.ErrorPIStylesheetNotFound, href);
+                }
                 xslt = CreateTransform(stylesheetResolver, embStylesheet.ReadSubtree());
             }
             else
@@ -317,7 +407,7 @@ namespace XmlLab.nxslt
                 //External stylesheet
                 options.Stylesheet = href;
                 xslt = PrepareStylesheet(stylesheetResolver);
-            }            
+            }
             //Save stylesheet loading/compilation time
             if (options.ShowTiming)
             {
@@ -327,7 +417,7 @@ namespace XmlLab.nxslt
             return xslt;
         }
 
-        
+
 
         /// <summary>
         /// Prepares source XML reader.
@@ -335,8 +425,8 @@ namespace XmlLab.nxslt
         /// <returns>XmlReader over source XML</returns>
         private XmlReader PrepareSourceReader(XmlResolver srcResolver)
         {
-            XmlReaderSettings srcReaderSettings = new XmlReaderSettings();            
-            srcReaderSettings.ProhibitDtd = false;            
+            XmlReaderSettings srcReaderSettings = new XmlReaderSettings();
+            srcReaderSettings.ProhibitDtd = false;
             if (options.StripWhiteSpace || options.PrettyPrintMode)
             {
                 srcReaderSettings.IgnoreWhitespace = true;
@@ -344,8 +434,8 @@ namespace XmlLab.nxslt
             if (options.ValidateDocs)
             {
                 srcReaderSettings.ValidationType = ValidationType.DTD;
-            }            
-            srcReaderSettings.XmlResolver = srcResolver;            
+            }
+            srcReaderSettings.XmlResolver = srcResolver;
             XmlReader srcReader;
             if (options.NoSourceXml)
             {
@@ -394,7 +484,7 @@ namespace XmlLab.nxslt
             {
                 stylesheetReaderSettings.XmlResolver = stylesheetResolver;
             }
-            XmlReader stylesheetReader;            
+            XmlReader stylesheetReader;
             if (options.IdentityTransformMode)
             {
                 //No XSLT - use identity transformation
