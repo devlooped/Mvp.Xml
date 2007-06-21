@@ -15,6 +15,10 @@ using TestInitialize = NUnit.Framework.SetUpAttribute;
 using TestCleanup = NUnit.Framework.TearDownAttribute;
 using TestMethod = NUnit.Framework.TestAttribute;
 using System.Xml.Serialization;
+using System.Net;
+using System.Xml.Xsl;
+using Mvp.Xml.Common.Xsl;
+using System.Web;
 #endif
 
 
@@ -491,8 +495,48 @@ namespace Mvp.Xml.XInclude.Test
             xir.Read();
             Assert.AreEqual("<HTML><![CDATA[<img src=\"/_layouts/images/\">]]></HTML>", xir.ReadOuterXml());
         }
+
+        [TestMethod]
+        public void TestXPointerIndentationBug()
+        {
+
+            XmlUrlResolver resolver = new XmlUrlResolver();
+            resolver.Credentials = CredentialCache.DefaultCredentials;
+            XsltSettings xsltSettings = new XsltSettings();
+            xsltSettings.EnableDocumentFunction = true;
+            XmlReaderSettings settings = new XmlReaderSettings();
+            settings.ProhibitDtd = false;
+            XmlReader reader = XmlReader.Create("../../XInclude/tests/Transform.xsl", settings);
+            XIncludingReader xInputReader = new XIncludingReader("../../XInclude/tests/FileA.xml");
+            try
+            {
+                MvpXslTransform processor = new MvpXslTransform(false);
+                processor.Load(reader, xsltSettings, resolver);                
+                //xInputReader.XmlResolver = new XMLBase();
+                XmlDocument xInputDoc = new XmlDocument();
+                xInputDoc.Load(xInputReader);
+                XmlInput xInput = new XmlInput(xInputDoc);
+                StringWriter stringW = new StringWriter();
+                XmlOutput xOutput = new XmlOutput(stringW);
+                processor.Transform(xInput, null, xOutput);
+                processor.TemporaryFiles.Delete();
+                Assert.AreEqual("<?xml version=\"1.0\" encoding=\"utf-16\"?>NodeA Content", stringW.ToString());
+            }
+            finally
+            {
+                 reader.Close();
+                 xInputReader.Close();
+            }
+        }
     }
 
+    public class XMLBase : XmlUrlResolver
+    {
+        public override Uri ResolveUri(Uri baseUri, string relativeUri)
+        {
+            return base.ResolveUri(baseUri, HttpContext.Current.Server.MapPath("/") + relativeUri);
+        }
+    }
     public class Document
     {
         private string name;
