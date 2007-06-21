@@ -123,6 +123,7 @@ Running under .NET {3}.{4}.{5}.{6}</value>
     <value xml:space="preserve">Usage: nxslt source stylesheet [options] [param=value...] [xmlns:prefix=uri...]
 		
 Options:
+   @file        Reads a file for more options
   -?            Show this message
   -o filename   Write output to named file    
   -xw           Strip non-significant whitespace from source and stylesheet

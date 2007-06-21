@@ -32,6 +32,7 @@
     <Reference Include="nunit.framework, Version=2.2.9.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
     <Reference Include="System.XML" />
   </ItemGroup>
   <ItemGroup>
@@ -801,7 +802,10 @@
     <Content Include="XInclude\tests\document2.xml" />
     <Content Include="XInclude\tests\disclaimerWithXmlBase.xml" />
     <Content Include="XInclude\tests\Document3.xml" />
+    <Content Include="XInclude\tests\FileA.xml" />
+    <Content Include="XInclude\tests\FileB.xml" />
     <Content Include="XInclude\tests\Item3.xml" />
+    <Content Include="XInclude\tests\Transform.xsl" />
     <None Include="Common\UpperLowerTests\Customer.xsx">
       <DependentUpon>Customer.xsd</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

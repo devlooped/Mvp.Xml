@@ -485,14 +485,14 @@ namespace XmlLab.nxslt {
         ///   Looks up a localized string similar to Usage: nxslt source stylesheet [options] [param=value...] [xmlns:prefix=uri...]
         ///		
         ///Options:
+        ///   @file        Reads a file for more options
         ///  -?            Show this message
         ///  -o filename   Write output to named file    
         ///  -xw           Strip non-significant whitespace from source and stylesheet
         ///  -xe           Do not resolve external definitions during parse phase
         ///  -xi           Do not process XInclude during parse phase
         ///  -v            Validate documents during parse phase    
-        ///  -t            Show load and transformation timings
-        ///  -xs        [rest of string was truncated]&quot;;.
+        ///  -t            Sho [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string UsageBody {
             get {
