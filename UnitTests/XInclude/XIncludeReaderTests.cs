@@ -528,6 +528,83 @@ namespace Mvp.Xml.XInclude.Test
                  xInputReader.Close();
             }
         }
+
+        [TestMethod]
+        public void TestLineInfo()
+        {
+            XIncludingReader r = new XIncludingReader("../../XInclude/tests/document.xml");            
+            IXmlLineInfo lineInfo = ((IXmlLineInfo)r);
+            Assert.IsTrue(lineInfo.HasLineInfo());
+            r.Read();
+            Assert.AreEqual(1, lineInfo.LineNumber);
+            Assert.AreEqual(3, lineInfo.LinePosition);
+            r.Read();
+            Assert.AreEqual(1, lineInfo.LineNumber);
+            Assert.AreEqual(22, lineInfo.LinePosition);
+            r.Read();
+            Assert.AreEqual(2, lineInfo.LineNumber);
+            Assert.AreEqual(2, lineInfo.LinePosition);
+            r.Read();
+            Assert.AreEqual(2, lineInfo.LineNumber);
+            Assert.AreEqual(54, lineInfo.LinePosition);
+            r.Read();
+            Assert.AreEqual(3, lineInfo.LineNumber);
+            Assert.AreEqual(6, lineInfo.LinePosition);
+            r.Read();
+            Assert.AreEqual(3, lineInfo.LineNumber);
+            Assert.AreEqual(8, lineInfo.LinePosition);
+            r.Read();
+            Assert.AreEqual(3, lineInfo.LineNumber);
+            Assert.AreEqual(54, lineInfo.LinePosition);
+            r.Read();
+            Assert.AreEqual(3, lineInfo.LineNumber);
+            Assert.AreEqual(56, lineInfo.LinePosition);
+            r.Read();
+            Assert.AreEqual(1, lineInfo.LineNumber);
+            Assert.AreEqual(22, lineInfo.LinePosition);
+            r.Read();
+            Assert.AreEqual(2, lineInfo.LineNumber);
+            Assert.AreEqual(5, lineInfo.LinePosition);
+            r.Read();
+            Assert.AreEqual(2, lineInfo.LineNumber);
+            Assert.AreEqual(17, lineInfo.LinePosition);
+            r.Read();
+            Assert.AreEqual(3, lineInfo.LineNumber);
+            Assert.AreEqual(3, lineInfo.LinePosition);
+            r.Read();
+            Assert.AreEqual(3, lineInfo.LineNumber);
+            Assert.AreEqual(12, lineInfo.LinePosition);
+            r.Read();
+            Assert.AreEqual(4, lineInfo.LineNumber);
+            Assert.AreEqual(2, lineInfo.LinePosition);
+            r.Read();
+            Assert.AreEqual(4, lineInfo.LineNumber);
+            Assert.AreEqual(13, lineInfo.LinePosition);
+            r.Read();
+            Assert.AreEqual(5, lineInfo.LineNumber);
+            Assert.AreEqual(4, lineInfo.LinePosition);
+            r.Read();
+            Assert.AreEqual(5, lineInfo.LineNumber);
+            Assert.AreEqual(6, lineInfo.LinePosition);
+            r.Read();
+            Assert.AreEqual(7, lineInfo.LineNumber);
+            Assert.AreEqual(18, lineInfo.LinePosition);
+            r.Read();
+            Assert.AreEqual(7, lineInfo.LineNumber);
+            Assert.AreEqual(20, lineInfo.LinePosition);
+            r.Read();
+            Assert.AreEqual(8, lineInfo.LineNumber);
+            Assert.AreEqual(3, lineInfo.LinePosition);
+            r.Read();
+            Assert.AreEqual(4, lineInfo.LineNumber);
+            Assert.AreEqual(75, lineInfo.LinePosition);
+            r.Read();
+            Assert.AreEqual(6, lineInfo.LineNumber);
+            Assert.AreEqual(3, lineInfo.LinePosition);
+            r.Read();
+            Assert.AreEqual(6, lineInfo.LineNumber);
+            Assert.AreEqual(12, lineInfo.LinePosition);
+        }
     }
 
     public class XMLBase : XmlUrlResolver

@@ -29,7 +29,7 @@ namespace Mvp.Xml.XInclude
 	/// <remarks><para>See <a href="http://mvp-xml.sf.net/xinclude">XInclude.NET homepage</a> for more info.</para>    
 	/// <para>Author: Oleg Tkachenko, <a href="http://www.xmllab.net">http://www.xmllab.net</a>.</para>
 	/// </remarks>
-	public class XIncludingReader : XmlReader
+	public class XIncludingReader : XmlReader, IXmlLineInfo
 	{
 		#region Private fields
 		//XInclude keywords
@@ -982,9 +982,61 @@ namespace Mvp.Xml.XInclude
 
 		#endregion
 
-		#region Public members
+        #region IXmlLineInfo impl 
 
-		/// <summary>
+        /// <summary>
+        /// Gets a value indicating whether the class can return line information.
+        /// See <see cref="IXmlLineInfo.HasLineInfo"/>.
+        /// </summary>        
+        public bool HasLineInfo()
+        {
+            IXmlLineInfo core = _reader as IXmlLineInfo;
+            if (core != null)
+            {
+                return core.HasLineInfo();
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Gets the current line number.
+        /// See <see cref="IXmlLineInfo.LineNumber "/>.
+        /// </summary>
+        public int LineNumber
+        {
+            get
+            {
+                IXmlLineInfo core = _reader as IXmlLineInfo;
+                if (core != null)
+                {
+                    return core.LineNumber;
+                }
+                return 0;
+            }
+        }
+
+        /// <summary>
+        ///   	Gets the current line position.
+        /// See <see cref="IXmlLineInfo.LinePosition "/>.
+        /// </summary>
+        public int LinePosition
+        {
+            get
+            {
+                IXmlLineInfo core = _reader as IXmlLineInfo;
+                if (core != null)
+                {
+                    return core.LinePosition;
+                }
+                return 0;
+            }
+        }
+
+        #endregion
+
+        #region Public members
+
+        /// <summary>
 		/// See <see cref="XmlTextReader.WhitespaceHandling"/>.
 		/// </summary>
 		public WhitespaceHandling WhitespaceHandling

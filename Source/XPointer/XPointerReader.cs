@@ -23,7 +23,7 @@ namespace Mvp.Xml.XPointer
     /// <remarks><para>See <a href="http://mvp-xml.sf.net/xpointer">XPointer.NET homepage</a> for more info.</para>
     /// <para>Author: Oleg Tkachenko, <a href="http://www.xmllab.net">http://www.xmllab.net</a>.</para>
     /// </remarks>
-    public class XPointerReader : XmlReader, IHasXPathNavigator
+    public class XPointerReader : XmlReader, IHasXPathNavigator, IXmlLineInfo
     {
         #region private members
 
@@ -417,6 +417,58 @@ namespace Mvp.Xml.XPointer
         public XPathNavigator GetNavigator()
         {
             return _pointedNodes.Current.Clone();
+        }
+
+        #endregion
+
+        #region IXmlLineInfo impl
+
+        /// <summary>
+        /// Gets a value indicating whether the class can return line information.
+        /// See <see cref="IXmlLineInfo.HasLineInfo"/>.
+        /// </summary>        
+        public bool HasLineInfo()
+        {
+            IXmlLineInfo core = _reader as IXmlLineInfo;
+            if (core != null)
+            {
+                return core.HasLineInfo();
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Gets the current line number.
+        /// See <see cref="IXmlLineInfo.LineNumber "/>.
+        /// </summary>
+        public int LineNumber
+        {
+            get
+            {
+                IXmlLineInfo core = _reader as IXmlLineInfo;
+                if (core != null)
+                {
+                    return core.LineNumber;
+                }
+                return 0;
+            }
+        }
+
+        /// <summary>
+        ///   	Gets the current line position.
+        /// See <see cref="IXmlLineInfo.LinePosition "/>.
+        /// </summary>
+        public int LinePosition
+        {
+            get
+            {
+                IXmlLineInfo core = _reader as IXmlLineInfo;
+                if (core != null)
+                {
+                    return core.LinePosition;
+                }
+                return 0;
+            }
         }
 
         #endregion
