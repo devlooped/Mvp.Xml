@@ -64,6 +64,7 @@
     <Compile Include="Common\XmlNodeFactory.cs" />
     <Compile Include="Common\XmlNodeListFactory.cs" />
     <Compile Include="Common\XmlPrefix.cs" />
+    <Compile Include="Common\XmlResourceResolver.cs" />
     <Compile Include="Common\XmlWrappingReader.cs" />
     <Compile Include="Common\XmlWrappingWriter.cs">
       <SubType>Code</SubType>
