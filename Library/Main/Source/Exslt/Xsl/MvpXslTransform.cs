@@ -257,7 +257,8 @@ namespace Mvp.Xml.Common.Xsl
         /// <param name="arguments">An <see cref="XsltArgumentList"/> containing the namespace-qualified 
         /// arguments used as input to the transform. This value can be a null reference (Nothing in Visual Basic).</param>
         /// <param name="output">Represents the transformation's output.</param>
-        public void Transform(XmlInput input, XsltArgumentList arguments, XmlOutput output)
+        /// <returns>Transformation output.</returns>
+        public XmlOutput Transform(XmlInput input, XsltArgumentList arguments, XmlOutput output)
         {
             if (input == null) throw new ArgumentNullException("defaltDocument");
             XmlWriter xmlWriter = output.destination as XmlWriter;
@@ -340,6 +341,7 @@ namespace Mvp.Xml.Common.Xsl
                     xmlWriter.Close();
                 }
             }
+            return output;
         }
 
         /// <summary>

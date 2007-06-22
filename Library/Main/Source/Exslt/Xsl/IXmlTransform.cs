@@ -21,7 +21,8 @@ namespace Mvp.Xml.Common.Xsl
 		/// <param name="defaulDocument">Default input XML document</param>
 		/// <param name="args">Parameters</param>
 		/// <param name="output">Represents the transformation's output</param>
-		void Transform(XmlInput defaulDocument, XsltArgumentList args, XmlOutput output);
+        /// <returns>Transformation output</returns>
+        XmlOutput Transform(XmlInput defaulDocument, XsltArgumentList args, XmlOutput output);
 		/// <summary>
 		/// Defines default output settings.
 		/// </summary>
