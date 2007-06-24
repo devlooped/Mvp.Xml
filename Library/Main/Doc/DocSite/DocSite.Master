@@ -1,0 +1,48 @@
+<%@ Master Language="C#" AutoEventWireup="true" Codebehind="DocSite.Master.cs" Inherits="DocSite.DocSite" %>
+<%@ Register Src="DocSiteSidebar.ascx" TagName="DocSiteSidebar" TagPrefix="DocSite" %>
+<%@ Register Assembly="System.Web.Extensions, Version=1.0.61025.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI" TagPrefix="asp" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+	<link rel="stylesheet" type="text/css" href="DocSite.css" />
+	<title>DocSite - </title>
+</head>
+<body>
+	<form id="form1" runat="server">
+		<asp:ScriptManager runat="server" ID="indexScriptManager"></asp:ScriptManager>
+		<div id="docsite_layout">
+			<div id="docsite_header">
+				<div id="docsite_header_links">
+					<a href="DocSite.chm">Download Compiled Help</a>
+				</div>
+				<img id="docsite_logo" width="51px" height="51px" alt="DocSite Logo" src="Logo.jpg" />
+				<div id="docsite_header_title">DocSite</div>
+				<div id="docsite_header_company"><span runat="server" id="Company"></span></div>
+			</div>
+			<DocSite:DocSiteSidebar runat="server" ID="sideBar" />
+			<div id="docsite_breadcrumbs">
+				<asp:UpdatePanel runat="server" ID="breadCrumbsUpdatePanel" ChildrenAsTriggers="true">
+					<ContentTemplate>
+						<asp:SiteMapPath runat="server" ID="breadCrumbs" SiteMapProvider="DocSiteContentsSiteMapProvider">
+							<CurrentNodeStyle CssClass="docsite_breadcrumb docsite_breadcrumbs_active" />
+							<NodeStyle CssClass="docsite_breadcrumb docsite_breadcrumbs_link" />
+							<RootNodeStyle CssClass="docsite_breadcrumb docsite_breadcrumbs_root" />
+						</asp:SiteMapPath>
+					</ContentTemplate>
+				</asp:UpdatePanel>
+			</div>
+			<div id="docsite_content">
+				<asp:ContentPlaceHolder runat="server" ID="Content" />
+			</div>
+			<div id="docsite_footer">
+				<span runat="server" id="Copyright"></span>
+			</div>
+		</div>
+		
+		<%= GetPersistSidebarHandleScript() %>
+		<!-- handle persistence script must appear before docsite script -->
+		<script type="text/javascript" src="DocSiteScript.js"></script>
+	</form>
+</body>
+</html>
