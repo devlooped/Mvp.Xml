@@ -1,0 +1,250 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Synchronization", "Source\Synchronization.csproj", "{5A747B6C-D230-4D59-9321-83B48C4553CF}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Synchronization.Tests", "UnitTests\Synchronization.Tests.csproj", "{6634F9B2-94CB-4D65-8AD7-E38D6F503057}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8E28D357-213F-4239-8F14-60423045A4AF}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+	ProjectSection(SolutionItems) = preProject
+		localtestrun.testrunconfig = localtestrun.testrunconfig
+		Mvp.Xml.Synchronization.vsmdi = Mvp.Xml.Synchronization.vsmdi
+	EndProjectSection
+	ProjectSection(FolderStartupServices) = postProject
+		{B4F97281-0DBD-4835-9ED8-7DFB966E87FF} = {B4F97281-0DBD-4835-9ED8-7DFB966E87FF}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{873DA134-5545-49B2-BBA0-3045B81AC44D}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+	ProjectSection(FolderStartupServices) = postProject
+		{B4F97281-0DBD-4835-9ED8-7DFB966E87FF} = {B4F97281-0DBD-4835-9ED8-7DFB966E87FF}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{F835F3C1-E7CE-4ADB-AE1E-532C0585377C}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+	ProjectSection(FolderStartupServices) = postProject
+		{B4F97281-0DBD-4835-9ED8-7DFB966E87FF} = {B4F97281-0DBD-4835-9ED8-7DFB966E87FF}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CFUnitTester", "CFUnitTester", "{AECE55BB-0B4C-412E-9D3B-2938EB616A73}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+	ProjectSection(FolderStartupServices) = postProject
+		{B4F97281-0DBD-4835-9ED8-7DFB966E87FF} = {B4F97281-0DBD-4835-9ED8-7DFB966E87FF}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTesting", "Tools\CFUnitTester\UnitTesting\UnitTesting.csproj", "{3385C4E6-0657-48E3-8437-6BF4A51B2315}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestRunner", "Tools\CFUnitTester\TestRunner\TestRunner.csproj", "{1C9AE3CD-C7F3-4A1D-9096-646549157B1A}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuiTestRunner", "Tools\CFUnitTester\GuiTestRunner\GuiTestRunner.csproj", "{EDD25FDB-37FD-4365-B2A8-BE0C6D395BDC}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{79108410-9F61-4979-A972-6139E491C1F0}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+	ProjectSection(FolderStartupServices) = postProject
+		{B4F97281-0DBD-4835-9ED8-7DFB966E87FF} = {B4F97281-0DBD-4835-9ED8-7DFB966E87FF}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerSample", "Samples\CustomerSample\CustomerSample.csproj", "{87B8B948-D954-42CE-AC0A-1BD4DDD5E83F}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerLibrary", "Samples\CustomerLibrary\CustomerLibrary.csproj", "{39CD4932-82D1-4CAC-A262-60C747BBE58F}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerLibrary.Tests", "Samples\CustomerLibrary.Tests\CustomerLibrary.Tests.csproj", "{668EB0BF-98AC-4511-B1AF-53536D2FC4E5}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerSite", "Samples\CustomerSite\CustomerSite.csproj", "{B654FA5B-A802-45F6-9AE2-A64CB32D52BA}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Adapters", "Adapters", "{8ABC36C1-491D-48D3-9A9A-A4D16620F137}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+	ProjectSection(FolderStartupServices) = postProject
+		{B4F97281-0DBD-4835-9ED8-7DFB966E87FF} = {B4F97281-0DBD-4835-9ED8-7DFB966E87FF}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Synchronization.CF", "Source\Synchronization.CF.csproj", "{6AB67AF4-83D3-449E-83D0-A88C343801AE}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Synchronization.Tests.CF", "UnitTests\Synchronization.Tests.CF.csproj", "{F3D077E0-0FD6-4914-A55C-3FC14F36276A}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 12
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs01.codeplex.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Samples\\CustomerLibrary.Tests\\CustomerLibrary.Tests.csproj
+		SccProjectTopLevelParentUniqueName1 = Mvp.Xml.Synchronization.VSTS.sln
+		SccProjectName1 = Samples/CustomerLibrary.Tests
+		SccLocalPath1 = Samples\\CustomerLibrary.Tests
+		SccProjectUniqueName2 = Samples\\CustomerLibrary\\CustomerLibrary.csproj
+		SccProjectTopLevelParentUniqueName2 = Mvp.Xml.Synchronization.VSTS.sln
+		SccProjectName2 = Samples/CustomerLibrary
+		SccLocalPath2 = Samples\\CustomerLibrary
+		SccProjectUniqueName3 = Samples\\CustomerSample\\CustomerSample.csproj
+		SccProjectTopLevelParentUniqueName3 = Mvp.Xml.Synchronization.VSTS.sln
+		SccProjectName3 = Samples/CustomerSample
+		SccLocalPath3 = Samples\\CustomerSample
+		SccProjectUniqueName4 = Samples\\CustomerSite\\CustomerSite.csproj
+		SccProjectTopLevelParentUniqueName4 = Mvp.Xml.Synchronization.VSTS.sln
+		SccProjectName4 = Samples/CustomerSite
+		SccLocalPath4 = Samples\\CustomerSite
+		SccProjectUniqueName5 = Source\\Synchronization.CF.csproj
+		SccProjectTopLevelParentUniqueName5 = Mvp.Xml.Synchronization.VSTS.sln
+		SccProjectName5 = Source
+		SccLocalPath5 = Source
+		SccProjectUniqueName6 = Source\\Synchronization.csproj
+		SccProjectTopLevelParentUniqueName6 = Mvp.Xml.Synchronization.VSTS.sln
+		SccProjectName6 = Source
+		SccLocalPath6 = Source
+		SccProjectUniqueName7 = Tools\\CFUnitTester\\GuiTestRunner\\GuiTestRunner.csproj
+		SccProjectTopLevelParentUniqueName7 = Mvp.Xml.Synchronization.VSTS.sln
+		SccProjectName7 = Tools/CFUnitTester/GuiTestRunner
+		SccLocalPath7 = Tools\\CFUnitTester\\GuiTestRunner
+		SccProjectUniqueName8 = Tools\\CFUnitTester\\TestRunner\\TestRunner.csproj
+		SccProjectTopLevelParentUniqueName8 = Mvp.Xml.Synchronization.VSTS.sln
+		SccProjectName8 = Tools/CFUnitTester/TestRunner
+		SccLocalPath8 = Tools\\CFUnitTester\\TestRunner
+		SccProjectUniqueName9 = Tools\\CFUnitTester\\UnitTesting\\UnitTesting.csproj
+		SccProjectTopLevelParentUniqueName9 = Mvp.Xml.Synchronization.VSTS.sln
+		SccProjectName9 = Tools/CFUnitTester/UnitTesting
+		SccLocalPath9 = Tools\\CFUnitTester\\UnitTesting
+		SccProjectUniqueName10 = UnitTests\\Synchronization.Tests.CF.csproj
+		SccProjectTopLevelParentUniqueName10 = Mvp.Xml.Synchronization.VSTS.sln
+		SccProjectName10 = UnitTests
+		SccLocalPath10 = UnitTests
+		SccProjectUniqueName11 = UnitTests\\Synchronization.Tests.csproj
+		SccProjectTopLevelParentUniqueName11 = Mvp.Xml.Synchronization.VSTS.sln
+		SccProjectName11 = UnitTests
+		SccLocalPath11 = UnitTests
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = Mvp.Xml.Synchronization.vsmdi
+	EndGlobalSection
+	GlobalSection(TextTemplating) = postSolution
+		TextTemplating = 1
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5A747B6C-D230-4D59-9321-83B48C4553CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A747B6C-D230-4D59-9321-83B48C4553CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A747B6C-D230-4D59-9321-83B48C4553CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A747B6C-D230-4D59-9321-83B48C4553CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6634F9B2-94CB-4D65-8AD7-E38D6F503057}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6634F9B2-94CB-4D65-8AD7-E38D6F503057}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6634F9B2-94CB-4D65-8AD7-E38D6F503057}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6634F9B2-94CB-4D65-8AD7-E38D6F503057}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3385C4E6-0657-48E3-8437-6BF4A51B2315}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3385C4E6-0657-48E3-8437-6BF4A51B2315}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3385C4E6-0657-48E3-8437-6BF4A51B2315}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C9AE3CD-C7F3-4A1D-9096-646549157B1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C9AE3CD-C7F3-4A1D-9096-646549157B1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C9AE3CD-C7F3-4A1D-9096-646549157B1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDD25FDB-37FD-4365-B2A8-BE0C6D395BDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDD25FDB-37FD-4365-B2A8-BE0C6D395BDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDD25FDB-37FD-4365-B2A8-BE0C6D395BDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDD25FDB-37FD-4365-B2A8-BE0C6D395BDC}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{87B8B948-D954-42CE-AC0A-1BD4DDD5E83F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87B8B948-D954-42CE-AC0A-1BD4DDD5E83F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87B8B948-D954-42CE-AC0A-1BD4DDD5E83F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87B8B948-D954-42CE-AC0A-1BD4DDD5E83F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39CD4932-82D1-4CAC-A262-60C747BBE58F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39CD4932-82D1-4CAC-A262-60C747BBE58F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39CD4932-82D1-4CAC-A262-60C747BBE58F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39CD4932-82D1-4CAC-A262-60C747BBE58F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{668EB0BF-98AC-4511-B1AF-53536D2FC4E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{668EB0BF-98AC-4511-B1AF-53536D2FC4E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{668EB0BF-98AC-4511-B1AF-53536D2FC4E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{668EB0BF-98AC-4511-B1AF-53536D2FC4E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B654FA5B-A802-45F6-9AE2-A64CB32D52BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B654FA5B-A802-45F6-9AE2-A64CB32D52BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B654FA5B-A802-45F6-9AE2-A64CB32D52BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B654FA5B-A802-45F6-9AE2-A64CB32D52BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AB67AF4-83D3-449E-83D0-A88C343801AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AB67AF4-83D3-449E-83D0-A88C343801AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AB67AF4-83D3-449E-83D0-A88C343801AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AB67AF4-83D3-449E-83D0-A88C343801AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3D077E0-0FD6-4914-A55C-3FC14F36276A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3D077E0-0FD6-4914-A55C-3FC14F36276A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3D077E0-0FD6-4914-A55C-3FC14F36276A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3D077E0-0FD6-4914-A55C-3FC14F36276A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5A747B6C-D230-4D59-9321-83B48C4553CF} = {873DA134-5545-49B2-BBA0-3045B81AC44D}
+		{6AB67AF4-83D3-449E-83D0-A88C343801AE} = {873DA134-5545-49B2-BBA0-3045B81AC44D}
+		{6634F9B2-94CB-4D65-8AD7-E38D6F503057} = {F835F3C1-E7CE-4ADB-AE1E-532C0585377C}
+		{AECE55BB-0B4C-412E-9D3B-2938EB616A73} = {F835F3C1-E7CE-4ADB-AE1E-532C0585377C}
+		{F3D077E0-0FD6-4914-A55C-3FC14F36276A} = {F835F3C1-E7CE-4ADB-AE1E-532C0585377C}
+		{3385C4E6-0657-48E3-8437-6BF4A51B2315} = {AECE55BB-0B4C-412E-9D3B-2938EB616A73}
+		{1C9AE3CD-C7F3-4A1D-9096-646549157B1A} = {AECE55BB-0B4C-412E-9D3B-2938EB616A73}
+		{EDD25FDB-37FD-4365-B2A8-BE0C6D395BDC} = {AECE55BB-0B4C-412E-9D3B-2938EB616A73}
+		{87B8B948-D954-42CE-AC0A-1BD4DDD5E83F} = {79108410-9F61-4979-A972-6139E491C1F0}
+		{39CD4932-82D1-4CAC-A262-60C747BBE58F} = {79108410-9F61-4979-A972-6139E491C1F0}
+		{668EB0BF-98AC-4511-B1AF-53536D2FC4E5} = {79108410-9F61-4979-A972-6139E491C1F0}
+		{B654FA5B-A802-45F6-9AE2-A64CB32D52BA} = {79108410-9F61-4979-A972-6139E491C1F0}
+	EndGlobalSection
+EndGlobal

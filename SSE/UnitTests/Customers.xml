@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Customer Id="1">
+	<FirstName>Daniel</FirstName>
+	<LastName>Cazzulino</LastName>
+	<Birthday>09/04/1974</Birthday>
+	<LastUpdated>02/05/2007 07:20:32 p.m.</LastUpdated>
+</Customer>

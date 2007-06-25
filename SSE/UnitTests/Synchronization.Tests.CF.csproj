@@ -1,0 +1,117 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F3D077E0-0FD6-4914-A55C-3FC14F36276A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Mvp.Xml.Synchronization.Tests.CF</RootNamespace>
+    <AssemblyName>Mvp.Xml.Synchronization.Tests.CF</AssemblyName>
+    <ProjectTypeGuids>{4D628B5B-2FBC-4AA6-8C16-197242AEB884};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PlatformFamilyName>PocketPC</PlatformFamilyName>
+    <PlatformID>4118C335-430C-497f-BE48-11C3316B135E</PlatformID>
+    <OSVersion>5.01</OSVersion>
+    <DeployDirSuffix>GuiTestRunner</DeployDirSuffix>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FormFactorID>
+    </FormFactorID>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\CF\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;$(PlatformFamilyName)</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>512</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\CF\</OutputPath>
+    <DefineConstants>TRACE;$(PlatformFamilyName)</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>512</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Behaviors\BehaviorFixture.cs" />
+    <Compile Include="Behaviors\MergeBehaviorFixture.cs" />
+    <Compile Include="ConflictResolutionFixture.cs" />
+    <Compile Include="DynamicXmlItemFixture.cs" />
+    <Compile Include="Mocks\MockSyncRepository.cs" />
+    <Compile Include="Mocks\MockXmlRepository.cs" />
+    <Compile Include="Model\ComparableListFixture.cs" />
+    <Compile Include="Model\ComparableStackFixture.cs" />
+    <Compile Include="Model\FeedFixture.cs" />
+    <Compile Include="Model\HistoryFixture.cs" />
+    <Compile Include="Model\ItemFixture.cs" />
+    <Compile Include="Model\RelatedFixture.cs" />
+    <Compile Include="Model\SharingFixture.cs" />
+    <Compile Include="Model\SyncFixture.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RssDateTimeFixture.cs" />
+    <Compile Include="RssReaderFixture.cs" />
+    <Compile Include="RssReaderWriterFixture.cs" />
+    <Compile Include="RssWriterFixture.cs" />
+    <Compile Include="SerializerXmlItemFixture.cs" />
+    <Compile Include="SyncEngineFixture.cs" />
+    <Compile Include="TestFixtureBase.cs" />
+    <Compile Include="TimestampFixture.cs" />
+    <Compile Include="XmlItemFixture.cs" />
+    <Compile Include="XmlNamespaceFilteringReaderFixture.cs" />
+    <Compile Include="XmlNoNsReader.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Source\Synchronization.CF.csproj">
+      <Project>{6AB67AF4-83D3-449E-83D0-A88C343801AE}</Project>
+      <Name>Synchronization.CF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tools\CFUnitTester\UnitTesting\UnitTesting.csproj">
+      <Project>{3385C4E6-0657-48E3-8437-6BF4A51B2315}</Project>
+      <Name>UnitTesting</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Customers.xml" />
+    <Content Include="Feed.xml" />
+  </ItemGroup>
+  <Import Condition="'$(TargetFrameworkVersion)' == 'v1.0'" Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.v1.targets" />
+  <Import Condition="'$(TargetFrameworkVersion)' == 'v2.0'" Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}">
+        <HostingProcess disable="1" />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
