@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<feed xmlns:sx='http://www.microsoft.com/schemas/sse'>
+	<title>Hello World</title>
+	<link>http://kzu</link>
+	<description>this is my feed</description>
+	<sx:sharing version='0.93' since='11-05-2007T19:33:27Z' until='14-05-2007T19:33:27Z'>
+		<sx:related link='http://kzu/full' type='complete' />
+	</sx:sharing>
+	<item>
+		<title>Foo Title</title>
+		<description>Foo Description</description>
+		<Foo Title='Foo' />
+		<sx:sync id='d92d64f5-c006-4086-a35a-c5195448d3ad' updates='1' deleted='false' noconflicts='false'>
+			<sx:history sequence='1' when='14-05-2007T19:33:27Z' by='KZU\' />
+		</sx:sync>
+	</item>
+	<item>
+		<title>Bar Title</title>
+		<description>Bar Description</description>
+		<Foo Title='Bar' />
+		<sx:sync id='646a4f4f-d5f0-4a82-878b-fcbbd6efb157' updates='1' deleted='false' noconflicts='false'>
+			<sx:history sequence='1' when='14-05-2007T19:33:27Z' by='KZU\' />
+		</sx:sync>
+	</item>
+	<item>
+		<title>Baz Title</title>
+		<description>Baz Description</description>
+		<Foo Title='Baz' />
+		<sx:sync id='0206cfdd-612a-4be9-b487-cf6f3f0458fb' updates='1' deleted='false' noconflicts='false'>
+			<sx:history sequence='1' when='14-05-2007T19:33:27Z' by='KZU\' />
+		</sx:sync>
+	</item>
+</feed>

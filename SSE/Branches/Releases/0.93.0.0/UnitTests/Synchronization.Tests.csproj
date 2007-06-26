@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6634F9B2-94CB-4D65-8AD7-E38D6F503057}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Mvp.Xml.Synchronization.Tests</RootNamespace>
+    <AssemblyName>Mvp.Xml.Synchronization.Tests</AssemblyName>
+    <WarningLevel>4</WarningLevel>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\WINDOWS\assembly\GAC_MSIL\Microsoft.VisualStudio.QualityTools.UnitTestFramework\8.0.0.0__b03f5f7f11d50a3a\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="NMock2, Version=1.0.2313.18049, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\NMock2.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SqlServerCe, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\assembly\GAC_MSIL\System.Data.SqlServerCe\9.0.242.0__89845dcd8080cc91\System.Data.SqlServerCe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Source\ObjectDumper.cs">
+      <Link>ObjectDumper.cs</Link>
+    </Compile>
+    <Compile Include="Behaviors\BehaviorFixture.cs" />
+    <Compile Include="Behaviors\MergeBehaviorFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TimestampFixture.cs" />
+    <Compile Include="Model\SharingFixture.cs" />
+    <Compile Include="XmlItemFixture.cs" />
+    <Compile Include="DbSyncRepositoryFixture.cs" />
+    <Compile Include="Model\ComparableListFixture.cs" />
+    <Compile Include="Model\ComparableStackFixture.cs" />
+    <Compile Include="Model\ItemFixture.cs" />
+    <Compile Include="RssReaderWriterFixture.cs" />
+    <Compile Include="HttpSyncFixture.cs" />
+    <Compile Include="DynamicXmlItemFixture.cs" />
+    <Compile Include="RssDateTimeFixture.cs" />
+    <Compile Include="RssWriterFixture.cs" />
+    <Compile Include="Mocks\MockSyncRepository.cs" />
+    <Compile Include="Mocks\MockXmlRepository.cs" />
+    <Compile Include="SerializerXmlItemFixture.cs" />
+    <Compile Include="SyncEngineFixture.cs" />
+    <Compile Include="RssReaderFixture.cs" />
+    <Compile Include="Model\HistoryFixture.cs" />
+    <Compile Include="Model\RelatedFixture.cs" />
+    <Compile Include="Model\SyncFixture.cs" />
+    <Compile Include="Model\FeedFixture.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestFixtureBase.cs" />
+    <Compile Include="XmlNamespaceFilteringReaderFixture.cs" />
+    <Compile Include="XmlNoNsReader.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Source\Synchronization.csproj">
+      <Project>{5A747B6C-D230-4D59-9321-83B48C4553CF}</Project>
+      <Name>Synchronization</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Customers.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Feed.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSHARP.Targets" />
+</Project>

@@ -1,0 +1,1979 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Tests>
+  <edtdocversion branch="retail" build="50727" revision="312" />
+  <TestCategory type="Microsoft.VisualStudio.TestTools.Common.TestCategory">
+    <id type="Microsoft.VisualStudio.TestTools.Common.TestCategoryId">
+      <id type="System.Guid">8c43106b-9dc1-4907-a29f-aa66a61bf5b6</id>
+    </id>
+    <name type="System.String">Lists of Tests</name>
+    <description type="System.String" />
+    <enabled type="System.Boolean">True</enabled>
+    <parentCategoryId type="Microsoft.VisualStudio.TestTools.Common.TestCategoryId">
+      <id type="System.Guid">00000000-0000-0000-0000-000000000000</id>
+    </parentCategoryId>
+    <runConfiguration type="Microsoft.VisualStudio.TestTools.Common.Link">
+      <id type="System.Guid">86c3ba75-e5ee-46f1-88f9-340538413543</id>
+      <name type="System.String">Local Test Run</name>
+      <storage type="System.String">localtestrun.testrunconfig</storage>
+      <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.Common.TestRunConfiguration</type>
+      <enabled type="System.Boolean">True</enabled>
+    </runConfiguration>
+  </TestCategory>
+  <TestCategory type="Microsoft.VisualStudio.TestTools.Common.TestCategory">
+    <id type="Microsoft.VisualStudio.TestTools.Common.TestCategoryId">
+      <id type="System.Guid">ccaca013-35d7-48b0-bd59-71c62c0c4b15</id>
+    </id>
+    <name type="System.String">All</name>
+    <description type="System.String">All tests</description>
+    <enabled type="System.Boolean">True</enabled>
+    <parentCategoryId type="Microsoft.VisualStudio.TestTools.Common.TestCategoryId">
+      <id type="System.Guid">8c43106b-9dc1-4907-a29f-aa66a61bf5b6</id>
+    </parentCategoryId>
+    <testLinks type="System.Collections.Hashtable">
+      <key type="System.Guid">0a8fd9e3-137c-f863-f633-40d62b26d30f</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">0a8fd9e3-137c-f863-f633-40d62b26d30f</id>
+        <name type="System.String">ShouldBuildSelectCommandTextWhereId2</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">4b8974d0-d801-6089-f100-2a7f254e0683</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">4b8974d0-d801-6089-f100-2a7f254e0683</id>
+        <name type="System.String">ShouldGetFirstUpdatedSinceReturnDateTimeMinValue</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">e26df728-2ac3-01d3-6766-310277360696</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">e26df728-2ac3-01d3-6766-310277360696</id>
+        <name type="System.String">ShouldThrowIfWhenParameterNull</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">46645f27-76a8-747a-835b-99c7fbe5c97a</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">46645f27-76a8-747a-835b-99c7fbe5c97a</id>
+        <name type="System.String">ShouldTHrowExceptionIfIdEmpty</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">3f78352a-6dbc-49ca-80db-87b07f200ecc</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">3f78352a-6dbc-49ca-80db-87b07f200ecc</id>
+        <name type="System.String">ShouldGetTwoAdded</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">b98fe054-1b47-01cc-b462-9ac53648a753</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">b98fe054-1b47-01cc-b462-9ac53648a753</id>
+        <name type="System.String">ShouldAddWithoutConflict</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">6edc7a5d-2f90-8bfb-31d6-30f7f0a961f3</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">6edc7a5d-2f90-8bfb-31d6-30f7f0a961f3</id>
+        <name type="System.String">ShouldNoOpOnUpdatedLocalItemWithUnchangedIncoming</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">5bf4662f-1245-f68c-561c-a96e49fc2d2f</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">5bf4662f-1245-f68c-561c-a96e49fc2d2f</id>
+        <name type="System.String">LessThanOperator</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">c9c48ebd-02db-02a1-e3e5-93d99ed18515</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">c9c48ebd-02db-02a1-e3e5-93d99ed18515</id>
+        <name type="System.String">NoOffsetAssumesLocalOffset</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">1bbb3520-bf80-f301-820a-e1200ac5e42b</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">1bbb3520-bf80-f301-820a-e1200ac5e42b</id>
+        <name type="System.String">ShouldSetSyncItemTimestampOnImport</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">042aa8f5-e5cc-b8ac-a605-904c1171d082</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">042aa8f5-e5cc-b8ac-a605-904c1171d082</id>
+        <name type="System.String">ShouldAlwaysUpdateLastSyncEvenIfOnlyConflicts</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">e0a3aaf3-b337-e602-4e2e-641c2cc7acc8</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">e0a3aaf3-b337-e602-4e2e-641c2cc7acc8</id>
+        <name type="System.String">ShouldThrowNullIfFactoryIsNull</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">060ff0e8-e897-e91f-cdeb-b8aee99a4f94</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">060ff0e8-e897-e91f-cdeb-b8aee99a4f94</id>
+        <name type="System.String">ShouldWriteFeedWithDeletedItem</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">954c1cf9-248f-c182-5f04-6a1858ff3dff</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">954c1cf9-248f-c182-5f04-6a1858ff3dff</id>
+        <name type="System.String">ShouldThrowIfNameIsNull</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">95f06ed8-dffc-6e28-d39c-4fa370917553</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">95f06ed8-dffc-6e28-d39c-4fa370917553</id>
+        <name type="System.String">ShouldAddTwoAndGetAllCountTwo</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">4ba91c2c-bdc3-0a8b-5607-a4583779b28a</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">4ba91c2c-bdc3-0a8b-5607-a4583779b28a</id>
+        <name type="System.String">ShouldPropagateUpdate</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">d9f74b82-5042-6f83-4873-bec2d918d3da</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">d9f74b82-5042-6f83-4873-bec2d918d3da</id>
+        <name type="System.String">ShouldRaiseEventForStatusChanged</name>
+        <storage type="System.String">jobmanagement\jobmanagement.tests\bin\debug\mvp.xml.synchronization.jobmanagement.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">96f08421-ba5a-8ad4-36d8-4b2c028a2d35</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">96f08421-ba5a-8ad4-36d8-4b2c028a2d35</id>
+        <name type="System.String">ShouldThrowIfNullSyncRepo</name>
+        <storage type="System.String">jobmanagement\jobmanagement.tests\bin\debug\mvp.xml.synchronization.jobmanagement.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">8ab8e1e4-6726-f1fd-8fbb-d1ee44ef95b0</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">8ab8e1e4-6726-f1fd-8fbb-d1ee44ef95b0</id>
+        <name type="System.String">ShouldSubsumeWithByGreaterSequence</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">47be01b7-a7b0-3b0c-04a5-4c7c09f58864</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">47be01b7-a7b0-3b0c-04a5-4c7c09f58864</id>
+        <name type="System.String">ShouldBuildSelectCommandTextWhereId1</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">9159bded-4273-c2f2-c821-f19973abc5ac</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">9159bded-4273-c2f2-c821-f19973abc5ac</id>
+        <name type="System.String">ShouldThrowIfNullData</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">36796c44-ed61-7e56-81c5-4135f2aefbab</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">36796c44-ed61-7e56-81c5-4135f2aefbab</id>
+        <name type="System.String">ShouldStartAllJobs</name>
+        <storage type="System.String">jobmanagement\jobmanagement.tests\bin\debug\mvp.xml.synchronization.jobmanagement.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">a0f5429c-8c42-49f2-d640-ab8c8070ffdc</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">a0f5429c-8c42-49f2-d640-ab8c8070ffdc</id>
+        <name type="System.String">CanAccessLocalTime</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">a1770837-7d3c-08a2-393a-69a6cfe49c85</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">a1770837-7d3c-08a2-393a-69a6cfe49c85</id>
+        <name type="System.String">CanSpecifyYearFourDigits</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">92ffd021-7863-135b-611b-abee80cb260f</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">92ffd021-7863-135b-611b-abee80cb260f</id>
+        <name type="System.String">ShouldThrowIfNoMemberFoundInTitleExpression</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">1d245225-ae21-42cc-c633-c26d4d264f84</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">1d245225-ae21-42cc-c633-c26d4d264f84</id>
+        <name type="System.String">ShouldDefaultNullForLastSyncUnkownFeed</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">cc31e6c6-bc35-2a45-fbbd-b564208115b8</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">cc31e6c6-bc35-2a45-fbbd-b564208115b8</id>
+        <name type="System.String">ShouldThrowIfContainsNull</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">d86900b2-6ba8-bfda-ca7d-484bb7dc339c</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">d86900b2-6ba8-bfda-ca7d-484bb7dc339c</id>
+        <name type="System.String">ShouldBuildInsertCommandParameters</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">f222f0c3-a825-2b2d-b885-3e29df29816c</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">f222f0c3-a825-2b2d-b885-3e29df29816c</id>
+        <name type="System.String">ShouldGetDefaultMapping</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">4daa32ed-9e5a-32fa-ef3a-93ae54cf5175</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">4daa32ed-9e5a-32fa-ef3a-93ae54cf5175</id>
+        <name type="System.String">ShouldThrowIfFeedNull</name>
+        <storage type="System.String">jobmanagement\jobmanagement.tests\bin\debug\mvp.xml.synchronization.jobmanagement.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">7406472a-06b6-e495-4479-1b0b6b0c6b5f</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">7406472a-06b6-e495-4479-1b0b6b0c6b5f</id>
+        <name type="System.String">ShouldNotSubsumeWithoutByAndWhen</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">fbf6fcd5-1036-6ded-24c0-7e2cce83272e</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">fbf6fcd5-1036-6ded-24c0-7e2cce83272e</id>
+        <name type="System.String">ShouldHaveHistorySequenceSameAsUpdateCount</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">52f61b34-21f5-11da-ae01-33197b2b25cb</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">52f61b34-21f5-11da-ae01-33197b2b25cb</id>
+        <name type="System.String">ShouldAddJob</name>
+        <storage type="System.String">jobmanagement\jobmanagement.tests\bin\debug\mvp.xml.synchronization.jobmanagement.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">89828f01-a2d5-897b-a4a5-b9c34d62b748</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">89828f01-a2d5-897b-a4a5-b9c34d62b748</id>
+        <name type="System.String">ShouldBuildSelectCountCommandParameters1</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">6d6ee69a-ce77-b73a-82e5-581c5529cfc7</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">6d6ee69a-ce77-b73a-82e5-581c5529cfc7</id>
+        <name type="System.String">AddTimeSpanOperator</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">ca82b395-1dcb-dabd-0b2e-d4e445c587aa</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">ca82b395-1dcb-dabd-0b2e-d4e445c587aa</id>
+        <name type="System.String">ShouldNotRemoveIfEmpty</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">96573d23-9148-4d3c-34b9-4ebfafbb0e05</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">96573d23-9148-4d3c-34b9-4ebfafbb0e05</id>
+        <name type="System.String">ShouldRetrieveItemsWithConflicts</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">28e9da62-4d13-2584-3986-abfb9e7cef7e</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">28e9da62-4d13-2584-3986-abfb9e7cef7e</id>
+        <name type="System.String">ShouldSerializePayloadWithNamespace</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">aae9c566-de5a-f770-e71c-e4b7dbcac004</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">aae9c566-de5a-f770-e71c-e4b7dbcac004</id>
+        <name type="System.String">ShouldThrowIfFactoryIsNull</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">59902ca0-8bb0-27ae-73f2-7376eb0b2631</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">59902ca0-8bb0-27ae-73f2-7376eb0b2631</id>
+        <name type="System.String">ShouldGetFirstUpdatedWithTwo</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">38298de4-6c9d-f531-ca4a-fdca29bee36c</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">38298de4-6c9d-f531-ca4a-fdca29bee36c</id>
+        <name type="System.String">ShouldThrowIfNullDescriptionExpression</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">82735c2c-edb7-9f0c-0773-114b0fff8508</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">82735c2c-edb7-9f0c-0773-114b0fff8508</id>
+        <name type="System.String">ShouldDeleteWithoutConflict</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">d5da7551-d18a-aa2e-a2ac-954161c9c211</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">d5da7551-d18a-aa2e-a2ac-954161c9c211</id>
+        <name type="System.String">ShouldBuildSelectCommandText1</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">edeb37ea-a7f6-c7d8-733e-13c03253f306</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">edeb37ea-a7f6-c7d8-733e-13c03253f306</id>
+        <name type="System.String">ShouldPreviewImport</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">20582124-5f15-c227-c9e9-4c2542bcf718</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">20582124-5f15-c227-c9e9-4c2542bcf718</id>
+        <name type="System.String">ShouldReturnDateTimeMaxValueIfNonUpdatedInGetLastUpdated</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">13955649-cffe-b87f-0203-efd4010b3f92</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">13955649-cffe-b87f-0203-efd4010b3f92</id>
+        <name type="System.String">SubstractDatesOperator</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">d27483bf-9177-fe54-7729-f3aeee1d17e6</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">d27483bf-9177-fe54-7729-f3aeee1d17e6</id>
+        <name type="System.String">ShouldNoOpWithNoChanges</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">a5fccfc9-c6ef-8cad-cdaa-c30813aea960</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">a5fccfc9-c6ef-8cad-cdaa-c30813aea960</id>
+        <name type="System.String">ShouldThrowIfSyncNull</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">133ec738-281d-3c34-c5a2-edacff9f5971</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">133ec738-281d-3c34-c5a2-edacff9f5971</id>
+        <name type="System.String">ShouldUpdateSyncLocalItemsOnImport</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">d3f20976-28b1-dc9f-4cc3-025485ba14f1</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">d3f20976-28b1-dc9f-4cc3-025485ba14f1</id>
+        <name type="System.String">Uritest</name>
+        <storage type="System.String">jobmanagement\jobmanagement.tests\bin\debug\mvp.xml.synchronization.jobmanagement.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">0b00f4b8-e60b-580f-285b-8b870e0b3339</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">0b00f4b8-e60b-580f-285b-8b870e0b3339</id>
+        <name type="System.String">ShouldSerializePayloadWithoutDefaultXsiAttributes</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">6e402d61-f043-ae44-b603-2a860c6243ef</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">6e402d61-f043-ae44-b603-2a860c6243ef</id>
+        <name type="System.String">ShouldBuildSelectCommandTextWithDefaultMapping</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">f5138e91-bad3-76bc-0694-b91c8afb78b1</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">f5138e91-bad3-76bc-0694-b91c8afb78b1</id>
+        <name type="System.String">ShouldEvaluateToMethodValue</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">4e0ddd6c-4f67-d98f-d0ac-8b0351f72ebd</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">4e0ddd6c-4f67-d98f-d0ac-8b0351f72ebd</id>
+        <name type="System.String">ShouldThrowIfGuidIsNull</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">46d8e503-3a29-6475-2a7a-c110c9fcb9c8</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">46d8e503-3a29-6475-2a7a-c110c9fcb9c8</id>
+        <name type="System.String">ShouldImportItemsWithConflict</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">a5aeb928-6620-8cc1-7420-73c5e55ef5b1</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">a5aeb928-6620-8cc1-7420-73c5e55ef5b1</id>
+        <name type="System.String">ShouldThrowIfNullSyncRepo</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">d7e32180-98f7-44fb-e631-ded312e175cc</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">d7e32180-98f7-44fb-e631-ded312e175cc</id>
+        <name type="System.String">ShouldBuildSelectNewestCommand1</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">97ad1dc7-5bef-9178-fc81-2de7795c3206</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">97ad1dc7-5bef-9178-fc81-2de7795c3206</id>
+        <name type="System.String">ShouldWinLatestUpdateWithConflicts</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">b22ca10c-bcee-dcae-8380-6fb2bf23a0ce</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">b22ca10c-bcee-dcae-8380-6fb2bf23a0ce</id>
+        <name type="System.String">ShouldGetLastUpdatedWithTwo</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">6f865b90-6765-6d61-bef7-ea3f67a1f01f</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">6f865b90-6765-6d61-bef7-ea3f67a1f01f</id>
+        <name type="System.String">ShouldNoOpForEqualItem</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">1d85441e-c4dd-e48e-ddd7-68f5198f5625</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">1d85441e-c4dd-e48e-ddd7-68f5198f5625</id>
+        <name type="System.String">ShouldEvaluateToPropertyValue</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">fd62f07b-c1fc-93fd-4ce4-706ac708c57a</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">fd62f07b-c1fc-93fd-4ce4-706ac708c57a</id>
+        <name type="System.String">ShouldGetFirstSinceUpdated</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">0b90414c-4c68-66b6-70ad-d8d6629b0fb4</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">0b90414c-4c68-66b6-70ad-d8d6629b0fb4</id>
+        <name type="System.String">ShouldDisplayJobStatus</name>
+        <storage type="System.String">jobmanagement\jobmanagement.tests\bin\debug\mvp.xml.synchronization.jobmanagement.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">370cc15e-4029-451f-be71-f68664679a19</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">370cc15e-4029-451f-be71-f68664679a19</id>
+        <name type="System.String">ShouldThrowIfEmptyTitleExpression</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">8237debb-3286-5217-00c2-fbb6e6e10ba3</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">8237debb-3286-5217-00c2-fbb6e6e10ba3</id>
+        <name type="System.String">ShouldBuildSelectCommandParametersWhereId1</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">57c0e5ec-34d4-33e2-d8bf-151b0ed4adc2</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">57c0e5ec-34d4-33e2-d8bf-151b0ed4adc2</id>
+        <name type="System.String">ShouldNotSubsumeWithoutByAndDifferentWhen</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">b407ab04-4818-5336-5f64-583d3a3f98c6</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">b407ab04-4818-5336-5f64-583d3a3f98c6</id>
+        <name type="System.String">ShouldReportItemsProgress</name>
+        <storage type="System.String">jobmanagement\jobmanagement.tests\bin\debug\mvp.xml.synchronization.jobmanagement.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">fc14de5d-99f7-2cf0-8cb3-27a0197023b9</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">fc14de5d-99f7-2cf0-8cb3-27a0197023b9</id>
+        <name type="System.String">LessThanEqualsOperator</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">3f086346-dfdf-c496-6de8-93a783d34f0a</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">3f086346-dfdf-c496-6de8-93a783d34f0a</id>
+        <name type="System.String">ShouldThrowIfMemberIsMethodWithArgs</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">2ed42cb0-fce3-1eb9-83a6-b4d3ee379590</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">2ed42cb0-fce3-1eb9-83a6-b4d3ee379590</id>
+        <name type="System.String">ShouldAddOneAndGetAndHaveCorrectPayload</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">3bb8903c-e515-b326-e433-88d74880be1d</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">3bb8903c-e515-b326-e433-88d74880be1d</id>
+        <name type="System.String">ShouldSyncServerItem</name>
+        <storage type="System.String">jobmanagement\jobmanagement.tests\bin\debug\mvp.xml.synchronization.jobmanagement.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">f2f02388-6bce-707d-72f4-e6efd8003f8b</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">f2f02388-6bce-707d-72f4-e6efd8003f8b</id>
+        <name type="System.String">ShouldThrowIfItemNull</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">2d5e54a3-04f7-4120-41e1-c7b8e678efcb</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">2d5e54a3-04f7-4120-41e1-c7b8e678efcb</id>
+        <name type="System.String">CanSpecifyUSOffset</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">c67c7c2e-d33f-77d8-e3e9-c964b248d92b</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">c67c7c2e-d33f-77d8-e3e9-c964b248d92b</id>
+        <name type="System.String">InvalidMonthThrows</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">536df297-c03b-1f6a-d045-7fe301f30de8</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">536df297-c03b-1f6a-d045-7fe301f30de8</id>
+        <name type="System.String">ShouldNotSubsumeWithoutByOnXAndByOnYWithEqualWhenAndSequence</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">dcc37b02-d8c5-9039-e37c-42dc2f9ecce1</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">dcc37b02-d8c5-9039-e37c-42dc2f9ecce1</id>
+        <name type="System.String">ShouldReturnSyncWithUpdatesEqualsToOne</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">fd7ddc1f-0c25-8c29-ff17-dc5648fdaf92</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">fd7ddc1f-0c25-8c29-ff17-dc5648fdaf92</id>
+        <name type="System.String">ShouldConflictWithDeletedLocalItem</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">0a74de3d-0acc-789a-f3ff-4c468d103ec6</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">0a74de3d-0acc-789a-f3ff-4c468d103ec6</id>
+        <name type="System.String">ShouldDeletionAttributeBeTrue</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">ea149408-5159-8002-ff3b-957b14fe16ee</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">ea149408-5159-8002-ff3b-957b14fe16ee</id>
+        <name type="System.String">ShouldUpdateJustOne</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">de35a043-f5d2-c9e1-27f1-9ace71a05644</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">de35a043-f5d2-c9e1-27f1-9ace71a05644</id>
+        <name type="System.String">ShouldUpdateLastSyncOnImportIfUpdatesSaved</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">f581b605-173c-706e-71e9-15100c0f3e6a</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">f581b605-173c-706e-71e9-15100c0f3e6a</id>
+        <name type="System.String">ShouldAddSync</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">76af672c-4240-7e91-7045-bb381fca94eb</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">76af672c-4240-7e91-7045-bb381fca94eb</id>
+        <name type="System.String">WrongWeekDayThrows</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">5d8543ad-08cc-385b-1356-b8bb774d904b</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">5d8543ad-08cc-385b-1356-b8bb774d904b</id>
+        <name type="System.String">ShouldImportWithNoConflicts</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">50fd13da-a92f-43d8-d8dd-aa24dabc23f1</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">50fd13da-a92f-43d8-d8dd-aa24dabc23f1</id>
+        <name type="System.String">ShouldIncomingWinWithConflict</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">81110df5-52ab-412f-2af5-bcc96bbab500</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">81110df5-52ab-412f-2af5-bcc96bbab500</id>
+        <name type="System.String">ShouldIncrementUpdatesByOneOnDeletion</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">1b2291e4-6f91-df8d-8f02-34883f2b19ec</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">1b2291e4-6f91-df8d-8f02-34883f2b19ec</id>
+        <name type="System.String">ShouldCompare</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">3b0d8262-3d32-9235-03c8-1bf7f3ae41f0</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">3b0d8262-3d32-9235-03c8-1bf7f3ae41f0</id>
+        <name type="System.String">EqualMethod</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">a28890d3-1803-f1aa-0eed-b04ef4d52558</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">a28890d3-1803-f1aa-0eed-b04ef4d52558</id>
+        <name type="System.String">ShouldReadTwoItems</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">2a269a2a-cc2c-fcb3-e972-70b6eff76a5f</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">2a269a2a-cc2c-fcb3-e972-70b6eff76a5f</id>
+        <name type="System.String">ShouldGetJobByName</name>
+        <storage type="System.String">jobmanagement\jobmanagement.tests\bin\debug\mvp.xml.synchronization.jobmanagement.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">11f00658-420b-5286-36b6-c13a902ce564</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">11f00658-420b-5286-36b6-c13a902ce564</id>
+        <name type="System.String">ShouldThrowIfEmptyDescriptionExpression</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">38e0c7f4-4002-18fb-a4fd-b97252e92889</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">38e0c7f4-4002-18fb-a4fd-b97252e92889</id>
+        <name type="System.String">ToStringRendersOffset</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">2f0c0646-5217-2421-ca4e-3bfeb7a9e822</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">2f0c0646-5217-2421-ca4e-3bfeb7a9e822</id>
+        <name type="System.String">ShouldAssignFields</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">bdc1091d-2292-8dfe-9226-213c9b72251b</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">bdc1091d-2292-8dfe-9226-213c9b72251b</id>
+        <name type="System.String">ShouldBuildSelectOldestSinceCommand1</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">754a31e8-2615-0890-e257-5136385bcc73</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">754a31e8-2615-0890-e257-5136385bcc73</id>
+        <name type="System.String">ShouldAddTwoAndGetAndHaveCorrectId</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">75c3ac5c-9ef1-48a5-e304-8d3af04757ed</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">75c3ac5c-9ef1-48a5-e304-8d3af04757ed</id>
+        <name type="System.String">ShouldUpdateSyncDeletedOnExportConflictsIfItemIsDeleted</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">85b08e06-704c-173d-bffb-49074edba264</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">85b08e06-704c-173d-bffb-49074edba264</id>
+        <name type="System.String">ShouldThrowIfMapNull</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">335775ee-04c2-02bb-58a0-3898cb897cf4</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">335775ee-04c2-02bb-58a0-3898cb897cf4</id>
+        <name type="System.String">ShouldBuildSelectCommandParametersWhereId2</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">bb1cb02a-e7bb-fa0a-6ddd-f61ed7f32463</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">bb1cb02a-e7bb-fa0a-6ddd-f61ed7f32463</id>
+        <name type="System.String">EqualOperator</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">0019ba16-e8ab-d501-d665-bc09377588d1</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">0019ba16-e8ab-d501-d665-bc09377588d1</id>
+        <name type="System.String">InvalidMilitaryOffsetThrows</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">24fede79-59b0-fde5-8084-be74a044dc94</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">24fede79-59b0-fde5-8084-be74a044dc94</id>
+        <name type="System.String">ShouldExportByDays</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">3917ee2e-1a5b-2fd2-883d-e45d517dbb19</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">3917ee2e-1a5b-2fd2-883d-e45d517dbb19</id>
+        <name type="System.String">ShouldThrowIfItemIsNullInInsert</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">62efeabc-5759-5357-b744-0e431ea60768</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">62efeabc-5759-5357-b744-0e431ea60768</id>
+        <name type="System.String">ShouldReturnSyncWithId</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">351f62d3-67d1-0724-de6b-9d90d8fc11d5</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">351f62d3-67d1-0724-de6b-9d90d8fc11d5</id>
+        <name type="System.String">ShouldHaveAHistory</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">98ec05d5-e08d-1eb3-702c-bba9b5c6a5e2</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">98ec05d5-e08d-1eb3-702c-bba9b5c6a5e2</id>
+        <name type="System.String">ShouldThrowIfUpdateNonExistingJob</name>
+        <storage type="System.String">jobmanagement\jobmanagement.tests\bin\debug\mvp.xml.synchronization.jobmanagement.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">7b289472-21cd-5dd7-e34e-de0199636f12</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">7b289472-21cd-5dd7-e34e-de0199636f12</id>
+        <name type="System.String">CanSpecifyMilitaryUT</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">79cdd300-819b-0669-930c-8143f0b790ec</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">79cdd300-819b-0669-930c-8143f0b790ec</id>
+        <name type="System.String">ShouldBuildUpdateCommandTextWithDefaultMapping</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">f613990c-a082-4128-f33c-312d84200e2c</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">f613990c-a082-4128-f33c-312d84200e2c</id>
+        <name type="System.String">ShouldUpdate</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">042f1cea-1e3b-9143-f10e-9b4d588f6642</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">042f1cea-1e3b-9143-f10e-9b4d588f6642</id>
+        <name type="System.String">ShouldBuildSelectSinceCommandTextWhereId2</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">f76c52d0-56f9-24ab-4c8b-01107366598b</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">f76c52d0-56f9-24ab-4c8b-01107366598b</id>
+        <name type="System.String">ShouldThrowIfEmptyUriString</name>
+        <storage type="System.String">jobmanagement\jobmanagement.tests\bin\debug\mvp.xml.synchronization.jobmanagement.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">10c96e87-7c3a-0b9d-c910-9f2e74a10ad4</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">10c96e87-7c3a-0b9d-c910-9f2e74a10ad4</id>
+        <name type="System.String">ShouldRemoveTwo</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">b13fdcd1-b18b-0a95-bc7c-765b3f7f850a</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">b13fdcd1-b18b-0a95-bc7c-765b3f7f850a</id>
+        <name type="System.String">ShouldThrowIfTitleEmpty</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">8123c767-4313-90ca-5e3b-f94591aa768c</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">8123c767-4313-90ca-5e3b-f94591aa768c</id>
+        <name type="System.String">ShouldIncrementUpdatesByOne</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">b35d8e50-c67b-9bc8-4e24-1c09a93bbf12</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">b35d8e50-c67b-9bc8-4e24-1c09a93bbf12</id>
+        <name type="System.String">ShouldUpdateSyncOnExport</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">ec9bd45b-e5dd-cdea-89e2-34630ce40667</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">ec9bd45b-e5dd-cdea-89e2-34630ce40667</id>
+        <name type="System.String">ShouldWinLatestUpdateWithConflictsPreserved</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">35a80e8a-3a95-d7bd-bf6f-d6634e065bfc</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">35a80e8a-3a95-d7bd-bf6f-d6634e065bfc</id>
+        <name type="System.String">ShouldConflictOnDeleteWithConflict</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">1c3b1a85-fc14-e071-133f-f3f0520c7358</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">1c3b1a85-fc14-e071-133f-f3f0520c7358</id>
+        <name type="System.String">ShouldThrowIfTimestampIsNull</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">4b1b7b9c-f771-d631-008a-ff8b6e4b766b</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">4b1b7b9c-f771-d631-008a-ff8b6e4b766b</id>
+        <name type="System.String">ShouldUpdateJob</name>
+        <storage type="System.String">jobmanagement\jobmanagement.tests\bin\debug\mvp.xml.synchronization.jobmanagement.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">7e75011b-23c9-c04b-94d3-4e1db67fa292</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">7e75011b-23c9-c04b-94d3-4e1db67fa292</id>
+        <name type="System.String">ShouldThrowIfNoMemberFoundInDescriptionExpression</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">6e5f9c23-3eaa-15f3-3096-08230c8eef21</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">6e5f9c23-3eaa-15f3-3096-08230c8eef21</id>
+        <name type="System.String">YearIsRenderedInFourDigits</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">4d182b66-9e14-bec2-60a9-4a3b29b84101</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">4d182b66-9e14-bec2-60a9-4a3b29b84101</id>
+        <name type="System.String">ShouldBuildSelectSinceCommandParametersWhereId2</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">358d9e67-4552-7366-3797-ed76e1b15ba6</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">358d9e67-4552-7366-3797-ed76e1b15ba6</id>
+        <name type="System.String">ShouldReportBytesProgress</name>
+        <storage type="System.String">jobmanagement\jobmanagement.tests\bin\debug\mvp.xml.synchronization.jobmanagement.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">75c5ae88-67ca-a568-1c25-b60f7938dfec</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">75c5ae88-67ca-a568-1c25-b60f7938dfec</id>
+        <name type="System.String">ShouldThrowNullIfConnectionStringIsEmpty</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">3ae3f349-b70f-2a98-fc9b-1d45a0cb7eb3</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">3ae3f349-b70f-2a98-fc9b-1d45a0cb7eb3</id>
+        <name type="System.String">ShouldLocalWinWithConflict</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">61f0172c-9df5-39ca-7dcd-d535bd24bf9d</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">61f0172c-9df5-39ca-7dcd-d535bd24bf9d</id>
+        <name type="System.String">ShouldContainAddedItem</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">02c808bb-9687-d044-97fd-fe5ac559ff36</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">02c808bb-9687-d044-97fd-fe5ac559ff36</id>
+        <name type="System.String">ShouldRoundtripItemWithConflicts</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">2c66a683-0417-04e6-29a9-7ae6680a2e76</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">2c66a683-0417-04e6-29a9-7ae6680a2e76</id>
+        <name type="System.String">ShouldIterateJobs</name>
+        <storage type="System.String">jobmanagement\jobmanagement.tests\bin\debug\mvp.xml.synchronization.jobmanagement.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">f67c6b73-ad1d-ac4c-6261-a57953286ee1</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">f67c6b73-ad1d-ac4c-6261-a57953286ee1</id>
+        <name type="System.String">ShouldConcatenateValues</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">8c1eeb49-282f-1a14-5a5f-96f3a237dcd0</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">8c1eeb49-282f-1a14-5a5f-96f3a237dcd0</id>
+        <name type="System.String">ShouldThrowIfUpdateIdIsNull</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">995d48ac-ed6d-5a4d-c243-ab107aa535a3</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">995d48ac-ed6d-5a4d-c243-ab107aa535a3</id>
+        <name type="System.String">ShouldGetFirstUpdatedSinceWithTwo</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">6c05bbc8-8117-52c8-6ce8-c1ff97e723da</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">6c05bbc8-8117-52c8-6ce8-c1ff97e723da</id>
+        <name type="System.String">GreaterThanEqualsOperator</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">5d27cbbc-d998-8e22-97fd-4ef1c6967444</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">5d27cbbc-d998-8e22-97fd-4ef1c6967444</id>
+        <name type="System.String">ShouldImportUpdateWithConflict</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">a549a3b8-ce4e-8f2d-37a5-34800f2258c4</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">a549a3b8-ce4e-8f2d-37a5-34800f2258c4</id>
+        <name type="System.String">ShouldThrowIfNullDataExpression</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">2a187a55-a9d2-51e5-c08f-b94853fb8a57</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">2a187a55-a9d2-51e5-c08f-b94853fb8a57</id>
+        <name type="System.String">ShouldEvaluateToFieldValue</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">57f8bbb2-aa7a-c4db-959b-c79ec8e3f3a2</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">57f8bbb2-aa7a-c4db-959b-c79ec8e3f3a2</id>
+        <name type="System.String">ShouldSubsumeWithByEqualSequence</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">3dd364f3-01d9-0e84-ced0-09ec75d93e3a</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">3dd364f3-01d9-0e84-ced0-09ec75d93e3a</id>
+        <name type="System.String">ShouldWriteCompleteFeed</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">483c9b59-43d8-2713-8bec-fdebfa3d8742</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">483c9b59-43d8-2713-8bec-fdebfa3d8742</id>
+        <name type="System.String">ThrowsIfNullString</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">60f379f0-fff7-1c23-9049-e03dacf0353a</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">60f379f0-fff7-1c23-9049-e03dacf0353a</id>
+        <name type="System.String">CanSpecifyGMT</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">39603112-54c3-0bc6-d213-c91ad77a353e</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">39603112-54c3-0bc6-d213-c91ad77a353e</id>
+        <name type="System.String">NotEqualsOperator</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">be9095dd-6828-8672-165b-abec10110f58</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">be9095dd-6828-8672-165b-abec10110f58</id>
+        <name type="System.String">ShouldThrowIfNullXmlRepo</name>
+        <storage type="System.String">jobmanagement\jobmanagement.tests\bin\debug\mvp.xml.synchronization.jobmanagement.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">ec1bda11-4e1e-7f60-e92c-c7b07c55d6ca</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">ec1bda11-4e1e-7f60-e92c-c7b07c55d6ca</id>
+        <name type="System.String">ShouldBuildDeleteCommandParameters</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">ac22b222-00f6-2348-e88b-b0e43a334e12</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">ac22b222-00f6-2348-e88b-b0e43a334e12</id>
+        <name type="System.String">ShouldConnectToDatabase</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">def62bda-052a-bb99-b989-5c5023993f31</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">def62bda-052a-bb99-b989-5c5023993f31</id>
+        <name type="System.String">ShouldThrowIfUpdateNotExistantItem</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">77c6b0a4-5fad-335f-6a8b-58f2ed349611</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">77c6b0a4-5fad-335f-6a8b-58f2ed349611</id>
+        <name type="System.String">Uritest</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">02827cba-e253-9d25-3330-89106d83be5d</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">02827cba-e253-9d25-3330-89106d83be5d</id>
+        <name type="System.String">ShouldThrowIfNameIsEmpty</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">97aa3215-985b-0c39-bc47-8860ea873121</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">97aa3215-985b-0c39-bc47-8860ea873121</id>
+        <name type="System.String">CanParsePositiveOffset</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">20a07f46-d455-bbec-0a3a-360860a434da</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">20a07f46-d455-bbec-0a3a-360860a434da</id>
+        <name type="System.String">ShouldContainNotContainOtherItemWhenAddedItem</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">3d46dd9b-8997-6fb4-059f-ab9f08974270</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">3d46dd9b-8997-6fb4-059f-ab9f08974270</id>
+        <name type="System.String">StoresOffset</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">ac3845d4-0d3d-c1b2-0dd3-74770405f1aa</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">ac3845d4-0d3d-c1b2-0dd3-74770405f1aa</id>
+        <name type="System.String">ShouldCreateSyncIfExportingItemsWithNoMapping</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">c3639650-7fee-661a-65d5-da7cfcb3969a</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">c3639650-7fee-661a-65d5-da7cfcb3969a</id>
+        <name type="System.String">ShouldSyncConflict</name>
+        <storage type="System.String">jobmanagement\jobmanagement.tests\bin\debug\mvp.xml.synchronization.jobmanagement.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">6054802b-aa04-2796-f87a-c0dcad8243a8</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">6054802b-aa04-2796-f87a-c0dcad8243a8</id>
+        <name type="System.String">ShouldGetAllSince</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">9b5a50b6-cf10-5b7d-8f53-6515c906eeaa</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">9b5a50b6-cf10-5b7d-8f53-6515c906eeaa</id>
+        <name type="System.String">ShouldThrowIfNullTitleExpression</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">2926d828-89e0-a548-ff16-2f674861f7b1</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">2926d828-89e0-a548-ff16-2f674861f7b1</id>
+        <name type="System.String">ShouldThrowIfSyncRepoNull</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">207a3799-844d-6b66-ca77-0b5506a4cbfc</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">207a3799-844d-6b66-ca77-0b5506a4cbfc</id>
+        <name type="System.String">ShouldPublishCompleteFeed</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">4a9d01eb-5e9d-dbbb-481f-7b59cf8bb4b4</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">4a9d01eb-5e9d-dbbb-481f-7b59cf8bb4b4</id>
+        <name type="System.String">ShouldAddTwoAndGetAndHaveCorrectPayload</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">89fe388d-2af8-271e-c9fa-208c04a71617</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">89fe388d-2af8-271e-c9fa-208c04a71617</id>
+        <name type="System.String">ShouldThrowIfNullReceiveUri</name>
+        <storage type="System.String">jobmanagement\jobmanagement.tests\bin\debug\mvp.xml.synchronization.jobmanagement.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">d190a1c8-41bc-f6cc-d42a-145be5edc979</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">d190a1c8-41bc-f6cc-d42a-145be5edc979</id>
+        <name type="System.String">ShouldSyncServerItems</name>
+        <storage type="System.String">jobmanagement\jobmanagement.tests\bin\debug\mvp.xml.synchronization.jobmanagement.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">82632527-844b-64cd-b605-77467c66f031</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">82632527-844b-64cd-b605-77467c66f031</id>
+        <name type="System.String">ShouldNotContainNotAddedItemWhenEmpty</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">7e5de276-8875-c17b-b46d-bf6961d1e2bb</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">7e5de276-8875-c17b-b46d-bf6961d1e2bb</id>
+        <name type="System.String">ShouldAddWithoutConflicts</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">c0783986-b7f1-ef7f-f578-8dc60c396a39</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">c0783986-b7f1-ef7f-f578-8dc60c396a39</id>
+        <name type="System.String">ShouldStartJobAfterInterval</name>
+        <storage type="System.String">jobmanagement\jobmanagement.tests\bin\debug\mvp.xml.synchronization.jobmanagement.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">c8f51167-678f-6ffa-186e-afa157f25e65</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">c8f51167-678f-6ffa-186e-afa157f25e65</id>
+        <name type="System.String">ShouldPublishLast1Day</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">5dbc79b0-a436-bcd6-f545-aebe54c0d6a2</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">5dbc79b0-a436-bcd6-f545-aebe54c0d6a2</id>
+        <name type="System.String">ShouldThrowIfNullUriString</name>
+        <storage type="System.String">jobmanagement\jobmanagement.tests\bin\debug\mvp.xml.synchronization.jobmanagement.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">1894a8d1-2733-f029-e77f-a2673ae8b8fd</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">1894a8d1-2733-f029-e77f-a2673ae8b8fd</id>
+        <name type="System.String">ShouldAddTwoAndGetWithDefaultMapping</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">08ead515-f032-775f-9119-46ddf7a4c5cc</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">08ead515-f032-775f-9119-46ddf7a4c5cc</id>
+        <name type="System.String">ShouldGetAllSince2</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">913ced2e-3a08-7add-32e6-6d14970e8e90</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">913ced2e-3a08-7add-32e6-6d14970e8e90</id>
+        <name type="System.String">ShouldImportReturnConflicts</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">cc1f09d6-f041-6391-405e-1ab55b9e55cb</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">cc1f09d6-f041-6391-405e-1ab55b9e55cb</id>
+        <name type="System.String">ShoudStopAllJobs</name>
+        <storage type="System.String">jobmanagement\jobmanagement.tests\bin\debug\mvp.xml.synchronization.jobmanagement.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">5a4bd542-31a1-e7df-0cc4-65e6054b6254</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">5a4bd542-31a1-e7df-0cc4-65e6054b6254</id>
+        <name type="System.String">ShouldBuildSelectCommandTextWhereId1WithDefaultMapping</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">33718d9b-ac1a-acce-1995-13168341ba47</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">33718d9b-ac1a-acce-1995-13168341ba47</id>
+        <name type="System.String">ShouldNotRemoveNotAdded</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">65bdef98-a99c-5abe-6d04-3b15104d66fe</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">65bdef98-a99c-5abe-6d04-3b15104d66fe</id>
+        <name type="System.String">ShouldThrowIfNullRepositoryId</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">d105ee06-744d-85e1-e277-ab1f16d42753</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">d105ee06-744d-85e1-e277-ab1f16d42753</id>
+        <name type="System.String">ShouldGetAllSinceReturnNoneIfEmpty</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">c9ccfdf4-c6a9-06ca-d66c-e87189ad4301</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">c9ccfdf4-c6a9-06ca-d66c-e87189ad4301</id>
+        <name type="System.String">ShouldThrowIfWhenNull</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">b6ed5557-f414-f90b-223c-c6bf73af3f9e</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">b6ed5557-f414-f90b-223c-c6bf73af3f9e</id>
+        <name type="System.String">ShouldContainCorrectMapping</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">e69908d7-5ba8-0c11-18db-670166385028</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">e69908d7-5ba8-0c11-18db-670166385028</id>
+        <name type="System.String">ShouldBuildSelectCountCommandText1</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">015f77b9-4505-a961-7f1f-b8ccaa665152</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">015f77b9-4505-a961-7f1f-b8ccaa665152</id>
+        <name type="System.String">CanSpecifyYearTwoDigits</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">409b0d1f-e64e-f595-f597-bcf53747b404</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">409b0d1f-e64e-f595-f597-bcf53747b404</id>
+        <name type="System.String">ShouldBuildDeleteCommandTexts</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">9f6c6306-303e-9aee-6dbf-c83ab1c754f8</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">9f6c6306-303e-9aee-6dbf-c83ab1c754f8</id>
+        <name type="System.String">ShouldAddOneAndGetAndHaveCorrectId</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">8776715e-64c3-b843-1e8c-89db8f2204b3</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">8776715e-64c3-b843-1e8c-89db8f2204b3</id>
+        <name type="System.String">ShouldBuildSelectSinceCommandParameters1</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">54344d41-8d50-15f2-ade9-3933e9dc5742</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">54344d41-8d50-15f2-ade9-3933e9dc5742</id>
+        <name type="System.String">ShouldRunAndSync</name>
+        <storage type="System.String">jobmanagement\jobmanagement.tests\bin\debug\mvp.xml.synchronization.jobmanagement.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">90604fb0-b6fa-7b71-3537-6a8f5f690384</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">90604fb0-b6fa-7b71-3537-6a8f5f690384</id>
+        <name type="System.String">ShouldThrowIfNullFactory</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">94c39d36-902f-01a3-f1a8-9fdae692392f</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">94c39d36-902f-01a3-f1a8-9fdae692392f</id>
+        <name type="System.String">ShouldRemoveOne</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">acd3aa10-6491-804d-a87d-377f917791e3</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">acd3aa10-6491-804d-a87d-377f917791e3</id>
+        <name type="System.String">ShouldBuildInsertCommandTextWithDefaultMapping</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">8155bc4d-5400-c847-c6c6-8d4f4f79ff4a</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">8155bc4d-5400-c847-c6c6-8d4f4f79ff4a</id>
+        <name type="System.String">ShouldStartJobForcedly</name>
+        <storage type="System.String">jobmanagement\jobmanagement.tests\bin\debug\mvp.xml.synchronization.jobmanagement.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">4d970c78-9708-7229-fb5b-b16928b9d823</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">4d970c78-9708-7229-fb5b-b16928b9d823</id>
+        <name type="System.String">ShouldBuildSelectOldestCommand1</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">94a2d2e5-cb9a-477a-8101-a7f6bca4817c</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">94a2d2e5-cb9a-477a-8101-a7f6bca4817c</id>
+        <name type="System.String">ShouldThrowIfGuidIsEmpty</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">3419cac7-712f-b8e2-e2fa-65e5240fa5ba</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">3419cac7-712f-b8e2-e2fa-65e5240fa5ba</id>
+        <name type="System.String">ShouldNotContainNotAddedItemWhenAddingAnother</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">5855bd49-9ba3-854f-c1af-0edb2ad0a164</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">5855bd49-9ba3-854f-c1af-0edb2ad0a164</id>
+        <name type="System.String">InvalidWeekDayThrows</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">7e07eb19-1d4d-e597-9880-2a8336ec0bfc</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">7e07eb19-1d4d-e597-9880-2a8336ec0bfc</id>
+        <name type="System.String">ShouldPostAndGet</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">fdcf4993-3508-7c90-1de7-4ce7c88c10a1</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">fdcf4993-3508-7c90-1de7-4ce7c88c10a1</id>
+        <name type="System.String">ShouldBuildUpdateCommandParameters</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">398a554d-af28-0d0f-c63b-14b8dc704234</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">398a554d-af28-0d0f-c63b-14b8dc704234</id>
+        <name type="System.String">ShouldExportDeleted</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">ec9fa6d9-e62c-93ca-bc52-8917fa99c004</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">ec9fa6d9-e62c-93ca-bc52-8917fa99c004</id>
+        <name type="System.String">ShouldWriteFeedWithDeletedItem</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">75932aaa-f1e3-22b4-cf89-c73b59ba2426</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">75932aaa-f1e3-22b4-cf89-c73b59ba2426</id>
+        <name type="System.String">ShouldThrowIfTitleNull</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">deec5cb3-dee9-9001-4393-364ca879e60a</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">deec5cb3-dee9-9001-4393-364ca879e60a</id>
+        <name type="System.String">ShouldThrowIfStartJobForcedlyWithUnexistingJob</name>
+        <storage type="System.String">jobmanagement\jobmanagement.tests\bin\debug\mvp.xml.synchronization.jobmanagement.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">b32bc530-3b19-0e9c-0c8f-0284af6d87a4</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">b32bc530-3b19-0e9c-0c8f-0284af6d87a4</id>
+        <name type="System.String">ShouldContainMapping</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">932e96ba-3d3c-150f-b8b3-4b3277be6a79</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">932e96ba-3d3c-150f-b8b3-4b3277be6a79</id>
+        <name type="System.String">ShouldBuildSelectOldestSinceCommand2</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">1df338c6-40bc-dc86-a134-1c0fdaa5ccb5</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">1df338c6-40bc-dc86-a134-1c0fdaa5ccb5</id>
+        <name type="System.String">ShouldBuildSelectOldestCommand2</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">eae773b5-a657-c397-e13a-21c21d82fbd0</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">eae773b5-a657-c397-e13a-21c21d82fbd0</id>
+        <name type="System.String">ShouldImportFeedAndUpdateLastSyncFromFeedInfo</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">4dfc42b0-b82f-4aa0-80d5-d9b00923a047</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">4dfc42b0-b82f-4aa0-80d5-d9b00923a047</id>
+        <name type="System.String">CanSpecifyMilitaryOffset</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">71b37ac8-1683-ab55-94eb-de1e359421e9</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">71b37ac8-1683-ab55-94eb-de1e359421e9</id>
+        <name type="System.String">ShouldThrowNullIfConnectionStringIsNull</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">9981116d-8ced-b357-21cd-b21ec2d4e1f7</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">9981116d-8ced-b357-21cd-b21ec2d4e1f7</id>
+        <name type="System.String">ShouldReadItems</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">a92dd980-55c4-0897-4663-2a622e348a01</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">a92dd980-55c4-0897-4663-2a622e348a01</id>
+        <name type="System.String">ShouldUpdateWithoutConflict</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">386f8292-05d5-3e31-56ec-aab99ecc64b5</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">386f8292-05d5-3e31-56ec-aab99ecc64b5</id>
+        <name type="System.String">ShouldBuildUpdateCommandText</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">ac346eed-02b4-7e1e-22c0-a4882bf83434</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">ac346eed-02b4-7e1e-22c0-a4882bf83434</id>
+        <name type="System.String">ShouldHaveHistoryWhenEqualsToNow</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">dcfe18b4-3f3e-ef20-70f5-af8715784dff</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">dcfe18b4-3f3e-ef20-70f5-af8715784dff</id>
+        <name type="System.String">ShouldThrowIdByNull</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">15ef4388-ebd5-c175-e221-dd2a85e15ea1</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">15ef4388-ebd5-c175-e221-dd2a85e15ea1</id>
+        <name type="System.String">ShouldThrowIfTimestampIsEmpty</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">829d2d3d-0e54-cfc0-b169-0f41d5243aac</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">829d2d3d-0e54-cfc0-b169-0f41d5243aac</id>
+        <name type="System.String">ShouldThrowIfRemoveNull</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">ea26c75b-7f9e-8109-c2db-a05e4abcb31b</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">ea26c75b-7f9e-8109-c2db-a05e4abcb31b</id>
+        <name type="System.String">ShouldContainTwoAddedItems</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">dbe70734-fd4f-deee-e9c7-f70cf6517123</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">dbe70734-fd4f-deee-e9c7-f70cf6517123</id>
+        <name type="System.String">ShouldSetPayloadToUnknownElements</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">14755eb2-4414-3849-5f9b-57519c30f6f7</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">14755eb2-4414-3849-5f9b-57519c30f6f7</id>
+        <name type="System.String">ShouldWinLatestUpdateWithoutConflicts</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">c4581ddd-3e20-ca74-09b4-edbe4d634d6c</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">c4581ddd-3e20-ca74-09b4-edbe4d634d6c</id>
+        <name type="System.String">GreaterThanOperator</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">6bfed6d0-1ba6-098b-e312-af0373866e4a</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">6bfed6d0-1ba6-098b-e312-af0373866e4a</id>
+        <name type="System.String">ShouldSubsumeWithoutByEqualWhenAndSequence</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">df5bd4fe-5146-8515-3dfc-5004973ed421</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">df5bd4fe-5146-8515-3dfc-5004973ed421</id>
+        <name type="System.String">ShouldGetIfAdded</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">c25d1938-7a3d-5d6b-45d5-c46c9993a99d</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">c25d1938-7a3d-5d6b-45d5-c46c9993a99d</id>
+        <name type="System.String">ShouldReadItemsWithEmptySharing</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">194c4e0e-e053-0593-de64-67aa08058659</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">194c4e0e-e053-0593-de64-67aa08058659</id>
+        <name type="System.String">ShouldAddOneAndGetAllCountOne</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">b9ca3f32-8361-f4bc-9773-64da08e8b729</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">b9ca3f32-8361-f4bc-9773-64da08e8b729</id>
+        <name type="System.String">ShouldBuildSelectSinceCommandText1</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">9b3c9f88-56aa-abbf-d0d8-6a5615091f85</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">9b3c9f88-56aa-abbf-d0d8-6a5615091f85</id>
+        <name type="System.String">ShouldThrowIfUpdateItemIsNull</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">08e47b6a-4575-bf54-152e-ccceb2db74f9</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">08e47b6a-4575-bf54-152e-ccceb2db74f9</id>
+        <name type="System.String">ShouldRemoveJob</name>
+        <storage type="System.String">jobmanagement\jobmanagement.tests\bin\debug\mvp.xml.synchronization.jobmanagement.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">b207fcac-7f95-3854-f6a3-437fd4db41d9</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">b207fcac-7f95-3854-f6a3-437fd4db41d9</id>
+        <name type="System.String">ShouldThrowIfNullPayloadExpression</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">35e7ce4e-9e44-ad43-116c-7c95227b8d1e</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">35e7ce4e-9e44-ad43-116c-7c95227b8d1e</id>
+        <name type="System.String">ShouldReturnDateTimeMinValueIfNonUpdatedInGetFirstUpdated</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">a9d468a9-fcbb-7fed-35a7-4e87d6419da6</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">a9d468a9-fcbb-7fed-35a7-4e87d6419da6</id>
+        <name type="System.String">ShouldRemoveJobByName</name>
+        <storage type="System.String">jobmanagement\jobmanagement.tests\bin\debug\mvp.xml.synchronization.jobmanagement.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">6a87d1ce-7024-ff92-c9a4-b28a8695ce30</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">6a87d1ce-7024-ff92-c9a4-b28a8695ce30</id>
+        <name type="System.String">ShouldCreateRepository</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">079e3602-458e-0d04-35ef-377f2b963680</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">079e3602-458e-0d04-35ef-377f2b963680</id>
+        <name type="System.String">ShouldThrowIfNullItemTimestamp</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">4e18537f-2146-ffcd-6083-f61df58fd349</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">4e18537f-2146-ffcd-6083-f61df58fd349</id>
+        <name type="System.String">CanSpecifyUT</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">a4905176-f926-8312-dccc-7e660b25841e</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">a4905176-f926-8312-dccc-7e660b25841e</id>
+        <name type="System.String">ShouldExportAllItems</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">c3053a8d-5f9f-88a3-d5c3-e6013c987b4c</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">c3053a8d-5f9f-88a3-d5c3-e6013c987b4c</id>
+        <name type="System.String">ShouldThrowIfNullConnectionString</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">824620da-3084-6712-c48c-ff43012e08ab</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">824620da-3084-6712-c48c-ff43012e08ab</id>
+        <name type="System.String">ShouldThrowIfGetIdIsNull</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">ef1f77a4-5f64-ee45-e738-88eb1fb9c2cc</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">ef1f77a4-5f64-ee45-e738-88eb1fb9c2cc</id>
+        <name type="System.String">ShouldBuildInsertCommandText</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">32218a88-9551-6aed-6c00-5a0c01014a3b</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">32218a88-9551-6aed-6c00-5a0c01014a3b</id>
+        <name type="System.String">CanParseCorrectDateTime</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">3aa9575d-fb95-44f4-6127-11fa3bd4b78a</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">3aa9575d-fb95-44f4-6127-11fa3bd4b78a</id>
+        <name type="System.String">InvalidUSOffsetThrows</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">2c89490c-acd8-194f-55c4-1f72beddca92</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">2c89490c-acd8-194f-55c4-1f72beddca92</id>
+        <name type="System.String">ShouldThrowIfXmlRepoNull</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">fe4c02c0-9f06-5448-41b0-fa27ddeb17a2</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">fe4c02c0-9f06-5448-41b0-fa27ddeb17a2</id>
+        <name type="System.String">ShouldReturnSameValueIfNoExpression</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">fe181f82-a72a-06dd-5d64-96ea68e0fbd0</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">fe181f82-a72a-06dd-5d64-96ea68e0fbd0</id>
+        <name type="System.String">ShouldPublishLast1Day</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">75f539dd-43db-74d5-f3bc-c693f36ddd9b</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">75f539dd-43db-74d5-f3bc-c693f36ddd9b</id>
+        <name type="System.String">ShouldTHrowExceptionIfIdNull</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">35585734-1b30-d2d6-f586-24e68214943e</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">35585734-1b30-d2d6-f586-24e68214943e</id>
+        <name type="System.String">ShouldFilterFromNamespace</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">18a7a0d5-fadf-c548-e263-e666294140a2</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">18a7a0d5-fadf-c548-e263-e666294140a2</id>
+        <name type="System.String">ShouldThrowIfNullXmlRepo</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">e01402bd-ab71-cf42-030b-8f3d43d76c69</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">e01402bd-ab71-cf42-030b-8f3d43d76c69</id>
+        <name type="System.String">ShouldThrowIfByNull</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">f4c9524f-4c60-9521-0ea6-29367ab74920</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">f4c9524f-4c60-9521-0ea6-29367ab74920</id>
+        <name type="System.String">ShouldGetFirstUpdated</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">a6c71be0-e2d2-2c9f-b32a-c911a13acaad</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">a6c71be0-e2d2-2c9f-b32a-c911a13acaad</id>
+        <name type="System.String">ShouldGetNullIfEmpty</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">8f6b4a57-1a69-aec9-7cc8-4767ae216210</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">8f6b4a57-1a69-aec9-7cc8-4767ae216210</id>
+        <name type="System.String">ShouldGetLastUpdated</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">d9385d64-4d1e-d1d7-f842-189a7cd8d0c9</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">d9385d64-4d1e-d1d7-f842-189a7cd8d0c9</id>
+        <name type="System.String">ShouldBuildSelectNewestCommand2</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">e95980a3-69b2-81a5-a5c9-a5332b32dd07</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">e95980a3-69b2-81a5-a5c9-a5332b32dd07</id>
+        <name type="System.String">ShouldBuildSelectCommandText2</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">e2efb25b-cff0-c56d-cb29-6a719a198c78</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">e2efb25b-cff0-c56d-cb29-6a719a198c78</id>
+        <name type="System.String">ShouldImportFeedAndUpdateLastSync</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">5259e3f8-a10d-4b68-9ad5-5fa5de1d28a4</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">5259e3f8-a10d-4b68-9ad5-5fa5de1d28a4</id>
+        <name type="System.String">SubstractTimeSpanOperatorThrowsOutOfRange</name>
+        <storage type="System.String">unittests\bin\debug\mvp.xml.synchronization.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">ffeff847-e1dc-221d-fcfb-6008ca4e4096</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">ffeff847-e1dc-221d-fcfb-6008ca4e4096</id>
+        <name type="System.String">ShouldNotGetNotAdded</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+      <key type="System.Guid">61246b98-192e-fbdc-63c5-26e2593cfbc6</key>
+      <value type="Microsoft.VisualStudio.TestTools.Common.Link">
+        <id type="System.Guid">61246b98-192e-fbdc-63c5-26e2593cfbc6</id>
+        <name type="System.String">ShouldAddTwoAndGetAndHaveCorrectIds</name>
+        <storage type="System.String">adapters\access\adapters.access.tests\bin\debug\mvp.xml.synchronization.adapters.access.tests.dll</storage>
+        <type type="System.Type, mscorlib">Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</type>
+        <enabled type="System.Boolean">True</enabled>
+      </value>
+    </testLinks>
+  </TestCategory>
+</Tests>
