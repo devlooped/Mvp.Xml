@@ -16,8 +16,8 @@ namespace Mvp.Xml.Synchronization.Tests
 		[TestMethod]
 		public void ShouldEqualWithSameValues()
 		{
-			XmlItem i1 = new XmlItem(Guid.NewGuid().ToString(), "title", "description", DateTime.Now, GetNavigator("<payload/>"));
-			XmlItem i2 = new XmlItem(i1.Id, "title", "description", i1.Timestamp, GetNavigator("<payload/>"));
+			XmlItem i1 = new XmlItem(Guid.NewGuid().ToString(), "title", "description", DateTime.Now, GetElement("<payload/>"));
+			XmlItem i2 = new XmlItem(i1.Id, "title", "description", i1.Timestamp, GetElement("<payload/>"));
 
 			Assert.AreEqual(i1, i2);
 		}
@@ -25,8 +25,8 @@ namespace Mvp.Xml.Synchronization.Tests
 		[TestMethod]
 		public void ShouldNotEqualWithDifferentPayload()
 		{
-			XmlItem i1 = new XmlItem(Guid.NewGuid().ToString(), "title", "description", DateTime.Now, GetNavigator("<payload/>"));
-			XmlItem i2 = new XmlItem(i1.Id, "title", "description", i1.Timestamp, GetNavigator("<payload id='foo'/>"));
+			XmlItem i1 = new XmlItem(Guid.NewGuid().ToString(), "title", "description", DateTime.Now, GetElement("<payload/>"));
+			XmlItem i2 = new XmlItem(i1.Id, "title", "description", i1.Timestamp, GetElement("<payload id='foo'/>"));
 
 			Assert.AreNotEqual(i1, i2);
 		}
@@ -34,8 +34,8 @@ namespace Mvp.Xml.Synchronization.Tests
 		[TestMethod]
 		public void ShouldNotEqualWithDifferentTimespan()
 		{
-			XmlItem i1 = new XmlItem(Guid.NewGuid().ToString(), "title", "description", DateTime.Now, GetNavigator("<payload/>"));
-			XmlItem i2 = new XmlItem(i1.Id, "title", "description", DateTime.Now.AddMilliseconds(50), GetNavigator("<payload/>"));
+			XmlItem i1 = new XmlItem(Guid.NewGuid().ToString(), "title", "description", DateTime.Now, GetElement("<payload/>"));
+			XmlItem i2 = new XmlItem(i1.Id, "title", "description", DateTime.Now.AddMilliseconds(50), GetElement("<payload/>"));
 
 			Assert.AreNotEqual(i1, i2);
 		}
@@ -43,8 +43,8 @@ namespace Mvp.Xml.Synchronization.Tests
 		[TestMethod]
 		public void ShouldNotEqualWithDifferentTitle()
 		{
-			XmlItem i1 = new XmlItem(Guid.NewGuid().ToString(), "title1", "description", DateTime.Now, GetNavigator("<payload/>"));
-			XmlItem i2 = new XmlItem(i1.Id, "title2", "description", i1.Timestamp, GetNavigator("<payload/>"));
+			XmlItem i1 = new XmlItem(Guid.NewGuid().ToString(), "title1", "description", DateTime.Now, GetElement("<payload/>"));
+			XmlItem i2 = new XmlItem(i1.Id, "title2", "description", i1.Timestamp, GetElement("<payload/>"));
 
 			Assert.AreNotEqual(i1, i2);
 		}
@@ -52,8 +52,8 @@ namespace Mvp.Xml.Synchronization.Tests
 		[TestMethod]
 		public void ShouldNotEqualWithDifferentDescription()
 		{
-			XmlItem i1 = new XmlItem(Guid.NewGuid().ToString(), "title", "description1", DateTime.Now, GetNavigator("<payload/>"));
-			XmlItem i2 = new XmlItem(i1.Id, "title", "description2", i1.Timestamp, GetNavigator("<payload/>"));
+			XmlItem i1 = new XmlItem(Guid.NewGuid().ToString(), "title", "description1", DateTime.Now, GetElement("<payload/>"));
+			XmlItem i2 = new XmlItem(i1.Id, "title", "description2", i1.Timestamp, GetElement("<payload/>"));
 
 			Assert.AreNotEqual(i1, i2);
 		}

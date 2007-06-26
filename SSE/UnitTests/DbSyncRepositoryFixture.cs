@@ -96,7 +96,7 @@ namespace Mvp.Xml.Synchronization.Tests
 
 			repo.Save(s);
 			s = new Sync(Guid.NewGuid().ToString());
-			s.Conflicts.Add(new Item(new XmlItem("title", "desc", GetNavigator("<payload/>")),
+			s.Conflicts.Add(new Item(new XmlItem("title", "desc", GetElement("<payload/>")),
 				Behaviors.Update(s.Clone(), "foo", DateTime.Now, false)));
 			s.ItemTimestamp = DateTime.Now;
 			repo.Save(s);

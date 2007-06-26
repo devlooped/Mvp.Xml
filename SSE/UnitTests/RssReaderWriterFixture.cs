@@ -21,7 +21,7 @@ namespace Mvp.Xml.Synchronization.Tests
 			string id = Guid.NewGuid().ToString();
 			Sync localSync = Behaviors.Create(id, "local", DateTime.Now, false);
 			Item localItem = new Item(
-				new XmlItem(id, "title", "description", DateTime.Now, GetNavigator("<payload><foo/></payload>")),
+				new XmlItem(id, "title", "description", DateTime.Now, GetElement("<payload><foo/></payload>")),
 				localSync);
 			
 			// Branch item for conflicting edits

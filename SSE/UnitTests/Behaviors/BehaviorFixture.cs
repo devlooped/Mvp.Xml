@@ -21,7 +21,7 @@ namespace Mvp.Xml.Synchronization.Tests
 		public void MergeShouldThrowIfXmlRepoNull()
 		{
 			Behaviors.Merge(null, new MockSyncRepository(), new Item(
-				new XmlItem("a", "b", GetNavigator("<c/>")),
+				new XmlItem("a", "b", GetElement("<c/>")),
 				new Sync(Guid.NewGuid().ToString())));
 		}
 
@@ -30,7 +30,7 @@ namespace Mvp.Xml.Synchronization.Tests
 		public void MergeShouldThrowIfSyncRepoNull()
 		{
 			Behaviors.Merge(new MockXmlRepository(), null, new Item(
-				new XmlItem("a", "b", GetNavigator("<c/>")),
+				new XmlItem("a", "b", GetElement("<c/>")),
 				new Sync(Guid.NewGuid().ToString())));
 		}
 
@@ -49,7 +49,7 @@ namespace Mvp.Xml.Synchronization.Tests
 
 			string id = Guid.NewGuid().ToString();
 			XmlItem xmlItem = new XmlItem(id, "foo", "bar",
-					DateTime.Now, GetNavigator("<foo id='bar'/>"));
+					DateTime.Now, GetElement("<foo id='bar'/>"));
 			// Save to xml repo only, as a regular app would do.
 			xmlRepo.Add(xmlItem);
 			Thread.Sleep(1000);
@@ -76,7 +76,7 @@ namespace Mvp.Xml.Synchronization.Tests
 
 			Item remoteItem = new Item(
 				new XmlItem(sync.Id, "foo", "bar",
-					DateTime.Now, GetNavigator("<foo id='bar'/>")),
+					DateTime.Now, GetElement("<foo id='bar'/>")),
 				sync);
 
 			ItemMergeResult result = Behaviors.Merge(xmlRepo, syncRepo, remoteItem);
@@ -94,7 +94,7 @@ namespace Mvp.Xml.Synchronization.Tests
 			Sync sync = Behaviors.Create(Guid.NewGuid().ToString(), DeviceAuthor.Current, DateTime.Now, false);
 			Item item = new Item(
 				new XmlItem(sync.Id, "foo", "bar",
-					DateTime.Now, GetNavigator("<foo id='bar'/>")),
+					DateTime.Now, GetElement("<foo id='bar'/>")),
 				sync);
 
 			// Save original item.
@@ -127,7 +127,7 @@ namespace Mvp.Xml.Synchronization.Tests
 			string id = sync.Id;
 			Item item = new Item(
 				new XmlItem(sync.Id, "foo", "bar",
-					DateTime.Now, GetNavigator("<foo id='bar'/>")),
+					DateTime.Now, GetElement("<foo id='bar'/>")),
 				sync);
 
 			// Save original item.
@@ -157,7 +157,7 @@ namespace Mvp.Xml.Synchronization.Tests
 			Sync localSync = Behaviors.Create(Guid.NewGuid().ToString(), DeviceAuthor.Current, DateTime.Now, false);
 			Item localItem = new Item(
 				new XmlItem(localSync.Id, "foo", "bar",
-					DateTime.Now, GetNavigator("<foo id='bar'/>")),
+					DateTime.Now, GetElement("<foo id='bar'/>")),
 				localSync);
 
 			// Save original item.
@@ -201,7 +201,7 @@ namespace Mvp.Xml.Synchronization.Tests
 			Sync sync = Behaviors.Create(Guid.NewGuid().ToString(), DeviceAuthor.Current, DateTime.Now, false);
 			Item item = new Item(
 				new XmlItem(sync.Id, "foo", "bar",
-					DateTime.Now, GetNavigator("<foo id='bar'/>")),
+					DateTime.Now, GetElement("<foo id='bar'/>")),
 				sync);
 
 			// Save original item.
@@ -224,7 +224,7 @@ namespace Mvp.Xml.Synchronization.Tests
 			Sync sync = Behaviors.Create(Guid.NewGuid().ToString(), DeviceAuthor.Current, DateTime.Now, false);
 			Item item = new Item(
 				new XmlItem(sync.Id, "foo", "bar",
-					DateTime.Now, GetNavigator("<foo id='bar'/>")),
+					DateTime.Now, GetElement("<foo id='bar'/>")),
 				sync);
 
 			// Save original item.
@@ -261,7 +261,7 @@ namespace Mvp.Xml.Synchronization.Tests
 			Sync localSync = Behaviors.Create(Guid.NewGuid().ToString(), DeviceAuthor.Current, DateTime.Now, false);
 			Item localItem = new Item(
 				new XmlItem(localSync.Id, "foo", "bar",
-					DateTime.Now, GetNavigator("<foo id='bar'/>")),
+					DateTime.Now, GetElement("<foo id='bar'/>")),
 				localSync);
 
 			// Save original item.
@@ -310,7 +310,7 @@ namespace Mvp.Xml.Synchronization.Tests
 			Sync localSync = Behaviors.Create(Guid.NewGuid().ToString(), DeviceAuthor.Current, DateTime.Now, false);
 			Item localItem = new Item(
 				new XmlItem(localSync.Id, "foo", "bar",
-					now, GetNavigator("<foo id='bar'/>")),
+					now, GetElement("<foo id='bar'/>")),
 				localSync);
 
 			// Save original item.
@@ -354,7 +354,7 @@ namespace Mvp.Xml.Synchronization.Tests
 			string id = localSync.Id;
 			Item localItem = new Item(
 				new XmlItem(id, "foo", "bar",
-					now, GetNavigator("<foo id='bar'/>")),
+					now, GetElement("<foo id='bar'/>")),
 				localSync);
 
 			// Save original item.
@@ -559,7 +559,7 @@ namespace Mvp.Xml.Synchronization.Tests
 		public void ResolveShouldNotUpdateArgument()
 		{
 			Item item = new Item(
-				new XmlItem("foo", "bar", GetNavigator("<payload/>")),
+				new XmlItem("foo", "bar", GetElement("<payload/>")),
 				Behaviors.Create(Guid.NewGuid().ToString(), "one", DateTime.Now, false));
 
 			Item resolved = Behaviors.ResolveConflicts(item, "two", DateTime.Now, false);
@@ -571,7 +571,7 @@ namespace Mvp.Xml.Synchronization.Tests
 		public void ResolveShouldUpdateEvenIfNoConflicts()
 		{
 			Item item = new Item(
-				new XmlItem("foo", "bar", GetNavigator("<payload/>")),
+				new XmlItem("foo", "bar", GetElement("<payload/>")),
 				Behaviors.Create(Guid.NewGuid().ToString(), "one", DateTime.Now, false));
 
 			Item resolved = Behaviors.ResolveConflicts(item, "two", DateTime.Now, false);
@@ -584,7 +584,7 @@ namespace Mvp.Xml.Synchronization.Tests
 		[TestMethod]
 		public void ResolveShouldAddConflictItemHistoryWithoutIncrementingUpdates()
 		{
-			XmlItem xml = new XmlItem("foo", "bar", GetNavigator("<payload/>"));
+			XmlItem xml = new XmlItem("foo", "bar", GetElement("<payload/>"));
 			Sync sync = Behaviors.Create(Guid.NewGuid().ToString(), "one",
 				DateTime.Now.Subtract(TimeSpan.FromMinutes(10)), false);
 			Sync conflictSync = Behaviors.Create(sync.Id, "two",
@@ -601,7 +601,7 @@ namespace Mvp.Xml.Synchronization.Tests
 		[TestMethod]
 		public void ResolveShouldRemoveConflicts()
 		{
-			XmlItem xml = new XmlItem("foo", "bar", GetNavigator("<payload/>"));
+			XmlItem xml = new XmlItem("foo", "bar", GetElement("<payload/>"));
 			Sync sync = Behaviors.Create(Guid.NewGuid().ToString(), "one",
 				DateTime.Now.Subtract(TimeSpan.FromMinutes(10)), false);
 			Sync conflictSync = Behaviors.Create(sync.Id, "two",
@@ -617,7 +617,7 @@ namespace Mvp.Xml.Synchronization.Tests
 		[TestMethod]
 		public void ResolveShouldNotAddConflictItemHistoryIfSubsumed()
 		{
-			XmlItem xml = new XmlItem("foo", "bar", GetNavigator("<payload/>"));
+			XmlItem xml = new XmlItem("foo", "bar", GetElement("<payload/>"));
 			Sync sync = Behaviors.Create(Guid.NewGuid().ToString(), "one",
 				DateTime.Now, false);
 			Sync conflictSync = sync.Clone();

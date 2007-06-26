@@ -37,7 +37,7 @@ namespace Mvp.Xml.Synchronization.Tests
 
 			xw.Flush();
 
-			XmlElement output = GetNavigator(sw.ToString());
+			XmlElement output = GetElement(sw.ToString());
 
 			Assert.AreEqual(1, EvaluateCount(output, "/feed"));
 			Assert.AreEqual(1, EvaluateCount(output, "/feed/sx:sharing"));
@@ -71,7 +71,7 @@ namespace Mvp.Xml.Synchronization.Tests
 
 			xw.Flush();
 
-			XmlNode output = GetNavigator(sw.ToString());
+			XmlNode output = GetElement(sw.ToString());
 
 			Assert.AreEqual(1, EvaluateCount(output, "/feed"));
 			Assert.AreEqual(1, EvaluateCount(output, "/feed/sx:sharing"));
@@ -109,7 +109,7 @@ namespace Mvp.Xml.Synchronization.Tests
 
 			xw.Flush();
 
-			XmlNode output = GetNavigator(sw.ToString());
+			XmlNode output = GetElement(sw.ToString());
 
 			Assert.AreEqual(1, EvaluateCount(output, "/feed"));
 			Assert.AreEqual(1, EvaluateCount(output, "/feed/sx:sharing"));

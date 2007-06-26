@@ -127,7 +127,7 @@ namespace Mvp.Xml.Synchronization.Tests
 			}
 		}
 
-		protected static XmlElement GetNavigator(string xml)
+		protected static XmlElement GetElement(string xml)
 		{
 			XmlDocument doc = new XmlDocument();
 			doc.Load(GetReader(xml));

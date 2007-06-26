@@ -54,7 +54,6 @@
     <Compile Include="Behaviors\MergeBehaviorFixture.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ConflictResolutionFixture.cs" />
     <Compile Include="TimestampFixture.cs" />
     <Compile Include="Model\SharingFixture.cs" />
     <Compile Include="XmlItemFixture.cs" />

@@ -10,6 +10,7 @@ using System.Xml;
 using System.Xml.XPath;
 using System.IO;
 using System.Threading;
+using NMock2;
 
 namespace Mvp.Xml.Synchronization.Tests
 {
@@ -171,7 +172,7 @@ namespace Mvp.Xml.Synchronization.Tests
 			Sync sync = Behaviors.Create(id, DeviceAuthor.Current, DateTime.Now, false);
 			Item item = new Item(
 				new XmlItem(id, "foo", "bar",
-					DateTime.Now, GetNavigator("<foo id='bar'/>")),
+					DateTime.Now, GetElement("<foo id='bar'/>")),
 				sync);
 
 			// Save original item.
@@ -207,7 +208,7 @@ namespace Mvp.Xml.Synchronization.Tests
 			Sync sync = Behaviors.Create(id, DeviceAuthor.Current, DateTime.Now, false);
 			Item item = new Item(
 				new XmlItem(id, "foo", "bar",
-					DateTime.Now, GetNavigator("<foo id='bar'/>")),
+					DateTime.Now, GetElement("<foo id='bar'/>")),
 				sync);
 
 			// Save original item.
@@ -265,7 +266,7 @@ namespace Mvp.Xml.Synchronization.Tests
 			Sync sync = Behaviors.Create(id, DeviceAuthor.Current, DateTime.Now, false);
 			Item item = new Item(
 				new XmlItem(id, "foo", "bar",
-					DateTime.Now, GetNavigator("<foo id='bar'/>")),
+					DateTime.Now, GetElement("<foo id='bar'/>")),
 				sync);
 
 			// Will save the only item and update LastSync
@@ -306,7 +307,7 @@ namespace Mvp.Xml.Synchronization.Tests
 			sync.ItemTimestamp = DateTime.Now;
 			Item item = new Item(
 				new XmlItem(id, "foo", "bar",
-					sync.ItemTimestamp.Value, GetNavigator("<foo id='bar'/>")),
+					sync.ItemTimestamp.Value, GetElement("<foo id='bar'/>")),
 				sync);
 
 			// Save original item.
@@ -682,7 +683,7 @@ namespace Mvp.Xml.Synchronization.Tests
 
 			item.XmlItem.Title = "Resolved";
 
-			Item resolved = engine.SaveClearConflicts(item);
+			Item resolved = engine.Save(item, true);
 
 			IXmlItem storedXml = xmlRepo.Get(item.XmlItem.Id);
 
@@ -707,11 +708,71 @@ namespace Mvp.Xml.Synchronization.Tests
 
 			item.XmlItem.Title = "Resolved";
 
-			Item resolved = engine.SaveClearConflicts(item);
+			Item resolved = engine.Save(item, true);
 
 			IXmlItem storedXml = xmlRepo.Get(item.XmlItem.Id);
 
 			Assert.AreEqual("Resolved", storedXml.Title);
+		}
+
+		[TestMethod]
+		public void ShouldSaveAddNewItemAndSync()
+		{
+			Mockery mocks = new Mockery();
+			ISyncRepository syncRepo = mocks.NewMock<ISyncRepository>();
+			IXmlRepository xmlRepo = mocks.NewMock<IXmlRepository>();
+
+			Expect.Once.On(xmlRepo).Method("Contains").Will(Return.Value(false));
+			Expect.Once.On(xmlRepo).Method("Add").Will(Return.Value(DateTime.Now));
+			Expect.Once.On(syncRepo).Method("Save");
+
+			SyncEngine engine = new SyncEngine(xmlRepo, syncRepo);
+
+			Sync sync = Behaviors.Create(Guid.NewGuid().ToString(), "kzu", null, false);
+			XmlItem item = new XmlItem("foo", "bar", GetElement("<payload/>"));
+
+			engine.Save(new Item(item, sync));
+
+			mocks.VerifyAllExpectationsHaveBeenMet();
+		}
+
+		[TestMethod]
+		public void ShouldSaveUpdateExistingItemAndSync()
+		{
+			Mockery mocks = new Mockery();
+			ISyncRepository syncRepo = mocks.NewMock<ISyncRepository>();
+			IXmlRepository xmlRepo = mocks.NewMock<IXmlRepository>();
+
+			Expect.Once.On(xmlRepo).Method("Contains").Will(Return.Value(true));
+			Expect.Once.On(xmlRepo).Method("Update").Will(Return.Value(DateTime.Now));
+			Expect.Once.On(syncRepo).Method("Save");
+
+			SyncEngine engine = new SyncEngine(xmlRepo, syncRepo);
+			
+			Sync sync = Behaviors.Create(Guid.NewGuid().ToString(), "kzu", null, false);
+			XmlItem item = new XmlItem("foo", "bar", GetElement("<payload/>"));
+
+			engine.Save(new Item(item, sync));
+
+			mocks.VerifyAllExpectationsHaveBeenMet();
+		}
+
+		[ExpectedException(typeof(ArgumentNullException))]
+		[TestMethod]
+		public void ShouldThrowIfSaveNullItem()
+		{
+			Mockery mocks = new Mockery();
+			ISyncRepository syncRepo = mocks.NewMock<ISyncRepository>();
+			IXmlRepository xmlRepo = mocks.NewMock<IXmlRepository>();
+
+			Expect.Never.On(xmlRepo);
+			Expect.Never.On(syncRepo);
+
+			SyncEngine engine = new SyncEngine(xmlRepo, syncRepo);
+
+			engine.Save(null);
+
+			mocks.VerifyAllExpectationsHaveBeenMet();
 		}
 
 		//[ExpectedException(typeof(InvalidOperationException))]
@@ -741,13 +802,13 @@ namespace Mvp.Xml.Synchronization.Tests
 						new XmlItem(
 							(id = Guid.NewGuid().ToString()), "Foo", "Description",
 							(when = DateTime.Now).Value, 
-							GetNavigator("<foo id='1'/>")), 
+							GetElement("<foo id='1'/>")), 
 						Behaviors.Update(new Sync(id), DeviceAuthor.Current, when, false)), 
 					new Item(
 						new XmlItem(
 							(id = Guid.NewGuid().ToString()), "Foo", "Description", 
 							(when = DateTime.Now).Value, 
-							GetNavigator("<foo id='2'/>")), 
+							GetElement("<foo id='2'/>")), 
 						Behaviors.Update(new Sync(id), DeviceAuthor.Current, when, false))
 				});
 		}

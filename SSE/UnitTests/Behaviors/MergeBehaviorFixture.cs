@@ -28,12 +28,12 @@ namespace Mvp.Xml.Synchronization.Tests
 
 			 sb = Behaviors.Update(sb, "vga", DateTime.Now.AddSeconds(5), false);
 
-			 Item a = new Item(new XmlItem("a", "a", GetNavigator("<payload/>")), sa);
+			 Item a = new Item(new XmlItem("a", "a", GetElement("<payload/>")), sa);
 			 a.XmlItem.Id = sb.Id;
 			 xmlRepo.Add(a.XmlItem);
 			 syncRepo.Save(a.Sync);
 
-			 Item b = new Item(new XmlItem("b", "b", GetNavigator("<payload/>")), sb);
+			 Item b = new Item(new XmlItem("b", "b", GetElement("<payload/>")), sb);
 			 b.XmlItem.Id = sb.Id;
 
 			 ItemMergeResult result = Behaviors.Merge(xmlRepo, syncRepo, b);
@@ -53,12 +53,12 @@ namespace Mvp.Xml.Synchronization.Tests
 
 			 Sync sb = sa.Clone();
 
-			 Item a = new Item(new XmlItem("a", "a", GetNavigator("<payload/>")), sa);
+			 Item a = new Item(new XmlItem("a", "a", GetElement("<payload/>")), sa);
 			 a.XmlItem.Id = sb.Id;
 			 xmlRepo.Add(a.XmlItem);
 			 syncRepo.Save(a.Sync);
 
-			 Item b = new Item(new XmlItem("a", "a", GetNavigator("<payload/>")), sb);
+			 Item b = new Item(new XmlItem("a", "a", GetElement("<payload/>")), sb);
 			 b.XmlItem.Id = sb.Id;
 
 			 ItemMergeResult result = Behaviors.Merge(xmlRepo, syncRepo, b);
@@ -75,7 +75,7 @@ namespace Mvp.Xml.Synchronization.Tests
 			 Sync sa = new Sync(Guid.NewGuid().ToString());
 			 Behaviors.Update(sa, "kzu", DateTime.Now, false);
 
-			 Item a = new Item(new XmlItem("a", "a", GetNavigator("<payload/>")), sa);
+			 Item a = new Item(new XmlItem("a", "a", GetElement("<payload/>")), sa);
 			 ItemMergeResult result = Behaviors.Merge(xmlRepo, syncRepo, a);
 
 			 Assert.AreEqual(MergeOperation.Added, result.Operation);
@@ -92,12 +92,12 @@ namespace Mvp.Xml.Synchronization.Tests
 
 			 Sync sb = sa.Clone();
 
-			 Item a = new Item(new XmlItem("a", "a", GetNavigator("<payload/>")), sa);
+			 Item a = new Item(new XmlItem("a", "a", GetElement("<payload/>")), sa);
 			 a.XmlItem.Id = sb.Id;
 			 a.Sync.ItemTimestamp = xmlRepo.Add(a.XmlItem);
 			 syncRepo.Save(a.Sync);
 
-			 Item b = new Item(new XmlItem("b", "b", GetNavigator("<payload/>")), sb);
+			 Item b = new Item(new XmlItem("b", "b", GetElement("<payload/>")), sb);
 			 b.XmlItem.Id = sb.Id;
 
 			 ItemMergeResult result = Behaviors.Merge(xmlRepo, syncRepo, b);
@@ -116,12 +116,12 @@ namespace Mvp.Xml.Synchronization.Tests
 			 sb = Behaviors.Update(sb, "vga", DateTime.Now.AddSeconds(50), false);
 			 sa = Behaviors.Update(sa, "kzu", DateTime.Now.AddSeconds(100), false);
 
-			 Item a = new Item(new XmlItem("a", "a", GetNavigator("<payload/>")), sa);
+			 Item a = new Item(new XmlItem("a", "a", GetElement("<payload/>")), sa);
 			 a.XmlItem.Id = sb.Id;
 			 a.Sync.ItemTimestamp = xmlRepo.Add(a.XmlItem);
 			 syncRepo.Save(a.Sync);
 
-			 Item b = new Item(new XmlItem("b", "b", GetNavigator("<payload/>")), sb);
+			 Item b = new Item(new XmlItem("b", "b", GetElement("<payload/>")), sb);
 			 b.XmlItem.Id = sb.Id;
 
 			 ItemMergeResult result = Behaviors.Merge(xmlRepo, syncRepo, b);
@@ -148,12 +148,12 @@ namespace Mvp.Xml.Synchronization.Tests
 			 sb = Behaviors.Update(sb, "vga", DateTime.Now.AddSeconds(50), false);
 			 sa = Behaviors.Update(sa, "kzu", DateTime.Now.AddSeconds(100), false);
 
-			 Item a = new Item(new XmlItem("a", "a", GetNavigator("<payload/>")), sa);
+			 Item a = new Item(new XmlItem("a", "a", GetElement("<payload/>")), sa);
 			 a.XmlItem.Id = sb.Id;
 			 xmlRepo.Add(a.XmlItem);
 			 syncRepo.Save(a.Sync);
 
-			 Item b = new Item(new XmlItem("b", "b", GetNavigator("<payload/>")), sb);
+			 Item b = new Item(new XmlItem("b", "b", GetElement("<payload/>")), sb);
 			 b.XmlItem.Id = sb.Id;
 
 			 ItemMergeResult result = Behaviors.Merge(xmlRepo, syncRepo, b);
@@ -182,12 +182,12 @@ namespace Mvp.Xml.Synchronization.Tests
 			 Sync sa = Behaviors.Create(Guid.NewGuid().ToString(), "kzu", now, false);
 			 Sync sb = Behaviors.Update(sa, "kzu", now, false);
 
-			 Item a = new Item(new XmlItem("a", "a", GetNavigator("<payload/>")), sa);
+			 Item a = new Item(new XmlItem("a", "a", GetElement("<payload/>")), sa);
 			 a.XmlItem.Id = sb.Id;
 			 xmlRepo.Add(a.XmlItem);
 			 syncRepo.Save(a.Sync);
 			 
-			 Item b = new Item(new XmlItem("b", "b", GetNavigator("<payload/>")), sb);
+			 Item b = new Item(new XmlItem("b", "b", GetElement("<payload/>")), sb);
 			 b.XmlItem.Id = sb.Id;
 
 			 ItemMergeResult result = Behaviors.Merge(xmlRepo, syncRepo, a);

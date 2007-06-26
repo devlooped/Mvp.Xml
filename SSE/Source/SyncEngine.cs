@@ -170,12 +170,38 @@ namespace Mvp.Xml.Synchronization
 			return Import(feed, PreviewImport(items));
 		}
 
-		public Item SaveClearConflicts(Item resolvedItem)
+		/// <summary>
+		/// Manually saves or updates a new or existing item, 
+		/// optionally merging the conflicts history.
+		/// </summary>
+		/// <remarks>
+		/// See 3.4 on SSE spec.
+		/// </remarks>
+		/// <returns>The saved item and its new timestamp.</returns>
+		public Item Save(Item item)
 		{
-			Item item = Behaviors.ResolveConflicts(resolvedItem, DeviceAuthor.Current, DateTime.Now, false);
+			return Save(item, false);
+		}
 
-			resolvedItem.Sync.ItemTimestamp = xmlRepo.Update(resolvedItem.XmlItem);
-			syncRepo.Save(resolvedItem.Sync);
+		public Item Save(Item item, bool resolveConflicts)
+		{
+			Guard.ArgumentNotNull(item, "item");
+
+			if (resolveConflicts)
+			{
+				item = Behaviors.ResolveConflicts(item, DeviceAuthor.Current, DateTime.Now, false);
+			}
+
+			if (xmlRepo.Contains(item.XmlItem.Id))
+			{
+				item.Sync.ItemTimestamp = xmlRepo.Update(item.XmlItem);
+			}
+			else
+			{
+				item.Sync.ItemTimestamp = xmlRepo.Add(item.XmlItem);
+			}
+				
+			syncRepo.Save(item.Sync);
 
 			return item;
 		}

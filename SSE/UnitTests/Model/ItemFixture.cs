@@ -25,13 +25,13 @@ namespace Mvp.Xml.Synchronization.Tests.Model
 		[TestMethod]
 		public void ShouldThrowNullSync()
 		{
-			new Item(new XmlItem("a", "b", GetNavigator("<c/>")), null);
+			new Item(new XmlItem("a", "b", GetElement("<c/>")), null);
 		}
 
 		[TestMethod]
 		public void ShouldEqualSameObject()
 		{
-			Item obj1 = new Item(new XmlItem("a", "b", GetNavigator("<c/>")), new Sync(Guid.NewGuid().ToString()));
+			Item obj1 = new Item(new XmlItem("a", "b", GetElement("<c/>")), new Sync(Guid.NewGuid().ToString()));
 			Item obj2 = obj1;
 
 			AssertEquals(obj1, obj2);
@@ -40,7 +40,7 @@ namespace Mvp.Xml.Synchronization.Tests.Model
 		[TestMethod]
 		public void ShouldNotEqualNull()
 		{
-			Item obj1 = new Item(new XmlItem("a", "b", GetNavigator("<c/>")), new Sync(Guid.NewGuid().ToString()));
+			Item obj1 = new Item(new XmlItem("a", "b", GetElement("<c/>")), new Sync(Guid.NewGuid().ToString()));
 			Item obj2 = null;
 
 			AssertNotEquals(obj1, obj2);
@@ -49,7 +49,7 @@ namespace Mvp.Xml.Synchronization.Tests.Model
 		[TestMethod]
 		public void ShouldNotEqualDifferentSync()
 		{
-			Item obj1 = new Item(new XmlItem("foo", "bar", GetNavigator("<payload/>")), new Sync(Guid.NewGuid().ToString()));
+			Item obj1 = new Item(new XmlItem("foo", "bar", GetElement("<payload/>")), new Sync(Guid.NewGuid().ToString()));
 			Item obj2 = new Item(obj1.XmlItem, new Sync(Guid.NewGuid().ToString()));
 
 			AssertNotEquals(obj1, obj2);			
@@ -58,8 +58,8 @@ namespace Mvp.Xml.Synchronization.Tests.Model
 		[TestMethod]
 		public void ShouldNotEqualDifferentItem()
 		{
-			Item obj1 = new Item(new XmlItem("foo", "bar", GetNavigator("<payload/>")), new Sync(Guid.NewGuid().ToString()));
-			Item obj2 = new Item(new XmlItem("foo", "bar", GetNavigator("<payload id='2'/>")), obj1.Sync);
+			Item obj1 = new Item(new XmlItem("foo", "bar", GetElement("<payload/>")), new Sync(Guid.NewGuid().ToString()));
+			Item obj2 = new Item(new XmlItem("foo", "bar", GetElement("<payload id='2'/>")), obj1.Sync);
 
 			AssertNotEquals(obj1, obj2);
 		}
@@ -67,7 +67,7 @@ namespace Mvp.Xml.Synchronization.Tests.Model
 		[TestMethod]
 		public void ShouldNotEqualWithOneNullXmlItem()
 		{
-			Item obj1 = new Item(new XmlItem("foo", "bar", GetNavigator("<payload/>")), new Sync(Guid.NewGuid().ToString()));
+			Item obj1 = new Item(new XmlItem("foo", "bar", GetElement("<payload/>")), new Sync(Guid.NewGuid().ToString()));
 			Item obj2 = new Item(null, obj1.Sync);
 
 			AssertNotEquals(obj1, obj2);
@@ -89,8 +89,8 @@ namespace Mvp.Xml.Synchronization.Tests.Model
 			Sync s2 = new Sync(s1.Id);
 			DateTime now = DateTime.Now;
 
-			Item obj1 = new Item(new XmlItem(s1.Id, "foo", "bar", now, GetNavigator("<payload/>")), s1);
-			Item obj2 = new Item(new XmlItem(s1.Id, "foo", "bar", now, GetNavigator("<payload/>")), s2);
+			Item obj1 = new Item(new XmlItem(s1.Id, "foo", "bar", now, GetElement("<payload/>")), s1);
+			Item obj2 = new Item(new XmlItem(s1.Id, "foo", "bar", now, GetElement("<payload/>")), s2);
 
 			AssertEquals(obj1, obj2);
 		}
@@ -102,8 +102,8 @@ namespace Mvp.Xml.Synchronization.Tests.Model
 			Sync s2 = new Sync(s1.Id);
 			DateTime now = DateTime.Now;
 
-			Item obj1 = new Item(new XmlItem(s1.Id, "foo", "bar", now, GetNavigator("<payload/>")), s1);
-			Item obj2 = new Item(new XmlItem(s1.Id, "foo", "bar", now, GetNavigator("<payload/>")), s2);
+			Item obj1 = new Item(new XmlItem(s1.Id, "foo", "bar", now, GetElement("<payload/>")), s1);
+			Item obj2 = new Item(new XmlItem(s1.Id, "foo", "bar", now, GetElement("<payload/>")), s2);
 
 			Assert.AreEqual(obj1.GetHashCode(), obj2.GetHashCode());
 		}
@@ -111,7 +111,7 @@ namespace Mvp.Xml.Synchronization.Tests.Model
 		[TestMethod]
 		public void ShouldEqualClonedItem()
 		{
-			Item obj1 = new Item(new XmlItem("a", "b", GetNavigator("<c/>")), new Sync(Guid.NewGuid().ToString()));
+			Item obj1 = new Item(new XmlItem("a", "b", GetElement("<c/>")), new Sync(Guid.NewGuid().ToString()));
 			Item obj2 = obj1.Clone();
 
 			AssertEquals(obj1, obj2);
@@ -120,7 +120,7 @@ namespace Mvp.Xml.Synchronization.Tests.Model
 		[TestMethod]
 		public void ShouldEqualClonedCloneableItem()
 		{
-			Item obj1 = new Item(new XmlItem("a", "b", GetNavigator("<c/>")), new Sync(Guid.NewGuid().ToString()));
+			Item obj1 = new Item(new XmlItem("a", "b", GetElement("<c/>")), new Sync(Guid.NewGuid().ToString()));
 			Item obj2 = (Item)((ICloneable)obj1).Clone();
 
 			AssertEquals(obj1, obj2);

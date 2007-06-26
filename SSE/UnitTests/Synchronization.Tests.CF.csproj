@@ -56,7 +56,6 @@
   <ItemGroup>
     <Compile Include="Behaviors\BehaviorFixture.cs" />
     <Compile Include="Behaviors\MergeBehaviorFixture.cs" />
-    <Compile Include="ConflictResolutionFixture.cs" />
     <Compile Include="DynamicXmlItemFixture.cs" />
     <Compile Include="Mocks\MockSyncRepository.cs" />
     <Compile Include="Mocks\MockXmlRepository.cs" />
