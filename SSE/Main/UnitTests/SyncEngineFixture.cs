@@ -2,6 +2,7 @@
 using Microsoft.Practices.Mobile.TestTools.UnitTesting;
 #else
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NMock2;
 #endif
 
 using System;
@@ -10,7 +11,6 @@ using System.Xml;
 using System.Xml.XPath;
 using System.IO;
 using System.Threading;
-using NMock2;
 
 namespace Mvp.Xml.Synchronization.Tests
 {
@@ -715,6 +715,8 @@ namespace Mvp.Xml.Synchronization.Tests
 			Assert.AreEqual("Resolved", storedXml.Title);
 		}
 
+#if !PocketPC
+
 		[TestMethod]
 		public void ShouldSaveAddNewItemAndSync()
 		{
@@ -774,6 +776,8 @@ namespace Mvp.Xml.Synchronization.Tests
 
 			mocks.VerifyAllExpectationsHaveBeenMet();
 		}
+
+#endif
 
 		//[ExpectedException(typeof(InvalidOperationException))]
 		//[TestMethod]

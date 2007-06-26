@@ -34,7 +34,7 @@
   <ItemGroup>
     <Reference Include="CustomValidation, Version=1.0.2700.34088, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Lib\CustomValidation.dll</HintPath>
+      <HintPath>..\..\..\Lib\CustomValidation.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
