@@ -53,19 +53,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CFUnitTester", "CFUnitTeste
 		{B4F97281-0DBD-4835-9ED8-7DFB966E87FF} = {B4F97281-0DBD-4835-9ED8-7DFB966E87FF}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTesting", "Tools\CFUnitTester\UnitTesting\UnitTesting.csproj", "{3385C4E6-0657-48E3-8437-6BF4A51B2315}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTesting", "..\Tools\CFUnitTester\UnitTesting\UnitTesting.csproj", "{3385C4E6-0657-48E3-8437-6BF4A51B2315}"
 	ProjectSection(WebsiteProperties) = preProject
 		Debug.AspNetCompiler.Debug = "True"
 		Release.AspNetCompiler.Debug = "False"
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestRunner", "Tools\CFUnitTester\TestRunner\TestRunner.csproj", "{1C9AE3CD-C7F3-4A1D-9096-646549157B1A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestRunner", "..\Tools\CFUnitTester\TestRunner\TestRunner.csproj", "{1C9AE3CD-C7F3-4A1D-9096-646549157B1A}"
 	ProjectSection(WebsiteProperties) = preProject
 		Debug.AspNetCompiler.Debug = "True"
 		Release.AspNetCompiler.Debug = "False"
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuiTestRunner", "Tools\CFUnitTester\GuiTestRunner\GuiTestRunner.csproj", "{EDD25FDB-37FD-4365-B2A8-BE0C6D395BDC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuiTestRunner", "..\Tools\CFUnitTester\GuiTestRunner\GuiTestRunner.csproj", "{EDD25FDB-37FD-4365-B2A8-BE0C6D395BDC}"
 	ProjectSection(WebsiteProperties) = preProject
 		Debug.AspNetCompiler.Debug = "True"
 		Release.AspNetCompiler.Debug = "False"

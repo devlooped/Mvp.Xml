@@ -85,7 +85,7 @@
       <Project>{6AB67AF4-83D3-449E-83D0-A88C343801AE}</Project>
       <Name>Synchronization.CF</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Tools\CFUnitTester\UnitTesting\UnitTesting.csproj">
+    <ProjectReference Include="..\..\Tools\CFUnitTester\UnitTesting\UnitTesting.csproj">
       <Project>{3385C4E6-0657-48E3-8437-6BF4A51B2315}</Project>
       <Name>UnitTesting</Name>
     </ProjectReference>
