@@ -346,6 +346,7 @@ namespace XmlLab.nxslt
         {            
             MvpXslTransform xslt = new MvpXslTransform();
             xslt.SupportCharacterMaps = options.ProcessCharacterMaps;
+            xslt.EnforceXHTMLOutput = options.EnforceXhtmlOutput;
             try
             {
                 xslt.Load(stylesheetReader, XsltSettings.TrustedXslt, stylesheetResolver);

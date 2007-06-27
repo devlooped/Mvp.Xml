@@ -45,6 +45,12 @@
     <Compile Include="..\..\..\Library\Main\Source\Common\Guard.cs">
       <Link>Common\Guard.cs</Link>
     </Compile>
+    <Compile Include="..\..\..\Library\Main\Source\Common\QName.cs">
+      <Link>Common\QName.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Library\Main\Source\Common\XhtmlWriter.cs">
+      <Link>Common\XhtmlWriter.cs</Link>
+    </Compile>
     <Compile Include="..\..\..\Library\Main\Source\Common\XmlBaseAwareXmlReader.cs">
       <Link>Common\XmlBaseAwareXmlTextReader.cs</Link>
     </Compile>

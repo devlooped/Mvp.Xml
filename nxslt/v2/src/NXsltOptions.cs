@@ -33,6 +33,7 @@ namespace XmlLab.nxslt
     private bool prettyPrintMode;
     private bool identityTransformMode;
     private bool processCharacterMaps = true;
+      private bool enforceXhtmlOutput = false;
 
     /// <summary>
     /// Process character maps.
@@ -42,6 +43,21 @@ namespace XmlLab.nxslt
         get { return processCharacterMaps; }
         set { processCharacterMaps = value; }
     }
+
+      /// <summary>
+      /// Enforce XHTML output mode
+      /// </summary>
+      public bool EnforceXhtmlOutput
+      {
+          get
+          {
+              return enforceXhtmlOutput;           
+          }
+          set
+          {
+          	enforceXhtmlOutput = value;
+          }
+      }
 
     /// <summary>
     /// Default constructor.

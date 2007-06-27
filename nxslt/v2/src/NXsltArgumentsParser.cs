@@ -80,6 +80,10 @@ namespace XmlLab.nxslt
                         case "-xcm":
                             options.ProcessCharacterMaps = false;
                             break;
+                        //XHTML output mode
+                        case "-xhtml":
+                            options.EnforceXhtmlOutput = true;
+                            break;
                         //Output filename
                         case "-o":
                             if (i == args.Length - 1)

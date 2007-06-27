@@ -791,6 +791,7 @@
     <Content Include="Common\CharacterMappingXmlReaderTests\style2.xslt" />
     <Content Include="Common\CharacterMappingXmlReaderTests\style.xslt" />
     <Content Include="Common\MvpXslTransformTests\char-map.xslt" />
+    <Content Include="Common\MvpXslTransformTests\xhtml.xslt" />
     <Content Include="Common\UpperLowerTests\Customer.xsd">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

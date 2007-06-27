@@ -422,6 +422,21 @@ namespace Mvp.Xml.Tests
             xslt.Transform(input, Arguments, new XmlOutput(sw));
             Assert.IsTrue(sw.ToString() == "<out attr=\"a&nbsp;b\"><text>Some&nbsp;text, now ASP.NET <%# Eval(\"foo\") %> and more&nbsp;text.</text><foo attr=\"<data>\">text <%= fff() %> and more&nbsp;text.</foo></out>");
         }
+
+        [TestMethod]
+        public void XhtmlTest()
+        {
+            MvpXslTransform xslt = new MvpXslTransform();
+            xslt.Load("../../Common/MvpXslTransformTests/xhtml.xslt");
+            xslt.EnforceXHTMLOutput = true;
+            XmlInput input = new XmlInput(new StringReader("<foo/>"));
+            StringWriter sw = new StringWriter();
+            XmlWriter w = XmlWriter.Create(sw, xslt.OutputSettings);
+            xslt.Transform(input, Arguments, new XmlOutput(w));
+            w.Close();
+            Console.WriteLine(sw.ToString());
+            Assert.AreEqual(sw.ToString(), "<?xml version=\"1.0\" encoding=\"utf-16\"?><!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\"><html xmlns=\"http://www.w3.org/1999/xhtml\"><head><title>Page title</title></head><body><p>Para</p><p></p><br /><p><img src=\"ddd\" /></p></body></html>");
+        }
     }
 
     public class MyXmlResolver : XmlUrlResolver

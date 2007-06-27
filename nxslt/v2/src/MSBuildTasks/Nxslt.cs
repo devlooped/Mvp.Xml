@@ -83,6 +83,14 @@ namespace XmlLab.NxsltTasks.MSBuild
             set { nxsltOptions.ProcessCharacterMaps = value; }
         }
 
+        /// <summary>Enforce XHTML output mode.</summary>        
+        public bool Xhtml
+        {
+            get { return nxsltOptions.EnforceXhtmlOutput; }
+            set { nxsltOptions.EnforceXhtmlOutput = value; }
+        }
+
+
         /// <summary>Show load and transformation timings.</summary>        
         public bool ShowTimings
         {

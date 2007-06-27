@@ -97,6 +97,16 @@ namespace XmlLab.NxsltTasks.NAnt
             set { nxsltOptions.ProcessCharacterMaps = value; }
         }
 
+        /// <summary>Enforce XHTML output mode.</summary>
+        [TaskAttribute("xhtml")]
+        [BooleanValidator()]
+        public bool Xhtml
+        {
+            get { return nxsltOptions.EnforceXhtmlOutput; }
+            set { nxsltOptions.EnforceXhtmlOutput = value; }
+        }
+
+
         /// <summary>Show load and transformation timings.</summary>
         [TaskAttribute("showtimings")]
         [BooleanValidator()]
