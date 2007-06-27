@@ -47,6 +47,7 @@
     <Compile Include="Common\IndexingXPathNavigatorTest.cs" />
     <Compile Include="Common\Misc.cs" />
     <Compile Include="Common\MvpXslTransformTests\MvpXslTransformTests.cs" />
+    <Compile Include="Common\XhtmlWriterTests.cs" />
     <Compile Include="Common\XmlNormalizingReaderFixture.cs" />
     <Compile Include="Common\pubsNs.cs">
       <DependentUpon>pubsNs.xsd</DependentUpon>
