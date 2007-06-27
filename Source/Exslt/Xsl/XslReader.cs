@@ -8,6 +8,7 @@ using System.Xml.Xsl;
 using System.Xml.XPath;
 using System.Diagnostics;
 using System.Threading;
+using Mvp.Xml.Common;
 #endregion
 
 namespace Mvp.Xml.Common.Xsl
@@ -685,29 +686,7 @@ namespace Mvp.Xml.Common.Xsl
 				"QName atomization Failure: '" + qnA.ToString() + "'"
 			);
 			return (object)qnA == (object)qnB;
-		}
-
-		// QName is imutable. 
-		private class QName
-		{
-			string local;
-			string nsUri;
-			string prefix;
-			public QName(string local, string nsUri, string prefix)
-			{
-				this.local = local;
-				this.nsUri = nsUri;
-				this.prefix = prefix;
-			}
-			public string Local { get { return this.local; } }
-			public string NsUri { get { return this.nsUri; } }
-			public string Prefix { get { return this.prefix; } }
-
-			public override string ToString()
-			{
-				return (Prefix != null && Prefix.Length != 0) ? (Prefix + ':' + Local) : Local;
-			}
-		}
+		}		
 
 		// BufferWriter records information written to it in sequence of WriterEvents: 
 		[DebuggerDisplay("{NodeType}: name={Name}, Value={Value}")]

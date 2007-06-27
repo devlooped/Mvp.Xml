@@ -49,6 +49,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\Guard.cs" />
+    <Compile Include="Common\QName.cs" />
+    <Compile Include="Common\XhtmlWriter.cs" />
     <Compile Include="Common\XmlNormalizingReader.cs" />
     <Compile Include="Common\Serialization\CacheKeyFactory.cs" />
     <Compile Include="Common\Serialization\SignatureExtractor.cs" />
