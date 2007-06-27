@@ -14,7 +14,7 @@ using Mvp.Xml.Exslt;
 
 namespace Mvp.Xml.Common.Xsl
 {
-
+     
     /// <summary>
     /// <para>MvpXslTransform class extends capabilities of the <see cref="XslCompiledTransform"/>
     /// class by adding support for transforming into <see cref="XmlReader"/>, 
@@ -29,7 +29,7 @@ namespace Mvp.Xml.Common.Xsl
     /// in multiple threads simultaneously.</para>
     /// <para>MvpXslTransform supports EXSLT extension functions from the following namespaces:<br/> 
     /// * http://exslt.org/common<br/>
-    /// * http://exslt.org/dates-and-times<br/>
+    /// * http://exslt.org/dates-and-times<br/>   
     /// * http://exslt.org/math<br/>
     /// * http://exslt.org/random<br/>
     /// * http://exslt.org/regular-expressions<br/>
@@ -61,17 +61,17 @@ namespace Mvp.Xml.Common.Xsl
         /// <summary>
         /// Supported EXSLT functions
         /// </summary>
-        protected ExsltFunctionNamespace supportedFunctions = ExsltFunctionNamespace.All;
+        private ExsltFunctionNamespace supportedFunctions = ExsltFunctionNamespace.All;
         /// <summary>
         /// Multioutput support flag
         /// </summary>
-        protected bool multiOutput;
+        private bool multiOutput;
         /// <summary>
         /// XSLT 2.0 like character maps support flag.
         /// </summary>
-        protected bool supportCharacterMaps = true;
+        private bool supportCharacterMaps = true;
         private Dictionary<char, string> characterMap;
-        
+        private bool enforceXHTMLOutput;
 
         #region ctors
 
@@ -213,6 +213,21 @@ namespace Mvp.Xml.Common.Xsl
         {
             get { return multiOutput; }
             set { multiOutput = value; }
+        }
+
+        /// <summary>
+        /// Enforces <see cref="MvpXslTransform"/> instance to output results in XHTML format.
+        /// </summary>
+        public bool EnforceXHTMLOutput
+        {
+            get
+            {
+                return enforceXHTMLOutput;
+            }
+            set
+            {
+                enforceXHTMLOutput = value;
+            }
         }
 
         /// <summary>
@@ -441,7 +456,7 @@ namespace Mvp.Xml.Common.Xsl
         /// </summary>        
         protected void TransformToWriter(XmlInput defaultDocument, XsltArgumentList xsltArgs, XmlWriter targetWriter)
         {
-            XmlWriter xmlWriter;
+            XmlWriter xmlWriter;            
             if (this.supportCharacterMaps && this.characterMap != null && this.characterMap.Count > 0)
             {
                 xmlWriter = new CharacterMappingXmlWriter(targetWriter, this.characterMap);
@@ -449,6 +464,10 @@ namespace Mvp.Xml.Common.Xsl
             else
             {
                 xmlWriter = targetWriter;
+            }
+            if (this.enforceXHTMLOutput)
+            {
+                xmlWriter = new XhtmlWriter(xmlWriter);
             }
             XsltArgumentList args = AddExsltExtensionObjectsSync(xsltArgs);
             XmlReader xmlReader = defaultDocument.source as XmlReader;
