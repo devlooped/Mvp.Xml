@@ -18,7 +18,8 @@ namespace Mvp.Xml.Common.Xsl
     /// <summary>
     /// <para>MvpXslTransform class extends capabilities of the <see cref="XslCompiledTransform"/>
     /// class by adding support for transforming into <see cref="XmlReader"/>, 
-    /// built-in vast collection of EXSLT extention functions, multiple outputs, XSLT 2.0 character
+    /// built-in vast collection of EXSLT extention functions, multiple outputs, XHTML output mode, 
+    /// XSLT 2.0 character
     /// maps and transforming of <see cref="IXPathNavigable"/> along with <see cref="XmlResolver"/>.
     /// Also MvpXslTransform class provides new improved XSL transformation API 
     /// by introducing concepts of <see cref="IXmlTransform"/> interface, <see cref="XmlInput"/>
