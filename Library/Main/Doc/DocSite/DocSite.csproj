@@ -193,7 +193,6 @@
     <Content Include="Icons\seealso1c.gif" />
     <Content Include="Icons\static.gif" />
     <Content Include="Icons\xna.gif" />
-    <Content Include="Logo.jpg" />
     <Content Include="Presentation\Shared\content\syntax_content.xml" />
     <Content Include="Presentation\Shared\scripts\copycode.js" />
     <Content Include="Presentation\Shared\scripts\samples.js" />
@@ -222,6 +221,7 @@
     <Content Include="Styles\Presentation.css" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Logo.png" />
     <Content Include="Presentation\Shared\configuration\xamlSyntax.config" />
     <Content Include="Presentation\Style\project.xml" />
     <Content Include="Presentation\Style\Configuration\MRefBuilder.config" />
@@ -254,14 +254,14 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>17414</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
         </WebProjectProperties>
       </FlavorProperties>
-      <UserProperties Sandcastle_ProduceHelp2x="False" Sandcastle_ProduceHelp1x="False" BuildEngineProviderName="Sandcastle/Deployment" Sandcastle_PresentationName="Visual Studio 2005" ProcessComponentTypeName="DocSite.BuildProcess" IsDocProject="true" />
+      <UserProperties DefaultApplyToAll="True" DontAskIncludeOutputInProject="True" IsDocProject="true" ProcessComponentTypeName="DocSite.BuildProcess" Sandcastle_PresentationName="Visual Studio 2005" BuildEngineProviderName="Sandcastle/Deployment" Sandcastle_ProduceHelp1x="False" Sandcastle_ProduceHelp2x="False" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

@@ -16,8 +16,8 @@
 				<div id="docsite_header_links">
 					<a href="DocSite.chm">Download Compiled Help</a>
 				</div>
-				<img id="docsite_logo" width="51px" height="51px" alt="DocSite Logo" src="Logo.jpg" />
-				<div id="docsite_header_title">DocSite</div>
+				<img id="docsite_logo" width="51px" height="51px" alt="DocSite Logo" src="Logo.png" />
+				<div id="docsite_header_title">Mvp.Xml Library Documentation</div>
 				<div id="docsite_header_company"><span runat="server" id="Company"></span></div>
 			</div>
 			<DocSite:DocSiteSidebar runat="server" ID="sideBar" />
@@ -36,7 +36,7 @@
 				<asp:ContentPlaceHolder runat="server" ID="Content" />
 			</div>
 			<div id="docsite_footer">
-				<span runat="server" id="Copyright"></span>
+				<span runat="server" id="Copyright"> 2005-2007 <a href="http://www.mvpxml.org">Mvp.Xml Project</a></span>
 			</div>
 		</div>
 		
