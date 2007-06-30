@@ -8,12 +8,12 @@ using System;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("DocSite")]
-[assembly: AssemblyDescription("DocSite web help system.")]
+[assembly: AssemblyTitle("Mvp.Xml Library Documentation")]
+[assembly: AssemblyDescription("Mvp.Xml Library Documentation")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("DocSite")]
-[assembly: AssemblyCopyright("Copyright © 2007 ")]
+[assembly: AssemblyProduct("Mvp.Xml Library Documentation")]
+[assembly: AssemblyCopyright("Copyright © Mvp.Xml Project 2007 ")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: CLSCompliant(false)]
