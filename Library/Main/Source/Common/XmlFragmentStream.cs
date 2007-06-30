@@ -86,6 +86,13 @@ namespace Mvp.Xml.Common
 
 		#region Stream abstract implementation
 
+		/// <summary>See <see cref="Stream.Close"/>.</summary>
+		public override void Close()
+		{
+			_stream.Close();
+			base.Close();
+		}
+
 		/// <summary>See <see cref="Stream.Flush"/>.</summary>
 		public override void Flush()
 		{
