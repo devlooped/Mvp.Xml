@@ -261,7 +261,7 @@
           <NTLMAuthentication>False</NTLMAuthentication>
         </WebProjectProperties>
       </FlavorProperties>
-      <UserProperties DefaultApplyToAll="True" DontAskIncludeOutputInProject="True" IsDocProject="true" ProcessComponentTypeName="DocSite.BuildProcess" Sandcastle_PresentationName="Visual Studio 2005" BuildEngineProviderName="Sandcastle/Deployment" Sandcastle_ProduceHelp1x="False" Sandcastle_ProduceHelp2x="False" />
+      <UserProperties Sandcastle_UseFriendlyHtmlFileNames="True" Sandcastle_ProduceHelp2x="False" Sandcastle_ProduceHelp1x="False" BuildEngineProviderName="Sandcastle/Deployment" Sandcastle_PresentationName="Visual Studio 2005" ProcessComponentTypeName="DocSite.BuildProcess" IsDocProject="true" DontAskIncludeOutputInProject="True" DefaultApplyToAll="True" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>
