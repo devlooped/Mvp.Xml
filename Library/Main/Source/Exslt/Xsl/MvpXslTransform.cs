@@ -16,19 +16,19 @@ namespace Mvp.Xml.Common.Xsl
 {
      
     /// <summary>
-    /// <para>MvpXslTransform class extends capabilities of the <see cref="XslCompiledTransform"/>
+    /// <para><see cref="MvpXslTransform"/> class extends capabilities of the <see cref="XslCompiledTransform"/>
     /// class by adding support for transforming into <see cref="XmlReader"/>, 
     /// built-in vast collection of EXSLT extention functions, multiple outputs, XHTML output mode, 
     /// XSLT 2.0 character
     /// maps and transforming of <see cref="IXPathNavigable"/> along with <see cref="XmlResolver"/>.
-    /// Also MvpXslTransform class provides new improved XSL transformation API 
+    /// Also <see cref="MvpXslTransform"/> class provides new improved XSL transformation API 
     /// by introducing concepts of <see cref="IXmlTransform"/> interface, <see cref="XmlInput"/>
     /// and <see cref="XmlOutput"/>.</para>    
     /// </summary>
-    /// <remarks><para>MvpXslTransform class is thread-safe for Transorm() methods. I.e.
-    /// once MvpXslTransform object is loaded, you can safely call its Transform() methods
+    /// <remarks><para><see cref="MvpXslTransform"/> class is thread-safe for Transorm() methods. I.e.
+    /// once <see cref="MvpXslTransform"/> object is loaded, you can safely call its Transform() methods
     /// in multiple threads simultaneously.</para>
-    /// <para>MvpXslTransform supports EXSLT extension functions from the following namespaces:<br/> 
+    /// <para><see cref="MvpXslTransform"/> supports EXSLT extension functions from the following namespaces:<br/> 
     /// * http://exslt.org/common<br/>
     /// * http://exslt.org/dates-and-times<br/>   
     /// * http://exslt.org/math<br/>
@@ -45,8 +45,22 @@ namespace Mvp.Xml.Common.Xsl
     /// <para>Multioutput (&lt;exsl:document&gt; element) is turned off by default and can 
     /// be turned on using <see cref="MvpXslTransform.MultiOutput"/> property. Note, that multioutput is not supported
     /// when transfomation is done to <see cref="XmlWriter"/> or <see cref="XmlReader"/>.</para>
-    /// <para>MvpXslTransform uses XSLT extension objects and reflection and so using
+    /// <para><see cref="MvpXslTransform"/> uses XSLT extension objects and reflection and so using
     /// it requires FullTrust security level.</para>
+    /// <para><see cref="MvpXslTransform"/> supports XSLT 2.0-like character map declarations.
+    /// For character mapping semantics see <a href="http://www.w3.org/TR/xslt20/#character-maps">http://www.w3.org/TR/xslt20/#character-maps</a>.
+    /// The only deviation from XSLT 2.0 is that "output", "character-map" and "output-character" elements
+    /// must be in the "http://www.xmllab.net/nxslt" namespace:
+    /// <pre>
+    /// &lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    ///     xmlns:nxslt="http://www.xmllab.net/nxslt">
+    ///    &lt;nxslt:output use-character-maps="testmap"/>
+    ///    &lt;nxslt:character-map name="testmap">
+    ///         &lt;nxslt:output-character character="&#160;" string="&amp;nbsp;" />
+    ///    &lt;/nxslt:character-map>
+    /// </pre>
+    /// </para>
+    /// <para>XHTML output mode can be enforced by setting <see cref="MvpXslTransform.EnforceXHTMLOutput"/> property.</para>
     /// <para>Author: Sergey Dubinets, Microsoft XML Team.</para>
     /// <para>Contributors: Oleg Tkachenko, <a href="http://www.xmllab.net">http://www.xmllab.net</a>.</para>
     /// </remarks>
@@ -77,7 +91,7 @@ namespace Mvp.Xml.Common.Xsl
         #region ctors
 
         /// <summary>
-        /// Initializes a new instance of the MvpXslTransform class. 
+        /// Initializes a new instance of the <see cref="MvpXslTransform"/> class. 
         /// </summary>
         public MvpXslTransform()
         {
@@ -85,7 +99,7 @@ namespace Mvp.Xml.Common.Xsl
         }
 
         /// <summary>
-        /// Initializes a new instance of the MvpXslTransform 
+        /// Initializes a new instance of the <see cref="MvpXslTransform"/> 
         /// class with the specified debug setting. 
         /// </summary>
         public MvpXslTransform(bool debug)
@@ -188,7 +202,7 @@ namespace Mvp.Xml.Common.Xsl
 
         /// <summary>
         /// Bitwise enumeration used to specify which EXSLT functions should be accessible to 
-        /// the MvpXslTransform object. The default value is ExsltFunctionNamespace.All 
+        /// the <see cref="MvpXslTransform"/> object. The default value is ExsltFunctionNamespace.All 
         /// </summary>
         public ExsltFunctionNamespace SupportedFunctions
         {
@@ -235,7 +249,7 @@ namespace Mvp.Xml.Common.Xsl
         /// Boolean flag used to specify whether XSLT 2.0 character maps are
         /// supported.
         /// </summary>
-        /// <remarks>Note: MvpXslTransform is XSLT 1.0 processor, so 
+        /// <remarks>Note: <see cref="MvpXslTransform"/> is XSLT 1.0 processor, so 
         /// XSLT 2.0 character maps must be defined in custom "http://www.xmllab.net/nxslt"
         /// namespace. Here is a sample:
         /// &lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"

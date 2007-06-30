@@ -9,6 +9,9 @@ namespace Mvp.Xml.Common
     /// <summary>
     /// XHTML writer. Writes XML using the HTML compatibility guidelines defined in the XHTML 1.0 specification.
     /// </summary>
+    /// <remarks>
+    /// <para>Author: Oleg Tkachenko, <a href="http://www.xmllab.net">http://www.xmllab.net</a>.</para>
+    /// </remarks>
     public class XhtmlWriter : XmlWrappingWriter
     {
         private const string XHTML_NAMESPACE = "http://www.w3.org/1999/xhtml";

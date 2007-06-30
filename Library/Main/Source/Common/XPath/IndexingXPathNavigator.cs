@@ -12,16 +12,16 @@ using System.Reflection;
 namespace Mvp.Xml.Common.XPath
 {
 	/// <summary>	
-	/// IndexingXPathNavigator enables lazy or eager indexing of any XML store
+    /// <see cref="IndexingXPathNavigator"/> enables lazy or eager indexing of any XML store
 	/// (<see cref="XmlDocument"/>, <see cref="XPathDocument"/> or any other <see cref="IXPathNavigable"/> XML store) thus
-	/// providing an alternative way to select nodes directly from an index table 
+	/// providing an alternative way to select nodes using XSLT key() function directly from an index table 
 	/// instead of searhing the XML tree. This allows drastically decrease selection time
 	/// on preindexed selections.
 	/// </summary>
 	/// <remarks>
 	/// <para>Author: Oleg Tkachenko, <a href="http://www.xmllab.net">http://www.xmllab.net</a>.</para>
 	/// <para>Contributors: Daniel Cazzulino, <a href="http://clariusconsulting.net/kzu">blog</a></para>
-	/// <para>See <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/dnxmlnet/html/XMLindexing.asp">"XML Indexing Part 1: XML IDs, XSLT Keys and IndexingXPathNavigator"</a>.</para>
+	/// <para>See <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/dnxmlnet/html/XMLindexing.asp">"XML Indexing Part 1: XML IDs, XSLT Keys and IndexingXPathNavigator"</a> article for more info.</para>
 	/// </remarks>    
 	public class IndexingXPathNavigator : XPathNavigator
 	{

@@ -26,7 +26,7 @@ namespace Mvp.Xml.XInclude
 	/// To put it another way <c>XIncludingReader</c> is XML Base and XInclude 1.0 aware
 	/// <see cref="XmlReader"/>.
 	/// </summary>
-	/// <remarks><para>See <a href="http://mvp-xml.sf.net/xinclude">XInclude.NET homepage</a> for more info.</para>    
+    /// <remarks><para>See <a href="http://www.codeplex.com/MVPXML/Wiki/View.aspx?title=XInclude.NET">XInclude.NET homepage</a> for more info.</para>    
 	/// <para>Author: Oleg Tkachenko, <a href="http://www.xmllab.net">http://www.xmllab.net</a>.</para>
 	/// </remarks>
 	public class XIncludingReader : XmlReader, IXmlLineInfo
