@@ -10,8 +10,21 @@ namespace Mvp.Xml.Common.Xsl
     /// from XSLT stylesheets.
     /// For character mapping semantics see http://www.w3.org/TR/xslt20/#character-maps.
     /// The only deviation from XSLT 2.0 is that "output", "character-map" and "output-character" elements
-    /// must be in the "http://www.xmllab.net/nxslt" namespace.
+    /// must be in the "http://www.xmllab.net/nxslt" namespace:
+    /// <pre>
+    /// &lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    ///     xmlns:nxslt="http://www.xmllab.net/nxslt">
+    ///    &lt;nxslt:output use-character-maps="testmap"/>
+    ///    &lt;nxslt:character-map name="testmap">
+    ///         &lt;nxslt:output-character character="&#160;" string="&amp;nbsp;" />
+    ///    &lt;/nxslt:character-map>
+    /// </pre>
+    /// When reading is done, resulting compiled character map can be compiled calling 
+    /// <see cref="CharacterMappingXmlReader.CompileCharacterMapping()"/> method.
     /// </summary>
+    /// <remarks>
+    /// <para>Author: Oleg Tkachenko, <a href="http://www.xmllab.net">http://www.xmllab.net</a>.</para>
+    /// </remarks>
     public class CharacterMappingXmlReader : XmlWrappingReader 
     {
         private CharacterMapping mapping;

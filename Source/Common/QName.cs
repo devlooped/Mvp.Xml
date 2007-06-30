@@ -4,10 +4,12 @@ using System.Text;
 
 namespace Mvp.Xml.Common {
     /// <summary>
-    /// XML Qualified Name (http://www.w3.org/TR/REC-xml-names/#dt-qualname).
+    /// XML Qualified Name (<a href="http://www.w3.org/TR/REC-xml-names/#dt-qualname">http://www.w3.org/TR/REC-xml-names/#dt-qualname</a>).
     /// Holds local name, prefix and namespace URI.
     /// </summary>
-    /// <remarks>Is immutable.</remarks>
+    /// <remarks><para>Is immutable.</para>
+    /// <para>Author: Oleg Tkachenko, <a href="http://www.xmllab.net">http://www.xmllab.net</a>.</para>
+    /// </remarks>    
     public class QName {
         private string local;
         private string nsUri;

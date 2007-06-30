@@ -7,6 +7,9 @@ namespace Mvp.Xml.Common.Xsl {
     /// <summary>
     /// Represents XSLT 2.0 Character map, see http://www.w3.org/TR/xslt20/#character-maps.
     /// </summary>
+    /// <remarks>
+    /// <para>Author: Oleg Tkachenko, <a href="http://www.xmllab.net">http://www.xmllab.net</a>.</para>
+    /// </remarks>
     internal class CharacterMap {        
         private Dictionary<char, string> map;
         private string[] usedCharMaps;

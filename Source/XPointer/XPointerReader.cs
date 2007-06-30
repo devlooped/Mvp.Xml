@@ -20,7 +20,7 @@ namespace Mvp.Xml.XPointer
     /// supports XPointer Framework, element(), xmlns(), xpath1() and
     /// xpointer() (XPath subset only) XPointer schemes.
     /// </summary>
-    /// <remarks><para>See <a href="http://mvp-xml.sf.net/xpointer">XPointer.NET homepage</a> for more info.</para>
+    /// <remarks><para>See <a href="http://www.codeplex.com/MVPXML/Wiki/View.aspx?title=XPointer.NET">XPointer.NET homepage</a> for more info.</para>
     /// <para>Author: Oleg Tkachenko, <a href="http://www.xmllab.net">http://www.xmllab.net</a>.</para>
     /// </remarks>
     public class XPointerReader : XmlReader, IHasXPathNavigator, IXmlLineInfo
