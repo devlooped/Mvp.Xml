@@ -6,6 +6,13 @@ using System.Text;
 
 using Mvp.Xml.XInclude;
 using Mvp.Xml.Common;
+
+using System.Xml.Serialization;
+using System.Net;
+using System.Xml.Xsl;
+using Mvp.Xml.Common.Xsl;
+using System.Web;
+
 #if !NUNIT
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 #else
@@ -14,11 +21,6 @@ using TestClass = NUnit.Framework.TestFixtureAttribute;
 using TestInitialize = NUnit.Framework.SetUpAttribute;
 using TestCleanup = NUnit.Framework.TearDownAttribute;
 using TestMethod = NUnit.Framework.TestAttribute;
-using System.Xml.Serialization;
-using System.Net;
-using System.Xml.Xsl;
-using Mvp.Xml.Common.Xsl;
-using System.Web;
 #endif
 
 
