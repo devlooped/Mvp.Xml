@@ -354,6 +354,11 @@ namespace XmlLab.nxslt
             catch (XsltException xslte)
             {
                 string errors = GetCompileErrors(xslt.CompiledTransform);
+                if (!string.IsNullOrEmpty(errors))
+                {
+                    errors += Environment.NewLine;
+                }
+                errors += Reporter.GetFullMessage(xslte);
                 throw new NXsltException(errors);
             }
             catch (XmlException xe)

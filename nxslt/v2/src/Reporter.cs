@@ -113,25 +113,26 @@ namespace XmlLab.nxslt
         /// </summary>    
         public static String GetFullMessage(Exception e)
         {
-            Exception ex = e;
-            StringBuilder msg = new StringBuilder();
-            while (ex != null)
-            {
-                if (ex is NXsltException)
-                {
-                    msg.AppendFormat(ex.Message);
-                }
-                else
-                {
-                    msg.AppendFormat("{0}: {1}", ex.GetType().FullName, ex.Message);
-                }
-                if (ex.InnerException != null)
-                {
-                    msg.Append(" ---> ");
-                }
-                ex = ex.InnerException;
-            }
-            return msg.ToString();
+            //Exception ex = e;
+            //StringBuilder msg = new StringBuilder();
+            //while (ex != null)
+            //{
+            //    if (ex is NXsltException)
+            //    {
+            //        msg.AppendFormat(ex.Message);
+            //    }
+            //    else
+            //    {
+            //        msg.AppendFormat("{0}: {1}", ex.GetType().FullName, ex.Message);
+            //    }
+            //    if (ex.InnerException != null)
+            //    {
+            //        msg.Append(" ---> ");
+            //    }
+            //    ex = ex.InnerException;
+            //}
+            //return msg.ToString();
+            return e.ToString();
         }
     }
 }
