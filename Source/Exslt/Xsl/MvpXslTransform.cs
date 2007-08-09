@@ -84,7 +84,7 @@ namespace Mvp.Xml.Common.Xsl
         /// <summary>
         /// XSLT 2.0 like character maps support flag.
         /// </summary>
-        private bool supportCharacterMaps = true;
+        private bool supportCharacterMaps = false;
         private Dictionary<char, string> characterMap;
         private bool enforceXHTMLOutput;
 
