@@ -32,7 +32,7 @@ namespace XmlLab.nxslt
     private bool noSourceXml;
     private bool prettyPrintMode;
     private bool identityTransformMode;
-    private bool processCharacterMaps = true;
+    private bool processCharacterMaps = false;
       private bool enforceXhtmlOutput = false;
 
     /// <summary>

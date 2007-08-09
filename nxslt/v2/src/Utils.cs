@@ -131,5 +131,6 @@ namespace XmlLab.nxslt
                 return XmlReader.Create(stream, settings);
             }
         }
+
     }
 }

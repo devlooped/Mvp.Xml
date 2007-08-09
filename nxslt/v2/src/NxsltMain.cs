@@ -494,17 +494,20 @@ namespace XmlLab.nxslt
             if (options.IdentityTransformMode)
             {
                 //No XSLT - use identity transformation
+                //stylesheetReader = XmlReader.Create(new StringReader(NXsltStrings.IdentityTransformation), stylesheetReaderSettings);
                 stylesheetReader = XmlReader.Create(new StringReader(NXsltStrings.IdentityTransformation), stylesheetReaderSettings);
             }
             else if (options.LoadStylesheetFromStdin)
             {
                 //Get stylesheet from stdin                 
-                stylesheetReader = Utils.CreateReader(Console.OpenStandardInput(), stylesheetReaderSettings, options, stylesheetResolver);
+                //stylesheetReader = Utils.CreateReader(Console.OpenStandardInput(), stylesheetReaderSettings, options, stylesheetResolver);
+                stylesheetReader = XmlReader.Create(Console.OpenStandardInput(), stylesheetReaderSettings);
             }
             else
             {
                 //Get source from URI
-                stylesheetReader = Utils.CreateReader(options.Stylesheet, stylesheetReaderSettings, options, stylesheetResolver);
+                //stylesheetReader = Utils.CreateReader(options.Stylesheet, stylesheetReaderSettings, options, stylesheetResolver);
+                stylesheetReader = XmlReader.Create(options.Stylesheet, stylesheetReaderSettings);
             }
             //Chain schema validaring reader on top
             if (options.ValidateDocs)
