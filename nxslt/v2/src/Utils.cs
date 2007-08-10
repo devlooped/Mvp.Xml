@@ -47,7 +47,7 @@ namespace XmlLab.nxslt
         /// </summary>
         /// <param name="credentials">User credentials</param>    
         /// <param name="options">Parsed command line options</param>
-        public static XmlResolver GetXmlResolver(NetworkCredential credentials, NXsltOptions options)
+        public static XmlResolver GetXmlResolver(NetworkCredential credentials, NXsltOptions options, bool prohibitDTD)
         {
             XmlResolver resolver;
             Type resolverType;
@@ -78,8 +78,14 @@ namespace XmlLab.nxslt
             }
             else
             {
-                //Standard resolver
-                resolver = new XmlUrlResolver();
+                if (prohibitDTD)
+                {
+                    resolver = new XmlUrlResolver();
+                }
+                else
+                {
+                    resolver = new DTDAllowingResolver();
+                }
             }
             //Set credentials if any
             if (credentials != null)
@@ -89,6 +95,7 @@ namespace XmlLab.nxslt
             return resolver;
         }
 
+       
         public static string ExtractStylsheetHrefFromPI(XPathNavigator pi)
         {
             Regex r = new Regex(@"href[ \n\t\r]*=[ \n\t\r]*""([^""]*)""|href[ \n\t\r]*=[ \n\t\r]*'([^']*)'");
@@ -108,7 +115,7 @@ namespace XmlLab.nxslt
         {
             if (options.ProcessXInclude)
             {
-                XIncludingReader xir = new XIncludingReader(filename, resolver);
+                XIncludingReader xir = new XIncludingReader(filename, (resolver != null && resolver is DTDAllowingResolver)? new XmlUrlResolver() : resolver);
                 xir.XmlResolver = resolver;
                 return XmlReader.Create(xir, settings);
             }
@@ -131,6 +138,27 @@ namespace XmlLab.nxslt
                 return XmlReader.Create(stream, settings);
             }
         }
+
+
+        public class DTDAllowingResolver : XmlUrlResolver
+        {
+            private static XmlReaderSettings settings;
+
+            public DTDAllowingResolver()
+            {
+                if (settings == null)
+                {
+                    settings = new XmlReaderSettings();
+                    settings.ProhibitDtd = false;
+                }
+            }
+
+            public override object GetEntity(Uri absoluteUri, string role, Type ofObjectToReturn)
+            {
+                return XmlReader.Create(absoluteUri.AbsoluteUri, settings);
+            }
+        }
+
 
     }
 }

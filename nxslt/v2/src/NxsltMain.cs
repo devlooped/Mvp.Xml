@@ -115,7 +115,7 @@ namespace XmlLab.nxslt
             XmlResolver srcResolver = null;
             if (options.ResolveExternals)
             {
-                srcResolver = Utils.GetXmlResolver(options.SourceCredential, options);
+                srcResolver = Utils.GetXmlResolver(options.SourceCredential, options, false);
             }
             XmlReader srcReader = PrepareSourceReader(srcResolver);
             if (options.PrettyPrintMode)
@@ -126,7 +126,7 @@ namespace XmlLab.nxslt
             else
             {
                 //Process transformation         
-                XmlResolver stylesheetResolver = Utils.GetXmlResolver(options.XSLTCredential, options);
+                XmlResolver stylesheetResolver = Utils.GetXmlResolver(options.XSLTCredential, options, true);
 
                 if (options.GetStylesheetFromPI)
                 {
