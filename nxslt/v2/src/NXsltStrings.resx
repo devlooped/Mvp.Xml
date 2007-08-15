@@ -128,7 +128,8 @@ Options:
   -o filename   Write output to named file    
   -xw           Strip non-significant whitespace from source and stylesheet
   -xe           Do not resolve external definitions during parse phase
-  -xi           Do not process XInclude during parse phase
+  -xi           Do not process XInclude in source XML during parse phase
+  -xslxi        Process XIcnlude in XSLT stylesheets
   -v            Validate documents during parse phase    
   -t            Show load and transformation timings
   -xs           No source XML

@@ -70,7 +70,7 @@ namespace XmlLab.NxsltTasks.NAnt
             set { nxsltOptions.ResolveExternals = value; }
         }
 
-        /// <summary>Process XInclude during parse phase.</summary>
+        /// <summary>Process XInclude in source XML during parse phase.</summary>
         [TaskAttribute("resolvexinclude")]
         [BooleanValidator()]
         public bool ResolveXInclude
@@ -79,6 +79,17 @@ namespace XmlLab.NxsltTasks.NAnt
             set { nxsltOptions.ProcessXInclude = value; }
         }
 
+
+        /// <summary>Process XInclude in XSLT stylesheets.</summary>
+        [TaskAttribute("resolvexincludeinxslt")]
+        [BooleanValidator()]
+        public bool ResolveXIncludeInXSLT
+        {
+            get { return nxsltOptions.ProcessXIncludeInXSLT; }
+            set { nxsltOptions.ProcessXIncludeInXSLT = value; }
+        }
+
+        
         /// <summary>Validate documents during parse phase.</summary>
         [TaskAttribute("validate")]
         [BooleanValidator()]

@@ -239,6 +239,10 @@ namespace XmlLab.nxslt
                         case "-xi":
                             options.ProcessXInclude = false;
                             break;
+                        //Process XInclude in XSLT
+                        case "-xslxi":
+                            options.ProcessXIncludeInXSLT = true;
+                            break;
                         //Pretty print source XML
                         case "-pp":
                             options.PrettyPrintMode = true;

@@ -493,21 +493,38 @@ namespace XmlLab.nxslt
             XmlReader stylesheetReader;
             if (options.IdentityTransformMode)
             {
-                //No XSLT - use identity transformation
-                //stylesheetReader = XmlReader.Create(new StringReader(NXsltStrings.IdentityTransformation), stylesheetReaderSettings);
+                //No XSLT - use identity transformation                
                 stylesheetReader = XmlReader.Create(new StringReader(NXsltStrings.IdentityTransformation), stylesheetReaderSettings);
             }
             else if (options.LoadStylesheetFromStdin)
             {
-                //Get stylesheet from stdin                 
-                //stylesheetReader = Utils.CreateReader(Console.OpenStandardInput(), stylesheetReaderSettings, options, stylesheetResolver);
-                stylesheetReader = XmlReader.Create(Console.OpenStandardInput(), stylesheetReaderSettings);
+                //Get stylesheet from stdin            
+                if (options.ProcessXIncludeInXSLT)
+                {
+                    XIncludingReader xir = new XIncludingReader(Directory.GetCurrentDirectory(),
+                        Console.OpenStandardInput(), stylesheetResolver);
+                    xir.XmlResolver = stylesheetResolver;
+                    stylesheetReader = XmlReader.Create(xir, stylesheetReaderSettings);
+                }
+                else
+                {
+                    stylesheetReader = XmlReader.Create(Console.OpenStandardInput(), stylesheetReaderSettings);
+                }
             }
             else
             {
                 //Get source from URI
-                //stylesheetReader = Utils.CreateReader(options.Stylesheet, stylesheetReaderSettings, options, stylesheetResolver);
-                stylesheetReader = XmlReader.Create(options.Stylesheet, stylesheetReaderSettings);
+                if (options.ProcessXIncludeInXSLT)
+                {
+                    XIncludingReader xir = new XIncludingReader(options.Stylesheet,
+                        (stylesheetResolver != null && stylesheetResolver is XmlLab.nxslt.Utils.DTDAllowingResolver) ? new XmlUrlResolver() : stylesheetResolver);
+                    xir.XmlResolver = stylesheetResolver;
+                    stylesheetReader = XmlReader.Create(xir, stylesheetReaderSettings);
+                }
+                else
+                {                    
+                    stylesheetReader = XmlReader.Create(options.Stylesheet, stylesheetReaderSettings);
+                }
             }
             //Chain schema validaring reader on top
             if (options.ValidateDocs)
