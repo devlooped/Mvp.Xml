@@ -140,7 +140,7 @@ Options:
   -an           Assembly full or partial name to look up URI resolver class
   -mo           Allow multiple output documents
   -ext          Comma-separated list of extension object class names  
-  -xcm          Do not process character maps
+  -cm           Process XSLT 2.0-like character maps
   -xhtml        Enforce XHTML output mode
   -xmlc creds   Credentials in username:password@domain format to be 
                 used in Web request authentications when loading source XML

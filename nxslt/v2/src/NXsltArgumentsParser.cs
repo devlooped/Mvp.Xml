@@ -77,8 +77,8 @@ namespace XmlLab.nxslt
                             options.StripWhiteSpace = true;
                             break;
                         //Do not process character maps
-                        case "-xcm":
-                            options.ProcessCharacterMaps = false;
+                        case "-cm":
+                            options.ProcessCharacterMaps = true;
                             break;
                         //XHTML output mode
                         case "-xhtml":
