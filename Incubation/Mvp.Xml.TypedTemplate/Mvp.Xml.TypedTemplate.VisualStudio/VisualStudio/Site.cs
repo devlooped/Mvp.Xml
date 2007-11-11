@@ -1,7 +1,7 @@
 using System;
 using System.ComponentModel;
 
-namespace Mvp.Xml.TypedTemplate.VisualStudio
+namespace Mvp.Xml.Template.VisualStudio
 {
 	/// <summary>
 	/// Basic <see cref="ISite"/> implementation. Passes all service 

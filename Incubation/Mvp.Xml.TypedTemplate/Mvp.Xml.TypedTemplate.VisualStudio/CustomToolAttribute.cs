@@ -1,6 +1,6 @@
 using System;
 
-namespace Mvp.Xml.TypedTemplate
+namespace Mvp.Xml.Template
 {
 	/// <summary>
 	/// Specifies custom tool registration information.

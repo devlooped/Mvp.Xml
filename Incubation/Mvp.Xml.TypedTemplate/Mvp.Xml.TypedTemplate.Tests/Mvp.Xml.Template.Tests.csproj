@@ -7,8 +7,8 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{F2091CF8-228B-4837-BA51-D715BA1F0DF9}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Mvp.Xml.TypedTemplate.Tests</RootNamespace>
-    <AssemblyName>Mvp.Xml.TypedTemplate.Tests</AssemblyName>
+    <RootNamespace>Mvp.Xml.Template.Tests</RootNamespace>
+    <AssemblyName>Mvp.Xml.Template.Tests</AssemblyName>
     <WarningLevel>4</WarningLevel>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <SccProjectName>SAK</SccProjectName>
@@ -47,32 +47,20 @@
     <Compile Include="XmlCodeRendererFixture.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Template1-vb.ipe">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Template1.ipe">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Template2-vb.ipe">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Template2.ipe">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="CustomerTemplate.xml">
+      <Generator>XmlTemplate</Generator>
+      <LastGenOutput>CustomerTemplate.Designer.cs</LastGenOutput>
     </Content>
     <Content Include="HTMLPage1.htm" />
     <Content Include="XMLFile1.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Mvp.Xml.TypedTemplate\Mvp.Xml.TypedTemplate.csproj">
+    <ProjectReference Include="..\Mvp.Xml.TypedTemplate\Mvp.Xml.Template.csproj">
       <Project>{8B71C979-C8B1-430D-9BD7-067884FA9F9C}</Project>
-      <Name>Mvp.Xml.TypedTemplate</Name>
+      <Name>Mvp.Xml.Template</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSHARP.Targets" />

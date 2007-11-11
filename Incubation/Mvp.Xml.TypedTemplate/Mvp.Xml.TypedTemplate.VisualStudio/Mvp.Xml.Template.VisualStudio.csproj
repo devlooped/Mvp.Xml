@@ -7,8 +7,8 @@
     <ProjectGuid>{B591C5A7-D7AA-4497-94A0-41B5F8001613}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Mvp.Xml.TypedTemplate</RootNamespace>
-    <AssemblyName>Mvp.Xml.TypedTemplate.VisualStudio</AssemblyName>
+    <RootNamespace>Mvp.Xml.Template</RootNamespace>
+    <AssemblyName>Mvp.Xml.Template.VisualStudio</AssemblyName>
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
@@ -89,9 +89,9 @@
     <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Mvp.Xml.TypedTemplate\Mvp.Xml.TypedTemplate.csproj">
+    <ProjectReference Include="..\Mvp.Xml.TypedTemplate\Mvp.Xml.Template.csproj">
       <Project>{8B71C979-C8B1-430D-9BD7-067884FA9F9C}</Project>
-      <Name>Mvp.Xml.TypedTemplate</Name>
+      <Name>Mvp.Xml.Template</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.CodeDom;
 
-namespace Mvp.Xml.TypedTemplate
+namespace Mvp.Xml.Template
 {
 	public class ElseInstruction : IInlineInstruction
 	{

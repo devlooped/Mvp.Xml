@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.CodeDom;
 
-namespace Mvp.Xml.TypedTemplate
+namespace Mvp.Xml.Template
 {
 	public class TemplateInstruction : ITypeInstruction
 	{
@@ -20,9 +20,9 @@ namespace Mvp.Xml.TypedTemplate
 			{
 				templateNamespace.Name = props["namespace"];
 			}
-			if (props.ContainsKey("typename"))
+			if (props.ContainsKey("classname"))
 			{
-				templateType.Name = props["typename"];
+				templateType.Name = props["classname"];
 			}
 		}
 	}

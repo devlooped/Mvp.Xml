@@ -16,7 +16,7 @@ using VSLangProj;
 using System.Globalization;
 using System.ComponentModel.Design;
 
-namespace Mvp.Xml.TypedTemplate
+namespace Mvp.Xml.Template
 {
 	/// <summary>
 	/// Base class for all custom tools.

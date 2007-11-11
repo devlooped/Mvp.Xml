@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mvp.Xml.TypedTemplate
+namespace Mvp.Xml.Template
 {
 	/// <summary>
 	/// Common guard clauses.

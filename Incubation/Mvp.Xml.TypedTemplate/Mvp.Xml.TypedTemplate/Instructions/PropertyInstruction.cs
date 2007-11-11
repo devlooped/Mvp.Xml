@@ -4,7 +4,7 @@ using System.Text;
 using System.CodeDom;
 using System.ComponentModel.Design;
 
-namespace Mvp.Xml.TypedTemplate
+namespace Mvp.Xml.Template
 {
 	public class PropertyInstruction : ITypeInstruction
 	{

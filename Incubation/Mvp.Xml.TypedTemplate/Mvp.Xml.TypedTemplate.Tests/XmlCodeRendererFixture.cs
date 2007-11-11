@@ -6,7 +6,7 @@ using System.Xml;
 using System.CodeDom;
 using System.IO;
 
-namespace Mvp.Xml.TypedTemplate.Tests
+namespace Mvp.Xml.Template.Tests
 {
 	[TestClass]
 	public class XmlCodeRendererFixture

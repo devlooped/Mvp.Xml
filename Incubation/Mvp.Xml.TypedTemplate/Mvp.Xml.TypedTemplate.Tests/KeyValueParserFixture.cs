@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Mvp.Xml.TypedTemplate.Tests
+namespace Mvp.Xml.Template.Tests
 {
 	[TestClass]
 	public class KeyValueParserFixture

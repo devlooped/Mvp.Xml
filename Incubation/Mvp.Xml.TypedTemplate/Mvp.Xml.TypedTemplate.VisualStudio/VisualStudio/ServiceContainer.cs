@@ -3,7 +3,7 @@ using System.Collections;
 using System.ComponentModel;
 using System.ComponentModel.Design;
 
-namespace Mvp.Xml.TypedTemplate.VisualStudio 
+namespace Mvp.Xml.Template.VisualStudio 
 {
 	/// <summary>
 	/// Implements a generic container for services.

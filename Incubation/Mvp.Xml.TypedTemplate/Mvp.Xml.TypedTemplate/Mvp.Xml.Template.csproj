@@ -7,8 +7,8 @@
     <ProjectGuid>{8B71C979-C8B1-430D-9BD7-067884FA9F9C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Mvp.Xml.TypedTemplate</RootNamespace>
-    <AssemblyName>Mvp.Xml.TypedTemplate</AssemblyName>
+    <RootNamespace>Mvp.Xml.Template</RootNamespace>
+    <AssemblyName>Mvp.Xml.Template</AssemblyName>
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>

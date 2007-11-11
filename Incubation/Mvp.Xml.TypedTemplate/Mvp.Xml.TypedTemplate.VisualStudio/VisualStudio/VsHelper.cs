@@ -7,7 +7,7 @@ using System.Xml;
 using System.Diagnostics;
 using Microsoft.VisualStudio;
 
-namespace Mvp.Xml.TypedTemplate
+namespace Mvp.Xml.Template
 {
 	/// <summary>
 	/// Helper methods to deal with DTE to VSIP project model conversions.

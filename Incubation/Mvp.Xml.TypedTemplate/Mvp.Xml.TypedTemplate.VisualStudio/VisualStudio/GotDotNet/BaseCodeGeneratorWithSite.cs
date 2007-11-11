@@ -1,4 +1,4 @@
-namespace Mvp.Xml.TypedTemplate.VisualStudio {
+namespace Mvp.Xml.Template.VisualStudio {
 
 	using System;
 	using System.CodeDom;

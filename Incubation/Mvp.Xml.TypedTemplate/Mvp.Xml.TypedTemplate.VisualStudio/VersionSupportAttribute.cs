@@ -1,6 +1,6 @@
 using System;
 
-namespace Mvp.Xml.TypedTemplate
+namespace Mvp.Xml.Template
 {
 	/// <summary>
 	/// Determines which versions of VS.NET are supported by the custom tool.

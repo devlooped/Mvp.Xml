@@ -2,7 +2,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace Mvp.Xml.TypedTemplate.VisualStudio
+namespace Mvp.Xml.Template.VisualStudio
 {
 	/// <remarks/>
 	[ComImport]

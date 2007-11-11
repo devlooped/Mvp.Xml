@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using System.Text;
 using System.Runtime.InteropServices;
 using System.Xml;
-using Mvp.Xml.TypedTemplate.VisualStudio;
+using Mvp.Xml.Template.VisualStudio;
 using System.IO;
 using System.CodeDom;
 using System.CodeDom.Compiler;
 
-namespace Mvp.Xml.TypedTemplate
+namespace Mvp.Xml.Template
 {
 	[Guid("832AF400-51F5-4c8d-A515-A07C802309AD")]
 	[ComVisible(true)]
-	[CustomTool("Mvp.Xml.TypedTemplate", ThisAssembly.Description, true)]
+	[CustomTool("XmlTemplate", ThisAssembly.Description, true)]
 	[VersionSupport("8.0")]
 	[CategorySupport(CategorySupportAttribute.CSharpCategory)]
 	public class TypedTemplateTool : CustomTool
@@ -86,7 +86,7 @@ namespace Mvp.Xml.TypedTemplate
 		/// Unregisters the generator.
 		/// </summary>
 		[ComUnregisterFunction]
-		public static void UnregisterClass(Type t)
+		public static void UnregisterClass(Type type)
 		{
 			CustomTool.UnRegister(typeof(TypedTemplateTool));
 		}

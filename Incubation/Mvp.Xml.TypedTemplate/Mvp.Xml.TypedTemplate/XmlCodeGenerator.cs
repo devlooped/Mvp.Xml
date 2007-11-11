@@ -6,7 +6,7 @@ using System.CodeDom;
 using System.Globalization;
 using System.Text.RegularExpressions;
 
-namespace Mvp.Xml.TypedTemplate
+namespace Mvp.Xml.Template
 {
 	public class XmlCodeGenerator
 	{

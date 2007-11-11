@@ -5,7 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Xml;
 using System.IO;
 
-namespace Mvp.Xml.TypedTemplate.Tests
+namespace Mvp.Xml.Template.Tests
 {
 	[TestClass]
 	public class TypedXmlTemplate
@@ -22,13 +22,13 @@ namespace Mvp.Xml.TypedTemplate.Tests
 		{
 			Customer c = BuildCustomer();
 
-			//CustomerTemplate ct = new CustomerTemplate();
-			//ct.customer = c;
+			CustomerTemplate ct = new CustomerTemplate();
+			ct.customer = c;
 
-			//XmlWriter writer = XmlWriter.Create(Console.Out);
-			//ct.Render(writer);
+			XmlWriter writer = XmlWriter.Create(Console.Out);
+			ct.Render(writer);
 
-			//writer.Close();
+			writer.Close();
 		}
 
 		[TestMethod]

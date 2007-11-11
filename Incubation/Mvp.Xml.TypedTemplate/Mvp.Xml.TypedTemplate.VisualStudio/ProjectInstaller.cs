@@ -5,7 +5,7 @@ using System.Configuration.Install;
 using System.Reflection;
 using System.Runtime.InteropServices;
 
-namespace Mvp.Xml.TypedTemplate
+namespace Mvp.Xml.Template
 {
 	/// <summary>
 	/// Registers the project with COM.
