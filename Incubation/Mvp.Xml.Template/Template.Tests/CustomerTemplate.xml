@@ -1,21 +1,21 @@
 <?xml version="1.0" standalone="yes" ?>
 <?template className="CustomerTemplate" ?>
-<?property name="customer" type="Mvp.Xml.TypedTemplate.Tests.Customer" ?>
-<Customer xmlns="mvp-xml-templates" Name="${ customer.LastName + &quot;, &quot; + customer.FirstName}">
+<?property name="customer" type="Mvp.Xml.Template.Tests.Customer" ?>
+<Customer xmlns="mvp-xml-templates" Name="{ customer.LastName + &quot;, &quot; + customer.FirstName}">
 	<Orders>
 		<?foreach (Order o in customer.Orders) ?>
-		<Order Id="${o.Id}" Premium="${(o.GrandTotal > 10000)}">
-			<Items GrandTotal="${CalculateTotals(o)}">
+		<Order Id="{o.Id}" Premium="{(o.GrandTotal > 10000)}">
+			<Items GrandTotal="{CalculateTotals(o)}">
 				<?foreach (Item i in o.Items) ?>
-				<Item Id="${i.ProductId}" SubTotal="${ i.Quantity * i.Price}" />
+				<Item Id="{i.ProductId}" SubTotal="{ i.Quantity * i.Price}" />
 				<?end?>
 			</Items>
 			<Recipe xmlns="http://schemas.microsoft.com/pag/gax-core" Name="Foo">
-				<Caption>${o.DateOrdered}</Caption>
+				<Caption>{o.DateOrdered}</Caption>
 				<Description>
 					Example of escaping the curly braces: 
 					string.Format("{{0}}");
-					${o.DateOrdered}
+					{o.DateOrdered}
 				</Description>
 			</Recipe>
 			<?if (customer == null) ?>

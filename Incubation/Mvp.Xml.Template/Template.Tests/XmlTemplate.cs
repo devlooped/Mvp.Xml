@@ -8,7 +8,7 @@ using System.IO;
 namespace Mvp.Xml.Template.Tests
 {
 	[TestClass]
-	public class TypedXmlTemplate
+	public class XmlTemplate
 	{
 		[TestMethod]
 		public void Indexes()

@@ -13,7 +13,7 @@ namespace Mvp.Xml.Template
 		delegate CodeStatementCollection GenerateFunction(XmlReader reader, CodeExpression writerExpression);
 
 		Regex stripWhitespace = new Regex("[\r\n\t]*$", RegexOptions.Compiled);
-		Regex outputExpression = new Regex("(?<!\\$)\\${(?<expression>.+?)}", RegexOptions.Compiled);
+        Regex outputExpression = new Regex("(?<!{){(?<expression>.+?)}(?!})", RegexOptions.Compiled);
 		IDictionary<XmlNodeType, GenerateFunction> generationFunctions;
 		IDictionary<string, ITypeInstruction> typeInstructions;
 		IDictionary<string, IInlineInstruction> inlineInstructions;
@@ -231,7 +231,7 @@ namespace Mvp.Xml.Template
 		private CodeExpression BuildValueExpression(string xmlString)
 		{
 			// Build concatenating expression for each occurrence of 
-			// the ${} keyword.
+			// the {} keyword.
 			Match m = outputExpression.Match(xmlString);
 
 			if (!m.Success)

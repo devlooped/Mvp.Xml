@@ -41,9 +41,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Customer.cs" />
+    <Compile Include="CustomerTemplate.cs" />
+    <Compile Include="CustomerTemplate.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CustomerTemplate.xml</DependentUpon>
+    </Compile>
     <Compile Include="KeyValueParserFixture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TypedXmlTemplate.cs" />
+    <Compile Include="XmlTemplate.cs" />
     <Compile Include="XmlCodeRendererFixture.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -58,9 +64,9 @@
     <Content Include="XMLFile1.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Mvp.Xml.TypedTemplate\Mvp.Xml.Template.csproj">
+    <ProjectReference Include="..\Template\Template.csproj">
       <Project>{8B71C979-C8B1-430D-9BD7-067884FA9F9C}</Project>
-      <Name>Mvp.Xml.Template</Name>
+      <Name>Template</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSHARP.Targets" />

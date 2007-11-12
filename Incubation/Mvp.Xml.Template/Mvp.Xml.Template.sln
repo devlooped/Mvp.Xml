@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 9.00
 # Visual Studio 2005
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mvp.Xml.Template.Tests", "Mvp.Xml.TypedTemplate.Tests\Mvp.Xml.Template.Tests.csproj", "{F2091CF8-228B-4837-BA51-D715BA1F0DF9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Template.Tests", "Template.Tests\Template.Tests.csproj", "{F2091CF8-228B-4837-BA51-D715BA1F0DF9}"
 	ProjectSection(WebsiteProperties) = preProject
 		Debug.AspNetCompiler.Debug = "True"
 		Release.AspNetCompiler.Debug = "False"
@@ -20,13 +20,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		{B4F97281-0DBD-4835-9ED8-7DFB966E87FF} = {B4F97281-0DBD-4835-9ED8-7DFB966E87FF}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mvp.Xml.Template", "Mvp.Xml.TypedTemplate\Mvp.Xml.Template.csproj", "{8B71C979-C8B1-430D-9BD7-067884FA9F9C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Template", "Template\Template.csproj", "{8B71C979-C8B1-430D-9BD7-067884FA9F9C}"
 	ProjectSection(WebsiteProperties) = preProject
 		Debug.AspNetCompiler.Debug = "True"
 		Release.AspNetCompiler.Debug = "False"
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mvp.Xml.Template.VisualStudio", "Mvp.Xml.TypedTemplate.VisualStudio\Mvp.Xml.Template.VisualStudio.csproj", "{B591C5A7-D7AA-4497-94A0-41B5F8001613}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Template.VisualStudio", "Template.VisualStudio\Template.VisualStudio.csproj", "{B591C5A7-D7AA-4497-94A0-41B5F8001613}"
 	ProjectSection(WebsiteProperties) = preProject
 		Debug.AspNetCompiler.Debug = "True"
 		Release.AspNetCompiler.Debug = "False"
@@ -43,19 +43,22 @@ Global
 		SccNumberOfProjects = 5
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://tfs01.codeplex.com/
-		SccProjectUniqueName0 = Setup\\Setup.vdproj
-		SccProjectName0 = Setup
-		SccLocalPath0 = Setup
-		SccLocalPath1 = .
-		SccProjectUniqueName2 = Mvp.Xml.TypedTemplate\\Mvp.Xml.Template.csproj
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Setup\\Setup.vdproj
+		SccProjectName1 = Setup
+		SccLocalPath1 = Setup
+		SccProjectUniqueName2 = Template\\Template.csproj
 		SccProjectName2 = Mvp.Xml.TypedTemplate
 		SccLocalPath2 = Mvp.Xml.TypedTemplate
-		SccProjectUniqueName3 = Mvp.Xml.TypedTemplate.Tests\\Mvp.Xml.Template.Tests.csproj
+		SccProjectFilePathRelativizedFromConnection2 = ..\\Template\\
+		SccProjectUniqueName3 = Template.Tests\\Template.Tests.csproj
 		SccProjectName3 = Mvp.Xml.TypedTemplate.Tests
 		SccLocalPath3 = Mvp.Xml.TypedTemplate.Tests
-		SccProjectUniqueName4 = Mvp.Xml.TypedTemplate.VisualStudio\\Mvp.Xml.Template.VisualStudio.csproj
+		SccProjectFilePathRelativizedFromConnection3 = ..\\Template.Tests\\
+		SccProjectUniqueName4 = Template.VisualStudio\\Template.VisualStudio.csproj
 		SccProjectName4 = Mvp.Xml.TypedTemplate.VisualStudio
 		SccLocalPath4 = Mvp.Xml.TypedTemplate.VisualStudio
+		SccProjectFilePathRelativizedFromConnection4 = ..\\Template.VisualStudio\\
 	EndGlobalSection
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = Mvp.Xml.TypedTemplate.vsmdi
@@ -81,7 +84,6 @@ Global
 		{B591C5A7-D7AA-4497-94A0-41B5F8001613}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B591C5A7-D7AA-4497-94A0-41B5F8001613}.Release|Any CPU.Build.0 = Release|Any CPU
 		{49B994C6-20A2-43AE-839B-57A2F469BF09}.Debug|Any CPU.ActiveCfg = Debug
-		{49B994C6-20A2-43AE-839B-57A2F469BF09}.Debug|Any CPU.Build.0 = Debug
 		{49B994C6-20A2-43AE-839B-57A2F469BF09}.Release|Any CPU.ActiveCfg = Release
 		{49B994C6-20A2-43AE-839B-57A2F469BF09}.Release|Any CPU.Build.0 = Release
 	EndGlobalSection

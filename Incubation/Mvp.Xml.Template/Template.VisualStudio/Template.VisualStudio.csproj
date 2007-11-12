@@ -89,9 +89,9 @@
     <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Mvp.Xml.TypedTemplate\Mvp.Xml.Template.csproj">
+    <ProjectReference Include="..\Template\Template.csproj">
       <Project>{8B71C979-C8B1-430D-9BD7-067884FA9F9C}</Project>
-      <Name>Mvp.Xml.Template</Name>
+      <Name>Template</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
@@ -109,4 +109,7 @@
     </CreateItem>
     <Copy SourceFiles="@(OutToCopy)" DestinationFolder="$(TargetFrameworkSDKDirectory)..\..\Common7\IDE\PrivateAssemblies\" SkipUnchangedFiles="true" />
   </Target>-->
+  <Target Name="AfterBuild">
+    <Exec Command="$(MSBuildBinPath)\InstallUtil.exe $(TargetPath)" ContinueOnError="true" />
+  </Target>
 </Project>

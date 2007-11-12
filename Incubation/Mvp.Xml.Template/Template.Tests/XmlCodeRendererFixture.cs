@@ -30,6 +30,7 @@ namespace Mvp.Xml.Template.Tests
 				<?template namespace=""foo"" classname=""bar"" ?>
 				<?using namespace='System.IO' ?>
 				<Element Id='Foo&amp;Bar'>
+                {System.DateTime.Now}
 				<?if (foo) ?>
 				<Root />
 				<?end?>
