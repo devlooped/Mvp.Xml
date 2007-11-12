@@ -26,18 +26,18 @@ namespace Mvp.Xml.Template.Tests
             writer.WriteStartDocument(true);
             writer.WriteStartElement("", "Customer", "mvp-xml-templates");
             writer.WriteAttributeString("", "xmlns", "http://www.w3.org/2000/xmlns/", "mvp-xml-templates");
-            writer.WriteAttributeString("", "Name", "", "{ customer.LastName + \", \" + customer.FirstName}");
+            writer.WriteAttributeString("", "Name", "", Converter.ToString(customer.LastName + ", " + customer.FirstName));
             writer.WriteStartElement("", "Orders", "mvp-xml-templates");
             foreach (Order o in customer.Orders)  { //;
             writer.WriteStartElement("", "Order", "mvp-xml-templates");
-            writer.WriteAttributeString("", "Id", "", "{o.Id}");
-            writer.WriteAttributeString("", "Premium", "", "{(o.GrandTotal > 10000)}");
+            writer.WriteAttributeString("", "Id", "", Converter.ToString(o.Id));
+            writer.WriteAttributeString("", "Premium", "", Converter.ToString((o.GrandTotal > 10000)));
             writer.WriteStartElement("", "Items", "mvp-xml-templates");
-            writer.WriteAttributeString("", "GrandTotal", "", "{CalculateTotals(o)}");
+            writer.WriteAttributeString("", "GrandTotal", "", Converter.ToString(CalculateTotals(o)));
             foreach (Item i in o.Items)  { //;
             writer.WriteStartElement("", "Item", "mvp-xml-templates");
-            writer.WriteAttributeString("", "Id", "", "{i.ProductId}");
-            writer.WriteAttributeString("", "SubTotal", "", "{ i.Quantity * i.Price}");
+            writer.WriteAttributeString("", "Id", "", Converter.ToString(i.ProductId));
+            writer.WriteAttributeString("", "SubTotal", "", Converter.ToString(i.Quantity * i.Price));
             writer.WriteEndElement();
             }//;
             writer.WriteEndElement();
@@ -45,11 +45,13 @@ namespace Mvp.Xml.Template.Tests
             writer.WriteAttributeString("", "xmlns", "http://www.w3.org/2000/xmlns/", "http://schemas.microsoft.com/pag/gax-core");
             writer.WriteAttributeString("", "Name", "", "Foo");
             writer.WriteStartElement("", "Caption", "http://schemas.microsoft.com/pag/gax-core");
-            writer.WriteString("{o.DateOrdered}");
+            writer.WriteString(Converter.ToString(o.DateOrdered));
             writer.WriteEndElement();
             writer.WriteStartElement("", "Description", "http://schemas.microsoft.com/pag/gax-core");
-            writer.WriteString("\n\t\t\t\t\tExample of escaping the curly braces: \n\t\t\t\t\tstring.Format(\"{{0}}\");\n\t\t\t\t\t{o" +
-                    ".DateOrdered}\n\t\t\t\t");
+            writer.WriteString(("\n\t\t\t\t\tExample of escaping the curly braces: \n\t\t\t\t\tstring.Format(\"" 
+                            + (Converter.ToString({0}) 
+                            + ("\");\n\t\t\t\t\t" 
+                            + (Converter.ToString(o.DateOrdered) + "\n\t\t\t\t")))));
             writer.WriteEndElement();
             writer.WriteEndElement();
             if (customer == null)  { //;
