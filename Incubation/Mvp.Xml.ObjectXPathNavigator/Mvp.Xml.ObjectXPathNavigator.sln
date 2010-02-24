@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mvp.Xml.ObjectXPathNavigator", "sdf.XPath\Mvp.Xml.ObjectXPathNavigator.csproj", "{EEB7F9AA-6BEA-47B4-AA7B-C25E1870598C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mvp.Xml.ObjectXPathNavigator.Test", "sdf.XPath.Test\Mvp.Xml.ObjectXPathNavigator.Test.csproj", "{58695B58-05D0-4E2A-9109-E1B31C504E71}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs01.codeplex.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = sdf.XPath.Test\\Mvp.Xml.ObjectXPathNavigator.Test.csproj
+		SccProjectName1 = sdf.XPath.Test
+		SccLocalPath1 = sdf.XPath.Test
+		SccProjectUniqueName2 = sdf.XPath\\Mvp.Xml.ObjectXPathNavigator.csproj
+		SccProjectName2 = sdf.XPath
+		SccLocalPath2 = sdf.XPath
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EEB7F9AA-6BEA-47B4-AA7B-C25E1870598C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEB7F9AA-6BEA-47B4-AA7B-C25E1870598C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEB7F9AA-6BEA-47B4-AA7B-C25E1870598C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEB7F9AA-6BEA-47B4-AA7B-C25E1870598C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58695B58-05D0-4E2A-9109-E1B31C504E71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58695B58-05D0-4E2A-9109-E1B31C504E71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58695B58-05D0-4E2A-9109-E1B31C504E71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58695B58-05D0-4E2A-9109-E1B31C504E71}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
