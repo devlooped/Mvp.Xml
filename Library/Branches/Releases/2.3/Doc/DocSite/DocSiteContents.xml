@@ -1,0 +1,1794 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topics>
+  <topic name="Mvp.Xml.Common Namespace" file="html/n_mvp_xml_common.htm">
+    <topic name="QName Class" file="html/t_mvp_xml_common_qname.htm">
+      <topic name="QName Members" file="html/allmembers_t_mvp_xml_common_qname.htm" />
+      <topic name="QName Constructor " file="html/c_mvp_xml_common_qname_ctor_3_ecda0320.htm" />
+      <topic name="QName Methods " file="html/methods_t_mvp_xml_common_qname.htm">
+        <topic name="ToString Method " file="html/m_mvp_xml_common_qname_tostring.htm" />
+      </topic>
+      <topic name="QName Properties " file="html/properties_t_mvp_xml_common_qname.htm">
+        <topic name="Local Property " file="html/p_mvp_xml_common_qname_local.htm" />
+        <topic name="NsUri Property " file="html/p_mvp_xml_common_qname_nsuri.htm" />
+        <topic name="Prefix Property " file="html/p_mvp_xml_common_qname_prefix.htm" />
+      </topic>
+    </topic>
+    <topic name="XhtmlWriter Class" file="html/t_mvp_xml_common_xhtmlwriter.htm">
+      <topic name="XhtmlWriter Members" file="html/allmembers_t_mvp_xml_common_xhtmlwriter.htm" />
+      <topic name="XhtmlWriter Constructor " file="html/c_mvp_xml_common_xhtmlwriter_ctor_1_213a68e2.htm" />
+      <topic name="XhtmlWriter Methods " file="html/methods_t_mvp_xml_common_xhtmlwriter.htm">
+        <topic name="WriteAttributeString Method " file="html/o_t_mvp_xml_common_xhtmlwriter_writeattributestring.htm" />
+        <topic name="WriteElementString Method " file="html/o_t_mvp_xml_common_xhtmlwriter_writeelementstring.htm" />
+        <topic name="WriteEndElement Method " file="html/m_mvp_xml_common_xhtmlwriter_writeendelement.htm" />
+        <topic name="WriteFullEndElement Method " file="html/m_mvp_xml_common_xhtmlwriter_writefullendelement.htm" />
+        <topic name="WriteNode Method " file="html/o_t_mvp_xml_common_xhtmlwriter_writenode.htm" />
+        <topic name="WriteRaw Method " file="html/o_t_mvp_xml_common_xhtmlwriter_writeraw.htm" />
+        <topic name="WriteStartAttribute Method " file="html/o_t_mvp_xml_common_xhtmlwriter_writestartattribute.htm" />
+        <topic name="WriteStartDocument Method " file="html/o_t_mvp_xml_common_xhtmlwriter_writestartdocument.htm" />
+        <topic name="WriteStartElement Method " file="html/o_t_mvp_xml_common_xhtmlwriter_writestartelement.htm">
+          <topic name="WriteStartElement Method (String, String, String)" file="html/m_mvp_xml_common_xhtmlwriter_writestartelement_3_45ca51f2.htm" />
+        </topic>
+        <topic name="WriteValue Method " file="html/o_t_mvp_xml_common_xhtmlwriter_writevalue.htm" />
+      </topic>
+    </topic>
+    <topic name="XmlBaseAwareXmlReader Class" file="html/t_mvp_xml_common_xmlbaseawarexmlreader.htm">
+      <topic name="XmlBaseAwareXmlReader Members" file="html/allmembers_t_mvp_xml_common_xmlbaseawarexmlreader.htm" />
+      <topic name="XmlBaseAwareXmlReader Constructor " file="html/o_t_mvp_xml_common_xmlbaseawarexmlreader_ctor.htm">
+        <topic name="XmlBaseAwareXmlReader Constructor (Stream)" file="html/c_mvp_xml_common_xmlbaseawarexmlreader_ctor_1_014c0eac.htm" />
+        <topic name="XmlBaseAwareXmlReader Constructor (TextReader)" file="html/c_mvp_xml_common_xmlbaseawarexmlreader_ctor_1_a6011e2f.htm" />
+        <topic name="XmlBaseAwareXmlReader Constructor (String)" file="html/c_mvp_xml_common_xmlbaseawarexmlreader_ctor_1_61b4e77c.htm" />
+        <topic name="XmlBaseAwareXmlReader Constructor (Stream, XmlNameTable)" file="html/c_mvp_xml_common_xmlbaseawarexmlreader_ctor_2_a81fb5c6.htm" />
+        <topic name="XmlBaseAwareXmlReader Constructor (Stream, XmlReaderSettings)" file="html/c_mvp_xml_common_xmlbaseawarexmlreader_ctor_2_16aa7e65.htm" />
+        <topic name="XmlBaseAwareXmlReader Constructor (TextReader, XmlNameTable)" file="html/c_mvp_xml_common_xmlbaseawarexmlreader_ctor_2_2f037164.htm" />
+        <topic name="XmlBaseAwareXmlReader Constructor (TextReader, XmlReaderSettings)" file="html/c_mvp_xml_common_xmlbaseawarexmlreader_ctor_2_bf85ed46.htm" />
+        <topic name="XmlBaseAwareXmlReader Constructor (String, Stream)" file="html/c_mvp_xml_common_xmlbaseawarexmlreader_ctor_2_887b455c.htm" />
+        <topic name="XmlBaseAwareXmlReader Constructor (String, TextReader)" file="html/c_mvp_xml_common_xmlbaseawarexmlreader_ctor_2_0f6c1c56.htm" />
+        <topic name="XmlBaseAwareXmlReader Constructor (String, XmlNameTable)" file="html/c_mvp_xml_common_xmlbaseawarexmlreader_ctor_2_bda39e3d.htm" />
+        <topic name="XmlBaseAwareXmlReader Constructor (String, XmlReaderSettings)" file="html/c_mvp_xml_common_xmlbaseawarexmlreader_ctor_2_1b89ef5b.htm" />
+        <topic name="XmlBaseAwareXmlReader Constructor (String, XmlResolver)" file="html/c_mvp_xml_common_xmlbaseawarexmlreader_ctor_2_597877be.htm" />
+        <topic name="XmlBaseAwareXmlReader Constructor (XmlReader, XmlReaderSettings)" file="html/c_mvp_xml_common_xmlbaseawarexmlreader_ctor_2_716918f4.htm" />
+        <topic name="XmlBaseAwareXmlReader Constructor (Stream, XmlReaderSettings, String)" file="html/c_mvp_xml_common_xmlbaseawarexmlreader_ctor_3_70264c97.htm" />
+        <topic name="XmlBaseAwareXmlReader Constructor (TextReader, XmlReaderSettings, String)" file="html/c_mvp_xml_common_xmlbaseawarexmlreader_ctor_3_217b7437.htm" />
+        <topic name="XmlBaseAwareXmlReader Constructor (String, Stream, XmlNameTable)" file="html/c_mvp_xml_common_xmlbaseawarexmlreader_ctor_3_49213cae.htm" />
+        <topic name="XmlBaseAwareXmlReader Constructor (String, Stream, XmlResolver)" file="html/c_mvp_xml_common_xmlbaseawarexmlreader_ctor_3_9625491b.htm" />
+        <topic name="XmlBaseAwareXmlReader Constructor (String, TextReader, XmlNameTable)" file="html/c_mvp_xml_common_xmlbaseawarexmlreader_ctor_3_9cbb7998.htm" />
+      </topic>
+      <topic name="XmlBaseAwareXmlReader Methods " file="html/methods_t_mvp_xml_common_xmlbaseawarexmlreader.htm">
+        <topic name="GetAttribute Method " file="html/o_t_mvp_xml_common_xmlbaseawarexmlreader_getattribute.htm" />
+        <topic name="IsStartElement Method " file="html/o_t_mvp_xml_common_xmlbaseawarexmlreader_isstartelement.htm" />
+        <topic name="MoveToAttribute Method " file="html/o_t_mvp_xml_common_xmlbaseawarexmlreader_movetoattribute.htm" />
+        <topic name="Read Method " file="html/m_mvp_xml_common_xmlbaseawarexmlreader_read.htm" />
+        <topic name="ReadElementContentAs Method " file="html/o_t_mvp_xml_common_xmlbaseawarexmlreader_readelementcontentas.htm" />
+        <topic name="ReadElementContentAsBoolean Method " file="html/o_t_mvp_xml_common_xmlbaseawarexmlreader_readelementcontentasboolean.htm" />
+        <topic name="ReadElementContentAsDateTime Method " file="html/o_t_mvp_xml_common_xmlbaseawarexmlreader_readelementcontentasdatetime.htm" />
+        <topic name="ReadElementContentAsDecimal Method " file="html/o_t_mvp_xml_common_xmlbaseawarexmlreader_readelementcontentasdecimal.htm" />
+        <topic name="ReadElementContentAsDouble Method " file="html/o_t_mvp_xml_common_xmlbaseawarexmlreader_readelementcontentasdouble.htm" />
+        <topic name="ReadElementContentAsFloat Method " file="html/o_t_mvp_xml_common_xmlbaseawarexmlreader_readelementcontentasfloat.htm" />
+        <topic name="ReadElementContentAsInt Method " file="html/o_t_mvp_xml_common_xmlbaseawarexmlreader_readelementcontentasint.htm" />
+        <topic name="ReadElementContentAsLong Method " file="html/o_t_mvp_xml_common_xmlbaseawarexmlreader_readelementcontentaslong.htm" />
+        <topic name="ReadElementContentAsObject Method " file="html/o_t_mvp_xml_common_xmlbaseawarexmlreader_readelementcontentasobject.htm" />
+        <topic name="ReadElementContentAsString Method " file="html/o_t_mvp_xml_common_xmlbaseawarexmlreader_readelementcontentasstring.htm" />
+        <topic name="ReadElementString Method " file="html/o_t_mvp_xml_common_xmlbaseawarexmlreader_readelementstring.htm" />
+        <topic name="ReadStartElement Method " file="html/o_t_mvp_xml_common_xmlbaseawarexmlreader_readstartelement.htm" />
+        <topic name="ReadToDescendant Method " file="html/o_t_mvp_xml_common_xmlbaseawarexmlreader_readtodescendant.htm" />
+        <topic name="ReadToFollowing Method " file="html/o_t_mvp_xml_common_xmlbaseawarexmlreader_readtofollowing.htm" />
+        <topic name="ReadToNextSibling Method " file="html/o_t_mvp_xml_common_xmlbaseawarexmlreader_readtonextsibling.htm" />
+      </topic>
+      <topic name="XmlBaseAwareXmlReader Properties " file="html/properties_t_mvp_xml_common_xmlbaseawarexmlreader.htm">
+        <topic name="BaseURI Property " file="html/p_mvp_xml_common_xmlbaseawarexmlreader_baseuri.htm" />
+        <topic name="Item Property " file="html/o_t_mvp_xml_common_xmlbaseawarexmlreader_item.htm" />
+      </topic>
+    </topic>
+    <topic name="XmlFirstLowerWriter Class" file="html/t_mvp_xml_common_xmlfirstlowerwriter.htm">
+      <topic name="XmlFirstLowerWriter Members" file="html/allmembers_t_mvp_xml_common_xmlfirstlowerwriter.htm" />
+      <topic name="XmlFirstLowerWriter Constructor " file="html/o_t_mvp_xml_common_xmlfirstlowerwriter_ctor.htm">
+        <topic name="XmlFirstLowerWriter Constructor (TextWriter)" file="html/c_mvp_xml_common_xmlfirstlowerwriter_ctor_1_9733276a.htm" />
+        <topic name="XmlFirstLowerWriter Constructor (Stream, Encoding)" file="html/c_mvp_xml_common_xmlfirstlowerwriter_ctor_2_6aa7866a.htm" />
+        <topic name="XmlFirstLowerWriter Constructor (String, Encoding)" file="html/c_mvp_xml_common_xmlfirstlowerwriter_ctor_2_9139111e.htm" />
+      </topic>
+      <topic name="XmlFirstLowerWriter Methods " file="html/methods_t_mvp_xml_common_xmlfirstlowerwriter.htm">
+        <topic name="WriteAttributeString Method " file="html/o_t_mvp_xml_common_xmlfirstlowerwriter_writeattributestring.htm" />
+        <topic name="WriteElementString Method " file="html/o_t_mvp_xml_common_xmlfirstlowerwriter_writeelementstring.htm" />
+        <topic name="WriteNode Method " file="html/o_t_mvp_xml_common_xmlfirstlowerwriter_writenode.htm" />
+        <topic name="WriteQualifiedName Method " file="html/m_mvp_xml_common_xmlfirstlowerwriter_writequalifiedname_2_52fce4af.htm" />
+        <topic name="WriteRaw Method " file="html/o_t_mvp_xml_common_xmlfirstlowerwriter_writeraw.htm" />
+        <topic name="WriteStartAttribute Method " file="html/o_t_mvp_xml_common_xmlfirstlowerwriter_writestartattribute.htm">
+          <topic name="WriteStartAttribute Method (String, String, String)" file="html/m_mvp_xml_common_xmlfirstlowerwriter_writestartattribute_3_45ca51f2.htm" />
+        </topic>
+        <topic name="WriteStartDocument Method " file="html/o_t_mvp_xml_common_xmlfirstlowerwriter_writestartdocument.htm" />
+        <topic name="WriteStartElement Method " file="html/o_t_mvp_xml_common_xmlfirstlowerwriter_writestartelement.htm">
+          <topic name="WriteStartElement Method (String, String, String)" file="html/m_mvp_xml_common_xmlfirstlowerwriter_writestartelement_3_45ca51f2.htm" />
+        </topic>
+        <topic name="WriteValue Method " file="html/o_t_mvp_xml_common_xmlfirstlowerwriter_writevalue.htm" />
+      </topic>
+    </topic>
+    <topic name="XmlFirstUpperReader Class" file="html/t_mvp_xml_common_xmlfirstupperreader.htm">
+      <topic name="XmlFirstUpperReader Members" file="html/allmembers_t_mvp_xml_common_xmlfirstupperreader.htm" />
+      <topic name="XmlFirstUpperReader Constructor " file="html/o_t_mvp_xml_common_xmlfirstupperreader_ctor.htm">
+        <topic name="XmlFirstUpperReader Constructor (Stream)" file="html/c_mvp_xml_common_xmlfirstupperreader_ctor_1_014c0eac.htm" />
+        <topic name="XmlFirstUpperReader Constructor (TextReader)" file="html/c_mvp_xml_common_xmlfirstupperreader_ctor_1_a6011e2f.htm" />
+        <topic name="XmlFirstUpperReader Constructor (String)" file="html/c_mvp_xml_common_xmlfirstupperreader_ctor_1_61b4e77c.htm" />
+        <topic name="XmlFirstUpperReader Constructor (Stream, XmlNameTable)" file="html/c_mvp_xml_common_xmlfirstupperreader_ctor_2_a81fb5c6.htm" />
+        <topic name="XmlFirstUpperReader Constructor (TextReader, XmlNameTable)" file="html/c_mvp_xml_common_xmlfirstupperreader_ctor_2_2f037164.htm" />
+        <topic name="XmlFirstUpperReader Constructor (String, Stream)" file="html/c_mvp_xml_common_xmlfirstupperreader_ctor_2_887b455c.htm" />
+        <topic name="XmlFirstUpperReader Constructor (String, TextReader)" file="html/c_mvp_xml_common_xmlfirstupperreader_ctor_2_0f6c1c56.htm" />
+        <topic name="XmlFirstUpperReader Constructor (String, XmlNameTable)" file="html/c_mvp_xml_common_xmlfirstupperreader_ctor_2_bda39e3d.htm" />
+        <topic name="XmlFirstUpperReader Constructor (Stream, XmlNodeType, XmlParserContext)" file="html/c_mvp_xml_common_xmlfirstupperreader_ctor_3_f8b145ff.htm" />
+        <topic name="XmlFirstUpperReader Constructor (String, Stream, XmlNameTable)" file="html/c_mvp_xml_common_xmlfirstupperreader_ctor_3_49213cae.htm" />
+        <topic name="XmlFirstUpperReader Constructor (String, TextReader, XmlNameTable)" file="html/c_mvp_xml_common_xmlfirstupperreader_ctor_3_9cbb7998.htm" />
+        <topic name="XmlFirstUpperReader Constructor (String, XmlNodeType, XmlParserContext)" file="html/c_mvp_xml_common_xmlfirstupperreader_ctor_3_4110cc4c.htm" />
+      </topic>
+      <topic name="XmlFirstUpperReader Methods " file="html/methods_t_mvp_xml_common_xmlfirstupperreader.htm">
+        <topic name="GetAttribute Method " file="html/o_t_mvp_xml_common_xmlfirstupperreader_getattribute.htm" />
+        <topic name="IsStartElement Method " file="html/o_t_mvp_xml_common_xmlfirstupperreader_isstartelement.htm" />
+        <topic name="MoveToAttribute Method " file="html/o_t_mvp_xml_common_xmlfirstupperreader_movetoattribute.htm">
+          <topic name="MoveToAttribute Method (String, String)" file="html/m_mvp_xml_common_xmlfirstupperreader_movetoattribute_2_52fce4af.htm" />
+        </topic>
+        <topic name="ReadElementContentAs Method " file="html/o_t_mvp_xml_common_xmlfirstupperreader_readelementcontentas.htm" />
+        <topic name="ReadElementContentAsBoolean Method " file="html/o_t_mvp_xml_common_xmlfirstupperreader_readelementcontentasboolean.htm" />
+        <topic name="ReadElementContentAsDateTime Method " file="html/o_t_mvp_xml_common_xmlfirstupperreader_readelementcontentasdatetime.htm" />
+        <topic name="ReadElementContentAsDecimal Method " file="html/o_t_mvp_xml_common_xmlfirstupperreader_readelementcontentasdecimal.htm" />
+        <topic name="ReadElementContentAsDouble Method " file="html/o_t_mvp_xml_common_xmlfirstupperreader_readelementcontentasdouble.htm" />
+        <topic name="ReadElementContentAsFloat Method " file="html/o_t_mvp_xml_common_xmlfirstupperreader_readelementcontentasfloat.htm" />
+        <topic name="ReadElementContentAsInt Method " file="html/o_t_mvp_xml_common_xmlfirstupperreader_readelementcontentasint.htm" />
+        <topic name="ReadElementContentAsLong Method " file="html/o_t_mvp_xml_common_xmlfirstupperreader_readelementcontentaslong.htm" />
+        <topic name="ReadElementContentAsObject Method " file="html/o_t_mvp_xml_common_xmlfirstupperreader_readelementcontentasobject.htm" />
+        <topic name="ReadElementContentAsString Method " file="html/o_t_mvp_xml_common_xmlfirstupperreader_readelementcontentasstring.htm" />
+        <topic name="ReadElementString Method " file="html/o_t_mvp_xml_common_xmlfirstupperreader_readelementstring.htm" />
+        <topic name="ReadStartElement Method " file="html/o_t_mvp_xml_common_xmlfirstupperreader_readstartelement.htm" />
+        <topic name="ReadToDescendant Method " file="html/o_t_mvp_xml_common_xmlfirstupperreader_readtodescendant.htm" />
+        <topic name="ReadToFollowing Method " file="html/o_t_mvp_xml_common_xmlfirstupperreader_readtofollowing.htm" />
+        <topic name="ReadToNextSibling Method " file="html/o_t_mvp_xml_common_xmlfirstupperreader_readtonextsibling.htm" />
+      </topic>
+      <topic name="XmlFirstUpperReader Properties " file="html/properties_t_mvp_xml_common_xmlfirstupperreader.htm">
+        <topic name="Item Property " file="html/o_t_mvp_xml_common_xmlfirstupperreader_item.htm">
+          <topic name="Item Property (String)" file="html/p_mvp_xml_common_xmlfirstupperreader_item_1_72eac341.htm" />
+          <topic name="Item Property (String, String)" file="html/p_mvp_xml_common_xmlfirstupperreader_item_2_52fce4af.htm" />
+        </topic>
+        <topic name="LocalName Property " file="html/p_mvp_xml_common_xmlfirstupperreader_localname.htm" />
+        <topic name="Name Property " file="html/p_mvp_xml_common_xmlfirstupperreader_name.htm" />
+      </topic>
+    </topic>
+    <topic name="XmlFragmentReader Class" file="html/t_mvp_xml_common_xmlfragmentreader.htm">
+      <topic name="XmlFragmentReader Members" file="html/allmembers_t_mvp_xml_common_xmlfragmentreader.htm" />
+      <topic name="XmlFragmentReader Constructor " file="html/o_t_mvp_xml_common_xmlfragmentreader_ctor.htm">
+        <topic name="XmlFragmentReader Constructor (String, XmlReader)" file="html/c_mvp_xml_common_xmlfragmentreader_ctor_2_14eb5d4a.htm" />
+        <topic name="XmlFragmentReader Constructor (XmlQualifiedName, XmlReader)" file="html/c_mvp_xml_common_xmlfragmentreader_ctor_2_714a86ff.htm" />
+        <topic name="XmlFragmentReader Constructor (String, String, XmlReader)" file="html/c_mvp_xml_common_xmlfragmentreader_ctor_3_f26e58e7.htm" />
+      </topic>
+      <topic name="XmlFragmentReader Methods " file="html/methods_t_mvp_xml_common_xmlfragmentreader.htm">
+        <topic name="GetAttribute Method " file="html/o_t_mvp_xml_common_xmlfragmentreader_getattribute.htm" />
+        <topic name="IsStartElement Method " file="html/o_t_mvp_xml_common_xmlfragmentreader_isstartelement.htm" />
+        <topic name="MoveToAttribute Method " file="html/o_t_mvp_xml_common_xmlfragmentreader_movetoattribute.htm" />
+        <topic name="Read Method " file="html/m_mvp_xml_common_xmlfragmentreader_read.htm" />
+        <topic name="ReadElementContentAs Method " file="html/o_t_mvp_xml_common_xmlfragmentreader_readelementcontentas.htm" />
+        <topic name="ReadElementContentAsBoolean Method " file="html/o_t_mvp_xml_common_xmlfragmentreader_readelementcontentasboolean.htm" />
+        <topic name="ReadElementContentAsDateTime Method " file="html/o_t_mvp_xml_common_xmlfragmentreader_readelementcontentasdatetime.htm" />
+        <topic name="ReadElementContentAsDecimal Method " file="html/o_t_mvp_xml_common_xmlfragmentreader_readelementcontentasdecimal.htm" />
+        <topic name="ReadElementContentAsDouble Method " file="html/o_t_mvp_xml_common_xmlfragmentreader_readelementcontentasdouble.htm" />
+        <topic name="ReadElementContentAsFloat Method " file="html/o_t_mvp_xml_common_xmlfragmentreader_readelementcontentasfloat.htm" />
+        <topic name="ReadElementContentAsInt Method " file="html/o_t_mvp_xml_common_xmlfragmentreader_readelementcontentasint.htm" />
+        <topic name="ReadElementContentAsLong Method " file="html/o_t_mvp_xml_common_xmlfragmentreader_readelementcontentaslong.htm" />
+        <topic name="ReadElementContentAsObject Method " file="html/o_t_mvp_xml_common_xmlfragmentreader_readelementcontentasobject.htm" />
+        <topic name="ReadElementContentAsString Method " file="html/o_t_mvp_xml_common_xmlfragmentreader_readelementcontentasstring.htm" />
+        <topic name="ReadElementString Method " file="html/o_t_mvp_xml_common_xmlfragmentreader_readelementstring.htm" />
+        <topic name="ReadStartElement Method " file="html/o_t_mvp_xml_common_xmlfragmentreader_readstartelement.htm" />
+        <topic name="ReadToDescendant Method " file="html/o_t_mvp_xml_common_xmlfragmentreader_readtodescendant.htm" />
+        <topic name="ReadToFollowing Method " file="html/o_t_mvp_xml_common_xmlfragmentreader_readtofollowing.htm" />
+        <topic name="ReadToNextSibling Method " file="html/o_t_mvp_xml_common_xmlfragmentreader_readtonextsibling.htm" />
+      </topic>
+      <topic name="XmlFragmentReader Properties " file="html/properties_t_mvp_xml_common_xmlfragmentreader.htm">
+        <topic name="Depth Property " file="html/p_mvp_xml_common_xmlfragmentreader_depth.htm" />
+        <topic name="Item Property " file="html/o_t_mvp_xml_common_xmlfragmentreader_item.htm" />
+        <topic name="LocalName Property " file="html/p_mvp_xml_common_xmlfragmentreader_localname.htm" />
+        <topic name="Name Property " file="html/p_mvp_xml_common_xmlfragmentreader_name.htm" />
+        <topic name="NamespaceURI Property " file="html/p_mvp_xml_common_xmlfragmentreader_namespaceuri.htm" />
+        <topic name="NodeType Property " file="html/p_mvp_xml_common_xmlfragmentreader_nodetype.htm" />
+        <topic name="Prefix Property " file="html/p_mvp_xml_common_xmlfragmentreader_prefix.htm" />
+        <topic name="ReadState Property " file="html/p_mvp_xml_common_xmlfragmentreader_readstate.htm" />
+      </topic>
+    </topic>
+    <topic name="XmlFragmentStream Class" file="html/t_mvp_xml_common_xmlfragmentstream.htm">
+      <topic name="XmlFragmentStream Members" file="html/allmembers_t_mvp_xml_common_xmlfragmentstream.htm" />
+      <topic name="XmlFragmentStream Constructor " file="html/o_t_mvp_xml_common_xmlfragmentstream_ctor.htm">
+        <topic name="XmlFragmentStream Constructor (Stream)" file="html/c_mvp_xml_common_xmlfragmentstream_ctor_1_014c0eac.htm" />
+        <topic name="XmlFragmentStream Constructor (Stream, String)" file="html/c_mvp_xml_common_xmlfragmentstream_ctor_2_69a7ea00.htm" />
+        <topic name="XmlFragmentStream Constructor (Stream, String, String)" file="html/c_mvp_xml_common_xmlfragmentstream_ctor_3_dbcb9650.htm" />
+      </topic>
+      <topic name="XmlFragmentStream Methods " file="html/methods_t_mvp_xml_common_xmlfragmentstream.htm">
+        <topic name="Dispose Method " file="html/o_t_mvp_xml_common_xmlfragmentstream_dispose.htm" />
+        <topic name="Flush Method " file="html/m_mvp_xml_common_xmlfragmentstream_flush.htm" />
+        <topic name="Read Method " file="html/m_mvp_xml_common_xmlfragmentstream_read_3_e342ee26.htm" />
+        <topic name="Seek Method " file="html/m_mvp_xml_common_xmlfragmentstream_seek_2_e27d2c1f.htm" />
+        <topic name="SetLength Method " file="html/m_mvp_xml_common_xmlfragmentstream_setlength_1_86267ecb.htm" />
+        <topic name="Write Method " file="html/m_mvp_xml_common_xmlfragmentstream_write_3_e342ee26.htm" />
+      </topic>
+      <topic name="XmlFragmentStream Properties " file="html/properties_t_mvp_xml_common_xmlfragmentstream.htm">
+        <topic name="CanRead Property " file="html/p_mvp_xml_common_xmlfragmentstream_canread.htm" />
+        <topic name="CanSeek Property " file="html/p_mvp_xml_common_xmlfragmentstream_canseek.htm" />
+        <topic name="CanWrite Property " file="html/p_mvp_xml_common_xmlfragmentstream_canwrite.htm" />
+        <topic name="Length Property " file="html/p_mvp_xml_common_xmlfragmentstream_length.htm" />
+        <topic name="Position Property " file="html/p_mvp_xml_common_xmlfragmentstream_position.htm" />
+      </topic>
+    </topic>
+    <topic name="XmlNamespaces Class" file="html/t_mvp_xml_common_xmlnamespaces.htm">
+      <topic name="XmlNamespaces Members" file="html/allmembers_t_mvp_xml_common_xmlnamespaces.htm" />
+      <topic name="XmlNamespaces Fields" file="html/fields_t_mvp_xml_common_xmlnamespaces.htm">
+        <topic name="Xml Field" file="html/f_mvp_xml_common_xmlnamespaces_xml.htm" />
+        <topic name="XmlNs Field" file="html/f_mvp_xml_common_xmlnamespaces_xmlns.htm" />
+        <topic name="XmlNsPrefix Field" file="html/f_mvp_xml_common_xmlnamespaces_xmlnsprefix.htm" />
+        <topic name="Xsd Field" file="html/f_mvp_xml_common_xmlnamespaces_xsd.htm" />
+        <topic name="Xsi Field" file="html/f_mvp_xml_common_xmlnamespaces_xsi.htm" />
+      </topic>
+    </topic>
+    <topic name="XmlNodeFactory Class" file="html/t_mvp_xml_common_xmlnodefactory.htm">
+      <topic name="XmlNodeFactory Members" file="html/allmembers_t_mvp_xml_common_xmlnodefactory.htm" />
+      <topic name="XmlNodeFactory Methods " file="html/methods_t_mvp_xml_common_xmlnodefactory.htm">
+        <topic name="Create Method " file="html/o_t_mvp_xml_common_xmlnodefactory_create.htm">
+          <topic name="Create Method (Object)" file="html/m_mvp_xml_common_xmlnodefactory_create_1_2572741a.htm" />
+          <topic name="Create Method (XmlReader)" file="html/m_mvp_xml_common_xmlnodefactory_create_1_3282adce.htm" />
+          <topic name="Create Method (XPathNavigator)" file="html/m_mvp_xml_common_xmlnodefactory_create_1_3b89351a.htm" />
+          <topic name="Create Method (XmlReader, Boolean)" file="html/m_mvp_xml_common_xmlnodefactory_create_2_eec612f3.htm" />
+        </topic>
+      </topic>
+    </topic>
+    <topic name="XmlNodeListFactory Class" file="html/t_mvp_xml_common_xmlnodelistfactory.htm">
+      <topic name="XmlNodeListFactory Members" file="html/allmembers_t_mvp_xml_common_xmlnodelistfactory.htm" />
+      <topic name="XmlNodeListFactory Methods " file="html/methods_t_mvp_xml_common_xmlnodelistfactory.htm">
+        <topic name="CreateNodeList Method " file="html/m_mvp_xml_common_xmlnodelistfactory_createnodelist_1_bb0264dd.htm" />
+      </topic>
+    </topic>
+    <topic name="XmlNormalizingReader Class" file="html/t_mvp_xml_common_xmlnormalizingreader.htm">
+      <topic name="XmlNormalizingReader Members" file="html/allmembers_t_mvp_xml_common_xmlnormalizingreader.htm" />
+      <topic name="XmlNormalizingReader Constructor " file="html/c_mvp_xml_common_xmlnormalizingreader_ctor_1_11267429.htm" />
+      <topic name="XmlNormalizingReader Methods " file="html/methods_t_mvp_xml_common_xmlnormalizingreader.htm">
+        <topic name="GetAttribute Method " file="html/o_t_mvp_xml_common_xmlnormalizingreader_getattribute.htm" />
+        <topic name="IsStartElement Method " file="html/o_t_mvp_xml_common_xmlnormalizingreader_isstartelement.htm" />
+        <topic name="MoveToAttribute Method " file="html/o_t_mvp_xml_common_xmlnormalizingreader_movetoattribute.htm" />
+        <topic name="MoveToFirstAttribute Method " file="html/m_mvp_xml_common_xmlnormalizingreader_movetofirstattribute.htm" />
+        <topic name="MoveToNextAttribute Method " file="html/m_mvp_xml_common_xmlnormalizingreader_movetonextattribute.htm" />
+        <topic name="Read Method " file="html/m_mvp_xml_common_xmlnormalizingreader_read.htm" />
+        <topic name="ReadElementContentAs Method " file="html/o_t_mvp_xml_common_xmlnormalizingreader_readelementcontentas.htm" />
+        <topic name="ReadElementContentAsBoolean Method " file="html/o_t_mvp_xml_common_xmlnormalizingreader_readelementcontentasboolean.htm" />
+        <topic name="ReadElementContentAsDateTime Method " file="html/o_t_mvp_xml_common_xmlnormalizingreader_readelementcontentasdatetime.htm" />
+        <topic name="ReadElementContentAsDecimal Method " file="html/o_t_mvp_xml_common_xmlnormalizingreader_readelementcontentasdecimal.htm" />
+        <topic name="ReadElementContentAsDouble Method " file="html/o_t_mvp_xml_common_xmlnormalizingreader_readelementcontentasdouble.htm" />
+        <topic name="ReadElementContentAsFloat Method " file="html/o_t_mvp_xml_common_xmlnormalizingreader_readelementcontentasfloat.htm" />
+        <topic name="ReadElementContentAsInt Method " file="html/o_t_mvp_xml_common_xmlnormalizingreader_readelementcontentasint.htm" />
+        <topic name="ReadElementContentAsLong Method " file="html/o_t_mvp_xml_common_xmlnormalizingreader_readelementcontentaslong.htm" />
+        <topic name="ReadElementContentAsObject Method " file="html/o_t_mvp_xml_common_xmlnormalizingreader_readelementcontentasobject.htm" />
+        <topic name="ReadElementContentAsString Method " file="html/o_t_mvp_xml_common_xmlnormalizingreader_readelementcontentasstring.htm" />
+        <topic name="ReadElementString Method " file="html/o_t_mvp_xml_common_xmlnormalizingreader_readelementstring.htm" />
+        <topic name="ReadStartElement Method " file="html/o_t_mvp_xml_common_xmlnormalizingreader_readstartelement.htm" />
+        <topic name="ReadToDescendant Method " file="html/o_t_mvp_xml_common_xmlnormalizingreader_readtodescendant.htm" />
+        <topic name="ReadToFollowing Method " file="html/o_t_mvp_xml_common_xmlnormalizingreader_readtofollowing.htm" />
+        <topic name="ReadToNextSibling Method " file="html/o_t_mvp_xml_common_xmlnormalizingreader_readtonextsibling.htm" />
+      </topic>
+      <topic name="XmlNormalizingReader Properties " file="html/properties_t_mvp_xml_common_xmlnormalizingreader.htm">
+        <topic name="AttributeCount Property " file="html/p_mvp_xml_common_xmlnormalizingreader_attributecount.htm" />
+        <topic name="Item Property " file="html/o_t_mvp_xml_common_xmlnormalizingreader_item.htm" />
+      </topic>
+    </topic>
+    <topic name="XmlPrefix Class" file="html/t_mvp_xml_common_xmlprefix.htm">
+      <topic name="XmlPrefix Members" file="html/allmembers_t_mvp_xml_common_xmlprefix.htm" />
+      <topic name="XmlPrefix Constructor " file="html/o_t_mvp_xml_common_xmlprefix_ctor.htm">
+        <topic name="XmlPrefix Constructor (String, String)" file="html/c_mvp_xml_common_xmlprefix_ctor_2_6608d038.htm" />
+        <topic name="XmlPrefix Constructor (String, String, XmlNameTable)" file="html/c_mvp_xml_common_xmlprefix_ctor_3_661df243.htm" />
+      </topic>
+      <topic name="XmlPrefix Properties " file="html/properties_t_mvp_xml_common_xmlprefix.htm">
+        <topic name="NamespaceURI Property " file="html/p_mvp_xml_common_xmlprefix_namespaceuri.htm" />
+        <topic name="Prefix Property " file="html/p_mvp_xml_common_xmlprefix_prefix.htm" />
+      </topic>
+    </topic>
+    <topic name="XmlWrappingReader Class" file="html/t_mvp_xml_common_xmlwrappingreader.htm">
+      <topic name="XmlWrappingReader Members" file="html/allmembers_t_mvp_xml_common_xmlwrappingreader.htm" />
+      <topic name="XmlWrappingReader Constructor " file="html/c_mvp_xml_common_xmlwrappingreader_ctor_1_11267429.htm" />
+      <topic name="XmlWrappingReader Methods " file="html/methods_t_mvp_xml_common_xmlwrappingreader.htm">
+        <topic name="Close Method " file="html/m_mvp_xml_common_xmlwrappingreader_close.htm" />
+        <topic name="Dispose Method " file="html/m_mvp_xml_common_xmlwrappingreader_dispose_1_36d384f7.htm" />
+        <topic name="GetAttribute Method " file="html/o_t_mvp_xml_common_xmlwrappingreader_getattribute.htm">
+          <topic name="GetAttribute Method (Int32)" file="html/m_mvp_xml_common_xmlwrappingreader_getattribute_1_cd2d7ec9.htm" />
+          <topic name="GetAttribute Method (String)" file="html/m_mvp_xml_common_xmlwrappingreader_getattribute_1_72eac341.htm" />
+          <topic name="GetAttribute Method (String, String)" file="html/m_mvp_xml_common_xmlwrappingreader_getattribute_2_52fce4af.htm" />
+        </topic>
+        <topic name="HasLineInfo Method " file="html/m_mvp_xml_common_xmlwrappingreader_haslineinfo.htm" />
+        <topic name="IsStartElement Method " file="html/o_t_mvp_xml_common_xmlwrappingreader_isstartelement.htm" />
+        <topic name="LookupNamespace Method " file="html/m_mvp_xml_common_xmlwrappingreader_lookupnamespace_1_72eac341.htm" />
+        <topic name="MoveToAttribute Method " file="html/o_t_mvp_xml_common_xmlwrappingreader_movetoattribute.htm">
+          <topic name="MoveToAttribute Method (Int32)" file="html/m_mvp_xml_common_xmlwrappingreader_movetoattribute_1_cd2d7ec9.htm" />
+          <topic name="MoveToAttribute Method (String)" file="html/m_mvp_xml_common_xmlwrappingreader_movetoattribute_1_72eac341.htm" />
+          <topic name="MoveToAttribute Method (String, String)" file="html/m_mvp_xml_common_xmlwrappingreader_movetoattribute_2_52fce4af.htm" />
+        </topic>
+        <topic name="MoveToElement Method " file="html/m_mvp_xml_common_xmlwrappingreader_movetoelement.htm" />
+        <topic name="MoveToFirstAttribute Method " file="html/m_mvp_xml_common_xmlwrappingreader_movetofirstattribute.htm" />
+        <topic name="MoveToNextAttribute Method " file="html/m_mvp_xml_common_xmlwrappingreader_movetonextattribute.htm" />
+        <topic name="Read Method " file="html/m_mvp_xml_common_xmlwrappingreader_read.htm" />
+        <topic name="ReadAttributeValue Method " file="html/m_mvp_xml_common_xmlwrappingreader_readattributevalue.htm" />
+        <topic name="ReadElementContentAs Method " file="html/o_t_mvp_xml_common_xmlwrappingreader_readelementcontentas.htm" />
+        <topic name="ReadElementContentAsBoolean Method " file="html/o_t_mvp_xml_common_xmlwrappingreader_readelementcontentasboolean.htm" />
+        <topic name="ReadElementContentAsDateTime Method " file="html/o_t_mvp_xml_common_xmlwrappingreader_readelementcontentasdatetime.htm" />
+        <topic name="ReadElementContentAsDecimal Method " file="html/o_t_mvp_xml_common_xmlwrappingreader_readelementcontentasdecimal.htm" />
+        <topic name="ReadElementContentAsDouble Method " file="html/o_t_mvp_xml_common_xmlwrappingreader_readelementcontentasdouble.htm" />
+        <topic name="ReadElementContentAsFloat Method " file="html/o_t_mvp_xml_common_xmlwrappingreader_readelementcontentasfloat.htm" />
+        <topic name="ReadElementContentAsInt Method " file="html/o_t_mvp_xml_common_xmlwrappingreader_readelementcontentasint.htm" />
+        <topic name="ReadElementContentAsLong Method " file="html/o_t_mvp_xml_common_xmlwrappingreader_readelementcontentaslong.htm" />
+        <topic name="ReadElementContentAsObject Method " file="html/o_t_mvp_xml_common_xmlwrappingreader_readelementcontentasobject.htm" />
+        <topic name="ReadElementContentAsString Method " file="html/o_t_mvp_xml_common_xmlwrappingreader_readelementcontentasstring.htm" />
+        <topic name="ReadElementString Method " file="html/o_t_mvp_xml_common_xmlwrappingreader_readelementstring.htm" />
+        <topic name="ReadStartElement Method " file="html/o_t_mvp_xml_common_xmlwrappingreader_readstartelement.htm" />
+        <topic name="ReadToDescendant Method " file="html/o_t_mvp_xml_common_xmlwrappingreader_readtodescendant.htm" />
+        <topic name="ReadToFollowing Method " file="html/o_t_mvp_xml_common_xmlwrappingreader_readtofollowing.htm" />
+        <topic name="ReadToNextSibling Method " file="html/o_t_mvp_xml_common_xmlwrappingreader_readtonextsibling.htm" />
+        <topic name="ReadValueChunk Method " file="html/m_mvp_xml_common_xmlwrappingreader_readvaluechunk_3_08937d44.htm" />
+        <topic name="ResolveEntity Method " file="html/m_mvp_xml_common_xmlwrappingreader_resolveentity.htm" />
+      </topic>
+      <topic name="XmlWrappingReader Properties " file="html/properties_t_mvp_xml_common_xmlwrappingreader.htm">
+        <topic name="AttributeCount Property " file="html/p_mvp_xml_common_xmlwrappingreader_attributecount.htm" />
+        <topic name="BaseReader Property " file="html/p_mvp_xml_common_xmlwrappingreader_basereader.htm" />
+        <topic name="BaseURI Property " file="html/p_mvp_xml_common_xmlwrappingreader_baseuri.htm" />
+        <topic name="CanReadBinaryContent Property " file="html/p_mvp_xml_common_xmlwrappingreader_canreadbinarycontent.htm" />
+        <topic name="CanReadValueChunk Property " file="html/p_mvp_xml_common_xmlwrappingreader_canreadvaluechunk.htm" />
+        <topic name="CanResolveEntity Property " file="html/p_mvp_xml_common_xmlwrappingreader_canresolveentity.htm" />
+        <topic name="Depth Property " file="html/p_mvp_xml_common_xmlwrappingreader_depth.htm" />
+        <topic name="EOF Property " file="html/p_mvp_xml_common_xmlwrappingreader_eof.htm" />
+        <topic name="HasValue Property " file="html/p_mvp_xml_common_xmlwrappingreader_hasvalue.htm" />
+        <topic name="IsDefault Property " file="html/p_mvp_xml_common_xmlwrappingreader_isdefault.htm" />
+        <topic name="IsEmptyElement Property " file="html/p_mvp_xml_common_xmlwrappingreader_isemptyelement.htm" />
+        <topic name="Item Property " file="html/o_t_mvp_xml_common_xmlwrappingreader_item.htm">
+          <topic name="Item Property (Int32)" file="html/p_mvp_xml_common_xmlwrappingreader_item_1_cd2d7ec9.htm" />
+          <topic name="Item Property (String)" file="html/p_mvp_xml_common_xmlwrappingreader_item_1_72eac341.htm" />
+          <topic name="Item Property (String, String)" file="html/p_mvp_xml_common_xmlwrappingreader_item_2_52fce4af.htm" />
+        </topic>
+        <topic name="LineNumber Property " file="html/p_mvp_xml_common_xmlwrappingreader_linenumber.htm" />
+        <topic name="LinePosition Property " file="html/p_mvp_xml_common_xmlwrappingreader_lineposition.htm" />
+        <topic name="LocalName Property " file="html/p_mvp_xml_common_xmlwrappingreader_localname.htm" />
+        <topic name="Name Property " file="html/p_mvp_xml_common_xmlwrappingreader_name.htm" />
+        <topic name="NamespaceURI Property " file="html/p_mvp_xml_common_xmlwrappingreader_namespaceuri.htm" />
+        <topic name="NameTable Property " file="html/p_mvp_xml_common_xmlwrappingreader_nametable.htm" />
+        <topic name="NodeType Property " file="html/p_mvp_xml_common_xmlwrappingreader_nodetype.htm" />
+        <topic name="Prefix Property " file="html/p_mvp_xml_common_xmlwrappingreader_prefix.htm" />
+        <topic name="QuoteChar Property " file="html/p_mvp_xml_common_xmlwrappingreader_quotechar.htm" />
+        <topic name="ReadState Property " file="html/p_mvp_xml_common_xmlwrappingreader_readstate.htm" />
+        <topic name="Value Property " file="html/p_mvp_xml_common_xmlwrappingreader_value.htm" />
+        <topic name="XmlLang Property " file="html/p_mvp_xml_common_xmlwrappingreader_xmllang.htm" />
+        <topic name="XmlSpace Property " file="html/p_mvp_xml_common_xmlwrappingreader_xmlspace.htm" />
+      </topic>
+    </topic>
+    <topic name="XmlWrappingWriter Class" file="html/t_mvp_xml_common_xmlwrappingwriter.htm">
+      <topic name="XmlWrappingWriter Members" file="html/allmembers_t_mvp_xml_common_xmlwrappingwriter.htm" />
+      <topic name="XmlWrappingWriter Constructor " file="html/c_mvp_xml_common_xmlwrappingwriter_ctor_1_213a68e2.htm" />
+      <topic name="XmlWrappingWriter Methods " file="html/methods_t_mvp_xml_common_xmlwrappingwriter.htm">
+        <topic name="Close Method " file="html/m_mvp_xml_common_xmlwrappingwriter_close.htm" />
+        <topic name="Dispose Method " file="html/m_mvp_xml_common_xmlwrappingwriter_dispose_1_36d384f7.htm" />
+        <topic name="Flush Method " file="html/m_mvp_xml_common_xmlwrappingwriter_flush.htm" />
+        <topic name="LookupPrefix Method " file="html/m_mvp_xml_common_xmlwrappingwriter_lookupprefix_1_72eac341.htm" />
+        <topic name="WriteAttributeString Method " file="html/o_t_mvp_xml_common_xmlwrappingwriter_writeattributestring.htm" />
+        <topic name="WriteBase64 Method " file="html/m_mvp_xml_common_xmlwrappingwriter_writebase64_3_e342ee26.htm" />
+        <topic name="WriteCData Method " file="html/m_mvp_xml_common_xmlwrappingwriter_writecdata_1_72eac341.htm" />
+        <topic name="WriteCharEntity Method " file="html/m_mvp_xml_common_xmlwrappingwriter_writecharentity_1_c1b86b75.htm" />
+        <topic name="WriteChars Method " file="html/m_mvp_xml_common_xmlwrappingwriter_writechars_3_08937d44.htm" />
+        <topic name="WriteComment Method " file="html/m_mvp_xml_common_xmlwrappingwriter_writecomment_1_72eac341.htm" />
+        <topic name="WriteDocType Method " file="html/m_mvp_xml_common_xmlwrappingwriter_writedoctype_4_193e86b9.htm" />
+        <topic name="WriteElementString Method " file="html/o_t_mvp_xml_common_xmlwrappingwriter_writeelementstring.htm" />
+        <topic name="WriteEndAttribute Method " file="html/m_mvp_xml_common_xmlwrappingwriter_writeendattribute.htm" />
+        <topic name="WriteEndDocument Method " file="html/m_mvp_xml_common_xmlwrappingwriter_writeenddocument.htm" />
+        <topic name="WriteEndElement Method " file="html/m_mvp_xml_common_xmlwrappingwriter_writeendelement.htm" />
+        <topic name="WriteEntityRef Method " file="html/m_mvp_xml_common_xmlwrappingwriter_writeentityref_1_72eac341.htm" />
+        <topic name="WriteFullEndElement Method " file="html/m_mvp_xml_common_xmlwrappingwriter_writefullendelement.htm" />
+        <topic name="WriteNode Method " file="html/o_t_mvp_xml_common_xmlwrappingwriter_writenode.htm" />
+        <topic name="WriteProcessingInstruction Method " file="html/m_mvp_xml_common_xmlwrappingwriter_writeprocessinginstruction_2_52fce4af.htm" />
+        <topic name="WriteRaw Method " file="html/o_t_mvp_xml_common_xmlwrappingwriter_writeraw.htm">
+          <topic name="WriteRaw Method (String)" file="html/m_mvp_xml_common_xmlwrappingwriter_writeraw_1_72eac341.htm" />
+          <topic name="WriteRaw Method (Char[], Int32, Int32)" file="html/m_mvp_xml_common_xmlwrappingwriter_writeraw_3_08937d44.htm" />
+        </topic>
+        <topic name="WriteStartAttribute Method " file="html/o_t_mvp_xml_common_xmlwrappingwriter_writestartattribute.htm">
+          <topic name="WriteStartAttribute Method (String, String, String)" file="html/m_mvp_xml_common_xmlwrappingwriter_writestartattribute_3_45ca51f2.htm" />
+        </topic>
+        <topic name="WriteStartDocument Method " file="html/o_t_mvp_xml_common_xmlwrappingwriter_writestartdocument.htm">
+          <topic name="WriteStartDocument Method " file="html/m_mvp_xml_common_xmlwrappingwriter_writestartdocument.htm" />
+          <topic name="WriteStartDocument Method (Boolean)" file="html/m_mvp_xml_common_xmlwrappingwriter_writestartdocument_1_36d384f7.htm" />
+        </topic>
+        <topic name="WriteStartElement Method " file="html/o_t_mvp_xml_common_xmlwrappingwriter_writestartelement.htm">
+          <topic name="WriteStartElement Method (String, String, String)" file="html/m_mvp_xml_common_xmlwrappingwriter_writestartelement_3_45ca51f2.htm" />
+        </topic>
+        <topic name="WriteString Method " file="html/m_mvp_xml_common_xmlwrappingwriter_writestring_1_72eac341.htm" />
+        <topic name="WriteSurrogateCharEntity Method " file="html/m_mvp_xml_common_xmlwrappingwriter_writesurrogatecharentity_2_a0b8c7ed.htm" />
+        <topic name="WriteValue Method " file="html/o_t_mvp_xml_common_xmlwrappingwriter_writevalue.htm">
+          <topic name="WriteValue Method (Boolean)" file="html/m_mvp_xml_common_xmlwrappingwriter_writevalue_1_36d384f7.htm" />
+          <topic name="WriteValue Method (DateTime)" file="html/m_mvp_xml_common_xmlwrappingwriter_writevalue_1_83ed3aaa.htm" />
+          <topic name="WriteValue Method (Decimal)" file="html/m_mvp_xml_common_xmlwrappingwriter_writevalue_1_219c160b.htm" />
+          <topic name="WriteValue Method (Double)" file="html/m_mvp_xml_common_xmlwrappingwriter_writevalue_1_9104ed59.htm" />
+          <topic name="WriteValue Method (Int32)" file="html/m_mvp_xml_common_xmlwrappingwriter_writevalue_1_cd2d7ec9.htm" />
+          <topic name="WriteValue Method (Int64)" file="html/m_mvp_xml_common_xmlwrappingwriter_writevalue_1_86267ecb.htm" />
+          <topic name="WriteValue Method (Object)" file="html/m_mvp_xml_common_xmlwrappingwriter_writevalue_1_2572741a.htm" />
+          <topic name="WriteValue Method (Single)" file="html/m_mvp_xml_common_xmlwrappingwriter_writevalue_1_12c89377.htm" />
+          <topic name="WriteValue Method (String)" file="html/m_mvp_xml_common_xmlwrappingwriter_writevalue_1_72eac341.htm" />
+        </topic>
+        <topic name="WriteWhitespace Method " file="html/m_mvp_xml_common_xmlwrappingwriter_writewhitespace_1_72eac341.htm" />
+      </topic>
+      <topic name="XmlWrappingWriter Properties " file="html/properties_t_mvp_xml_common_xmlwrappingwriter.htm">
+        <topic name="BaseWriter Property " file="html/p_mvp_xml_common_xmlwrappingwriter_basewriter.htm" />
+        <topic name="Settings Property " file="html/p_mvp_xml_common_xmlwrappingwriter_settings.htm" />
+        <topic name="WriteState Property " file="html/p_mvp_xml_common_xmlwrappingwriter_writestate.htm" />
+        <topic name="XmlLang Property " file="html/p_mvp_xml_common_xmlwrappingwriter_xmllang.htm" />
+        <topic name="XmlSpace Property " file="html/p_mvp_xml_common_xmlwrappingwriter_xmlspace.htm" />
+      </topic>
+    </topic>
+  </topic>
+  <topic name="Mvp.Xml.Common.Serialization Namespace" file="html/n_mvp_xml_common_serialization.htm">
+    <topic name="CacheKeyFactory Class" file="html/t_mvp_xml_common_serialization_cachekeyfactory.htm">
+      <topic name="CacheKeyFactory Members" file="html/allmembers_t_mvp_xml_common_serialization_cachekeyfactory.htm" />
+      <topic name="CacheKeyFactory Methods " file="html/methods_t_mvp_xml_common_serialization_cachekeyfactory.htm">
+        <topic name="MakeKey Method " file="html/m_mvp_xml_common_serialization_cachekeyfactory_makekey_5_3ea5bd41.htm" />
+      </topic>
+    </topic>
+    <topic name="SerializerCacheDelegate Delegate" file="html/t_mvp_xml_common_serialization_serializercachedelegate.htm" />
+    <topic name="SignatureExtractor Class" file="html/t_mvp_xml_common_serialization_signatureextractor.htm">
+      <topic name="SignatureExtractor Members" file="html/allmembers_t_mvp_xml_common_serialization_signatureextractor.htm" />
+      <topic name="SignatureExtractor Methods " file="html/methods_t_mvp_xml_common_serialization_signatureextractor.htm">
+        <topic name="GetDefaultNamespaceSignature Method " file="html/m_mvp_xml_common_serialization_signatureextractor_getdefaultnamespacesignature_1_72eac341.htm" />
+        <topic name="GetOverridesSignature Method " file="html/m_mvp_xml_common_serialization_signatureextractor_getoverridessignature_1_de552725.htm" />
+        <topic name="GetTypeArraySignature Method " file="html/m_mvp_xml_common_serialization_signatureextractor_gettypearraysignature_1_a221b361.htm" />
+        <topic name="GetXmlRootSignature Method " file="html/m_mvp_xml_common_serialization_signatureextractor_getxmlrootsignature_1_00891b8c.htm" />
+      </topic>
+    </topic>
+    <topic name="StringSorter Class" file="html/t_mvp_xml_common_serialization_stringsorter.htm">
+      <topic name="StringSorter Members" file="html/allmembers_t_mvp_xml_common_serialization_stringsorter.htm" />
+      <topic name="StringSorter Constructor " file="html/c_mvp_xml_common_serialization_stringsorter_ctor.htm" />
+      <topic name="StringSorter Methods " file="html/methods_t_mvp_xml_common_serialization_stringsorter.htm">
+        <topic name="AddString Method " file="html/m_mvp_xml_common_serialization_stringsorter_addstring_1_72eac341.htm" />
+        <topic name="GetOrderedArray Method " file="html/m_mvp_xml_common_serialization_stringsorter_getorderedarray.htm" />
+      </topic>
+    </topic>
+    <topic name="XmlAttributeOverridesThumbprinter Class" file="html/t_mvp_xml_common_serialization_xmlattributeoverridesthumbprinter.htm">
+      <topic name="XmlAttributeOverridesThumbprinter Members" file="html/allmembers_t_mvp_xml_common_serialization_xmlattributeoverridesthumbprinter.htm" />
+      <topic name="XmlAttributeOverridesThumbprinter Methods " file="html/methods_t_mvp_xml_common_serialization_xmlattributeoverridesthumbprinter.htm">
+        <topic name="GetThumbprint Method " file="html/m_mvp_xml_common_serialization_xmlattributeoverridesthumbprinter_getthumbprint_1_de552725.htm" />
+      </topic>
+    </topic>
+    <topic name="XmlSerializerCache Class" file="html/t_mvp_xml_common_serialization_xmlserializercache.htm">
+      <topic name="XmlSerializerCache Members" file="html/allmembers_t_mvp_xml_common_serialization_xmlserializercache.htm" />
+      <topic name="XmlSerializerCache Constructor " file="html/c_mvp_xml_common_serialization_xmlserializercache_ctor.htm" />
+      <topic name="XmlSerializerCache Methods " file="html/methods_t_mvp_xml_common_serialization_xmlserializercache.htm">
+        <topic name="Dispose Method " file="html/m_mvp_xml_common_serialization_xmlserializercache_dispose.htm" />
+        <topic name="Finalize Method " file="html/m_mvp_xml_common_serialization_xmlserializercache_finalize.htm" />
+        <topic name="GetSerializer Method " file="html/o_t_mvp_xml_common_serialization_xmlserializercache_getserializer.htm">
+          <topic name="GetSerializer Method (Type, String)" file="html/m_mvp_xml_common_serialization_xmlserializercache_getserializer_2_2147db6e.htm" />
+          <topic name="GetSerializer Method (Type, Type[])" file="html/m_mvp_xml_common_serialization_xmlserializercache_getserializer_2_5184ca2a.htm" />
+          <topic name="GetSerializer Method (Type, XmlAttributeOverrides)" file="html/m_mvp_xml_common_serialization_xmlserializercache_getserializer_2_045d41d8.htm" />
+          <topic name="GetSerializer Method (Type, XmlRootAttribute)" file="html/m_mvp_xml_common_serialization_xmlserializercache_getserializer_2_d9c301a7.htm" />
+          <topic name="GetSerializer Method (Type, XmlAttributeOverrides, Type[], XmlRootAttribute, String)" file="html/m_mvp_xml_common_serialization_xmlserializercache_getserializer_5_3ea5bd41.htm" />
+        </topic>
+      </topic>
+      <topic name="XmlSerializerCache Events" file="html/events_t_mvp_xml_common_serialization_xmlserializercache.htm">
+        <topic name="CacheHit Event" file="html/e_mvp_xml_common_serialization_xmlserializercache_cachehit.htm" />
+        <topic name="NewSerializer Event" file="html/e_mvp_xml_common_serialization_xmlserializercache_newserializer.htm" />
+      </topic>
+    </topic>
+  </topic>
+  <topic name="Mvp.Xml.Common.XPath Namespace" file="html/n_mvp_xml_common_xpath.htm">
+    <topic name="DynamicContext Class" file="html/t_mvp_xml_common_xpath_dynamiccontext.htm">
+      <topic name="DynamicContext Members" file="html/allmembers_t_mvp_xml_common_xpath_dynamiccontext.htm" />
+      <topic name="DynamicContext Constructor " file="html/o_t_mvp_xml_common_xpath_dynamiccontext_ctor.htm">
+        <topic name="DynamicContext Constructor " file="html/c_mvp_xml_common_xpath_dynamiccontext_ctor.htm" />
+        <topic name="DynamicContext Constructor (NameTable)" file="html/c_mvp_xml_common_xpath_dynamiccontext_ctor_1_598844b4.htm" />
+        <topic name="DynamicContext Constructor (XmlNamespaceManager)" file="html/c_mvp_xml_common_xpath_dynamiccontext_ctor_1_22e1c46f.htm" />
+        <topic name="DynamicContext Constructor (XmlNamespaceManager, NameTable)" file="html/c_mvp_xml_common_xpath_dynamiccontext_ctor_2_ac90a9d3.htm" />
+      </topic>
+      <topic name="DynamicContext Methods " file="html/methods_t_mvp_xml_common_xpath_dynamiccontext.htm">
+        <topic name="AddVariable Method " file="html/m_mvp_xml_common_xpath_dynamiccontext_addvariable_2_a8b2c272.htm" />
+        <topic name="CompareDocument Method " file="html/m_mvp_xml_common_xpath_dynamiccontext_comparedocument_2_52fce4af.htm" />
+        <topic name="Compile Method " file="html/m_mvp_xml_common_xpath_dynamiccontext_compile_1_72eac341.htm" />
+        <topic name="LookupNamespace Method " file="html/m_mvp_xml_common_xpath_dynamiccontext_lookupnamespace_1_72eac341.htm" />
+        <topic name="LookupPrefix Method " file="html/m_mvp_xml_common_xpath_dynamiccontext_lookupprefix_1_72eac341.htm" />
+        <topic name="PreserveWhitespace Method " file="html/m_mvp_xml_common_xpath_dynamiccontext_preservewhitespace_1_3b89351a.htm" />
+        <topic name="ResolveFunction Method " file="html/m_mvp_xml_common_xpath_dynamiccontext_resolvefunction_3_2875465d.htm" />
+        <topic name="ResolveVariable Method " file="html/m_mvp_xml_common_xpath_dynamiccontext_resolvevariable_2_52fce4af.htm" />
+      </topic>
+      <topic name="DynamicContext Properties " file="html/properties_t_mvp_xml_common_xpath_dynamiccontext.htm">
+        <topic name="Whitespace Property " file="html/p_mvp_xml_common_xpath_dynamiccontext_whitespace.htm" />
+      </topic>
+    </topic>
+    <topic name="EmptyXPathNodeIterator Class" file="html/t_mvp_xml_common_xpath_emptyxpathnodeiterator.htm">
+      <topic name="EmptyXPathNodeIterator Members" file="html/allmembers_t_mvp_xml_common_xpath_emptyxpathnodeiterator.htm" />
+      <topic name="EmptyXPathNodeIterator Fields" file="html/fields_t_mvp_xml_common_xpath_emptyxpathnodeiterator.htm">
+        <topic name="Instance Field" file="html/f_mvp_xml_common_xpath_emptyxpathnodeiterator_instance.htm" />
+      </topic>
+      <topic name="EmptyXPathNodeIterator Methods " file="html/methods_t_mvp_xml_common_xpath_emptyxpathnodeiterator.htm">
+        <topic name="Clone Method " file="html/m_mvp_xml_common_xpath_emptyxpathnodeiterator_clone.htm" />
+        <topic name="MoveNext Method " file="html/m_mvp_xml_common_xpath_emptyxpathnodeiterator_movenext.htm" />
+      </topic>
+      <topic name="EmptyXPathNodeIterator Properties " file="html/properties_t_mvp_xml_common_xpath_emptyxpathnodeiterator.htm">
+        <topic name="Count Property " file="html/p_mvp_xml_common_xpath_emptyxpathnodeiterator_count.htm" />
+        <topic name="Current Property " file="html/p_mvp_xml_common_xpath_emptyxpathnodeiterator_current.htm" />
+        <topic name="CurrentPosition Property " file="html/p_mvp_xml_common_xpath_emptyxpathnodeiterator_currentposition.htm" />
+      </topic>
+    </topic>
+    <topic name="IHasXPathNavigator Interface" file="html/t_mvp_xml_common_xpath_ihasxpathnavigator.htm">
+      <topic name="IHasXPathNavigator Members" file="html/allmembers_t_mvp_xml_common_xpath_ihasxpathnavigator.htm" />
+      <topic name="IHasXPathNavigator Methods " file="html/methods_t_mvp_xml_common_xpath_ihasxpathnavigator.htm">
+        <topic name="GetNavigator Method " file="html/m_mvp_xml_common_xpath_ihasxpathnavigator_getnavigator.htm" />
+      </topic>
+    </topic>
+    <topic name="IndexingXPathNavigator Class" file="html/t_mvp_xml_common_xpath_indexingxpathnavigator.htm">
+      <topic name="IndexingXPathNavigator Members" file="html/allmembers_t_mvp_xml_common_xpath_indexingxpathnavigator.htm" />
+      <topic name="IndexingXPathNavigator Constructor " file="html/c_mvp_xml_common_xpath_indexingxpathnavigator_ctor_1_a8eee4ed.htm" />
+      <topic name="IndexingXPathNavigator Methods " file="html/methods_t_mvp_xml_common_xpath_indexingxpathnavigator.htm">
+        <topic name="AddKey Method " file="html/m_mvp_xml_common_xpath_indexingxpathnavigator_addkey_3_45ca51f2.htm" />
+        <topic name="AppendChild Method " file="html/o_t_mvp_xml_common_xpath_indexingxpathnavigator_appendchild.htm" />
+        <topic name="BuildIndexes Method " file="html/m_mvp_xml_common_xpath_indexingxpathnavigator_buildindexes.htm" />
+        <topic name="Clone Method " file="html/m_mvp_xml_common_xpath_indexingxpathnavigator_clone.htm" />
+        <topic name="Compile Method " file="html/m_mvp_xml_common_xpath_indexingxpathnavigator_compile_1_72eac341.htm" />
+        <topic name="Evaluate Method " file="html/o_t_mvp_xml_common_xpath_indexingxpathnavigator_evaluate.htm" />
+        <topic name="GetAttribute Method " file="html/m_mvp_xml_common_xpath_indexingxpathnavigator_getattribute_2_52fce4af.htm" />
+        <topic name="GetNamespace Method " file="html/m_mvp_xml_common_xpath_indexingxpathnavigator_getnamespace_1_72eac341.htm" />
+        <topic name="InsertAfter Method " file="html/o_t_mvp_xml_common_xpath_indexingxpathnavigator_insertafter.htm" />
+        <topic name="InsertBefore Method " file="html/o_t_mvp_xml_common_xpath_indexingxpathnavigator_insertbefore.htm" />
+        <topic name="IsSamePosition Method " file="html/m_mvp_xml_common_xpath_indexingxpathnavigator_issameposition_1_3b89351a.htm" />
+        <topic name="Matches Method " file="html/o_t_mvp_xml_common_xpath_indexingxpathnavigator_matches.htm" />
+        <topic name="MoveTo Method " file="html/m_mvp_xml_common_xpath_indexingxpathnavigator_moveto_1_3b89351a.htm" />
+        <topic name="MoveToAttribute Method " file="html/m_mvp_xml_common_xpath_indexingxpathnavigator_movetoattribute_2_52fce4af.htm" />
+        <topic name="MoveToChild Method " file="html/o_t_mvp_xml_common_xpath_indexingxpathnavigator_movetochild.htm" />
+        <topic name="MoveToFirst Method " file="html/m_mvp_xml_common_xpath_indexingxpathnavigator_movetofirst.htm" />
+        <topic name="MoveToFirstAttribute Method " file="html/m_mvp_xml_common_xpath_indexingxpathnavigator_movetofirstattribute.htm" />
+        <topic name="MoveToFirstChild Method " file="html/m_mvp_xml_common_xpath_indexingxpathnavigator_movetofirstchild.htm" />
+        <topic name="MoveToFirstNamespace Method " file="html/m_mvp_xml_common_xpath_indexingxpathnavigator_movetofirstnamespace_1_c028fe5c.htm" />
+        <topic name="MoveToFollowing Method " file="html/o_t_mvp_xml_common_xpath_indexingxpathnavigator_movetofollowing.htm" />
+        <topic name="MoveToId Method " file="html/m_mvp_xml_common_xpath_indexingxpathnavigator_movetoid_1_72eac341.htm" />
+        <topic name="MoveToNamespace Method " file="html/m_mvp_xml_common_xpath_indexingxpathnavigator_movetonamespace_1_72eac341.htm" />
+        <topic name="MoveToNext Method " file="html/o_t_mvp_xml_common_xpath_indexingxpathnavigator_movetonext.htm">
+          <topic name="MoveToNext Method " file="html/m_mvp_xml_common_xpath_indexingxpathnavigator_movetonext.htm" />
+        </topic>
+        <topic name="MoveToNextAttribute Method " file="html/m_mvp_xml_common_xpath_indexingxpathnavigator_movetonextattribute.htm" />
+        <topic name="MoveToNextNamespace Method " file="html/m_mvp_xml_common_xpath_indexingxpathnavigator_movetonextnamespace_1_c028fe5c.htm" />
+        <topic name="MoveToParent Method " file="html/m_mvp_xml_common_xpath_indexingxpathnavigator_movetoparent.htm" />
+        <topic name="MoveToPrevious Method " file="html/m_mvp_xml_common_xpath_indexingxpathnavigator_movetoprevious.htm" />
+        <topic name="MoveToRoot Method " file="html/m_mvp_xml_common_xpath_indexingxpathnavigator_movetoroot.htm" />
+        <topic name="PrependChild Method " file="html/o_t_mvp_xml_common_xpath_indexingxpathnavigator_prependchild.htm" />
+        <topic name="ReplaceSelf Method " file="html/o_t_mvp_xml_common_xpath_indexingxpathnavigator_replaceself.htm" />
+        <topic name="Select Method " file="html/o_t_mvp_xml_common_xpath_indexingxpathnavigator_select.htm">
+          <topic name="Select Method (String)" file="html/m_mvp_xml_common_xpath_indexingxpathnavigator_select_1_72eac341.htm" />
+        </topic>
+        <topic name="SelectAncestors Method " file="html/o_t_mvp_xml_common_xpath_indexingxpathnavigator_selectancestors.htm" />
+        <topic name="SelectChildren Method " file="html/o_t_mvp_xml_common_xpath_indexingxpathnavigator_selectchildren.htm" />
+        <topic name="SelectDescendants Method " file="html/o_t_mvp_xml_common_xpath_indexingxpathnavigator_selectdescendants.htm" />
+        <topic name="SelectSingleNode Method " file="html/o_t_mvp_xml_common_xpath_indexingxpathnavigator_selectsinglenode.htm" />
+        <topic name="ValueAs Method " file="html/o_t_mvp_xml_common_xpath_indexingxpathnavigator_valueas.htm" />
+      </topic>
+      <topic name="IndexingXPathNavigator Properties " file="html/properties_t_mvp_xml_common_xpath_indexingxpathnavigator.htm">
+        <topic name="BaseURI Property " file="html/p_mvp_xml_common_xpath_indexingxpathnavigator_baseuri.htm" />
+        <topic name="HasAttributes Property " file="html/p_mvp_xml_common_xpath_indexingxpathnavigator_hasattributes.htm" />
+        <topic name="HasChildren Property " file="html/p_mvp_xml_common_xpath_indexingxpathnavigator_haschildren.htm" />
+        <topic name="IsEmptyElement Property " file="html/p_mvp_xml_common_xpath_indexingxpathnavigator_isemptyelement.htm" />
+        <topic name="LocalName Property " file="html/p_mvp_xml_common_xpath_indexingxpathnavigator_localname.htm" />
+        <topic name="Name Property " file="html/p_mvp_xml_common_xpath_indexingxpathnavigator_name.htm" />
+        <topic name="NamespaceURI Property " file="html/p_mvp_xml_common_xpath_indexingxpathnavigator_namespaceuri.htm" />
+        <topic name="NameTable Property " file="html/p_mvp_xml_common_xpath_indexingxpathnavigator_nametable.htm" />
+        <topic name="NodeType Property " file="html/p_mvp_xml_common_xpath_indexingxpathnavigator_nodetype.htm" />
+        <topic name="Prefix Property " file="html/p_mvp_xml_common_xpath_indexingxpathnavigator_prefix.htm" />
+        <topic name="Value Property " file="html/p_mvp_xml_common_xpath_indexingxpathnavigator_value.htm" />
+        <topic name="XmlLang Property " file="html/p_mvp_xml_common_xpath_indexingxpathnavigator_xmllang.htm" />
+      </topic>
+    </topic>
+    <topic name="SingletonXPathNodeIterator Class" file="html/t_mvp_xml_common_xpath_singletonxpathnodeiterator.htm">
+      <topic name="SingletonXPathNodeIterator Members" file="html/allmembers_t_mvp_xml_common_xpath_singletonxpathnodeiterator.htm" />
+      <topic name="SingletonXPathNodeIterator Constructor " file="html/c_mvp_xml_common_xpath_singletonxpathnodeiterator_ctor_1_a8eee4ed.htm" />
+      <topic name="SingletonXPathNodeIterator Methods " file="html/methods_t_mvp_xml_common_xpath_singletonxpathnodeiterator.htm">
+        <topic name="Clone Method " file="html/m_mvp_xml_common_xpath_singletonxpathnodeiterator_clone.htm" />
+        <topic name="MoveNext Method " file="html/m_mvp_xml_common_xpath_singletonxpathnodeiterator_movenext.htm" />
+      </topic>
+      <topic name="SingletonXPathNodeIterator Properties " file="html/properties_t_mvp_xml_common_xpath_singletonxpathnodeiterator.htm">
+        <topic name="Count Property " file="html/p_mvp_xml_common_xpath_singletonxpathnodeiterator_count.htm" />
+        <topic name="Current Property " file="html/p_mvp_xml_common_xpath_singletonxpathnodeiterator_current.htm" />
+        <topic name="CurrentPosition Property " file="html/p_mvp_xml_common_xpath_singletonxpathnodeiterator_currentposition.htm" />
+      </topic>
+    </topic>
+    <topic name="SubtreeXPathNavigator Class" file="html/t_mvp_xml_common_xpath_subtreexpathnavigator.htm">
+      <topic name="SubtreeXPathNavigator Members" file="html/allmembers_t_mvp_xml_common_xpath_subtreexpathnavigator.htm" />
+      <topic name="SubtreeXPathNavigator Constructor " file="html/o_t_mvp_xml_common_xpath_subtreexpathnavigator_ctor.htm">
+        <topic name="SubtreeXPathNavigator Constructor (XPathNavigator)" file="html/c_mvp_xml_common_xpath_subtreexpathnavigator_ctor_1_a8eee4ed.htm" />
+        <topic name="SubtreeXPathNavigator Constructor (XPathNavigator, Boolean)" file="html/c_mvp_xml_common_xpath_subtreexpathnavigator_ctor_2_889f3f56.htm" />
+      </topic>
+      <topic name="SubtreeXPathNavigator Methods " file="html/methods_t_mvp_xml_common_xpath_subtreexpathnavigator.htm">
+        <topic name="AppendChild Method " file="html/o_t_mvp_xml_common_xpath_subtreexpathnavigator_appendchild.htm" />
+        <topic name="Clone Method " file="html/m_mvp_xml_common_xpath_subtreexpathnavigator_clone.htm" />
+        <topic name="Evaluate Method " file="html/o_t_mvp_xml_common_xpath_subtreexpathnavigator_evaluate.htm" />
+        <topic name="GetAttribute Method " file="html/m_mvp_xml_common_xpath_subtreexpathnavigator_getattribute_2_52fce4af.htm" />
+        <topic name="GetNamespace Method " file="html/m_mvp_xml_common_xpath_subtreexpathnavigator_getnamespace_1_72eac341.htm" />
+        <topic name="InsertAfter Method " file="html/o_t_mvp_xml_common_xpath_subtreexpathnavigator_insertafter.htm" />
+        <topic name="InsertBefore Method " file="html/o_t_mvp_xml_common_xpath_subtreexpathnavigator_insertbefore.htm" />
+        <topic name="IsSamePosition Method " file="html/m_mvp_xml_common_xpath_subtreexpathnavigator_issameposition_1_3b89351a.htm" />
+        <topic name="Matches Method " file="html/o_t_mvp_xml_common_xpath_subtreexpathnavigator_matches.htm" />
+        <topic name="MoveTo Method " file="html/m_mvp_xml_common_xpath_subtreexpathnavigator_moveto_1_3b89351a.htm" />
+        <topic name="MoveToAttribute Method " file="html/m_mvp_xml_common_xpath_subtreexpathnavigator_movetoattribute_2_52fce4af.htm" />
+        <topic name="MoveToChild Method " file="html/o_t_mvp_xml_common_xpath_subtreexpathnavigator_movetochild.htm" />
+        <topic name="MoveToFirst Method " file="html/m_mvp_xml_common_xpath_subtreexpathnavigator_movetofirst.htm" />
+        <topic name="MoveToFirstAttribute Method " file="html/m_mvp_xml_common_xpath_subtreexpathnavigator_movetofirstattribute.htm" />
+        <topic name="MoveToFirstChild Method " file="html/m_mvp_xml_common_xpath_subtreexpathnavigator_movetofirstchild.htm" />
+        <topic name="MoveToFirstNamespace Method " file="html/m_mvp_xml_common_xpath_subtreexpathnavigator_movetofirstnamespace_1_c028fe5c.htm" />
+        <topic name="MoveToFollowing Method " file="html/o_t_mvp_xml_common_xpath_subtreexpathnavigator_movetofollowing.htm" />
+        <topic name="MoveToId Method " file="html/m_mvp_xml_common_xpath_subtreexpathnavigator_movetoid_1_72eac341.htm" />
+        <topic name="MoveToNamespace Method " file="html/m_mvp_xml_common_xpath_subtreexpathnavigator_movetonamespace_1_72eac341.htm" />
+        <topic name="MoveToNext Method " file="html/o_t_mvp_xml_common_xpath_subtreexpathnavigator_movetonext.htm">
+          <topic name="MoveToNext Method " file="html/m_mvp_xml_common_xpath_subtreexpathnavigator_movetonext.htm" />
+        </topic>
+        <topic name="MoveToNextAttribute Method " file="html/m_mvp_xml_common_xpath_subtreexpathnavigator_movetonextattribute.htm" />
+        <topic name="MoveToNextNamespace Method " file="html/m_mvp_xml_common_xpath_subtreexpathnavigator_movetonextnamespace_1_c028fe5c.htm" />
+        <topic name="MoveToParent Method " file="html/m_mvp_xml_common_xpath_subtreexpathnavigator_movetoparent.htm" />
+        <topic name="MoveToPrevious Method " file="html/m_mvp_xml_common_xpath_subtreexpathnavigator_movetoprevious.htm" />
+        <topic name="MoveToRoot Method " file="html/m_mvp_xml_common_xpath_subtreexpathnavigator_movetoroot.htm" />
+        <topic name="PrependChild Method " file="html/o_t_mvp_xml_common_xpath_subtreexpathnavigator_prependchild.htm" />
+        <topic name="ReplaceSelf Method " file="html/o_t_mvp_xml_common_xpath_subtreexpathnavigator_replaceself.htm" />
+        <topic name="Select Method " file="html/o_t_mvp_xml_common_xpath_subtreexpathnavigator_select.htm" />
+        <topic name="SelectAncestors Method " file="html/o_t_mvp_xml_common_xpath_subtreexpathnavigator_selectancestors.htm" />
+        <topic name="SelectChildren Method " file="html/o_t_mvp_xml_common_xpath_subtreexpathnavigator_selectchildren.htm" />
+        <topic name="SelectDescendants Method " file="html/o_t_mvp_xml_common_xpath_subtreexpathnavigator_selectdescendants.htm" />
+        <topic name="SelectSingleNode Method " file="html/o_t_mvp_xml_common_xpath_subtreexpathnavigator_selectsinglenode.htm" />
+        <topic name="ValueAs Method " file="html/o_t_mvp_xml_common_xpath_subtreexpathnavigator_valueas.htm" />
+      </topic>
+      <topic name="SubtreeXPathNavigator Properties " file="html/properties_t_mvp_xml_common_xpath_subtreexpathnavigator.htm">
+        <topic name="BaseURI Property " file="html/p_mvp_xml_common_xpath_subtreexpathnavigator_baseuri.htm" />
+        <topic name="HasAttributes Property " file="html/p_mvp_xml_common_xpath_subtreexpathnavigator_hasattributes.htm" />
+        <topic name="HasChildren Property " file="html/p_mvp_xml_common_xpath_subtreexpathnavigator_haschildren.htm" />
+        <topic name="IsEmptyElement Property " file="html/p_mvp_xml_common_xpath_subtreexpathnavigator_isemptyelement.htm" />
+        <topic name="LocalName Property " file="html/p_mvp_xml_common_xpath_subtreexpathnavigator_localname.htm" />
+        <topic name="Name Property " file="html/p_mvp_xml_common_xpath_subtreexpathnavigator_name.htm" />
+        <topic name="NamespaceURI Property " file="html/p_mvp_xml_common_xpath_subtreexpathnavigator_namespaceuri.htm" />
+        <topic name="NameTable Property " file="html/p_mvp_xml_common_xpath_subtreexpathnavigator_nametable.htm" />
+        <topic name="NodeType Property " file="html/p_mvp_xml_common_xpath_subtreexpathnavigator_nodetype.htm" />
+        <topic name="Prefix Property " file="html/p_mvp_xml_common_xpath_subtreexpathnavigator_prefix.htm" />
+        <topic name="Value Property " file="html/p_mvp_xml_common_xpath_subtreexpathnavigator_value.htm" />
+        <topic name="XmlLang Property " file="html/p_mvp_xml_common_xpath_subtreexpathnavigator_xmllang.htm" />
+      </topic>
+    </topic>
+    <topic name="XPathCache Class" file="html/t_mvp_xml_common_xpath_xpathcache.htm">
+      <topic name="XPathCache Members" file="html/allmembers_t_mvp_xml_common_xpath_xpathcache.htm" />
+      <topic name="XPathCache Methods " file="html/methods_t_mvp_xml_common_xpath_xpathcache.htm">
+        <topic name="Evaluate Method " file="html/o_t_mvp_xml_common_xpath_xpathcache_evaluate.htm">
+          <topic name="Evaluate Method (String, XPathNavigator)" file="html/m_mvp_xml_common_xpath_xpathcache_evaluate_2_be3ebfdf.htm" />
+          <topic name="Evaluate Method (String, XPathNavigator, XmlPrefix[])" file="html/m_mvp_xml_common_xpath_xpathcache_evaluate_3_a3427462.htm" />
+          <topic name="Evaluate Method (String, XPathNavigator, XPathVariable[])" file="html/m_mvp_xml_common_xpath_xpathcache_evaluate_3_63e9e8c9.htm" />
+          <topic name="Evaluate Method (String, XPathNavigator, XmlNamespaceManager)" file="html/m_mvp_xml_common_xpath_xpathcache_evaluate_3_a98e0328.htm" />
+          <topic name="Evaluate Method (String, XPathNavigator, XmlPrefix[], XPathVariable[])" file="html/m_mvp_xml_common_xpath_xpathcache_evaluate_4_e72a9539.htm" />
+          <topic name="Evaluate Method (String, XPathNavigator, XmlNamespaceManager, XPathVariable[])" file="html/m_mvp_xml_common_xpath_xpathcache_evaluate_4_96039d8b.htm" />
+        </topic>
+        <topic name="Select Method " file="html/o_t_mvp_xml_common_xpath_xpathcache_select.htm">
+          <topic name="Select Method (String, XPathNavigator)" file="html/m_mvp_xml_common_xpath_xpathcache_select_2_be3ebfdf.htm" />
+          <topic name="Select Method (String, XPathNavigator, XmlPrefix[])" file="html/m_mvp_xml_common_xpath_xpathcache_select_3_a3427462.htm" />
+          <topic name="Select Method (String, XPathNavigator, XPathVariable[])" file="html/m_mvp_xml_common_xpath_xpathcache_select_3_63e9e8c9.htm" />
+          <topic name="Select Method (String, XPathNavigator, XmlNamespaceManager)" file="html/m_mvp_xml_common_xpath_xpathcache_select_3_a98e0328.htm" />
+          <topic name="Select Method (String, XPathNavigator, XmlPrefix[], XPathVariable[])" file="html/m_mvp_xml_common_xpath_xpathcache_select_4_e72a9539.htm" />
+          <topic name="Select Method (String, XPathNavigator, XmlNamespaceManager, XPathVariable[])" file="html/m_mvp_xml_common_xpath_xpathcache_select_4_96039d8b.htm" />
+        </topic>
+        <topic name="SelectNodes Method " file="html/o_t_mvp_xml_common_xpath_xpathcache_selectnodes.htm">
+          <topic name="SelectNodes Method (String, XmlNode)" file="html/m_mvp_xml_common_xpath_xpathcache_selectnodes_2_4be32f8b.htm" />
+          <topic name="SelectNodes Method (String, XmlNode, XmlPrefix[])" file="html/m_mvp_xml_common_xpath_xpathcache_selectnodes_3_0f4e820b.htm" />
+          <topic name="SelectNodes Method (String, XmlNode, XPathVariable[])" file="html/m_mvp_xml_common_xpath_xpathcache_selectnodes_3_9014ca37.htm" />
+          <topic name="SelectNodes Method (String, XmlNode, XmlNamespaceManager)" file="html/m_mvp_xml_common_xpath_xpathcache_selectnodes_3_b490c32f.htm" />
+          <topic name="SelectNodes Method (String, XmlNode, XmlPrefix[], XPathVariable[])" file="html/m_mvp_xml_common_xpath_xpathcache_selectnodes_4_52163e01.htm" />
+          <topic name="SelectNodes Method (String, XmlNode, XmlNamespaceManager, XPathVariable[])" file="html/m_mvp_xml_common_xpath_xpathcache_selectnodes_4_0c7c0cb0.htm" />
+        </topic>
+        <topic name="SelectNodesSorted Method " file="html/o_t_mvp_xml_common_xpath_xpathcache_selectnodessorted.htm">
+          <topic name="SelectNodesSorted Method (String, XmlNode, Object, IComparer)" file="html/m_mvp_xml_common_xpath_xpathcache_selectnodessorted_4_7b45dce0.htm" />
+          <topic name="SelectNodesSorted Method (String, XmlNode, Object, IComparer, XmlPrefix[])" file="html/m_mvp_xml_common_xpath_xpathcache_selectnodessorted_5_c49b0995.htm" />
+          <topic name="SelectNodesSorted Method (String, XmlNode, Object, IComparer, XPathVariable[])" file="html/m_mvp_xml_common_xpath_xpathcache_selectnodessorted_5_7fabd405.htm" />
+          <topic name="SelectNodesSorted Method (String, XmlNode, Object, IComparer, XmlPrefix[], XPathVariable[])" file="html/m_mvp_xml_common_xpath_xpathcache_selectnodessorted_6_50a9c7ce.htm" />
+          <topic name="SelectNodesSorted Method (String, XmlNode, Object, IComparer, XmlNamespaceManager, XPathVariable[])" file="html/m_mvp_xml_common_xpath_xpathcache_selectnodessorted_6_8d03e3af.htm" />
+          <topic name="SelectNodesSorted Method (String, XmlNode, Object, XmlSortOrder, XmlCaseOrder, String, XmlDataType)" file="html/m_mvp_xml_common_xpath_xpathcache_selectnodessorted_7_d50401c2.htm" />
+          <topic name="SelectNodesSorted Method (String, XmlNode, Object, XmlSortOrder, XmlCaseOrder, String, XmlDataType, XmlPrefix[])" file="html/m_mvp_xml_common_xpath_xpathcache_selectnodessorted_8_ddd84434.htm" />
+          <topic name="SelectNodesSorted Method (String, XmlNode, Object, XmlSortOrder, XmlCaseOrder, String, XmlDataType, XPathVariable[])" file="html/m_mvp_xml_common_xpath_xpathcache_selectnodessorted_8_1bd5e42d.htm" />
+          <topic name="SelectNodesSorted Method (String, XmlNode, Object, XmlSortOrder, XmlCaseOrder, String, XmlDataType, XmlNamespaceManager)" file="html/m_mvp_xml_common_xpath_xpathcache_selectnodessorted_8_5a4ca6cd.htm" />
+          <topic name="SelectNodesSorted Method (String, XmlNode, Object, XmlSortOrder, XmlCaseOrder, String, XmlDataType, XmlPrefix[], XPathVariable[])" file="html/m_mvp_xml_common_xpath_xpathcache_selectnodessorted_9_948170de.htm" />
+          <topic name="SelectNodesSorted Method (String, XmlNode, Object, XmlSortOrder, XmlCaseOrder, String, XmlDataType, XmlNamespaceManager, XPathVariable[])" file="html/m_mvp_xml_common_xpath_xpathcache_selectnodessorted_9_95213242.htm" />
+        </topic>
+        <topic name="SelectSingleNode Method " file="html/o_t_mvp_xml_common_xpath_xpathcache_selectsinglenode.htm">
+          <topic name="SelectSingleNode Method (String, XmlNode)" file="html/m_mvp_xml_common_xpath_xpathcache_selectsinglenode_2_4be32f8b.htm" />
+          <topic name="SelectSingleNode Method (String, XmlNode, XmlPrefix[])" file="html/m_mvp_xml_common_xpath_xpathcache_selectsinglenode_3_0f4e820b.htm" />
+          <topic name="SelectSingleNode Method (String, XmlNode, XPathVariable[])" file="html/m_mvp_xml_common_xpath_xpathcache_selectsinglenode_3_9014ca37.htm" />
+          <topic name="SelectSingleNode Method (String, XmlNode, XmlNamespaceManager)" file="html/m_mvp_xml_common_xpath_xpathcache_selectsinglenode_3_b490c32f.htm" />
+          <topic name="SelectSingleNode Method (String, XmlNode, XmlPrefix[], XPathVariable[])" file="html/m_mvp_xml_common_xpath_xpathcache_selectsinglenode_4_52163e01.htm" />
+          <topic name="SelectSingleNode Method (String, XmlNode, XmlNamespaceManager, XPathVariable[])" file="html/m_mvp_xml_common_xpath_xpathcache_selectsinglenode_4_0c7c0cb0.htm" />
+        </topic>
+        <topic name="SelectSorted Method " file="html/o_t_mvp_xml_common_xpath_xpathcache_selectsorted.htm">
+          <topic name="SelectSorted Method (String, XPathNavigator, Object, IComparer)" file="html/m_mvp_xml_common_xpath_xpathcache_selectsorted_4_dbd75be9.htm" />
+          <topic name="SelectSorted Method (String, XPathNavigator, Object, IComparer, XmlPrefix[])" file="html/m_mvp_xml_common_xpath_xpathcache_selectsorted_5_6ad756e5.htm" />
+          <topic name="SelectSorted Method (String, XPathNavigator, Object, IComparer, XPathVariable[])" file="html/m_mvp_xml_common_xpath_xpathcache_selectsorted_5_055f0d30.htm" />
+          <topic name="SelectSorted Method (String, XPathNavigator, Object, IComparer, XmlPrefix[], XPathVariable[])" file="html/m_mvp_xml_common_xpath_xpathcache_selectsorted_6_7bc4eab6.htm" />
+          <topic name="SelectSorted Method (String, XPathNavigator, Object, IComparer, XmlNamespaceManager, XPathVariable[])" file="html/m_mvp_xml_common_xpath_xpathcache_selectsorted_6_494735a0.htm" />
+          <topic name="SelectSorted Method (String, XPathNavigator, Object, XmlSortOrder, XmlCaseOrder, String, XmlDataType)" file="html/m_mvp_xml_common_xpath_xpathcache_selectsorted_7_f9808e9c.htm" />
+          <topic name="SelectSorted Method (String, XPathNavigator, Object, XmlSortOrder, XmlCaseOrder, String, XmlDataType, XmlPrefix[])" file="html/m_mvp_xml_common_xpath_xpathcache_selectsorted_8_69085f3c.htm" />
+          <topic name="SelectSorted Method (String, XPathNavigator, Object, XmlSortOrder, XmlCaseOrder, String, XmlDataType, XPathVariable[])" file="html/m_mvp_xml_common_xpath_xpathcache_selectsorted_8_219dfa3b.htm" />
+          <topic name="SelectSorted Method (String, XPathNavigator, Object, XmlSortOrder, XmlCaseOrder, String, XmlDataType, XmlNamespaceManager)" file="html/m_mvp_xml_common_xpath_xpathcache_selectsorted_8_d5626bc8.htm" />
+          <topic name="SelectSorted Method (String, XPathNavigator, Object, XmlSortOrder, XmlCaseOrder, String, XmlDataType, XmlPrefix[], XPathVariable[])" file="html/m_mvp_xml_common_xpath_xpathcache_selectsorted_9_1d537a81.htm" />
+          <topic name="SelectSorted Method (String, XPathNavigator, Object, XmlSortOrder, XmlCaseOrder, String, XmlDataType, XmlNamespaceManager, XPathVariable[])" file="html/m_mvp_xml_common_xpath_xpathcache_selectsorted_9_0c1e5d5a.htm" />
+        </topic>
+      </topic>
+    </topic>
+    <topic name="XPathDocumentWriter Class" file="html/t_mvp_xml_common_xpath_xpathdocumentwriter.htm">
+      <topic name="XPathDocumentWriter Members" file="html/allmembers_t_mvp_xml_common_xpath_xpathdocumentwriter.htm" />
+      <topic name="XPathDocumentWriter Constructor " file="html/o_t_mvp_xml_common_xpath_xpathdocumentwriter_ctor.htm">
+        <topic name="XPathDocumentWriter Constructor " file="html/c_mvp_xml_common_xpath_xpathdocumentwriter_ctor.htm" />
+        <topic name="XPathDocumentWriter Constructor (String)" file="html/c_mvp_xml_common_xpath_xpathdocumentwriter_ctor_1_61b4e77c.htm" />
+      </topic>
+      <topic name="XPathDocumentWriter Methods " file="html/methods_t_mvp_xml_common_xpath_xpathdocumentwriter.htm">
+        <topic name="Close Method " file="html/m_mvp_xml_common_xpath_xpathdocumentwriter_close.htm" />
+        <topic name="Dispose Method " file="html/m_mvp_xml_common_xpath_xpathdocumentwriter_dispose_1_36d384f7.htm" />
+        <topic name="WriteAttributeString Method " file="html/o_t_mvp_xml_common_xpath_xpathdocumentwriter_writeattributestring.htm" />
+        <topic name="WriteElementString Method " file="html/o_t_mvp_xml_common_xpath_xpathdocumentwriter_writeelementstring.htm" />
+        <topic name="WriteNode Method " file="html/o_t_mvp_xml_common_xpath_xpathdocumentwriter_writenode.htm" />
+        <topic name="WriteRaw Method " file="html/o_t_mvp_xml_common_xpath_xpathdocumentwriter_writeraw.htm" />
+        <topic name="WriteStartAttribute Method " file="html/o_t_mvp_xml_common_xpath_xpathdocumentwriter_writestartattribute.htm" />
+        <topic name="WriteStartDocument Method " file="html/o_t_mvp_xml_common_xpath_xpathdocumentwriter_writestartdocument.htm" />
+        <topic name="WriteStartElement Method " file="html/o_t_mvp_xml_common_xpath_xpathdocumentwriter_writestartelement.htm">
+          <topic name="WriteStartElement Method (String, String, String)" file="html/m_mvp_xml_common_xpath_xpathdocumentwriter_writestartelement_3_45ca51f2.htm" />
+        </topic>
+        <topic name="WriteValue Method " file="html/o_t_mvp_xml_common_xpath_xpathdocumentwriter_writevalue.htm" />
+      </topic>
+      <topic name="XPathDocumentWriter Properties " file="html/properties_t_mvp_xml_common_xpath_xpathdocumentwriter.htm">
+        <topic name="WriteState Property " file="html/p_mvp_xml_common_xpath_xpathdocumentwriter_writestate.htm" />
+      </topic>
+    </topic>
+    <topic name="XPathIteratorReader Class" file="html/t_mvp_xml_common_xpath_xpathiteratorreader.htm">
+      <topic name="XPathIteratorReader Members" file="html/allmembers_t_mvp_xml_common_xpath_xpathiteratorreader.htm" />
+      <topic name="XPathIteratorReader Constructor " file="html/o_t_mvp_xml_common_xpath_xpathiteratorreader_ctor.htm">
+        <topic name="XPathIteratorReader Constructor " file="html/c_mvp_xml_common_xpath_xpathiteratorreader_ctor.htm" />
+        <topic name="XPathIteratorReader Constructor (XPathNodeIterator)" file="html/c_mvp_xml_common_xpath_xpathiteratorreader_ctor_1_decc81af.htm" />
+        <topic name="XPathIteratorReader Constructor (XPathNodeIterator, String)" file="html/c_mvp_xml_common_xpath_xpathiteratorreader_ctor_2_246ede3d.htm" />
+        <topic name="XPathIteratorReader Constructor (XPathNodeIterator, String, String)" file="html/c_mvp_xml_common_xpath_xpathiteratorreader_ctor_3_fc1d2c2b.htm" />
+      </topic>
+      <topic name="XPathIteratorReader Methods " file="html/methods_t_mvp_xml_common_xpath_xpathiteratorreader.htm">
+        <topic name="Close Method " file="html/m_mvp_xml_common_xpath_xpathiteratorreader_close.htm" />
+        <topic name="GetAttribute Method " file="html/o_t_mvp_xml_common_xpath_xpathiteratorreader_getattribute.htm">
+          <topic name="GetAttribute Method (Int32)" file="html/m_mvp_xml_common_xpath_xpathiteratorreader_getattribute_1_cd2d7ec9.htm" />
+          <topic name="GetAttribute Method (String)" file="html/m_mvp_xml_common_xpath_xpathiteratorreader_getattribute_1_72eac341.htm" />
+          <topic name="GetAttribute Method (String, String)" file="html/m_mvp_xml_common_xpath_xpathiteratorreader_getattribute_2_52fce4af.htm" />
+        </topic>
+        <topic name="GetSchema Method " file="html/m_mvp_xml_common_xpath_xpathiteratorreader_getschema.htm" />
+        <topic name="IsStartElement Method " file="html/o_t_mvp_xml_common_xpath_xpathiteratorreader_isstartelement.htm" />
+        <topic name="LookupNamespace Method " file="html/m_mvp_xml_common_xpath_xpathiteratorreader_lookupnamespace_1_72eac341.htm" />
+        <topic name="MoveToAttribute Method " file="html/o_t_mvp_xml_common_xpath_xpathiteratorreader_movetoattribute.htm">
+          <topic name="MoveToAttribute Method (Int32)" file="html/m_mvp_xml_common_xpath_xpathiteratorreader_movetoattribute_1_cd2d7ec9.htm" />
+          <topic name="MoveToAttribute Method (String)" file="html/m_mvp_xml_common_xpath_xpathiteratorreader_movetoattribute_1_72eac341.htm" />
+          <topic name="MoveToAttribute Method (String, String)" file="html/m_mvp_xml_common_xpath_xpathiteratorreader_movetoattribute_2_52fce4af.htm" />
+        </topic>
+        <topic name="MoveToContent Method " file="html/m_mvp_xml_common_xpath_xpathiteratorreader_movetocontent.htm" />
+        <topic name="MoveToElement Method " file="html/m_mvp_xml_common_xpath_xpathiteratorreader_movetoelement.htm" />
+        <topic name="MoveToFirstAttribute Method " file="html/m_mvp_xml_common_xpath_xpathiteratorreader_movetofirstattribute.htm" />
+        <topic name="MoveToNextAttribute Method " file="html/m_mvp_xml_common_xpath_xpathiteratorreader_movetonextattribute.htm" />
+        <topic name="Read Method " file="html/m_mvp_xml_common_xpath_xpathiteratorreader_read.htm" />
+        <topic name="ReadAttributeValue Method " file="html/m_mvp_xml_common_xpath_xpathiteratorreader_readattributevalue.htm" />
+        <topic name="ReadElementContentAs Method " file="html/o_t_mvp_xml_common_xpath_xpathiteratorreader_readelementcontentas.htm" />
+        <topic name="ReadElementContentAsBoolean Method " file="html/o_t_mvp_xml_common_xpath_xpathiteratorreader_readelementcontentasboolean.htm" />
+        <topic name="ReadElementContentAsDateTime Method " file="html/o_t_mvp_xml_common_xpath_xpathiteratorreader_readelementcontentasdatetime.htm" />
+        <topic name="ReadElementContentAsDecimal Method " file="html/o_t_mvp_xml_common_xpath_xpathiteratorreader_readelementcontentasdecimal.htm" />
+        <topic name="ReadElementContentAsDouble Method " file="html/o_t_mvp_xml_common_xpath_xpathiteratorreader_readelementcontentasdouble.htm" />
+        <topic name="ReadElementContentAsFloat Method " file="html/o_t_mvp_xml_common_xpath_xpathiteratorreader_readelementcontentasfloat.htm" />
+        <topic name="ReadElementContentAsInt Method " file="html/o_t_mvp_xml_common_xpath_xpathiteratorreader_readelementcontentasint.htm" />
+        <topic name="ReadElementContentAsLong Method " file="html/o_t_mvp_xml_common_xpath_xpathiteratorreader_readelementcontentaslong.htm" />
+        <topic name="ReadElementContentAsObject Method " file="html/o_t_mvp_xml_common_xpath_xpathiteratorreader_readelementcontentasobject.htm" />
+        <topic name="ReadElementContentAsString Method " file="html/o_t_mvp_xml_common_xpath_xpathiteratorreader_readelementcontentasstring.htm" />
+        <topic name="ReadElementString Method " file="html/o_t_mvp_xml_common_xpath_xpathiteratorreader_readelementstring.htm" />
+        <topic name="ReadInnerXml Method " file="html/m_mvp_xml_common_xpath_xpathiteratorreader_readinnerxml.htm" />
+        <topic name="ReadOuterXml Method " file="html/m_mvp_xml_common_xpath_xpathiteratorreader_readouterxml.htm" />
+        <topic name="ReadStartElement Method " file="html/o_t_mvp_xml_common_xpath_xpathiteratorreader_readstartelement.htm" />
+        <topic name="ReadToDescendant Method " file="html/o_t_mvp_xml_common_xpath_xpathiteratorreader_readtodescendant.htm" />
+        <topic name="ReadToFollowing Method " file="html/o_t_mvp_xml_common_xpath_xpathiteratorreader_readtofollowing.htm" />
+        <topic name="ReadToNextSibling Method " file="html/o_t_mvp_xml_common_xpath_xpathiteratorreader_readtonextsibling.htm" />
+        <topic name="ReadXml Method " file="html/m_mvp_xml_common_xpath_xpathiteratorreader_readxml_1_3282adce.htm" />
+        <topic name="ResolveEntity Method " file="html/m_mvp_xml_common_xpath_xpathiteratorreader_resolveentity.htm" />
+        <topic name="WriteXml Method " file="html/m_mvp_xml_common_xpath_xpathiteratorreader_writexml_1_6304620f.htm" />
+      </topic>
+      <topic name="XPathIteratorReader Properties " file="html/properties_t_mvp_xml_common_xpath_xpathiteratorreader.htm">
+        <topic name="AttributeCount Property " file="html/p_mvp_xml_common_xpath_xpathiteratorreader_attributecount.htm" />
+        <topic name="BaseURI Property " file="html/p_mvp_xml_common_xpath_xpathiteratorreader_baseuri.htm" />
+        <topic name="Depth Property " file="html/p_mvp_xml_common_xpath_xpathiteratorreader_depth.htm" />
+        <topic name="EOF Property " file="html/p_mvp_xml_common_xpath_xpathiteratorreader_eof.htm" />
+        <topic name="HasValue Property " file="html/p_mvp_xml_common_xpath_xpathiteratorreader_hasvalue.htm" />
+        <topic name="IsDefault Property " file="html/p_mvp_xml_common_xpath_xpathiteratorreader_isdefault.htm" />
+        <topic name="IsEmptyElement Property " file="html/p_mvp_xml_common_xpath_xpathiteratorreader_isemptyelement.htm" />
+        <topic name="Item Property " file="html/o_t_mvp_xml_common_xpath_xpathiteratorreader_item.htm">
+          <topic name="Item Property (Int32)" file="html/p_mvp_xml_common_xpath_xpathiteratorreader_item_1_cd2d7ec9.htm" />
+          <topic name="Item Property (String)" file="html/p_mvp_xml_common_xpath_xpathiteratorreader_item_1_72eac341.htm" />
+          <topic name="Item Property (String, String)" file="html/p_mvp_xml_common_xpath_xpathiteratorreader_item_2_52fce4af.htm" />
+        </topic>
+        <topic name="LocalName Property " file="html/p_mvp_xml_common_xpath_xpathiteratorreader_localname.htm" />
+        <topic name="Name Property " file="html/p_mvp_xml_common_xpath_xpathiteratorreader_name.htm" />
+        <topic name="NamespaceURI Property " file="html/p_mvp_xml_common_xpath_xpathiteratorreader_namespaceuri.htm" />
+        <topic name="NameTable Property " file="html/p_mvp_xml_common_xpath_xpathiteratorreader_nametable.htm" />
+        <topic name="NodeType Property " file="html/p_mvp_xml_common_xpath_xpathiteratorreader_nodetype.htm" />
+        <topic name="Prefix Property " file="html/p_mvp_xml_common_xpath_xpathiteratorreader_prefix.htm" />
+        <topic name="QuoteChar Property " file="html/p_mvp_xml_common_xpath_xpathiteratorreader_quotechar.htm" />
+        <topic name="ReadState Property " file="html/p_mvp_xml_common_xpath_xpathiteratorreader_readstate.htm" />
+        <topic name="Value Property " file="html/p_mvp_xml_common_xpath_xpathiteratorreader_value.htm" />
+        <topic name="XmlLang Property " file="html/p_mvp_xml_common_xpath_xpathiteratorreader_xmllang.htm" />
+        <topic name="XmlSpace Property " file="html/p_mvp_xml_common_xpath_xpathiteratorreader_xmlspace.htm" />
+      </topic>
+    </topic>
+    <topic name="XPathNavigatorIterator Class" file="html/t_mvp_xml_common_xpath_xpathnavigatoriterator.htm">
+      <topic name="XPathNavigatorIterator Members" file="html/allmembers_t_mvp_xml_common_xpath_xpathnavigatoriterator.htm" />
+      <topic name="XPathNavigatorIterator Constructor " file="html/o_t_mvp_xml_common_xpath_xpathnavigatoriterator_ctor.htm">
+        <topic name="XPathNavigatorIterator Constructor " file="html/c_mvp_xml_common_xpath_xpathnavigatoriterator_ctor.htm" />
+        <topic name="XPathNavigatorIterator Constructor (List)" file="html/c_mvp_xml_common_xpath_xpathnavigatoriterator_ctor_1_72a2a658.htm" />
+        <topic name="XPathNavigatorIterator Constructor (Int32)" file="html/c_mvp_xml_common_xpath_xpathnavigatoriterator_ctor_1_f9cace8a.htm" />
+        <topic name="XPathNavigatorIterator Constructor (XPathNavigator)" file="html/c_mvp_xml_common_xpath_xpathnavigatoriterator_ctor_1_a8eee4ed.htm" />
+        <topic name="XPathNavigatorIterator Constructor (XPathNodeIterator)" file="html/c_mvp_xml_common_xpath_xpathnavigatoriterator_ctor_1_decc81af.htm" />
+        <topic name="XPathNavigatorIterator Constructor (XPathNodeIterator, Boolean)" file="html/c_mvp_xml_common_xpath_xpathnavigatoriterator_ctor_2_9d1ad939.htm" />
+      </topic>
+      <topic name="XPathNavigatorIterator Methods " file="html/methods_t_mvp_xml_common_xpath_xpathnavigatoriterator.htm">
+        <topic name="Add Method " file="html/o_t_mvp_xml_common_xpath_xpathnavigatoriterator_add.htm">
+          <topic name="Add Method (IEnumerable)" file="html/m_mvp_xml_common_xpath_xpathnavigatoriterator_add_1_a4ac0e8e.htm" />
+          <topic name="Add Method (XPathNavigator)" file="html/m_mvp_xml_common_xpath_xpathnavigatoriterator_add_1_3b89351a.htm" />
+          <topic name="Add Method (XPathNodeIterator)" file="html/m_mvp_xml_common_xpath_xpathnavigatoriterator_add_1_bb0264dd.htm" />
+        </topic>
+        <topic name="Clone Method " file="html/m_mvp_xml_common_xpath_xpathnavigatoriterator_clone.htm" />
+        <topic name="Contains Method " file="html/m_mvp_xml_common_xpath_xpathnavigatoriterator_contains_1_3b89351a.htm" />
+        <topic name="ContainsValue Method " file="html/m_mvp_xml_common_xpath_xpathnavigatoriterator_containsvalue_1_72eac341.htm" />
+        <topic name="MoveNext Method " file="html/m_mvp_xml_common_xpath_xpathnavigatoriterator_movenext.htm" />
+        <topic name="RemoveAt Method " file="html/m_mvp_xml_common_xpath_xpathnavigatoriterator_removeat_1_cd2d7ec9.htm" />
+        <topic name="Reset Method " file="html/m_mvp_xml_common_xpath_xpathnavigatoriterator_reset.htm" />
+      </topic>
+      <topic name="XPathNavigatorIterator Properties " file="html/properties_t_mvp_xml_common_xpath_xpathnavigatoriterator.htm">
+        <topic name="Count Property " file="html/p_mvp_xml_common_xpath_xpathnavigatoriterator_count.htm" />
+        <topic name="Current Property " file="html/p_mvp_xml_common_xpath_xpathnavigatoriterator_current.htm" />
+        <topic name="CurrentPosition Property " file="html/p_mvp_xml_common_xpath_xpathnavigatoriterator_currentposition.htm" />
+        <topic name="Item Property " file="html/p_mvp_xml_common_xpath_xpathnavigatoriterator_item_1_cd2d7ec9.htm" />
+      </topic>
+    </topic>
+    <topic name="XPathVariable Structure" file="html/t_mvp_xml_common_xpath_xpathvariable.htm">
+      <topic name="XPathVariable Members" file="html/allmembers_t_mvp_xml_common_xpath_xpathvariable.htm" />
+      <topic name="XPathVariable Constructor " file="html/c_mvp_xml_common_xpath_xpathvariable_ctor_2_89845c1b.htm" />
+      <topic name="XPathVariable Methods " file="html/methods_t_mvp_xml_common_xpath_xpathvariable.htm">
+        <topic name="Equality Operator" file="html/m_mvp_xml_common_xpath_xpathvariable_op_equality_2_11c102f9.htm" />
+        <topic name="Equals Method " file="html/m_mvp_xml_common_xpath_xpathvariable_equals_1_2572741a.htm" />
+        <topic name="GetHashCode Method " file="html/m_mvp_xml_common_xpath_xpathvariable_gethashcode.htm" />
+        <topic name="Inequality Operator" file="html/m_mvp_xml_common_xpath_xpathvariable_op_inequality_2_11c102f9.htm" />
+      </topic>
+      <topic name="XPathVariable Properties " file="html/properties_t_mvp_xml_common_xpath_xpathvariable.htm">
+        <topic name="Name Property " file="html/p_mvp_xml_common_xpath_xpathvariable_name.htm" />
+        <topic name="Value Property " file="html/p_mvp_xml_common_xpath_xpathvariable_value.htm" />
+      </topic>
+    </topic>
+  </topic>
+  <topic name="Mvp.Xml.Common.Xsl Namespace" file="html/n_mvp_xml_common_xsl.htm">
+    <topic name="CharacterMappingXmlReader Class" file="html/t_mvp_xml_common_xsl_charactermappingxmlreader.htm">
+      <topic name="CharacterMappingXmlReader Members" file="html/allmembers_t_mvp_xml_common_xsl_charactermappingxmlreader.htm" />
+      <topic name="CharacterMappingXmlReader Constructor " file="html/c_mvp_xml_common_xsl_charactermappingxmlreader_ctor_1_11267429.htm" />
+      <topic name="CharacterMappingXmlReader Methods " file="html/methods_t_mvp_xml_common_xsl_charactermappingxmlreader.htm">
+        <topic name="CompileCharacterMapping Method " file="html/m_mvp_xml_common_xsl_charactermappingxmlreader_compilecharactermapping.htm" />
+        <topic name="GetAttribute Method " file="html/o_t_mvp_xml_common_xsl_charactermappingxmlreader_getattribute.htm" />
+        <topic name="IsStartElement Method " file="html/o_t_mvp_xml_common_xsl_charactermappingxmlreader_isstartelement.htm" />
+        <topic name="MoveToAttribute Method " file="html/o_t_mvp_xml_common_xsl_charactermappingxmlreader_movetoattribute.htm" />
+        <topic name="Read Method " file="html/m_mvp_xml_common_xsl_charactermappingxmlreader_read.htm" />
+        <topic name="ReadElementContentAs Method " file="html/o_t_mvp_xml_common_xsl_charactermappingxmlreader_readelementcontentas.htm" />
+        <topic name="ReadElementContentAsBoolean Method " file="html/o_t_mvp_xml_common_xsl_charactermappingxmlreader_readelementcontentasboolean.htm" />
+        <topic name="ReadElementContentAsDateTime Method " file="html/o_t_mvp_xml_common_xsl_charactermappingxmlreader_readelementcontentasdatetime.htm" />
+        <topic name="ReadElementContentAsDecimal Method " file="html/o_t_mvp_xml_common_xsl_charactermappingxmlreader_readelementcontentasdecimal.htm" />
+        <topic name="ReadElementContentAsDouble Method " file="html/o_t_mvp_xml_common_xsl_charactermappingxmlreader_readelementcontentasdouble.htm" />
+        <topic name="ReadElementContentAsFloat Method " file="html/o_t_mvp_xml_common_xsl_charactermappingxmlreader_readelementcontentasfloat.htm" />
+        <topic name="ReadElementContentAsInt Method " file="html/o_t_mvp_xml_common_xsl_charactermappingxmlreader_readelementcontentasint.htm" />
+        <topic name="ReadElementContentAsLong Method " file="html/o_t_mvp_xml_common_xsl_charactermappingxmlreader_readelementcontentaslong.htm" />
+        <topic name="ReadElementContentAsObject Method " file="html/o_t_mvp_xml_common_xsl_charactermappingxmlreader_readelementcontentasobject.htm" />
+        <topic name="ReadElementContentAsString Method " file="html/o_t_mvp_xml_common_xsl_charactermappingxmlreader_readelementcontentasstring.htm" />
+        <topic name="ReadElementString Method " file="html/o_t_mvp_xml_common_xsl_charactermappingxmlreader_readelementstring.htm" />
+        <topic name="ReadStartElement Method " file="html/o_t_mvp_xml_common_xsl_charactermappingxmlreader_readstartelement.htm" />
+        <topic name="ReadToDescendant Method " file="html/o_t_mvp_xml_common_xsl_charactermappingxmlreader_readtodescendant.htm" />
+        <topic name="ReadToFollowing Method " file="html/o_t_mvp_xml_common_xsl_charactermappingxmlreader_readtofollowing.htm" />
+        <topic name="ReadToNextSibling Method " file="html/o_t_mvp_xml_common_xsl_charactermappingxmlreader_readtonextsibling.htm" />
+      </topic>
+    </topic>
+    <topic name="CharacterMappingXmlWriter Class" file="html/t_mvp_xml_common_xsl_charactermappingxmlwriter.htm">
+      <topic name="CharacterMappingXmlWriter Members" file="html/allmembers_t_mvp_xml_common_xsl_charactermappingxmlwriter.htm" />
+      <topic name="CharacterMappingXmlWriter Constructor " file="html/o_t_mvp_xml_common_xsl_charactermappingxmlwriter_ctor.htm">
+        <topic name="CharacterMappingXmlWriter Constructor (XmlWriter, Dictionary)" file="html/c_mvp_xml_common_xsl_charactermappingxmlwriter_ctor_3_1bdab197.htm" />
+        <topic name="CharacterMappingXmlWriter Constructor (CharacterMappingXmlReader, XmlWriter)" file="html/c_mvp_xml_common_xsl_charactermappingxmlwriter_ctor_2_947c386a.htm" />
+      </topic>
+      <topic name="CharacterMappingXmlWriter Methods " file="html/methods_t_mvp_xml_common_xsl_charactermappingxmlwriter.htm">
+        <topic name="WriteAttributeString Method " file="html/o_t_mvp_xml_common_xsl_charactermappingxmlwriter_writeattributestring.htm" />
+        <topic name="WriteElementString Method " file="html/o_t_mvp_xml_common_xsl_charactermappingxmlwriter_writeelementstring.htm" />
+        <topic name="WriteNode Method " file="html/o_t_mvp_xml_common_xsl_charactermappingxmlwriter_writenode.htm" />
+        <topic name="WriteRaw Method " file="html/o_t_mvp_xml_common_xsl_charactermappingxmlwriter_writeraw.htm" />
+        <topic name="WriteStartAttribute Method " file="html/o_t_mvp_xml_common_xsl_charactermappingxmlwriter_writestartattribute.htm" />
+        <topic name="WriteStartDocument Method " file="html/o_t_mvp_xml_common_xsl_charactermappingxmlwriter_writestartdocument.htm" />
+        <topic name="WriteStartElement Method " file="html/o_t_mvp_xml_common_xsl_charactermappingxmlwriter_writestartelement.htm" />
+        <topic name="WriteString Method " file="html/m_mvp_xml_common_xsl_charactermappingxmlwriter_writestring_1_72eac341.htm" />
+        <topic name="WriteValue Method " file="html/o_t_mvp_xml_common_xsl_charactermappingxmlwriter_writevalue.htm" />
+      </topic>
+    </topic>
+    <topic name="IXmlTransform Interface" file="html/t_mvp_xml_common_xsl_ixmltransform.htm">
+      <topic name="IXmlTransform Members" file="html/allmembers_t_mvp_xml_common_xsl_ixmltransform.htm" />
+      <topic name="IXmlTransform Methods " file="html/methods_t_mvp_xml_common_xsl_ixmltransform.htm">
+        <topic name="Transform Method " file="html/m_mvp_xml_common_xsl_ixmltransform_transform_3_2f479bac.htm" />
+      </topic>
+      <topic name="IXmlTransform Properties " file="html/properties_t_mvp_xml_common_xsl_ixmltransform.htm">
+        <topic name="OutputSettings Property " file="html/p_mvp_xml_common_xsl_ixmltransform_outputsettings.htm" />
+      </topic>
+    </topic>
+    <topic name="MvpXslTransform Class" file="html/t_mvp_xml_common_xsl_mvpxsltransform.htm">
+      <topic name="MvpXslTransform Members" file="html/allmembers_t_mvp_xml_common_xsl_mvpxsltransform.htm" />
+      <topic name="MvpXslTransform Constructor " file="html/o_t_mvp_xml_common_xsl_mvpxsltransform_ctor.htm">
+        <topic name="MvpXslTransform Constructor " file="html/c_mvp_xml_common_xsl_mvpxsltransform_ctor.htm" />
+        <topic name="MvpXslTransform Constructor (Boolean)" file="html/c_mvp_xml_common_xsl_mvpxsltransform_ctor_1_abc7a1d5.htm" />
+      </topic>
+      <topic name="MvpXslTransform Fields" file="html/fields_t_mvp_xml_common_xsl_mvpxsltransform.htm">
+        <topic name="DefaultReaderSettings Field" file="html/f_mvp_xml_common_xsl_mvpxsltransform_defaultreadersettings.htm" />
+      </topic>
+      <topic name="MvpXslTransform Methods " file="html/methods_t_mvp_xml_common_xsl_mvpxsltransform.htm">
+        <topic name="AddExsltExtensionObjects Method " file="html/o_t_mvp_xml_common_xsl_mvpxsltransform_addexsltextensionobjects.htm">
+          <topic name="AddExsltExtensionObjects Method (XsltArgumentList)" file="html/m_mvp_xml_common_xsl_mvpxsltransform_addexsltextensionobjects_1_843c1c32.htm" />
+          <topic name="AddExsltExtensionObjects Method (XsltArgumentList, ExsltFunctionNamespace)" file="html/m_mvp_xml_common_xsl_mvpxsltransform_addexsltextensionobjects_2_07a6742f.htm" />
+        </topic>
+        <topic name="AddExsltExtensionObjectsSync Method " file="html/m_mvp_xml_common_xsl_mvpxsltransform_addexsltextensionobjectssync_1_843c1c32.htm" />
+        <topic name="GetReaderSettings Method " file="html/m_mvp_xml_common_xsl_mvpxsltransform_getreadersettings_1_3c0cd88b.htm" />
+        <topic name="Load Method " file="html/o_t_mvp_xml_common_xsl_mvpxsltransform_load.htm">
+          <topic name="Load Method (String)" file="html/m_mvp_xml_common_xsl_mvpxsltransform_load_1_72eac341.htm" />
+          <topic name="Load Method (XmlReader)" file="html/m_mvp_xml_common_xsl_mvpxsltransform_load_1_3282adce.htm" />
+          <topic name="Load Method (IXPathNavigable)" file="html/m_mvp_xml_common_xsl_mvpxsltransform_load_1_3f046af3.htm" />
+          <topic name="Load Method (String, XsltSettings, XmlResolver)" file="html/m_mvp_xml_common_xsl_mvpxsltransform_load_3_c8c52f08.htm" />
+          <topic name="Load Method (XmlReader, XsltSettings, XmlResolver)" file="html/m_mvp_xml_common_xsl_mvpxsltransform_load_3_8f1cab85.htm" />
+          <topic name="Load Method (IXPathNavigable, XsltSettings, XmlResolver)" file="html/m_mvp_xml_common_xsl_mvpxsltransform_load_3_03478022.htm" />
+        </topic>
+        <topic name="LoadStylesheetFromReader Method " file="html/o_t_mvp_xml_common_xsl_mvpxsltransform_loadstylesheetfromreader.htm">
+          <topic name="LoadStylesheetFromReader Method (XmlReader)" file="html/m_mvp_xml_common_xsl_mvpxsltransform_loadstylesheetfromreader_1_3282adce.htm" />
+          <topic name="LoadStylesheetFromReader Method (XmlReader, XsltSettings, XmlResolver)" file="html/m_mvp_xml_common_xsl_mvpxsltransform_loadstylesheetfromreader_3_8f1cab85.htm" />
+        </topic>
+        <topic name="Transform Method " file="html/o_t_mvp_xml_common_xsl_mvpxsltransform_transform.htm">
+          <topic name="Transform Method (XmlInput, XsltArgumentList)" file="html/m_mvp_xml_common_xsl_mvpxsltransform_transform_2_ea6bb92e.htm" />
+          <topic name="Transform Method (XmlInput, XsltArgumentList, XmlOutput)" file="html/m_mvp_xml_common_xsl_mvpxsltransform_transform_3_2f479bac.htm" />
+          <topic name="Transform Method (XmlInput, XsltArgumentList, Boolean, Int32)" file="html/m_mvp_xml_common_xsl_mvpxsltransform_transform_4_310c5ede.htm" />
+        </topic>
+        <topic name="TransformIXPathNavigable Method " file="html/m_mvp_xml_common_xsl_mvpxsltransform_transformixpathnavigable_4_a68ae6e9.htm" />
+        <topic name="TransformToWriter Method " file="html/m_mvp_xml_common_xsl_mvpxsltransform_transformtowriter_3_9cf64944.htm" />
+      </topic>
+      <topic name="MvpXslTransform Properties " file="html/properties_t_mvp_xml_common_xsl_mvpxsltransform.htm">
+        <topic name="EnforceXHTMLOutput Property " file="html/p_mvp_xml_common_xsl_mvpxsltransform_enforcexhtmloutput.htm" />
+        <topic name="MultiOutput Property " file="html/p_mvp_xml_common_xsl_mvpxsltransform_multioutput.htm" />
+        <topic name="OutputSettings Property " file="html/p_mvp_xml_common_xsl_mvpxsltransform_outputsettings.htm" />
+        <topic name="SupportCharacterMaps Property " file="html/p_mvp_xml_common_xsl_mvpxsltransform_supportcharactermaps.htm" />
+        <topic name="SupportedFunctions Property " file="html/p_mvp_xml_common_xsl_mvpxsltransform_supportedfunctions.htm" />
+        <topic name="TemporaryFiles Property " file="html/p_mvp_xml_common_xsl_mvpxsltransform_temporaryfiles.htm" />
+      </topic>
+    </topic>
+    <topic name="OutputResolver Class" file="html/t_mvp_xml_common_xsl_outputresolver.htm">
+      <topic name="OutputResolver Members" file="html/allmembers_t_mvp_xml_common_xsl_outputresolver.htm" />
+      <topic name="OutputResolver Constructor " file="html/c_mvp_xml_common_xsl_outputresolver_ctor_1_61b4e77c.htm" />
+      <topic name="OutputResolver Methods " file="html/methods_t_mvp_xml_common_xsl_outputresolver.htm">
+        <topic name="ResolveUri Method " file="html/m_mvp_xml_common_xsl_outputresolver_resolveuri_2_d5663b1c.htm" />
+      </topic>
+    </topic>
+    <topic name="XmlInput Class" file="html/t_mvp_xml_common_xsl_xmlinput.htm">
+      <topic name="XmlInput Members" file="html/allmembers_t_mvp_xml_common_xsl_xmlinput.htm" />
+      <topic name="XmlInput Constructor " file="html/o_t_mvp_xml_common_xsl_xmlinput_ctor.htm">
+        <topic name="XmlInput Constructor (Stream)" file="html/c_mvp_xml_common_xsl_xmlinput_ctor_1_014c0eac.htm" />
+        <topic name="XmlInput Constructor (TextReader)" file="html/c_mvp_xml_common_xsl_xmlinput_ctor_1_a6011e2f.htm" />
+        <topic name="XmlInput Constructor (String)" file="html/c_mvp_xml_common_xsl_xmlinput_ctor_1_61b4e77c.htm" />
+        <topic name="XmlInput Constructor (XmlReader)" file="html/c_mvp_xml_common_xsl_xmlinput_ctor_1_11267429.htm" />
+        <topic name="XmlInput Constructor (IXPathNavigable)" file="html/c_mvp_xml_common_xsl_xmlinput_ctor_1_da1af64f.htm" />
+        <topic name="XmlInput Constructor (Stream, XmlResolver)" file="html/c_mvp_xml_common_xsl_xmlinput_ctor_2_18ea0d58.htm" />
+        <topic name="XmlInput Constructor (TextReader, XmlResolver)" file="html/c_mvp_xml_common_xsl_xmlinput_ctor_2_8edffa09.htm" />
+        <topic name="XmlInput Constructor (String, XmlResolver)" file="html/c_mvp_xml_common_xsl_xmlinput_ctor_2_597877be.htm" />
+        <topic name="XmlInput Constructor (XmlReader, XmlResolver)" file="html/c_mvp_xml_common_xsl_xmlinput_ctor_2_a6940957.htm" />
+        <topic name="XmlInput Constructor (IXPathNavigable, XmlResolver)" file="html/c_mvp_xml_common_xsl_xmlinput_ctor_2_368e6594.htm" />
+      </topic>
+    </topic>
+    <topic name="XmlOutput Class" file="html/t_mvp_xml_common_xsl_xmloutput.htm">
+      <topic name="XmlOutput Members" file="html/allmembers_t_mvp_xml_common_xsl_xmloutput.htm" />
+      <topic name="XmlOutput Constructor " file="html/o_t_mvp_xml_common_xsl_xmloutput_ctor.htm">
+        <topic name="XmlOutput Constructor (Stream)" file="html/c_mvp_xml_common_xsl_xmloutput_ctor_1_014c0eac.htm" />
+        <topic name="XmlOutput Constructor (TextWriter)" file="html/c_mvp_xml_common_xsl_xmloutput_ctor_1_9733276a.htm" />
+        <topic name="XmlOutput Constructor (String)" file="html/c_mvp_xml_common_xsl_xmloutput_ctor_1_61b4e77c.htm" />
+        <topic name="XmlOutput Constructor (XmlWriter)" file="html/c_mvp_xml_common_xsl_xmloutput_ctor_1_213a68e2.htm" />
+      </topic>
+      <topic name="XmlOutput Properties " file="html/properties_t_mvp_xml_common_xsl_xmloutput.htm">
+        <topic name="XmlResolver Property " file="html/p_mvp_xml_common_xsl_xmloutput_xmlresolver.htm" />
+      </topic>
+    </topic>
+    <topic name="XslReader Class" file="html/t_mvp_xml_common_xsl_xslreader.htm">
+      <topic name="XslReader Members" file="html/allmembers_t_mvp_xml_common_xsl_xslreader.htm" />
+      <topic name="XslReader Constructor " file="html/o_t_mvp_xml_common_xsl_xslreader_ctor.htm">
+        <topic name="XslReader Constructor (XslCompiledTransform)" file="html/c_mvp_xml_common_xsl_xslreader_ctor_1_201db871.htm" />
+        <topic name="XslReader Constructor (XslCompiledTransform, Boolean, Int32)" file="html/c_mvp_xml_common_xsl_xslreader_ctor_3_db7e3c5f.htm" />
+      </topic>
+      <topic name="XslReader Methods " file="html/methods_t_mvp_xml_common_xsl_xslreader.htm">
+        <topic name="Close Method " file="html/m_mvp_xml_common_xsl_xslreader_close.htm" />
+        <topic name="GetAttribute Method " file="html/o_t_mvp_xml_common_xsl_xslreader_getattribute.htm">
+          <topic name="GetAttribute Method (Int32)" file="html/m_mvp_xml_common_xsl_xslreader_getattribute_1_cd2d7ec9.htm" />
+          <topic name="GetAttribute Method (String)" file="html/m_mvp_xml_common_xsl_xslreader_getattribute_1_72eac341.htm" />
+          <topic name="GetAttribute Method (String, String)" file="html/m_mvp_xml_common_xsl_xslreader_getattribute_2_52fce4af.htm" />
+        </topic>
+        <topic name="IsStartElement Method " file="html/o_t_mvp_xml_common_xsl_xslreader_isstartelement.htm" />
+        <topic name="LookupNamespace Method " file="html/m_mvp_xml_common_xsl_xslreader_lookupnamespace_1_72eac341.htm" />
+        <topic name="MoveToAttribute Method " file="html/o_t_mvp_xml_common_xsl_xslreader_movetoattribute.htm">
+          <topic name="MoveToAttribute Method (Int32)" file="html/m_mvp_xml_common_xsl_xslreader_movetoattribute_1_cd2d7ec9.htm" />
+          <topic name="MoveToAttribute Method (String)" file="html/m_mvp_xml_common_xsl_xslreader_movetoattribute_1_72eac341.htm" />
+          <topic name="MoveToAttribute Method (String, String)" file="html/m_mvp_xml_common_xsl_xslreader_movetoattribute_2_52fce4af.htm" />
+        </topic>
+        <topic name="MoveToElement Method " file="html/m_mvp_xml_common_xsl_xslreader_movetoelement.htm" />
+        <topic name="MoveToFirstAttribute Method " file="html/m_mvp_xml_common_xsl_xslreader_movetofirstattribute.htm" />
+        <topic name="MoveToNextAttribute Method " file="html/m_mvp_xml_common_xsl_xslreader_movetonextattribute.htm" />
+        <topic name="Read Method " file="html/m_mvp_xml_common_xsl_xslreader_read.htm" />
+        <topic name="ReadAttributeValue Method " file="html/m_mvp_xml_common_xsl_xslreader_readattributevalue.htm" />
+        <topic name="ReadElementContentAs Method " file="html/o_t_mvp_xml_common_xsl_xslreader_readelementcontentas.htm" />
+        <topic name="ReadElementContentAsBoolean Method " file="html/o_t_mvp_xml_common_xsl_xslreader_readelementcontentasboolean.htm" />
+        <topic name="ReadElementContentAsDateTime Method " file="html/o_t_mvp_xml_common_xsl_xslreader_readelementcontentasdatetime.htm" />
+        <topic name="ReadElementContentAsDecimal Method " file="html/o_t_mvp_xml_common_xsl_xslreader_readelementcontentasdecimal.htm" />
+        <topic name="ReadElementContentAsDouble Method " file="html/o_t_mvp_xml_common_xsl_xslreader_readelementcontentasdouble.htm" />
+        <topic name="ReadElementContentAsFloat Method " file="html/o_t_mvp_xml_common_xsl_xslreader_readelementcontentasfloat.htm" />
+        <topic name="ReadElementContentAsInt Method " file="html/o_t_mvp_xml_common_xsl_xslreader_readelementcontentasint.htm" />
+        <topic name="ReadElementContentAsLong Method " file="html/o_t_mvp_xml_common_xsl_xslreader_readelementcontentaslong.htm" />
+        <topic name="ReadElementContentAsObject Method " file="html/o_t_mvp_xml_common_xsl_xslreader_readelementcontentasobject.htm" />
+        <topic name="ReadElementContentAsString Method " file="html/o_t_mvp_xml_common_xsl_xslreader_readelementcontentasstring.htm" />
+        <topic name="ReadElementString Method " file="html/o_t_mvp_xml_common_xsl_xslreader_readelementstring.htm" />
+        <topic name="ReadStartElement Method " file="html/o_t_mvp_xml_common_xsl_xslreader_readstartelement.htm" />
+        <topic name="ReadToDescendant Method " file="html/o_t_mvp_xml_common_xsl_xslreader_readtodescendant.htm" />
+        <topic name="ReadToFollowing Method " file="html/o_t_mvp_xml_common_xsl_xslreader_readtofollowing.htm" />
+        <topic name="ReadToNextSibling Method " file="html/o_t_mvp_xml_common_xsl_xslreader_readtonextsibling.htm" />
+        <topic name="ResolveEntity Method " file="html/m_mvp_xml_common_xsl_xslreader_resolveentity.htm" />
+        <topic name="StartTransform Method " file="html/m_mvp_xml_common_xsl_xslreader_starttransform_2_ea6bb92e.htm" />
+      </topic>
+      <topic name="XslReader Properties " file="html/properties_t_mvp_xml_common_xsl_xslreader.htm">
+        <topic name="AttributeCount Property " file="html/p_mvp_xml_common_xsl_xslreader_attributecount.htm" />
+        <topic name="BaseURI Property " file="html/p_mvp_xml_common_xsl_xslreader_baseuri.htm" />
+        <topic name="Depth Property " file="html/p_mvp_xml_common_xsl_xslreader_depth.htm" />
+        <topic name="EOF Property " file="html/p_mvp_xml_common_xsl_xslreader_eof.htm" />
+        <topic name="HasValue Property " file="html/p_mvp_xml_common_xsl_xslreader_hasvalue.htm" />
+        <topic name="InitialBufferSize Property " file="html/p_mvp_xml_common_xsl_xslreader_initialbuffersize.htm" />
+        <topic name="IsEmptyElement Property " file="html/p_mvp_xml_common_xsl_xslreader_isemptyelement.htm" />
+        <topic name="Item Property " file="html/o_t_mvp_xml_common_xsl_xslreader_item.htm" />
+        <topic name="LocalName Property " file="html/p_mvp_xml_common_xsl_xslreader_localname.htm" />
+        <topic name="NamespaceURI Property " file="html/p_mvp_xml_common_xsl_xslreader_namespaceuri.htm" />
+        <topic name="NameTable Property " file="html/p_mvp_xml_common_xsl_xslreader_nametable.htm" />
+        <topic name="NodeType Property " file="html/p_mvp_xml_common_xsl_xslreader_nodetype.htm" />
+        <topic name="Prefix Property " file="html/p_mvp_xml_common_xsl_xslreader_prefix.htm" />
+        <topic name="ReadState Property " file="html/p_mvp_xml_common_xsl_xslreader_readstate.htm" />
+        <topic name="Value Property " file="html/p_mvp_xml_common_xsl_xslreader_value.htm" />
+        <topic name="XmlLang Property " file="html/p_mvp_xml_common_xsl_xslreader_xmllang.htm" />
+        <topic name="XmlSpace Property " file="html/p_mvp_xml_common_xsl_xslreader_xmlspace.htm" />
+        <topic name="XslCompiledTransform Property " file="html/p_mvp_xml_common_xsl_xslreader_xslcompiledtransform.htm" />
+      </topic>
+    </topic>
+  </topic>
+  <topic name="Mvp.Xml.Exslt Namespace" file="html/n_mvp_xml_exslt.htm">
+    <topic name="ExsltContext Class" file="html/t_mvp_xml_exslt_exsltcontext.htm">
+      <topic name="ExsltContext Members" file="html/allmembers_t_mvp_xml_exslt_exsltcontext.htm" />
+      <topic name="ExsltContext Constructor " file="html/o_t_mvp_xml_exslt_exsltcontext_ctor.htm">
+        <topic name="ExsltContext Constructor (XmlNameTable)" file="html/c_mvp_xml_exslt_exsltcontext_ctor_1_f6cedcd0.htm" />
+        <topic name="ExsltContext Constructor (NameTable, ExsltFunctionNamespace)" file="html/c_mvp_xml_exslt_exsltcontext_ctor_2_3a751a7d.htm" />
+      </topic>
+      <topic name="ExsltContext Methods " file="html/methods_t_mvp_xml_exslt_exsltcontext.htm">
+        <topic name="CompareDocument Method " file="html/m_mvp_xml_exslt_exsltcontext_comparedocument_2_52fce4af.htm" />
+        <topic name="ConvertToXPathType Method " file="html/m_mvp_xml_exslt_exsltcontext_converttoxpathtype_1_61b1ab37.htm" />
+        <topic name="PreserveWhitespace Method " file="html/m_mvp_xml_exslt_exsltcontext_preservewhitespace_1_3b89351a.htm" />
+        <topic name="ResolveFunction Method " file="html/m_mvp_xml_exslt_exsltcontext_resolvefunction_3_2875465d.htm" />
+        <topic name="ResolveVariable Method " file="html/m_mvp_xml_exslt_exsltcontext_resolvevariable_2_52fce4af.htm" />
+      </topic>
+      <topic name="ExsltContext Properties " file="html/properties_t_mvp_xml_exslt_exsltcontext.htm">
+        <topic name="SupportedFunctions Property " file="html/p_mvp_xml_exslt_exsltcontext_supportedfunctions.htm" />
+        <topic name="Whitespace Property " file="html/p_mvp_xml_exslt_exsltcontext_whitespace.htm" />
+      </topic>
+    </topic>
+    <topic name="ExsltDatesAndTimes Class" file="html/t_mvp_xml_exslt_exsltdatesandtimes.htm">
+      <topic name="ExsltDatesAndTimes Members" file="html/allmembers_t_mvp_xml_exslt_exsltdatesandtimes.htm" />
+      <topic name="ExsltDatesAndTimes Constructor " file="html/c_mvp_xml_exslt_exsltdatesandtimes_ctor.htm" />
+      <topic name="ExsltDatesAndTimes Methods " file="html/methods_t_mvp_xml_exslt_exsltdatesandtimes.htm">
+        <topic name="add Method " file="html/m_mvp_xml_exslt_exsltdatesandtimes_add_2_52fce4af.htm" />
+        <topic name="add-duration Method " file="html/m_mvp_xml_exslt_exsltdatesandtimes_add-duration_2_52fce4af.htm" />
+        <topic name="addDuration Method " file="html/m_mvp_xml_exslt_exsltdatesandtimes_addduration_2_52fce4af.htm" />
+        <topic name="date Method " file="html/o_t_mvp_xml_exslt_exsltdatesandtimes_date.htm">
+          <topic name="date Method " file="html/m_mvp_xml_exslt_exsltdatesandtimes_date.htm" />
+          <topic name="date Method (String)" file="html/m_mvp_xml_exslt_exsltdatesandtimes_date_1_72eac341.htm" />
+        </topic>
+        <topic name="date-time Method " file="html/o_t_mvp_xml_exslt_exsltdatesandtimes_date-time.htm">
+          <topic name="date-time Method " file="html/m_mvp_xml_exslt_exsltdatesandtimes_date-time.htm" />
+          <topic name="date-time Method (String)" file="html/m_mvp_xml_exslt_exsltdatesandtimes_date-time_1_72eac341.htm" />
+        </topic>
+        <topic name="dateTime Method " file="html/o_t_mvp_xml_exslt_exsltdatesandtimes_datetime.htm">
+          <topic name="dateTime Method " file="html/m_mvp_xml_exslt_exsltdatesandtimes_datetime.htm" />
+          <topic name="dateTime Method (String)" file="html/m_mvp_xml_exslt_exsltdatesandtimes_datetime_1_72eac341.htm" />
+        </topic>
+        <topic name="day-abbreviation Method " file="html/o_t_mvp_xml_exslt_exsltdatesandtimes_day-abbreviation.htm">
+          <topic name="day-abbreviation Method " file="html/m_mvp_xml_exslt_exsltdatesandtimes_day-abbreviation.htm" />
+          <topic name="day-abbreviation Method (String)" file="html/m_mvp_xml_exslt_exsltdatesandtimes_day-abbreviation_1_72eac341.htm" />
+        </topic>
+        <topic name="dayAbbreviation Method " file="html/o_t_mvp_xml_exslt_exsltdatesandtimes_dayabbreviation.htm">
+          <topic name="dayAbbreviation Method " file="html/m_mvp_xml_exslt_exsltdatesandtimes_dayabbreviation.htm" />
+          <topic name="dayAbbreviation Method (String)" file="html/m_mvp_xml_exslt_exsltdatesandtimes_dayabbreviation_1_72eac341.htm" />
+        </topic>
+        <topic name="day-in-month Method " file="html/o_t_mvp_xml_exslt_exsltdatesandtimes_day-in-month.htm">
+          <topic name="day-in-month Method " file="html/m_mvp_xml_exslt_exsltdatesandtimes_day-in-month.htm" />
+          <topic name="day-in-month Method (String)" file="html/m_mvp_xml_exslt_exsltdatesandtimes_day-in-month_1_72eac341.htm" />
+        </topic>
+        <topic name="dayInMonth Method " file="html/o_t_mvp_xml_exslt_exsltdatesandtimes_dayinmonth.htm">
+          <topic name="dayInMonth Method " file="html/m_mvp_xml_exslt_exsltdatesandtimes_dayinmonth.htm" />
+          <topic name="dayInMonth Method (String)" file="html/m_mvp_xml_exslt_exsltdatesandtimes_dayinmonth_1_72eac341.htm" />
+        </topic>
+        <topic name="day-in-week Method " file="html/o_t_mvp_xml_exslt_exsltdatesandtimes_day-in-week.htm">
+          <topic name="day-in-week Method " file="html/m_mvp_xml_exslt_exsltdatesandtimes_day-in-week.htm" />
+          <topic name="day-in-week Method (String)" file="html/m_mvp_xml_exslt_exsltdatesandtimes_day-in-week_1_72eac341.htm" />
+        </topic>
+        <topic name="dayInWeek Method " file="html/o_t_mvp_xml_exslt_exsltdatesandtimes_dayinweek.htm">
+          <topic name="dayInWeek Method " file="html/m_mvp_xml_exslt_exsltdatesandtimes_dayinweek.htm" />
+          <topic name="dayInWeek Method (String)" file="html/m_mvp_xml_exslt_exsltdatesandtimes_dayinweek_1_72eac341.htm" />
+        </topic>
+        <topic name="day-in-year Method " file="html/o_t_mvp_xml_exslt_exsltdatesandtimes_day-in-year.htm">
+          <topic name="day-in-year Method " file="html/m_mvp_xml_exslt_exsltdatesandtimes_day-in-year.htm" />
+          <topic name="day-in-year Method (String)" file="html/m_mvp_xml_exslt_exsltdatesandtimes_day-in-year_1_72eac341.htm" />
+        </topic>
+        <topic name="dayInYear Method " file="html/o_t_mvp_xml_exslt_exsltdatesandtimes_dayinyear.htm">
+          <topic name="dayInYear Method " file="html/m_mvp_xml_exslt_exsltdatesandtimes_dayinyear.htm" />
+          <topic name="dayInYear Method (String)" file="html/m_mvp_xml_exslt_exsltdatesandtimes_dayinyear_1_72eac341.htm" />
+        </topic>
+        <topic name="day-name Method " file="html/o_t_mvp_xml_exslt_exsltdatesandtimes_day-name.htm">
+          <topic name="day-name Method " file="html/m_mvp_xml_exslt_exsltdatesandtimes_day-name.htm" />
+          <topic name="day-name Method (String)" file="html/m_mvp_xml_exslt_exsltdatesandtimes_day-name_1_72eac341.htm" />
+        </topic>
+        <topic name="dayName Method " file="html/o_t_mvp_xml_exslt_exsltdatesandtimes_dayname.htm">
+          <topic name="dayName Method " file="html/m_mvp_xml_exslt_exsltdatesandtimes_dayname.htm" />
+          <topic name="dayName Method (String)" file="html/m_mvp_xml_exslt_exsltdatesandtimes_dayname_1_72eac341.htm" />
+        </topic>
+        <topic name="day-of-week-in-month Method " file="html/o_t_mvp_xml_exslt_exsltdatesandtimes_day-of-week-in-month.htm">
+          <topic name="day-of-week-in-month Method " file="html/m_mvp_xml_exslt_exsltdatesandtimes_day-of-week-in-month.htm" />
+          <topic name="day-of-week-in-month Method (String)" file="html/m_mvp_xml_exslt_exsltdatesandtimes_day-of-week-in-month_1_72eac341.htm" />
+        </topic>
+        <topic name="dayOfWeekInMonth Method " file="html/o_t_mvp_xml_exslt_exsltdatesandtimes_dayofweekinmonth.htm">
+          <topic name="dayOfWeekInMonth Method " file="html/m_mvp_xml_exslt_exsltdatesandtimes_dayofweekinmonth.htm" />
+          <topic name="dayOfWeekInMonth Method (String)" file="html/m_mvp_xml_exslt_exsltdatesandtimes_dayofweekinmonth_1_72eac341.htm" />
+        </topic>
+        <topic name="difference Method " file="html/m_mvp_xml_exslt_exsltdatesandtimes_difference_2_52fce4af.htm" />
+        <topic name="duration Method " file="html/o_t_mvp_xml_exslt_exsltdatesandtimes_duration.htm">
+          <topic name="duration Method " file="html/m_mvp_xml_exslt_exsltdatesandtimes_duration.htm" />
+          <topic name="duration Method (Double)" file="html/m_mvp_xml_exslt_exsltdatesandtimes_duration_1_9104ed59.htm" />
+        </topic>
+        <topic name="format-date Method " file="html/m_mvp_xml_exslt_exsltdatesandtimes_format-date_2_52fce4af.htm" />
+        <topic name="formatDate Method " file="html/m_mvp_xml_exslt_exsltdatesandtimes_formatdate_2_52fce4af.htm" />
+        <topic name="hour-in-day Method " file="html/o_t_mvp_xml_exslt_exsltdatesandtimes_hour-in-day.htm">
+          <topic name="hour-in-day Method " file="html/m_mvp_xml_exslt_exsltdatesandtimes_hour-in-day.htm" />
+          <topic name="hour-in-day Method (String)" file="html/m_mvp_xml_exslt_exsltdatesandtimes_hour-in-day_1_72eac341.htm" />
+        </topic>
+        <topic name="hourInDay Method " file="html/o_t_mvp_xml_exslt_exsltdatesandtimes_hourinday.htm">
+          <topic name="hourInDay Method " file="html/m_mvp_xml_exslt_exsltdatesandtimes_hourinday.htm" />
+          <topic name="hourInDay Method (String)" file="html/m_mvp_xml_exslt_exsltdatesandtimes_hourinday_1_72eac341.htm" />
+        </topic>
+        <topic name="leap-year Method " file="html/o_t_mvp_xml_exslt_exsltdatesandtimes_leap-year.htm">
+          <topic name="leap-year Method " file="html/m_mvp_xml_exslt_exsltdatesandtimes_leap-year.htm" />
+          <topic name="leap-year Method (String)" file="html/m_mvp_xml_exslt_exsltdatesandtimes_leap-year_1_72eac341.htm" />
+        </topic>
+        <topic name="leapYear Method " file="html/o_t_mvp_xml_exslt_exsltdatesandtimes_leapyear.htm">
+          <topic name="leapYear Method " file="html/m_mvp_xml_exslt_exsltdatesandtimes_leapyear.htm" />
+          <topic name="leapYear Method (String)" file="html/m_mvp_xml_exslt_exsltdatesandtimes_leapyear_1_72eac341.htm" />
+        </topic>
+        <topic name="minute-in-hour Method " file="html/o_t_mvp_xml_exslt_exsltdatesandtimes_minute-in-hour.htm">
+          <topic name="minute-in-hour Method " file="html/m_mvp_xml_exslt_exsltdatesandtimes_minute-in-hour.htm" />
+          <topic name="minute-in-hour Method (String)" file="html/m_mvp_xml_exslt_exsltdatesandtimes_minute-in-hour_1_72eac341.htm" />
+        </topic>
+        <topic name="minuteInHour Method " file="html/o_t_mvp_xml_exslt_exsltdatesandtimes_minuteinhour.htm">
+          <topic name="minuteInHour Method " file="html/m_mvp_xml_exslt_exsltdatesandtimes_minuteinhour.htm" />
+          <topic name="minuteInHour Method (String)" file="html/m_mvp_xml_exslt_exsltdatesandtimes_minuteinhour_1_72eac341.htm" />
+        </topic>
+        <topic name="month-abbreviation Method " file="html/o_t_mvp_xml_exslt_exsltdatesandtimes_month-abbreviation.htm">
+          <topic name="month-abbreviation Method " file="html/m_mvp_xml_exslt_exsltdatesandtimes_month-abbreviation.htm" />
+          <topic name="month-abbreviation Method (String)" file="html/m_mvp_xml_exslt_exsltdatesandtimes_month-abbreviation_1_72eac341.htm" />
+        </topic>
+        <topic name="monthAbbreviation Method " file="html/o_t_mvp_xml_exslt_exsltdatesandtimes_monthabbreviation.htm">
+          <topic name="monthAbbreviation Method " file="html/m_mvp_xml_exslt_exsltdatesandtimes_monthabbreviation.htm" />
+          <topic name="monthAbbreviation Method (String)" file="html/m_mvp_xml_exslt_exsltdatesandtimes_monthabbreviation_1_72eac341.htm" />
+        </topic>
+        <topic name="month-in-year Method " file="html/o_t_mvp_xml_exslt_exsltdatesandtimes_month-in-year.htm">
+          <topic name="month-in-year Method " file="html/m_mvp_xml_exslt_exsltdatesandtimes_month-in-year.htm" />
+          <topic name="month-in-year Method (String)" file="html/m_mvp_xml_exslt_exsltdatesandtimes_month-in-year_1_72eac341.htm" />
+        </topic>
+        <topic name="monthInYear Method " file="html/o_t_mvp_xml_exslt_exsltdatesandtimes_monthinyear.htm">
+          <topic name="monthInYear Method " file="html/m_mvp_xml_exslt_exsltdatesandtimes_monthinyear.htm" />
+          <topic name="monthInYear Method (String)" file="html/m_mvp_xml_exslt_exsltdatesandtimes_monthinyear_1_72eac341.htm" />
+        </topic>
+        <topic name="month-name Method " file="html/o_t_mvp_xml_exslt_exsltdatesandtimes_month-name.htm">
+          <topic name="month-name Method " file="html/m_mvp_xml_exslt_exsltdatesandtimes_month-name.htm" />
+          <topic name="month-name Method (String)" file="html/m_mvp_xml_exslt_exsltdatesandtimes_month-name_1_72eac341.htm" />
+        </topic>
+        <topic name="monthName Method " file="html/o_t_mvp_xml_exslt_exsltdatesandtimes_monthname.htm">
+          <topic name="monthName Method " file="html/m_mvp_xml_exslt_exsltdatesandtimes_monthname.htm" />
+          <topic name="monthName Method (String)" file="html/m_mvp_xml_exslt_exsltdatesandtimes_monthname_1_72eac341.htm" />
+        </topic>
+        <topic name="parse-date Method " file="html/m_mvp_xml_exslt_exsltdatesandtimes_parse-date_2_52fce4af.htm" />
+        <topic name="parseDate Method " file="html/m_mvp_xml_exslt_exsltdatesandtimes_parsedate_2_52fce4af.htm" />
+        <topic name="second-in-minute Method " file="html/o_t_mvp_xml_exslt_exsltdatesandtimes_second-in-minute.htm">
+          <topic name="second-in-minute Method " file="html/m_mvp_xml_exslt_exsltdatesandtimes_second-in-minute.htm" />
+          <topic name="second-in-minute Method (String)" file="html/m_mvp_xml_exslt_exsltdatesandtimes_second-in-minute_1_72eac341.htm" />
+        </topic>
+        <topic name="secondInMinute Method " file="html/o_t_mvp_xml_exslt_exsltdatesandtimes_secondinminute.htm">
+          <topic name="secondInMinute Method " file="html/m_mvp_xml_exslt_exsltdatesandtimes_secondinminute.htm" />
+          <topic name="secondInMinute Method (String)" file="html/m_mvp_xml_exslt_exsltdatesandtimes_secondinminute_1_72eac341.htm" />
+        </topic>
+        <topic name="seconds Method " file="html/o_t_mvp_xml_exslt_exsltdatesandtimes_seconds.htm">
+          <topic name="seconds Method " file="html/m_mvp_xml_exslt_exsltdatesandtimes_seconds.htm" />
+          <topic name="seconds Method (String)" file="html/m_mvp_xml_exslt_exsltdatesandtimes_seconds_1_72eac341.htm" />
+        </topic>
+        <topic name="sum Method " file="html/m_mvp_xml_exslt_exsltdatesandtimes_sum_1_bb0264dd.htm" />
+        <topic name="time Method " file="html/o_t_mvp_xml_exslt_exsltdatesandtimes_time.htm">
+          <topic name="time Method " file="html/m_mvp_xml_exslt_exsltdatesandtimes_time.htm" />
+          <topic name="time Method (String)" file="html/m_mvp_xml_exslt_exsltdatesandtimes_time_1_72eac341.htm" />
+        </topic>
+        <topic name="week-in-month Method " file="html/o_t_mvp_xml_exslt_exsltdatesandtimes_week-in-month.htm">
+          <topic name="week-in-month Method " file="html/m_mvp_xml_exslt_exsltdatesandtimes_week-in-month.htm" />
+          <topic name="week-in-month Method (String)" file="html/m_mvp_xml_exslt_exsltdatesandtimes_week-in-month_1_72eac341.htm" />
+        </topic>
+        <topic name="weekInMonth Method " file="html/o_t_mvp_xml_exslt_exsltdatesandtimes_weekinmonth.htm">
+          <topic name="weekInMonth Method " file="html/m_mvp_xml_exslt_exsltdatesandtimes_weekinmonth.htm" />
+          <topic name="weekInMonth Method (String)" file="html/m_mvp_xml_exslt_exsltdatesandtimes_weekinmonth_1_72eac341.htm" />
+        </topic>
+        <topic name="week-in-year Method " file="html/o_t_mvp_xml_exslt_exsltdatesandtimes_week-in-year.htm">
+          <topic name="week-in-year Method " file="html/m_mvp_xml_exslt_exsltdatesandtimes_week-in-year.htm" />
+          <topic name="week-in-year Method (String)" file="html/m_mvp_xml_exslt_exsltdatesandtimes_week-in-year_1_72eac341.htm" />
+        </topic>
+        <topic name="weekInYear Method " file="html/o_t_mvp_xml_exslt_exsltdatesandtimes_weekinyear.htm">
+          <topic name="weekInYear Method " file="html/m_mvp_xml_exslt_exsltdatesandtimes_weekinyear.htm" />
+          <topic name="weekInYear Method (String)" file="html/m_mvp_xml_exslt_exsltdatesandtimes_weekinyear_1_72eac341.htm" />
+        </topic>
+        <topic name="year Method " file="html/o_t_mvp_xml_exslt_exsltdatesandtimes_year.htm">
+          <topic name="year Method " file="html/m_mvp_xml_exslt_exsltdatesandtimes_year.htm" />
+          <topic name="year Method (String)" file="html/m_mvp_xml_exslt_exsltdatesandtimes_year_1_72eac341.htm" />
+        </topic>
+      </topic>
+    </topic>
+    <topic name="ExsltFunctionNamespace Enumeration" file="html/t_mvp_xml_exslt_exsltfunctionnamespace.htm" />
+    <topic name="ExsltMath Class" file="html/t_mvp_xml_exslt_exsltmath.htm">
+      <topic name="ExsltMath Members" file="html/allmembers_t_mvp_xml_exslt_exsltmath.htm" />
+      <topic name="ExsltMath Constructor " file="html/c_mvp_xml_exslt_exsltmath_ctor.htm" />
+      <topic name="ExsltMath Methods " file="html/methods_t_mvp_xml_exslt_exsltmath.htm">
+        <topic name="abs Method " file="html/m_mvp_xml_exslt_exsltmath_abs_1_9104ed59.htm" />
+        <topic name="acos Method " file="html/m_mvp_xml_exslt_exsltmath_acos_1_9104ed59.htm" />
+        <topic name="asin Method " file="html/m_mvp_xml_exslt_exsltmath_asin_1_9104ed59.htm" />
+        <topic name="atan Method " file="html/m_mvp_xml_exslt_exsltmath_atan_1_9104ed59.htm" />
+        <topic name="atan2 Method " file="html/m_mvp_xml_exslt_exsltmath_atan2_2_a8984f3a.htm" />
+        <topic name="constant Method " file="html/m_mvp_xml_exslt_exsltmath_constant_2_09687205.htm" />
+        <topic name="cos Method " file="html/m_mvp_xml_exslt_exsltmath_cos_1_9104ed59.htm" />
+        <topic name="exp Method " file="html/m_mvp_xml_exslt_exsltmath_exp_1_9104ed59.htm" />
+        <topic name="highest Method " file="html/m_mvp_xml_exslt_exsltmath_highest_1_bb0264dd.htm" />
+        <topic name="log Method " file="html/m_mvp_xml_exslt_exsltmath_log_1_9104ed59.htm" />
+        <topic name="lowest Method " file="html/m_mvp_xml_exslt_exsltmath_lowest_1_bb0264dd.htm" />
+        <topic name="max Method " file="html/m_mvp_xml_exslt_exsltmath_max_1_bb0264dd.htm" />
+        <topic name="min Method " file="html/m_mvp_xml_exslt_exsltmath_min_1_bb0264dd.htm" />
+        <topic name="power Method " file="html/m_mvp_xml_exslt_exsltmath_power_2_a8984f3a.htm" />
+        <topic name="random Method " file="html/m_mvp_xml_exslt_exsltmath_random.htm" />
+        <topic name="sin Method " file="html/m_mvp_xml_exslt_exsltmath_sin_1_9104ed59.htm" />
+        <topic name="sqrt Method " file="html/m_mvp_xml_exslt_exsltmath_sqrt_1_9104ed59.htm" />
+        <topic name="tan Method " file="html/m_mvp_xml_exslt_exsltmath_tan_1_9104ed59.htm" />
+      </topic>
+    </topic>
+    <topic name="ExsltNamespaces Class" file="html/t_mvp_xml_exslt_exsltnamespaces.htm">
+      <topic name="ExsltNamespaces Members" file="html/allmembers_t_mvp_xml_exslt_exsltnamespaces.htm" />
+      <topic name="ExsltNamespaces Fields" file="html/fields_t_mvp_xml_exslt_exsltnamespaces.htm">
+        <topic name="DatesAndTimes Field" file="html/f_mvp_xml_exslt_exsltnamespaces_datesandtimes.htm" />
+        <topic name="GDNDatesAndTimes Field" file="html/f_mvp_xml_exslt_exsltnamespaces_gdndatesandtimes.htm" />
+        <topic name="GDNDynamic Field" file="html/f_mvp_xml_exslt_exsltnamespaces_gdndynamic.htm" />
+        <topic name="GDNMath Field" file="html/f_mvp_xml_exslt_exsltnamespaces_gdnmath.htm" />
+        <topic name="GDNRegularExpressions Field" file="html/f_mvp_xml_exslt_exsltnamespaces_gdnregularexpressions.htm" />
+        <topic name="GDNSets Field" file="html/f_mvp_xml_exslt_exsltnamespaces_gdnsets.htm" />
+        <topic name="GDNStrings Field" file="html/f_mvp_xml_exslt_exsltnamespaces_gdnstrings.htm" />
+        <topic name="Math Field" file="html/f_mvp_xml_exslt_exsltnamespaces_math.htm" />
+        <topic name="Random Field" file="html/f_mvp_xml_exslt_exsltnamespaces_random.htm" />
+        <topic name="RegularExpressions Field" file="html/f_mvp_xml_exslt_exsltnamespaces_regularexpressions.htm" />
+        <topic name="Sets Field" file="html/f_mvp_xml_exslt_exsltnamespaces_sets.htm" />
+        <topic name="Strings Field" file="html/f_mvp_xml_exslt_exsltnamespaces_strings.htm" />
+      </topic>
+    </topic>
+    <topic name="ExsltRandom Class" file="html/t_mvp_xml_exslt_exsltrandom.htm">
+      <topic name="ExsltRandom Members" file="html/allmembers_t_mvp_xml_exslt_exsltrandom.htm" />
+      <topic name="ExsltRandom Constructor " file="html/c_mvp_xml_exslt_exsltrandom_ctor.htm" />
+      <topic name="ExsltRandom Methods " file="html/methods_t_mvp_xml_exslt_exsltrandom.htm">
+        <topic name="random-sequence Method " file="html/o_t_mvp_xml_exslt_exsltrandom_random-sequence.htm">
+          <topic name="random-sequence Method " file="html/m_mvp_xml_exslt_exsltrandom_random-sequence.htm" />
+          <topic name="random-sequence Method (Double)" file="html/m_mvp_xml_exslt_exsltrandom_random-sequence_1_9104ed59.htm" />
+          <topic name="random-sequence Method (Double, Double)" file="html/m_mvp_xml_exslt_exsltrandom_random-sequence_2_a8984f3a.htm" />
+        </topic>
+        <topic name="randomSequence Method " file="html/o_t_mvp_xml_exslt_exsltrandom_randomsequence.htm">
+          <topic name="randomSequence Method " file="html/m_mvp_xml_exslt_exsltrandom_randomsequence.htm" />
+          <topic name="randomSequence Method (Double)" file="html/m_mvp_xml_exslt_exsltrandom_randomsequence_1_9104ed59.htm" />
+          <topic name="randomSequence Method (Double, Double)" file="html/m_mvp_xml_exslt_exsltrandom_randomsequence_2_a8984f3a.htm" />
+        </topic>
+      </topic>
+    </topic>
+    <topic name="ExsltRegularExpressions Class" file="html/t_mvp_xml_exslt_exsltregularexpressions.htm">
+      <topic name="ExsltRegularExpressions Members" file="html/allmembers_t_mvp_xml_exslt_exsltregularexpressions.htm" />
+      <topic name="ExsltRegularExpressions Constructor " file="html/c_mvp_xml_exslt_exsltregularexpressions_ctor.htm" />
+      <topic name="ExsltRegularExpressions Methods " file="html/methods_t_mvp_xml_exslt_exsltregularexpressions.htm">
+        <topic name="match Method " file="html/o_t_mvp_xml_exslt_exsltregularexpressions_match.htm">
+          <topic name="match Method (String, String)" file="html/m_mvp_xml_exslt_exsltregularexpressions_match_2_52fce4af.htm" />
+          <topic name="match Method (String, String, String)" file="html/m_mvp_xml_exslt_exsltregularexpressions_match_3_45ca51f2.htm" />
+        </topic>
+        <topic name="replace Method " file="html/m_mvp_xml_exslt_exsltregularexpressions_replace_4_193e86b9.htm" />
+        <topic name="test Method " file="html/o_t_mvp_xml_exslt_exsltregularexpressions_test.htm">
+          <topic name="test Method (String, String)" file="html/m_mvp_xml_exslt_exsltregularexpressions_test_2_52fce4af.htm" />
+          <topic name="test Method (String, String, String)" file="html/m_mvp_xml_exslt_exsltregularexpressions_test_3_45ca51f2.htm" />
+        </topic>
+      </topic>
+    </topic>
+    <topic name="ExsltSets Class" file="html/t_mvp_xml_exslt_exsltsets.htm">
+      <topic name="ExsltSets Members" file="html/allmembers_t_mvp_xml_exslt_exsltsets.htm" />
+      <topic name="ExsltSets Constructor " file="html/c_mvp_xml_exslt_exsltsets_ctor.htm" />
+      <topic name="ExsltSets Methods " file="html/methods_t_mvp_xml_exslt_exsltsets.htm">
+        <topic name="difference Method " file="html/m_mvp_xml_exslt_exsltsets_difference_2_209fc805.htm" />
+        <topic name="distinct Method " file="html/m_mvp_xml_exslt_exsltsets_distinct_1_bb0264dd.htm" />
+        <topic name="has-same-node Method " file="html/m_mvp_xml_exslt_exsltsets_has-same-node_2_209fc805.htm" />
+        <topic name="hasSameNode Method " file="html/m_mvp_xml_exslt_exsltsets_hassamenode_2_209fc805.htm" />
+        <topic name="intersection Method " file="html/m_mvp_xml_exslt_exsltsets_intersection_2_209fc805.htm" />
+        <topic name="leading Method " file="html/m_mvp_xml_exslt_exsltsets_leading_2_209fc805.htm" />
+        <topic name="trailing Method " file="html/m_mvp_xml_exslt_exsltsets_trailing_2_209fc805.htm" />
+      </topic>
+    </topic>
+    <topic name="ExsltStrings Class" file="html/t_mvp_xml_exslt_exsltstrings.htm">
+      <topic name="ExsltStrings Members" file="html/allmembers_t_mvp_xml_exslt_exsltstrings.htm" />
+      <topic name="ExsltStrings Constructor " file="html/c_mvp_xml_exslt_exsltstrings_ctor.htm" />
+      <topic name="ExsltStrings Methods " file="html/methods_t_mvp_xml_exslt_exsltstrings.htm">
+        <topic name="align Method " file="html/o_t_mvp_xml_exslt_exsltstrings_align.htm">
+          <topic name="align Method (String, String)" file="html/m_mvp_xml_exslt_exsltstrings_align_2_52fce4af.htm" />
+          <topic name="align Method (String, String, String)" file="html/m_mvp_xml_exslt_exsltstrings_align_3_45ca51f2.htm" />
+        </topic>
+        <topic name="concat Method " file="html/m_mvp_xml_exslt_exsltstrings_concat_1_bb0264dd.htm" />
+        <topic name="decode-uri Method " file="html/o_t_mvp_xml_exslt_exsltstrings_decode-uri.htm">
+          <topic name="decode-uri Method (String)" file="html/m_mvp_xml_exslt_exsltstrings_decode-uri_1_72eac341.htm" />
+          <topic name="decode-uri Method (String, String)" file="html/m_mvp_xml_exslt_exsltstrings_decode-uri_2_52fce4af.htm" />
+        </topic>
+        <topic name="decodeUri Method " file="html/o_t_mvp_xml_exslt_exsltstrings_decodeuri.htm">
+          <topic name="decodeUri Method (String)" file="html/m_mvp_xml_exslt_exsltstrings_decodeuri_1_72eac341.htm" />
+          <topic name="decodeUri Method (String, String)" file="html/m_mvp_xml_exslt_exsltstrings_decodeuri_2_52fce4af.htm" />
+        </topic>
+        <topic name="encode-uri Method " file="html/o_t_mvp_xml_exslt_exsltstrings_encode-uri.htm">
+          <topic name="encode-uri Method (String, Boolean)" file="html/m_mvp_xml_exslt_exsltstrings_encode-uri_2_00bbdc3f.htm" />
+          <topic name="encode-uri Method (String, Boolean, String)" file="html/m_mvp_xml_exslt_exsltstrings_encode-uri_3_2c1e5554.htm" />
+        </topic>
+        <topic name="encodeUri Method " file="html/o_t_mvp_xml_exslt_exsltstrings_encodeuri.htm">
+          <topic name="encodeUri Method (String, Boolean)" file="html/m_mvp_xml_exslt_exsltstrings_encodeuri_2_00bbdc3f.htm" />
+          <topic name="encodeUri Method (String, Boolean, String)" file="html/m_mvp_xml_exslt_exsltstrings_encodeuri_3_2c1e5554.htm" />
+        </topic>
+        <topic name="padding Method " file="html/o_t_mvp_xml_exslt_exsltstrings_padding.htm">
+          <topic name="padding Method (Int32)" file="html/m_mvp_xml_exslt_exsltstrings_padding_1_cd2d7ec9.htm" />
+          <topic name="padding Method (Int32, String)" file="html/m_mvp_xml_exslt_exsltstrings_padding_2_fdad1945.htm" />
+        </topic>
+        <topic name="replace Method " file="html/m_mvp_xml_exslt_exsltstrings_replace_3_45ca51f2.htm" />
+        <topic name="split Method " file="html/o_t_mvp_xml_exslt_exsltstrings_split.htm">
+          <topic name="split Method (String)" file="html/m_mvp_xml_exslt_exsltstrings_split_1_72eac341.htm" />
+          <topic name="split Method (String, String)" file="html/m_mvp_xml_exslt_exsltstrings_split_2_52fce4af.htm" />
+        </topic>
+        <topic name="tokenize Method " file="html/o_t_mvp_xml_exslt_exsltstrings_tokenize.htm">
+          <topic name="tokenize Method (String)" file="html/m_mvp_xml_exslt_exsltstrings_tokenize_1_72eac341.htm" />
+          <topic name="tokenize Method (String, String)" file="html/m_mvp_xml_exslt_exsltstrings_tokenize_2_52fce4af.htm" />
+        </topic>
+      </topic>
+    </topic>
+    <topic name="ExsltTransform Class" file="html/t_mvp_xml_exslt_exslttransform.htm">
+      <topic name="ExsltTransform Members" file="html/allmembers_t_mvp_xml_exslt_exslttransform.htm" />
+      <topic name="ExsltTransform Constructor " file="html/o_t_mvp_xml_exslt_exslttransform_ctor.htm">
+        <topic name="ExsltTransform Constructor " file="html/c_mvp_xml_exslt_exslttransform_ctor.htm" />
+        <topic name="ExsltTransform Constructor (Boolean)" file="html/c_mvp_xml_exslt_exslttransform_ctor_1_abc7a1d5.htm" />
+      </topic>
+      <topic name="ExsltTransform Methods " file="html/methods_t_mvp_xml_exslt_exslttransform.htm">
+        <topic name="Load Method " file="html/o_t_mvp_xml_exslt_exslttransform_load.htm">
+          <topic name="Load Method (String)" file="html/m_mvp_xml_exslt_exslttransform_load_1_72eac341.htm" />
+          <topic name="Load Method (XmlReader)" file="html/m_mvp_xml_exslt_exslttransform_load_1_3282adce.htm" />
+          <topic name="Load Method (IXPathNavigable)" file="html/m_mvp_xml_exslt_exslttransform_load_1_3f046af3.htm" />
+          <topic name="Load Method (String, XsltSettings, XmlResolver)" file="html/m_mvp_xml_exslt_exslttransform_load_3_c8c52f08.htm" />
+          <topic name="Load Method (XmlReader, XsltSettings, XmlResolver)" file="html/m_mvp_xml_exslt_exslttransform_load_3_8f1cab85.htm" />
+          <topic name="Load Method (IXPathNavigable, XsltSettings, XmlResolver)" file="html/m_mvp_xml_exslt_exslttransform_load_3_03478022.htm" />
+        </topic>
+        <topic name="Transform Method " file="html/o_t_mvp_xml_exslt_exslttransform_transform.htm">
+          <topic name="Transform Method (String, String)" file="html/m_mvp_xml_exslt_exslttransform_transform_2_52fce4af.htm" />
+          <topic name="Transform Method (String, XmlWriter)" file="html/m_mvp_xml_exslt_exslttransform_transform_2_ce952b97.htm" />
+          <topic name="Transform Method (XmlReader, XmlWriter)" file="html/m_mvp_xml_exslt_exslttransform_transform_2_91a58095.htm" />
+          <topic name="Transform Method (IXPathNavigable, XmlWriter)" file="html/m_mvp_xml_exslt_exslttransform_transform_2_c0b877cf.htm" />
+          <topic name="Transform Method (String, XsltArgumentList, Stream)" file="html/m_mvp_xml_exslt_exslttransform_transform_3_f1fb88d0.htm" />
+          <topic name="Transform Method (String, XsltArgumentList, TextWriter)" file="html/m_mvp_xml_exslt_exslttransform_transform_3_60b874c1.htm" />
+          <topic name="Transform Method (String, XsltArgumentList, XmlWriter)" file="html/m_mvp_xml_exslt_exslttransform_transform_3_e1c02e9f.htm" />
+          <topic name="Transform Method (XmlReader, XsltArgumentList, Stream)" file="html/m_mvp_xml_exslt_exslttransform_transform_3_03f648d3.htm" />
+          <topic name="Transform Method (XmlReader, XsltArgumentList, TextWriter)" file="html/m_mvp_xml_exslt_exslttransform_transform_3_deb631ee.htm" />
+          <topic name="Transform Method (XmlReader, XsltArgumentList, XmlWriter)" file="html/m_mvp_xml_exslt_exslttransform_transform_3_3bae11b3.htm" />
+          <topic name="Transform Method (IXPathNavigable, XsltArgumentList, Stream)" file="html/m_mvp_xml_exslt_exslttransform_transform_3_97b04479.htm" />
+          <topic name="Transform Method (IXPathNavigable, XsltArgumentList, TextWriter)" file="html/m_mvp_xml_exslt_exslttransform_transform_3_e09e6c59.htm" />
+          <topic name="Transform Method (IXPathNavigable, XsltArgumentList, XmlWriter)" file="html/m_mvp_xml_exslt_exslttransform_transform_3_b7b16c1d.htm" />
+          <topic name="Transform Method (XmlReader, XsltArgumentList, XmlWriter, XmlResolver)" file="html/m_mvp_xml_exslt_exslttransform_transform_4_2643c046.htm" />
+        </topic>
+      </topic>
+      <topic name="ExsltTransform Properties " file="html/properties_t_mvp_xml_exslt_exslttransform.htm">
+        <topic name="MultiOutput Property " file="html/p_mvp_xml_exslt_exslttransform_multioutput.htm" />
+        <topic name="OutputSettings Property " file="html/p_mvp_xml_exslt_exslttransform_outputsettings.htm" />
+        <topic name="SupportedFunctions Property " file="html/p_mvp_xml_exslt_exslttransform_supportedfunctions.htm" />
+        <topic name="TemporaryFiles Property " file="html/p_mvp_xml_exslt_exslttransform_temporaryfiles.htm" />
+      </topic>
+    </topic>
+    <topic name="GDNDatesAndTimes Class" file="html/t_mvp_xml_exslt_gdndatesandtimes.htm">
+      <topic name="GDNDatesAndTimes Members" file="html/allmembers_t_mvp_xml_exslt_gdndatesandtimes.htm" />
+      <topic name="GDNDatesAndTimes Constructor " file="html/c_mvp_xml_exslt_gdndatesandtimes_ctor.htm" />
+      <topic name="GDNDatesAndTimes Methods " file="html/methods_t_mvp_xml_exslt_gdndatesandtimes.htm">
+        <topic name="avg Method " file="html/m_mvp_xml_exslt_gdndatesandtimes_avg_1_bb0264dd.htm" />
+        <topic name="date Method " file="html/o_t_mvp_xml_exslt_gdndatesandtimes_date.htm" />
+        <topic name="date-time Method " file="html/o_t_mvp_xml_exslt_gdndatesandtimes_date-time.htm" />
+        <topic name="dateTime Method " file="html/o_t_mvp_xml_exslt_gdndatesandtimes_datetime.htm" />
+        <topic name="day-abbreviation Method " file="html/o_t_mvp_xml_exslt_gdndatesandtimes_day-abbreviation.htm">
+          <topic name="day-abbreviation Method (String)" file="html/m_mvp_xml_exslt_gdndatesandtimes_day-abbreviation_1_72eac341.htm" />
+          <topic name="day-abbreviation Method (String, String)" file="html/m_mvp_xml_exslt_gdndatesandtimes_day-abbreviation_2_52fce4af.htm" />
+        </topic>
+        <topic name="dayAbbreviation Method " file="html/o_t_mvp_xml_exslt_gdndatesandtimes_dayabbreviation.htm">
+          <topic name="dayAbbreviation Method (String)" file="html/m_mvp_xml_exslt_gdndatesandtimes_dayabbreviation_1_72eac341.htm" />
+          <topic name="dayAbbreviation Method (String, String)" file="html/m_mvp_xml_exslt_gdndatesandtimes_dayabbreviation_2_52fce4af.htm" />
+        </topic>
+        <topic name="day-in-month Method " file="html/o_t_mvp_xml_exslt_gdndatesandtimes_day-in-month.htm" />
+        <topic name="dayInMonth Method " file="html/o_t_mvp_xml_exslt_gdndatesandtimes_dayinmonth.htm" />
+        <topic name="day-in-week Method " file="html/o_t_mvp_xml_exslt_gdndatesandtimes_day-in-week.htm" />
+        <topic name="dayInWeek Method " file="html/o_t_mvp_xml_exslt_gdndatesandtimes_dayinweek.htm" />
+        <topic name="day-in-year Method " file="html/o_t_mvp_xml_exslt_gdndatesandtimes_day-in-year.htm" />
+        <topic name="dayInYear Method " file="html/o_t_mvp_xml_exslt_gdndatesandtimes_dayinyear.htm" />
+        <topic name="day-name Method " file="html/o_t_mvp_xml_exslt_gdndatesandtimes_day-name.htm">
+          <topic name="day-name Method (String)" file="html/m_mvp_xml_exslt_gdndatesandtimes_day-name_1_72eac341.htm" />
+          <topic name="day-name Method (String, String)" file="html/m_mvp_xml_exslt_gdndatesandtimes_day-name_2_52fce4af.htm" />
+        </topic>
+        <topic name="dayName Method " file="html/o_t_mvp_xml_exslt_gdndatesandtimes_dayname.htm">
+          <topic name="dayName Method (String)" file="html/m_mvp_xml_exslt_gdndatesandtimes_dayname_1_72eac341.htm" />
+          <topic name="dayName Method (String, String)" file="html/m_mvp_xml_exslt_gdndatesandtimes_dayname_2_52fce4af.htm" />
+        </topic>
+        <topic name="day-of-week-in-month Method " file="html/o_t_mvp_xml_exslt_gdndatesandtimes_day-of-week-in-month.htm" />
+        <topic name="dayOfWeekInMonth Method " file="html/o_t_mvp_xml_exslt_gdndatesandtimes_dayofweekinmonth.htm" />
+        <topic name="duration Method " file="html/o_t_mvp_xml_exslt_gdndatesandtimes_duration.htm" />
+        <topic name="hour-in-day Method " file="html/o_t_mvp_xml_exslt_gdndatesandtimes_hour-in-day.htm" />
+        <topic name="hourInDay Method " file="html/o_t_mvp_xml_exslt_gdndatesandtimes_hourinday.htm" />
+        <topic name="leap-year Method " file="html/o_t_mvp_xml_exslt_gdndatesandtimes_leap-year.htm" />
+        <topic name="leapYear Method " file="html/o_t_mvp_xml_exslt_gdndatesandtimes_leapyear.htm" />
+        <topic name="max Method " file="html/m_mvp_xml_exslt_gdndatesandtimes_max_1_bb0264dd.htm" />
+        <topic name="min Method " file="html/m_mvp_xml_exslt_gdndatesandtimes_min_1_bb0264dd.htm" />
+        <topic name="minute-in-hour Method " file="html/o_t_mvp_xml_exslt_gdndatesandtimes_minute-in-hour.htm" />
+        <topic name="minuteInHour Method " file="html/o_t_mvp_xml_exslt_gdndatesandtimes_minuteinhour.htm" />
+        <topic name="month-abbreviation Method " file="html/o_t_mvp_xml_exslt_gdndatesandtimes_month-abbreviation.htm">
+          <topic name="month-abbreviation Method (String)" file="html/m_mvp_xml_exslt_gdndatesandtimes_month-abbreviation_1_72eac341.htm" />
+          <topic name="month-abbreviation Method (String, String)" file="html/m_mvp_xml_exslt_gdndatesandtimes_month-abbreviation_2_52fce4af.htm" />
+        </topic>
+        <topic name="monthAbbreviation Method " file="html/o_t_mvp_xml_exslt_gdndatesandtimes_monthabbreviation.htm">
+          <topic name="monthAbbreviation Method (String)" file="html/m_mvp_xml_exslt_gdndatesandtimes_monthabbreviation_1_72eac341.htm" />
+          <topic name="monthAbbreviation Method (String, String)" file="html/m_mvp_xml_exslt_gdndatesandtimes_monthabbreviation_2_52fce4af.htm" />
+        </topic>
+        <topic name="month-in-year Method " file="html/o_t_mvp_xml_exslt_gdndatesandtimes_month-in-year.htm" />
+        <topic name="monthInYear Method " file="html/o_t_mvp_xml_exslt_gdndatesandtimes_monthinyear.htm" />
+        <topic name="month-name Method " file="html/o_t_mvp_xml_exslt_gdndatesandtimes_month-name.htm">
+          <topic name="month-name Method (String)" file="html/m_mvp_xml_exslt_gdndatesandtimes_month-name_1_72eac341.htm" />
+          <topic name="month-name Method (String, String)" file="html/m_mvp_xml_exslt_gdndatesandtimes_month-name_2_52fce4af.htm" />
+        </topic>
+        <topic name="monthName Method " file="html/o_t_mvp_xml_exslt_gdndatesandtimes_monthname.htm">
+          <topic name="monthName Method (String)" file="html/m_mvp_xml_exslt_gdndatesandtimes_monthname_1_72eac341.htm" />
+          <topic name="monthName Method (String, String)" file="html/m_mvp_xml_exslt_gdndatesandtimes_monthname_2_52fce4af.htm" />
+        </topic>
+        <topic name="second-in-minute Method " file="html/o_t_mvp_xml_exslt_gdndatesandtimes_second-in-minute.htm" />
+        <topic name="secondInMinute Method " file="html/o_t_mvp_xml_exslt_gdndatesandtimes_secondinminute.htm" />
+        <topic name="seconds Method " file="html/o_t_mvp_xml_exslt_gdndatesandtimes_seconds.htm" />
+        <topic name="time Method " file="html/o_t_mvp_xml_exslt_gdndatesandtimes_time.htm" />
+        <topic name="week-in-month Method " file="html/o_t_mvp_xml_exslt_gdndatesandtimes_week-in-month.htm" />
+        <topic name="weekInMonth Method " file="html/o_t_mvp_xml_exslt_gdndatesandtimes_weekinmonth.htm" />
+        <topic name="week-in-year Method " file="html/o_t_mvp_xml_exslt_gdndatesandtimes_week-in-year.htm" />
+        <topic name="weekInYear Method " file="html/o_t_mvp_xml_exslt_gdndatesandtimes_weekinyear.htm" />
+        <topic name="year Method " file="html/o_t_mvp_xml_exslt_gdndatesandtimes_year.htm" />
+      </topic>
+    </topic>
+    <topic name="GDNDynamic Class" file="html/t_mvp_xml_exslt_gdndynamic.htm">
+      <topic name="GDNDynamic Members" file="html/allmembers_t_mvp_xml_exslt_gdndynamic.htm" />
+      <topic name="GDNDynamic Constructor " file="html/c_mvp_xml_exslt_gdndynamic_ctor.htm" />
+      <topic name="GDNDynamic Methods " file="html/methods_t_mvp_xml_exslt_gdndynamic.htm">
+        <topic name="evaluate Method " file="html/o_t_mvp_xml_exslt_gdndynamic_evaluate.htm">
+          <topic name="evaluate Method (XPathNodeIterator, String)" file="html/m_mvp_xml_exslt_gdndynamic_evaluate_2_6f57ab92.htm" />
+          <topic name="evaluate Method (XPathNodeIterator, String, String)" file="html/m_mvp_xml_exslt_gdndynamic_evaluate_3_a90c75fa.htm" />
+        </topic>
+      </topic>
+    </topic>
+    <topic name="GDNMath Class" file="html/t_mvp_xml_exslt_gdnmath.htm">
+      <topic name="GDNMath Members" file="html/allmembers_t_mvp_xml_exslt_gdnmath.htm" />
+      <topic name="GDNMath Constructor " file="html/c_mvp_xml_exslt_gdnmath_ctor.htm" />
+      <topic name="GDNMath Methods " file="html/methods_t_mvp_xml_exslt_gdnmath.htm">
+        <topic name="avg Method " file="html/m_mvp_xml_exslt_gdnmath_avg_1_bb0264dd.htm" />
+      </topic>
+    </topic>
+    <topic name="GDNRegularExpressions Class" file="html/t_mvp_xml_exslt_gdnregularexpressions.htm">
+      <topic name="GDNRegularExpressions Members" file="html/allmembers_t_mvp_xml_exslt_gdnregularexpressions.htm" />
+      <topic name="GDNRegularExpressions Constructor " file="html/c_mvp_xml_exslt_gdnregularexpressions_ctor.htm" />
+      <topic name="GDNRegularExpressions Methods " file="html/methods_t_mvp_xml_exslt_gdnregularexpressions.htm">
+        <topic name="tokenize Method " file="html/o_t_mvp_xml_exslt_gdnregularexpressions_tokenize.htm">
+          <topic name="tokenize Method (String, String)" file="html/m_mvp_xml_exslt_gdnregularexpressions_tokenize_2_52fce4af.htm" />
+          <topic name="tokenize Method (String, String, String)" file="html/m_mvp_xml_exslt_gdnregularexpressions_tokenize_3_45ca51f2.htm" />
+        </topic>
+      </topic>
+    </topic>
+    <topic name="GDNSets Class" file="html/t_mvp_xml_exslt_gdnsets.htm">
+      <topic name="GDNSets Members" file="html/allmembers_t_mvp_xml_exslt_gdnsets.htm" />
+      <topic name="GDNSets Constructor " file="html/c_mvp_xml_exslt_gdnsets_ctor.htm" />
+      <topic name="GDNSets Methods " file="html/methods_t_mvp_xml_exslt_gdnsets.htm">
+        <topic name="subset Method " file="html/m_mvp_xml_exslt_gdnsets_subset_2_209fc805.htm" />
+        <topic name="subset2 Method " file="html/m_mvp_xml_exslt_gdnsets_subset2_2_209fc805.htm" />
+      </topic>
+    </topic>
+    <topic name="GDNStrings Class" file="html/t_mvp_xml_exslt_gdnstrings.htm">
+      <topic name="GDNStrings Members" file="html/allmembers_t_mvp_xml_exslt_gdnstrings.htm" />
+      <topic name="GDNStrings Constructor " file="html/c_mvp_xml_exslt_gdnstrings_ctor.htm" />
+      <topic name="GDNStrings Methods " file="html/methods_t_mvp_xml_exslt_gdnstrings.htm">
+        <topic name="lowercase Method " file="html/m_mvp_xml_exslt_gdnstrings_lowercase_1_72eac341.htm" />
+        <topic name="uppercase Method " file="html/m_mvp_xml_exslt_gdnstrings_uppercase_1_72eac341.htm" />
+      </topic>
+    </topic>
+    <topic name="MultiXmlTextWriter Class" file="html/t_mvp_xml_exslt_multixmltextwriter.htm">
+      <topic name="MultiXmlTextWriter Members" file="html/allmembers_t_mvp_xml_exslt_multixmltextwriter.htm" />
+      <topic name="MultiXmlTextWriter Constructor " file="html/o_t_mvp_xml_exslt_multixmltextwriter_ctor.htm">
+        <topic name="MultiXmlTextWriter Constructor (TextWriter)" file="html/c_mvp_xml_exslt_multixmltextwriter_ctor_1_9733276a.htm" />
+        <topic name="MultiXmlTextWriter Constructor (Stream, Encoding)" file="html/c_mvp_xml_exslt_multixmltextwriter_ctor_2_6aa7866a.htm" />
+        <topic name="MultiXmlTextWriter Constructor (TextWriter, XmlResolver)" file="html/c_mvp_xml_exslt_multixmltextwriter_ctor_2_84d455c3.htm" />
+        <topic name="MultiXmlTextWriter Constructor (String, Encoding)" file="html/c_mvp_xml_exslt_multixmltextwriter_ctor_2_9139111e.htm" />
+        <topic name="MultiXmlTextWriter Constructor (Stream, Encoding, XmlResolver)" file="html/c_mvp_xml_exslt_multixmltextwriter_ctor_3_c0f59374.htm" />
+      </topic>
+      <topic name="MultiXmlTextWriter Fields" file="html/fields_t_mvp_xml_exslt_multixmltextwriter.htm">
+        <topic name="RedirectElementName Field" file="html/f_mvp_xml_exslt_multixmltextwriter_redirectelementname.htm" />
+        <topic name="RedirectNamespace Field" file="html/f_mvp_xml_exslt_multixmltextwriter_redirectnamespace.htm" />
+      </topic>
+      <topic name="MultiXmlTextWriter Methods " file="html/methods_t_mvp_xml_exslt_multixmltextwriter.htm">
+        <topic name="WriteAttributeString Method " file="html/o_t_mvp_xml_exslt_multixmltextwriter_writeattributestring.htm" />
+        <topic name="WriteComment Method " file="html/m_mvp_xml_exslt_multixmltextwriter_writecomment_1_72eac341.htm" />
+        <topic name="WriteElementString Method " file="html/o_t_mvp_xml_exslt_multixmltextwriter_writeelementstring.htm" />
+        <topic name="WriteEndAttribute Method " file="html/m_mvp_xml_exslt_multixmltextwriter_writeendattribute.htm" />
+        <topic name="WriteEndElement Method " file="html/m_mvp_xml_exslt_multixmltextwriter_writeendelement.htm" />
+        <topic name="WriteFullEndElement Method " file="html/m_mvp_xml_exslt_multixmltextwriter_writefullendelement.htm" />
+        <topic name="WriteNode Method " file="html/o_t_mvp_xml_exslt_multixmltextwriter_writenode.htm" />
+        <topic name="WriteProcessingInstruction Method " file="html/m_mvp_xml_exslt_multixmltextwriter_writeprocessinginstruction_2_52fce4af.htm" />
+        <topic name="WriteRaw Method " file="html/o_t_mvp_xml_exslt_multixmltextwriter_writeraw.htm" />
+        <topic name="WriteStartAttribute Method " file="html/o_t_mvp_xml_exslt_multixmltextwriter_writestartattribute.htm">
+          <topic name="WriteStartAttribute Method (String, String, String)" file="html/m_mvp_xml_exslt_multixmltextwriter_writestartattribute_3_45ca51f2.htm" />
+        </topic>
+        <topic name="WriteStartDocument Method " file="html/o_t_mvp_xml_exslt_multixmltextwriter_writestartdocument.htm" />
+        <topic name="WriteStartElement Method " file="html/o_t_mvp_xml_exslt_multixmltextwriter_writestartelement.htm">
+          <topic name="WriteStartElement Method (String, String, String)" file="html/m_mvp_xml_exslt_multixmltextwriter_writestartelement_3_45ca51f2.htm" />
+        </topic>
+        <topic name="WriteString Method " file="html/m_mvp_xml_exslt_multixmltextwriter_writestring_1_72eac341.htm" />
+        <topic name="WriteValue Method " file="html/o_t_mvp_xml_exslt_multixmltextwriter_writevalue.htm" />
+      </topic>
+    </topic>
+  </topic>
+  <topic name="Mvp.Xml.XInclude Namespace" file="html/n_mvp_xml_xinclude.htm">
+    <topic name="AttributeOrNamespaceInIncludeLocationError Class" file="html/t_mvp_xml_xinclude_attributeornamespaceinincludelocationerror.htm">
+      <topic name="AttributeOrNamespaceInIncludeLocationError Members" file="html/allmembers_t_mvp_xml_xinclude_attributeornamespaceinincludelocationerror.htm" />
+      <topic name="AttributeOrNamespaceInIncludeLocationError Constructor " file="html/c_mvp_xml_xinclude_attributeornamespaceinincludelocationerror_ctor_1_61b4e77c.htm" />
+    </topic>
+    <topic name="CircularInclusionException Class" file="html/t_mvp_xml_xinclude_circularinclusionexception.htm">
+      <topic name="CircularInclusionException Members" file="html/allmembers_t_mvp_xml_xinclude_circularinclusionexception.htm" />
+      <topic name="CircularInclusionException Constructor " file="html/o_t_mvp_xml_xinclude_circularinclusionexception_ctor.htm">
+        <topic name="CircularInclusionException Constructor (Uri)" file="html/c_mvp_xml_xinclude_circularinclusionexception_ctor_1_c40c5aea.htm" />
+        <topic name="CircularInclusionException Constructor (Uri, String, Int32, Int32)" file="html/c_mvp_xml_xinclude_circularinclusionexception_ctor_4_ae9a17fa.htm" />
+      </topic>
+    </topic>
+    <topic name="FatalException Class" file="html/t_mvp_xml_xinclude_fatalexception.htm">
+      <topic name="FatalException Members" file="html/allmembers_t_mvp_xml_xinclude_fatalexception.htm" />
+      <topic name="FatalException Constructor " file="html/o_t_mvp_xml_xinclude_fatalexception_ctor.htm">
+        <topic name="FatalException Constructor (String)" file="html/c_mvp_xml_xinclude_fatalexception_ctor_1_61b4e77c.htm" />
+        <topic name="FatalException Constructor (String, Exception)" file="html/c_mvp_xml_xinclude_fatalexception_ctor_2_3ec47892.htm" />
+      </topic>
+    </topic>
+    <topic name="FatalResourceException Class" file="html/t_mvp_xml_xinclude_fatalresourceexception.htm">
+      <topic name="FatalResourceException Members" file="html/allmembers_t_mvp_xml_xinclude_fatalresourceexception.htm" />
+      <topic name="FatalResourceException Constructor " file="html/c_mvp_xml_xinclude_fatalresourceexception_ctor_1_8d535e04.htm" />
+    </topic>
+    <topic name="InvalidAcceptHTTPHeaderValueError Class" file="html/t_mvp_xml_xinclude_invalidaccepthttpheadervalueerror.htm">
+      <topic name="InvalidAcceptHTTPHeaderValueError Members" file="html/allmembers_t_mvp_xml_xinclude_invalidaccepthttpheadervalueerror.htm" />
+      <topic name="InvalidAcceptHTTPHeaderValueError Constructor " file="html/c_mvp_xml_xinclude_invalidaccepthttpheadervalueerror_ctor_1_968c9eed.htm" />
+    </topic>
+    <topic name="MalformedXInclusionResultError Class" file="html/t_mvp_xml_xinclude_malformedxinclusionresulterror.htm">
+      <topic name="MalformedXInclusionResultError Members" file="html/allmembers_t_mvp_xml_xinclude_malformedxinclusionresulterror.htm" />
+      <topic name="MalformedXInclusionResultError Constructor " file="html/c_mvp_xml_xinclude_malformedxinclusionresulterror_ctor_1_61b4e77c.htm" />
+    </topic>
+    <topic name="NonXmlCharacterException Class" file="html/t_mvp_xml_xinclude_nonxmlcharacterexception.htm">
+      <topic name="NonXmlCharacterException Members" file="html/allmembers_t_mvp_xml_xinclude_nonxmlcharacterexception.htm" />
+      <topic name="NonXmlCharacterException Constructor " file="html/c_mvp_xml_xinclude_nonxmlcharacterexception_ctor_1_968c9eed.htm" />
+    </topic>
+    <topic name="XIncludeException Class" file="html/t_mvp_xml_xinclude_xincludeexception.htm">
+      <topic name="XIncludeException Members" file="html/allmembers_t_mvp_xml_xinclude_xincludeexception.htm" />
+      <topic name="XIncludeException Constructor " file="html/o_t_mvp_xml_xinclude_xincludeexception_ctor.htm">
+        <topic name="XIncludeException Constructor (String)" file="html/c_mvp_xml_xinclude_xincludeexception_ctor_1_61b4e77c.htm" />
+        <topic name="XIncludeException Constructor (String, Exception)" file="html/c_mvp_xml_xinclude_xincludeexception_ctor_2_3ec47892.htm" />
+      </topic>
+    </topic>
+    <topic name="XIncludeSyntaxError Class" file="html/t_mvp_xml_xinclude_xincludesyntaxerror.htm">
+      <topic name="XIncludeSyntaxError Members" file="html/allmembers_t_mvp_xml_xinclude_xincludesyntaxerror.htm" />
+      <topic name="XIncludeSyntaxError Constructor " file="html/c_mvp_xml_xinclude_xincludesyntaxerror_ctor_1_61b4e77c.htm" />
+    </topic>
+    <topic name="XIncludingReader Class" file="html/t_mvp_xml_xinclude_xincludingreader.htm">
+      <topic name="XIncludingReader Members" file="html/allmembers_t_mvp_xml_xinclude_xincludingreader.htm" />
+      <topic name="XIncludingReader Constructor " file="html/o_t_mvp_xml_xinclude_xincludingreader_ctor.htm">
+        <topic name="XIncludingReader Constructor (Stream)" file="html/c_mvp_xml_xinclude_xincludingreader_ctor_1_014c0eac.htm" />
+        <topic name="XIncludingReader Constructor (TextReader)" file="html/c_mvp_xml_xinclude_xincludingreader_ctor_1_a6011e2f.htm" />
+        <topic name="XIncludingReader Constructor (String)" file="html/c_mvp_xml_xinclude_xincludingreader_ctor_1_61b4e77c.htm" />
+        <topic name="XIncludingReader Constructor (XmlReader)" file="html/c_mvp_xml_xinclude_xincludingreader_ctor_1_11267429.htm" />
+        <topic name="XIncludingReader Constructor (Stream, XmlNameTable)" file="html/c_mvp_xml_xinclude_xincludingreader_ctor_2_a81fb5c6.htm" />
+        <topic name="XIncludingReader Constructor (TextReader, XmlNameTable)" file="html/c_mvp_xml_xinclude_xincludingreader_ctor_2_2f037164.htm" />
+        <topic name="XIncludingReader Constructor (String, Stream)" file="html/c_mvp_xml_xinclude_xincludingreader_ctor_2_887b455c.htm" />
+        <topic name="XIncludingReader Constructor (String, TextReader)" file="html/c_mvp_xml_xinclude_xincludingreader_ctor_2_0f6c1c56.htm" />
+        <topic name="XIncludingReader Constructor (String, XmlNameTable)" file="html/c_mvp_xml_xinclude_xincludingreader_ctor_2_bda39e3d.htm" />
+        <topic name="XIncludingReader Constructor (String, XmlResolver)" file="html/c_mvp_xml_xinclude_xincludingreader_ctor_2_597877be.htm" />
+        <topic name="XIncludingReader Constructor (String, Stream, XmlNameTable)" file="html/c_mvp_xml_xinclude_xincludingreader_ctor_3_49213cae.htm" />
+        <topic name="XIncludingReader Constructor (String, Stream, XmlResolver)" file="html/c_mvp_xml_xinclude_xincludingreader_ctor_3_9625491b.htm" />
+        <topic name="XIncludingReader Constructor (String, TextReader, XmlNameTable)" file="html/c_mvp_xml_xinclude_xincludingreader_ctor_3_9cbb7998.htm" />
+      </topic>
+      <topic name="XIncludingReader Methods " file="html/methods_t_mvp_xml_xinclude_xincludingreader.htm">
+        <topic name="Close Method " file="html/m_mvp_xml_xinclude_xincludingreader_close.htm" />
+        <topic name="GetAttribute Method " file="html/o_t_mvp_xml_xinclude_xincludingreader_getattribute.htm">
+          <topic name="GetAttribute Method (Int32)" file="html/m_mvp_xml_xinclude_xincludingreader_getattribute_1_cd2d7ec9.htm" />
+          <topic name="GetAttribute Method (String)" file="html/m_mvp_xml_xinclude_xincludingreader_getattribute_1_72eac341.htm" />
+          <topic name="GetAttribute Method (String, String)" file="html/m_mvp_xml_xinclude_xincludingreader_getattribute_2_52fce4af.htm" />
+        </topic>
+        <topic name="HasLineInfo Method " file="html/m_mvp_xml_xinclude_xincludingreader_haslineinfo.htm" />
+        <topic name="IsStartElement Method " file="html/o_t_mvp_xml_xinclude_xincludingreader_isstartelement.htm" />
+        <topic name="LookupNamespace Method " file="html/m_mvp_xml_xinclude_xincludingreader_lookupnamespace_1_72eac341.htm" />
+        <topic name="MoveToAttribute Method " file="html/o_t_mvp_xml_xinclude_xincludingreader_movetoattribute.htm">
+          <topic name="MoveToAttribute Method (Int32)" file="html/m_mvp_xml_xinclude_xincludingreader_movetoattribute_1_cd2d7ec9.htm" />
+          <topic name="MoveToAttribute Method (String)" file="html/m_mvp_xml_xinclude_xincludingreader_movetoattribute_1_72eac341.htm" />
+          <topic name="MoveToAttribute Method (String, String)" file="html/m_mvp_xml_xinclude_xincludingreader_movetoattribute_2_52fce4af.htm" />
+        </topic>
+        <topic name="MoveToElement Method " file="html/m_mvp_xml_xinclude_xincludingreader_movetoelement.htm" />
+        <topic name="MoveToFirstAttribute Method " file="html/m_mvp_xml_xinclude_xincludingreader_movetofirstattribute.htm" />
+        <topic name="MoveToNextAttribute Method " file="html/m_mvp_xml_xinclude_xincludingreader_movetonextattribute.htm" />
+        <topic name="Read Method " file="html/m_mvp_xml_xinclude_xincludingreader_read.htm" />
+        <topic name="ReadAttributeValue Method " file="html/m_mvp_xml_xinclude_xincludingreader_readattributevalue.htm" />
+        <topic name="ReadElementContentAs Method " file="html/o_t_mvp_xml_xinclude_xincludingreader_readelementcontentas.htm" />
+        <topic name="ReadElementContentAsBoolean Method " file="html/o_t_mvp_xml_xinclude_xincludingreader_readelementcontentasboolean.htm" />
+        <topic name="ReadElementContentAsDateTime Method " file="html/o_t_mvp_xml_xinclude_xincludingreader_readelementcontentasdatetime.htm" />
+        <topic name="ReadElementContentAsDecimal Method " file="html/o_t_mvp_xml_xinclude_xincludingreader_readelementcontentasdecimal.htm" />
+        <topic name="ReadElementContentAsDouble Method " file="html/o_t_mvp_xml_xinclude_xincludingreader_readelementcontentasdouble.htm" />
+        <topic name="ReadElementContentAsFloat Method " file="html/o_t_mvp_xml_xinclude_xincludingreader_readelementcontentasfloat.htm" />
+        <topic name="ReadElementContentAsInt Method " file="html/o_t_mvp_xml_xinclude_xincludingreader_readelementcontentasint.htm" />
+        <topic name="ReadElementContentAsLong Method " file="html/o_t_mvp_xml_xinclude_xincludingreader_readelementcontentaslong.htm" />
+        <topic name="ReadElementContentAsObject Method " file="html/o_t_mvp_xml_xinclude_xincludingreader_readelementcontentasobject.htm" />
+        <topic name="ReadElementContentAsString Method " file="html/o_t_mvp_xml_xinclude_xincludingreader_readelementcontentasstring.htm" />
+        <topic name="ReadElementString Method " file="html/o_t_mvp_xml_xinclude_xincludingreader_readelementstring.htm" />
+        <topic name="ReadInnerXml Method " file="html/m_mvp_xml_xinclude_xincludingreader_readinnerxml.htm" />
+        <topic name="ReadOuterXml Method " file="html/m_mvp_xml_xinclude_xincludingreader_readouterxml.htm" />
+        <topic name="ReadStartElement Method " file="html/o_t_mvp_xml_xinclude_xincludingreader_readstartelement.htm" />
+        <topic name="ReadString Method " file="html/m_mvp_xml_xinclude_xincludingreader_readstring.htm" />
+        <topic name="ReadToDescendant Method " file="html/o_t_mvp_xml_xinclude_xincludingreader_readtodescendant.htm" />
+        <topic name="ReadToFollowing Method " file="html/o_t_mvp_xml_xinclude_xincludingreader_readtofollowing.htm" />
+        <topic name="ReadToNextSibling Method " file="html/o_t_mvp_xml_xinclude_xincludingreader_readtonextsibling.htm" />
+        <topic name="ResolveEntity Method " file="html/m_mvp_xml_xinclude_xincludingreader_resolveentity.htm" />
+      </topic>
+      <topic name="XIncludingReader Properties " file="html/properties_t_mvp_xml_xinclude_xincludingreader.htm">
+        <topic name="AttributeCount Property " file="html/p_mvp_xml_xinclude_xincludingreader_attributecount.htm" />
+        <topic name="BaseURI Property " file="html/p_mvp_xml_xinclude_xincludingreader_baseuri.htm" />
+        <topic name="Depth Property " file="html/p_mvp_xml_xinclude_xincludingreader_depth.htm" />
+        <topic name="Encoding Property " file="html/p_mvp_xml_xinclude_xincludingreader_encoding.htm" />
+        <topic name="EOF Property " file="html/p_mvp_xml_xinclude_xincludingreader_eof.htm" />
+        <topic name="ExposeTextInclusionsAsCDATA Property " file="html/p_mvp_xml_xinclude_xincludingreader_exposetextinclusionsascdata.htm" />
+        <topic name="HasValue Property " file="html/p_mvp_xml_xinclude_xincludingreader_hasvalue.htm" />
+        <topic name="IsDefault Property " file="html/p_mvp_xml_xinclude_xincludingreader_isdefault.htm" />
+        <topic name="IsEmptyElement Property " file="html/p_mvp_xml_xinclude_xincludingreader_isemptyelement.htm" />
+        <topic name="Item Property " file="html/o_t_mvp_xml_xinclude_xincludingreader_item.htm">
+          <topic name="Item Property (Int32)" file="html/p_mvp_xml_xinclude_xincludingreader_item_1_cd2d7ec9.htm" />
+          <topic name="Item Property (String)" file="html/p_mvp_xml_xinclude_xincludingreader_item_1_72eac341.htm" />
+          <topic name="Item Property (String, String)" file="html/p_mvp_xml_xinclude_xincludingreader_item_2_52fce4af.htm" />
+        </topic>
+        <topic name="LineNumber Property " file="html/p_mvp_xml_xinclude_xincludingreader_linenumber.htm" />
+        <topic name="LinePosition Property " file="html/p_mvp_xml_xinclude_xincludingreader_lineposition.htm" />
+        <topic name="LocalName Property " file="html/p_mvp_xml_xinclude_xincludingreader_localname.htm" />
+        <topic name="MakeRelativeBaseUri Property " file="html/p_mvp_xml_xinclude_xincludingreader_makerelativebaseuri.htm" />
+        <topic name="Name Property " file="html/p_mvp_xml_xinclude_xincludingreader_name.htm" />
+        <topic name="NamespaceURI Property " file="html/p_mvp_xml_xinclude_xincludingreader_namespaceuri.htm" />
+        <topic name="NameTable Property " file="html/p_mvp_xml_xinclude_xincludingreader_nametable.htm" />
+        <topic name="NodeType Property " file="html/p_mvp_xml_xinclude_xincludingreader_nodetype.htm" />
+        <topic name="Prefix Property " file="html/p_mvp_xml_xinclude_xincludingreader_prefix.htm" />
+        <topic name="QuoteChar Property " file="html/p_mvp_xml_xinclude_xincludingreader_quotechar.htm" />
+        <topic name="ReadState Property " file="html/p_mvp_xml_xinclude_xincludingreader_readstate.htm" />
+        <topic name="Value Property " file="html/p_mvp_xml_xinclude_xincludingreader_value.htm" />
+        <topic name="WhitespaceHandling Property " file="html/p_mvp_xml_xinclude_xincludingreader_whitespacehandling.htm" />
+        <topic name="XmlLang Property " file="html/p_mvp_xml_xinclude_xincludingreader_xmllang.htm" />
+        <topic name="XmlResolver Property " file="html/p_mvp_xml_xinclude_xincludingreader_xmlresolver.htm" />
+        <topic name="XmlSpace Property " file="html/p_mvp_xml_xinclude_xincludingreader_xmlspace.htm" />
+      </topic>
+    </topic>
+  </topic>
+  <topic name="Mvp.Xml.XPointer Namespace" file="html/n_mvp_xml_xpointer.htm">
+    <topic name="NoSubresourcesIdentifiedException Class" file="html/t_mvp_xml_xpointer_nosubresourcesidentifiedexception.htm">
+      <topic name="NoSubresourcesIdentifiedException Members" file="html/allmembers_t_mvp_xml_xpointer_nosubresourcesidentifiedexception.htm" />
+      <topic name="NoSubresourcesIdentifiedException Constructor " file="html/o_t_mvp_xml_xpointer_nosubresourcesidentifiedexception_ctor.htm">
+        <topic name="NoSubresourcesIdentifiedException Constructor (String)" file="html/c_mvp_xml_xpointer_nosubresourcesidentifiedexception_ctor_1_61b4e77c.htm" />
+        <topic name="NoSubresourcesIdentifiedException Constructor (String, Exception)" file="html/c_mvp_xml_xpointer_nosubresourcesidentifiedexception_ctor_2_3ec47892.htm" />
+      </topic>
+    </topic>
+    <topic name="Pointer Class" file="html/t_mvp_xml_xpointer_pointer.htm">
+      <topic name="Pointer Members" file="html/allmembers_t_mvp_xml_xpointer_pointer.htm" />
+      <topic name="Pointer Constructor " file="html/c_mvp_xml_xpointer_pointer_ctor.htm" />
+      <topic name="Pointer Methods " file="html/methods_t_mvp_xml_xpointer_pointer.htm">
+        <topic name="Compile Method " file="html/m_mvp_xml_xpointer_pointer_compile_1_72eac341.htm" />
+        <topic name="Evaluate Method " file="html/m_mvp_xml_xpointer_pointer_evaluate_1_3b89351a.htm" />
+      </topic>
+    </topic>
+    <topic name="XPointerException Class" file="html/t_mvp_xml_xpointer_xpointerexception.htm">
+      <topic name="XPointerException Members" file="html/allmembers_t_mvp_xml_xpointer_xpointerexception.htm" />
+      <topic name="XPointerException Constructor " file="html/o_t_mvp_xml_xpointer_xpointerexception_ctor.htm">
+        <topic name="XPointerException Constructor (String)" file="html/c_mvp_xml_xpointer_xpointerexception_ctor_1_61b4e77c.htm" />
+        <topic name="XPointerException Constructor (String, Exception)" file="html/c_mvp_xml_xpointer_xpointerexception_ctor_2_3ec47892.htm" />
+      </topic>
+    </topic>
+    <topic name="XPointerReader Class" file="html/t_mvp_xml_xpointer_xpointerreader.htm">
+      <topic name="XPointerReader Members" file="html/allmembers_t_mvp_xml_xpointer_xpointerreader.htm" />
+      <topic name="XPointerReader Constructor " file="html/o_t_mvp_xml_xpointer_xpointerreader_ctor.htm">
+        <topic name="XPointerReader Constructor (String, String)" file="html/c_mvp_xml_xpointer_xpointerreader_ctor_2_6608d038.htm" />
+        <topic name="XPointerReader Constructor (XmlReader, String)" file="html/c_mvp_xml_xpointer_xpointerreader_ctor_2_6c5a57b3.htm" />
+        <topic name="XPointerReader Constructor (IXPathNavigable, String)" file="html/c_mvp_xml_xpointer_xpointerreader_ctor_2_98c35319.htm" />
+        <topic name="XPointerReader Constructor (XPathNavigator, String)" file="html/c_mvp_xml_xpointer_xpointerreader_ctor_2_e5f0927c.htm" />
+        <topic name="XPointerReader Constructor (String, Stream, String)" file="html/c_mvp_xml_xpointer_xpointerreader_ctor_3_e3eba89d.htm" />
+        <topic name="XPointerReader Constructor (String, String, String)" file="html/c_mvp_xml_xpointer_xpointerreader_ctor_3_ecda0320.htm" />
+        <topic name="XPointerReader Constructor (String, XmlNameTable, String)" file="html/c_mvp_xml_xpointer_xpointerreader_ctor_3_4356741c.htm" />
+        <topic name="XPointerReader Constructor (String, Stream, XmlNameTable, String)" file="html/c_mvp_xml_xpointer_xpointerreader_ctor_4_8214b198.htm" />
+      </topic>
+      <topic name="XPointerReader Methods " file="html/methods_t_mvp_xml_xpointer_xpointerreader.htm">
+        <topic name="Close Method " file="html/m_mvp_xml_xpointer_xpointerreader_close.htm" />
+        <topic name="GetAttribute Method " file="html/o_t_mvp_xml_xpointer_xpointerreader_getattribute.htm">
+          <topic name="GetAttribute Method (Int32)" file="html/m_mvp_xml_xpointer_xpointerreader_getattribute_1_cd2d7ec9.htm" />
+          <topic name="GetAttribute Method (String)" file="html/m_mvp_xml_xpointer_xpointerreader_getattribute_1_72eac341.htm" />
+          <topic name="GetAttribute Method (String, String)" file="html/m_mvp_xml_xpointer_xpointerreader_getattribute_2_52fce4af.htm" />
+        </topic>
+        <topic name="GetNavigator Method " file="html/m_mvp_xml_xpointer_xpointerreader_getnavigator.htm" />
+        <topic name="HasLineInfo Method " file="html/m_mvp_xml_xpointer_xpointerreader_haslineinfo.htm" />
+        <topic name="IsStartElement Method " file="html/o_t_mvp_xml_xpointer_xpointerreader_isstartelement.htm" />
+        <topic name="LookupNamespace Method " file="html/m_mvp_xml_xpointer_xpointerreader_lookupnamespace_1_72eac341.htm" />
+        <topic name="MoveToAttribute Method " file="html/o_t_mvp_xml_xpointer_xpointerreader_movetoattribute.htm">
+          <topic name="MoveToAttribute Method (Int32)" file="html/m_mvp_xml_xpointer_xpointerreader_movetoattribute_1_cd2d7ec9.htm" />
+          <topic name="MoveToAttribute Method (String)" file="html/m_mvp_xml_xpointer_xpointerreader_movetoattribute_1_72eac341.htm" />
+          <topic name="MoveToAttribute Method (String, String)" file="html/m_mvp_xml_xpointer_xpointerreader_movetoattribute_2_52fce4af.htm" />
+        </topic>
+        <topic name="MoveToElement Method " file="html/m_mvp_xml_xpointer_xpointerreader_movetoelement.htm" />
+        <topic name="MoveToFirstAttribute Method " file="html/m_mvp_xml_xpointer_xpointerreader_movetofirstattribute.htm" />
+        <topic name="MoveToNextAttribute Method " file="html/m_mvp_xml_xpointer_xpointerreader_movetonextattribute.htm" />
+        <topic name="Read Method " file="html/m_mvp_xml_xpointer_xpointerreader_read.htm" />
+        <topic name="ReadAttributeValue Method " file="html/m_mvp_xml_xpointer_xpointerreader_readattributevalue.htm" />
+        <topic name="ReadElementContentAs Method " file="html/o_t_mvp_xml_xpointer_xpointerreader_readelementcontentas.htm" />
+        <topic name="ReadElementContentAsBoolean Method " file="html/o_t_mvp_xml_xpointer_xpointerreader_readelementcontentasboolean.htm" />
+        <topic name="ReadElementContentAsDateTime Method " file="html/o_t_mvp_xml_xpointer_xpointerreader_readelementcontentasdatetime.htm" />
+        <topic name="ReadElementContentAsDecimal Method " file="html/o_t_mvp_xml_xpointer_xpointerreader_readelementcontentasdecimal.htm" />
+        <topic name="ReadElementContentAsDouble Method " file="html/o_t_mvp_xml_xpointer_xpointerreader_readelementcontentasdouble.htm" />
+        <topic name="ReadElementContentAsFloat Method " file="html/o_t_mvp_xml_xpointer_xpointerreader_readelementcontentasfloat.htm" />
+        <topic name="ReadElementContentAsInt Method " file="html/o_t_mvp_xml_xpointer_xpointerreader_readelementcontentasint.htm" />
+        <topic name="ReadElementContentAsLong Method " file="html/o_t_mvp_xml_xpointer_xpointerreader_readelementcontentaslong.htm" />
+        <topic name="ReadElementContentAsObject Method " file="html/o_t_mvp_xml_xpointer_xpointerreader_readelementcontentasobject.htm" />
+        <topic name="ReadElementContentAsString Method " file="html/o_t_mvp_xml_xpointer_xpointerreader_readelementcontentasstring.htm" />
+        <topic name="ReadElementString Method " file="html/o_t_mvp_xml_xpointer_xpointerreader_readelementstring.htm" />
+        <topic name="ReadInnerXml Method " file="html/m_mvp_xml_xpointer_xpointerreader_readinnerxml.htm" />
+        <topic name="ReadOuterXml Method " file="html/m_mvp_xml_xpointer_xpointerreader_readouterxml.htm" />
+        <topic name="ReadStartElement Method " file="html/o_t_mvp_xml_xpointer_xpointerreader_readstartelement.htm" />
+        <topic name="ReadString Method " file="html/m_mvp_xml_xpointer_xpointerreader_readstring.htm" />
+        <topic name="ReadToDescendant Method " file="html/o_t_mvp_xml_xpointer_xpointerreader_readtodescendant.htm" />
+        <topic name="ReadToFollowing Method " file="html/o_t_mvp_xml_xpointer_xpointerreader_readtofollowing.htm" />
+        <topic name="ReadToNextSibling Method " file="html/o_t_mvp_xml_xpointer_xpointerreader_readtonextsibling.htm" />
+        <topic name="ResolveEntity Method " file="html/m_mvp_xml_xpointer_xpointerreader_resolveentity.htm" />
+      </topic>
+      <topic name="XPointerReader Properties " file="html/properties_t_mvp_xml_xpointer_xpointerreader.htm">
+        <topic name="AttributeCount Property " file="html/p_mvp_xml_xpointer_xpointerreader_attributecount.htm" />
+        <topic name="BaseURI Property " file="html/p_mvp_xml_xpointer_xpointerreader_baseuri.htm" />
+        <topic name="Depth Property " file="html/p_mvp_xml_xpointer_xpointerreader_depth.htm" />
+        <topic name="EOF Property " file="html/p_mvp_xml_xpointer_xpointerreader_eof.htm" />
+        <topic name="HasValue Property " file="html/p_mvp_xml_xpointer_xpointerreader_hasvalue.htm" />
+        <topic name="IsDefault Property " file="html/p_mvp_xml_xpointer_xpointerreader_isdefault.htm" />
+        <topic name="IsEmptyElement Property " file="html/p_mvp_xml_xpointer_xpointerreader_isemptyelement.htm" />
+        <topic name="Item Property " file="html/o_t_mvp_xml_xpointer_xpointerreader_item.htm">
+          <topic name="Item Property (Int32)" file="html/p_mvp_xml_xpointer_xpointerreader_item_1_cd2d7ec9.htm" />
+          <topic name="Item Property (String)" file="html/p_mvp_xml_xpointer_xpointerreader_item_1_72eac341.htm" />
+          <topic name="Item Property (String, String)" file="html/p_mvp_xml_xpointer_xpointerreader_item_2_52fce4af.htm" />
+        </topic>
+        <topic name="LineNumber Property " file="html/p_mvp_xml_xpointer_xpointerreader_linenumber.htm" />
+        <topic name="LinePosition Property " file="html/p_mvp_xml_xpointer_xpointerreader_lineposition.htm" />
+        <topic name="LocalName Property " file="html/p_mvp_xml_xpointer_xpointerreader_localname.htm" />
+        <topic name="Name Property " file="html/p_mvp_xml_xpointer_xpointerreader_name.htm" />
+        <topic name="NamespaceURI Property " file="html/p_mvp_xml_xpointer_xpointerreader_namespaceuri.htm" />
+        <topic name="NameTable Property " file="html/p_mvp_xml_xpointer_xpointerreader_nametable.htm" />
+        <topic name="NodeType Property " file="html/p_mvp_xml_xpointer_xpointerreader_nodetype.htm" />
+        <topic name="Prefix Property " file="html/p_mvp_xml_xpointer_xpointerreader_prefix.htm" />
+        <topic name="QuoteChar Property " file="html/p_mvp_xml_xpointer_xpointerreader_quotechar.htm" />
+        <topic name="ReadState Property " file="html/p_mvp_xml_xpointer_xpointerreader_readstate.htm" />
+        <topic name="Value Property " file="html/p_mvp_xml_xpointer_xpointerreader_value.htm" />
+        <topic name="XmlLang Property " file="html/p_mvp_xml_xpointer_xpointerreader_xmllang.htm" />
+        <topic name="XmlSpace Property " file="html/p_mvp_xml_xpointer_xpointerreader_xmlspace.htm" />
+      </topic>
+    </topic>
+    <topic name="XPointerSyntaxException Class" file="html/t_mvp_xml_xpointer_xpointersyntaxexception.htm">
+      <topic name="XPointerSyntaxException Members" file="html/allmembers_t_mvp_xml_xpointer_xpointersyntaxexception.htm" />
+      <topic name="XPointerSyntaxException Constructor " file="html/o_t_mvp_xml_xpointer_xpointersyntaxexception_ctor.htm">
+        <topic name="XPointerSyntaxException Constructor (String)" file="html/c_mvp_xml_xpointer_xpointersyntaxexception_ctor_1_61b4e77c.htm" />
+        <topic name="XPointerSyntaxException Constructor (String, Exception)" file="html/c_mvp_xml_xpointer_xpointersyntaxexception_ctor_2_3ec47892.htm" />
+      </topic>
+    </topic>
+  </topic>
+</topics>

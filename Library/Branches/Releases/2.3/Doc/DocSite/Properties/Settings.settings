@@ -1,0 +1,24 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="DocSite.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="VirtualHelpPath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">~/Default.aspx</Value>
+    </Setting>
+    <Setting Name="HelpFileNotFoundPath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">~/HelpFileNotFound.htm</Value>
+    </Setting>
+    <Setting Name="FileNotFoundPath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">~/FileNotFound.htm</Value>
+    </Setting>
+    <Setting Name="DocSiteIndexXmlSource" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">~/DocSiteIndex.xml</Value>
+    </Setting>
+    <Setting Name="DocSiteContentsXmlSource" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">~/DocSiteContents.xml</Value>
+    </Setting>
+		<Setting Name="EnablePersistSidebarHandle" Type="System.Boolean" Scope="Application">
+			<Value Profile="(Default)">True</Value>
+		</Setting>
+  </Settings>
+</SettingsFile>
