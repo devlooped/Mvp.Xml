@@ -2,6 +2,8 @@
 using System.IO;
 using System.Linq;
 using Microsoft.Extensions.Configuration;
+using Mono.Cecil;
+using Mono.Cecil.Cil;
 using Serilog;
 
 // configure serilog
@@ -13,10 +15,10 @@ Log.Logger = new LoggerConfiguration()
 
 Log.Information($"MethodRenamer started with {args.Length} arguments");
 
-if (args.Length < 3)
+if (args.Length != 2)
 {
     Log.Error("MethodRenamer: missing parameter(s).");
-    Console.WriteLine("Usage: MethodRenamer [path to config file] [path to input il] [path to output il]");
+    Console.WriteLine("Usage: MethodRenamer [path to config file] [path to assembly]");
     return;
 }
 
@@ -28,36 +30,29 @@ var dictionary = new ConfigurationBuilder()
     .AsEnumerable()
     .ToDictionary(item => item.Key, item => item.Value);
 
-// Reads input IL code
-var reader = new StreamReader(args[1]);
-
-// Writes output IL code
-var writer = new StreamWriter(args[2]);
-
-string line;
-
-// Go read line by line
-while ((line = reader.ReadLine()) != null)
+using var assembly = AssemblyDefinition.ReadAssembly(args[1], new ReaderParameters
 {
-    // Method definition?
-    if (line.Trim().StartsWith(".method"))
+    ReadSymbols = true,
+    SymbolReaderProvider = new PortablePdbReaderProvider(),
+    ReadWrite = true,
+    InMemory = true,
+});
+
+foreach (var type in assembly.MainModule.Types)
+{
+    foreach (var method in type.Methods)
     {
-        writer.WriteLine(line);
-        line = reader.ReadLine();
-        if (line != null && line.IndexOf("(", StringComparison.Ordinal) != -1)
+        if (dictionary.TryGetValue(method.Name, out string renamed))
         {
-            string methodName =
-                line.Trim().Substring(0, line.Trim().IndexOf("(", StringComparison.Ordinal));
-            if (dictionary.TryGetValue(methodName, out string replaceMethodName))
-            {
-                writer.WriteLine(line.Replace(methodName + "(", "'" + replaceMethodName + "'("));
-                Console.WriteLine($"Found '{methodName}' method, renamed to '{replaceMethodName}'");
-                continue;
-            }
+            Console.WriteLine($"Found '{method.Name}' method, renamed to '{renamed}'");
+            method.Name = renamed;
         }
     }
-    writer.WriteLine(line);
 }
 
-reader.Close();
-writer.Close();
+// Save the modified assembly
+assembly.Write(args[1], new WriterParameters
+{
+    WriteSymbols = true,
+    SymbolWriterProvider = new PortablePdbWriterProvider()
+});
