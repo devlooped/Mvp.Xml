@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "MethodRenamer": {
+      "commandName": "Project",
+      "commandLineArgs": "C:\\Code\\Mvp.Xml\\src\\Mvp.Xml\\RenameMappings.json C:\\Code\\Mvp.Xml\\src\\Mvp.Xml\\obj\\Debug\\netstandard2.0\\Mvp.Xml.il C:\\Code\\Mvp.Xml\\src\\Mvp.Xml\\obj\\Debug\\netstandard2.0\\Mvp.Xml.fixed.il"
+    }
+  }
+}
