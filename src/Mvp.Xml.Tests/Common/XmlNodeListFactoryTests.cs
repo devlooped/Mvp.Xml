@@ -4,9 +4,6 @@ using Xunit;
 
 namespace Mvp.Xml.Tests;
 
-/// <summary>
-/// </summary>
-
 public class XmlNodeListFactoryTests
 {
     XmlDocument pubsDocument;

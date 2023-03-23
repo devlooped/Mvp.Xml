@@ -8,9 +8,6 @@ using Xunit;
 
 namespace Mvp.Xml.Tests;
 
-/// <summary>
-/// </summary>
-
 public class XmlNodeFactoryTests
 {
     static readonly XmlSerializer ser = new(typeof(XmlNode));
