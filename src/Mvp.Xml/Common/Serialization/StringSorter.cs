@@ -2,13 +2,13 @@
 
 namespace Mvp.Xml.Common.Serialization
 {
-	/// <summary>
-	/// Helper class to simpify sorting
-	/// strings (Not really necessary in Whidbey).
-	/// </summary>
-	public class StringSorter
-	{
-	    readonly List<string> list = new();
+    /// <summary>
+    /// Helper class to simpify sorting
+    /// strings (Not really necessary in Whidbey).
+    /// </summary>
+    public class StringSorter
+    {
+        readonly List<string> list = new();
 
         /// <summary>
         /// Add a string to sort
@@ -22,9 +22,9 @@ namespace Mvp.Xml.Common.Serialization
         /// </summary>
         /// <returns>A sorted string array.</returns>
         public string[] GetOrderedArray()
-		{
-			list.Sort();
-			return list.ToArray();
-		}
-	}
+        {
+            list.Sort();
+            return list.ToArray();
+        }
+    }
 }

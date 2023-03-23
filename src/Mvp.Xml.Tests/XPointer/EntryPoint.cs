@@ -14,7 +14,7 @@
 //            //XPointerReaderTests rt = new XPointerReaderTests();
 //            try 
 //            {
-               
+
 //                pt.CircumflexErrorTest();
 //            } 
 //            catch (Exception e) 

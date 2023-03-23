@@ -246,7 +246,7 @@ public static class XPathCache
     /// <summary>
     /// Selects a node set using the specified XPath expression.
     /// </summary>
-    public static XPathNodeIterator Select(string expression, XPathNavigator source, 
+    public static XPathNodeIterator Select(string expression, XPathNavigator source,
         XmlNamespaceManager context, params XPathVariable[] variables)
     {
         var expr = GetCompiledExpression(expression, source);
@@ -475,7 +475,7 @@ public static class XPathCache
     /// <remarks>
     /// See <see cref="XPathExpression.AddSort(object, IComparer)"/>.
     /// </remarks>
-    public static XmlNodeList SelectNodesSorted(string expression, XmlNode source, object sortExpression, IComparer comparer) 
+    public static XmlNodeList SelectNodesSorted(string expression, XmlNode source, object sortExpression, IComparer comparer)
         => XmlNodeListFactory.CreateNodeList(SelectSorted(expression, source.CreateNavigator(), sortExpression, comparer));
 
     /// <summary>
@@ -484,61 +484,61 @@ public static class XPathCache
     /// <remarks>(object, IComparer)
     /// See <see cref="XPathExpression.AddSort(object, IComparer)"/>.
     /// </remarks>
-    public static XmlNodeList SelectNodesSorted(string expression, XmlNode source, object sortExpression, XmlSortOrder order, XmlCaseOrder caseOrder, string lang, XmlDataType dataType) 
+    public static XmlNodeList SelectNodesSorted(string expression, XmlNode source, object sortExpression, XmlSortOrder order, XmlCaseOrder caseOrder, string lang, XmlDataType dataType)
         => XmlNodeListFactory.CreateNodeList(SelectSorted(expression, source.CreateNavigator(), sortExpression, order, caseOrder, lang, dataType));
 
     /// <summary>
     /// Selects a node set using the specified XPath expression.
     /// </summary>
-    public static XmlNodeList SelectNodesSorted(string expression, XmlNode source, object sortExpression, IComparer comparer, params XPathVariable[] variables) 
+    public static XmlNodeList SelectNodesSorted(string expression, XmlNode source, object sortExpression, IComparer comparer, params XPathVariable[] variables)
         => XmlNodeListFactory.CreateNodeList(SelectSorted(expression, source.CreateNavigator(), sortExpression, comparer, variables));
 
     /// <summary>
     /// Selects a node set using the specified XPath expression.
     /// </summary>
-    public static XmlNodeList SelectNodesSorted(string expression, XmlNode source, object sortExpression, XmlSortOrder order, XmlCaseOrder caseOrder, string lang, XmlDataType dataType, params XPathVariable[] variables) 
+    public static XmlNodeList SelectNodesSorted(string expression, XmlNode source, object sortExpression, XmlSortOrder order, XmlCaseOrder caseOrder, string lang, XmlDataType dataType, params XPathVariable[] variables)
         => XmlNodeListFactory.CreateNodeList(SelectSorted(expression, source.CreateNavigator(), sortExpression, order, caseOrder, lang, dataType, variables));
 
     /// <summary>
     /// Selects a node set using the specified XPath expression.
     /// </summary>
-    public static XmlNodeList SelectNodesSorted(string expression, XmlNode source, object sortExpression, XmlSortOrder order, XmlCaseOrder caseOrder, string lang, XmlDataType dataType, XmlNamespaceManager context) 
+    public static XmlNodeList SelectNodesSorted(string expression, XmlNode source, object sortExpression, XmlSortOrder order, XmlCaseOrder caseOrder, string lang, XmlDataType dataType, XmlNamespaceManager context)
         => XmlNodeListFactory.CreateNodeList(SelectSorted(expression, source.CreateNavigator(), sortExpression, order, caseOrder, lang, dataType, context));
 
     /// <summary>
     /// Selects a node set using the specified XPath expression.
     /// </summary>
-    public static XmlNodeList SelectNodesSorted(string expression, XmlNode source, object sortExpression, IComparer comparer, params XmlPrefix[] prefixes) 
+    public static XmlNodeList SelectNodesSorted(string expression, XmlNode source, object sortExpression, IComparer comparer, params XmlPrefix[] prefixes)
         => XmlNodeListFactory.CreateNodeList(SelectSorted(expression, source.CreateNavigator(), sortExpression, comparer, prefixes));
 
     /// <summary>
     /// Selects a node set using the specified XPath expression.
     /// </summary>
-    public static XmlNodeList SelectNodesSorted(string expression, XmlNode source, object sortExpression, XmlSortOrder order, XmlCaseOrder caseOrder, string lang, XmlDataType dataType, params XmlPrefix[] prefixes) 
+    public static XmlNodeList SelectNodesSorted(string expression, XmlNode source, object sortExpression, XmlSortOrder order, XmlCaseOrder caseOrder, string lang, XmlDataType dataType, params XmlPrefix[] prefixes)
         => XmlNodeListFactory.CreateNodeList(SelectSorted(expression, source.CreateNavigator(), sortExpression, order, caseOrder, lang, dataType, prefixes));
 
     /// <summary>
     /// Selects a node set using the specified XPath expression.
     /// </summary>
-    public static XmlNodeList SelectNodesSorted(string expression, XmlNode source, object sortExpression, XmlSortOrder order, XmlCaseOrder caseOrder, string lang, XmlDataType dataType, XmlNamespaceManager context, params XPathVariable[] variables) 
+    public static XmlNodeList SelectNodesSorted(string expression, XmlNode source, object sortExpression, XmlSortOrder order, XmlCaseOrder caseOrder, string lang, XmlDataType dataType, XmlNamespaceManager context, params XPathVariable[] variables)
         => XmlNodeListFactory.CreateNodeList(SelectSorted(expression, source.CreateNavigator(), sortExpression, order, caseOrder, lang, dataType, context, variables));
 
     /// <summary>
     /// Selects a node set using the specified XPath expression.
     /// </summary>
-    public static XmlNodeList SelectNodesSorted(string expression, XmlNode source, object sortExpression, IComparer comparer, XmlNamespaceManager context, params XPathVariable[] variables) 
+    public static XmlNodeList SelectNodesSorted(string expression, XmlNode source, object sortExpression, IComparer comparer, XmlNamespaceManager context, params XPathVariable[] variables)
         => XmlNodeListFactory.CreateNodeList(SelectSorted(expression, source.CreateNavigator(), sortExpression, comparer, context, variables));
 
     /// <summary>
     /// Selects a node set using the specified XPath expression.
     /// </summary>
-    public static XmlNodeList SelectNodesSorted(string expression, XmlNode source, object sortExpression, XmlSortOrder order, XmlCaseOrder caseOrder, string lang, XmlDataType dataType, XmlPrefix[] prefixes, params XPathVariable[] variables) 
+    public static XmlNodeList SelectNodesSorted(string expression, XmlNode source, object sortExpression, XmlSortOrder order, XmlCaseOrder caseOrder, string lang, XmlDataType dataType, XmlPrefix[] prefixes, params XPathVariable[] variables)
         => XmlNodeListFactory.CreateNodeList(SelectSorted(expression, source.CreateNavigator(), sortExpression, order, caseOrder, lang, dataType, prefixes, variables));
 
     /// <summary>
     /// Selects a node set using the specified XPath expression.
     /// </summary>
-    public static XmlNodeList SelectNodesSorted(string expression, XmlNode source, object sortExpression, IComparer comparer, XmlPrefix[] prefixes, params XPathVariable[] variables) 
+    public static XmlNodeList SelectNodesSorted(string expression, XmlNode source, object sortExpression, IComparer comparer, XmlPrefix[] prefixes, params XPathVariable[] variables)
         => XmlNodeListFactory.CreateNodeList(SelectSorted(expression, source.CreateNavigator(), sortExpression, comparer, prefixes, variables));
 
     /// <summary>

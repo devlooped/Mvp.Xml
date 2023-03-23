@@ -112,6 +112,6 @@ public class CharacterMappingXmlReader : XmlWrappingReader
     /// <summary>
     /// Compiles character map.
     /// </summary>        
-    public Dictionary<char, string> CompileCharacterMapping() 
+    public Dictionary<char, string> CompileCharacterMapping()
         => mapping == null ? new Dictionary<char, string>() : mapping.Compile(useCharacterMaps);
 }

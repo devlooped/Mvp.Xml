@@ -9,7 +9,7 @@
 //	/// Test of XPath-only EXSLT.
 //	/// </summary>
 //	public class ExsltXPathTest {
-		
+
 //		public static void Main(string[] args) {
 //		    if (args.Length != 2) {
 //		        PrintUsage();
@@ -31,7 +31,7 @@
 //		        Console.WriteLine(o);
 //		    }		        
 //		}	
-		
+
 //		private static void PrintUsage() {
 //		    Console.WriteLine("ExsltXPathTest usage:");
 //		    Console.WriteLine("ExsltXPathTest.exe source XPath-expression");

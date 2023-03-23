@@ -16,5 +16,5 @@ public class SingletonXPathNodeIteratorTests
         Assert.True(ni.MoveNext());
         Assert.True(ni.Current == node);
         Assert.False(ni.MoveNext());
-    }        
+    }
 }

@@ -20,15 +20,15 @@ class ExsltContextFunction : IXsltContextFunction
         ownerObj = owner;
     }
 
-    public int Minargs => argTypes.Length; 
+    public int Minargs => argTypes.Length;
 
-    public int Maxargs => argTypes.Length; 
+    public int Maxargs => argTypes.Length;
 
-    public XPathResultType[] ArgTypes  => argTypes; 
+    public XPathResultType[] ArgTypes => argTypes;
 
     public XPathResultType ReturnType => ExsltContext.ConvertToXPathType(method.ReturnType);
 
-    public object Invoke(XsltContext xsltContext, object[] args, XPathNavigator docContext) 
+    public object Invoke(XsltContext xsltContext, object[] args, XPathNavigator docContext)
         => method.Invoke(ownerObj, args);
 }
 

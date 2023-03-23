@@ -72,7 +72,7 @@ class TextIncludingReader : XmlReader
 
     public override XmlNameTable NameTable => null;
 
-    public override XmlNodeType NodeType => state == 
+    public override XmlNodeType NodeType => state ==
         ReadState.Interactive ?
         exposeCdata ? XmlNodeType.CDATA : XmlNodeType.Text
         : XmlNodeType.None;

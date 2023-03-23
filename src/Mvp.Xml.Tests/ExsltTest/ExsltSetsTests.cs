@@ -6,26 +6,26 @@ namespace ExsltTest;
 /// Collection of unit tests for EXSLT Sets module functions.
 /// </summary>
 public class ExsltSetsTests : ExsltUnitTests
-{        
-    protected override string TestDir => "../../ExsltTest/tests/EXSLT/Sets/"; 
-    protected override string ResultsDir => "../../ExsltTest/results/EXSLT/Sets/"; 
-                   
+{
+    protected override string TestDir => "../../ExsltTest/tests/EXSLT/Sets/";
+    protected override string ResultsDir => "../../ExsltTest/results/EXSLT/Sets/";
+
     /// <summary>
     /// Tests the following function:
     ///     set:difference()
     /// </summary>
     [Fact]
-    public void DifferenceTest() 
+    public void DifferenceTest()
     {
         RunAndCompare("source.xml", "difference.xslt", "difference.xml");
     }
-    
+
     /// <summary>
     /// Tests the following function:
     ///     set:intersection()
     /// </summary>
     [Fact]
-    public void IntersectionTest() 
+    public void IntersectionTest()
     {
         RunAndCompare("source.xml", "intersection.xslt", "intersection.xml");
     }
@@ -35,7 +35,7 @@ public class ExsltSetsTests : ExsltUnitTests
     ///     set:distinct()
     /// </summary>
     [Fact]
-    public void DistinctTest() 
+    public void DistinctTest()
     {
         RunAndCompare("source.xml", "distinct.xslt", "distinct.xml");
     }
@@ -45,7 +45,7 @@ public class ExsltSetsTests : ExsltUnitTests
     ///     set:has-same-node()
     /// </summary>
     [Fact]
-    public void HasSameNodeTest() 
+    public void HasSameNodeTest()
     {
         RunAndCompare("source.xml", "has-same-node.xslt", "has-same-node.xml");
     }
@@ -55,7 +55,7 @@ public class ExsltSetsTests : ExsltUnitTests
     ///     set:leading()
     /// </summary>
     [Fact]
-    public void LeadingTest() 
+    public void LeadingTest()
     {
         RunAndCompare("source.xml", "leading.xslt", "leading.xml");
     }
@@ -65,8 +65,8 @@ public class ExsltSetsTests : ExsltUnitTests
     ///     set:trailing()
     /// </summary>
     [Fact]
-    public void TrailingTest() 
+    public void TrailingTest()
     {
         RunAndCompare("source.xml", "trailing.xslt", "trailing.xml");
-    }        
+    }
 }

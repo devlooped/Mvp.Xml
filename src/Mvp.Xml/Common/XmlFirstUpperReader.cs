@@ -25,52 +25,52 @@ public class XmlFirstUpperReader : XmlTextReader
     /// See <see cref="XmlTextReader"/> constructor overloads.
     /// </summary>
     public XmlFirstUpperReader(TextReader input) : base(input) { }
-    
+
     /// <summary>
     /// See <see cref="XmlTextReader"/> constructor overloads.
     /// </summary>
     public XmlFirstUpperReader(string url) : base(url) { }
-    
+
     /// <summary>
     /// See <see cref="XmlTextReader"/> constructor overloads.
     /// </summary>
     public XmlFirstUpperReader(Stream input, XmlNameTable nt) : base(input, nt) { }
-    
+
     /// <summary>
     /// See <see cref="XmlTextReader"/> constructor overloads.
     /// </summary>
     public XmlFirstUpperReader(TextReader input, XmlNameTable nt) : base(input, nt) { }
-    
+
     /// <summary>
     /// See <see cref="XmlTextReader"/> constructor overloads.
     /// </summary>
     public XmlFirstUpperReader(string url, Stream input) : base(url, input) { }
-    
+
     /// <summary>
     /// See <see cref="XmlTextReader"/> constructor overloads.
     /// </summary>
     public XmlFirstUpperReader(string url, TextReader input) : base(url, input) { }
-    
+
     /// <summary>
     /// See <see cref="XmlTextReader"/> constructor overloads.
     /// </summary>
     public XmlFirstUpperReader(string url, XmlNameTable nt) : base(url, nt) { }
-    
+
     /// <summary>
     /// See <see cref="XmlTextReader"/> constructor overloads.
     /// </summary>
     public XmlFirstUpperReader(Stream xmlFragment, XmlNodeType fragType, XmlParserContext context) : base(xmlFragment, fragType, context) { }
-    
+
     /// <summary>
     /// See <see cref="XmlTextReader"/> constructor overloads.
     /// </summary>
     public XmlFirstUpperReader(string url, Stream input, XmlNameTable nt) : base(url, input, nt) { }
-    
+
     /// <summary>
     /// See <see cref="XmlTextReader"/> constructor overloads.
     /// </summary>
     public XmlFirstUpperReader(string url, TextReader input, XmlNameTable nt) : base(url, input, nt) { }
-    
+
     /// <summary>
     /// See <see cref="XmlTextReader"/> constructor overloads.
     /// </summary>
@@ -97,7 +97,7 @@ public class XmlFirstUpperReader : XmlTextReader
     }
 
     /// <summary>See <see cref="XmlReader.this[string, string]"/></summary>
-    public override string this[string name, string namespaceUri] 
+    public override string this[string name, string namespaceUri]
         => base[NameTable.Add(XmlFirstLowerWriter.MakeFirstLower(name)), namespaceUri];
 
     /// <summary>See <see cref="XmlReader.this[string]"/></summary>
@@ -142,6 +142,6 @@ public class XmlFirstUpperReader : XmlTextReader
     }
 
     /// <summary>See <see cref="XmlReader.MoveToAttribute(string, string)"/></summary>
-    public override bool MoveToAttribute(string name, string ns) 
+    public override bool MoveToAttribute(string name, string ns)
         => base.MoveToAttribute(NameTable.Add(XmlFirstLowerWriter.MakeFirstLower(name)), ns);
 }

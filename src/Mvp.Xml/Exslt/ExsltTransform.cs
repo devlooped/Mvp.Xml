@@ -187,7 +187,7 @@ public class ExsltTransform
     /// Gets an <see cref="XmlWriterSettings"/> object that contains the output 
     /// information derived from the xsl:output element of the style sheet.
     /// </summary>
-    public XmlWriterSettings OutputSettings => xslTransform.OutputSettings; 
+    public XmlWriterSettings OutputSettings => xslTransform.OutputSettings;
 
     ///// <summary>
     ///// Gets the TempFileCollection that contains the temporary files generated 
@@ -315,7 +315,7 @@ public class ExsltTransform
     /// Executes the transform using the input document specified by the 
     /// XmlReader object and outputs the results to an XmlWriter. 
     /// </summary>        
-    public void Transform(XmlReader input, XmlWriter results) 
+    public void Transform(XmlReader input, XmlWriter results)
         => xslTransform.Transform(input, AddExsltExtensionObjects(null), results);
 
     /// <summary>
@@ -364,7 +364,7 @@ public class ExsltTransform
     /// IXPathNavigable object and outputs the results to an XmlWriter. 
     /// The XsltArgumentList provides additional run-time arguments. 
     /// </summary>        
-    public void Transform(IXPathNavigable input, XsltArgumentList arguments, XmlWriter results) 
+    public void Transform(IXPathNavigable input, XsltArgumentList arguments, XmlWriter results)
         => xslTransform.Transform(input, AddExsltExtensionObjects(arguments), results);
 
     /// <summary>
@@ -469,7 +469,7 @@ public class ExsltTransform
     /// The XsltArgumentList provides additional run-time arguments and the 
     /// XmlResolver resolves the XSLT document() function. 
     /// </summary>        
-    public void Transform(XmlReader input, XsltArgumentList arguments, XmlWriter results, XmlResolver documentResolver) 
+    public void Transform(XmlReader input, XsltArgumentList arguments, XmlWriter results, XmlResolver documentResolver)
         => xslTransform.Transform(input, AddExsltExtensionObjects(arguments), results, documentResolver);
 
     /// <summary>

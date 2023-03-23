@@ -6,27 +6,27 @@ namespace ExsltTest;
 /// Collection of unit tests for EXSLT Dates and Times module functions.
 /// </summary>
 public class ExsltDatesAndTimesTests : ExsltUnitTests
-{        
-    protected override string TestDir => "../../ExsltTest/tests/EXSLT/DatesAndTimes/"; 
+{
+    protected override string TestDir => "../../ExsltTest/tests/EXSLT/DatesAndTimes/";
 
-    protected override string ResultsDir => "../../ExsltTest/results/EXSLT/DatesAndTimes/"; 
-    
+    protected override string ResultsDir => "../../ExsltTest/results/EXSLT/DatesAndTimes/";
+
     /// <summary>
     /// Tests the following function:
     ///     date:format-date()
     /// </summary>
     [Fact]
-    public void FormatDateTest() 
+    public void FormatDateTest()
     {
         RunAndCompare("source.xml", "format-date.xslt", "format-date.xml");
-    }                
+    }
 
     /// <summary>
     /// Tests the following function:
     ///     date:parse-date()
     /// </summary>
     [Fact]
-    public void ParseDateTest() 
+    public void ParseDateTest()
     {
         RunAndCompare("source.xml", "parse-date.xslt", "parse-date.xml");
     }
@@ -36,7 +36,7 @@ public class ExsltDatesAndTimesTests : ExsltUnitTests
     ///     date:date-time()
     /// </summary>
     [Fact]
-    public void DateTimeTest() 
+    public void DateTimeTest()
     {
         RunAndCompare("source.xml", "date-time.xslt", "date-time.xml");
     }
@@ -46,7 +46,7 @@ public class ExsltDatesAndTimesTests : ExsltUnitTests
     ///     date:date()
     /// </summary>
     [Fact]
-    public void DateTest() 
+    public void DateTest()
     {
         RunAndCompare("source.xml", "date.xslt", "date.xml");
     }
@@ -56,7 +56,7 @@ public class ExsltDatesAndTimesTests : ExsltUnitTests
     ///     date:time()
     /// </summary>
     [Fact]
-    public void TimeTest() 
+    public void TimeTest()
     {
         RunAndCompare("source.xml", "time.xslt", "time.xml");
     }
@@ -66,7 +66,7 @@ public class ExsltDatesAndTimesTests : ExsltUnitTests
     ///     date:year()
     /// </summary>
     [Fact]
-    public void YearTest() 
+    public void YearTest()
     {
         RunAndCompare("source.xml", "year.xslt", "year.xml");
     }
@@ -76,7 +76,7 @@ public class ExsltDatesAndTimesTests : ExsltUnitTests
     ///     date:leap-year()
     /// </summary>
     [Fact]
-    public void LeapYearTest() 
+    public void LeapYearTest()
     {
         RunAndCompare("source.xml", "leap-year.xslt", "leap-year.xml");
     }
@@ -86,7 +86,7 @@ public class ExsltDatesAndTimesTests : ExsltUnitTests
     ///     date:month-in-year()
     /// </summary>
     [Fact]
-    public void MonthInYearTest() 
+    public void MonthInYearTest()
     {
         RunAndCompare("source.xml", "month-in-year.xslt", "month-in-year.xml");
     }
@@ -96,7 +96,7 @@ public class ExsltDatesAndTimesTests : ExsltUnitTests
     ///     date:month-name()
     /// </summary>
     [Fact]
-    public void MonthNameTest() 
+    public void MonthNameTest()
     {
         RunAndCompare("source.xml", "month-name.xslt", "month-name.xml");
     }
@@ -106,7 +106,7 @@ public class ExsltDatesAndTimesTests : ExsltUnitTests
     ///     date:month-abbreviation()
     /// </summary>
     [Fact]
-    public void MonthAbbreviationTest() 
+    public void MonthAbbreviationTest()
     {
         RunAndCompare("source.xml", "month-abbreviation.xslt", "month-abbreviation.xml");
     }
@@ -116,7 +116,7 @@ public class ExsltDatesAndTimesTests : ExsltUnitTests
     ///     date:week-in-year()
     /// </summary>
     [Fact]
-    public void WeekInYearTest() 
+    public void WeekInYearTest()
     {
         RunAndCompare("source.xml", "week-in-year.xslt", "week-in-year.xml");
     }
@@ -126,7 +126,7 @@ public class ExsltDatesAndTimesTests : ExsltUnitTests
     ///     date:week-in-month()
     /// </summary>
     [Fact]
-    public void WeekInMonthTest() 
+    public void WeekInMonthTest()
     {
         RunAndCompare("source.xml", "week-in-month.xslt", "week-in-month.xml");
     }
@@ -136,7 +136,7 @@ public class ExsltDatesAndTimesTests : ExsltUnitTests
     ///     date:day-in-year()
     /// </summary>
     [Fact]
-    public void DayInYearTest() 
+    public void DayInYearTest()
     {
         RunAndCompare("source.xml", "day-in-year.xslt", "day-in-year.xml");
     }
@@ -146,7 +146,7 @@ public class ExsltDatesAndTimesTests : ExsltUnitTests
     ///     date:day-in-month()
     /// </summary>
     [Fact]
-    public void DayInMonthTest() 
+    public void DayInMonthTest()
     {
         RunAndCompare("source.xml", "day-in-month.xslt", "day-in-month.xml");
     }
@@ -156,7 +156,7 @@ public class ExsltDatesAndTimesTests : ExsltUnitTests
     ///     date:week-of-week-in-month()
     /// </summary>
     [Fact]
-    public void DayOfWeekInMonthTest() 
+    public void DayOfWeekInMonthTest()
     {
         RunAndCompare("source.xml", "day-of-week-in-month.xslt", "day-of-week-in-month.xml");
     }
@@ -166,7 +166,7 @@ public class ExsltDatesAndTimesTests : ExsltUnitTests
     ///     date:day-in-week()
     /// </summary>
     [Fact]
-    public void DayInWeekTest() 
+    public void DayInWeekTest()
     {
         RunAndCompare("source.xml", "day-in-week.xslt", "day-in-week.xml");
     }
@@ -176,7 +176,7 @@ public class ExsltDatesAndTimesTests : ExsltUnitTests
     ///     date:day-name()
     /// </summary>
     [Fact]
-    public void DayNameTest() 
+    public void DayNameTest()
     {
         RunAndCompare("source.xml", "day-name.xslt", "day-name.xml");
     }
@@ -186,7 +186,7 @@ public class ExsltDatesAndTimesTests : ExsltUnitTests
     ///     date:day-abbreviation()
     /// </summary>
     [Fact]
-    public void DayAbbreviationTest() 
+    public void DayAbbreviationTest()
     {
         RunAndCompare("source.xml", "day-abbreviation.xslt", "day-abbreviation.xml");
     }
@@ -196,7 +196,7 @@ public class ExsltDatesAndTimesTests : ExsltUnitTests
     ///     date:hour-in-day()
     /// </summary>
     [Fact]
-    public void HourInDayTest() 
+    public void HourInDayTest()
     {
         RunAndCompare("source.xml", "hour-in-day.xslt", "hour-in-day.xml");
     }
@@ -206,7 +206,7 @@ public class ExsltDatesAndTimesTests : ExsltUnitTests
     ///     date:minute-in-hour()
     /// </summary>
     [Fact]
-    public void MinuteInHourTest() 
+    public void MinuteInHourTest()
     {
         RunAndCompare("source.xml", "minute-in-hour.xslt", "minute-in-hour.xml");
     }
@@ -216,17 +216,17 @@ public class ExsltDatesAndTimesTests : ExsltUnitTests
     ///     date:second-in-minute()
     /// </summary>
     [Fact]
-    public void SecondInMinuteTest() 
+    public void SecondInMinuteTest()
     {
         RunAndCompare("source.xml", "second-in-minute.xslt", "second-in-minute.xml");
     }
-    
+
     /// <summary>
     /// Tests the following function:
     ///     date:difference()
     /// </summary>
     [Fact]
-    public void DifferenceTest() 
+    public void DifferenceTest()
     {
         RunAndCompare("source.xml", "difference.xslt", "difference.xml");
     }
@@ -236,7 +236,7 @@ public class ExsltDatesAndTimesTests : ExsltUnitTests
     ///     date:add()
     /// </summary>
     [Fact]
-    public void AddTest() 
+    public void AddTest()
     {
         RunAndCompare("source.xml", "add.xslt", "add.xml");
     }
@@ -246,7 +246,7 @@ public class ExsltDatesAndTimesTests : ExsltUnitTests
     ///     date:add-duration()
     /// </summary>
     [Fact]
-    public void AddDurationTest() 
+    public void AddDurationTest()
     {
         RunAndCompare("source.xml", "add-duration.xslt", "add-duration.xml");
     }
@@ -256,7 +256,7 @@ public class ExsltDatesAndTimesTests : ExsltUnitTests
     ///     date:sum()
     /// </summary>
     [Fact]
-    public void SumTest() 
+    public void SumTest()
     {
         RunAndCompare("source.xml", "sum.xslt", "sum.xml");
     }
@@ -266,7 +266,7 @@ public class ExsltDatesAndTimesTests : ExsltUnitTests
     ///     date:seconds()
     /// </summary>
     [Fact]
-    public void SecondsTest() 
+    public void SecondsTest()
     {
         RunAndCompare("source.xml", "seconds.xslt", "seconds.xml");
     }
@@ -276,8 +276,8 @@ public class ExsltDatesAndTimesTests : ExsltUnitTests
     ///     date:duration()
     /// </summary>
     [Fact]
-    public void DurationTest() 
+    public void DurationTest()
     {
         RunAndCompare("source.xml", "duration.xslt", "duration.xml");
-    }        
+    }
 }

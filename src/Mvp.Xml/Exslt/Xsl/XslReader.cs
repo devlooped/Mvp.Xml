@@ -989,7 +989,7 @@ public class XslReader : XmlReader
             }
             return null;
         }
-        
+
         public string Lang { get; private set; }
 
         public XmlSpace Space { get; private set; }

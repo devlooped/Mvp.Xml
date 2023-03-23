@@ -1,6 +1,6 @@
 using System.Collections.Generic;
-using System.Xml;
 using System.Globalization;
+using System.Xml;
 
 namespace Mvp.Xml.Common;
 
@@ -75,5 +75,5 @@ public class XhtmlWriter : XmlWrappingWriter
         {
             base.WriteEndElement();
         }
-    }        
+    }
 }

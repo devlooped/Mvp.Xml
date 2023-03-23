@@ -16,7 +16,7 @@ public class XPointerParserTests
     [Fact]
     public void SyntaxErrorTest()
     {
-        Assert.Throws<XPointerSyntaxException>(() => 
+        Assert.Throws<XPointerSyntaxException>(() =>
             Pointer.Compile("too bad"));
     }
 

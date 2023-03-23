@@ -33,7 +33,7 @@ public struct XPathVariable
     /// if both their <see cref="Name"/> and their <see cref="Value"/> 
     /// are equal.
     /// </summary>
-    public override bool Equals(object obj) 
+    public override bool Equals(object obj)
         => Name == ((XPathVariable)obj).Name && Value == ((XPathVariable)obj).Value;
 
     /// <summary>
