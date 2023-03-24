@@ -1,0 +1,8 @@
+<Project>
+
+  <PropertyGroup>
+      <DebugType>portable</DebugType>
+      <Nullable>annotations</Nullable>
+  </PropertyGroup>
+
+</Project>
