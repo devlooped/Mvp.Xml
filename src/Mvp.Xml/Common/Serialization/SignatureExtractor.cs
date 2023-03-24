@@ -2,7 +2,7 @@
 using System.Text;
 using System.Xml.Serialization;
 
-namespace Mvp.Xml.Common.Serialization;
+namespace Mvp.Xml.Serialization;
 
 // TODO:
 // I could test if the creating the hashvalue for the

@@ -4,7 +4,7 @@ using System.Xml;
 using System.Xml.XPath;
 using System.Xml.Xsl;
 
-namespace Mvp.Xml.Common.XPath;
+namespace Mvp.Xml.XPath;
 
 /// <summary>
 /// Provides the evaluation context for fast execution and custom 

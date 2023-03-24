@@ -1,6 +1,5 @@
 using System.IO;
 using System.Xml;
-using Mvp.Xml.Common;
 using Xunit;
 
 namespace Mvp.Xml.Tests.XmlFragments;

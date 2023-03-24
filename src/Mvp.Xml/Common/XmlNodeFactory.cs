@@ -3,7 +3,7 @@ using System.Xml;
 using System.Xml.Serialization;
 using System.Xml.XPath;
 
-namespace Mvp.Xml.Common;
+namespace Mvp.Xml;
 
 /// <summary>
 /// Creates <see cref="XmlNode"/> wrapper instances 

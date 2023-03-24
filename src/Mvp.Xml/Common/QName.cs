@@ -1,4 +1,4 @@
-namespace Mvp.Xml.Common;
+namespace Mvp.Xml;
 
 /// <summary>
 /// XML Qualified Name (<a href="http://www.w3.org/TR/REC-xml-names/#dt-qualname">http://www.w3.org/TR/REC-xml-names/#dt-qualname</a>).

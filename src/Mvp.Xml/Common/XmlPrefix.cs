@@ -1,6 +1,6 @@
 using System.Xml;
 
-namespace Mvp.Xml.Common;
+namespace Mvp.Xml;
 
 /// <summary>
 /// Represents a mapping between a prefix and a namespace.

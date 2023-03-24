@@ -1,6 +1,6 @@
 using System.Xml.XPath;
 
-namespace Mvp.Xml.Common.XPath;
+namespace Mvp.Xml.XPath;
 
 /// <summary>
 /// Enables a class to return an <see cref="XPathNavigator"/> from the current context or position.

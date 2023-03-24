@@ -1,4 +1,3 @@
-using Mvp.Xml.Common;
 using Xunit;
 
 namespace Mvp.Xml.Tests.Common;

@@ -1,7 +1,7 @@
 using System;
 using System.Globalization;
 
-namespace Mvp.Xml.Common;
+namespace Mvp.Xml;
 
 /// <summary>
 /// Helper class with guard checks.

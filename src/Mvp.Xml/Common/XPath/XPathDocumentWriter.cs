@@ -6,7 +6,7 @@ using System.Security.Permissions;
 using System.Xml;
 using System.Xml.XPath;
 
-namespace Mvp.Xml.Common.XPath;
+namespace Mvp.Xml.XPath;
 
 /// <summary>
 /// <see cref="XmlWriter"/> that can produce an 

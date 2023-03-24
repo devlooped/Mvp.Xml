@@ -1,6 +1,5 @@
 using System;
 using System.Xml.Serialization;
-using Mvp.Xml.Common.Serialization;
 using Xunit;
 
 namespace Mvp.Xml.Serialization.Tests;

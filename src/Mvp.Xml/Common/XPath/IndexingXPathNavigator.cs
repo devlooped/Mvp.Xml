@@ -4,7 +4,7 @@ using System.Xml;
 using System.Xml.XPath;
 using System.Xml.Xsl;
 
-namespace Mvp.Xml.Common.XPath;
+namespace Mvp.Xml.XPath;
 
 /// <summary>	
 /// <see cref="IndexingXPathNavigator"/> enables lazy or eager indexing of any XML store

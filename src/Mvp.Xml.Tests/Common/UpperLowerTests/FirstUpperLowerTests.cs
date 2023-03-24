@@ -2,7 +2,6 @@ using System.IO;
 using System.Xml;
 using System.Xml.Schema;
 using System.Xml.Serialization;
-using Mvp.Xml.Common;
 using Xunit;
 
 namespace Mvp.Xml.Tests.UpperLowerTests;

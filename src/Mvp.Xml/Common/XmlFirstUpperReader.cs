@@ -2,7 +2,7 @@ using System;
 using System.IO;
 using System.Xml;
 
-namespace Mvp.Xml.Common;
+namespace Mvp.Xml;
 
 /// <summary>
 /// Implements an <see cref="XmlTextReader"/> that turns the 

@@ -1,6 +1,6 @@
 using System.Xml;
 
-namespace Mvp.Xml.Common;
+namespace Mvp.Xml;
 
 /// <summary>
 /// Wraps an <see cref="XmlReader"/> which was created to read 

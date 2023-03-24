@@ -1,7 +1,7 @@
 using System;
 using System.Xml;
 
-namespace Mvp.Xml.Common;
+namespace Mvp.Xml;
 
 /// <summary>
 /// Base <see cref="XmlReader"/> that can be use to create new readers by 
