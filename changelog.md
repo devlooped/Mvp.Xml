@@ -6,6 +6,7 @@
 
 :sparkles: Implemented enhancements:
 
+- Add SponsorLink to ensure ongoing development and support [\#5](https://github.com/devlooped/Mvp.Xml/pull/5) (@kzu)
 - Modernize and update [\#1](https://github.com/devlooped/Mvp.Xml/pull/1) (@kzu)
 
 
