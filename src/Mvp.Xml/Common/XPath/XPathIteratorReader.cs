@@ -3,7 +3,7 @@ using System.Xml;
 using System.Xml.Serialization;
 using System.Xml.XPath;
 
-namespace Mvp.Xml.Common.XPath;
+namespace Mvp.Xml.XPath;
 
 /// <summary>
 /// Provides an <see cref="XmlReader"/> over an 

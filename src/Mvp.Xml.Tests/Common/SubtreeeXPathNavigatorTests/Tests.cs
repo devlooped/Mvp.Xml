@@ -4,7 +4,7 @@ using System.IO;
 using System.Xml;
 using System.Xml.XPath;
 using System.Xml.Xsl;
-using Mvp.Xml.Common.XPath;
+using Mvp.Xml.XPath;
 using Xunit;
 
 namespace Mvp.Xml.Tests.SubtreeeXPathNavigatorTests;

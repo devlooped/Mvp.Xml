@@ -1,4 +1,4 @@
-namespace Mvp.Xml.Common.XPath;
+namespace Mvp.Xml.XPath;
 
 /// <summary>
 /// Represents a variable to use in dynamic XPath expression 

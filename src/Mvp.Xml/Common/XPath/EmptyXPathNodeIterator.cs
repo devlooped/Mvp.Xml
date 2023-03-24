@@ -1,6 +1,6 @@
 using System.Xml.XPath;
 
-namespace Mvp.Xml.Common.XPath;
+namespace Mvp.Xml.XPath;
 
 /// <summary>
 /// Empty <see cref="XPathNodeIterator"/>, used to represent empty

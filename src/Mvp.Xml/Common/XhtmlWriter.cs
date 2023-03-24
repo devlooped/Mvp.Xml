@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Xml;
 
-namespace Mvp.Xml.Common;
+namespace Mvp.Xml;
 
 /// <summary>
 /// XHTML writer. Writes XML using the HTML compatibility guidelines defined in the XHTML 1.0 specification.

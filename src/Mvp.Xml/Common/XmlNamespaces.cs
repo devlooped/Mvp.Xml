@@ -1,4 +1,4 @@
-namespace Mvp.Xml.Common;
+namespace Mvp.Xml;
 
 /// <summary>
 /// Provides public constants for wellknown XML namespaces.

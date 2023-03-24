@@ -1,8 +1,7 @@
 using System;
 using System.Xml;
 using System.Xml.XPath;
-using Mvp.Xml.Common;
-using Mvp.Xml.Common.XPath;
+using Mvp.Xml.XPath;
 using Xunit;
 
 namespace Mvp.Xml.Tests;

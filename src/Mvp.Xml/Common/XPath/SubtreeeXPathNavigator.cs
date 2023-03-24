@@ -1,7 +1,7 @@
 using System.Xml;
 using System.Xml.XPath;
 
-namespace Mvp.Xml.Common.XPath;
+namespace Mvp.Xml.XPath;
 
 /// <summary>	
 /// Allows to navigate a subtree of an <see cref="IXPathNavigable"/> source, 

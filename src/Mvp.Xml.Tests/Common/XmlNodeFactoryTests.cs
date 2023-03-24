@@ -3,7 +3,6 @@ using System.IO;
 using System.Xml;
 using System.Xml.Serialization;
 using System.Xml.XPath;
-using Mvp.Xml.Common;
 using Xunit;
 
 namespace Mvp.Xml.Tests;

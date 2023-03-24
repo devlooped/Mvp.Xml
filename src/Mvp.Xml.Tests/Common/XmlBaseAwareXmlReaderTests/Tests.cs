@@ -1,7 +1,6 @@
 using System;
 using System.Xml;
 using System.Xml.XPath;
-using Mvp.Xml.Common;
 using Xunit;
 
 namespace Mvp.Xml.Tests.XmlBaseAwareXmlReaderTests;

@@ -2,7 +2,7 @@
 using System.Text;
 using System.Xml.Serialization;
 
-namespace Mvp.Xml.Common.Serialization;
+namespace Mvp.Xml.Serialization;
 
 /// <summary>
 /// The CacheKeyFactory extracts a unique signature

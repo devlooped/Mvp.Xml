@@ -1,6 +1,6 @@
 using System.Xml;
 
-namespace Mvp.Xml.Common;
+namespace Mvp.Xml;
 
 /// <summary>
 /// Reader that only exposes xmlns attribute declarations if they 

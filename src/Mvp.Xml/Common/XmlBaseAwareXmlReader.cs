@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Xml;
 
-namespace Mvp.Xml.Common;
+namespace Mvp.Xml;
 
 /// <summary>
 /// Custom <see cref="XmlReader"/> supporting <a href="http://www.w3.org/TR/xmlbase/">XML Base</a>.

@@ -1,6 +1,6 @@
 using System.Xml.XPath;
 
-namespace Mvp.Xml.Common.XPath;
+namespace Mvp.Xml.XPath;
 
 /// <summary>
 /// <see cref="XPathNodeIterator"/> over a single node. Can be used to return a single

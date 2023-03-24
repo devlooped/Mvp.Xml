@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Xml.XPath;
 
-namespace Mvp.Xml.Common.XPath;
+namespace Mvp.Xml.XPath;
 
 /// <summary>
 /// An <see cref="XPathNodeIterator"/> that allows 

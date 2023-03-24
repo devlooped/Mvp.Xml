@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.IO;
 using System.Text;
 
-namespace Mvp.Xml.Common;
+namespace Mvp.Xml;
 
 /// <summary>
 /// Allows streams without a root element (i.e. multiple document 

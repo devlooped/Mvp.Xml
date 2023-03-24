@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Xml;
 using System.Xml.XPath;
 
-namespace Mvp.Xml.Common.XPath;
+namespace Mvp.Xml.XPath;
 
 /// <summary>
 /// Implements a cache of XPath queries, for faster execution.

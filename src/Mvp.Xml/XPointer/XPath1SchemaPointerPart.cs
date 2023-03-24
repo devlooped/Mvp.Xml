@@ -2,7 +2,7 @@ using System;
 using System.Globalization;
 using System.Xml;
 using System.Xml.XPath;
-using Mvp.Xml.Common.XPath;
+using Mvp.Xml.XPath;
 
 namespace Mvp.Xml.XPointer;
 
