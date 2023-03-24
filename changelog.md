@@ -1,5 +1,13 @@
 # Changelog
 
+## [v3.0.0-beta](https://github.com/devlooped/Mvp.Xml/tree/v3.0.0-beta) (2023-03-24)
+
+[Full Changelog](https://github.com/devlooped/Mvp.Xml/compare/v3.0.0-alpha...v3.0.0-beta)
+
+:sparkles: Implemented enhancements:
+
+- Remove Common from Mvp.Xml namespaces [\#7](https://github.com/devlooped/Mvp.Xml/pull/7) (@kzu)
+
 ## [v3.0.0-alpha](https://github.com/devlooped/Mvp.Xml/tree/v3.0.0-alpha) (2023-03-24)
 
 [Full Changelog](https://github.com/devlooped/Mvp.Xml/compare/647a43f04add21073eaa1a5b679d9f6d23bfda52...v3.0.0-alpha)
