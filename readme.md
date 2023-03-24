@@ -57,7 +57,8 @@ public XPathNodeIterator GetExpensiveBooks(IXPathNavigable doc, int minPrice)
  
  // XPathCache optimally caches the compiled XPath expression and parameterizes it
  return XPathCache.Select(expr, doc.CreateNavigator(), mgr, new XPathVariable("price", minPrice));
-}```
+}
+```
 
 ```csharp
 var xslt = new XslTransform();
