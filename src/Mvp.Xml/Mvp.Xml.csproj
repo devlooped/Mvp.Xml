@@ -4,20 +4,32 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <EnableRexCodeGenerator>true</EnableRexCodeGenerator>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-    <PackageTags>xml;xslt;exslt;xinclude;xpointer;xmlbase</PackageTags>
   </PropertyGroup>
 
+  <PropertyGroup Label="NuGet">
+    <PackageId>Mvp.Xml</PackageId>
+    <PackageProjectUrl>https://clarius.org/Mvp.Xml</PackageProjectUrl>
+    <Description>
+.NET implementations of EXSLT, XML Base, XInclude, XPointer, as well as a unique set of utility classes
+making XML programming in .NET platform easier, more productive and effective.
+    </Description>
+    <PackageTags>xml xslt exslt xinclude xpointer xmlbase</PackageTags>
+  </PropertyGroup>
+  
   <ItemGroup>
+    <PackageReference Include="NuGetizer" Version="1.0.1" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="all" />
     <PackageReference Include="System.CodeDom" Version="6.0.0" />
     <PackageReference Include="System.Security.Permissions" Version="6.0.0" />
     <PackageReference Include="System.Xml.XmlDocument" Version="4.3.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MethodRenamer\MethodRenamer.csproj"
-                      ReferenceOutputAssembly="false"
-                      OutputItemType="None"
-                      SkipGetTargetFrameworkProperties="true"/>
+    <ProjectReference Include="..\MethodRenamer\MethodRenamer.csproj" 
+                      ReferenceOutputAssembly="false" 
+                      OutputItemType="None" 
+                      SkipGetTargetFrameworkProperties="true" 
+                      Pack="false" />
   </ItemGroup>
 
   <ItemGroup>
@@ -39,7 +51,7 @@
     <PropertyGroup>
       <IntermediateAssembly>@(IntermediateAssembly -> '%(FullPath)')</IntermediateAssembly>
     </PropertyGroup>
-    <Exec Command='dotnet $(MSBuildProjectDirectory)\..\MethodRenamer\bin\$(Configuration)\MethodRenamer.dll RenameMappings.json "$(IntermediateAssembly)"' />
+    <Exec Command="dotnet $(MSBuildProjectDirectory)\..\MethodRenamer\bin\$(Configuration)\MethodRenamer.dll RenameMappings.json &quot;$(IntermediateAssembly)&quot;" />
   </Target>
 
 </Project>
