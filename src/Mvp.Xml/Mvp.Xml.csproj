@@ -9,10 +9,7 @@
   <PropertyGroup Label="NuGet">
     <PackageId>Mvp.Xml</PackageId>
     <PackageProjectUrl>https://clarius.org/Mvp.Xml</PackageProjectUrl>
-    <Description>
-.NET implementations of EXSLT, XML Base, XInclude, XPointer, as well as a unique set of utility classes
-making XML programming in .NET platform easier, more productive and effective.
-    </Description>
+    <Description>.NET implementations of EXSLT, XML Base, XInclude, XPointer, as well as a unique set of utility classes making XML programming in .NET platform easier, more productive and effective.</Description>
     <PackageTags>xml xslt exslt xinclude xpointer xmlbase</PackageTags>
   </PropertyGroup>
   
