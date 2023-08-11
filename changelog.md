@@ -1,5 +1,13 @@
 # Changelog
 
+## [v3.1.0](https://github.com/devlooped/Mvp.Xml/tree/v3.1.0) (2023-08-11)
+
+[Full Changelog](https://github.com/devlooped/Mvp.Xml/compare/v3.0.0...v3.1.0)
+
+:twisted_rightwards_arrows: Merged:
+
+- Remove current implementation of SponsorLink for now [\#29](https://github.com/devlooped/Mvp.Xml/pull/29) (@kzu)
+
 ## [v3.0.0](https://github.com/devlooped/Mvp.Xml/tree/v3.0.0) (2023-03-27)
 
 [Full Changelog](https://github.com/devlooped/Mvp.Xml/compare/v3.0.0-beta...v3.0.0)
