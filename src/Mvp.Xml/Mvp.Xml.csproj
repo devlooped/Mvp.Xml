@@ -23,7 +23,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MethodRenamer\MethodRenamer.csproj" ReferenceOutputAssembly="false" OutputItemType="None" SkipGetTargetFrameworkProperties="true" Pack="false" />
-    <ProjectReference Include="..\Mvp.Xml.CodeAnalysis\Mvp.Xml.CodeAnalysis.csproj" ReferenceOutputAssembly="false" OutputItemType="None" />
+    <!--<ProjectReference Include="..\Mvp.Xml.CodeAnalysis\Mvp.Xml.CodeAnalysis.csproj" ReferenceOutputAssembly="false" OutputItemType="None" />-->
   </ItemGroup>
 
   <ItemGroup>
