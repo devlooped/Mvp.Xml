@@ -14,8 +14,8 @@
 	skip
 [file ".editorconfig"]
 	url = https://github.com/devlooped/oss/blob/main/.editorconfig
-	sha = fd5b554bf3538a3c92a0b49e395c8ad2e8429158
-	etag = bf02d1679442e5169d03304164b8e9407997ac3132145831a91ba61fc8b50687
+	sha = c779d3d4e468358106dea03e93ba2cd35bb01ecb
+	etag = 7298c6450967975a8782b5c74f3071e1910fc59686e48f9c9d5cd7c68213cf59
 	weak
 [file ".gitattributes"]
 	url = https://github.com/devlooped/oss/blob/main/.gitattributes
@@ -24,8 +24,8 @@
 	weak
 [file ".github/dependabot.yml"]
 	url = https://github.com/devlooped/oss/blob/main/.github/dependabot.yml
-	sha = 4f070a477b4162a280f02722ae666376ae4fcc71
-	etag = 35f2134fff3b0235ff8dac8618a76198c8ef533ad2f29628bbb435cd1134d638
+	sha = 49661dbf0720cde93eb5569be7523b5912351560
+	etag = c147ea2f3431ca0338c315c4a45b56ee233c4d30f8d6ab698d0e1980a257fd6a
 	weak
 [file ".github/release.yml"]
 	url = https://github.com/devlooped/oss/blob/main/.github/release.yml
@@ -34,8 +34,8 @@
 	weak
 [file ".github/workflows/build.yml"]
 	url = https://github.com/devlooped/oss/blob/main/.github/workflows/build.yml
-	sha = 543f7daf1e8a63ea0dc599ae0494df7d1a90caa4
-	etag = 6abaf57f2624bc65517b8cc7b8a4b7e34542cf26f2ebcd1935a15a2a075c8733
+	sha = 6e7a3ab866a523d036e95066ab63351b63cc8a24
+	etag = 11c16867077f1d67b23a75e83556d3cd761aa6a69fd6c6bbed7d0f6b202c33da
 	weak
 [file ".github/workflows/changelog.config"]
 	url = https://github.com/devlooped/oss/blob/main/.github/workflows/changelog.config
@@ -77,8 +77,8 @@
 	weak
 [file ".gitignore"]
 	url = https://github.com/devlooped/oss/blob/main/.gitignore
-	sha = 9dff0bde290185226986f512c75fa0434bc9fe3f
-	etag = 7b3f23aa88e3ed628f03677a5b0fc4587c404bd0ef97dcf9650917a48316d51c
+	sha = ef852e7d2ec9a845dac272dfc479909c0bc6d9f3
+	etag = a556d6108892aa8e7e63476f4fad3a898b3ec1deda94332dd4e89d2fb6b555ca
 	weak
 [file "Directory.Build.rsp"]
 	url = https://github.com/devlooped/oss/blob/main/Directory.Build.rsp
@@ -102,13 +102,13 @@
 	weak
 [file "src/Directory.Build.props"]
 	url = https://github.com/devlooped/oss/blob/main/src/Directory.Build.props
-	sha = 6ae80a175a8f926ac5d9ffb0f6afd55d85cc9320
-	etag = 69d4b16c14d5047b3ed812dbf556b0b8d77deb86f73af04b9bd3640220056fa8
+	sha = b1d14c6379e5820eb2c30e08bedbdf6e9c8e8cb2
+	etag = 33cd19e0f599f444c320406da3452e9e84d28c3bb13c09e9190d9d2e7f129545
 	weak
 [file "src/Directory.Build.targets"]
 	url = https://github.com/devlooped/oss/blob/main/src/Directory.Build.targets
-	sha = 6ae80a175a8f926ac5d9ffb0f6afd55d85cc9320
-	etag = a890e3c9574327c4885f386756cba483c0f8fb2446554e4badcb6ab5b0eecfd0
+	sha = 1bf1eacc7ac3920d52c8e7045bfa34abc7c05302
+	etag = 7cb1421f00d9f6f4c00f0ca98e485dcadb927cfa6b3f0b5d4fb212525d2ce9c0
 	weak
 [file "src/nuget.config"]
 	url = https://github.com/devlooped/oss/blob/main/src/nuget.config
