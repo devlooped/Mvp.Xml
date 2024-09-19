@@ -114,7 +114,8 @@ public class XmlBaseAwareXmlReader : XmlWrappingReader
     /// <summary>
     /// Creates XmlBaseAwareXmlReader instance for given uri and <see cref="XmlReaderSettings"/>.        
     /// </summary>        
-    public XmlBaseAwareXmlReader(string uri, XmlReaderSettings settings) : base(Create(uri, settings)) { }
+    public XmlBaseAwareXmlReader(string uri, XmlReaderSettings settings) : base(Create(uri, settings))
+        => state.BaseUri = new Uri(base.BaseURI);
 
     /// <summary>
     /// Creates XmlBaseAwareXmlReader instance for given <see cref="TextReader"/> and <see cref="XmlReaderSettings"/>.        
@@ -136,14 +137,16 @@ public class XmlBaseAwareXmlReader : XmlWrappingReader
     /// <see cref="TextReader"/>, <see cref="XmlReaderSettings"/>
     /// and base uri.
     /// </summary>        
-    public XmlBaseAwareXmlReader(TextReader reader, XmlReaderSettings settings, string baseUri) : base(Create(reader, settings, baseUri)) { }
+    public XmlBaseAwareXmlReader(TextReader reader, XmlReaderSettings settings, string baseUri) : base(Create(reader, settings, baseUri))
+        => state.BaseUri = new Uri(base.BaseURI);
 
     /// <summary>
     /// Creates XmlBaseAwareXmlReader instance for given 
     /// <see cref="Stream"/>, <see cref="XmlReaderSettings"/>
     /// and base uri.
     /// </summary>        
-    public XmlBaseAwareXmlReader(Stream stream, XmlReaderSettings settings, string baseUri) : base(Create(stream, settings, baseUri)) { }
+    public XmlBaseAwareXmlReader(Stream stream, XmlReaderSettings settings, string baseUri) : base(Create(stream, settings, baseUri))
+        => state.BaseUri = new Uri(base.BaseURI);
 
     /// <summary>
     /// See <see cref="XmlTextReader.BaseURI"/>.

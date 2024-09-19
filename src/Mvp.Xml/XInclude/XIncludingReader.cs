@@ -1260,23 +1260,15 @@ public class XIncludingReader : XmlReader, IXmlLineInfo
         var stream = GetResource(includeLocation.AbsoluteUri,
             reader.GetAttribute(keywords.Accept),
             reader.GetAttribute(keywords.AcceptLanguage), out var wRes);
-        var xir = new XIncludingReader(wRes.ResponseUri.AbsoluteUri, stream, nameTable)
-        {
-            WhitespaceHandling = WhitespaceHandling
-        };
         var sw = new StringWriter();
-        var w = new XmlTextWriter(sw);
-        try
+        using (var r = new XmlBaseAwareXmlReader(stream, CreateReaderSettings(), wRes.ResponseUri.AbsoluteUri))
+        using (var xir = new XIncludingReader(r) { WhitespaceHandling = WhitespaceHandling })
+        using (var w = new XmlTextWriter(sw))
         {
             while (xir.Read())
             {
                 w.WriteNode(xir, false);
             }
-        }
-        finally
-        {
-            xir.Close();
-            w.Close();
         }
         var content = sw.ToString();
         lock (cache)
@@ -1295,7 +1287,7 @@ public class XIncludingReader : XmlReader, IXmlLineInfo
     /// <param name="sourceReader">Source reader</param>
     /// <param name="includeLocation">Base URI</param>
     string CreateAcquiredInfoset(Uri includeLocation, TextReader sourceReader) => CreateAcquiredInfoset(
-            new XmlBaseAwareXmlReader(includeLocation.AbsoluteUri, sourceReader, nameTable));
+            new XmlBaseAwareXmlReader(sourceReader, CreateReaderSettings(), includeLocation.AbsoluteUri));
 
     /// <summary>
     /// Creates acquired infoset.
@@ -1360,7 +1352,7 @@ public class XIncludingReader : XmlReader, IXmlLineInfo
                 //    XmlResolver = xmlResolver,
                 //    IgnoreWhitespace = (WhitespaceHandling == WhitespaceHandling.None)
                 //};
-                XmlReader r = new XmlBaseAwareXmlReader(wRes.ResponseUri.AbsoluteUri, stream, nameTable);
+                XmlReader r = new XmlBaseAwareXmlReader(stream, CreateReaderSettings(), wRes.ResponseUri.AbsoluteUri);
                 reader = r;
             }
             return Read();
@@ -1420,7 +1412,7 @@ public class XIncludingReader : XmlReader, IXmlLineInfo
                 //No XPointer   
                 if (resource is TextReader tr)
                 {
-                    reader = new XmlBaseAwareXmlReader(includeLocation.AbsoluteUri, tr, nameTable);
+                    reader = new XmlBaseAwareXmlReader(tr, CreateReaderSettings(), includeLocation.AbsoluteUri);
                 }
                 else if (resource is XmlReader xr)
                 {
@@ -1491,4 +1483,6 @@ public class XIncludingReader : XmlReader, IXmlLineInfo
 
         return reader.BaseURI;
     }
+
+    XmlReaderSettings CreateReaderSettings() => new() { DtdProcessing = DtdProcessing.Parse, NameTable = nameTable, CloseInput = true };
 }

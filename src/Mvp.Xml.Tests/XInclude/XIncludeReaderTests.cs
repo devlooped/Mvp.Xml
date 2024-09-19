@@ -44,7 +44,7 @@ public class XIncludeReaderTests
     {
         var doc = new XmlDocument();
         doc.PreserveWhitespace = true;
-        var xir = new XIncludingReader(source);
+        using var xir = new XIncludingReader(source);
         if (resolver != null)
             xir.XmlResolver = resolver;
         xir.ExposeTextInclusionsAsCDATA = textAsCDATA;
@@ -284,17 +284,21 @@ public class XIncludeReaderTests
     [Fact]
     public void OuterXmlTest()
     {
-        var xir = new XIncludingReader("../../XInclude/tests/document.xml");
-        xir.MoveToContent();
-        var outerXml = xir.ReadOuterXml();
-        xir.Close();
-        xir = new XIncludingReader("../../XInclude/tests/document.xml");
-        xir.MoveToContent();
-        var doc = new XmlDocument();
-        doc.PreserveWhitespace = true;
-        doc.Load(xir);
-        var outerXml2 = doc.DocumentElement.OuterXml;
-        Assert.Equal(outerXml, outerXml2);
+        string outerXml;
+        using (var xir = new XIncludingReader("../../XInclude/tests/document.xml"))
+        {
+            xir.MoveToContent();
+            outerXml = xir.ReadOuterXml();
+        }
+        using (var xir = new XIncludingReader("../../XInclude/tests/document.xml"))
+        {
+            xir.MoveToContent();
+            var doc = new XmlDocument();
+            doc.PreserveWhitespace = true;
+            doc.Load(xir);
+            var outerXml2 = doc.DocumentElement.OuterXml;
+            Assert.Equal(outerXml, outerXml2);
+        }
     }
 
     /// <summary>
@@ -303,17 +307,21 @@ public class XIncludeReaderTests
     [Fact]
     public void InnerXmlTest()
     {
-        var xir = new XIncludingReader("../../XInclude/tests/document.xml");
-        xir.MoveToContent();
-        var innerXml = xir.ReadInnerXml();
-        xir.Close();
-        xir = new XIncludingReader("../../XInclude/tests/document.xml");
-        xir.MoveToContent();
-        var doc = new XmlDocument();
-        doc.PreserveWhitespace = true;
-        doc.Load(xir);
-        var innerXml2 = doc.DocumentElement.InnerXml;
-        Assert.Equal(innerXml, innerXml2);
+        string innerXml;
+        using (var xir = new XIncludingReader("../../XInclude/tests/document.xml"))
+        {
+            xir.MoveToContent();
+            innerXml = xir.ReadInnerXml();
+        }
+        using (var xir = new XIncludingReader("../../XInclude/tests/document.xml"))
+        {
+            xir.MoveToContent();
+            var doc = new XmlDocument();
+            doc.PreserveWhitespace = true;
+            doc.Load(xir);
+            var innerXml2 = doc.DocumentElement.InnerXml;
+            Assert.Equal(innerXml, innerXml2);
+        }
     }
 
     /// <summary>
@@ -322,7 +330,7 @@ public class XIncludeReaderTests
     [Fact]
     public void DepthTest()
     {
-        var xir = new XIncludingReader("../../XInclude/tests/document.xml");
+        using var xir = new XIncludingReader("../../XInclude/tests/document.xml");
         var sb = new StringBuilder();
         while (xir.Read())
         {
@@ -364,7 +372,7 @@ public class XIncludeReaderTests
 
         Assert.Throws<FatalResourceException>(() =>
         {
-            var xir = new XIncludingReader(new StringReader(xml));
+            using var xir = new XIncludingReader(new StringReader(xml));
             var w = XmlWriter.Create(Console.Out);
             while (xir.Read()) ;
         });
@@ -391,7 +399,7 @@ public class XIncludeReaderTests
     [Fact]
     public void GetAttributeTest()
     {
-        var xir = new XIncludingReader("../../XInclude/tests/document.xml");
+        using var xir = new XIncludingReader("../../XInclude/tests/document.xml");
         while (xir.Read())
         {
             if (xir.NodeType == XmlNodeType.Element && xir.Name == "disclaimer")
@@ -406,7 +414,7 @@ public class XIncludeReaderTests
     [Fact]
     public void GetAttributeTest2()
     {
-        var xir = new XIncludingReader("../../XInclude/tests/document2.xml");
+        using var xir = new XIncludingReader("../../XInclude/tests/document2.xml");
         xir.MakeRelativeBaseUri = false;
         while (xir.Read())
         {
@@ -422,7 +430,7 @@ public class XIncludeReaderTests
     [Fact]
     public void GetAttributeTest3()
     {
-        var xir = new XIncludingReader("../../XInclude/tests/document.xml");
+        using var xir = new XIncludingReader("../../XInclude/tests/document.xml");
         while (xir.Read())
         {
             if (xir.NodeType == XmlNodeType.Element && xir.Name == "disclaimer")
@@ -438,7 +446,7 @@ public class XIncludeReaderTests
     [Fact]
     public void GetAttributeTest4()
     {
-        var xir = new XIncludingReader("../../XInclude/tests/document2.xml");
+        using var xir = new XIncludingReader("../../XInclude/tests/document2.xml");
         xir.MakeRelativeBaseUri = false;
         while (xir.Read())
         {
@@ -470,7 +478,7 @@ public class XIncludeReaderTests
     public void EncodingTest()
     {
         var r = new XmlTextReader(new StringReader("<foo/>"));
-        var xir = new XIncludingReader(r);
+        using var xir = new XIncludingReader(r);
         xir.ExposeTextInclusionsAsCDATA = true;
         xir.MoveToContent();
         Assert.True(xir.Encoding == UnicodeEncoding.Unicode);
@@ -480,7 +488,7 @@ public class XIncludeReaderTests
     public void ShouldPreserveCDATA()
     {
         var xml = "<HTML><![CDATA[<img src=\"/_layouts/images/\">]]></HTML>";
-        var xir = new XIncludingReader(new StringReader(xml));
+        using var xir = new XIncludingReader(new StringReader(xml));
         xir.Read();
         Assert.Equal("<HTML><![CDATA[<img src=\"/_layouts/images/\">]]></HTML>", xir.ReadOuterXml());
     }
@@ -496,7 +504,7 @@ public class XIncludeReaderTests
         var settings = new XmlReaderSettings { DtdProcessing = DtdProcessing.Parse };
         //settings.ProhibitDtd = false;
         var reader = XmlReader.Create("../../XInclude/tests/Transform.xsl", settings);
-        var xInputReader = new XIncludingReader("../../XInclude/tests/FileA.xml");
+        using var xInputReader = new XIncludingReader("../../XInclude/tests/FileA.xml");
         try
         {
             var processor = new MvpXslTransform(false);
@@ -521,7 +529,7 @@ public class XIncludeReaderTests
     [Fact]
     public void TestLineInfo()
     {
-        var r = new XIncludingReader("../../XInclude/tests/document.xml");
+        using var r = new XIncludingReader("../../XInclude/tests/document.xml");
         var lineInfo = ((IXmlLineInfo)r);
         Assert.True(lineInfo.HasLineInfo());
         r.Read();
@@ -593,6 +601,82 @@ public class XIncludeReaderTests
         r.Read();
         Assert.Equal(6, lineInfo.LineNumber);
         Assert.Equal(12, lineInfo.LinePosition);
+    }
+
+    [Fact]
+    public void DisposeInternalStreams()
+    {
+        using (var xir = new XIncludingReader("../../XInclude/tests/document.xml"))
+        {
+            while (xir.Read()) ;
+        }
+
+        using (var stream = new FileStream("../../XInclude/tests/document.xml", FileMode.Open, FileAccess.ReadWrite))
+        {
+            // success!
+        }
+
+        using (var stream = new FileStream("../../XInclude/tests/disclaimer.xml", FileMode.Open, FileAccess.ReadWrite))
+        {
+            // success!
+        }
+    }
+
+    [Fact]
+    public void DisposeInternalStreamsResolver()
+    {
+        using (var xir = new XIncludingReader("../../XInclude/tests/document.xml") { XmlResolver = new TestResolver() })
+        {
+            while (xir.Read()) ;
+        }
+
+        using (var stream = new FileStream("../../XInclude/tests/document.xml", FileMode.Open, FileAccess.ReadWrite))
+        {
+            // success!
+        }
+
+        using (var stream = new FileStream("../../XInclude/tests/disclaimer.xml", FileMode.Open, FileAccess.ReadWrite))
+        {
+            // success!
+        }
+    }
+
+    [Fact]
+    public void DisposeInternalStreamsXPointer()
+    {
+        using (var xir = new XIncludingReader("../../XInclude/tests/xpointer.xml"))
+        {
+            while (xir.Read()) ;
+        }
+
+        using (var stream = new FileStream("../../XInclude/tests/xpointer.xml", FileMode.Open, FileAccess.ReadWrite))
+        {
+            // success!
+        }
+
+        using (var stream = new FileStream("../../XInclude/tests/test2.xml", FileMode.Open, FileAccess.ReadWrite))
+        {
+            // success!
+        }
+    }
+
+    [Fact]
+    public void DisposeInternalStreamsXPointerResolver()
+    {
+        using (var xir = new XIncludingReader("../../XInclude/tests/xpointer.xml") { XmlResolver = new TestResolver() })
+        {
+            while (xir.Read()) ;
+        }
+
+        using (var stream = new FileStream("../../XInclude/tests/xpointer.xml", FileMode.Open, FileAccess.ReadWrite))
+        {
+            // success!
+        }
+
+        using (var stream = new FileStream("../../XInclude/tests/test2.xml", FileMode.Open, FileAccess.ReadWrite))
+        {
+            // success!
+        }
     }
 }
 
