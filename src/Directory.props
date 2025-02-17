@@ -1,8 +1,9 @@
 <Project>
 
   <PropertyGroup>
-      <DebugType>portable</DebugType>
-      <Nullable>annotations</Nullable>
+    <DebugType>portable</DebugType>
+    <Nullable>annotations</Nullable>
+    <Product>Mvp.Xml</Product>
   </PropertyGroup>
 
 </Project>
