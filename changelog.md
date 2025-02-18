@@ -1,5 +1,17 @@
 # Changelog
 
+## [v3.2.0](https://github.com/devlooped/Mvp.Xml/tree/v3.2.0) (2025-02-17)
+
+[Full Changelog](https://github.com/devlooped/Mvp.Xml/compare/v3.1.0...v3.2.0)
+
+:sparkles: Implemented enhancements:
+
+- 💟 Add SponsorLink to ensure ongoing maintenance [\#63](https://github.com/devlooped/Mvp.Xml/pull/63) (@kzu)
+
+:twisted_rightwards_arrows: Merged:
+
+- Release files included with XInclude after reading [\#60](https://github.com/devlooped/Mvp.Xml/pull/60) (@epithet)
+
 ## [v3.1.0](https://github.com/devlooped/Mvp.Xml/tree/v3.1.0) (2023-08-11)
 
 [Full Changelog](https://github.com/devlooped/Mvp.Xml/compare/v3.0.0...v3.1.0)
