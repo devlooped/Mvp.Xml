@@ -37,6 +37,6 @@ public sealed class Globals
 
     public static Stream GetResource(string name)
     {
-        return new FileStream(name, FileMode.Open, FileAccess.Read);
+        return new FileStream(Path.GetFullPath(name), FileMode.Open, FileAccess.Read);
     }
 }

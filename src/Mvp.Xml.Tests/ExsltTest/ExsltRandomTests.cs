@@ -1,11 +1,12 @@
 using Xunit;
+using Xunit.Abstractions;
 
 namespace ExsltTest;
 
 /// <summary>
 /// Collection of unit tests for EXSLT Random module functions.
 /// </summary>
-public class ExsltRandomTests : ExsltUnitTests
+public class ExsltRandomTests(ITestOutputHelper output) : ExsltUnitTests(output)
 {
     protected override string TestDir => "../../ExsltTest/tests/EXSLT/Random/";
     protected override string ResultsDir => "../../ExsltTest/results/EXSLT/Random/";

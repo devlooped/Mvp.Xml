@@ -1,11 +1,12 @@
 using Xunit;
+using Xunit.Abstractions;
 
 namespace ExsltTest;
 
 /// <summary>
 /// Collection of unit tests for GotDotNet Dynamic module functions.
 /// </summary>
-public class GDNDynamicTests : ExsltUnitTests
+public class GDNDynamicTests(ITestOutputHelper output) : ExsltUnitTests(output)
 {
     protected override string TestDir => "../../ExsltTest/tests/GotDotNet/Dynamic/";
     protected override string ResultsDir => "../../ExsltTest/results/GotDotNet/Dynamic/";

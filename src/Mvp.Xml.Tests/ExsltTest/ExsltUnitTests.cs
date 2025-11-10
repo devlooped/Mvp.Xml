@@ -4,13 +4,14 @@ using System.Xml.Linq;
 using System.Xml.XPath;
 using Mvp.Xml.Common.Xsl;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace ExsltTest;
 
 /// <summary>
 /// Superclass for unit tests.
 /// </summary>
-public class ExsltUnitTests
+public class ExsltUnitTests(ITestOutputHelper output)
 {
     protected virtual string TestDir => "../../ExsltTest/tests/EXSLT/Common/";
     protected virtual string ResultsDir => "../../ExsltTest/results/EXSLT/Common/";
@@ -42,8 +43,9 @@ public class ExsltUnitTests
         var areEqual = XNode.DeepEquals(expected, actual);
         if (!areEqual)
         {
-            Console.WriteLine(@"Actual Result was {0}", actualResult);
-            Console.WriteLine(@"Expected Result was {0}", expectedResult);
+            output.WriteLine(@"Actual Result was {0}", actualResult);
+            output.WriteLine(@"Expected Result was {0}", expectedResult);
+            Assert.Equal(expectedResult, actualResult);
         }
         Assert.True(areEqual);
     }
