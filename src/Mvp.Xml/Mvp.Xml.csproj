@@ -40,13 +40,13 @@
   <Target Name="RenameMethods" AfterTargets="CoreCompile">
     <PropertyGroup>
       <IntermediateAssembly>@(IntermediateAssembly -> '%(FullPath)')</IntermediateAssembly>
-      <RenameCommand>dotnet $(MSBuildProjectDirectory)\..\MethodRenamer\bin\$(Configuration)\MethodRenamer.dll RenameMappings.json "$(IntermediateAssembly)"</RenameCommand>
+      <RenameCommand>dotnet $([System.IO.Path]::GetFullPath('$(MSBuildProjectDirectory)/../MethodRenamer/bin/$(Configuration)/MethodRenamer.dll')) RenameMappings.json "$(IntermediateAssembly)"</RenameCommand>
     </PropertyGroup>
     <Exec Command="$(RenameCommand)" EchoOff="true" ConsoleToMSBuild="true" ContinueOnError="true" StandardErrorImportance="high" StandardOutputImportance="low" StdOutEncoding="utf-8">
       <Output TaskParameter="ConsoleOutput" PropertyName="RenameOutput" />
       <Output TaskParameter="ExitCode" PropertyName="MSBuildLastExitCode" />
     </Exec>
-    <Error Text="Failed to rename methods: %0A $(RenameOutput)" Condition="'$(MSBuildLastExitCode)' != '0'" />
+    <Error Text="Failed to rename methods: $(RenameCommand) %0A $(RenameOutput)" Condition="'$(MSBuildLastExitCode)' != '0'" />
   </Target>
 
 </Project>
