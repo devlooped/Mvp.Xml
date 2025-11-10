@@ -16,12 +16,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Common\XmlBaseAwareXmlReaderTests\relativeTest.xml">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </None>
-    <None Update="Common\XmlBaseAwareXmlReaderTests\test.xml">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </None>
+    <None Update="Common\XmlBaseAwareXmlReaderTests\relativeTest.xml" CopyToOutputDirectory="Never" />
+    <None Update="Common\XmlBaseAwareXmlReaderTests\test.xml" CopyToOutputDirectory="Never" />
   </ItemGroup>
 
 </Project>
