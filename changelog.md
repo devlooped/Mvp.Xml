@@ -1,5 +1,17 @@
 # Changelog
 
+## [v3.3.0](https://github.com/devlooped/Mvp.Xml/tree/v3.3.0) (2025-11-10)
+
+[Full Changelog](https://github.com/devlooped/Mvp.Xml/compare/v3.2.0...v3.3.0)
+
+:hammer: Other:
+
+- ASP.NET Web API fails on startup with net::ERR\_HTTP2\_PROTOCOL\_ERROR [\#59](https://github.com/devlooped/Mvp.Xml/issues/59)
+
+:twisted_rightwards_arrows: Merged:
+
+- Switch to https  for xinclude test [\#129](https://github.com/devlooped/Mvp.Xml/pull/129) (@kzu)
+
 ## [v3.2.0](https://github.com/devlooped/Mvp.Xml/tree/v3.2.0) (2025-02-17)
 
 [Full Changelog](https://github.com/devlooped/Mvp.Xml/compare/v3.1.0...v3.2.0)
