@@ -4,6 +4,9 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <EnableRexCodeGenerator>true</EnableRexCodeGenerator>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <PackageLicenseExpression></PackageLicenseExpression>
+    <PackageLicenseFile>OSMFEULA.txt</PackageLicenseFile>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 
   <PropertyGroup Label="NuGet">
@@ -22,13 +25,16 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MethodRenamer\MethodRenamer.csproj" ReferenceOutputAssembly="false" OutputItemType="None" SkipGetTargetFrameworkProperties="true" Pack="false" />
-    <ProjectReference Include="..\Mvp.Xml.CodeAnalysis\Mvp.Xml.CodeAnalysis.csproj" ReferenceOutputAssembly="false" OutputItemType="None" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Update="Properties\Resources.resx">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\osmfeula.txt" Link="osmfeula.txt" PackagePath="OSMFEULA.txt" />
   </ItemGroup>
 
   <Target Name="RenameMethods" AfterTargets="CoreCompile">
