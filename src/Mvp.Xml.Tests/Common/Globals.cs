@@ -13,30 +13,28 @@ public sealed class Globals
     /// <summary>
     /// The resource name for sample data from a library (<see cref="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/cpguide/html/cpconXslTransformClassImplementsXSLTProcessor.asp?frame=true&hidetoc=true"/>.
     /// </summary>
-    public const string LibraryResource = "..\\..\\Common\\library.xml";
+    public const string LibraryResource = "../../Common/library.xml";
 
     /// <summary>
     /// The resource name for sample data from Pubs database.
     /// </summary>
-    public const string PubsResource = "..\\..\\Common\\pubs.xml";
+    public const string PubsResource = "../../Common/pubs.xml";
 
     /// <summary>
     /// The resource name for sample data from Pubs database with xmlns="mvp-xml".
     /// </summary>
-    public const string PubsNsResource = "..\\..\\Common\\pubsNs.xml";
+    public const string PubsNsResource = "../../Common/pubsNs.xml";
 
     /// <summary>
     /// The resource name for schema for the resource <see cref="PubsNsResource"/>.
     /// </summary>
-    public const string PubsNsSchemaResource = "..\\..\\Common\\pubsNs.xsd";
+    public const string PubsNsSchemaResource = "../../Common/pubsNs.xsd";
 
     /// <summary>
     /// The resource name for sample data from Pubs database.
     /// </summary>
-    public const string NorthwindResource = "..\\..\\Common\\northwind.xml";
+    public const string NorthwindResource = "../../Common/northwind.xml";
 
     public static Stream GetResource(string name)
-    {
-        return new FileStream(Path.GetFullPath(name), FileMode.Open, FileAccess.Read);
-    }
+        => new FileStream(name.Replace('/', Path.DirectorySeparatorChar), FileMode.Open, FileAccess.Read);
 }
