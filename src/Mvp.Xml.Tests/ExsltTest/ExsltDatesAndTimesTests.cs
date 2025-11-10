@@ -1,11 +1,12 @@
 using Xunit;
+using Xunit.Abstractions;
 
 namespace ExsltTest;
 
 /// <summary>
 /// Collection of unit tests for EXSLT Dates and Times module functions.
 /// </summary>
-public class ExsltDatesAndTimesTests : ExsltUnitTests
+public class ExsltDatesAndTimesTests(ITestOutputHelper output) : ExsltUnitTests(output)
 {
     protected override string TestDir => "../../ExsltTest/tests/EXSLT/DatesAndTimes/";
 

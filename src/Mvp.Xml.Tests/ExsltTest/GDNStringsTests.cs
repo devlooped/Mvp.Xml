@@ -1,11 +1,12 @@
 using Xunit;
+using Xunit.Abstractions;
 
 namespace ExsltTest;
 
 /// <summary>
 /// Collection of unit tests for GotDotNet Strings module functions.
 /// </summary>
-public class GDNStringsTests : ExsltUnitTests
+public class GDNStringsTests(ITestOutputHelper output) : ExsltUnitTests(output)
 {
     protected override string TestDir => "../../ExsltTest/tests/GotDotNet/Strings/";
     protected override string ResultsDir => "../../ExsltTest/results/GotDotNet/Strings/";

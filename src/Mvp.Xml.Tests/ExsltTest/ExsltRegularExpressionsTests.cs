@@ -1,11 +1,12 @@
 using Xunit;
+using Xunit.Abstractions;
 
 namespace ExsltTest;
 
 /// <summary>
 /// Collection of unit tests for EXSLT RegularExpressions module functions.
 /// </summary>
-public class ExsltRegularExpressionsTests : ExsltUnitTests
+public class ExsltRegularExpressionsTests(ITestOutputHelper output) : ExsltUnitTests(output)
 {
     protected override string TestDir => "../../ExsltTest/tests/EXSLT/RegularExpressions/";
     protected override string ResultsDir => "../../ExsltTest/results/EXSLT/RegularExpressions/";

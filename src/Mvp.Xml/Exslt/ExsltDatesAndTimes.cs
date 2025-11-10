@@ -15,6 +15,10 @@ public class ExsltDatesAndTimes
 {
     //private CultureInfo ci = new CultureInfo("en-US");
 
+    public ExsltDatesAndTimes()
+    {
+    }
+
     class ExsltDateTimeFactory
     {
         /// <summary>

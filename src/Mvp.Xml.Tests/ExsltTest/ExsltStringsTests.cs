@@ -1,11 +1,12 @@
 using Xunit;
+using Xunit.Abstractions;
 
 namespace ExsltTest;
 
 /// <summary>
 /// Collection of unit tests for EXSLT Strings module functions.
 /// </summary>
-public class ExsltStringsTests : ExsltUnitTests
+public class ExsltStringsTests(ITestOutputHelper output) : ExsltUnitTests(output)
 {
     protected override string TestDir => "../../ExsltTest/tests/EXSLT/Strings/";
     protected override string ResultsDir => "../../ExsltTest/results/EXSLT/Strings/";
