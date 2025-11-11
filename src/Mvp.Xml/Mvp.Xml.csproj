@@ -18,8 +18,8 @@
   
   <ItemGroup>
     <PackageReference Include="NuGetizer" Version="1.4.6" PrivateAssets="all" PackTransitive="false" />
-    <PackageReference Include="System.CodeDom" Version="8.0.0" />
-    <PackageReference Include="System.Security.Permissions" Version="8.0.0" />
+    <PackageReference Include="System.CodeDom" Version="9.0.10" />
+    <PackageReference Include="System.Security.Permissions" Version="9.0.10" />
     <PackageReference Include="System.Xml.XmlDocument" Version="4.3.0" />
   </ItemGroup>
 
